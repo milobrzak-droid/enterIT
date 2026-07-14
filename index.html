@@ -507,6 +507,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .bc-who{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
 .bc-go{font-family:var(--mono);font-size:11px;color:var(--ob-acc,var(--green));transition:transform .2s}
 .bc-card:hover .bc-go{transform:translateX(3px)}
+/* ===== TEAM (koncept 3 týmů) ===== */
+.eng-stats{display:flex;flex-wrap:wrap;gap:24px 44px;margin:34px 0 40px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eng-stat .v{font-family:var(--head);font-weight:900;font-size:clamp(28px,4vw,42px);line-height:1;color:#fff;letter-spacing:-.01em}
+.eng-stat .l{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:7px}
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+@media(max-width:860px){.eng-grid{grid-template-columns:1fr}}
+.eng-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px 24px 22px;border:1px solid var(--line);border-radius:var(--r-xl);background:rgba(27,37,51,.55);overflow:hidden;transition:border-color .25s ease,transform .25s ease}
+.eng-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--acc) 45%,var(--line))}
+.eng-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--acc)}
+.eng-card::after{content:"";position:absolute;inset:auto -30% -55% auto;width:65%;height:65%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 15%,transparent),transparent 68%);opacity:0;transition:opacity .3s;pointer-events:none}
+.eng-card:hover::after{opacity:1}
+.eng-top{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:1}
+.eng-name{font-family:var(--head);font-weight:800;font-size:19px;color:#fff;letter-spacing:-.005em}
+.eng-size{font-family:var(--mono);font-size:11px;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 38%,transparent);border-radius:20px;padding:4px 11px;white-space:nowrap}
+.eng-tag{font-family:var(--mono);font-size:13.5px;font-weight:500;color:var(--acc);margin:2px 0 0;position:relative;z-index:1}
+.eng-p{font-family:var(--mono);font-size:12.6px;line-height:1.6;color:var(--muted);margin:0;position:relative;z-index:1}
+.eng-bul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1}
+.eng-bul li{font-family:var(--mono);font-size:12.4px;line-height:1.5;color:var(--text);padding-left:18px;position:relative}
+.eng-bul li::before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.eng-bul li b{color:#fff;font-weight:700}
+.eng-foot2{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);position:relative;z-index:1}
+.team-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 </style>
 </head>
 <body>
@@ -921,6 +943,63 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
     <div class="how-cta reveal">
       <a class="tlink" href="jak-stavime-automatizace.html">Do hloubky: jak stavíme automatizace <span class="arr">→</span></a>
       <a class="tlink" href="jak-stavime-agenty.html">Jak stavíme agenty <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TÝM — koncept 3 týmů ============ -->
+<section class="block" id="tym-sekce">
+  <div class="wrap">
+    <span class="sec-kicker reveal"><span class="n">08</span><span class="ln"></span><span>Tým</span></span>
+    <h2 class="h2 reveal">75 vývojářů. Tři specializované týmy. <span class="gt">Jeden partner.</span></h2>
+    <p class="lead reveal">Enter&nbsp;IT není jeden generalista na&nbsp;všechno. Je to <b style="color:var(--white);font-weight:600">malé in-house jádro, které řídí 70&nbsp;lidí dodací kapacity</b> rozdělené do&nbsp;tří specializovaných týmů. Každý řeší jinou vrstvu — od&nbsp;enterprise architektury přes agentní AI po&nbsp;produktový vývoj. Vy jednáte s&nbsp;jedním partnerem, za&nbsp;výsledek ručí celá struktura.</p>
+
+    <div class="eng-stats reveal">
+      <div class="eng-stat"><div class="v">75</div><div class="l">vývojářů</div></div>
+      <div class="eng-stat"><div class="v">3</div><div class="l">specializované týmy</div></div>
+      <div class="eng-stat"><div class="v">10+</div><div class="l">let zkušeností</div></div>
+      <div class="eng-stat"><div class="v">EU</div><div class="l">dodávky po celé Evropě</div></div>
+    </div>
+
+    <div class="eng-grid">
+      <div class="eng-card reveal" style="--acc:#6ECEFF">
+        <div class="eng-top"><span class="eng-name">Enter Enterprise</span><span class="eng-size">45 lidí</span></div>
+        <p class="eng-tag">Velké systémy, které unesou zátěž.</p>
+        <p class="eng-p">Navrhujeme architekturu a&nbsp;dodáváme komplexní custom systémy, integrace a&nbsp;modernizaci pro&nbsp;velké firmy. Sehraný senior tým — spoléháte se na&nbsp;tým jako celek, ne&nbsp;na&nbsp;jednotlivce.</p>
+        <ul class="eng-bul">
+          <li><b>Architektura &amp;&nbsp;custom vývoj</b> — systémy na&nbsp;míru, integrace do&nbsp;legacy</li>
+          <li><b>DevOps &amp;&nbsp;infrastruktura</b> — servery, cloud, dlouhodobá údržba</li>
+          <li>Reference kalibru <b>Notino, GymBeam, Home&nbsp;Credit</b></li>
+        </ul>
+        <div class="eng-foot2">Nese největší enterprise zátěž a&nbsp;odpovědnost za&nbsp;architekturu.</div>
+      </div>
+      <div class="eng-card reveal" style="--acc:#B790FF">
+        <div class="eng-top"><span class="eng-name">Enter Agents</span><span class="eng-size">25 lidí</span></div>
+        <p class="eng-tag">AI agenti, kteří pracují 24/7.</p>
+        <p class="eng-p">Stavíme AI agenty a&nbsp;agentní systémy a&nbsp;nasazujeme je přímo do&nbsp;vašich procesů. Forward-deployed engineeři jdou dovnitř provozu, ne&nbsp;jen do&nbsp;dokumentace.</p>
+        <ul class="eng-bul">
+          <li><b>Agentní automatizace</b> procesů a&nbsp;LLM řešení na&nbsp;míru</li>
+          <li><b>Forward-deployed engineeři</b> nasazení přímo u&nbsp;vás</li>
+          <li>Měřitelný dopad — rychlejší reakce, méně rutiny</li>
+        </ul>
+        <div class="eng-foot2">Převádí procesy na&nbsp;agenty, kteří běží nepřetržitě.</div>
+      </div>
+      <div class="eng-card reveal" style="--acc:#41E39E">
+        <div class="eng-top"><span class="eng-name">Enter Studio</span><span class="eng-size">5 lidí</span></div>
+        <p class="eng-tag">Naši lidé. Rychle, agilně, blízko.</p>
+        <p class="eng-p">In-house jádro Enter — mladý agilní tým v&nbsp;srdci firmy. Dodáváme produkty, weby a&nbsp;aplikace od&nbsp;MVP po&nbsp;rozvoj a&nbsp;držíme datové vrstvy pro&nbsp;agentní řešení.</p>
+        <ul class="eng-bul">
+          <li><b>Produkty, weby &amp;&nbsp;aplikace</b> od&nbsp;MVP po&nbsp;škálování</li>
+          <li><b>Datové vrstvy</b> a&nbsp;základy pro&nbsp;agentní řešení</li>
+          <li>Krátká zpětná vazba, blízko klientovi</li>
+        </ul>
+        <div class="eng-foot2">Rychlé jádro, které drží produkt a&nbsp;data pohromadě.</div>
+      </div>
+    </div>
+
+    <div class="team-cta reveal">
+      <a href="tym.html" class="btn green">Poznat celý tým <span class="arr">→</span></a>
+      <a class="tlink" href="#contact">Probrat váš projekt <span class="arr">→</span></a>
     </div>
   </div>
 </section>
