@@ -543,6 +543,40 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .eng-bul li b{color:#fff;font-weight:700}
 .eng-foot2{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);position:relative;z-index:1}
 .team-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+/* ===== TEAM SWITCHER (přepínač týmů) ===== */
+.tm-switch{display:inline-flex;gap:5px;background:var(--navy-1);border:1px solid var(--line);border-radius:99px;padding:6px;margin:32px 0 24px;flex-wrap:wrap}
+.tm-tab{font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:0;cursor:pointer;padding:11px 20px;border-radius:99px;transition:all .22s var(--ease);white-space:nowrap;display:flex;align-items:center;gap:9px}
+.tm-tab .dt{width:8px;height:8px;border-radius:50%;background:var(--tc);opacity:.45;transition:all .22s}
+.tm-tab[data-team="ent"]{--tc:#6ECEFF}.tm-tab[data-team="agt"]{--tc:#B790FF}.tm-tab[data-team="std"]{--tc:#41E39E}
+.tm-tab:hover{color:var(--text)}
+.tm-tab.on{background:color-mix(in srgb,var(--tc) 18%,var(--navy-2));color:#fff}
+.tm-tab.on .dt{opacity:1;box-shadow:0 0 10px var(--tc)}
+.tm-panel{display:none;grid-template-columns:.82fr 1.18fr;gap:22px;align-items:stretch}
+@media(max-width:860px){.tm-panel{grid-template-columns:1fr}}
+.tm-panel.on{display:grid;animation:tmFade .42s var(--ease)}
+@keyframes tmFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tm-id{position:relative;background:linear-gradient(158deg,color-mix(in srgb,var(--acc) 15%,var(--navy-1)),var(--navy-1) 62%);border:1px solid color-mix(in srgb,var(--acc) 32%,var(--line));border-radius:var(--r-xl);padding:30px 28px;overflow:hidden}
+.tm-id::after{content:"";position:absolute;inset:auto -22% -42% auto;width:62%;height:62%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 32%,transparent),transparent 68%);pointer-events:none}
+.tm-id>*{position:relative;z-index:1}
+.tm-size{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 42%,transparent);border-radius:99px;padding:4px 12px}
+.tm-id h3{font-family:var(--head);font-weight:900;font-size:clamp(23px,2.7vw,30px);color:#fff;margin:15px 0 0;letter-spacing:-.01em}
+.tm-tagline{font-family:var(--mono);font-size:13.5px;color:var(--acc);margin:8px 0 0}
+.tm-people{display:flex;flex-direction:column;gap:13px;margin-top:24px}
+.tm-person{display:flex;align-items:center;gap:12px}
+.tm-person img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid color-mix(in srgb,var(--acc) 40%,var(--navy));flex:none}
+.tm-person .pn{font-family:var(--head);font-weight:700;font-size:14px;color:#fff;display:block;line-height:1.2}
+.tm-person .pr{font-family:var(--mono);font-size:10px;color:var(--acc);text-transform:uppercase;letter-spacing:.06em}
+.tm-more{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-left:56px;margin-top:-4px}
+.tm-ref{margin-top:22px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--acc) 22%,var(--line));font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--muted)}
+.tm-ref b{color:#fff;font-weight:600}
+.tm-caps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.tm-caps{grid-template-columns:1fr}}
+.tm-cap{background:rgba(27,37,51,.5);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 20px;transition:border-color .22s,transform .22s}
+.tm-cap:hover{border-color:color-mix(in srgb,var(--acc) 42%,var(--line));transform:translateY(-3px)}
+.tm-cap .ci{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent);border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);margin-bottom:13px}
+.tm-cap .ci svg{width:20px;height:20px}
+.tm-cap h4{font-family:var(--head);font-weight:800;font-size:14.5px;color:#fff;margin:0 0 5px;letter-spacing:-.005em}
+.tm-cap p{font-family:var(--mono);font-size:11.8px;line-height:1.5;color:var(--muted);margin:0}
 </style>
 </head>
 <body>
@@ -964,7 +998,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   <div class="wrap">
     <span class="sec-kicker reveal"><span class="n">08</span><span class="ln"></span><span>Tým</span></span>
     <h2 class="h2 reveal">75 vývojářů. Tři specializované týmy. <span class="gt">Jeden partner.</span></h2>
-    <p class="lead reveal">Enter&nbsp;IT není jeden generalista na&nbsp;všechno. Je to <b style="color:var(--white);font-weight:600">malé in-house jádro, které řídí 70&nbsp;lidí dodací kapacity</b> rozdělené do&nbsp;tří specializovaných týmů. Každý řeší jinou vrstvu — od&nbsp;enterprise architektury přes agentní AI po&nbsp;produktový vývoj. Vy jednáte s&nbsp;jedním partnerem, za&nbsp;výsledek ručí celá struktura.</p>
+    <p class="lead reveal">Ne jeden generalista na&nbsp;všechno — malé in-house jádro řídí 70&nbsp;lidí ve&nbsp;třech specializovaných týmech. <b style="color:var(--white);font-weight:600">Přepněte si, co který tým umí.</b></p>
 
     <div class="eng-stats reveal">
       <div class="eng-stat"><div class="v">75</div><div class="l">vývojářů</div></div>
@@ -973,39 +1007,72 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
       <div class="eng-stat"><div class="v">EU</div><div class="l">dodávky po celé Evropě</div></div>
     </div>
 
-    <div class="eng-grid">
-      <div class="eng-card reveal" style="--acc:#6ECEFF">
-        <div class="eng-top"><span class="eng-name">Enter Enterprise</span><span class="eng-size">45 lidí</span></div>
-        <p class="eng-tag">Velké systémy, které unesou zátěž.</p>
-        <p class="eng-p">Navrhujeme architekturu a&nbsp;dodáváme komplexní custom systémy, integrace a&nbsp;modernizaci pro&nbsp;velké firmy. Sehraný senior tým — spoléháte se na&nbsp;tým jako celek, ne&nbsp;na&nbsp;jednotlivce.</p>
-        <ul class="eng-bul">
-          <li><b>Architektura &amp;&nbsp;custom vývoj</b> — systémy na&nbsp;míru, integrace do&nbsp;legacy</li>
-          <li><b>DevOps &amp;&nbsp;infrastruktura</b> — servery, cloud, dlouhodobá údržba</li>
-          <li>Reference kalibru <b>Notino, GymBeam, Home&nbsp;Credit</b></li>
-        </ul>
-        <div class="eng-foot2">Nese největší enterprise zátěž a&nbsp;odpovědnost za&nbsp;architekturu.</div>
+    <div class="tm-switch reveal" role="tablist">
+      <button class="tm-tab on" data-team="ent" type="button"><span class="dt"></span>Enter Enterprise</button>
+      <button class="tm-tab" data-team="agt" type="button"><span class="dt"></span>Enter Agents</button>
+      <button class="tm-tab" data-team="std" type="button"><span class="dt"></span>Enter Studio</button>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="tm-panel on" data-team="ent" style="--acc:#6ECEFF">
+      <div class="tm-id">
+        <span class="tm-size">45 lidí · senior tým</span>
+        <h3>Enter Enterprise</h3>
+        <p class="tm-tagline">Velké systémy, které unesou zátěž.</p>
+        <div class="tm-people">
+          <div class="tm-person"><img src="assets/team/adam-nagy.jpg" alt="Adam Nagy" loading="lazy"><div><span class="pn">Adam Nagy</span><span class="pr">CIO</span></div></div>
+          <div class="tm-person"><img src="assets/team/gaspar-nagy.jpg" alt="Gašpar Nagy" loading="lazy"><div><span class="pn">Gašpar Nagy</span><span class="pr">Founder</span></div></div>
+          <span class="tm-more">+43 dalších v&nbsp;týmu</span>
+        </div>
+        <div class="tm-ref">Reference kalibru <b>Notino · GymBeam · Home&nbsp;Credit · Partners</b></div>
       </div>
-      <div class="eng-card reveal" style="--acc:#B790FF">
-        <div class="eng-top"><span class="eng-name">Enter Agents</span><span class="eng-size">25 lidí</span></div>
-        <p class="eng-tag">AI agenti, kteří pracují 24/7.</p>
-        <p class="eng-p">Stavíme AI agenty a&nbsp;agentní systémy a&nbsp;nasazujeme je přímo do&nbsp;vašich procesů. Forward-deployed engineeři jdou dovnitř provozu, ne&nbsp;jen do&nbsp;dokumentace.</p>
-        <ul class="eng-bul">
-          <li><b>Agentní automatizace</b> procesů a&nbsp;LLM řešení na&nbsp;míru</li>
-          <li><b>Forward-deployed engineeři</b> nasazení přímo u&nbsp;vás</li>
-          <li>Měřitelný dopad — rychlejší reakce, méně rutiny</li>
-        </ul>
-        <div class="eng-foot2">Převádí procesy na&nbsp;agenty, kteří běží nepřetržitě.</div>
+      <div class="tm-caps">
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h4>Enterprise architektura</h4><p>Návrh systémů, které unesou zátěž a&nbsp;škálují s&nbsp;firmou.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3M8 7h8a2 2 0 0 1 2 2v3a6 6 0 0 1-12 0V9a2 2 0 0 1 2-2zM12 18v4"/></svg></span><h4>Custom vývoj &amp; integrace</h4><p>Systémy na&nbsp;míru napojené i&nbsp;do&nbsp;legacy prostředí.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h4>DevOps &amp; infrastruktura</h4><p>Servery, cloud, provoz a&nbsp;monitoring 24/7.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></span><h4>Provoz pod SLA</h4><p>Dlouhodobá stabilita, údržba a&nbsp;rozvoj s&nbsp;garancí.</p></div>
       </div>
-      <div class="eng-card reveal" style="--acc:#41E39E">
-        <div class="eng-top"><span class="eng-name">Enter Studio</span><span class="eng-size">5 lidí</span></div>
-        <p class="eng-tag">Naši lidé. Rychle, agilně, blízko.</p>
-        <p class="eng-p">In-house jádro Enter — mladý agilní tým v&nbsp;srdci firmy. Dodáváme produkty, weby a&nbsp;aplikace od&nbsp;MVP po&nbsp;rozvoj a&nbsp;držíme datové vrstvy pro&nbsp;agentní řešení.</p>
-        <ul class="eng-bul">
-          <li><b>Produkty, weby &amp;&nbsp;aplikace</b> od&nbsp;MVP po&nbsp;škálování</li>
-          <li><b>Datové vrstvy</b> a&nbsp;základy pro&nbsp;agentní řešení</li>
-          <li>Krátká zpětná vazba, blízko klientovi</li>
-        </ul>
-        <div class="eng-foot2">Rychlé jádro, které drží produkt a&nbsp;data pohromadě.</div>
+    </div>
+
+    <!-- AGENTS -->
+    <div class="tm-panel" data-team="agt" style="--acc:#B790FF">
+      <div class="tm-id">
+        <span class="tm-size">25 lidí · AI engineering</span>
+        <h3>Enter Agents</h3>
+        <p class="tm-tagline">AI agenti, kteří pracují 24/7.</p>
+        <div class="tm-people">
+          <div class="tm-person"><img src="assets/team/nedvidek.jpg" alt="Honza Nedvídek" loading="lazy"><div><span class="pn">Honza Nedvídek</span><span class="pr">CEO</span></div></div>
+          <div class="tm-person"><img src="assets/team/hanigovsky.jpg" alt="Ondřej Hanigovský" loading="lazy"><div><span class="pn">Ondřej Hanigovský</span><span class="pr">CTO</span></div></div>
+          <span class="tm-more">+23 dalších v&nbsp;týmu</span>
+        </div>
+        <div class="tm-ref">Forward-deployed — engineeři jdou <b>přímo do&nbsp;vašeho provozu</b>.</div>
+      </div>
+      <div class="tm-caps">
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><h4>Agentní systémy</h4><p>Návrh a&nbsp;orchestrace AI agentů přímo do&nbsp;procesů.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg></span><h4>LLM řešení na&nbsp;míru</h4><p>Modely a&nbsp;pipeline šité na&nbsp;váš use-case.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span><h4>Forward-deployed</h4><p>Engineeři nasazení přímo u&nbsp;vás v&nbsp;provozu.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span><h4>Datové vrstvy pro&nbsp;agenty</h4><p>Čistá data jako spolehlivý základ pro&nbsp;AI.</p></div>
+      </div>
+    </div>
+
+    <!-- STUDIO -->
+    <div class="tm-panel" data-team="std" style="--acc:#41E39E">
+      <div class="tm-id">
+        <span class="tm-size">5 lidí · in-house jádro</span>
+        <h3>Enter Studio</h3>
+        <p class="tm-tagline">Naši lidé. Rychle, agilně, blízko.</p>
+        <div class="tm-people">
+          <div class="tm-person"><img src="assets/team/studio-1.jpg" alt="Jiří Čechal" loading="lazy"><div><span class="pn">Jiří Čechal</span><span class="pr">Head of Development</span></div></div>
+          <div class="tm-person"><img src="assets/team/studio-2.jpg" alt="Vítek Sasin" loading="lazy"><div><span class="pn">Vítek Sasin</span><span class="pr">C programmer</span></div></div>
+          <span class="tm-more">+3 další v&nbsp;týmu</span>
+        </div>
+        <div class="tm-ref">Vlastní lidé v&nbsp;srdci firmy — <b>ne&nbsp;subdodávka</b>.</div>
+      </div>
+      <div class="tm-caps">
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M9.5 6.5h.01"/></svg></span><h4>Produktový vývoj</h4><p>Od&nbsp;MVP po&nbsp;dlouhodobé škálování.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h4>Weby &amp; aplikace</h4><p>Webové i&nbsp;mobilní aplikace na&nbsp;míru.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg></span><h4>Datové základy</h4><p>Datové vrstvy jako základ agentních řešení.</p></div>
+        <div class="tm-cap"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></span><h4>Agilní iterace</h4><p>Krátká zpětná vazba, blízko klientovi.</p></div>
       </div>
     </div>
 
@@ -1303,6 +1370,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
         '&body='+encodeURIComponent(body);
     });
   }
+})();
+</script>
+<script>
+/* ===== Team switcher (přepínač týmů) ===== */
+(function(){
+  var tabs = document.querySelectorAll('#tym-sekce .tm-tab');
+  var panels = document.querySelectorAll('#tym-sekce .tm-panel');
+  if(!tabs.length) return;
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var team = tab.getAttribute('data-team');
+      tabs.forEach(function(t){ t.classList.toggle('on', t===tab); });
+      panels.forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-team')===team); });
+    });
+  });
 })();
 </script>
 <script>
