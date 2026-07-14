@@ -488,6 +488,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .feat-result div span{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .model-note{font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--muted);margin-top:22px;display:flex;align-items:baseline;gap:9px;max-width:70ch}
 .model-note .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex:none;transform:translateY(-1px)}
+/* ===== MODEL PROJECT CARDS (bc-card, forked Enter AI) ===== */
+.bc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:900px){.bc-grid{grid-template-columns:1fr}}
+.bc-card{position:relative;display:flex;flex-direction:column;background:rgba(27,37,51,.6);border:1px solid var(--line);border-radius:var(--r-xl);padding:24px 22px 20px;overflow:hidden;transition:transform .28s var(--ease),border-color .28s var(--ease);text-decoration:none}
+.bc-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ob-acc,var(--green))}
+.bc-card::after{content:"";position:absolute;inset:auto -30% -60% auto;width:70%;height:70%;background:radial-gradient(circle,color-mix(in srgb,var(--ob-acc,var(--green)) 16%,transparent),transparent 68%);opacity:0;transition:opacity .3s var(--ease);pointer-events:none}
+.bc-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--ob-acc,var(--green)) 45%,var(--line))}
+.bc-card:hover::after{opacity:1}
+.bc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;position:relative;z-index:1}
+.bc-ic{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--ob-acc,var(--green));background:color-mix(in srgb,var(--ob-acc,var(--green)) 12%,transparent);border:1px solid color-mix(in srgb,var(--ob-acc,var(--green)) 34%,transparent)}
+.bc-ic svg{width:21px;height:21px}
+.bc-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-acc,var(--green));border:1px solid color-mix(in srgb,var(--ob-acc,var(--green)) 34%,transparent);border-radius:20px;padding:4px 9px}
+.bc-card h3{font-family:var(--head);font-weight:800;font-size:16.5px;color:#fff;letter-spacing:-.01em;line-height:1.15;margin:0;position:relative;z-index:1}
+.bc-card .bc-sub{font-family:var(--mono);font-size:11.5px;color:var(--ob-acc,var(--green));margin:5px 0 0;position:relative;z-index:1}
+.bc-card p{font-family:var(--mono);font-size:12.3px;line-height:1.6;color:var(--muted);margin:11px 0 0;position:relative;z-index:1}
+.bc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;position:relative;z-index:1}
+.bc-who{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.bc-go{font-family:var(--mono);font-size:11px;color:var(--ob-acc,var(--green));transition:transform .2s}
+.bc-card:hover .bc-go{transform:translateX(3px)}
 </style>
 </head>
 <body>
@@ -541,15 +560,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="sec-kicker"><span class="n">Enter IT</span><span class="ln"></span><span>Engineering force</span></span>
-        <h1 class="h1">Komplexní systémy a&nbsp;agenti, které <span class="gt">utáhne 75 vývojářů.</span></h1>
-        <p class="hero-sub">Nová generace vývojářů, ne&nbsp;parta, co&nbsp;30&nbsp;let kóduje ručně. Stavíme infrastruktury, custom systémy a&nbsp;AI agenty, napojíme je na&nbsp;vaše systémy a&nbsp;řídíme dodávky po&nbsp;celé Evropě — od&nbsp;architektury po&nbsp;provoz 24/7.</p>
-        <div class="hero-badges">
-          <span class="hb"><b>75</b><span>vývojářů</span></span>
-          <span class="hb"><b>3</b><span>specializované týmy</span></span>
-          <span class="hb"><b>EU</b><span>dodávky napříč Evropou</span></span>
-          <span class="hb"><b>25+</b><span>referencí</span></span>
-        </div>
+        <span class="eyebrow">Vývoj AI řešení · automatizace · agenti</span>
+        <h1 class="h1">Ať počítač dělá <span class="gt">nudnou práci</span> za vaše lidi.
+          <img class="mascot-wave" src="assets/decor/mascot-wave.svg" alt="" aria-hidden="true">
+        </h1>
+        <p class="hero-sub">Stavíme agenty, kteří přepisují faktury, dohledávají objednávky, vyplňují reporty a&nbsp;odpovídají zákazníkům — místo&nbsp;vašich lidí. Napojíme je na&nbsp;vaše systémy a&nbsp;nasadíme do&nbsp;provozu.</p>
         <form class="capture" id="heroCapture" autocomplete="on">
           <input type="email" id="heroEmail" placeholder="Zadejte e-mail pro výpočet úspor" aria-label="E-mail">
           <button type="submit">Spočítat úsporu →</button>
@@ -751,7 +766,52 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
         </div>
       </div>
     </div>
-    <p class="model-note reveal"><span class="dot"></span>Modelové projekty ilustrují naši kapacitu, architekturu a&nbsp;postup dodávky. Reálné, anonymizované výsledky najdete v&nbsp;sekci Reference výše.</p>
+    <h3 class="lead reveal" style="color:var(--white);font-family:var(--head);font-weight:800;font-size:clamp(17px,1.9vw,21px);margin-top:52px">Co dál umíme postavit a&nbsp;dodat.</h3>
+    <div class="bc-grid">
+      <a href="#contact" class="bc-card reveal" style="--ob-acc:#6ECEFF">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Datová platforma nad&nbsp;rozházenými systémy</h3>
+        <span class="bc-sub">Logistika · více zemí</span>
+        <p>ERP + CRM + WMS sjednocené do&nbsp;jednoho zdroje pravdy. Reporting a&nbsp;čistý základ pro&nbsp;agenty.</p>
+        <div class="bc-foot"><span class="bc-who">architektura + integrace</span><span class="bc-go">Probrat →</span></div>
+      </a>
+      <a href="#contact" class="bc-card reveal d1" style="--ob-acc:#B790FF">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Agentní servisní asistent nad&nbsp;firemními daty</h3>
+        <span class="bc-sub">Podpora · e-commerce</span>
+        <p>Odpovídá z&nbsp;firemních znalostí, zakládá reklamace a&nbsp;tickety, odbaví většinu dotazů sám.</p>
+        <div class="bc-foot"><span class="bc-who">LLM + integrace</span><span class="bc-go">Probrat →</span></div>
+      </a>
+      <a href="#contact" class="bc-card reveal d2" style="--ob-acc:#41E39E">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6-1.5A4 4 0 0 0 6 19z"/><path d="M12 12v6M9.5 15l2.5 3 2.5-3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Legacy modernizace + cloud migrace</h3>
+        <span class="bc-sub">Průmysl · enterprise</span>
+        <p>Přesun stárnoucího stacku do&nbsp;cloudu bez&nbsp;výpadku, DevOps, monitoring a&nbsp;údržba pod&nbsp;SLA.</p>
+        <div class="bc-foot"><span class="bc-who">architektura + DevOps</span><span class="bc-go">Probrat →</span></div>
+      </a>
+      <a href="#contact" class="bc-card reveal" style="--ob-acc:#FF848C">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 13h5M8 16h5"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Interní systém na&nbsp;míru</h3>
+        <span class="bc-sub">Stavebnictví · výroba</span>
+        <p>Konec ručního přepisování — jednotný přehled zakázek, rolí a&nbsp;stavů napojený na&nbsp;vaše data.</p>
+        <div class="bc-foot"><span class="bc-who">custom vývoj</span><span class="bc-go">Probrat →</span></div>
+      </a>
+      <a href="#contact" class="bc-card reveal d1" style="--ob-acc:#F8E354">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M8 7h8a2 2 0 0 1 2 2v3a6 6 0 0 1-12 0V9a2 2 0 0 1 2-2zM12 18v4"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Integrace &amp; API vrstva</h3>
+        <span class="bc-sub">Napříč systémy</span>
+        <p>Propojení ERP, CRM, e-shopu a&nbsp;dalších nástrojů do&nbsp;jednoho spolehlivého toku dat.</p>
+        <div class="bc-foot"><span class="bc-who">integrace + API</span><span class="bc-go">Probrat →</span></div>
+      </a>
+      <a href="#contact" class="bc-card reveal d2" style="--ob-acc:#E399FF">
+        <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Reporting &amp; BI automatizace</h3>
+        <span class="bc-sub">Vedení · data</span>
+        <p>Data z&nbsp;více zdrojů automaticky do&nbsp;živých dashboardů — rozhodování na&nbsp;aktuálních číslech.</p>
+        <div class="bc-foot"><span class="bc-who">data + Power BI</span><span class="bc-go">Probrat →</span></div>
+      </a>
+    </div>
+    <p class="model-note reveal" style="margin-top:26px"><span class="dot"></span>Modelové projekty ilustrují naši kapacitu, architekturu a&nbsp;postup dodávky. Reálné, anonymizované výsledky najdete v&nbsp;sekci Reference výše.</p>
   </div>
 </section>
 
