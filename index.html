@@ -388,6 +388,43 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 .intg-chips span{font-family:var(--mono);font-size:12.5px;color:var(--text);padding:8px 14px;background:var(--navy-1);border:1px solid var(--line-2);border-radius:99px;transition:all .2s;cursor:default}
 .intg-chips span:hover{border-color:color-mix(in srgb,var(--acc) 58%,transparent);color:#fff;background:color-mix(in srgb,var(--acc) 12%,var(--navy-1));transform:translateY(-2px)}
 .intg-empty{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:20px}
+/* ===== INTEGRATION DATA-FLOW DIAGRAM ===== */
+.idf{margin-top:38px;background:linear-gradient(180deg,rgba(27,37,51,.5),rgba(16,23,31,.3));border:1px solid var(--line);border-radius:var(--r-xl);padding:34px 30px 30px;position:relative;overflow:hidden}
+.idf-lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
+.idf-sys{display:flex;flex-wrap:wrap;gap:11px;justify-content:center}
+.idf-chip{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--navy-1);border:1px solid var(--line-2);border-radius:12px;padding:11px 15px;font-family:var(--mono);font-size:13px;color:var(--text)}
+.idf-chip svg{width:16px;height:16px;color:var(--muted);flex:none}
+.idf-chip.old{border-color:rgba(255,132,140,.32)}
+.idf-chip .tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);border:1px solid rgba(255,132,140,.35);border-radius:20px;padding:2px 6px;margin-left:2px}
+.idf-conn{height:46px;position:relative}
+.idf-conn::before,.idf-conn::after{content:"";position:absolute;left:22%;right:22%;top:0;bottom:0;background:
+  repeating-linear-gradient(90deg,transparent 0 44px,var(--line-2) 44px 45px)}
+.idf-conn::after{background:none}
+.idf-conn i{position:absolute;top:-3px;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 9px var(--green);animation:idfDrop 1.9s linear infinite}
+.idf-conn.up i{animation-name:idfRise}
+.idf-conn i:nth-child(1){left:26%;animation-delay:0s}
+.idf-conn i:nth-child(2){left:42%;animation-delay:.5s}
+.idf-conn i:nth-child(3){left:58%;animation-delay:1s}
+.idf-conn i:nth-child(4){left:74%;animation-delay:1.5s}
+@keyframes idfDrop{0%{top:-3px;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:46px;opacity:0}}
+@keyframes idfRise{0%{top:46px;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:-3px;opacity:0}}
+.idf-core{position:relative;background:linear-gradient(90deg,rgba(65,227,158,.13),rgba(110,206,255,.10),rgba(65,227,158,.13));border:1.5px solid var(--green-line);border-radius:14px;padding:20px 24px;text-align:center;overflow:hidden}
+.idf-core::before{content:"";position:absolute;top:0;bottom:0;width:36%;background:linear-gradient(90deg,transparent,rgba(65,227,158,.20),transparent);animation:idfSweep 3s linear infinite}
+@keyframes idfSweep{from{transform:translateX(-120%)}to{transform:translateX(340%)}}
+.idf-core-lab{position:relative;font-family:var(--head);font-weight:800;color:#fff;font-size:clamp(16px,1.9vw,19px);letter-spacing:-.005em}
+.idf-core-sub{position:relative;display:block;font-family:var(--mono);font-size:12.5px;color:var(--green);margin-top:5px}
+.idf-res{display:flex;flex-wrap:wrap;gap:11px;justify-content:center}
+.idf-res span{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:#fff;background:color-mix(in srgb,var(--green) 9%,var(--navy-1));border:1px solid var(--green-line);border-radius:12px;padding:11px 16px}
+.idf-res span::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;background:var(--green);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12l5 5 9-11'/></svg>") center/11px no-repeat;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12l5 5 9-11'/></svg>") center/11px no-repeat}
+.idf-vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media(max-width:760px){.idf-vals{grid-template-columns:1fr}}
+.idf-val{background:rgba(27,37,51,.5);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 22px}
+.idf-val .vn{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.06em}
+.idf-val h4{font-family:var(--head);font-weight:800;font-size:16px;color:#fff;margin:8px 0 6px;letter-spacing:-.005em}
+.idf-val p{font-family:var(--mono);font-size:12.4px;line-height:1.6;color:var(--muted);margin:0}
+.intg-more-lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:44px 0 4px}
 
 /* ============================================================
    HOW — colored bordered panel with numbered steps
@@ -963,8 +1000,38 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 <section class="block" id="integ">
   <div class="wrap">
     <span class="sec-kicker reveal"><span class="n">06</span><span class="ln"></span><span>Integrace</span></span>
-    <h2 class="h2 reveal">Napojíme se na&nbsp;to, co už máte.</h2>
-    <p class="lead reveal">ERP, CRM, e-shop, účetnictví i&nbsp;AI modely. Nemusíte nic měnit — postavíme řešení nad&nbsp;vašimi systémy.</p>
+    <h2 class="h2 reveal">Vaše systémy spolu <span class="gt">konečně mluví.</span></h2>
+    <p class="lead reveal">Nejvíc času a&nbsp;chyb vzniká tam, kde se&nbsp;data ručně přepisují mezi systémy — a&nbsp;ty bývají staré a&nbsp;spolu nemluví. My z&nbsp;nich data vyčteme, propojíme je a&nbsp;načteme zpět, automaticky. <b style="color:var(--white);font-weight:600">To je náš největší obor.</b></p>
+
+    <div class="idf reveal">
+      <div class="idf-lab">Vaše systémy — často staré, každý zvlášť</div>
+      <div class="idf-sys">
+        <span class="idf-chip old">ERP <span class="tag">staré</span></span>
+        <span class="idf-chip">CRM</span>
+        <span class="idf-chip">E-shop</span>
+        <span class="idf-chip old">Sklad <span class="tag">staré</span></span>
+        <span class="idf-chip">E-maily</span>
+        <span class="idf-chip">Účetnictví</span>
+      </div>
+      <div class="idf-conn"><i></i><i></i><i></i><i></i></div>
+      <div class="idf-core">
+        <span class="idf-core-lab">Enter&nbsp;IT · integrační vrstva</span>
+        <span class="idf-core-sub">vyčítá, propojuje a&nbsp;načítá data mezi systémy</span>
+      </div>
+      <div class="idf-conn"><i></i><i></i><i></i><i></i></div>
+      <div class="idf-res">
+        <span>Jeden tok dat</span>
+        <span>Aktuální data všude</span>
+        <span>Bez ručního přepisování</span>
+      </div>
+      <div class="idf-vals">
+        <div class="idf-val"><span class="vn">01 · Vyčteme</span><h4>Data ven ze&nbsp;starých systémů</h4><p>I&nbsp;z&nbsp;těch, které spolu nemluví a&nbsp;nemají moderní rozhraní.</p></div>
+        <div class="idf-val"><span class="vn">02 · Propojíme</span><h4>Systémy mezi sebou</h4><p>ERP, CRM, e-shop, sklad i&nbsp;e-maily do&nbsp;jednoho spolehlivého toku.</p></div>
+        <div class="idf-val"><span class="vn">03 · Načteme</span><h4>Data zpět, kam patří</h4><p>Správně a&nbsp;automaticky — konec duplicitního přepisování.</p></div>
+      </div>
+    </div>
+
+    <p class="intg-more-lab reveal">Napojíme se na&nbsp;60+ systémů — najděte ten svůj</p>
     <div class="intg-search reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input id="intgSearch" type="text" placeholder="Napište svůj systém (SAP, Pohoda, Shoptet…)" aria-label="Hledat systém">
