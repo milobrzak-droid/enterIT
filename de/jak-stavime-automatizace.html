@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wie wir Automatisierungen bauen — Enter IT</title>
+<meta name="description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit. Wir zeigen, was wir real automatisieren, wie wir in 4 Phasen vorgehen und ein reales Beispiel für den Einsatz eines Agenten im ERP Helios.">
+<link rel="canonical" href="https://enterit.cz/de/jak-stavime-automatizace.html">
+<link rel="alternate" hreflang="cs" href="https://enterit.cz/jak-stavime-automatizace.html">
+<link rel="alternate" hreflang="en" href="https://enterit.cz/en/jak-stavime-automatizace.html">
+<link rel="alternate" hreflang="de" href="https://enterit.cz/de/jak-stavime-automatizace.html">
+<link rel="alternate" hreflang="pl" href="https://enterit.cz/pl/jak-stavime-automatizace.html">
+<link rel="alternate" hreflang="x-default" href="https://enterit.cz/jak-stavime-automatizace.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#17202E">
+<meta name="robots" content="index,follow">
+<meta name="author" content="AI Enter s.r.o.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Enter IT">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Wie wir Automatisierungen bauen — Enter IT">
+<meta property="og:description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit.">
+<meta property="og:url" content="https://enterit.cz/de/jak-stavime-automatizace.html">
+<meta property="og:image" content="https://enterit.cz/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wie wir Automatisierungen bauen — Enter IT">
+<meta name="twitter:description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit.">
+<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<style>
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+:root{
+  --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
+  --white:#FBFBFB; --text:#C6CEDC; --muted:#8A95A8;
+  --green:#41E39E; --green-soft:#7CF0BE; --green-deep:#27B981;
+  --blue:#6ECEFF; --purple:#E399FF;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
+  --green-line:rgba(65,227,158,.35); --green-wash:rgba(65,227,158,.08);
+  --head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  --mono:'Fira Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:24px; --maxw:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--text);font-family:var(--mono);font-weight:500;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);font-weight:900;color:var(--white);margin:0}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(65,227,158,.3);color:var(--white)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+@media(min-width:1024px){.wrap{padding:0 60px}}
+.block{padding:clamp(48px,8vh,92px) 0;position:relative}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.h1{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(32px,5vw,56px);line-height:1.04;letter-spacing:-.02em;margin:0 0 20px;max-width:20ch}
+.h2{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(26px,3.4vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px}
+.gt{color:var(--green)}
+.lead{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:68ch;margin:0 0 8px}
+.hero-sub{font-family:var(--mono);font-size:16px;line-height:1.75;color:var(--text);max-width:66ch;margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:14px;
+  letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);
+  background:var(--navy);color:var(--white);padding:15px 24px;border-radius:12px;transition:all .25s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--navy);transform:translateY(-2px)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.green{background:var(--green);border-color:var(--green);color:var(--navy)}
+.btn.green:hover{background:var(--green-soft);border-color:var(--green-soft)}
+.btn.outline{background:transparent;border-color:var(--line-2);color:var(--white)}
+.btn.outline:hover{background:var(--white);border-color:var(--white);color:var(--navy)}
+.tlink{font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);transition:color .2s}
+.tlink:hover{color:var(--green-soft)}
+.tlink .arr{transition:transform .2s var(--ease);display:inline-block}
+.tlink:hover .arr{transform:translateX(4px)}
+header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-bottom:2px solid #000}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:42px;width:auto}
+.brand .it{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--muted);align-self:center}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-family:var(--mono);font-size:13.5px;color:var(--white);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.mtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.mtoggle span{width:26px;height:2px;background:var(--white);transition:.3s}
+.mtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mtoggle.open span:nth-child(2){opacity:0}
+.mtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:74px 0 0;background:var(--navy);border-top:2px solid var(--green);z-index:55;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto;padding:40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--head);font-weight:700;font-size:26px;color:var(--white)}
+.mobile-menu a:hover{color:var(--green)}
+@media(max-width:1000px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
+@media(min-width:1001px){.mobile-menu{display:none}}
+.jp-hero{padding-top:clamp(120px,18vh,180px);padding-bottom:12px}
+.jp-blocks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+@media(max-width:820px){.jp-blocks{grid-template-columns:1fr}}
+.jp-block{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;transition:border-color .2s,transform .2s}
+.jp-block:hover{border-color:var(--green-line);transform:translateY(-2px)}
+.jp-block h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;margin:0 0 9px;line-height:1.25}
+.jp-block p{font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--text);margin:0}
+.block.alt{background:var(--navy-deep)}
+.jp-walk{display:flex;flex-direction:column;gap:0;margin-top:36px;border-left:2px solid var(--green-line);padding-left:28px}
+.jp-step{position:relative;padding-bottom:34px}
+.jp-step:last-child{padding-bottom:0}
+.jp-step::before{content:"";position:absolute;left:-34px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 10px var(--green-line)}
+.jp-step .sn{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.jp-step h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:18px;margin:6px 0 8px}
+.jp-step p{font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--text);margin:0;max-width:70ch}
+.jp-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
+.jp-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 26px}
+.jp-final .cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.footer{background:var(--purple);color:var(--navy);position:relative;overflow:hidden}
+.footer .wrap{position:relative;z-index:1;padding:56px 0 30px}
+.foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.foot-logo .ft-name{font-family:var(--head);font-weight:900;color:var(--navy);font-size:26px;letter-spacing:-.01em}
+.foot-bar{border-top:1px solid rgba(23,32,46,.35);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--mono);font-size:11px;color:#3a2358}
+.foot-bar a{text-decoration:underline}
+.foot-bar .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/de.html" aria-label="Enter IT — Startseite">
+        <img src="/assets/enter_logo_white.svg" alt="Enter">
+        <span class="it">IT</span>
+      </a>
+      <div class="nav-links">
+        <a href="/de.html#problems">Probleme</a>
+        <a href="/de.html#solutions">Lösungen</a>
+        <a href="/de.html#how">Wie wir arbeiten</a>
+        <a href="/de.html#integ">Integrationen</a>
+        <a href="/de.html#work">Referenzen</a>
+      </div>
+      <div class="nav-right">
+        <a class="btn green" href="/de.html#contact">Kontakt</a>
+        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<nav class="mobile-menu" id="mmenu">
+  <a href="/de.html#problems">Probleme</a>
+  <a href="/de.html#solutions">Lösungen</a>
+  <a href="/de.html#how">Wie wir arbeiten</a>
+  <a href="/de.html#integ">Integrationen</a>
+  <a href="/de.html#work">Referenzen</a>
+  <a href="/de.html#contact">Kontakt</a>
+</nav>
+
+<main>
+
+<section class="block jp-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Wie wir vorgehen</span>
+    <h1 class="h1 reveal">Automatisierung, die den Menschen die Routine abnimmt, nicht die&nbsp;Arbeit</h1>
+    <p class="hero-sub reveal">Bestellungen aus E-Mails ins System abtippen, Preise in zehn Preislisten suchen, immer wieder dieselben Formulare ausfüllen — das soll eine Maschine erledigen, nicht ein Mensch. Wir bauen Automatisierungen, die auf Ihre realen Prozesse und Systeme zugeschnitten sind, keine Universalvorlagen, die am Ende niemand nutzt.</p>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Warum wir uns überhaupt damit befassen</span>
+    <h2 class="h2 reveal">Routine kostet nicht nur Zeit. Sie kostet Menschen und Know-how.</h2>
+    <p class="lead reveal">Das sind keine Hypothesen aus einer Präsentation. Es sind Dinge, die wir genau so bei realen Firmen gesehen haben — und die sich in Stunden und Geld beziffern lassen.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>Die Bestellung kommt per Mail und jemand tippt sie ab</h4><p>Bei einem Großhandel mit IT-Technik kamen Bestellungen per E-Mail und die Verwaltung tippte sie ins System ab — Position für Position, Tag für Tag. Genauso die Zeiterfassung: manuell geführt, fehleranfällig. Klassische Arbeit, die niemand machen will und bei der ein einziger Tippfehler genügt.</p></div>
+      <div class="jp-block reveal"><h4>Der Technologe legt stundenlang immer wieder ähnliche Positionen an</h4><p>In einem Maschinenbaubetrieb kommt der Auftrag als einzige Kopfposition ins ERP. Der Technologe lädt dann zu jedem Teil manuell das PDF herunter, legt in Helios die Komponentenpositionen an, speichert Zeichnungen, ergänzt Arbeitsablauf und Norm. Wöchentlich 15–25 Baugruppen, also 70–120 Positionen — und alles tippt ein Mensch ab.</p></div>
+      <div class="jp-block reveal"><h4>Der Vertriebler klickt sich durch Exporte, um einen Preis herauszufinden</h4><p>Bei einem Hersteller von Beschattungstechnik zog der Vertrieb die Daten manuell aus dem ERP K2 und aus Excel-Preislisten. Herauszufinden, welche Produkte die Kombination Maß–Material–Farbe–Preis erfüllen, bedeutete dutzende Minuten Klickerei — und bei jeder Anfrage das Risiko, eine neuere Version der Preisliste zu übersehen.</p></div>
+      <div class="jp-block reveal"><h4>Die Leitung unterschreibt, weiß aber nicht, wer das Dokument gesehen hat</h4><p>In einem Handelsunternehmen unterzeichnete die Leitung Dokumente von über 20 Seiten, ohne sicher zu sein, dass sie alle Personen durchlaufen hatten, die sie sehen sollten. Die Freigabe lief per E-Mail, ohne jede Audit-Spur. Bei Handelsverträgen war das ein reales rechtliches Risiko, nicht bloß ein Ärgernis.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Was wir lösen können</span>
+    <h2 class="h2 reveal">Fünf Ebenen, auf denen die Maschine die Routine besser erledigt als der Mensch</h2>
+    <p class="lead reveal">Nicht jede Automatisierung ist gleich. Das sind fünf Typen von Problemen, die wir lösen — und zu jedem ein reales Beispiel aus der Praxis, kein Marketingsatz.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>Transaktional — Daten, die abgetippt werden</h4><p>Anhänge auslesen, CRM und ERP synchronisieren, Aufgaben und Positionen anlegen, Angebote generieren. Beispiel: ein Agent „e-mail to order", der aus der Bestellung im Mail die Positionen ausliest und sie statt manuellen Abtippens im System anlegt.</p></div>
+      <div class="jp-block reveal"><h4>Wissensbasiert — Antworten, die in Dokumenten versteckt sind</h4><p>Assistenten über firmeneigener Dokumentation und Know-how. Beispiel: ein KI-Tool, das bei einem Hersteller von Beschattungstechnik Fragen zu Parametern und Preisen in natürlicher Sprache beantwortet und in PDF-Preislisten, Excel und Zeichnungen sucht — immer mit der Quelle der Antwort.</p></div>
+      <div class="jp-block reveal"><h4>Reporting — Zahlen, auf die man wartet</h4><p>Daten aus dem ERP oder dem Data Warehouse in natürlicher Sprache, ohne darauf zu warten, dass sie jemand manuell zusammenstellt. Beispiel: ein Executive-Dashboard bei einem Motorenhersteller, in dem der Geschäftsführer erstmals einen „Helicopter View" hatte statt Daten, die zwischen Helios, SharePoint, Outlook und WhatsApp verstreut waren.</p></div>
+      <div class="jp-block reveal"><h4>Kommunikation — Anfragen, die immer wieder kommen</h4><p>Chatbots und das Abwickeln von Anfragen auf der Website, per E-Mail oder über WhatsApp, gerne rund um die Uhr. Beispiel: Antwortentwürfe für wiederkehrende E-Mails und ein Chatbot, der die eingehende Post filtert, damit die Menschen nur das Wesentliche erreicht.</p></div>
+      <div class="jp-block reveal"><h4>Monitoring — Termine und Abweichungen, die übersehen werden</h4><p>Überwachung von Fristen, Abweichungen und Ereignissen, von denen Sie sonst zu spät erfahren. Beispiel: eine Datenschicht über den Firmenprozessen, die abbildet, was geschieht, und selbst auf eine Abweichung hinweist — die Entscheidung aber beim Menschen belässt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Wie wir es bauen</span>
+    <h2 class="h2 reveal">Vier Phasen, die Sie vor einem teuren Irrtum schützen</h2>
+    <p class="lead reveal">Wir beginnen nie mit dem Satz „lasst uns KI einsetzen". Wir beginnen damit, zu messen, was Sie der jeweilige Prozess heute kostet. Jede Phase hat eine einzige Aufgabe — dafür zu sorgen, dass der nächste Schritt auf etwas Geprüftem steht, nicht auf Hoffnung.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>1. Analyse — zuerst messen wir, was es heute kostet</h4><p>Eine detaillierte Prozesskarte: wo genau Routine entsteht, wie die Eingaben aussehen (Exporte aus dem ERP, Aufbau der Preislisten, Layout der Stempel auf Zeichnungen), wo Duplikate und alte Versionen entstehen. Dazu eine Baseline für Zeit, Kosten und Qualität. Ohne diese Zahl ergibt es keinen Sinn, die Rentabilität zu berechnen — und wir wollen sie berechnen.</p></div>
+      <div class="jp-block reveal"><h4>2. Pilot — wir prüfen es in der Realität, nicht auf dem Papier</h4><p>Ein schneller Prototyp im Betrieb, mit echten Daten und echten Dokumenten. Beim Maschinenbau geht dem ein Eingangsaudit von 5–10 echten Zeichnungen voraus, damit wir wissen, ob verschiedene Abnehmer unterschiedliche Stempel-Layouts haben — denn davon hängen Zuverlässigkeit und Preis ab. Der Pilot beantwortet eine einzige Frage: funktioniert es wirklich?</p></div>
+      <div class="jp-block reveal"><h4>3. Implementierung — Anbindung an Ihre Systeme und Rollen</h4><p>Einführung und Integration in das, was die Firma tatsächlich nutzt: bestehende Systeme, Daten, Rollen und Entscheidungspunkte. Die Lösung wird nicht neben die Firma gestellt, sondern in sie hinein — einschließlich der Frage, wer was freigibt und wo der Mensch das letzte Wort hat.</p></div>
+      <div class="jp-block reveal"><h4>4. Support — Betrieb, Messung und Feinabstimmung</h4><p>Eine Automatisierung wird nicht übergeben und vergessen. Wir betreiben sie, werten sie aus und optimieren sie. Bei der Datenplattform über K2 hatten wir deshalb das Hosting für zwei Jahre im Preis und den Quellcode beim Lieferanten mit einer Option auf Ankauf — die Lösung ist eine langfristig gepflegte Schicht der Firma, kein einmaliges Spielzeug.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Warum das kein Spielzeug ist</span>
+    <h2 class="h2 reveal">Zu wissen, wo man die Maschine einsetzt und wo man den Menschen lässt, ist für sich genommen Expertise</h2>
+    <p class="lead reveal">Der Unterschied zwischen einer funktionierenden und einer nicht funktionierenden Lösung sind oft nicht die Modelle oder Werkzeuge. Es sind bewusste Entscheidungen, wo man der Maschine vertraut und wo man ihr im Gegenteil bewusst nicht vertraut. Das ist die Arbeit, für die man bezahlt wird.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>Wir lesen bewusst nicht, was die Maschine unzuverlässig liest</h4><p>Beim Maschinenbau-TPV-Agenten haben wir entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Stattdessen lesen wir nur den Eckstempel und die Stückliste, wo die Erkennung zuverlässig ist. Eine weniger ambitionierte Aufgabe, aber eine Lösung, der man vertrauen kann.</p></div>
+      <div class="jp-block reveal"><h4>Was nur der Mensch sieht, überlassen wir dem Menschen</h4><p>Die Blechdicke oder die Anzahl der Biegungen liest aus der Zeichnung nur der Technologe zuverlässig ab. Deshalb gibt es einen Dialog mit PDF-Vorschau, in dem er diesen Wert ergänzt. Die Daten werden in eine CSV gesammelt und per Import wird die Struktur im ERP angelegt. Die Maschine erledigt die Routine, das Urteil bleibt beim Menschen.</p></div>
+      <div class="jp-block reveal"><h4>Realismus ist Teil des Vertrags, kein Versprechen</h4><p>Eine gute Lösung rechnet mit der Realität. Bei der Datenplattform über K2 verschieben sich deshalb die Fristen vertraglich um Verzögerungen auf Kundenseite (Daten aus dem ERP) sowie um Urlaub und Ferien. Keine Fantasietermine, die am Ende ohnehin niemand einhält.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Human-in-the-loop</span>
+    <h2 class="h2 reveal">Der Agent empfiehlt, der Mensch entscheidet</h2>
+    <p class="lead reveal">KI ist bei uns keine Blackbox, die selbst entscheidet. Sie ist ein Werkzeug, das die Arbeit vorbereitet und sie dort an den Menschen übergibt, wo Urteilsvermögen oder Verantwortung gefragt sind. Das ist keine Einschränkung — das ist der Grund, warum man ihr vertrauen kann.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>Der Agent legt die Struktur an, der Technologe verfeinert sie</h4><p>Der TPV-Agent liest Stempel und Stückliste, findet ähnliche bestehende Positionen, legt die Komponentenstruktur an und übernimmt auch den technologischen Arbeitsablauf und die Zeitnorm aus der ursprünglichen Position. Der Technologe kontrolliert nur noch und ergänzt das, was wirklich menschliches Urteilsvermögen verlangt.</p></div>
+      <div class="jp-block reveal"><h4>Das System protokolliert, aber unterschreiben tut der Mensch</h4><p>Bei der digitalen Vertragsfreigabe erfasst das System, wer wann auf „Freigegeben" geklickt hat — und lässt eine Freigabe nicht zu, solange der Nutzer das Dokument nicht geöffnet hat. Es misst sogar, wie lange nach dem Öffnen freigegeben wurde, als Nachweis des tatsächlichen Lesens. Die eigentliche elektronische Unterschrift bleibt aber beim Menschen.</p></div>
+      <div class="jp-block reveal"><h4>Es bildet ab und warnt, aber entscheidet nicht</h4><p>Die Daten- und KI-Schicht über den Prozessen deckt eine Abweichung auf und weist darauf hin. Was mit der Abweichung geschieht, entscheidet immer der Mensch. Das ist der Unterschied zwischen einem vertrauenswürdigen Werkzeug und einem System, dem in der Firma niemand vertraut.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Integration, Sicherheit und Messung</span>
+    <h2 class="h2 reveal">Wir binden uns an das an, was Sie haben. Sicherheit denken wir von Anfang an mit. Und wir messen immer.</h2>
+    <p class="lead reveal">Drei Dinge, die ein seriöses Projekt von einer Demo trennen: Wir bauen auf Ihren bestehenden Systemen, Sicherheit ist Teil des Entwurfs und jede Lösung hat eine Baseline und einen definierten Nutzen.</p>
+    <div class="jp-blocks">
+      <div class="jp-block reveal"><h4>Wir bauen auf Ihren Systemen, wir ersetzen sie nicht</h4><p>Wir binden uns real an ERP (K2, Helios, Business Central), SharePoint, Microsoft 365, Buchhaltungssysteme, PDM/CAD, E-Mail und WhatsApp an. Für die Orchestrierung nutzen wir primär n8n, dazu Make, Zapier, Power Automate oder Copilot Studio. Wir zwingen die Firma nicht, die Werkzeuge zu wechseln, an die sie gewöhnt ist.</p></div>
+      <div class="jp-block reveal"><h4>Sicherheit steckt im Entwurf, nicht als Zusatz am Ende</h4><p>Die Daten bleiben bei der Firma, Übertragung und Speicher sind verschlüsselt, die Lösung respektiert die DSGVO und die tschechische Gesetzgebung. Für sensible Daten bieten wir On-Prem- oder lokale Modelle an. Dazu gehört eine „KI-Ampel" — klare Regeln, was in die KI darf und was nicht. In regulierten Branchen ist das eine Bedingung, kein Bonus.</p></div>
+      <div class="jp-block reveal"><h4>Keine Lösung ohne Baseline und Nutzendefinition</h4><p>Wir messen Prozess- und Reaktionszeit, Kosten pro Transaktion, Qualität des Ergebnisses, Fehlerquote und Rework sowie die Kapazität des Teams. Die typische Amortisation liegt bei 3–12 Monaten. Ohne eine Zahl zu Beginn lässt sich nicht ehrlich sagen, ob es Sinn ergibt — und wir wollen, dass es Sinn ergibt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Reales Beispiel</span>
+    <h2 class="h2 reveal">Ein Maschinenbaubetrieb: wie wir den Agenten gebaut haben, der ERP-Positionen statt des Technologen anlegt</h2>
+    <div class="jp-walk">
+      <div class="jp-step reveal"><span class="sn">Schritt 1</span><h4>Ausgangslage: stundenlange Routine täglich</h4><p>Die Firma fertigt Teile für große ausländische Abnehmer. Ein Auftrag kommt herein, im ERP Helios ist nur die Kopfposition des Projekts mit hochgeladenen Daten (PDF, DWG, DXF) angelegt. Der Technologe lädt dann zu jedem Teil manuell das PDF herunter, legt im ERP die Komponentenpositionen an, erstellt die Positionsstruktur, speichert zu jeder Position das PDF und ergänzt den technologischen Arbeitsablauf und die Zeitnorm. Wöchentlich bedeutet das 15–25 Baugruppen, also 70–120 Positionen — immer sehr ähnliche, und alles legt ein Mensch an und tippt es ab.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 2</span><h4>Eingangsaudit echter Zeichnungen</h4><p>Noch vor der Preisermittlung haben wir 5–10 echte PDF-Zeichnungen durchgesehen, um zu prüfen, ob verschiedene Abnehmer unterschiedliche Layouts der Eckstempel haben. Davon hängen Zuverlässigkeit und Preis der Lösung direkt ab. Deshalb bauen wir den Piloten auf einem Hauptabnehmer auf, bei dem der Stempel einheitlich und die Erkennung am zuverlässigsten ist.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 3</span><h4>Bewusste Entscheidung: was lesen und was nicht</h4><p>Wir haben entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig und würde Fehler einbringen. Wir lesen nur den Eckstempel und die Stückliste (Bezeichnung, Zeichnungsnummer, Stahlgüte, Gewicht), wo die Erkennung zuverlässig ist. Diese Entscheidung ist für sich genommen Expertise: sie hält die Lösung in den Grenzen, in denen man ihr vertrauen kann.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 4</span><h4>Der Agent legt die Struktur an und übernimmt die Normen</h4><p>Der Agent lädt das PDF der Kopfposition, liest Stempel und Stückliste, findet anhand der Stückliste im ERP bereits bestehende ähnliche Positionen und legt die Komponentenstruktur an — einschließlich der Übernahme des technologischen Arbeitsablaufs und der Zeitnorm aus der ursprünglichen Position. Die Ähnlichkeitssuche läuft über Felder der Stammkarte plus Metadaten aus dem Formular. Helios wird per API gemäß der Wiki-Dokumentation angebunden.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 5</span><h4>Human-in-the-loop dort, wo der Mensch entscheidet</h4><p>Was maschinell nicht lesbar ist — etwa die Blechdicke oder die Anzahl der Biegungen — ergänzt der Technologe in einem Dialogformular mit PDF-Vorschau: er sieht die Zeichnung, wählt im Pop-up eine Kategorie und gibt einen Zahlenwert ein. Die ergänzten Metadaten werden in eine CSV gesammelt und legen per Import ins ERP automatisch die Positionsstruktur an. Die Maschine erledigt die Routine, das Urteil bleibt beim Menschen.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 6</span><h4>Aufteilung in Phasen und Ergebnis</h4><p>Das Projekt haben wir in zwei Phasen aufgeteilt: zuerst die gefertigten Positionen, in der zweiten Phase die zugekauften und normierten Teile, mit der Möglichkeit der Erweiterung auch auf die Preisermittlung. Das Ergebnis: von stundenlangem Routine-Abtippen bei 70–120 Positionen wöchentlich zu einem Agenten, der die Struktur anlegt und die Normen übernimmt — und der Technologe kontrolliert nur noch und ergänzt das, was wirklich menschliches Urteilsvermögen verlangt. Das Konkurrenzangebot für denselben Use Case war dabei teurer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block jp-final">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow">Gehen wir es an</span>
+      <h2 class="h2">Haben Sie einen Prozess, der Menschen Zeit raubt?</h2>
+      <p>Sagen Sie uns, was bei Ihnen immer wieder von Hand gemacht wird. Wir entwerfen eine Lösung und rechnen aus, wie viel sie zurückbringt.</p>
+      <div class="cta-btns">
+        <a href="/de.html#contact" class="btn green">Unverbindliche Beratung <span class="arr">→</span></a>
+        <a href="/de.html#solutions" class="btn outline">Lösungskatalog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-logo">
+      <img src="/assets/decor/enty.svg" alt="" style="width:44px;height:44px">
+      <span class="ft-name">Enter&nbsp;IT</span>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="legal"><a href="/de/gdpr.html">Datenschutz</a><a href="/de/podminky.html">Geschäftsbedingungen</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function(){ header.classList.toggle('scrolled', window.scrollY>12); }, {passive:true});
+  var mt = document.getElementById('mtoggle'), mm = document.getElementById('mmenu');
+  mt.addEventListener('click', function(){
+    var open = mt.classList.toggle('open'); mm.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mt.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow=''; }); });
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>

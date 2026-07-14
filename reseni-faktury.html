@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Automatizace přijatých faktur — AI vytěžení do ERP | Enter IT</title>
+<meta name="description" content="Faktura se sama vytěží, spáruje s objednávkou a zaúčtuje. Chybovost pod 1 %, úspora ~30 h/měs. Pohoda, Helios, Business Central, K2.">
+<link rel="canonical" href="https://enterit.cz/reseni-faktury.html">
+<link rel="alternate" hreflang="cs" href="https://enterit.cz/reseni-faktury.html">
+<link rel="alternate" hreflang="en" href="https://enterit.cz/en/reseni-faktury.html">
+<link rel="alternate" hreflang="de" href="https://enterit.cz/de/reseni-faktury.html">
+<link rel="alternate" hreflang="pl" href="https://enterit.cz/pl/reseni-faktury.html">
+<link rel="alternate" hreflang="x-default" href="https://enterit.cz/reseni-faktury.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<meta name="theme-color" content="#17202E">
+<meta name="robots" content="index,follow">
+<meta name="author" content="AI Enter s.r.o.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Enter IT">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Automatizace přijatých faktur — AI vytěžení do ERP | Enter IT">
+<meta property="og:description" content="Faktura se sama vytěží, spáruje s objednávkou a zaúčtuje. Chybovost pod 1 %, úspora ~30 h/měs.">
+<meta property="og:url" content="https://enterit.cz/reseni-faktury.html">
+<meta property="og:image" content="https://enterit.cz/assets/og.png">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Funguje to s Pohodou, Heliosem, K2 nebo Money S5?","acceptedAnswer":{"@type":"Answer","text":"Ano, napojujeme se na běžná česká i mezinárodní ERP a účetní systémy. Pokud používáte něco jiného, ozvěte se — pravděpodobně to půjde taky."}},
+{"@type":"Question","name":"Co když je faktura vyfocená mobilem nebo špatně čitelná?","acceptedAnswer":{"@type":"Answer","text":"Agent umí pracovat i s horší kvalitou skenu. Tam, kde si není jistý, položku neuhodne, ale pošle fakturu ke kontrole člověku."}},
+{"@type":"Question","name":"Musíme měnit způsob, jak nám faktury chodí?","acceptedAnswer":{"@type":"Answer","text":"Ne. Napojíme se na to, co už používáte — e-mailovou schránku, portál dodavatele nebo sdílenou složku."}},
+{"@type":"Question","name":"Kdo fakturu schvaluje?","acceptedAnswer":{"@type":"Answer","text":"Vždy člověk s odpovědností za nákup. Agent připraví podklad ke schválení, sám neplatí ani neschvaluje."}},
+{"@type":"Question","name":"Co se stane s fakturou, kterou agent nedokáže spárovat?","acceptedAnswer":{"@type":"Answer","text":"Označí ji jako výjimku a předá účetní k ručnímu zpracování — nic nezůstane bez povšimnutí."}}
+]}</script>
+<style>
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+:root{
+  --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
+  --white:#FBFBFB; --text:#C6CEDC; --muted:#8A95A8;
+  --green:#41E39E; --green-soft:#7CF0BE; --green-deep:#27B981;
+  --blue:#6ECEFF; --purple:#E399FF;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
+  --green-line:rgba(65,227,158,.35); --green-wash:rgba(65,227,158,.08);
+  --head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  --mono:'Fira Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:24px; --maxw:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--text);font-family:var(--mono);font-weight:500;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);font-weight:900;color:var(--white);margin:0}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(65,227,158,.3);color:var(--white)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+@media(min-width:1024px){.wrap{padding:0 60px}}
+.block{padding:clamp(44px,7.5vh,84px) 0;position:relative}
+.block.alt{background:var(--navy-deep)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.h1{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(30px,4.6vw,50px);line-height:1.06;letter-spacing:-.02em;margin:0 0 18px;max-width:20ch}
+.h2{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(24px,3vw,36px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px}
+.lead{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:68ch;margin:0 0 8px}
+.hero-sub{font-family:var(--mono);font-size:15.5px;line-height:1.75;color:var(--text);max-width:64ch;margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:14px;
+  letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);
+  background:var(--navy);color:var(--white);padding:15px 24px;border-radius:12px;transition:all .25s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--navy);transform:translateY(-2px)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.green{background:var(--green);border-color:var(--green);color:var(--navy)}
+.btn.green:hover{background:var(--green-soft);border-color:var(--green-soft)}
+.btn.outline{background:transparent;border-color:var(--line-2);color:var(--white)}
+.btn.outline:hover{background:var(--white);border-color:var(--white);color:var(--navy)}
+.tlink{font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);transition:color .2s}
+.tlink:hover{color:var(--green-soft)}
+header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-bottom:2px solid #000}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:42px;width:auto}
+.brand .it{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--muted);align-self:center}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-family:var(--mono);font-size:13.5px;color:var(--white);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.mtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.mtoggle span{width:26px;height:2px;background:var(--white);transition:.3s}
+.mtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mtoggle.open span:nth-child(2){opacity:0}
+.mtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:74px 0 0;background:var(--navy);border-top:2px solid var(--green);z-index:55;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto;padding:40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--head);font-weight:700;font-size:26px;color:var(--white)}
+.mobile-menu a:hover{color:var(--green)}
+@media(max-width:1000px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
+@media(min-width:1001px){.mobile-menu{display:none}}
+.rs-hero{padding-top:clamp(120px,17vh,170px);padding-bottom:8px}
+.rs-hero-num{display:inline-flex;align-items:baseline;gap:10px;margin-top:8px;background:var(--navy-1);border:2px solid var(--green-line);border-radius:var(--r-lg);padding:14px 22px}
+.rs-hero-num b{font-family:var(--head);font-weight:900;color:var(--green);font-size:28px}
+.rs-hero-num span{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.rs-pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media(max-width:860px){.rs-pains{grid-template-columns:1fr}}
+.rs-pain{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:20px 22px}
+.rs-pain p{font-family:var(--mono);font-size:13.5px;line-height:1.65;color:var(--text);margin:0}
+.rs-flow{display:flex;flex-direction:column;gap:0;margin-top:34px;border-left:2px solid var(--green-line);padding-left:26px}
+.rs-flow-step{position:relative;padding-bottom:26px}
+.rs-flow-step:last-child{padding-bottom:0}
+.rs-flow-step::before{content:"";position:absolute;left:-32px;top:2px;width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 8px var(--green-line)}
+.rs-flow-step b{font-family:var(--head);font-weight:800;color:var(--white);font-size:15.5px;display:block;margin-bottom:4px}
+.rs-flow-step p{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--text);margin:0}
+.rs-flow-step.esc::before{background:var(--blue)}
+.rs-donts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+@media(max-width:860px){.rs-donts{grid-template-columns:1fr}}
+.rs-dont{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:20px 22px}
+.rs-dont .x{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:rgba(110,206,255,.1);border:1px solid rgba(110,206,255,.3);border-radius:99px;padding:3px 10px;margin-bottom:10px}
+.rs-dont p{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--text);margin:0}
+.rs-need{margin-top:28px;list-style:none;padding:0;display:grid;gap:12px}
+.rs-need li{font-family:var(--mono);font-size:13.5px;line-height:1.6;color:var(--text);padding-left:26px;position:relative}
+.rs-need li::before{content:"→";position:absolute;left:0;color:var(--green)}
+.rs-sec-box{margin-top:28px;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:26px 28px}
+.rs-sec-box p{font-family:var(--mono);font-size:13.5px;line-height:1.75;color:var(--text);margin:0 0 10px}
+.rs-sec-box p:last-child{margin-bottom:0}
+.rs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:32px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.rs-stats div{background:var(--navy-1);padding:22px 20px}
+.rs-stats b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(18px,2vw,24px);line-height:1.05}
+.rs-stats span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:8px}
+@media(max-width:720px){.rs-stats{grid-template-columns:1fr 1fr}}
+.rs-case{margin-top:28px;background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);border-radius:var(--r-xl);padding:28px 30px}
+.rs-case p{font-family:var(--mono);font-size:14px;line-height:1.75;color:var(--text);margin:0}
+.rs-faq{margin-top:30px;display:grid;gap:14px}
+.rs-faq-item{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-md);padding:18px 22px}
+.rs-faq-item h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:15px;margin:0 0 8px}
+.rs-faq-item p{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--text);margin:0}
+.rs-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
+.rs-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 26px}
+.rs-final .cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.footer{background:var(--purple);color:var(--navy);position:relative;overflow:hidden}
+.footer .wrap{position:relative;z-index:1;padding:56px 0 30px}
+.foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.foot-logo .ft-name{font-family:var(--head);font-weight:900;color:var(--navy);font-size:26px;letter-spacing:-.01em}
+.foot-bar{border-top:1px solid rgba(23,32,46,.35);padding-top:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--mono);font-size:11px;color:#3a2358}
+.foot-bar a{text-decoration:underline}
+.foot-bar .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Enter IT — domů">
+        <img src="assets/enter_logo_white.svg" alt="Enter">
+        <span class="it">IT</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#problems">Co řešíme</a>
+        <a href="index.html#solutions">Hotová řešení</a>
+        <a href="index.html#how">Jak to děláme</a>
+        <a href="index.html#integ">Integrace</a>
+        <a href="index.html#work">Reference</a>
+      </div>
+      <div class="nav-right">
+        <a class="btn green" href="index.html#contact">Kontaktovat</a>
+        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<nav class="mobile-menu" id="mmenu">
+  <a href="index.html#problems">Co řešíme</a>
+  <a href="index.html#solutions">Hotová řešení</a>
+  <a href="index.html#how">Jak to děláme</a>
+  <a href="index.html#integ">Integrace</a>
+  <a href="index.html#work">Reference</a>
+  <a href="index.html#contact">Kontakt</a>
+</nav>
+
+<main>
+
+<section class="block rs-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Hotová řešení · Faktury</span>
+    <h1 class="h1 reveal">Faktury, které se samy zapíšou do&nbsp;účetnictví.</h1>
+    <p class="hero-sub reveal">Přijatá faktura dorazí mailem — agent ji&nbsp;vytěží, spáruje s&nbsp;objednávkou a&nbsp;pošle ke&nbsp;schválení. Nikdo nic nepřepisuje ručně.</p>
+    <div class="rs-hero-num reveal"><b>~30 h/měs</b><span>ušetří účtárna</span></div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Jak to dnes bolí</span>
+    <h2 class="h2 reveal">Konec měsíce jako kolotoč</h2>
+    <div class="rs-pains">
+      <div class="rs-pain reveal"><p>Účetní ručně přepisuje položky z&nbsp;PDF nebo naskenované faktury do&nbsp;ERP — pomalé a&nbsp;náchylné na&nbsp;překlepy v&nbsp;částkách.</p></div>
+      <div class="rs-pain reveal"><p>Faktura se ručně páruje s&nbsp;objednávkou nebo dodacím listem — hledání v&nbsp;mailu, tabulkách a&nbsp;šanonech zabere čas, který mohl jít jinam.</p></div>
+      <div class="rs-pain reveal"><p>Konec měsíce znamená dohledávání chybějících faktur, opravu chyb a&nbsp;tlak na&nbsp;uzávěrku — vždy na&nbsp;poslední chvíli.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Jak agent funguje</span>
+    <h2 class="h2 reveal">Krok za&nbsp;krokem, od&nbsp;doručení po&nbsp;zaúčtování</h2>
+    <p class="lead reveal">Konkrétní tok — ne&nbsp;sliby. A&nbsp;stejně důležité je, co agent záměrně nedělá.</p>
+    <div class="rs-flow">
+      <div class="rs-flow-step reveal"><b>1. Faktura přijde</b><p>E-mailem, přes portál dodavatele nebo naskenovaná — napojíme se na&nbsp;to, co už používáte.</p></div>
+      <div class="rs-flow-step reveal"><b>2. Agent vytěží data (OCR)</b><p>Dodavatel, IČO/DIČ, částka, DUZP, splatnost a&nbsp;jednotlivé položky.</p></div>
+      <div class="rs-flow-step reveal"><b>3. Spáruje s&nbsp;objednávkou</b><p>Najde odpovídající objednávku nebo dodací list v&nbsp;ERP a&nbsp;ověří shodu částky a&nbsp;množství.</p></div>
+      <div class="rs-flow-step reveal"><b>4. Doplní předkontaci</b><p>Podle historie podobných faktur navrhne účtovací kód a&nbsp;středisko.</p></div>
+      <div class="rs-flow-step reveal"><b>5. Pošle ke&nbsp;schválení</b><p>Odpovědná osoba vidí fakturu i&nbsp;navržené spárování a&nbsp;jedním klikem schválí.</p></div>
+      <div class="rs-flow-step reveal"><b>6. Zapíše do&nbsp;účetnictví</b><p>Po&nbsp;schválení agent fakturu zaúčtuje — chybovost pod&nbsp;1&nbsp;%.</p></div>
+      <div class="rs-flow-step esc reveal"><b>7. Výjimku eskaluje na&nbsp;člověka</b><p>Chybějící objednávka, nesedící částka nebo nový dodavatel jde vždy nejdřív na&nbsp;kontrolu — agent nehádá.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Co agent NEdělá</span>
+    <h2 class="h2 reveal">Hranice, které budují důvěru</h2>
+    <div class="rs-donts">
+      <div class="rs-dont reveal"><span class="x">Nikdy sám</span><p>Neplatí faktury sám — platbu vždy iniciuje a&nbsp;potvrzuje člověk.</p></div>
+      <div class="rs-dont reveal"><span class="x">Nikdy sám</span><p>Nezakládá nové dodavatele do&nbsp;systému bez schválení.</p></div>
+      <div class="rs-dont reveal"><span class="x">Nikdy sám</span><p>Nerozhoduje o&nbsp;sporných částkách nebo neshodách — ty vždy jdou na&nbsp;schválení.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Co k&nbsp;tomu potřebujeme</span>
+    <h2 class="h2 reveal">Vstup od&nbsp;vás je záměrně malý</h2>
+    <ul class="rs-need">
+      <li class="reveal">Přístup (API nebo účet) do&nbsp;vašeho ERP nebo účetního systému — Helios, K2, Pohoda, Money S5, Business Central, SAP, Abra, Karat, Byznys nebo Oracle NetSuite.</li>
+      <li class="reveal">Způsob, jakým vám dnes faktury chodí — e-mailová schránka, portál dodavatele nebo sdílená složka. Měnit ho nemusíte.</li>
+      <li class="reveal">Pár desítek historických faktur, na&nbsp;kterých natrénujeme párování a&nbsp;předkontaci.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Bezpečnost a&nbsp;compliance</span>
+    <h2 class="h2 reveal">Data zůstávají u&nbsp;vás</h2>
+    <div class="rs-sec-box reveal">
+      <p>Data zpracováváme ve&nbsp;vaší infrastruktuře nebo v&nbsp;EU cloudu podle vaší volby, přenos i&nbsp;úložiště jsou šifrované.</p>
+      <p>Zpracování respektuje GDPR a&nbsp;požadavky AI Act; u&nbsp;citlivých dat nabízíme provoz on-prem.</p>
+      <p>Přístup k&nbsp;datům mají jen role, které ho mít mají, se schvalovací a&nbsp;auditní stopou.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow reveal">Čísla a&nbsp;timeline</span>
+    <h2 class="h2 reveal">Co od&nbsp;toho čekat</h2>
+    <div class="rs-stats">
+      <div class="reveal"><b>3–5 týdnů</b><span>do nasazení</span></div>
+      <div class="reveal"><b>do 12 týdnů</b><span>se vrátí investice</span></div>
+      <div class="reveal"><b>&lt;1 %</b><span>chybovost</span></div>
+      <div class="reveal"><b>~30 h/měs</b><span>ušetří účtárna</span></div>
+    </div>
+    <div class="rs-case reveal">
+      <p>Z&nbsp;naší praxe: obchodní firma (82&nbsp;lidí, obor kovy) — fakturační a&nbsp;další agenti jí&nbsp;vrátili přibližně 1&nbsp;420&nbsp;hodin ročně, návratnost celého programu 3&nbsp;měsíce. Konkrétní referenci z&nbsp;vašeho oboru rádi doložíme na&nbsp;schůzce.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Časté otázky</span>
+    <h2 class="h2 reveal">Co nás lidé ptají nejčastěji</h2>
+    <div class="rs-faq">
+      <div class="rs-faq-item reveal"><h4>Funguje to s&nbsp;Pohodou, Heliosem, K2 nebo Money S5?</h4><p>Ano, napojujeme se na&nbsp;běžná česká i&nbsp;mezinárodní ERP a&nbsp;účetní systémy. Pokud používáte něco jiného, ozvěte se — pravděpodobně to půjde taky.</p></div>
+      <div class="rs-faq-item reveal"><h4>Co když je faktura vyfocená mobilem nebo špatně čitelná?</h4><p>Agent umí pracovat i&nbsp;s&nbsp;horší kvalitou skenu. Tam, kde si není jistý, položku neuhodne, ale pošle fakturu ke&nbsp;kontrole člověku.</p></div>
+      <div class="rs-faq-item reveal"><h4>Musíme měnit způsob, jak nám faktury chodí?</h4><p>Ne. Napojíme se na&nbsp;to, co už používáte — e-mailovou schránku, portál dodavatele nebo sdílenou složku.</p></div>
+      <div class="rs-faq-item reveal"><h4>Kdo fakturu schvaluje?</h4><p>Vždy člověk s&nbsp;odpovědností za&nbsp;nákup. Agent připraví podklad ke&nbsp;schválení, sám neplatí ani neschvaluje.</p></div>
+      <div class="rs-faq-item reveal"><h4>Co se stane s&nbsp;fakturou, kterou agent nedokáže spárovat?</h4><p>Označí ji jako výjimku a&nbsp;předá účetní k&nbsp;ručnímu zpracování — nic nezůstane bez povšimnutí.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block rs-final">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow">Pojďme do&nbsp;toho</span>
+      <h2 class="h2">Ukážeme vám to na&nbsp;vašich fakturách.</h2>
+      <p>30&nbsp;minut nezávazně. Projdeme, jak vám dnes faktury chodí, a&nbsp;řekneme, co s&nbsp;tím — a&nbsp;kolik to ušetří.</p>
+      <div class="cta-btns">
+        <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener" class="btn green">Rezervovat 30 min <span class="arr">→</span></a>
+        <a href="index.html#calc" class="btn outline">Spočítat úsporu v&nbsp;kalkulačce</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-logo">
+      <img src="assets/decor/enty.svg" alt="" style="width:44px;height:44px">
+      <span class="ft-name">Enter&nbsp;IT</span>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="legal"><a href="gdpr.html">Ochrana osobních údajů</a><a href="podminky.html">Všeobecné obchodní podmínky</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function(){ header.classList.toggle('scrolled', window.scrollY>12); }, {passive:true});
+  var mt = document.getElementById('mtoggle'), mm = document.getElementById('mmenu');
+  mt.addEventListener('click', function(){
+    var open = mt.classList.toggle('open'); mm.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mt.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow=''; }); });
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>

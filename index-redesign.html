@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enter IT — automatizace a AI agenti do provozu | ušetřete 30–60 % rutiny</title>
+<meta name="description" content="Enter IT postaví a provozuje AI automatizace, agenty a integrace, které ve vaší firmě reálně běží a měří se. Nasazení 4–8 týdnů, návratnost obvykle do 12 týdnů.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<meta name="theme-color" content="#17202E">
+<style>
+/* ============================================================
+   FONTS — Greycliff CF (display) + Fira Mono (text/labels)
+   ============================================================ */
+@font-face{font-family:'Greycliff CF';src:url('assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url('assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+
+/* ============================================================
+   DESIGN TOKENS — "Enter" old playful theme
+   ============================================================ */
+:root{
+  --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
+  --white:#FBFBFB; --text:#C6CEDC; --muted:#8A95A8;
+  --green:#41E39E; --green-soft:#7CF0BE; --green-deep:#27B981;
+  --blue:#6ECEFF; --purple:#E399FF; --violet:#B790FF; --yellow:#F8E354; --coral:#FF848C;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
+  --green-line:rgba(65,227,158,.35); --green-wash:rgba(65,227,158,.08);
+  --head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  --mono:'Fira Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:24px;
+  --maxw:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--text);font-family:var(--mono);font-weight:500;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);font-weight:900;color:var(--white);margin:0}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+::selection{background:rgba(65,227,158,.3);color:var(--white)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+@media(min-width:640px){.wrap{padding:0 36px}}
+@media(min-width:1024px){.wrap{padding:0 60px}}
+.block{padding:clamp(56px,9vh,104px) 0;position:relative}
+.block.tight{padding:44px 0}
+
+/* eyebrow / mono label */
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.eyebrow.dark{color:var(--navy)}
+.h1{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(40px,6.4vw,76px);line-height:.95;letter-spacing:-.02em;margin:0 0 22px}
+.h2{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(30px,4vw,52px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px}
+.gt{color:var(--green)}
+.lead{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:62ch;margin:0 0 8px}
+
+/* buttons (old style: navy → green on hover) */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:14px;
+  letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);
+  background:var(--navy);color:var(--white);padding:15px 24px;border-radius:12px;transition:all .25s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--navy);transform:translateY(-2px)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.green{background:var(--green);border-color:var(--green);color:var(--navy)}
+.btn.green:hover{background:var(--green-soft);border-color:var(--green-soft)}
+.btn.outline{background:transparent;border-color:var(--line-2);color:var(--white)}
+.btn.outline:hover{background:var(--white);border-color:var(--white);color:var(--navy)}
+.btn.onlight{border-color:var(--navy)}
+.tlink{font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);transition:color .2s}
+.tlink:hover{color:var(--green-soft)}
+.tlink .arr{transition:transform .2s var(--ease);display:inline-block}
+.tlink:hover .arr{transform:translateX(4px)}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+header{position:fixed;top:0;left:0;width:100%;z-index:60;transition:background .3s,border-color .3s;border-bottom:2px solid transparent}
+header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-bottom-color:#000}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:42px;width:auto}
+.brand .it{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--muted);align-self:center}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-family:var(--mono);font-size:13.5px;color:var(--white);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.langsw{display:flex;gap:2px;font-family:var(--mono);font-size:12px}
+.langsw a{padding:4px 7px;border-radius:7px;color:var(--muted);transition:all .2s}
+.langsw a.active,.langsw a:hover{color:var(--navy);background:var(--green)}
+.mtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.mtoggle span{width:26px;height:2px;background:var(--white);transition:.3s}
+.mtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mtoggle.open span:nth-child(2){opacity:0}
+.mtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:74px 0 0;background:var(--navy);border-top:2px solid var(--green);z-index:55;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto;padding:40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--head);font-weight:700;font-size:28px;color:var(--white)}
+.mobile-menu a:hover{color:var(--green)}
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .langsw.lang-desktop{display:none}
+  .nav-right .btn{display:none}
+  .mtoggle{display:flex}
+}
+@media(min-width:1001px){.mobile-menu{display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding-top:clamp(120px,18vh,180px);padding-bottom:clamp(50px,8vh,80px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero-copy .h1{position:relative}
+.mascot-wave{position:absolute;width:74px;height:auto;top:-58px;right:8%}
+@media(max-width:980px){.mascot-wave{width:58px;top:-44px;right:auto;left:62%}}
+.hero-sub{font-family:var(--mono);font-size:16px;line-height:1.7;color:var(--text);max-width:52ch;margin:0 0 30px}
+/* email capture (old signature) */
+.capture{display:flex;gap:0;max-width:520px;border-radius:12px;overflow:hidden;border:2px solid var(--white);background:var(--white)}
+.capture input{flex:1;min-width:0;border:0;outline:none;background:var(--white);color:#24303f;
+  font-family:var(--mono);font-size:14px;padding:16px 18px}
+.capture input::placeholder{color:#64748B}
+.capture button{flex:none;border:0;cursor:pointer;background:var(--navy);color:var(--white);
+  font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:0 22px;transition:all .25s var(--ease)}
+.capture button:hover{background:var(--green);color:var(--navy)}
+@media(max-width:520px){.capture{flex-direction:column;border-radius:14px}.capture button{padding:15px}}
+.capture-note{font-family:var(--mono);font-size:11px;color:var(--muted);margin:14px 0 0;max-width:480px}
+.capture-note a{color:var(--white);text-decoration:underline}
+.hero-alt{margin-top:18px}
+
+/* hero console card */
+.console{background:var(--navy-2);border:2px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden;
+  box-shadow:0 30px 70px -34px rgba(0,0,0,.8)}
+.cons-top{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.cons-dots{display:flex;gap:6px}.cons-dots i{width:11px;height:11px;border-radius:50%;background:var(--navy-3)}
+.cons-dots i:first-child{background:var(--coral)}.cons-dots i:nth-child(2){background:var(--yellow)}.cons-dots i:nth-child(3){background:var(--green)}
+.cons-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.cons-live{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;color:var(--green)}
+.cons-live .ld{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.cons-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.cons-kpi{background:var(--navy-2);padding:16px 16px}
+.cons-kpi b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:24px;line-height:1}
+.cons-kpi span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:6px}
+.cons-rows{padding:14px 16px;display:flex;flex-direction:column;gap:11px}
+.cons-row{background:var(--navy-1);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px}
+.cons-row .rh{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.cons-row .sd{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 7px var(--green);flex:none;animation:pulse 1.8s infinite}
+.cons-row .nm{font-family:var(--mono);font-size:12.5px;color:var(--white)}
+.cons-row .pct{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.cons-row .tk{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:8px}
+.cons-row .bar{display:block;height:5px;border-radius:99px;background:var(--navy-3);overflow:hidden}
+.cons-row .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green-deep),var(--green));border-radius:99px;width:0;animation:fill var(--d,4s) var(--ease) infinite}
+@keyframes fill{0%{width:6%}70%{width:96%}100%{width:100%}}
+
+/* hero stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:46px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.stats div{background:var(--navy-1);padding:22px 20px}
+.stats b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(19px,2.1vw,25px);line-height:1.05}
+.stats span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:8px}
+@media(max-width:720px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ============================================================
+   PARTNERS
+   ============================================================ */
+.partners{text-align:center}
+.partners .plab{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.partners-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
+.partners-row img{height:34px;width:auto;object-fit:contain;opacity:.9}
+.ms-logo{display:inline-flex;align-items:center;gap:11px}
+.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:24px;height:24px}
+.ms-sq i{display:block;border-radius:1px}
+.ms-tx{display:flex;flex-direction:column;line-height:1.1;text-align:left}
+.ms-tx b{font-family:var(--head);font-weight:700;color:var(--white);font-size:15px}
+.ms-tx span{font-family:var(--mono);font-size:10px;color:var(--muted)}
+
+/* ============================================================
+   GENERIC CARD HELPERS
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   PROBLEMS — configurator
+   ============================================================ */
+.cfg{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-top:36px;align-items:start}
+@media(max-width:920px){.cfg{grid-template-columns:1fr}}
+.cfg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.cfg-grid{grid-template-columns:1fr}}
+.cfg-card{text-align:left;cursor:pointer;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);
+  padding:18px 18px;position:relative;transition:border-color .2s,transform .2s,background .2s;font-family:var(--mono)}
+.cfg-card:hover{border-color:var(--green-line);transform:translateY(-2px)}
+.cfg-card.on{border-color:var(--green);background:var(--green-wash)}
+.cfg-card .chk{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;transition:all .2s}
+.cfg-card .chk svg{width:13px;height:13px;color:var(--navy);opacity:0;transition:opacity .2s}
+.cfg-card.on .chk{background:var(--green);border-color:var(--green)}
+.cfg-card.on .chk svg{opacity:1}
+.cfg-card .hrs{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--green);
+  background:var(--green-wash);border:1px solid var(--green-line);border-radius:99px;padding:3px 10px;margin-bottom:12px}
+.cfg-card .pain{display:block;font-family:var(--head);font-weight:700;color:var(--white);font-size:16px;line-height:1.25;margin-bottom:10px;padding-right:26px}
+.cfg-card .sol{display:block;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--muted)}
+.cfg-card .sol b{color:var(--text);font-weight:500}
+.cfg-panel{background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);
+  border-radius:var(--r-xl);padding:30px 28px;position:sticky;top:100px;text-align:center;overflow:hidden}
+.cfg-panel::before{content:"";position:absolute;top:-40%;right:-25%;width:300px;height:300px;background:radial-gradient(circle,var(--green-wash),transparent 70%);pointer-events:none}
+.cfg-panel .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cfg-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(48px,7vw,72px);line-height:1;margin:8px 0 2px}
+.cfg-unit{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:20px}
+.cfg-bar{height:8px;border-radius:99px;background:var(--navy-3);overflow:hidden;margin-bottom:10px}
+.cfg-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green-deep),var(--green));border-radius:99px;transition:width .5s var(--ease)}
+.cfg-count{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:22px}
+.cfg-money{font-family:var(--head);font-weight:900;color:var(--white);font-size:28px;line-height:1}
+.cfg-moneyl{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:24px}
+.cfg-panel .btn{width:100%;justify-content:center}
+.cfg-hint{font-family:var(--mono);font-size:11px;line-height:1.55;color:var(--muted);margin-top:16px}
+
+/* ============================================================
+   SOLUTIONS — GREEN BLOCK with white bordered cards (signature)
+   ============================================================ */
+.sol-block{background:var(--green);position:relative;overflow:hidden}
+.sol-block .tc-vec{position:absolute;pointer-events:none;opacity:.5;z-index:0}
+.sol-block .tc-vec.l{left:-50px;top:-30px;width:180px}
+.sol-block .tc-vec.r{right:-50px;bottom:-30px;width:230px}
+.sol-block .wrap{position:relative;z-index:1}
+.sol-block .eyebrow{color:#15412f}
+.sol-block .h2{color:var(--navy)}
+.sol-block .lead{color:#173b2c}
+.prj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+@media(max-width:1080px){.prj-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.prj-grid{grid-template-columns:1fr}}
+.prj-wrap{position:relative}
+.prj{position:relative;z-index:1;background:var(--white);border:2px solid var(--navy);border-radius:var(--r-lg);
+  padding:22px 20px;height:100%;transition:transform .3s var(--ease)}
+.prj-wrap::before{content:"";position:absolute;inset:0;border-radius:var(--r-lg);background:var(--navy);z-index:0;transition:transform .3s var(--ease)}
+.prj-wrap:hover::before{transform:translate(8px,8px)}
+.prj-wrap:hover .prj{transform:translate(-2px,-2px)}
+.prj-ic{width:44px;height:44px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.prj-ic svg{width:23px;height:23px;color:var(--green)}
+.prj h3{font-family:var(--head);font-weight:900;color:var(--navy);font-size:19px;line-height:1.1;margin-bottom:10px}
+.prj .solves{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:#3a4654;margin:0 0 16px}
+.prj-io{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:14px}
+.prj-io span{font-family:var(--mono);font-size:10.5px;padding:4px 8px;border-radius:7px;line-height:1.3}
+.prj-io .b4{background:#eef1f4;color:#46505d;border:1px solid #dfe4e9}
+.prj-io .ar{color:var(--green-deep);font-weight:700;padding:0 2px}
+.prj-io .af{background:var(--green-wash);color:#176147;border:1px solid var(--green-line)}
+.prj .save{font-family:var(--mono);font-size:12px;color:#3a4654;border-top:1px solid #e7eaee;padding-top:13px}
+.prj .save b{font-family:var(--head);font-weight:900;color:var(--navy);font-size:14px}
+.sol-foot{margin-top:34px}
+.sol-foot .tlink{color:var(--navy)}
+.sol-foot .tlink:hover{color:#15412f}
+
+/* ============================================================
+   REFERENCES — KPI cards
+   ============================================================ */
+.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+@media(max-width:920px){.wk-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wk-grid{grid-template-columns:1fr}}
+.wk{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:26px 24px;transition:border-color .25s,transform .25s}
+.wk:hover{border-color:var(--green-line);transform:translateY(-4px)}
+.wk .ob{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wk .kpi{font-family:var(--head);font-weight:900;color:var(--green);font-size:34px;letter-spacing:-.01em;margin:13px 0 10px;line-height:1}
+.wk p{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--text);margin:0}
+.wk .tech{margin-top:15px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+
+/* ============================================================
+   INTEGRATIONS
+   ============================================================ */
+.intg-search{display:flex;align-items:center;gap:12px;max-width:520px;margin:30px 0 26px;
+  background:var(--navy-1);border:2px solid var(--line-2);border-radius:14px;padding:0 18px}
+.intg-search svg{width:20px;height:20px;color:var(--muted);flex:none}
+.intg-search input{flex:1;border:0;outline:none;background:none;color:var(--white);font-family:var(--mono);font-size:14px;padding:15px 0}
+.intg-search input::placeholder{color:var(--muted)}
+.intg-row{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+@media(max-width:680px){.intg-row{grid-template-columns:1fr;gap:12px}}
+.intg-cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);padding-top:6px}
+.intg-chips{display:flex;flex-wrap:wrap;gap:9px}
+.intg-chips span{font-family:var(--mono);font-size:12.5px;color:var(--text);padding:7px 13px;background:var(--navy-1);border:1px solid var(--line-2);border-radius:99px;transition:all .2s}
+.intg-chips span:hover{border-color:var(--green-line);color:var(--white)}
+.intg-empty{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:20px}
+
+/* ============================================================
+   HOW — colored bordered panel with numbered steps
+   ============================================================ */
+.how-panel{margin-top:40px;background:var(--blue);border:2px solid var(--navy);border-radius:var(--r-xl);padding:clamp(26px,4vw,48px)}
+.how-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:26px 40px}
+@media(max-width:760px){.how-list{grid-template-columns:1fr;gap:22px}}
+.how-list li{display:flex;gap:18px;align-items:flex-start}
+.how-num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:18px}
+.how-list h4{font-family:var(--head);font-weight:900;color:var(--navy);font-size:19px;margin:4px 0 6px;line-height:1.1}
+.how-list .kk{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#16466a;display:block;margin-bottom:6px}
+.how-list p{font-family:var(--mono);font-size:13px;line-height:1.6;color:#15364d;margin:0}
+.how-cta{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px}
+
+/* ============================================================
+   CALCULATOR
+   ============================================================ */
+.kc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;align-items:stretch}
+@media(max-width:880px){.kc-wrap{grid-template-columns:1fr}}
+.kc-form{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-xl);padding:30px 28px}
+.kc-field{margin-bottom:26px}.kc-field:last-child{margin-bottom:0}
+.kc-field label{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:12px;gap:14px}
+.kc-field label b{font-family:var(--head);font-weight:900;color:var(--green);font-size:19px;white-space:nowrap}
+.kc-field input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:99px;background:var(--navy-3);outline:none}
+.kc-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:21px;height:21px;border-radius:50%;background:var(--green);cursor:pointer;box-shadow:0 0 12px var(--green-line)}
+.kc-field input[type=range]::-moz-range-thumb{width:21px;height:21px;border:0;border-radius:50%;background:var(--green);cursor:pointer}
+.kc-hint{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px}
+.kc-result{background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);border-radius:var(--r-xl);padding:32px 30px;position:relative;overflow:hidden}
+.kc-result::before{content:"";position:absolute;top:-40%;right:-20%;width:320px;height:320px;background:radial-gradient(circle,var(--green-wash),transparent 70%);pointer-events:none}
+.kc-result .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kc-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(38px,5.5vw,58px);line-height:1;margin:8px 0 4px}
+.kc-sub{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:24px}
+.kc-split{display:flex;gap:14px;margin-bottom:24px}
+.kc-split div{flex:1;background:var(--navy-1);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
+.kc-split b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:22px}
+.kc-split span{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.kc-result .btn{width:100%;justify-content:center}
+.kc-disc{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:16px;line-height:1.6}
+
+/* ============================================================
+   CONTACT (signup style)
+   ============================================================ */
+.contact{position:relative;overflow:hidden}
+.contact .book{position:absolute;left:-20px;top:50%;transform:translateY(-50%) scaleX(-1);width:200px;opacity:.9;pointer-events:none}
+@media(max-width:980px){.contact .book{display:none}}
+.cta-card{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-card p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 28px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* ============================================================
+   FOOTER — purple block
+   ============================================================ */
+.footer{background:var(--purple);color:var(--navy);position:relative;overflow:hidden}
+.footer .wrap{position:relative;z-index:1}
+.foot-top{display:grid;grid-template-columns:300px 1fr;gap:40px;padding:64px 0 40px}
+@media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:32px}}
+.foot-logo{display:flex;align-items:center;gap:12px}
+.foot-logo .enty{width:54px;height:54px}
+.foot-logo .ft-name{font-family:var(--head);font-weight:900;color:var(--navy);font-size:30px;letter-spacing:-.01em}
+.foot-cta{font-family:var(--head);font-weight:900;color:var(--navy);font-size:clamp(26px,3.4vw,42px);line-height:.98;letter-spacing:-.01em;margin-bottom:36px;max-width:18ch}
+.foot-cols{display:flex;flex-wrap:wrap;gap:40px 64px;justify-content:space-between}
+.foot-h{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3a2358;margin-bottom:18px}
+.foot-contact a{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;color:var(--navy);font-size:22px;line-height:1.3;margin-bottom:12px}
+.foot-contact a:hover{text-decoration:underline}
+.foot-contact svg{width:24px;height:24px;flex:none}
+.foot-menu a{display:block;font-family:var(--mono);font-size:14px;color:var(--navy);margin-bottom:9px}
+.foot-menu a:hover{text-decoration:underline}
+.foot-soc{display:flex;gap:14px}
+.foot-soc a{display:flex}.foot-soc svg{width:30px;height:30px;color:var(--navy)}
+.foot-bar{border-top:1px solid rgba(23,32,46,.35);padding:20px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
+  font-family:var(--mono);font-size:11px;color:#3a2358}
+.foot-bar a{text-decoration:underline}
+.foot-bar .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+/* visible keyboard focus (a11y) */
+a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
+.kc-field input[type=range]:focus-visible{outline:none}
+.kc-field input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--green-line)}
+.kc-field input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px var(--green-line)}
+[inert]{filter:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Enter IT — domů">
+        <img src="assets/enter_logo_white.svg" alt="Enter">
+        <span class="it">IT</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problems">Co řešíme</a>
+        <a href="#solutions">Hotová řešení</a>
+        <a href="#how">Jak to děláme</a>
+        <a href="#integ">Integrace</a>
+        <a href="#work">Reference</a>
+      </div>
+      <div class="nav-right">
+        <div class="langsw lang-desktop" role="group" aria-label="Jazyk">
+          <a href="index-redesign.html" class="active">CZ</a><a href="en.html">EN</a><a href="de.html">DE</a><a href="pl.html">PL</a>
+        </div>
+        <a class="btn green" href="#contact">Kontaktovat</a>
+        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<nav class="mobile-menu" id="mmenu">
+  <a href="#problems">Co řešíme</a>
+  <a href="#solutions">Hotová řešení</a>
+  <a href="#how">Jak to děláme</a>
+  <a href="#integ">Integrace</a>
+  <a href="#work">Reference</a>
+  <a href="#contact">Kontakt</a>
+  <div class="langsw" role="group" aria-label="Jazyk" style="font-size:16px">
+    <a href="index-redesign.html" class="active">CZ</a><a href="en.html">EN</a><a href="de.html">DE</a><a href="pl.html">PL</a>
+  </div>
+</nav>
+
+<main id="home">
+
+<!-- ============ HERO ============ -->
+<section class="block hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="h1">Ať počítač dělá <span class="gt">nudnou práci</span> za vaše lidi.
+          <img class="mascot-wave" src="assets/decor/mascot-wave.svg" alt="" aria-hidden="true">
+        </h1>
+        <p class="hero-sub">Stavíme agenty, kteří přepisují faktury, dohledávají objednávky, vyplňují reporty a&nbsp;odpovídají zákazníkům — místo&nbsp;vašich lidí. Napojíme je na&nbsp;vaše systémy a&nbsp;nasadíme do&nbsp;provozu.</p>
+        <form class="capture" id="heroCapture" autocomplete="on">
+          <input type="email" id="heroEmail" placeholder="Zadejte e-mail pro výpočet úspor" aria-label="E-mail">
+          <button type="submit">Spočítat úsporu →</button>
+        </form>
+        <p class="capture-note">Vyplněním souhlasíte s&nbsp;<a href="gdpr.html">Prohlášením o&nbsp;zpracování osobních údajů</a>.</p>
+        <div class="hero-alt"><a class="tlink" href="#problems">Co vám ušetříme <span class="arr">→</span></a></div>
+      </div>
+      <div class="hero-viz">
+        <div class="console reveal">
+          <div class="cons-top">
+            <span class="cons-dots"><i></i><i></i><i></i></span>
+            <span class="cons-title">Agent Ops</span>
+            <span class="cons-live"><span class="ld"></span>LIVE · uptime 99,98 %</span>
+          </div>
+          <div class="cons-kpis">
+            <div class="cons-kpi"><b class="num" data-val="12480">0</b><span>úkolů dnes</span></div>
+            <div class="cons-kpi"><b class="num" data-val="99" data-suf=" %">0</b><span>bez chyby</span></div>
+            <div class="cons-kpi"><b class="num" data-val="612" data-suf=" h">0</b><span>ušetřeno / měs</span></div>
+          </div>
+          <div class="cons-rows">
+            <div class="cons-row" style="--d:4.2s"><span class="rh"><span class="sd"></span><span class="nm">Fakturační agent</span><span class="pct">běží</span></span><span class="tk">OCR faktury #4821 → ERP</span><span class="bar"><i></i></span></div>
+            <div class="cons-row" style="--d:5.1s"><span class="rh"><span class="sd"></span><span class="nm">Objednávkový agent</span><span class="pct">zpracovává</span></span><span class="tk">vytěžuji objednávku #2207</span><span class="bar"><i></i></span></div>
+            <div class="cons-row" style="--d:3.6s"><span class="rh"><span class="sd"></span><span class="nm">Knowledge agent</span><span class="pct">běží</span></span><span class="tk">dohledávám cenu v&nbsp;ceníku K2</span><span class="bar"><i></i></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div><b>4–8 týdnů</b><span>do nasazení</span></div>
+      <div><b>do 12 týdnů</b><span>se vrátí investice</span></div>
+      <div><b>Data ve firmě</b><span>GDPR &amp; AI Act</span></div>
+      <div><b>120+ projektů</b><span>za námi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="block tight partners">
+  <div class="wrap reveal">
+    <span class="plab">Stavíme na ověřeném stacku · partneři</span>
+    <div class="partners-row">
+      <span class="ms-logo">
+        <span class="ms-sq"><i style="background:#F25022"></i><i style="background:#7FBA00"></i><i style="background:#00A4EF"></i><i style="background:#FFB900"></i></span>
+        <span class="ms-tx"><b>Microsoft</b><span>Solutions Partner</span></span>
+      </span>
+      <img src="assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy">
+      <img src="assets/logos/techmates-white.png" alt="Techmates" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS — configurator ============ -->
+<section class="block" id="problems">
+  <div class="wrap">
+    <span class="eyebrow reveal">Co řešíme</span>
+    <h2 class="h2 reveal">Co vás každý den zdržuje?</h2>
+    <p class="lead reveal">Naklikejte, co vám ve&nbsp;firmě bere nejvíc času. Hned uvidíte, co to vyřeší — a&nbsp;kolik hodin vám to vrátí.</p>
+    <div class="cfg">
+      <div class="cfg-grid reveal" id="cfgGrid">
+        <button class="cfg-card" data-hrs="30" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~30 h/měs</span><span class="pain">Přepisujeme objednávky a&nbsp;faktury do&nbsp;systému ručně</span><span class="sol"><b>Vyřeší:</b> agent vytěží dokument a&nbsp;zapíše ho rovnou do&nbsp;ERP. Chybovost pod&nbsp;1&nbsp;%.</span></button>
+        <button class="cfg-card" data-hrs="25" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~25 h/měs</span><span class="pain">Dohledáváme informace v&nbsp;dokumentech a&nbsp;e-mailech</span><span class="sol"><b>Vyřeší:</b> AI asistent najde odpověď ve&nbsp;vašich dokumentech — i&nbsp;se&nbsp;zdrojem.</span></button>
+        <button class="cfg-card" data-hrs="20" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~20 h/měs</span><span class="pain">Vyplňujeme reporty a&nbsp;tabulky každý týden</span><span class="sol"><b>Vyřeší:</b> zeptáte se&nbsp;česky, agent připraví report z&nbsp;ERP i&nbsp;datového skladu.</span></button>
+        <button class="cfg-card" data-hrs="35" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~35 h/měs</span><span class="pain">Odpovídáme zákazníkům pořád na&nbsp;stejné dotazy</span><span class="sol"><b>Vyřeší:</b> chatbot nad&nbsp;vašimi zdroji odbaví 24/7, člověka volá jen na&nbsp;výjimky.</span></button>
+        <button class="cfg-card" data-hrs="18" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~18 h/měs</span><span class="pain">Evidujeme docházku, dovolené a&nbsp;výkazy v&nbsp;Excelu</span><span class="sol"><b>Vyřeší:</b> evidenční agent sesbírá data a&nbsp;připraví hotové podklady pro&nbsp;mzdy.</span></button>
+        <button class="cfg-card" data-hrs="40" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~40 h/měs</span><span class="pain">Plánujeme výrobu v&nbsp;roztříštěných Excelech</span><span class="sol"><b>Vyřeší:</b> digitální plánování propojené se&nbsp;skladem a&nbsp;ERP — harmonogram i&nbsp;dashboard.</span></button>
+        <button class="cfg-card" data-hrs="28" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~28 h/měs</span><span class="pain">Třídíme a&nbsp;odbavujeme příchozí poptávky</span><span class="sol"><b>Vyřeší:</b> agent vytěží přílohu, klasifikuje a&nbsp;připraví nabídku ke&nbsp;schválení.</span></button>
+        <button class="cfg-card" data-hrs="22" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~22 h/měs</span><span class="pain">Překlepáváme stejná data mezi systémy</span><span class="sol"><b>Vyřeší:</b> integrace propojí CRM, ERP a&nbsp;e-shop. Konec duplicitního zadávání.</span></button>
+      </div>
+      <div class="cfg-panel reveal">
+        <span class="lbl">Vrátíme vašim lidem</span>
+        <div class="cfg-big" id="cfgHrs">0 h</div>
+        <div class="cfg-unit">práce každý měsíc</div>
+        <div class="cfg-bar"><i id="cfgBar"></i></div>
+        <div class="cfg-count" id="cfgCount">Vyberte, co vás zdržuje ↑</div>
+        <div class="cfg-money" id="cfgMoney">~ 0 Kč</div>
+        <div class="cfg-moneyl">ročně (orientačně, 500 Kč/h)</div>
+        <a href="#contact" class="btn green">Chci to vyřešit <span class="arr">→</span></a>
+        <div class="cfg-hint">Orientační odhad. Přesný dopad změříme v&nbsp;pilotu na&nbsp;vašich datech.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTIONS — green block ============ -->
+<section class="block sol-block" id="solutions">
+  <img class="tc-vec l" src="assets/decor/tc-leftVector.svg" alt="" aria-hidden="true">
+  <img class="tc-vec r" src="assets/decor/tc-rightVector.svg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <span class="eyebrow reveal">Hotová řešení</span>
+    <h2 class="h2 reveal">Konkrétní věci, co lidem vezmou z&nbsp;ruky.</h2>
+    <p class="lead reveal">Hmatatelná řešení, která nasadíme — bez&nbsp;žargonu. Každé z&nbsp;nich nahradí ruční přepisování, hledání nebo vyplňování.</p>
+    <div class="prj-grid">
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Evidence docházky</h3>
+        <p class="solves">Konec ručního sčítání hodin z&nbsp;píchaček a&nbsp;Excelu na&nbsp;konci měsíce.</p>
+        <div class="prj-io"><span class="b4">Píchačky + Excel</span><span class="ar">→</span><span class="af">přehled hodin + mzda</span></div>
+        <div class="save"><b>~15 h/měs</b> ušetří mzdová účetní</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20M7 13h6"/></svg></div>
+        <h3>Příjem objednávek z&nbsp;e-mailů</h3>
+        <p class="solves">Objednávka přijde mailem v&nbsp;jakémkoli formátu — nikdo ji&nbsp;nepřepisuje.</p>
+        <div class="prj-io"><span class="b4">E-mail objednávka</span><span class="ar">→</span><span class="af">založeno + potvrzeno</span></div>
+        <div class="save"><b>~25 h/měs</b> ušetří obchodní oddělení</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/><path d="M9.5 12l2 2 3.5-4"/></svg></div>
+        <h3>Reklamace pod&nbsp;kontrolou</h3>
+        <p class="solves">Žádná reklamace se&nbsp;neztratí v&nbsp;mailech — automaticky se&nbsp;založí a&nbsp;hlídá.</p>
+        <div class="prj-io"><span class="b4">Reklamace v&nbsp;mailu</span><span class="ar">→</span><span class="af">založená + sledovaná</span></div>
+        <div class="save"><b>rychlejší</b> odbavení, spokojenější zákazník</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></div>
+        <h3>Sklad bez&nbsp;papírů</h3>
+        <p class="solves">Dodací list vyfotíte — naskladnění a&nbsp;spárování s&nbsp;objednávkou proběhne samo.</p>
+        <div class="prj-io"><span class="b4">Dodací list (foto)</span><span class="ar">→</span><span class="af">naskladněno + spárováno</span></div>
+        <div class="save"><b>~20 h/měs</b> ušetří skladník</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg></div>
+        <h3>Schvalování dovolených</h3>
+        <p class="solves">Konec papírových lístků — žádost, schválení i&nbsp;hlídání zůstatku na&nbsp;jednom místě.</p>
+        <div class="prj-io"><span class="b4">Žádost o&nbsp;dovolenou</span><span class="ar">→</span><span class="af">schváleno + zapsáno</span></div>
+        <div class="save"><b>přehled</b> pro&nbsp;vedoucí i&nbsp;HR v&nbsp;reálném čase</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-6.5a2 2 0 0 0-2-1.5h-7a2 2 0 0 0-2 1.5L5 17z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
+        <h3>Kniha jízd automaticky</h3>
+        <p class="solves">Tankování a&nbsp;trasy se&nbsp;samy promění v&nbsp;hotovou knihu jízd. Hlídá i&nbsp;STK a&nbsp;servisy.</p>
+        <div class="prj-io"><span class="b4">Tankování + trasy</span><span class="ar">→</span><span class="af">kniha jízd + alerty</span></div>
+        <div class="save"><b>~10 h/měs</b> ušetří fleet manažer</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>Faktury samy do&nbsp;účetnictví</h3>
+        <p class="solves">Přijatá faktura se&nbsp;vytěží, spáruje s&nbsp;objednávkou a&nbsp;pošle ke&nbsp;schválení.</p>
+        <div class="prj-io"><span class="b4">Faktura v&nbsp;PDF</span><span class="ar">→</span><span class="af">v&nbsp;účetnictví, &lt;1 % chyb</span></div>
+        <div class="save"><b>~30 h/měs</b> ušetří účtárna</div>
+      </div></div>
+      <div class="prj-wrap reveal"><div class="prj">
+        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h6M9 5a2 2 0 1 0-4 0M9 5v14M5 5v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M13 11h4M13 15h4"/></svg></div>
+        <h3>Pracovní výkazy</h3>
+        <p class="solves">Výkazy techniků a&nbsp;dělníků se&nbsp;sesbírají, schválí a&nbsp;připraví pro&nbsp;fakturaci i&nbsp;mzdy.</p>
+        <div class="prj-io"><span class="b4">Výkazy z&nbsp;terénu</span><span class="ar">→</span><span class="af">schváleno + k&nbsp;fakturaci</span></div>
+        <div class="save"><b>~12 h/měs</b> a&nbsp;méně chyb ve&nbsp;fakturaci</div>
+      </div></div>
+    </div>
+    <div class="sol-foot reveal"><a class="tlink" href="#contact">Nevidíte to svoje? Postavíme na&nbsp;míru <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section class="block" id="work">
+  <div class="wrap">
+    <span class="eyebrow reveal">Reference</span>
+    <h2 class="h2 reveal">Co jsme postavili. A&nbsp;co to přineslo.</h2>
+    <p class="lead reveal">Vybrané realizace anonymně po&nbsp;odvětvích — konkrétní reference doložíme na&nbsp;schůzce.</p>
+    <div class="wk-grid">
+      <div class="wk reveal"><span class="ob">Výroba · ~600 lidí</span><div class="kpi">17 → 78 %</div><p>Agentizace nad&nbsp;Business Central. Lidé používají AI denně, ~40&nbsp;min/týden na&nbsp;uživatele.</p><div class="tech">Copilot · Business Central</div></div>
+      <div class="wk reveal"><span class="ob">Překlady · holding 8 zemí</span><div class="kpi">−90 %</div><p>GenAI do&nbsp;procesů + lokální LLM na&nbsp;firemním HW. Náklady na&nbsp;nástroje dolů, data ve&nbsp;firmě.</p><div class="tech">Llama 3 · Make · Claude</div></div>
+      <div class="wk reveal"><span class="ob">Energetika · kogenerace</span><div class="kpi">9 agentů</div><p>Dokumenty, servis, reporting i&nbsp;zápisy ze&nbsp;schůzek → úkoly. Dvě země, jeden přehled.</p><div class="tech">Claude · Helios · n8n</div></div>
+      <div class="wk reveal"><span class="ob">Obchod s&nbsp;kovy · 82 lidí</span><div class="kpi">3 měsíce</div><p>Návratnost programu. ~1&nbsp;420&nbsp;hodin ročně ušetřeno, přínos ~710&nbsp;tis.&nbsp;Kč/rok.</p><div class="tech">Copilot · n8n</div></div>
+      <div class="wk reveal"><span class="ob">Stavební skupina</span><div class="kpi">−180 h/měs</div><p>Interní systém na&nbsp;míru. Konec ručního přepisování, jednotný přehled zakázek.</p><div class="tech">Aplikace · API · Power BI</div></div>
+      <div class="wk reveal"><span class="ob">Logistika · migrace</span><div class="kpi">−41 %</div><p>Migrace stacku a&nbsp;automatizace toků sklad ↔ doprava. Nižší provozní náklady.</p><div class="tech">Cloud · n8n · integrace</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="block" id="integ">
+  <div class="wrap">
+    <span class="eyebrow reveal">Integrace</span>
+    <h2 class="h2 reveal">Napojíme se na&nbsp;to, co už máte.</h2>
+    <p class="lead reveal">ERP, CRM, e-shop, účetnictví i&nbsp;AI modely. Nemusíte nic měnit — postavíme řešení nad&nbsp;vašimi systémy.</p>
+    <div class="intg-search reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="intgSearch" type="text" placeholder="Napište svůj systém (SAP, Pohoda, Shoptet…)" aria-label="Hledat systém">
+    </div>
+    <div id="intgWrap" class="reveal">
+      <div class="intg-row"><div class="intg-cat">ERP</div><div class="intg-chips"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span><span>Karat</span></div></div>
+      <div class="intg-row"><div class="intg-cat">CRM</div><div class="intg-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div></div>
+      <div class="intg-row"><div class="intg-cat">E-shop</div><div class="intg-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div></div>
+      <div class="intg-row"><div class="intg-cat">Komunikace &amp; data</div><div class="intg-chips"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div></div>
+      <div class="intg-row"><div class="intg-cat">Automatizace</div><div class="intg-chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div></div>
+      <div class="intg-row"><div class="intg-cat">AI modely</div><div class="intg-chips"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div></div>
+    </div>
+    <p class="intg-empty" id="intgEmpty" style="display:none">Tenhle systém v&nbsp;seznamu není? Nevadí — napojíme se i&nbsp;na&nbsp;něj. <a class="tlink" href="#contact">Zeptejte se →</a></p>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section class="block" id="how">
+  <div class="wrap">
+    <span class="eyebrow reveal">Jak to děláme</span>
+    <h2 class="h2 reveal">Od&nbsp;prvního dotazu do&nbsp;provozu. Měřitelně.</h2>
+    <p class="lead reveal">Čtyři kroky, na&nbsp;jejichž konci stojí běžící řešení s&nbsp;jasně změřeným dopadem.</p>
+    <div class="how-panel reveal">
+      <ul class="how-list">
+        <li><span class="how-num">1</span><div><span class="kk">01 · 1–2 týdny</span><h4>Najdeme, co bolí</h4><p>Projdeme procesy a&nbsp;vybereme, kde se&nbsp;ušetří nejvíc. Změříme výchozí stav.</p></div></li>
+        <li><span class="how-num">2</span><div><span class="kk">02 · 2–3 týdny</span><h4>Postavíme pilot</h4><p>Prototyp na&nbsp;vašich datech v&nbsp;bezpečném režimu. Ladíme výjimky.</p></div></li>
+        <li><span class="how-num">3</span><div><span class="kk">03 · 1–2 týdny</span><h4>Nasadíme</h4><p>Napojíme na&nbsp;systémy a&nbsp;role, pustíme do&nbsp;provozu a&nbsp;měříme dopad.</p></div></li>
+        <li><span class="how-num">4</span><div><span class="kk">04 · průběžně</span><h4>Rozvíjíme</h4><p>Provoz, optimalizace a&nbsp;další řešení na&nbsp;stejném základu.</p></div></li>
+      </ul>
+    </div>
+    <div class="how-cta reveal">
+      <a class="tlink" href="#contact">Do hloubky: jak stavíme automatizace <span class="arr">→</span></a>
+      <a class="tlink" href="#contact">Jak stavíme agenty <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section class="block" id="calc">
+  <div class="wrap">
+    <span class="eyebrow reveal">Kalkulačka úspor</span>
+    <h2 class="h2 reveal">Spočítejte si&nbsp;to přesněji.</h2>
+    <p class="lead reveal">Posuňte hodnoty podle své firmy — výsledek se&nbsp;přepočítá hned.</p>
+    <div class="kc-wrap">
+      <div class="kc-form reveal">
+        <div class="kc-field"><label for="kc-people">Počet lidí dělajících rutinu <b id="kc-people-v">10</b></label><input id="kc-people" type="range" min="1" max="200" step="1" value="10"><div class="kc-hint">Kolik zaměstnanců se&nbsp;věnuje opakující se&nbsp;agendě.</div></div>
+        <div class="kc-field"><label for="kc-hours">Hodin rutiny týdně na&nbsp;osobu <b id="kc-hours-v">8 h</b></label><input id="kc-hours" type="range" min="1" max="40" step="1" value="8"><div class="kc-hint">Přepisování, hledání, vyplňování, dohledávání…</div></div>
+        <div class="kc-field"><label for="kc-rate">Hodinová sazba <b id="kc-rate-v">500 Kč</b></label><input id="kc-rate" type="range" min="200" max="2000" step="50" value="500"><div class="kc-hint">Průměrné náklady na&nbsp;hodinu práce vč.&nbsp;režie.</div></div>
+        <div class="kc-field"><label for="kc-share">Podíl, který převezme AI <b id="kc-share-v">45 %</b></label><input id="kc-share" type="range" min="20" max="70" step="5" value="45"><div class="kc-hint">U&nbsp;vhodných procesů typicky 30–60&nbsp;% rutiny.</div></div>
+      </div>
+      <div class="kc-result reveal">
+        <span class="lbl">Roční úspora nákladů</span>
+        <div class="kc-big" id="kc-money">828 000 Kč</div>
+        <p class="kc-sub">při&nbsp;automatizaci vybrané rutiny</p>
+        <div class="kc-split"><div><b id="kc-hrs">1 656 h</b><span>ušetřených ročně</span></div><div><b id="kc-fte">0,9×</b><span>úvazku uvolněno</span></div></div>
+        <a href="#contact" class="btn green">Probrat moje procesy <span class="arr">→</span></a>
+        <p class="kc-disc">Orientační odhad pro&nbsp;představu řádu, ne&nbsp;nabídka. Skutečný přínos ověříme v&nbsp;pilotu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="block contact" id="contact">
+  <img class="book" src="assets/decor/book.svg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow">Pojďme do&nbsp;toho</span>
+      <h2 class="h2">Ukážeme vám to na&nbsp;vašich procesech.</h2>
+      <p>30&nbsp;minut nezávazně. Projdeme, co vás zdržuje, a&nbsp;řekneme, co s&nbsp;tím — a&nbsp;kolik to ušetří.</p>
+      <div class="cta-btns">
+        <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener" class="btn green">Rezervovat 30 min <span class="arr">→</span></a>
+        <a href="mailto:milo@enterit.cz" class="btn outline">milo@enterit.cz</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">
+          <img class="enty" src="assets/decor/enty.svg" alt="">
+          <span class="ft-name">Enter&nbsp;IT</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="foot-cta">Račte vstoupit do&nbsp;světa automatizací. Nemusíte klepat. Stačí kliknout.</h2>
+        <div class="foot-cols">
+          <div class="foot-contact">
+            <div class="foot-h">Máte dotaz?</div>
+            <a href="mailto:milo@enterit.cz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>milo@enterit.cz</a>
+            <a href="tel:+420608969263"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>+420 608 969 263</a>
+          </div>
+          <div class="foot-menu">
+            <div class="foot-h">Menu</div>
+            <a href="#problems">Co řešíme</a>
+            <a href="#solutions">Hotová řešení</a>
+            <a href="#work">Reference</a>
+            <a href="https://enterai.cz/" target="_blank" rel="noopener">EnterAI</a>
+          </div>
+          <div class="foot-soc-wrap">
+            <div class="foot-h">Zůstaňte v&nbsp;obraze</div>
+            <div class="foot-soc">
+              <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+              <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+              <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="legal"><a href="gdpr.html">Ochrana osobních údajů</a><a href="podminky.html">Všeobecné obchodní podmínky</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- header scroll ---- */
+  var header = document.getElementById('header');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- mobile menu ---- */
+  var mt = document.getElementById('mtoggle'), mm = document.getElementById('mmenu');
+  var pageMain = document.getElementById('home'), pageFoot = document.querySelector('.footer');
+  function setBehind(on){ [pageMain,pageFoot].forEach(function(el){ if(!el) return; if(on) el.setAttribute('inert',''); else el.removeAttribute('inert'); }); }
+  function closeMenu(){ mt.classList.remove('open'); mm.classList.remove('open'); mt.setAttribute('aria-expanded','false'); document.body.style.overflow=''; setBehind(false); mt.focus(); }
+  function openMenu(){ mt.classList.add('open'); mm.classList.add('open'); mt.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; setBehind(true); var first=mm.querySelector('a'); if(first) first.focus(); }
+  mt.addEventListener('click', function(){ mt.classList.contains('open') ? closeMenu() : openMenu(); });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && mt.classList.contains('open')) closeMenu(); });
+
+  /* ---- reveal on scroll ---- */
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- number counters ---- */
+  function animateNum(el){
+    var target = parseFloat(el.getAttribute('data-val')) || 0;
+    var suf = el.getAttribute('data-suf') || '';
+    if(prefersReduced){ el.textContent = target.toLocaleString('cs-CZ')+suf; return; }
+    var dur = 1400, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur, 1);
+      var eased = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased).toLocaleString('cs-CZ')+suf;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var nums = document.querySelectorAll('.num');
+  if('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ animateNum(e.target); io2.unobserve(e.target); } });
+    }, {threshold:.4});
+    nums.forEach(function(el){ io2.observe(el); });
+  } else { nums.forEach(animateNum); }
+
+  /* ---- helpers ---- */
+  function cz(n){ return Math.round(n).toLocaleString('cs-CZ'); }
+
+  /* ---- problems configurator ---- */
+  var grid = document.getElementById('cfgGrid');
+  if(grid){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.cfg-card'));
+    var elHrs = document.getElementById('cfgHrs'), elBar = document.getElementById('cfgBar'),
+        elCount = document.getElementById('cfgCount'), elMoney = document.getElementById('cfgMoney');
+    var maxHrs = cards.reduce(function(s,c){ return s+(parseInt(c.dataset.hrs,10)||0); },0);
+    function fmtMoney(n){ return n>=1e6 ? (n/1e6).toFixed(1).replace('.',',')+' mil. Kč' : cz(n)+' Kč'; }
+    function plural(n){ return n===1?'oblast':(n>=2&&n<=4?'oblasti':'oblastí'); }
+    function updateCfg(){
+      var sel = cards.filter(function(c){ return c.classList.contains('on'); });
+      var n = sel.length;
+      var hrs = sel.reduce(function(s,c){ return s+(parseInt(c.dataset.hrs,10)||0); },0);
+      elHrs.textContent = cz(hrs)+' h';
+      elBar.style.width = (maxHrs?Math.min(hrs/maxHrs*100,100):0)+'%';
+      elMoney.textContent = '~ '+fmtMoney(hrs*12*500);
+      elCount.textContent = n===0 ? 'Vyberte, co vás zdržuje ↑' : ('Řešíme '+n+' '+plural(n));
+    }
+    cards.forEach(function(c){
+      c.addEventListener('click', function(){ c.classList.toggle('on'); updateCfg(); });
+    });
+    updateCfg();
+  }
+
+  /* ---- savings calculator ---- */
+  var people = document.getElementById('kc-people'), hours = document.getElementById('kc-hours'),
+      rate = document.getElementById('kc-rate'), share = document.getElementById('kc-share');
+  if(people && hours && rate && share){
+    var WEEKS = 46, FTE = 1840;
+    var pv=document.getElementById('kc-people-v'), hv=document.getElementById('kc-hours-v'),
+        rv=document.getElementById('kc-rate-v'), sv=document.getElementById('kc-share-v'),
+        money=document.getElementById('kc-money'), hrsEl=document.getElementById('kc-hrs'), fte=document.getElementById('kc-fte');
+    function calc(){
+      var p=+people.value, h=+hours.value, r=+rate.value, s=+share.value/100;
+      pv.textContent=p; hv.textContent=h+' h'; rv.textContent=cz(r)+' Kč'; sv.textContent=(s*100)+' %';
+      var savedHrs = p*h*s*WEEKS;
+      money.textContent = cz(savedHrs*r)+' Kč';
+      hrsEl.textContent = cz(savedHrs)+' h';
+      fte.textContent = (savedHrs/FTE).toFixed(1).replace('.',',')+'×';
+    }
+    [people,hours,rate,share].forEach(function(el){ el.addEventListener('input', calc); });
+    calc();
+  }
+
+  /* ---- integrations search ---- */
+  var search = document.getElementById('intgSearch');
+  if(search){
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#intgWrap .intg-row'));
+    var empty = document.getElementById('intgEmpty');
+    search.addEventListener('input', function(){
+      var q = search.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function(row){
+        var chips = Array.prototype.slice.call(row.querySelectorAll('.intg-chips span'));
+        var rowHas = false;
+        chips.forEach(function(ch){
+          var match = !q || ch.textContent.toLowerCase().indexOf(q) !== -1;
+          ch.style.display = match ? '' : 'none';
+          if(match) rowHas = true;
+        });
+        row.style.display = rowHas ? '' : 'none';
+        if(rowHas) anyVisible = true;
+      });
+      empty.style.display = (q && !anyVisible) ? '' : 'none';
+    });
+  }
+
+  /* ---- hero email capture → contact ---- */
+  var cap = document.getElementById('heroCapture');
+  if(cap){
+    cap.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = (document.getElementById('heroEmail').value||'').trim();
+      var url = 'mailto:milo@enterit.cz?subject='+encodeURIComponent('Chci spočítat úsporu')+
+                '&body='+encodeURIComponent('Dobrý den,\n\nmám zájem o nezávazný výpočet úspory.\nMůj e-mail: '+email);
+      window.location.href = url;
+    });
+  }
+})();
+</script>
+</body>
+</html>

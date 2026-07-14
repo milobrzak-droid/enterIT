@@ -1,0 +1,53 @@
+<svg width="127" height="99" viewBox="0 0 127 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* CSS fallback in case SMIL is disabled */
+    @keyframes wave-right {
+      0% { transform: rotate(0deg); }
+      82% { transform: rotate(0deg); }   /* idle most of the time */
+      85% { transform: rotate(-20deg); } /* down */
+      88% { transform: rotate(20deg); }  /* up */
+      91% { transform: rotate(-20deg); } /* down */
+      95% { transform: rotate(20deg); }  /* up */
+      100%{ transform: rotate(0deg); }
+    }
+    #arm-right-stroke.wave {
+      transform-origin: 86.6875px 42.7053px; /* shoulder pivot */
+      transform-box: view-box;
+      animation: wave-right 10s ease-in-out infinite;
+    }
+  </style>
+
+  <path d="M114.697 87.9313L105.172 87.9313L95.2194 69.0259C94.4873 67.6353 93.045 66.7646 91.4735 66.7646L74.2354 66.7646" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+  <path d="M118.534 78.1103L109.406 78.1103L100.814 62.0747C100.077 60.6993 98.6427 59.8408 97.0822 59.8408L75.4072 59.8408" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+
+  <!-- RIGHT ARM: grouped and animated (pivot at 86.6875, 42.7053) -->
+  <g id="arm-right-stroke" class="wave">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      values="
+        0 86.6875 42.7053;
+        0 86.6875 42.7053;
+        -20 86.6875 42.7053;
+        20 86.6875 42.7053;
+        0 86.6875 42.7053;
+        0 86.6875 42.7053"
+      keyTimes="0; 0.70; 0.78; 0.86; 0.94; 1"
+      dur="10s"
+      repeatCount="indefinite"/>
+    <path d="M86.6875 42.7053C95.35 41.2476 112.947 32.5269 114.035 9.30566" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+  </g>
+
+  <path d="M98.422 12.7078C98.422 6.01793 93.0065 0.574219 86.3513 0.574219H49.7805C46.7954 0.574219 44.0583 1.6728 41.9508 3.48628V3.47972L41.9215 3.50923C41.4484 3.91915 41.008 4.36186 40.6035 4.83737C38.1013 7.35918 32.9892 12.5176 32.9892 12.5176H32.9989C30.301 14.7443 28.5752 18.1154 28.5752 21.89V58.2907C28.5752 64.9806 33.9907 70.4243 40.6459 70.4243H77.2167C80.4399 70.4243 83.3663 69.1486 85.5324 67.0728L85.539 67.0662C85.676 66.9351 85.8065 66.8039 85.937 66.6661L94.6801 57.8808C94.8138 57.7496 94.9476 57.6184 95.0781 57.4807L95.1074 57.4512C97.1627 55.2737 98.4253 52.3387 98.4253 49.1085V12.7078H98.422Z" fill="url(#paint0_linear_16041_14007)"/>
+  <path d="M42.506 42.6699C45.022 51.0862 55.8484 67.472 79.0264 65.6851" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+  <path d="M87.7662 24.198C87.7717 22.6701 88.5023 21.4746 89.4337 21.4766C90.571 21.4805 91.0862 23.0287 91.083 24.2088C91.0787 25.4074 90.5252 26.9358 89.4157 26.9312C88.486 26.9276 87.7622 25.7276 87.7662 24.198Z" fill="#17202E"/>
+  <path d="M85.2881 32.1633C84.8939 33.0694 84.1539 33.8533 83.1727 34.4044C82.1914 34.9554 81.0184 35.2457 79.8194 35.2342C78.6205 35.2228 77.4561 34.9101 76.4909 34.3405C75.5256 33.7708 74.8083 32.9729 74.4402 32.0596" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+  <path d="M73.5055 23.9315C73.2959 23.4037 72.8881 22.9409 72.3396 22.6085C71.7911 22.276 71.1298 22.0908 70.4489 22.0789C69.768 22.067 69.1021 22.2291 68.5452 22.5422C67.9883 22.8553 67.5686 23.3037 67.3453 23.8239" stroke="#17202E" stroke-width="2.38125" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="paint0_linear_16041_14007" x1="98.4253" y1="0.574221" x2="28.5934" y2="70.2392" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#FF848C"/>
+      <stop offset="0.898398" stop-color="#F8E354"/>
+    </linearGradient>
+  </defs>
+</svg>
