@@ -569,6 +569,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .feat-steps li::before{content:"";position:absolute;left:-31px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 8px var(--green-line)}
 .feat-steps b{display:block;font-family:var(--head);font-weight:800;font-size:14px;color:#fff;margin-bottom:3px}
 .feat-steps p{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--text);margin:0}
+.feat-steps li.human::before{background:var(--blue);box-shadow:0 0 0 4px var(--navy),0 0 9px rgba(110,206,255,.5)}
+.feat-steps li.human b{color:var(--blue)}
+.feat-steps li.human b::after{content:"👤";margin-left:7px;font-size:12px}
 .feat-result{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:22px}
 .feat-result div b{display:block;font-family:var(--head);font-weight:900;font-size:22px;color:var(--green);line-height:1}
 .feat-result div span{font-family:var(--mono);font-size:11px;color:var(--muted)}
@@ -894,10 +897,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
         <span class="fkick">Výzva → Architektura → Integrace → Výsledek</span>
         <h3>Doklady se samy roztřídí, vytěží a&nbsp;zapíšou do&nbsp;ERP.</h3>
         <ul class="feat-steps">
-          <li><b>Výzva</b><p>Tři pobočky, tisíce dokladů měsíčně přepisované ručně do&nbsp;systémů, chyby a&nbsp;zpoždění.</p></li>
-          <li><b>Co jsme postavili</b><p>Agentní pipeline: příjem → klasifikace → vytěžení → ověření proti&nbsp;ERP → zápis, s&nbsp;audit trailem.</p></li>
-          <li><b>Jak jsme integrovali</b><p>Napojení na&nbsp;Business Central, e-mail, sklad a&nbsp;DMS; výjimky schvaluje člověk jedním klikem.</p></li>
-          <li><b>Výsledek</b><p>Desítky hodin týdně zpět, řádově nižší chybovost, doklady zpracované tentýž den.</p></li>
+          <li><b>Doklad přijde</b><p>E-mail, PDF nebo sken — v&nbsp;jakémkoli formátu.</p></li>
+          <li><b>Agent vytěží a&nbsp;ověří</b><p>Data proti&nbsp;ERP, s&nbsp;audit trailem.</p></li>
+          <li class="human"><b>Člověk schválí výjimku</b><p>Jen když je potřeba — jedním klikem.</p></li>
+          <li><b>Zápis do&nbsp;systému</b><p>Business Central, sklad i&nbsp;DMS. Hotovo.</p></li>
         </ul>
         <div class="feat-result">
           <div><b>~40 h/týd</b><span>zpět lidem</span></div>
@@ -912,42 +915,42 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Datová platforma nad&nbsp;rozházenými systémy</h3>
         <span class="bc-sub">Logistika · více zemí</span>
-        <p>ERP + CRM + WMS sjednocené do&nbsp;jednoho zdroje pravdy. Reporting a&nbsp;čistý základ pro&nbsp;agenty.</p>
+        <p>ERP, CRM a&nbsp;WMS v&nbsp;jednom zdroji pravdy.</p>
         <div class="bc-foot"><span class="bc-who">architektura + integrace</span><span class="bc-go">Probrat →</span></div>
       </a>
       <a href="#contact" class="bc-card reveal d1" style="--ob-acc:#B790FF">
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Agentní servisní asistent nad&nbsp;firemními daty</h3>
         <span class="bc-sub">Podpora · e-commerce</span>
-        <p>Odpovídá z&nbsp;firemních znalostí, zakládá reklamace a&nbsp;tickety, odbaví většinu dotazů sám.</p>
+        <p>Odpovídá z&nbsp;firemních dat a&nbsp;zakládá tickety sám.</p>
         <div class="bc-foot"><span class="bc-who">LLM + integrace</span><span class="bc-go">Probrat →</span></div>
       </a>
       <a href="#contact" class="bc-card reveal d2" style="--ob-acc:#41E39E">
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6-1.5A4 4 0 0 0 6 19z"/><path d="M12 12v6M9.5 15l2.5 3 2.5-3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Legacy modernizace + cloud migrace</h3>
         <span class="bc-sub">Průmysl · enterprise</span>
-        <p>Přesun stárnoucího stacku do&nbsp;cloudu bez&nbsp;výpadku, DevOps, monitoring a&nbsp;údržba pod&nbsp;SLA.</p>
+        <p>Přesun do&nbsp;cloudu bez&nbsp;výpadku, provoz pod&nbsp;SLA.</p>
         <div class="bc-foot"><span class="bc-who">architektura + DevOps</span><span class="bc-go">Probrat →</span></div>
       </a>
       <a href="#contact" class="bc-card reveal" style="--ob-acc:#FF848C">
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M13 13h5M8 16h5"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Interní systém na&nbsp;míru</h3>
         <span class="bc-sub">Stavebnictví · výroba</span>
-        <p>Konec ručního přepisování — jednotný přehled zakázek, rolí a&nbsp;stavů napojený na&nbsp;vaše data.</p>
+        <p>Jednotný přehled zakázek napojený na&nbsp;vaše data.</p>
         <div class="bc-foot"><span class="bc-who">custom vývoj</span><span class="bc-go">Probrat →</span></div>
       </a>
       <a href="#contact" class="bc-card reveal d1" style="--ob-acc:#F8E354">
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M8 7h8a2 2 0 0 1 2 2v3a6 6 0 0 1-12 0V9a2 2 0 0 1 2-2zM12 18v4"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Integrace &amp; API vrstva</h3>
         <span class="bc-sub">Napříč systémy</span>
-        <p>Propojení ERP, CRM, e-shopu a&nbsp;dalších nástrojů do&nbsp;jednoho spolehlivého toku dat.</p>
+        <p>Vaše nástroje v&nbsp;jednom spolehlivém toku dat.</p>
         <div class="bc-foot"><span class="bc-who">integrace + API</span><span class="bc-go">Probrat →</span></div>
       </a>
       <a href="#contact" class="bc-card reveal d2" style="--ob-acc:#E399FF">
         <div class="bc-top"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
         <h3>Reporting &amp; BI automatizace</h3>
         <span class="bc-sub">Vedení · data</span>
-        <p>Data z&nbsp;více zdrojů automaticky do&nbsp;živých dashboardů — rozhodování na&nbsp;aktuálních číslech.</p>
+        <p>Data z&nbsp;více zdrojů do&nbsp;živých dashboardů.</p>
         <div class="bc-foot"><span class="bc-who">data + Power BI</span><span class="bc-go">Probrat →</span></div>
       </a>
     </div>
