@@ -107,6 +107,17 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .f30-level p{font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--text);margin:0 0 10px;max-width:70ch}
 .f30-level .sign{font-family:var(--mono);font-size:12.5px;color:var(--green-soft);font-style:italic}
 .f30-level .method{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:8px}
+.f30-level{cursor:pointer;transition:opacity .2s}
+.f30-level:hover h3{color:var(--green-soft)}
+.f30-level>p:not(.sign){max-height:0;opacity:0;margin:0;overflow:hidden;transition:max-height .38s var(--ease),opacity .3s,margin .3s}
+.f30-level.sel>p:not(.sign){max-height:240px;opacity:1;margin:0 0 10px}
+.f30-level.sel::before{background:rgba(65,227,158,.18);box-shadow:0 0 0 4px var(--navy),0 0 12px var(--green-line)}
+.f30-level.sel h3{color:var(--green)}
+.f30-level h3{display:inline-flex;align-items:center;flex-wrap:wrap;gap:2px}
+.f30-most{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--yellow);border:1px solid rgba(248,227,84,.4);border-radius:20px;padding:3px 9px;margin-left:10px}
+.f30-here{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:var(--green);border-radius:20px;padding:3px 10px;margin-left:10px;font-weight:500}
+.f30-ladder-hint{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:24px 0 4px}
+.f30-ladder-hint b{color:var(--green)}
 .f30-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
 .f30-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:56ch;margin:0 auto 26px}
 .f30-final .cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
@@ -186,6 +197,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     <span class="eyebrow reveal">Pět úrovní na&nbsp;cestě</span>
     <h2 class="h2 reveal">Kde je na&nbsp;téhle cestě vaše firma?</h2>
     <p class="lead reveal">Nejde o&nbsp;přesný test, ale o&nbsp;orientaci. Většina firem, se kterými pracujeme, je dnes na&nbsp;úrovni 1 nebo 2 — a&nbsp;to je v&nbsp;pořádku, tam se dá nejrychleji začít.</p>
+    <p class="f30-ladder-hint reveal"><b>Klikněte na&nbsp;úroveň</b>, kde je dnes vaše firma — rozbalí se detail a&nbsp;uvidíte, co bývá další krok.</p>
     <div class="f30-levels">
       <div class="f30-level reveal" data-lvl="0">
         <h3>Ruční provoz</h3>
@@ -274,6 +286,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
     reveals.forEach(function(el){ io.observe(el); });
   } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+<script>
+/* interaktivní žebřík zralosti — „kde jste vy?" */
+(function(){
+  var levels = document.querySelectorAll('#urovne .f30-level');
+  if(!levels.length) return;
+  levels.forEach(function(lv){
+    var l = lv.getAttribute('data-lvl');
+    if(l==='1'||l==='2'){ var m=document.createElement('span'); m.className='f30-most'; m.textContent='Většina firem'; var h3=lv.querySelector('h3'); if(h3) h3.appendChild(m); }
+    lv.addEventListener('click', function(){
+      var was = lv.classList.contains('sel');
+      levels.forEach(function(o){ o.classList.remove('sel'); var h=o.querySelector('.f30-here'); if(h) h.remove(); });
+      if(!was){ lv.classList.add('sel'); var here=document.createElement('span'); here.className='f30-here'; here.textContent='Vy jste tady'; var h3=lv.querySelector('h3'); if(h3) h3.appendChild(here); }
+    });
+  });
 })();
 </script>
 </body>
