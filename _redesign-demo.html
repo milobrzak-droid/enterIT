@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enter IT — redesign demo</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+:root{
+  --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
+  --white:#FBFBFB; --text:#C6CEDC; --muted:#8A95A8;
+  --green:#41E39E; --green-soft:#7CF0BE; --green-deep:#27B981;
+  --blue:#6ECEFF; --purple:#E399FF; --violet:#B790FF; --yellow:#F8E354; --coral:#FF848C;
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
+  --green-line:rgba(65,227,158,.35); --green-wash:rgba(65,227,158,.08);
+  --head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  --mono:'Fira Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1); --dur:.28s;
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:24px; --maxw:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--text);font-family:var(--mono);font-weight:500;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);font-weight:900;color:var(--white);margin:0}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(65,227,158,.3);color:var(--white)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:2}
+@media(min-width:640px){.wrap{padding:0 36px}}
+@media(min-width:1024px){.wrap{padding:0 60px}}
+.block{padding:clamp(48px,8vh,96px) 0;position:relative}
+.block.alt{background:rgba(16,23,31,.72)}
+
+/* ===== BINARY BACKGROUND ===== */
+#binary{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+.page{position:relative;z-index:1}
+
+/* ===== section kicker (forked from Enter AI) ===== */
+.sec-head{max-width:760px;margin-bottom:44px}
+.sec-kicker{display:inline-flex;align-items:center;gap:13px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.sec-kicker .n{color:var(--green)}
+.sec-kicker .ln{width:46px;height:1px;background:linear-gradient(90deg,var(--green-line),transparent)}
+.sec-head h2{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(28px,3.6vw,44px);line-height:1.03;letter-spacing:-.02em}
+.sec-head p{font-family:var(--mono);font-size:14.5px;line-height:1.65;color:var(--text);max-width:64ch;margin-top:18px}
+.gt{color:var(--green)}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+
+/* ===== HERO ===== */
+.hero{padding-top:clamp(120px,17vh,180px);padding-bottom:clamp(48px,8vh,90px)}
+.hero h1{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(34px,5.4vw,66px);line-height:1;letter-spacing:-.025em;margin:16px 0 0;max-width:17ch}
+.hero .lede{font-family:var(--mono);font-size:clamp(15px,1.6vw,17px);line-height:1.7;color:var(--text);max-width:60ch;margin:24px 0 0}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hbadge{display:inline-flex;align-items:baseline;gap:9px;background:rgba(27,37,51,.66);backdrop-filter:blur(4px);border:2px solid var(--green-line);border-radius:var(--r-lg);padding:12px 18px}
+.hbadge b{font-family:var(--head);font-weight:900;color:var(--green);font-size:22px;line-height:1}
+.hbadge span{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:14px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:2px solid var(--green);background:var(--green);color:var(--navy);padding:15px 24px;border-radius:12px;transition:all .25s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--green-soft);border-color:var(--green-soft);transform:translateY(-2px)}
+.btn.outline{background:transparent;border-color:var(--line-2);color:var(--white)}
+.btn.outline:hover{background:var(--white);border-color:var(--white);color:var(--navy)}
+.btn .arr{transition:transform .25s var(--ease)}.btn:hover .arr{transform:translateX(4px)}
+
+/* ===== FEATURED CASE ===== */
+.feat{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:stretch;margin-top:8px}
+@media(max-width:900px){.feat{grid-template-columns:1fr}}
+.feat-media{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-2);min-height:340px;background:radial-gradient(130% 120% at 70% 10%,rgba(65,227,158,.16),transparent 60%),linear-gradient(160deg,#1e2a3c,#121a27)}
+.feat-media .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px;text-align:center}
+.feat-media .ph .lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.feat-media .ph .big{font-family:var(--head);font-weight:900;font-size:clamp(30px,4vw,52px);color:#fff;line-height:1;letter-spacing:-.02em}
+.feat-media .ph small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.feat-badge{position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--green);border-radius:7px;padding:5px 11px;font-weight:500}
+.feat-body{background:rgba(27,37,51,.6);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:var(--r-xl);padding:30px 30px 28px;display:flex;flex-direction:column}
+.feat-body .kick{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.feat-body h3{font-family:var(--head);font-weight:900;font-size:clamp(21px,2.4vw,27px);color:#fff;letter-spacing:-.015em;line-height:1.1}
+.feat-steps{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-left:2px solid var(--green-line);padding-left:24px}
+.feat-steps li{position:relative;padding-bottom:18px}
+.feat-steps li:last-child{padding-bottom:0}
+.feat-steps li::before{content:"";position:absolute;left:-31px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 8px var(--green-line)}
+.feat-steps b{display:block;font-family:var(--head);font-weight:800;font-size:14px;color:#fff;margin-bottom:3px}
+.feat-steps p{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--text);margin:0}
+.feat-result{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:22px}
+.feat-result div b{display:block;font-family:var(--head);font-weight:900;font-size:22px;color:var(--green);line-height:1}
+.feat-result div span{font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+/* ===== CASE GRID (bc-card, forked from Enter AI) ===== */
+.bc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+@media(max-width:900px){.bc-grid{grid-template-columns:1fr}}
+.bc-card{position:relative;display:flex;flex-direction:column;background:rgba(27,37,51,.6);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:var(--r-xl);padding:26px 24px 22px;overflow:hidden;transition:transform .28s var(--ease),border-color .28s var(--ease)}
+.bc-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ob-acc,var(--green))}
+.bc-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--ob-acc,var(--green)) 45%,var(--line))}
+.bc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.bc-ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--ob-acc,var(--green));background:color-mix(in srgb,var(--ob-acc,var(--green)) 12%,transparent);border:1px solid color-mix(in srgb,var(--ob-acc,var(--green)) 34%,transparent)}
+.bc-ic svg{width:22px;height:22px}
+.bc-tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-acc,var(--green));border:1px solid color-mix(in srgb,var(--ob-acc,var(--green)) 34%,transparent);border-radius:20px;padding:4px 10px}
+.bc-card h3{font-family:var(--head);font-weight:800;font-size:18px;color:#fff;letter-spacing:-.01em;line-height:1.15}
+.bc-card .bc-sub{font-family:var(--mono);font-size:12px;color:var(--ob-acc,var(--green));margin:6px 0 0}
+.bc-card p{font-family:var(--mono);font-size:12.6px;line-height:1.6;color:var(--muted);margin:12px 0 0}
+.bc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px}
+.bc-who{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.bc-go{font-family:var(--mono);font-size:11.5px;color:var(--ob-acc,var(--green));letter-spacing:.03em}
+.model-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:22px;display:inline-flex;align-items:center;gap:8px}
+.model-note .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+.demo-tag{position:fixed;top:12px;right:12px;z-index:20;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--yellow);border-radius:6px;padding:5px 10px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="binary" aria-hidden="true"></canvas>
+<span class="demo-tag">Redesign demo</span>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="block hero">
+  <div class="wrap">
+    <span class="sec-kicker reveal"><span class="n">Enter IT</span><span class="ln"></span><span>Engineering force</span></span>
+    <h1 class="reveal d1">75 vývojářů, kteří <span class="gt">utáhnou celý projekt.</span></h1>
+    <p class="lede reveal d1">Stavíme komplexní infrastruktury, systémy a AI agenty a řídíme dodávky po&nbsp;celé Evropě. Ne parta, co třicet let kóduje ručně — nová generace, která unese enterprise zátěž od&nbsp;architektury po&nbsp;provoz 24/7.</p>
+    <div class="hero-badges reveal d2">
+      <span class="hbadge"><b>75</b><span>vývojářů</span></span>
+      <span class="hbadge"><b>3</b><span>specializované týmy</span></span>
+      <span class="hbadge"><b>EU</b><span>dodávky napříč Evropou</span></span>
+      <span class="hbadge"><b>25+</b><span>referencí</span></span>
+    </div>
+    <div class="hero-cta reveal d2">
+      <a href="#" class="btn">Probrat projekt <span class="arr">→</span></a>
+      <a href="#" class="btn outline">Naše realizace</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="n">03</span><span class="ln"></span><span>Případová studie</span></span>
+      <h2>Agentní dokumentová platforma <span class="gt">nad Business Central.</span></h2>
+      <p>Modelové nasazení pro&nbsp;výrobně-obchodní firmu, ~600&nbsp;lidí, 3&nbsp;země. Ukazuje, jak vypadá plný projekt s&nbsp;Enter&nbsp;IT — od&nbsp;architektury po&nbsp;provoz.</p>
+    </div>
+    <div class="feat reveal">
+      <div class="feat-media">
+        <span class="feat-badge">Modelový projekt</span>
+        <div class="ph">
+          <span class="lab">Doklady zpracované agenty</span>
+          <span class="big">10&nbsp;000+/měs</span>
+          <small>faktury · objednávky · smlouvy · dodací listy</small>
+        </div>
+      </div>
+      <div class="feat-body">
+        <span class="kick">Výzva → Architektura → Integrace → Výsledek</span>
+        <h3>Doklady se samy roztřídí, vytěží a zapíšou do&nbsp;ERP.</h3>
+        <ul class="feat-steps">
+          <li><b>Výzva</b><p>Tři pobočky, tisíce dokladů měsíčně přepisované ručně do&nbsp;systémů, chyby a&nbsp;zpoždění.</p></li>
+          <li><b>Co jsme postavili</b><p>Agentní pipeline: příjem → klasifikace → vytěžení → ověření proti ERP → zápis, s&nbsp;audit trailem.</p></li>
+          <li><b>Jak jsme integrovali</b><p>Napojení na&nbsp;Business Central, e-mail, sklad a&nbsp;DMS; výjimky schvaluje člověk jedním klikem.</p></li>
+          <li><b>Výsledek</b><p>Desítky hodin týdně zpět, řádově nižší chybovost, doklady zpracované tentýž den.</p></li>
+        </ul>
+        <div class="feat-result">
+          <div><b>~40 h/týd</b><span>zpět lidem</span></div>
+          <div><b>3→1</b><span>místa, kde doklady žijí</span></div>
+          <div><b>&lt;1 den</b><span>zpracování dokladu</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE GRID -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="n">04</span><span class="ln"></span><span>Případové studie</span></span>
+      <h2>Co pro vás <span class="gt">postavíme.</span></h2>
+      <p>Modelové projekty napříč obory — každý ukazuje výzvu, architekturu, integraci do&nbsp;vašich systémů a&nbsp;dopad. Takhle vypadá práce s&nbsp;Enter&nbsp;IT.</p>
+    </div>
+    <div class="bc-grid">
+      <a href="#" class="bc-card reveal" style="--ob-acc:#6ECEFF">
+        <div class="bc-head"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Datová platforma nad rozházenými systémy</h3>
+        <p class="bc-sub">Logistika · více zemí</p>
+        <p>ERP + CRM + WMS sjednocené do&nbsp;jednoho zdroje pravdy. Reporting a&nbsp;základ pro&nbsp;agenty nad&nbsp;čistými daty.</p>
+        <div class="bc-foot"><span class="bc-who">architektura + integrace</span><span class="bc-go">Otevřít →</span></div>
+      </a>
+      <a href="#" class="bc-card reveal d1" style="--ob-acc:#B790FF">
+        <div class="bc-head"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Agentní servisní asistent nad firemními daty</h3>
+        <p class="bc-sub">Zákaznická podpora · e-commerce</p>
+        <p>Asistent odpovídá z&nbsp;firemních znalostí, zakládá reklamace a&nbsp;tickety, odbaví většinu opakovaných dotazů sám.</p>
+        <div class="bc-foot"><span class="bc-who">LLM + integrace</span><span class="bc-go">Otevřít →</span></div>
+      </a>
+      <a href="#" class="bc-card reveal d2" style="--ob-acc:#41E39E">
+        <div class="bc-head"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6-1.5A4 4 0 0 0 6 19z"/><path d="M12 12v6M9.5 15l2.5 3 2.5-3"/></svg></span><span class="bc-tag">Modelový projekt</span></div>
+        <h3>Legacy modernizace + cloud migrace</h3>
+        <p class="bc-sub">Průmysl · enterprise</p>
+        <p>Přesun stárnoucího stacku do&nbsp;cloudu bez&nbsp;výpadku provozu, DevOps, monitoring a&nbsp;dlouhodobá údržba pod&nbsp;SLA.</p>
+        <div class="bc-foot"><span class="bc-who">architektura + DevOps</span><span class="bc-go">Otevřít →</span></div>
+      </a>
+    </div>
+    <span class="model-note reveal"><span class="dot"></span>Modelové projekty ilustrují naši kapacitu a&nbsp;postup. Reálné anonymizované výsledky ukazujeme v&nbsp;sekci Reference.</span>
+  </div>
+</section>
+
+</div>
+
+<script>
+/* ===== Binary background — řádky 0/1, světélkují u kurzoru ===== */
+(function(){
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var c = document.getElementById('binary'); if(!c) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio||1, 2);
+  var W, H, cols, rows, cell = 22, digits = [], flip = [];
+  var mx = -9999, my = -9999, tmx = -9999, tmy = -9999, seeded = false;
+  var R = 160; // glow radius px
+
+  function build(){
+    W = c.clientWidth; H = c.clientHeight;
+    c.width = W*DPR; c.height = H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    cols = Math.ceil(W/cell)+1; rows = Math.ceil(H/cell)+1;
+    digits = new Array(cols*rows); flip = new Array(cols*rows);
+    for(var i=0;i<digits.length;i++){ digits[i] = Math.random()<0.5?'0':'1'; flip[i] = Math.random()*400+120; }
+  }
+  function resize(){ build(); }
+  window.addEventListener('resize', resize, {passive:true});
+
+  window.addEventListener('pointermove', function(e){ tmx = e.clientX; tmy = e.clientY; if(!seeded){ mx = tmx; my = tmy; seeded = true; } }, {passive:true});
+  window.addEventListener('pointerleave', function(){ tmx = -9999; tmy = -9999; }, {passive:true});
+
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  var t = 0;
+  function draw(){
+    mx += (tmx-mx)*0.15; my += (tmy-my)*0.15;
+    ctx.clearRect(0,0,W,H);
+    // soft green spotlight under the cursor
+    if(seeded && mx>-9000){
+      var g = ctx.createRadialGradient(mx,my,0,mx,my,R);
+      g.addColorStop(0,'rgba(65,227,158,0.10)');
+      g.addColorStop(0.6,'rgba(65,227,158,0.04)');
+      g.addColorStop(1,'rgba(65,227,158,0)');
+      ctx.fillStyle = g; ctx.fillRect(mx-R,my-R,R*2,R*2);
+    }
+    ctx.font = '12px "Fira Mono", monospace';
+    t++;
+    for(var y=0;y<rows;y++){
+      for(var x=0;x<cols;x++){
+        var idx = y*cols+x;
+        var px = x*cell + cell*0.5, py = y*cell + cell*0.5;
+        // occasional flip
+        if(!RM && (t % (flip[idx]|0)) === 0){ digits[idx] = Math.random()<0.5?'0':'1'; }
+        var dx = px-mx, dy = py-my, dist = Math.sqrt(dx*dx+dy*dy);
+        var glow = dist < R ? (1 - dist/R) : 0;
+        glow = glow*glow;
+        var base = 0.05;
+        var a = base + glow*0.85;
+        if(glow>0.02){
+          ctx.fillStyle = 'rgba('+Math.round(120+glow*(65-120))+','+Math.round(140+glow*(227-140))+','+Math.round(150+glow*(158-150))+','+a+')';
+          if(glow>0.4){ ctx.shadowColor='rgba(65,227,158,'+(glow*0.7)+')'; ctx.shadowBlur=8; } else { ctx.shadowBlur=0; }
+        } else {
+          ctx.fillStyle = 'rgba(150,170,190,'+a+')';
+          ctx.shadowBlur = 0;
+        }
+        ctx.fillText(digits[idx], px, py);
+      }
+    }
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(draw);
+  }
+  build();
+  if(RM){
+    // static single pass
+    ctx.font='12px "Fira Mono", monospace';
+    for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){ ctx.fillStyle='rgba(150,170,190,0.05)'; ctx.fillText(digits[y*cols+x], x*cell+cell*0.5, y*cell+cell*0.5); }
+  } else {
+    requestAnimationFrame(draw);
+  }
+
+  // reveal
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

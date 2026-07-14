@@ -118,6 +118,9 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 .mtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .mtoggle.open span:nth-child(2){opacity:0}
 .mtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#binary{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;opacity:.7;
+  -webkit-mask-image:radial-gradient(135% 100% at 70% 22%,#000 42%,transparent 100%);
+  mask-image:radial-gradient(135% 100% at 70% 22%,#000 42%,transparent 100%)}
 .mobile-menu{position:fixed;inset:74px 0 0;background:var(--navy);border-top:2px solid var(--green);z-index:55;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
   transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto;padding:40px}
@@ -135,6 +138,13 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 /* ============================================================
    HERO
    ============================================================ */
+.sec-kicker{display:inline-flex;align-items:center;gap:13px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.sec-kicker .n{color:var(--green)}
+.sec-kicker .ln{width:46px;height:1px;background:linear-gradient(90deg,var(--green-line),transparent)}
+.hero-badges{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
+.hero-badges .hb{display:inline-flex;align-items:baseline;gap:8px;background:rgba(27,37,51,.55);border:1px solid var(--green-line);border-radius:14px;padding:9px 14px}
+.hero-badges .hb b{font-family:var(--head);font-weight:900;color:var(--green);font-size:16px;line-height:1}
+.hero-badges .hb span{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .hero{padding-top:clamp(120px,18vh,180px);padding-bottom:clamp(50px,8vh,80px)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:34px}}
@@ -455,9 +465,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+/* ===== FEATURED CASE ===== */
+.feat{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:stretch;margin-top:34px}
+@media(max-width:900px){.feat{grid-template-columns:1fr}}
+.feat-media{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-2);min-height:330px;background:radial-gradient(130% 120% at 70% 10%,rgba(65,227,158,.16),transparent 60%),linear-gradient(160deg,#1e2a3c,#121a27)}
+.feat-media .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px;text-align:center}
+.feat-media .ph .lab{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.feat-media .ph .big{font-family:var(--head);font-weight:900;font-size:clamp(30px,4vw,50px);color:#fff;line-height:1;letter-spacing:-.02em}
+.feat-media .ph small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.feat-badge{position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--green);border-radius:7px;padding:5px 11px;font-weight:500}
+.feat-body{background:rgba(27,37,51,.6);border:1px solid var(--line);border-radius:var(--r-xl);padding:30px 30px 28px;display:flex;flex-direction:column}
+.feat-body .fkick{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.feat-body h3{font-family:var(--head);font-weight:900;font-size:clamp(21px,2.4vw,27px);color:#fff;letter-spacing:-.015em;line-height:1.1}
+.feat-steps{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-left:2px solid var(--green-line);padding-left:24px}
+.feat-steps li{position:relative;padding-bottom:18px}
+.feat-steps li:last-child{padding-bottom:0}
+.feat-steps li::before{content:"";position:absolute;left:-31px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 8px var(--green-line)}
+.feat-steps b{display:block;font-family:var(--head);font-weight:800;font-size:14px;color:#fff;margin-bottom:3px}
+.feat-steps p{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--text);margin:0}
+.feat-result{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:22px}
+.feat-result div b{display:block;font-family:var(--head);font-weight:900;font-size:22px;color:var(--green);line-height:1}
+.feat-result div span{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.model-note{font-family:var(--mono);font-size:11.5px;line-height:1.6;color:var(--muted);margin-top:22px;display:flex;align-items:baseline;gap:9px;max-width:70ch}
+.model-note .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex:none;transform:translateY(-1px)}
 </style>
 </head>
 <body>
+<canvas id="binary" aria-hidden="true"></canvas>
 
 <!-- ============ HEADER ============ -->
 <header id="header">
@@ -507,11 +541,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">Vývoj AI řešení · automatizace · agenti</span>
-        <h1 class="h1">Ať počítač dělá <span class="gt">nudnou práci</span> za vaše lidi.
-          <img class="mascot-wave" src="assets/decor/mascot-wave.svg" alt="" aria-hidden="true">
-        </h1>
-        <p class="hero-sub">Stavíme agenty, kteří přepisují faktury, dohledávají objednávky, vyplňují reporty a&nbsp;odpovídají zákazníkům — místo&nbsp;vašich lidí. Napojíme je na&nbsp;vaše systémy a&nbsp;nasadíme do&nbsp;provozu.</p>
+        <span class="sec-kicker"><span class="n">Enter IT</span><span class="ln"></span><span>Engineering force</span></span>
+        <h1 class="h1">Komplexní systémy a&nbsp;agenti, které <span class="gt">utáhne 75 vývojářů.</span></h1>
+        <p class="hero-sub">Nová generace vývojářů, ne&nbsp;parta, co&nbsp;30&nbsp;let kóduje ručně. Stavíme infrastruktury, custom systémy a&nbsp;AI agenty, napojíme je na&nbsp;vaše systémy a&nbsp;řídíme dodávky po&nbsp;celé Evropě — od&nbsp;architektury po&nbsp;provoz 24/7.</p>
+        <div class="hero-badges">
+          <span class="hb"><b>75</b><span>vývojářů</span></span>
+          <span class="hb"><b>3</b><span>specializované týmy</span></span>
+          <span class="hb"><b>EU</b><span>dodávky napříč Evropou</span></span>
+          <span class="hb"><b>25+</b><span>referencí</span></span>
+        </div>
         <form class="capture" id="heroCapture" autocomplete="on">
           <input type="email" id="heroEmail" placeholder="Zadejte e-mail pro výpočet úspor" aria-label="E-mail">
           <button type="submit">Spočítat úsporu →</button>
@@ -668,7 +706,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 <!-- ============ REFERENCES ============ -->
 <section class="block" id="work">
   <div class="wrap">
-    <span class="eyebrow reveal">Reference</span>
+    <span class="sec-kicker reveal"><span class="n">02</span><span class="ln"></span><span>Reference</span></span>
     <h2 class="h2 reveal">Co jsme postavili. A&nbsp;co to přineslo.</h2>
     <p class="lead reveal">Vybrané realizace anonymně po&nbsp;odvětvích — konkrétní reference doložíme na&nbsp;schůzce.</p>
     <div class="wk-grid">
@@ -682,6 +720,41 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   </div>
 </section>
 
+<!-- ============ FEATURED CASE ============ -->
+<section class="block" id="pripadovka">
+  <div class="wrap">
+    <span class="sec-kicker reveal"><span class="n">03</span><span class="ln"></span><span>Případová studie</span></span>
+    <h2 class="h2 reveal">Agentní dokumentová platforma <span class="gt">nad Business Central.</span></h2>
+    <p class="lead reveal">Modelové nasazení pro&nbsp;výrobně-obchodní firmu, ~600&nbsp;lidí, 3&nbsp;země. Ukazuje, jak vypadá plný projekt s&nbsp;Enter&nbsp;IT — od&nbsp;architektury po&nbsp;provoz.</p>
+    <div class="feat reveal">
+      <div class="feat-media">
+        <span class="feat-badge">Modelový projekt</span>
+        <div class="ph">
+          <span class="lab">Doklady zpracované agenty</span>
+          <span class="big">10&nbsp;000+/měs</span>
+          <small>faktury · objednávky · smlouvy · dodací listy</small>
+        </div>
+      </div>
+      <div class="feat-body">
+        <span class="fkick">Výzva → Architektura → Integrace → Výsledek</span>
+        <h3>Doklady se samy roztřídí, vytěží a&nbsp;zapíšou do&nbsp;ERP.</h3>
+        <ul class="feat-steps">
+          <li><b>Výzva</b><p>Tři pobočky, tisíce dokladů měsíčně přepisované ručně do&nbsp;systémů, chyby a&nbsp;zpoždění.</p></li>
+          <li><b>Co jsme postavili</b><p>Agentní pipeline: příjem → klasifikace → vytěžení → ověření proti&nbsp;ERP → zápis, s&nbsp;audit trailem.</p></li>
+          <li><b>Jak jsme integrovali</b><p>Napojení na&nbsp;Business Central, e-mail, sklad a&nbsp;DMS; výjimky schvaluje člověk jedním klikem.</p></li>
+          <li><b>Výsledek</b><p>Desítky hodin týdně zpět, řádově nižší chybovost, doklady zpracované tentýž den.</p></li>
+        </ul>
+        <div class="feat-result">
+          <div><b>~40 h/týd</b><span>zpět lidem</span></div>
+          <div><b>3→1</b><span>místa, kde doklady žijí</span></div>
+          <div><b>&lt;1 den</b><span>zpracování dokladu</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="model-note reveal"><span class="dot"></span>Modelové projekty ilustrují naši kapacitu, architekturu a&nbsp;postup dodávky. Reálné, anonymizované výsledky najdete v&nbsp;sekci Reference výše.</p>
+  </div>
+</section>
+
 <!-- ============ PROJECTS ============ -->
 <section class="block sol-block" id="projekty">
   <img class="tc-vec l" src="assets/decor/tc-leftVector.svg" alt="" aria-hidden="true">
@@ -690,8 +763,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
     <div class="pjt-grid">
 
       <div class="pjt-head">
-        <span class="eyebrow reveal">Projekty</span>
-        <h2 class="h2 reveal">Projekty, které už běží.</h2>
+        <span class="sec-kicker reveal"><span class="n">04</span><span class="ln"></span><span>Modelové projekty</span></span>
+        <h2 class="h2 reveal">Co pro vás <span class="gt">postavíme.</span></h2>
         <p class="lead reveal">Žádné prezentace. Tři konkrétní věci z&nbsp;poslední doby, které dnes reálně dělají svou práci.</p>
       </div>
 
@@ -1078,6 +1151,58 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
         '&body='+encodeURIComponent(body);
     });
   }
+})();
+</script>
+<script>
+/* ===== Binary background — řádky 0/1, světélkují u kurzoru ===== */
+(function(){
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var c = document.getElementById('binary'); if(!c) return;
+  var ctx = c.getContext('2d');
+  var DPR = Math.min(window.devicePixelRatio||1, 2);
+  var W, H, cols, rows, cell = 26, digits = [], flip = [];
+  var mx = -9999, my = -9999, tmx = -9999, tmy = -9999, seeded = false;
+  var R = 160;
+  function build(){
+    W = c.clientWidth; H = c.clientHeight;
+    c.width = W*DPR; c.height = H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    cols = Math.ceil(W/cell)+1; rows = Math.ceil(H/cell)+1;
+    digits = new Array(cols*rows); flip = new Array(cols*rows);
+    for(var i=0;i<digits.length;i++){ digits[i] = Math.random()<0.5?'0':'1'; flip[i] = Math.random()*400+120; }
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+  }
+  window.addEventListener('resize', build, {passive:true});
+  window.addEventListener('pointermove', function(e){ tmx = e.clientX; tmy = e.clientY; if(!seeded){ mx = tmx; my = tmy; seeded = true; } }, {passive:true});
+  window.addEventListener('pointerleave', function(){ tmx = -9999; tmy = -9999; }, {passive:true});
+  var t = 0;
+  function draw(){
+    mx += (tmx-mx)*0.15; my += (tmy-my)*0.15;
+    ctx.clearRect(0,0,W,H);
+    if(seeded && mx>-9000){
+      var g = ctx.createRadialGradient(mx,my,0,mx,my,R);
+      g.addColorStop(0,'rgba(65,227,158,0.10)'); g.addColorStop(0.6,'rgba(65,227,158,0.04)'); g.addColorStop(1,'rgba(65,227,158,0)');
+      ctx.fillStyle = g; ctx.fillRect(mx-R,my-R,R*2,R*2);
+    }
+    ctx.font = '12px "Fira Mono", monospace'; t++;
+    for(var y=0;y<rows;y++){
+      for(var x=0;x<cols;x++){
+        var idx = y*cols+x, px = x*cell + cell*0.5, py = y*cell + cell*0.5;
+        if(!RM && (t % (flip[idx]|0)) === 0){ digits[idx] = Math.random()<0.5?'0':'1'; }
+        var dx = px-mx, dy = py-my, dist = Math.sqrt(dx*dx+dy*dy);
+        var glow = dist < R ? (1 - dist/R) : 0; glow = glow*glow;
+        var a = 0.05 + glow*0.85;
+        if(glow>0.02){
+          ctx.fillStyle = 'rgba('+Math.round(120+glow*(65-120))+','+Math.round(140+glow*(227-140))+','+Math.round(150+glow*(158-150))+','+a+')';
+          ctx.shadowBlur = glow>0.4 ? 8 : 0; ctx.shadowColor = 'rgba(65,227,158,'+(glow*0.7)+')';
+        } else { ctx.fillStyle = 'rgba(150,170,190,'+a+')'; ctx.shadowBlur = 0; }
+        ctx.fillText(digits[idx], px, py);
+      }
+    }
+    ctx.shadowBlur = 0; requestAnimationFrame(draw);
+  }
+  build();
+  if(RM){ ctx.font='12px "Fira Mono", monospace'; for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){ ctx.fillStyle='rgba(150,170,190,0.05)'; ctx.fillText(digits[y*cols+x], x*cell+cell*0.5, y*cell+cell*0.5); } }
+  else { requestAnimationFrame(draw); }
 })();
 </script>
 </body>
