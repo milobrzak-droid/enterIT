@@ -270,40 +270,35 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 /* ============================================================
    SOLUTIONS — GREEN BLOCK with white bordered cards (signature)
    ============================================================ */
-.sol-block{background:var(--green);position:relative;overflow:hidden}
-.sol-block .tc-vec{position:absolute;pointer-events:none;opacity:.5;z-index:0}
-.sol-block .tc-vec.l{left:-50px;top:-30px;width:180px}
-.sol-block .tc-vec.r{right:-50px;bottom:-30px;width:230px}
+.sol-block{position:relative;overflow:hidden}
+.sol-block .tc-vec{display:none}
 .sol-block .wrap{position:relative;z-index:1}
-.sol-block .eyebrow{color:#15412f}
-.sol-block .h2{color:var(--navy)}
-.sol-block .lead{color:#173b2c}
-.prj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.prj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}
 @media(max-width:1080px){.prj-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.prj-grid{grid-template-columns:1fr}}
-.prj-wrap{position:relative}
-.prj{position:relative;z-index:1;background:var(--white);border:2px solid var(--navy);border-radius:var(--r-lg);
-  padding:22px 20px;height:100%;transition:transform .3s var(--ease)}
-.prj-wrap::before{content:"";position:absolute;inset:0;border-radius:var(--r-lg);background:var(--navy);z-index:0;transition:transform .3s var(--ease)}
-.prj-wrap:hover::before{transform:translate(8px,8px)}
-.prj-wrap:hover .prj{transform:translate(-2px,-2px)}
-.prj-ic{width:44px;height:44px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.prj-ic svg{width:23px;height:23px;color:var(--green)}
-.prj h3{font-family:var(--head);font-weight:900;color:var(--navy);font-size:19px;line-height:1.1;margin-bottom:10px}
-.prj .solves{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:#3a4654;margin:0 0 16px}
+.prj-wrap{position:relative;text-decoration:none}
+.prj{position:relative;z-index:1;background:rgba(27,37,51,.55);border:1px solid var(--line);border-radius:var(--r-xl);
+  padding:22px 20px;height:100%;transition:transform .28s var(--ease),border-color .28s var(--ease);overflow:hidden;display:flex;flex-direction:column}
+.prj::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--green);opacity:0;transition:opacity .25s}
+.prj-wrap:hover .prj{transform:translateY(-5px);border-color:var(--green-line)}
+.prj-wrap:hover .prj::after{opacity:1}
+.prj-ic{width:42px;height:42px;border-radius:11px;background:var(--green-wash);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.prj-ic svg{width:22px;height:22px;color:var(--green)}
+.prj h3{font-family:var(--head);font-weight:800;color:#fff;font-size:17px;line-height:1.15;margin-bottom:9px;letter-spacing:-.01em}
+.prj .solves{font-family:var(--mono);font-size:12.3px;line-height:1.55;color:var(--muted);margin:0 0 15px}
 .prj-io{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:14px}
-.prj-io span{font-family:var(--mono);font-size:10.5px;padding:4px 8px;border-radius:7px;line-height:1.3}
-.prj-io .b4{background:#eef1f4;color:#46505d;border:1px solid #dfe4e9}
-.prj-io .ar{color:var(--green-deep);font-weight:700;padding:0 2px}
-.prj-io .af{background:var(--green-wash);color:#176147;border:1px solid var(--green-line)}
-.prj .save{font-family:var(--mono);font-size:12px;color:#3a4654;border-top:1px solid #e7eaee;padding-top:13px}
-.prj .save b{font-family:var(--head);font-weight:900;color:var(--navy);font-size:14px}
-.prj-more{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--green-deep);margin-top:12px}
+.prj-io span{font-family:var(--mono);font-size:10.5px;padding:5px 9px;border-radius:7px;line-height:1.3}
+.prj-io .b4{background:var(--navy-1);color:var(--muted);border:1px solid var(--line-2)}
+.prj-io .ar{color:var(--green);font-weight:700;padding:0 2px}
+.prj-io .af{background:var(--green-wash);color:var(--green);border:1px solid var(--green-line)}
+.prj .save{font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:13px;margin-top:auto}
+.prj .save b{font-family:var(--head);font-weight:900;color:var(--green);font-size:14px}
+.prj-more{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--green);margin-top:12px}
 .prj-more .arr{display:inline-block;transition:transform .2s var(--ease)}
 .prj-wrap:hover .prj-more .arr{transform:translateX(4px)}
 .sol-foot{margin-top:34px}
-.sol-foot .tlink{color:var(--navy)}
-.sol-foot .tlink:hover{color:#15412f}
+.sol-foot .tlink{color:var(--green)}
+.sol-foot .tlink:hover{color:var(--green-soft)}
 
 /* ============================================================
    PROJECTS — konkrétní projekty (zelený blok, nadpis v gridu)
