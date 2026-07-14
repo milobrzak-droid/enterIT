@@ -420,6 +420,37 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 .idf-val h4{font-family:var(--head);font-weight:800;font-size:16px;color:#fff;margin:8px 0 6px;letter-spacing:-.005em}
 .idf-val p{font-family:var(--mono);font-size:12.4px;line-height:1.6;color:var(--muted);margin:0}
 .intg-more-lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:44px 0 4px}
+/* ===== NO-CODE CONNECTOR (interaktivní) ===== */
+.nc{margin-top:34px}
+.nc-hint-lab{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:center;margin-bottom:16px}
+.nc-hint-lab b{color:var(--green)}
+.nc-canvas{position:relative;height:430px;background:radial-gradient(120% 90% at 50% 50%,rgba(65,227,158,.05),transparent 70%),linear-gradient(180deg,rgba(27,37,51,.45),rgba(16,23,31,.25));border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden}
+@media(max-width:640px){.nc-canvas{height:520px}}
+.nc-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.nc-wires line{stroke-width:2;stroke-dasharray:5 9;opacity:.85;animation:ncFlow 1s linear infinite;filter:drop-shadow(0 0 3px currentColor)}
+@keyframes ncFlow{to{stroke-dashoffset:-14}}
+.nc-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;text-align:center;
+  background:linear-gradient(160deg,rgba(65,227,158,.2),rgba(16,23,31,.7));border:1.5px solid var(--green-line);border-radius:16px;padding:15px 24px;box-shadow:0 0 46px rgba(65,227,158,.28)}
+.nc-hub b{display:block;font-family:var(--head);font-weight:800;color:#fff;font-size:16px;letter-spacing:-.005em}
+.nc-hub span{font-family:var(--mono);font-size:11px;color:var(--green)}
+.nc-node{position:absolute;transform:translate(-50%,-50%);z-index:4;background:var(--navy-1);border:1.5px solid var(--acc);border-radius:12px;padding:10px 13px;font-family:var(--mono);font-size:12.5px;color:#fff;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px -8px color-mix(in srgb,var(--acc) 60%,transparent);animation:ncPop .32s var(--ease)}
+.nc-node .d{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px var(--acc);flex:none}
+.nc-node .x{margin-left:2px;color:var(--muted);font-size:14px;line-height:1}
+.nc-node:hover .x{color:#fff}
+@keyframes ncPop{from{transform:translate(-50%,-50%) scale(.55);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.nc-empty{position:absolute;left:50%;top:74%;transform:translateX(-50%);width:80%;text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--muted);z-index:2}
+.nc-palette{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;justify-content:center}
+.nc-chip{font-family:var(--mono);font-size:12.5px;color:var(--text);background:var(--navy-1);border:1px solid var(--line-2);border-radius:99px;padding:9px 15px;cursor:pointer;transition:all .18s var(--ease);display:inline-flex;align-items:center;gap:8px}
+.nc-chip .d{width:7px;height:7px;border-radius:50%;background:var(--acc);opacity:.55;transition:opacity .18s}
+.nc-chip:hover{border-color:color-mix(in srgb,var(--acc) 55%,var(--line-2));color:#fff;transform:translateY(-2px)}
+.nc-chip:hover .d{opacity:1}
+.nc-chip.on{background:color-mix(in srgb,var(--acc) 15%,var(--navy-1));border-color:var(--acc);color:#fff}
+.nc-chip.on .d{opacity:1;box-shadow:0 0 8px var(--acc)}
+.nc-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-top:20px}
+.nc-status{font-family:var(--mono);font-size:13.5px;color:var(--text);text-align:center}
+.nc-status b{color:var(--green)}
+.nc-reset{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line-2);border-radius:99px;padding:7px 14px;cursor:pointer;transition:all .18s}
+.nc-reset:hover{color:#fff;border-color:var(--line-2)}
 
 /* ============================================================
    HOW — colored bordered panel with numbered steps
@@ -996,50 +1027,44 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   <div class="wrap">
     <span class="sec-kicker reveal"><span class="n">06</span><span class="ln"></span><span>Integrace</span></span>
     <h2 class="h2 reveal">Vaše systémy spolu <span class="gt">konečně mluví.</span></h2>
-    <p class="lead reveal">Nejvíc času a&nbsp;chyb vzniká tam, kde se&nbsp;data ručně přepisují mezi systémy — a&nbsp;ty bývají staré a&nbsp;spolu nemluví. My z&nbsp;nich data vyčteme, propojíme je a&nbsp;načteme zpět, automaticky. <b style="color:var(--white);font-weight:600">To je náš největší obor.</b></p>
+    <p class="lead reveal">Nejvíc času a&nbsp;chyb vzniká tam, kde se&nbsp;data ručně přepisují mezi systémy — a&nbsp;ty bývají staré a&nbsp;spolu nemluví. My z&nbsp;nich data vyčteme, propojíme je a&nbsp;načteme zpět, automaticky. <b style="color:var(--white);font-weight:600">Rozmluvit staré systémy, které spolu nemluví, umí málokdo. My ano.</b></p>
 
-    <div class="idf reveal">
-      <div class="idf-lab">Vaše systémy — často staré, každý zvlášť</div>
-      <div class="idf-sys">
-        <span class="idf-chip old">ERP <span class="tag">staré</span></span>
-        <span class="idf-chip">CRM</span>
-        <span class="idf-chip">E-shop</span>
-        <span class="idf-chip old">Sklad <span class="tag">staré</span></span>
-        <span class="idf-chip">E-maily</span>
-        <span class="idf-chip">Účetnictví</span>
+    <div class="nc reveal">
+      <div class="nc-hint-lab">Zkuste si to — <b>klikněte na své systémy</b> a&nbsp;Enter&nbsp;IT je propojí. Data mezi nimi začnou téct.</div>
+      <div class="nc-canvas" id="ncCanvas">
+        <svg class="nc-wires" id="ncWires"></svg>
+        <div class="nc-hub"><b>Enter&nbsp;IT</b><span>integrační vrstva</span></div>
+        <div class="nc-empty" id="ncEmpty">Vyberte systémy níže — uvidíte, jak je propojíme a&nbsp;jak mezi nimi tečou data.</div>
       </div>
-      <div class="idf-conn"><i></i><i></i><i></i><i></i></div>
-      <div class="idf-core">
-        <span class="idf-core-lab">Enter&nbsp;IT · integrační vrstva</span>
-        <span class="idf-core-sub">vyčítá, propojuje a&nbsp;načítá data mezi systémy</span>
+      <div class="nc-palette" id="ncPalette">
+        <button class="nc-chip" type="button" data-sys="SAP" data-acc="#6ECEFF" style="--acc:#6ECEFF"><span class="d"></span>SAP</button>
+        <button class="nc-chip" type="button" data-sys="Business Central" data-acc="#6ECEFF" style="--acc:#6ECEFF"><span class="d"></span>Business Central</button>
+        <button class="nc-chip" type="button" data-sys="Helios" data-acc="#6ECEFF" style="--acc:#6ECEFF"><span class="d"></span>Helios</button>
+        <button class="nc-chip" type="button" data-sys="Pohoda" data-acc="#6ECEFF" style="--acc:#6ECEFF"><span class="d"></span>Pohoda</button>
+        <button class="nc-chip" type="button" data-sys="Salesforce" data-acc="#B790FF" style="--acc:#B790FF"><span class="d"></span>Salesforce</button>
+        <button class="nc-chip" type="button" data-sys="HubSpot" data-acc="#B790FF" style="--acc:#B790FF"><span class="d"></span>HubSpot</button>
+        <button class="nc-chip" type="button" data-sys="Raynet" data-acc="#B790FF" style="--acc:#B790FF"><span class="d"></span>Raynet</button>
+        <button class="nc-chip" type="button" data-sys="Shopify" data-acc="#41E39E" style="--acc:#41E39E"><span class="d"></span>Shopify</button>
+        <button class="nc-chip" type="button" data-sys="Shoptet" data-acc="#41E39E" style="--acc:#41E39E"><span class="d"></span>Shoptet</button>
+        <button class="nc-chip" type="button" data-sys="Sklad / WMS" data-acc="#41E39E" style="--acc:#41E39E"><span class="d"></span>Sklad / WMS</button>
+        <button class="nc-chip" type="button" data-sys="Microsoft 365" data-acc="#FF848C" style="--acc:#FF848C"><span class="d"></span>Microsoft 365</button>
+        <button class="nc-chip" type="button" data-sys="Outlook / e-maily" data-acc="#FF848C" style="--acc:#FF848C"><span class="d"></span>Outlook / e-maily</button>
+        <button class="nc-chip" type="button" data-sys="n8n" data-acc="#F8E354" style="--acc:#F8E354"><span class="d"></span>n8n</button>
+        <button class="nc-chip" type="button" data-sys="Make" data-acc="#F8E354" style="--acc:#F8E354"><span class="d"></span>Make</button>
+        <button class="nc-chip" type="button" data-sys="Claude" data-acc="#E399FF" style="--acc:#E399FF"><span class="d"></span>Claude</button>
+        <button class="nc-chip" type="button" data-sys="Copilot" data-acc="#E399FF" style="--acc:#E399FF"><span class="d"></span>Copilot</button>
       </div>
-      <div class="idf-conn"><i></i><i></i><i></i><i></i></div>
-      <div class="idf-res">
-        <span>Jeden tok dat</span>
-        <span>Aktuální data všude</span>
-        <span>Bez ručního přepisování</span>
-      </div>
-      <div class="idf-vals">
-        <div class="idf-val"><span class="vn">01 · Vyčteme</span><h4>Data ven ze&nbsp;starých systémů</h4><p>I&nbsp;z&nbsp;těch, které spolu nemluví a&nbsp;nemají moderní rozhraní.</p></div>
-        <div class="idf-val"><span class="vn">02 · Propojíme</span><h4>Systémy mezi sebou</h4><p>ERP, CRM, e-shop, sklad i&nbsp;e-maily do&nbsp;jednoho spolehlivého toku.</p></div>
-        <div class="idf-val"><span class="vn">03 · Načteme</span><h4>Data zpět, kam patří</h4><p>Správně a&nbsp;automaticky — konec duplicitního přepisování.</p></div>
+      <div class="nc-bar">
+        <span class="nc-status" id="ncStatus">Ukázka — reálně napojíme <b>60+ systémů</b>. Vyberte pár a&nbsp;uvidíte.</span>
+        <button class="nc-reset" id="ncReset" type="button">Vyčistit</button>
       </div>
     </div>
 
-    <p class="intg-more-lab reveal">Napojíme se na&nbsp;60+ systémů — najděte ten svůj</p>
-    <div class="intg-search reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input id="intgSearch" type="text" placeholder="Napište svůj systém (SAP, Pohoda, Shoptet…)" aria-label="Hledat systém">
+    <div class="idf-vals reveal" style="margin-top:32px">
+      <div class="idf-val"><span class="vn">01 · Vyčteme</span><h4>Data ven ze&nbsp;starých systémů</h4><p>I&nbsp;z&nbsp;těch, které spolu nemluví a&nbsp;nemají moderní rozhraní.</p></div>
+      <div class="idf-val"><span class="vn">02 · Propojíme</span><h4>Systémy mezi sebou</h4><p>ERP, CRM, e-shop, sklad i&nbsp;e-maily do&nbsp;jednoho spolehlivého toku.</p></div>
+      <div class="idf-val"><span class="vn">03 · Načteme</span><h4>Data zpět, kam patří</h4><p>Správně a&nbsp;automaticky — konec duplicitního přepisování.</p></div>
     </div>
-    <div id="intgWrap" class="reveal">
-      <div class="intg-row"><div class="intg-cat">ERP</div><div class="intg-chips"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span><span>Karat</span></div></div>
-      <div class="intg-row"><div class="intg-cat">CRM</div><div class="intg-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div></div>
-      <div class="intg-row"><div class="intg-cat">E-shop</div><div class="intg-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div></div>
-      <div class="intg-row"><div class="intg-cat">Komunikace &amp; data</div><div class="intg-chips"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div></div>
-      <div class="intg-row"><div class="intg-cat">Automatizace</div><div class="intg-chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div></div>
-      <div class="intg-row"><div class="intg-cat">AI modely</div><div class="intg-chips"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div></div>
-    </div>
-    <p class="intg-empty" id="intgEmpty" style="display:none">Tenhle systém v&nbsp;seznamu není? Nevadí — napojíme se i&nbsp;na&nbsp;něj. <a class="tlink" href="#contact">Zeptejte se →</a></p>
   </div>
 </section>
 
@@ -1456,6 +1481,58 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
       panels.forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-team')===team); });
     });
   });
+})();
+</script>
+<script>
+/* ===== No-code connector — interaktivní propojení systémů ===== */
+(function(){
+  var canvas=document.getElementById('ncCanvas'), svg=document.getElementById('ncWires'),
+      palette=document.getElementById('ncPalette'), status=document.getElementById('ncStatus'),
+      empty=document.getElementById('ncEmpty'), reset=document.getElementById('ncReset');
+  if(!canvas||!svg||!palette) return;
+  var SLOTS=[[24,18],[76,18],[10,50],[90,50],[24,82],[76,82]];
+  var slotUsed=new Array(SLOTS.length).fill(null), nodes={}, SVGNS='http://www.w3.org/2000/svg';
+  function px(p){ return [p[0]/100*canvas.clientWidth, p[1]/100*canvas.clientHeight]; }
+  function hub(){ return [canvas.clientWidth/2, canvas.clientHeight/2]; }
+  function redraw(){ var h=hub(); Object.keys(nodes).forEach(function(name){ var n=nodes[name], p=px(SLOTS[n.slot]);
+    n.line.setAttribute('x1',p[0]);n.line.setAttribute('y1',p[1]);n.line.setAttribute('x2',h[0]);n.line.setAttribute('y2',h[1]); }); }
+  window.addEventListener('resize',redraw,{passive:true});
+  function cnt(){ return Object.keys(nodes).length; }
+  function plural(n){ return n===1?'systém':(n>=2&&n<=4?'systémy':'systémů'); }
+  function upd(){ var n=cnt();
+    if(n===0){ empty.style.display=''; status.innerHTML='Ukázka — reálně napojíme <b>60+ systémů</b>. Vyberte pár a&nbsp;uvidíte.'; return; }
+    empty.style.display='none';
+    status.innerHTML = n===1 ? '<b>1</b> systém napojený — přidejte další, začnou spolu mluvit.'
+      : 'Enter&nbsp;IT propojuje <b>'+n+'</b> '+plural(n)+' — data tečou mezi nimi automaticky.'; }
+  function firstFree(){ for(var i=0;i<slotUsed.length;i++) if(!slotUsed[i]) return i; return -1; }
+  function add(name,acc,chip){
+    if(nodes[name]){ remove(name); return; }
+    var slot=firstFree();
+    if(slot<0){ status.innerHTML='Kapacita ukázky je plná — reálně napojíme <b>kolik potřebujete</b>.'; return; }
+    slotUsed[slot]=name;
+    var p=px(SLOTS[slot]), h=hub();
+    var line=document.createElementNS(SVGNS,'line');
+    line.setAttribute('x1',p[0]);line.setAttribute('y1',p[1]);line.setAttribute('x2',h[0]);line.setAttribute('y2',h[1]);
+    line.setAttribute('stroke',acc); line.style.color=acc; svg.appendChild(line);
+    var el=document.createElement('button'); el.type='button'; el.className='nc-node';
+    el.style.setProperty('--acc',acc); el.style.left=SLOTS[slot][0]+'%'; el.style.top=SLOTS[slot][1]+'%';
+    el.innerHTML='<span class="d"></span>'+name+'<span class="x">×</span>';
+    el.addEventListener('click',function(){ remove(name); });
+    canvas.appendChild(el);
+    nodes[name]={el:el,line:line,slot:slot,chip:chip};
+    if(chip) chip.classList.add('on');
+    upd();
+  }
+  function remove(name){ var n=nodes[name]; if(!n) return;
+    n.el.remove(); n.line.remove(); slotUsed[n.slot]=null; if(n.chip) n.chip.classList.remove('on'); delete nodes[name]; upd(); }
+  palette.querySelectorAll('.nc-chip').forEach(function(chip){
+    chip.addEventListener('click',function(){ add(chip.getAttribute('data-sys'),chip.getAttribute('data-acc'),chip); }); });
+  if(reset) reset.addEventListener('click',function(){ Object.keys(nodes).slice().forEach(remove); });
+  setTimeout(function(){
+    ['SAP','Shopify','Outlook / e-maily'].forEach(function(s){
+      var c=palette.querySelector('[data-sys="'+s+'"]'); if(c && !c.classList.contains('on')) c.click(); });
+    redraw();
+  },250);
 })();
 </script>
 <script>
