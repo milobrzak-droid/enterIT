@@ -203,14 +203,14 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
    ============================================================ */
 .partners{text-align:center}
 .partners .plab{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
-.partners-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
-.partners-row img{height:34px;width:auto;object-fit:contain;opacity:.9}
-.ms-logo{display:inline-flex;align-items:center;gap:11px}
-.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:24px;height:24px}
-.ms-sq i{display:block;border-radius:1px}
-.ms-tx{display:flex;flex-direction:column;line-height:1.1;text-align:left}
-.ms-tx b{font-family:var(--head);font-weight:700;color:var(--white);font-size:15px}
-.ms-tx span{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.partners-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:32px 64px}
+.partners-row img.p-main{height:56px;width:auto;object-fit:contain;opacity:1}
+.ms-logo{display:inline-flex;align-items:center;gap:13px}
+.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:28px;height:28px}
+.ms-sq i{display:block;border-radius:1px;background:#EAEDF3}
+.ms-tx{display:flex;flex-direction:column;line-height:1.12;text-align:left}
+.ms-tx b{font-family:var(--head);font-weight:700;color:var(--white);font-size:18px;letter-spacing:.01em}
+.ms-tx span{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
 /* ============================================================
    GENERIC CARD HELPERS
@@ -225,25 +225,39 @@ header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-
 @media(max-width:920px){.cfg{grid-template-columns:1fr}}
 .cfg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:560px){.cfg-grid{grid-template-columns:1fr}}
-.cfg-card{text-align:left;cursor:pointer;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);
-  padding:18px 18px;position:relative;transition:border-color .2s,transform .2s,background .2s;font-family:var(--mono)}
-.cfg-card:hover{border-color:var(--green-line);transform:translateY(-2px)}
-.cfg-card.on{border-color:var(--green);background:var(--green-wash)}
-.cfg-card .chk{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line-2);
+.cfg-card{--acc:var(--green);text-align:left;cursor:pointer;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);
+  padding:18px 18px;position:relative;transition:border-color .2s,transform .2s,background .2s,box-shadow .2s;font-family:var(--mono);overflow:hidden}
+.cfg-grid .cfg-card:nth-child(8n+1){--acc:#6ECEFF}
+.cfg-grid .cfg-card:nth-child(8n+2){--acc:#B790FF}
+.cfg-grid .cfg-card:nth-child(8n+3){--acc:#41E39E}
+.cfg-grid .cfg-card:nth-child(8n+4){--acc:#FF848C}
+.cfg-grid .cfg-card:nth-child(8n+5){--acc:#F8E354}
+.cfg-grid .cfg-card:nth-child(8n+6){--acc:#E399FF}
+.cfg-grid .cfg-card:nth-child(8n+7){--acc:#6ECEFF}
+.cfg-grid .cfg-card:nth-child(8n){--acc:#B790FF}
+.cfg-card::after{content:"";position:absolute;inset:auto -28% -55% auto;width:62%;height:62%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 28%,transparent),transparent 66%);opacity:0;transition:opacity .28s;pointer-events:none}
+.cfg-card:hover{border-color:color-mix(in srgb,var(--acc) 60%,var(--line));transform:translateY(-3px)}
+.cfg-card:hover::after{opacity:.5}
+.cfg-card:active{transform:translateY(-1px) scale(.99)}
+.cfg-card.on{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 9%,var(--navy-1));box-shadow:0 0 0 1px color-mix(in srgb,var(--acc) 38%,transparent),0 16px 36px -20px color-mix(in srgb,var(--acc) 70%,transparent)}
+.cfg-card.on::after{opacity:1}
+.cfg-card .chk{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line-2);z-index:1;
   display:flex;align-items:center;justify-content:center;transition:all .2s}
 .cfg-card .chk svg{width:13px;height:13px;color:var(--navy);opacity:0;transition:opacity .2s}
-.cfg-card.on .chk{background:var(--green);border-color:var(--green)}
+.cfg-card.on .chk{background:var(--acc);border-color:var(--acc);transform:scale(1.12)}
 .cfg-card.on .chk svg{opacity:1}
-.cfg-card .hrs{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--green);
-  background:var(--green-wash);border:1px solid var(--green-line);border-radius:99px;padding:3px 10px;margin-bottom:12px}
-.cfg-card .pain{display:block;font-family:var(--head);font-weight:700;color:var(--white);font-size:16px;line-height:1.25;margin-bottom:10px;padding-right:26px}
-.cfg-card .sol{display:block;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--muted)}
+.cfg-card .hrs{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--acc);position:relative;z-index:1;
+  background:color-mix(in srgb,var(--acc) 13%,transparent);border:1px solid color-mix(in srgb,var(--acc) 36%,transparent);border-radius:99px;padding:3px 10px;margin-bottom:12px}
+.cfg-card .pain{display:block;font-family:var(--head);font-weight:700;color:var(--white);font-size:16px;line-height:1.25;margin-bottom:10px;padding-right:26px;position:relative;z-index:1}
+.cfg-card .sol{display:block;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--muted);position:relative;z-index:1}
 .cfg-card .sol b{color:var(--text);font-weight:500}
 .cfg-panel{background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);
   border-radius:var(--r-xl);padding:30px 28px;position:sticky;top:100px;text-align:center;overflow:hidden}
 .cfg-panel::before{content:"";position:absolute;top:-40%;right:-25%;width:300px;height:300px;background:radial-gradient(circle,var(--green-wash),transparent 70%);pointer-events:none}
 .cfg-panel .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cfg-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(48px,7vw,72px);line-height:1;margin:8px 0 2px}
+.cfg-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(48px,7vw,72px);line-height:1;margin:8px 0 2px;text-shadow:0 0 34px rgba(65,227,158,.4);transition:transform .3s var(--ease)}
+.cfg-big.bump{animation:cfgBump .34s var(--ease)}
+@keyframes cfgBump{0%{transform:scale(1)}42%{transform:scale(1.09)}100%{transform:scale(1)}}
 .cfg-unit{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:20px}
 .cfg-bar{height:8px;border-radius:99px;background:var(--navy-3);overflow:hidden;margin-bottom:10px}
 .cfg-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green-deep),var(--green));border-radius:99px;transition:width .5s var(--ease)}
@@ -626,14 +640,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 <!-- ============ PARTNERS ============ -->
 <section class="block tight partners">
   <div class="wrap reveal">
-    <span class="plab">Stavíme na ověřeném stacku · partneři</span>
     <div class="partners-row">
+      <img class="p-main" src="assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy">
       <span class="ms-logo">
-        <span class="ms-sq"><i style="background:#F25022"></i><i style="background:#7FBA00"></i><i style="background:#00A4EF"></i><i style="background:#FFB900"></i></span>
+        <span class="ms-sq"><i></i><i></i><i></i><i></i></span>
         <span class="ms-tx"><b>Microsoft</b><span>Solutions Partner</span></span>
       </span>
-      <img src="assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy">
-      <img src="assets/logos/techmates-white.png" alt="Techmates" loading="lazy">
     </div>
   </div>
 </section>
@@ -1206,6 +1218,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
       var n = sel.length;
       var hrs = sel.reduce(function(s,c){ return s+(parseInt(c.dataset.hrs,10)||0); },0);
       elHrs.textContent = cz(hrs)+' h';
+      elHrs.classList.remove('bump'); void elHrs.offsetWidth; elHrs.classList.add('bump');
       elBar.style.width = (maxHrs?Math.min(hrs/maxHrs*100,100):0)+'%';
       elMoney.textContent = '~ '+fmtMoney(hrs*12*500);
       elCount.textContent = n===0 ? 'Vyberte, co vás zdržuje ↑' : ('Řešíme '+n+' '+plural(n));
