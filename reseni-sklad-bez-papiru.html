@@ -153,6 +153,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 .rs-badge .ic svg{width:20px;height:20px}
 .rs-badge b{display:block;font-family:var(--head);font-weight:800;color:var(--white);font-size:14.5px;margin-bottom:5px;letter-spacing:-.005em}
 .rs-badge .cap{font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--muted)}
+
+.rs-flow{counter-reset:rsstep;padding-left:46px}
+.rs-flow-step{counter-increment:rsstep}
+.rs-flow-step::before{content:counter(rsstep);left:-60px;top:-4px;width:28px;height:28px;background:var(--navy-1);border:2px solid var(--green);color:var(--green);font-family:var(--head);font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--navy)}
+.rs-flow-step.esc::before{content:"👤";background:rgba(110,206,255,.14);border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 4px var(--navy),0 0 10px rgba(110,206,255,.4)}
+.rs-flow-step.esc b{color:var(--blue)}
 </style>
 </head>
 <body>
@@ -216,11 +222,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     <h2 class="h2 reveal">Krok za&nbsp;krokem</h2>
     <p class="lead reveal">Konkrétní tok — ne&nbsp;sliby. A&nbsp;stejně důležité je, co agent záměrně nedělá.</p>
     <div class="rs-flow">
-      <div class="rs-flow-step reveal"><b>1. Skladník vyfotí dodací list</b><p>V&nbsp;mobilní appce, nebo ho pošle na&nbsp;určenou adresu.</p></div>
-      <div class="rs-flow-step reveal"><b>2. Agent vytěží data</b><p>Dodavatele, položky, množství, šarže.</p></div>
-      <div class="rs-flow-step reveal"><b>3. Spáruje s&nbsp;objednávkou</b><p>Porovná: přišlo, co jsme objednali? V&nbsp;objednaném množství?</p></div>
-      <div class="rs-flow-step reveal"><b>4. Naskladní</b><p>V&nbsp;ERP a&nbsp;připraví příjemku.</p></div>
-      <div class="rs-flow-step esc reveal"><b>5. Rozdíly hlásí hned a&nbsp;volá člověka</b><p>Chybějící položky, přebytky, poškození jdou rovnou nákupčímu do&nbsp;Teams, dokud je řidič ještě na&nbsp;rampě. Stejně tak neznámou položku nebo nečitelný dodací list agent nehádá.</p></div>
+      <div class="rs-flow-step reveal"><b>Skladník vyfotí dodací list</b><p>V&nbsp;mobilní appce, nebo ho pošle na&nbsp;určenou adresu.</p></div>
+      <div class="rs-flow-step reveal"><b>Agent vytěží data</b><p>Dodavatele, položky, množství, šarže.</p></div>
+      <div class="rs-flow-step reveal"><b>Spáruje s&nbsp;objednávkou</b><p>Porovná: přišlo, co jsme objednali? V&nbsp;objednaném množství?</p></div>
+      <div class="rs-flow-step reveal"><b>Naskladní</b><p>V&nbsp;ERP a&nbsp;připraví příjemku.</p></div>
+      <div class="rs-flow-step esc reveal"><b>Rozdíly hlásí hned a&nbsp;volá člověka</b><p>Chybějící položky, přebytky, poškození jdou rovnou nákupčímu do&nbsp;Teams, dokud je řidič ještě na&nbsp;rampě. Stejně tak neznámou položku nebo nečitelný dodací list agent nehádá.</p></div>
     </div>
   </div>
 </section>
