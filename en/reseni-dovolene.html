@@ -17,7 +17,7 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="AI Enter s.r.o.">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Enter IT">
+<meta property="og:site_name" content="EnterIT">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Paperless leave approvals — in Teams | Enter IT">
 <meta property="og:description" content="Requests, approvals and balances in one place. Deployment 2–4 weeks — the ideal first automation.">
@@ -26,9 +26,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Paperless leave approvals — in Teams | Enter IT">
 <meta name="twitter:description" content="Requests, approvals and balances in one place. Deployment 2–4 weeks — the ideal first automation.">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Paperless leave approvals — in Teams | Enter IT">
+<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+<meta name="twitter:image:alt" content="Paperless leave approvals — in Teams | Enter IT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/en/reseni-dovolene.html#webpage","url":"https://enterit.cz/en/reseni-dovolene.html","name":"Paperless leave approvals — in Teams | Enter IT","description":"Requests, approvals and balances in one place. Deployment 2–4 weeks — the ideal first automation.","inLanguage":"en","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/en/reseni-dovolene.html#service"},"breadcrumb":{"@id":"https://enterit.cz/en/reseni-dovolene.html#breadcrumb"}},{"@type":"Service","@id":"https://enterit.cz/en/reseni-dovolene.html#service","name":"Requests, approvals and leave balances in one place.","description":"Requests, approvals and balances in one place. Deployment 2–4 weeks — the ideal first automation.","url":"https://enterit.cz/en/reseni-dovolene.html","serviceType":"Requests, approvals and leave balances in one place.","provider":{"@id":"https://enterit.cz/#organization"},"areaServed":{"@type":"Place","name":"Europe"},"availableLanguage":["cs","en","de","pl"]},{"@type":"BreadcrumbList","@id":"https://enterit.cz/en/reseni-dovolene.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://enterit.cz/en.html"},{"@type":"ListItem","position":2,"name":"Requests, approvals and leave balances in one place.","item":"https://enterit.cz/en/reseni-dovolene.html"}]}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "We also have sick days, home office and time off in lieu.", "acceptedAnswer": {"@type": "Answer", "text": "Every type of absence, the same process."}}, {"@type": "Question", "name": "Does it work without Teams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — e-mail or a simple web app."}}]}</script>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -94,8 +102,8 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu a{font-family:var(--head);font-weight:700;font-size:26px;color:var(--white)}
 .mobile-menu a:hover{color:var(--green)}
-@media(max-width:1000px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
-@media(min-width:1001px){.mobile-menu{display:none}}
+@media(max-width:1180px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
+@media(min-width:1181px){.mobile-menu{display:none}}
 .rs-hero{padding-top:clamp(120px,17vh,170px);padding-bottom:8px}
 .rs-hero-num{display:inline-flex;align-items:baseline;gap:10px;margin-top:8px;background:var(--navy-1);border:2px solid var(--green-line);border-radius:var(--r-lg);padding:14px 22px}
 .rs-hero-num b{font-family:var(--head);font-weight:900;color:var(--green);font-size:28px}
@@ -131,7 +139,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .rs-case p{font-family:var(--mono);font-size:14px;line-height:1.75;color:var(--text);margin:0}
 .rs-faq{margin-top:30px;display:grid;gap:14px}
 .rs-faq-item{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-md);padding:18px 22px}
-.rs-faq-item h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:15px;margin:0 0 8px}
+.rs-faq-item h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:15px;margin:0 0 8px}
 .rs-faq-item p{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--text);margin:0}
 .rs-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
 .rs-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 26px}
@@ -148,14 +156,17 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
+<link rel="stylesheet" href="/assets/site-ui.css">
+<script src="/assets/site-ui.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header id="header">
   <div class="wrap">
     <nav class="nav">
       <a class="brand" href="/en.html" aria-label="Enter IT — home">
-        <img src="/assets/enter_logo_white.svg" alt="Enter">
+        <img src="/assets/enter_logo_white.svg" alt="Enter" width="477" height="200" decoding="async">
         <span class="it">IT</span>
       </a>
       <div class="nav-links">
@@ -166,8 +177,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
         <a href="/en.html#work">Case studies</a>
       </div>
       <div class="nav-right">
+        <div class="page-lang lang-desktop" role="group" aria-label="Language"><a href="/reseni-dovolene.html" lang="cs" hreflang="cs">CZ</a><a href="/en/reseni-dovolene.html" lang="en" hreflang="en" aria-current="page">EN</a><a href="/de/reseni-dovolene.html" lang="de" hreflang="de">DE</a><a href="/pl/reseni-dovolene.html" lang="pl" hreflang="pl">PL</a></div>
         <a class="btn green" href="/en.html#contact">Contact us</a>
-        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button class="mtoggle" id="mtoggle" aria-controls="mmenu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
@@ -179,15 +191,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <a href="/en.html#integ">Integrations</a>
   <a href="/en.html#work">Case studies</a>
   <a href="/en.html#contact">Contact</a>
+  <div class="page-lang" role="group" aria-label="Language"><a href="/reseni-dovolene.html" lang="cs" hreflang="cs">CZ</a><a href="/en/reseni-dovolene.html" lang="en" hreflang="en" aria-current="page">EN</a><a href="/de/reseni-dovolene.html" lang="de" hreflang="de">DE</a><a href="/pl/reseni-dovolene.html" lang="pl" hreflang="pl">PL</a></div>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <section class="block rs-hero">
   <div class="wrap">
     <span class="eyebrow reveal">Ready-made solutions · Leave</span>
     <h1 class="h1 reveal">Requests, approvals and leave balances in one place.</h1>
-    <p class="hero-sub reveal">Paper request forms and “boss, can I&nbsp;take Friday off?” e-mails are replaced by one process: the employee requests in Teams, the manager approves with a&nbsp;click, and the balance tracks itself.</p>
+    <p class="hero-sub reveal">Employees request leave in&nbsp;Teams, managers approve in&nbsp;one click and&nbsp;balances update automatically.</p>
     <div class="rs-hero-num reveal"><b>2–4 weeks</b><span>to deployment</span></div>
   </div>
 </section>
@@ -197,9 +210,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     <span class="eyebrow reveal">Where it hurts today</span>
     <h2 class="h2 reveal">Where the time really goes</h2>
     <div class="rs-pains">
-      <div class="rs-pain reveal"><p>Nobody keeps a&nbsp;systematic record of paper forms and e-mails.</p></div>
-      <div class="rs-pain reveal"><p>Everyone counts their leave balance differently — the numbers don’t match for HR, the manager or the employee.</p></div>
-      <div class="rs-pain reveal"><p>Clashes within the team (who’s already off) only surface when it’s too late to reshuffle.</p></div>
+      <div class="rs-pain reveal"><p>Paper forms and&nbsp;e-mails have no consistent record.</p></div>
+      <div class="rs-pain reveal"><p>HR, managers and&nbsp;employees see different balances.</p></div>
+      <div class="rs-pain reveal"><p>Team clashes surface too late.</p></div>
     </div>
   </div>
 </section>
@@ -208,13 +221,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">How the agent works</span>
     <h2 class="h2 reveal">Step by step</h2>
-    <p class="lead reveal">A concrete flow — not promises. And just as important: what the agent deliberately does not do.</p>
+    <p class="lead reveal">A&nbsp;controlled flow with&nbsp;clear manager approval.</p>
     <div class="rs-flow">
-      <div class="rs-flow-step reveal"><b>1. The employee requests</b><p>Wherever they’re used to — Teams, e-mail, phone. Just “I’d like leave 14–18 July.”</p></div>
-      <div class="rs-flow-step reveal"><b>2. The agent checks</b><p>The balance, clashes in the team (who’s already off) and flags minimum staffing.</p></div>
-      <div class="rs-flow-step reveal"><b>3. The manager approves</b><p>With a&nbsp;single click — the team calendar is right there.</p></div>
-      <div class="rs-flow-step reveal"><b>4. It records itself</b><p>Into attendance, the calendar and the payroll inputs.</p></div>
-      <div class="rs-flow-step esc reveal"><b>5. The agent tracks balances, a person approves</b><p>It flags unused leave before year-end. But approval always rests with the manager — the agent enforces the rules and handles the admin.</p></div>
+      <div class="rs-flow-step reveal"><b>1. Employee request</b><p>Through Teams, e-mail or phone.</p></div>
+      <div class="rs-flow-step reveal"><b>2. Automatic checks</b><p>Balance, team clashes and&nbsp;minimum staffing.</p></div>
+      <div class="rs-flow-step reveal"><b>3. Manager approval</b><p>One click beside the team calendar.</p></div>
+      <div class="rs-flow-step reveal"><b>4. Automatic record</b><p>Attendance, calendar and&nbsp;payroll inputs update.</p></div>
+      <div class="rs-flow-step esc reveal"><b>5. Balance alerts</b><p>The agent flags unused leave; approval always remains with&nbsp;the manager.</p></div>
     </div>
   </div>
 </section>
@@ -234,7 +247,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">What we need from you</span>
-    <h2 class="h2 reveal">The input from you is deliberately small</h2>
+    <h2 class="h2 reveal">We keep your input to a minimum</h2>
     <ul class="rs-need">
       <li class="reveal">M365 or Google Workspace.</li>
       <li class="reveal">Leave balances — an export from payroll.</li>
@@ -248,9 +261,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     <span class="eyebrow reveal">Security and compliance</span>
     <h2 class="h2 reveal">Your data stays with you</h2>
     <div class="rs-sec-box reveal">
-      <p>We process data in your own infrastructure or in an&nbsp;EU cloud, as you prefer; both transfer and storage are encrypted.</p>
-      <p>Processing complies with GDPR and the&nbsp;AI Act; for sensitive data we offer on-prem operation.</p>
-      <p>Only the roles that should have access to the data do, with an approval and audit trail.</p>
+      <p>Run in&nbsp;your infrastructure or an&nbsp;EU cloud, with encrypted transfer and&nbsp;storage.</p>
+      <p>GDPR and&nbsp;AI Act controls, plus on-prem operation for&nbsp;sensitive data.</p>
+      <p>Role-based access with&nbsp;approval and&nbsp;audit trails.</p>
     </div>
   </div>
 </section>
@@ -271,10 +284,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">FAQ</span>
-    <h2 class="h2 reveal">What people ask us most</h2>
+    <h2 class="h2 reveal">Frequently asked questions</h2>
     <div class="rs-faq">
-      <div class="rs-faq-item reveal"><h4>We also have sick days, home office and&nbsp;time off in lieu.</h4><p>Every type of absence, the same process.</p></div>
-      <div class="rs-faq-item reveal"><h4>Does it work without&nbsp;Teams?</h4><p>Yes — e-mail or a&nbsp;simple web app.</p></div>
+      <div class="rs-faq-item reveal"><h3>We also have sick days, home office and&nbsp;time off in lieu.</h3><p>Every type of absence, the same process.</p></div>
+      <div class="rs-faq-item reveal"><h3>Does it work without&nbsp;Teams?</h3><p>Yes — e-mail or a&nbsp;simple web app.</p></div>
     </div>
   </div>
 </section>
@@ -283,8 +296,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <div class="cta-card reveal">
       <span class="eyebrow">Let's get started</span>
-      <h2 class="h2">The fastest deployment in our whole range — the ideal first step.</h2>
-      <p>30&nbsp;minutes, no commitment. We’ll walk through how it works at your company today and tell you what to do about it — and how much it saves.</p>
+      <h2 class="h2">The fastest deployment in&nbsp;our portfolio — an ideal first step.</h2>
+      <p>In&nbsp;30 minutes, map the process and&nbsp;estimate its time and&nbsp;cost savings.</p>
       <div class="cta-btns">
         <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener" class="btn green">Book 30 min <span class="arr">→</span></a>
         <a href="/en.html#calc" class="btn outline">Calculate the saving in the calculator</a>
@@ -298,7 +311,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <footer class="footer">
   <div class="wrap">
     <div class="foot-logo">
-      <img src="/assets/decor/enty.svg" alt="" style="width:44px;height:44px">
+      <img src="/assets/decor/enty.svg" alt="" style="width:44px;height:44px" width="160" height="160" decoding="async" loading="lazy">
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">

@@ -23,8 +23,19 @@
 <meta property="og:description" content="Architektura, bezpečnost, human-in-the-loop a měření. Jak vypadá AI agent, který ve firmě reálně běží — krok za krokem.">
 <meta property="og:url" content="https://enterit.cz/jak-stavime-agenty.html">
 <meta property="og:image" content="https://enterit.cz/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jak stavíme AI agenty | EnterIT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jak stavíme AI agenty | EnterIT">
+<meta name="twitter:description" content="Architektura, bezpečnost, human-in-the-loop a měření. Jak vypadá AI agent, který ve firmě reálně běží — krok za krokem.">
+<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+<meta name="twitter:image:alt" content="Jak stavíme AI agenty | EnterIT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/jak-stavime-agenty.html#webpage","url":"https://enterit.cz/jak-stavime-agenty.html","name":"Jak stavíme AI agenty | EnterIT","description":"Architektura, bezpečnost, human-in-the-loop a měření. Jak vypadá AI agent, který ve firmě reálně běží — krok za krokem.","inLanguage":"cs","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/jak-stavime-agenty.html#article"},"breadcrumb":{"@id":"https://enterit.cz/jak-stavime-agenty.html#breadcrumb"}},{"@type":"TechArticle","@id":"https://enterit.cz/jak-stavime-agenty.html#article","headline":"Agent není chatbot. Je to digitální kolega s jasně danou náplní práce.","description":"Architektura, bezpečnost, human-in-the-loop a měření. Jak vypadá AI agent, který ve firmě reálně běží — krok za krokem.","inLanguage":"cs","url":"https://enterit.cz/jak-stavime-agenty.html","image":"https://enterit.cz/assets/og.png","author":{"@id":"https://enterit.cz/#organization"},"publisher":{"@id":"https://enterit.cz/#organization"},"mainEntityOfPage":{"@id":"https://enterit.cz/jak-stavime-agenty.html#webpage"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/jak-stavime-agenty.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://enterit.cz/"},{"@type":"ListItem","position":2,"name":"Agent není chatbot. Je to digitální kolega s jasně danou náplní práce.","item":"https://enterit.cz/jak-stavime-agenty.html"}]}]}</script>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -92,14 +103,14 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu a{font-family:var(--head);font-weight:700;font-size:26px;color:var(--white)}
 .mobile-menu a:hover{color:var(--green)}
-@media(max-width:1000px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
-@media(min-width:1001px){.mobile-menu{display:none}}
+@media(max-width:1180px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
+@media(min-width:1181px){.mobile-menu{display:none}}
 .jp-hero{padding-top:clamp(120px,18vh,180px);padding-bottom:12px}
 .jp-blocks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
 @media(max-width:820px){.jp-blocks{grid-template-columns:1fr}}
 .jp-block{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;transition:border-color .2s,transform .2s}
 .jp-block:hover{border-color:var(--green-line);transform:translateY(-2px)}
-.jp-block h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;margin:0 0 9px;line-height:1.25}
+.jp-block h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;margin:0 0 9px;line-height:1.25}
 .jp-block p{font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--text);margin:0}
 .jp-num{display:grid;grid-template-columns:36px 1fr;gap:14px}
 .jp-num i{font-family:var(--head);font-weight:900;color:var(--green);font-size:16px;font-style:normal}
@@ -116,7 +127,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .jp-step:last-child{padding-bottom:0}
 .jp-step::before{content:"";position:absolute;left:-34px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 10px var(--green-line)}
 .jp-step .sn{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
-.jp-step h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:18px;margin:6px 0 8px}
+.jp-step h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:18px;margin:6px 0 8px}
 .jp-step p{font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--text);margin:0;max-width:70ch}
 .jp-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
 .jp-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 26px}
@@ -133,46 +144,51 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
+<link rel="stylesheet" href="/assets/site-ui.css">
+<script src="/assets/site-ui.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Přeskočit na obsah</a>
 
 <header id="header">
   <div class="wrap">
     <nav class="nav">
-      <a class="brand" href="index.html" aria-label="EnterIT — domů">
-        <img src="assets/enter_logo_white.svg" alt="Enter">
+      <a class="brand" href="/" aria-label="EnterIT — domů">
+        <img src="assets/enter_logo_white.svg" alt="Enter" width="477" height="200" decoding="async">
         <span class="it">IT</span>
       </a>
       <div class="nav-links">
-        <a href="index.html#problems">Co řešíme</a>
-        <a href="index.html#solutions">Hotová řešení</a>
-        <a href="index.html#how">Jak to děláme</a>
-        <a href="index.html#integ">Integrace</a>
-        <a href="index.html#work">Reference</a>
+        <a href="/#problems">Co řešíme</a>
+        <a href="/#solutions">Hotová řešení</a>
+        <a href="/#how">Jak to děláme</a>
+        <a href="/#integ">Integrace</a>
+        <a href="/#work">Reference</a>
       </div>
       <div class="nav-right">
-        <a class="btn green" href="index.html#contact">Kontaktovat</a>
-        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="page-lang lang-desktop" role="group" aria-label="Jazyk"><a href="/jak-stavime-agenty.html" lang="cs" hreflang="cs" aria-current="page">CZ</a><a href="/en/jak-stavime-agenty.html" lang="en" hreflang="en">EN</a><a href="/de/jak-stavime-agenty.html" lang="de" hreflang="de">DE</a><a href="/pl/jak-stavime-agenty.html" lang="pl" hreflang="pl">PL</a></div>
+        <a class="btn green" href="/#contact">Kontaktovat</a>
+        <button class="mtoggle" id="mtoggle" aria-controls="mmenu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 <nav class="mobile-menu" id="mmenu">
-  <a href="index.html#problems">Co řešíme</a>
-  <a href="index.html#solutions">Hotová řešení</a>
-  <a href="index.html#how">Jak to děláme</a>
-  <a href="index.html#integ">Integrace</a>
-  <a href="index.html#work">Reference</a>
-  <a href="index.html#contact">Kontakt</a>
+  <a href="/#problems">Co řešíme</a>
+  <a href="/#solutions">Hotová řešení</a>
+  <a href="/#how">Jak to děláme</a>
+  <a href="/#integ">Integrace</a>
+  <a href="/#work">Reference</a>
+  <a href="/#contact">Kontakt</a>
+  <div class="page-lang" role="group" aria-label="Jazyk"><a href="/jak-stavime-agenty.html" lang="cs" hreflang="cs" aria-current="page">CZ</a><a href="/en/jak-stavime-agenty.html" lang="en" hreflang="en">EN</a><a href="/de/jak-stavime-agenty.html" lang="de" hreflang="de">DE</a><a href="/pl/jak-stavime-agenty.html" lang="pl" hreflang="pl">PL</a></div>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <section class="block jp-hero">
   <div class="wrap">
     <span class="eyebrow reveal">Jak to děláme</span>
     <h1 class="h1 reveal">Agent není chatbot. Je to digitální kolega s&nbsp;jasně danou náplní práce.</h1>
-    <p class="hero-sub reveal">Stavíme agenta, který umí přečíst dokument, rozhodnout se podle vašich pravidel a&nbsp;tam, kde je potřeba úsudek, předat věc člověku. Funguje to ale jen tehdy, když má přesně definovanou roli, vstup, výstup a&nbsp;mantinely. Přesně tohle děláme — a&nbsp;tady ukazujeme jak.</p>
+    <p class="hero-sub reveal">Agent přečte dokument, postupuje podle vašich pravidel a&nbsp;výjimku předá člověku. Tady ukazujeme, jak mu nastavujeme roli, vstupy, výstupy i&nbsp;mantinely.</p>
   </div>
 </section>
 
@@ -180,12 +196,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Nejdřív základy</span>
     <h2 class="h2 reveal">Co je AI agent a&nbsp;čím se liší od&nbsp;běžné automatizace</h2>
-    <p class="lead reveal">Automatizace jede po&nbsp;pevné koleji: když přijde X, udělej Y. Skvělé pro věci, které se nemění. Agent dostane cíl a&nbsp;kontext a&nbsp;sám rozhoduje, jakými kroky se k&nbsp;němu dostane — přečte dokument, najde podobnost, vede konverzaci, a&nbsp;když je něco nad jeho síly, eskaluje na&nbsp;člověka. To je rozdíl mezi skriptem a&nbsp;digitálním kolegou.</p>
+    <p class="lead reveal">Automatizace plní pevný postup. Agent dostane cíl a&nbsp;kontext, volí kroky a&nbsp;výjimku eskaluje člověku.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Automatizace = pevná kolej</h4><p>Pevný postup, žádné rozhodování. Když přijde faktura v&nbsp;očekávaném formátu, přepíše se do&nbsp;systému. Spolehlivé, levné, ale slepé k&nbsp;výjimce. Jiný formát a&nbsp;stojí to.</p></div>
-      <div class="jp-block reveal"><h4>Agent = cíl a&nbsp;úsudek</h4><p>Řekneme mu „vytvoř položky v&nbsp;ERP z&nbsp;téhle objednávky" a&nbsp;poradí si i&nbsp;s&nbsp;tím, že každý zákazník píše e-mail jinak. Rozumí obsahu, ne&nbsp;jen formátu. Náš agent na&nbsp;objednávky z&nbsp;e-mailu nečte formulář — rozumí objednávce.</p></div>
-      <div class="jp-block reveal"><h4>Proč na&nbsp;tom záleží rozhodovateli</h4><p>Agent zvládne procesy, které dřív vyžadovaly člověka, protože šlo o&nbsp;úsudek nad textem a&nbsp;dokumenty. To je přesně ta drahá, vyčerpávající rutina, kterou nešlo „naskriptovat" — a&nbsp;kde dnes utíká čas i&nbsp;know-how.</p></div>
-      <div class="jp-block reveal"><h4>Není to magie, je to inženýrství</h4><p>Agent funguje spolehlivě jen tehdy, když má správně postavený rámec: roli, vstupy, výstupy, pravidla, integrace a&nbsp;metriky. Bez toho je to jen efektní demo, které se v&nbsp;ostrém provozu rozsype. My stavíme ten první typ.</p></div>
+      <div class="jp-block reveal"><h3>Automatizace = pevná kolej</h3><p>Spolehlivý postup pro&nbsp;očekávaný vstup, bez&nbsp;rozhodování nad&nbsp;výjimkou.</p></div>
+      <div class="jp-block reveal"><h3>Agent = cíl a&nbsp;úsudek</h3><p>Rozumí obsahu, zvolí správné kroky a&nbsp;zvládne i&nbsp;různé formáty objednávek.</p></div>
+      <div class="jp-block reveal"><h3>Proč na&nbsp;tom záleží rozhodovateli</h3><p>Přebírá drahou rutinu nad&nbsp;textem a&nbsp;dokumenty, kterou dřív nešlo jednoduše naskriptovat.</p></div>
+      <div class="jp-block reveal"><h3>Není to magie, je to inženýrství</h3><p>Spolehlivost stojí na&nbsp;roli, pravidlech, integracích, kontrole a&nbsp;metrikách.</p></div>
     </div>
   </div>
 </section>
@@ -194,16 +210,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Anatomie agenta</span>
     <h2 class="h2 reveal">Z&nbsp;čeho se skládá spolehlivý agent — krok za&nbsp;krokem</h2>
-    <p class="lead reveal">Tohle je jádro celé práce. Agent není jeden „chytrý model", ale systém jasně definovaných komponent. Vynechte jednu a&nbsp;agent vám dlouhodobě neposlouží — proto to není levná práce, ale projekt s&nbsp;váhou. Takhle ho stavíme.</p>
+    <p class="lead reveal">Agent není jeden model, ale systém osmi jasně definovaných komponent.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal jp-num"><i>1</i><div><h4>Role — co dělá a&nbsp;co NE</h4><p>Přesná role a&nbsp;její hranice — co dělá a&nbsp;hlavně co&nbsp;NE. Hranice je polovina spolehlivosti.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>2</i><div><h4>Vstup a&nbsp;výstup v&nbsp;každém kroku</h4><p>Jasný vstup (PDF, e-mail) a&nbsp;výstup (řádky do&nbsp;ERP). Dá se ověřit a&nbsp;změřit.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>3</i><div><h4>Pravidla a&nbsp;guardrails — smí / nesmí</h4><p>Co smí sám a&nbsp;kde zastaví. Kolejnice, díky kterým se dá agentovi věřit u&nbsp;živého ERP.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>4</i><div><h4>Nástroje a&nbsp;integrace — ruce agenta</h4><p>Napojení na&nbsp;ERP, e-mail, CRM i&nbsp;CAD — ruce agenta přímo ve&nbsp;vašich systémech.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>5</i><div><h4>Paměť a&nbsp;kontext — RAG</h4><p>Odpovídá z&nbsp;vašich dokumentů — a&nbsp;vždycky ukáže zdroj.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>6</i><div><h4>Human-in-the-loop — kde rozhoduje člověk</h4><p>Agent doporučuje, člověk schvaluje. Podpis dělá člověk, ne&nbsp;stroj.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>7</i><div><h4>Metriky — podle čeho ho hodnotíme</h4><p>Chybovost, úspora, využití. Měříme a&nbsp;ladíme — ne&nbsp;nasadit a&nbsp;zapomenout.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>8</i><div><h4>Governance a&nbsp;bezpečnost od&nbsp;začátku</h4><p>Kdo co smí, jak se přistupuje k&nbsp;datům, u&nbsp;citlivých dat privátní AI on-prem. Bezpečnost je v&nbsp;návrhu, ne&nbsp;dodatek na&nbsp;konci.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>1</i><div><h3>Role — co dělá a&nbsp;co NE</h3><p>Přesná role a&nbsp;její hranice — co dělá a&nbsp;hlavně co&nbsp;NE. Hranice je polovina spolehlivosti.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>2</i><div><h3>Vstup a&nbsp;výstup v&nbsp;každém kroku</h3><p>Jasný vstup (PDF, e-mail) a&nbsp;výstup (řádky do&nbsp;ERP). Dá se ověřit a&nbsp;změřit.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>3</i><div><h3>Pravidla a&nbsp;guardrails — smí / nesmí</h3><p>Co smí sám a&nbsp;kde zastaví. Kolejnice, díky kterým se dá agentovi věřit u&nbsp;živého ERP.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>4</i><div><h3>Nástroje a&nbsp;integrace — ruce agenta</h3><p>Napojení na&nbsp;ERP, e-mail, CRM i&nbsp;CAD — ruce agenta přímo ve&nbsp;vašich systémech.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>5</i><div><h3>Paměť a&nbsp;kontext — RAG</h3><p>Odpovídá z&nbsp;vašich dokumentů — a&nbsp;vždycky ukáže zdroj.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>6</i><div><h3>Human-in-the-loop — kde rozhoduje člověk</h3><p>Agent doporučuje, člověk schvaluje. Podpis dělá člověk, ne&nbsp;stroj.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>7</i><div><h3>Metriky — podle čeho ho hodnotíme</h3><p>Chybovost, úspora, využití. Měříme a&nbsp;ladíme — ne&nbsp;nasadit a&nbsp;zapomenout.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>8</i><div><h3>Governance a&nbsp;bezpečnost od&nbsp;začátku</h3><p>Kdo co smí, jak se přistupuje k&nbsp;datům, u&nbsp;citlivých dat privátní AI on-prem. Bezpečnost je v&nbsp;návrhu, ne&nbsp;dodatek na&nbsp;konci.</p></div></div>
     </div>
     <div class="jp-callout reveal">
       <p><b>Co agent nedělá:</b> neposílá nic ven z&nbsp;firmy bez&nbsp;schválení. Nemaže data. Nerozhoduje o&nbsp;penězích — schvalování zůstává lidem. Neučí se na&nbsp;vašich datech pro&nbsp;nikoho jiného.</p>
@@ -228,14 +244,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Typy agentů</span>
     <h2 class="h2 reveal">Co agenti v&nbsp;naší praxi opravdu umí</h2>
-    <p class="lead reveal">Nejde o&nbsp;abstraktní kategorie ze&nbsp;slidu. Každý typ máme postavený v&nbsp;reálném projektu. Model a&nbsp;nástroj volíme podle úlohy a&nbsp;citlivosti dat — Claude, GPT, Gemini, Copilot, Azure OpenAI, nebo lokální model — ne&nbsp;podle módy.</p>
+    <p class="lead reveal">Každý typ máme v&nbsp;reálném projektu. Model volíme podle úlohy a&nbsp;citlivosti dat, ne&nbsp;podle módy.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Čtecí / extrakční agent</h4><p>Přečte PDF výkres, razítko, kusovník, fakturu, smlouvu, a&nbsp;vytěží z&nbsp;nich strukturovaná data. Základ pro&nbsp;strojírenské provozy i&nbsp;pro&nbsp;vytěžování příloh.</p></div>
-      <div class="jp-block reveal"><h4>E-mailový agent</h4><p>Objednávka přijde mailem, agent z&nbsp;ní vytěží položky a&nbsp;založí ji v&nbsp;ERP — místo ručního přepisování položku po&nbsp;položce. Umí i&nbsp;navrhnout odpověď na&nbsp;opakující se dotazy.</p></div>
-      <div class="jp-block reveal"><h4>Znalostní / RAG agent</h4><p>Odpovídá nad&nbsp;firemní dokumentací přirozeným jazykem a&nbsp;vždy ukáže zdroj. Servisní know-how, které dřív odcházelo s&nbsp;techniky, zůstává ve&nbsp;firmě.</p></div>
-      <div class="jp-block reveal"><h4>Procesní agent</h4><p>Ze&nbsp;zápisu ze&nbsp;schůzky udělá úkoly a&nbsp;eskalace. Samoobslužná dovednost, kterou umí spustit každý zaměstnanec, ne&nbsp;jen IT.</p></div>
-      <div class="jp-block reveal"><h4>Reportovací agent</h4><p>Data z&nbsp;ERP nebo datového skladu přirozeným jazykem. Místo proklikávání exportů se obchodník zeptá a&nbsp;dostane filtrovanou odpověď.</p></div>
-      <div class="jp-block reveal"><h4>Komunikační agent / chatbot</h4><p>Web, WhatsApp, 24/7. Odbaví dotaz, filtruje poštu, odpoví na&nbsp;opakující se dotaz a&nbsp;zbytek pošle na&nbsp;člověka.</p></div>
+      <div class="jp-block reveal"><h3>Čtecí / extrakční agent</h3><p>Přečte PDF výkres, razítko, kusovník, fakturu, smlouvu, a&nbsp;vytěží z&nbsp;nich strukturovaná data. Základ pro&nbsp;strojírenské provozy i&nbsp;pro&nbsp;vytěžování příloh.</p></div>
+      <div class="jp-block reveal"><h3>E-mailový agent</h3><p>Objednávka přijde mailem, agent z&nbsp;ní vytěží položky a&nbsp;založí ji v&nbsp;ERP — místo ručního přepisování položku po&nbsp;položce. Umí i&nbsp;navrhnout odpověď na&nbsp;opakující se dotazy.</p></div>
+      <div class="jp-block reveal"><h3>Znalostní / RAG agent</h3><p>Odpovídá nad&nbsp;firemní dokumentací přirozeným jazykem a&nbsp;vždy ukáže zdroj. Servisní know-how, které dřív odcházelo s&nbsp;techniky, zůstává ve&nbsp;firmě.</p></div>
+      <div class="jp-block reveal"><h3>Procesní agent</h3><p>Ze&nbsp;zápisu ze&nbsp;schůzky udělá úkoly a&nbsp;eskalace. Samoobslužná dovednost, kterou umí spustit každý zaměstnanec, ne&nbsp;jen IT.</p></div>
+      <div class="jp-block reveal"><h3>Reportovací agent</h3><p>Data z&nbsp;ERP nebo datového skladu přirozeným jazykem. Místo proklikávání exportů se obchodník zeptá a&nbsp;dostane filtrovanou odpověď.</p></div>
+      <div class="jp-block reveal"><h3>Komunikační agent / chatbot</h3><p>Web, WhatsApp, 24/7. Odbaví dotaz, filtruje poštu, odpoví na&nbsp;opakující se dotaz a&nbsp;zbytek pošle na&nbsp;člověka.</p></div>
     </div>
   </div>
 </section>
@@ -244,12 +260,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Důvěryhodnost</span>
     <h2 class="h2 reveal">Jak stavíme agenta, kterému můžete věřit</h2>
-    <p class="lead reveal">Spolehlivost není slib, je to způsob práce. Poctivý agent umí říct „tohle nevím" a&nbsp;„tohle nechám na&nbsp;člověku". Vědět, kam nasadit stroj a&nbsp;kde ho záměrně nechat na&nbsp;člověku, je expertíza sama o&nbsp;sobě — a&nbsp;nejčastější důvod, proč levná řešení v&nbsp;provozu selžou.</p>
+    <p class="lead reveal">Spolehlivý agent umí říct „nevím“ a&nbsp;předat rozhodnutí člověku.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Vždy odpověď se zdrojem</h4><p>RAG agent neodpovídá „z&nbsp;hlavy". U&nbsp;každé odpovědi ukáže, ze&nbsp;kterého ceníku, výkresu nebo dokumentu vychází. Firma vidí, odkud odpověď je — a&nbsp;to je klíč k&nbsp;důvěře, ne&nbsp;ozdoba.</p></div>
-      <div class="jp-block reveal"><h4>Záměrný krok zpět tam, kde si OCR neporadí</h4><p>Ve&nbsp;strojírenské firmě jsme se rozhodli nečíst rozměry ze&nbsp;složitých výkresů — OCR je tam nespolehlivé. Čteme jen razítko a&nbsp;kusovník, kde je rozpoznávání spolehlivé. Zbytek doplní člověk. Vědět, co agentovi nesvěřit, je součást řemesla.</p></div>
-      <div class="jp-block reveal"><h4>Audit dokumentů před&nbsp;nabídkou</h4><p>Než cokoli nacení EnterIT, projdeme 5–10 reálných PDF a&nbsp;ověříme, jestli mají různí zákazníci jiné rozvržení razítka. Od&nbsp;toho se odvíjí spolehlivost i&nbsp;cena. Žádné sliby naslepo.</p></div>
-      <div class="jp-block reveal"><h4>Člověk u&nbsp;rozhodnutí, ne&nbsp;u&nbsp;rutiny</h4><p>Agent přebírá přepisování a&nbsp;zakládání, člověk si nechává úsudek a&nbsp;schválení. Není to kompromis — je to návrh, díky kterému je nasazení AI v&nbsp;regulovaných oborech (energetika, výroba, citlivé smlouvy) vůbec možné.</p></div>
+      <div class="jp-block reveal"><h3>Vždy odpověď se zdrojem</h3><p>RAG agent neodpovídá „z&nbsp;hlavy". U&nbsp;každé odpovědi ukáže, ze&nbsp;kterého ceníku, výkresu nebo dokumentu vychází. Firma vidí, odkud odpověď je — a&nbsp;to je klíč k&nbsp;důvěře, ne&nbsp;ozdoba.</p></div>
+      <div class="jp-block reveal"><h3>Záměrný krok zpět tam, kde si OCR neporadí</h3><p>Ve&nbsp;strojírenské firmě jsme se rozhodli nečíst rozměry ze&nbsp;složitých výkresů — OCR je tam nespolehlivé. Čteme jen razítko a&nbsp;kusovník, kde je rozpoznávání spolehlivé. Zbytek doplní člověk. Vědět, co agentovi nesvěřit, je součást řemesla.</p></div>
+      <div class="jp-block reveal"><h3>Audit dokumentů před&nbsp;nabídkou</h3><p>Než cokoli nacení EnterIT, projdeme 5–10 reálných PDF a&nbsp;ověříme, jestli mají různí zákazníci jiné rozvržení razítka. Od&nbsp;toho se odvíjí spolehlivost i&nbsp;cena. Žádné sliby naslepo.</p></div>
+      <div class="jp-block reveal"><h3>Člověk u&nbsp;rozhodnutí, ne&nbsp;u&nbsp;rutiny</h3><p>Agent přebírá přepisování a&nbsp;zakládání, člověk si nechává úsudek a&nbsp;schválení. Není to kompromis — je to návrh, díky kterému je nasazení AI v&nbsp;regulovaných oborech (energetika, výroba, citlivé smlouvy) vůbec možné.</p></div>
     </div>
   </div>
 </section>
@@ -258,12 +274,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Měření a&nbsp;provoz</span>
     <h2 class="h2 reveal">Co agent měří a&nbsp;jak ho dlouhodobě řídíme</h2>
-    <p class="lead reveal">Agent se nasadí, ale hlavně se vyhodnocuje a&nbsp;ladí. Bez výchozí hodnoty a&nbsp;definovaného přínosu tady žádného nestavíme — to odlišuje seriózní projekt od&nbsp;malého dema. A&nbsp;nepředáme ho a&nbsp;nezmizíme: provoz a&nbsp;dlouhodobá správa jsou součástí dohody.</p>
+    <p class="lead reveal">Každý agent má výchozí hodnotu, cílový přínos a&nbsp;dlouhodobou správu.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Co každý agent měří</h4><p>Dobu odezvy a&nbsp;celého procesu, chybovost a&nbsp;přepracování, kolik práce reálně ušetří, jak roste využití. Čísla, ne&nbsp;pocity — proti naměřené výchozí hodnotě před&nbsp;nasazením.</p></div>
-      <div class="jp-block reveal"><h4>Typická návratnost 3–12 měsíců</h4><p>Stavíme tak, aby návratnost pokryla i&nbsp;další rozvoj. Agent není jednorázová hračka, ale dlouhodobě spravovaná vrstva firmy, která se v&nbsp;provozu zlepšuje.</p></div>
-      <div class="jp-block reveal"><h4>Provoz a&nbsp;ladění, ne&nbsp;předání a&nbsp;sbohem</h4><p>Sledujeme, kde agent chybuje, doplňujeme pravidla, rozšiřujeme záběr. Pilot na&nbsp;jednom zákazníkovi s&nbsp;ověřenou logikou, pak rozšíření tam, kde se to vyplatí.</p></div>
-      <div class="jp-block reveal"><h4>Data zůstávají ve&nbsp;firmě</h4><p>Šifrovaný přenos a&nbsp;úložiště, GDPR a&nbsp;česká legislativa, možnost on-prem pro&nbsp;citlivá data. Rámec governance a&nbsp;bezpečnosti běží od&nbsp;prvního dne, ne&nbsp;jako záplata na&nbsp;konci.</p></div>
+      <div class="jp-block reveal"><h3>Co každý agent měří</h3><p>Dobu odezvy a&nbsp;celého procesu, chybovost a&nbsp;přepracování, kolik práce reálně ušetří, jak roste využití. Čísla, ne&nbsp;pocity — proti naměřené výchozí hodnotě před&nbsp;nasazením.</p></div>
+      <div class="jp-block reveal"><h3>Typická návratnost 3–12 měsíců</h3><p>Stavíme tak, aby návratnost pokryla i&nbsp;další rozvoj. Agent není jednorázová hračka, ale dlouhodobě spravovaná vrstva firmy, která se v&nbsp;provozu zlepšuje.</p></div>
+      <div class="jp-block reveal"><h3>Provoz a&nbsp;ladění, ne&nbsp;předání a&nbsp;sbohem</h3><p>Sledujeme, kde agent chybuje, doplňujeme pravidla, rozšiřujeme záběr. Pilot na&nbsp;jednom zákazníkovi s&nbsp;ověřenou logikou, pak rozšíření tam, kde se to vyplatí.</p></div>
+      <div class="jp-block reveal"><h3>Data zůstávají ve&nbsp;firmě</h3><p>Šifrovaný přenos a&nbsp;úložiště, GDPR a&nbsp;česká legislativa, možnost on-prem pro&nbsp;citlivá data. Rámec governance a&nbsp;bezpečnosti běží od&nbsp;prvního dne, ne&nbsp;jako záplata na&nbsp;konci.</p></div>
     </div>
   </div>
 </section>
@@ -272,15 +288,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Reálný příklad</span>
     <h2 class="h2 reveal">Agent pro&nbsp;TPV v&nbsp;ERP Helios — strojírenská a&nbsp;konstrukční firma</h2>
+    <details class="content-details reveal">
+      <summary><span>Projít celý postup krok za&nbsp;krokem</span><i aria-hidden="true">+</i></summary>
     <div class="jp-walk">
-      <div class="jp-step reveal"><span class="sn">Krok 1</span><h4>Bolest, kterou jsme řešili</h4><p>Technologická příprava výroby znamenala hodiny rutiny každý den. Přišla objednávka, v&nbsp;ERP vznikla jen hlavní položka projektu s&nbsp;nahranými daty (PDF + DWG + DXF). Procesní technolog pak pro&nbsp;každý díl ručně stáhl PDF, podle něj v&nbsp;Heliosu vytvořil položky komponent, sestavil strukturu položky, přiložil výkres ke&nbsp;každé položce a&nbsp;doplnil technologický postup a&nbsp;časovou normu. Pořád stejné, velmi podobné položky — 15–25 sestav týdně, tedy 70–120 položek, vše přepsané a&nbsp;založené člověkem.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 2</span><h4>Vstupní audit místo slibů</h4><p>Než jsme cokoli nacenili, prošli jsme 5–10 reálných výkresů a&nbsp;ověřili, jestli mají různí zákazníci jiné rozvržení razítka. Od&nbsp;toho se odvíjí spolehlivost i&nbsp;cena. Pilot jsme záměrně postavili na&nbsp;jednom hlavním zákazníkovi — stejné razítko znamená vyšší spolehlivost čtení.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 3</span><h4>Záměrné rozhodnutí, co agentovi NEsvěřit</h4><p>Rozhodli jsme se nečíst rozměry ze&nbsp;složitých výkresů — OCR je tam nespolehlivé. Agent čte jen razítko a&nbsp;kusovník (název, číslo výkresu, jakost materiálu, hmotnost), kde je rozpoznávání spolehlivé. Tahle hranice je expertíza sama o&nbsp;sobě: drží linii mezi funkčním a&nbsp;nefunkčním řešením.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 4</span><h4>Co agent zvládne sám</h4><p>Načte PDF hlavní položky, přečte razítko a&nbsp;kusovník, podle kusovníku najde už existující podobné položky v&nbsp;ERP a&nbsp;vytvoří strukturu komponent — včetně přenesení technologického postupu a&nbsp;časové normy z&nbsp;původní podobné položky. Vyhledávání podobnosti běží nad&nbsp;poli hlavního záznamu a&nbsp;metadaty z&nbsp;formuláře.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 5</span><h4>Human-in-the-loop tam, kde vidí jen člověk</h4><p>Kde data nejsou strojově čitelná z&nbsp;výkresu (počet ohybů, tloušťka plechu), otevře se dialog s&nbsp;náhledem PDF a&nbsp;číselným polem. Procesní technolog doplní hodnotu podle výkresu. Přidaná metadata se sesbírají do&nbsp;CSV a&nbsp;importem se v&nbsp;Heliosu automaticky vytvoří struktura položky. Agent doporučuje a&nbsp;zakládá, technolog kontroluje a&nbsp;doplňuje úsudek.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 6</span><h4>Integrace a&nbsp;fázování</h4><p>Agent stojí nad&nbsp;ERP Helios (napojení přes API dle wiki dokumentace), čte PDF/DWG/DXF výkresy, používá OCR na&nbsp;razítko a&nbsp;kusovník, a&nbsp;importem CSV zapisuje do&nbsp;ERP. Rozdělili jsme to do&nbsp;dvou fází: nejdřív vyráběné položky, ve&nbsp;druhé fázi nakupované a&nbsp;normalizované díly — s&nbsp;možností rozšířit to až na&nbsp;nacenění.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 7</span><h4>Výsledek</h4><p>Z&nbsp;hodin rutinního přepisování napříč 70–120 položkami týdně na&nbsp;agenta, který vytvoří strukturu a&nbsp;přenese standardy. Procesní technolog teď jen kontroluje a&nbsp;doplňuje to, co skutečně vyžaduje lidský úsudek. Pilot běží na&nbsp;jednom hlavním zákazníkovi s&nbsp;ověřenou logikou a&nbsp;prostorem k&nbsp;rozšíření. Konkurenční nabídka na&nbsp;stejné zadání byla navíc dražší.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 1</span><h3>Bolest, kterou jsme řešili</h3><p>Technolog ručně zakládal komponenty, výkresy, postupy a&nbsp;časové normy: 15–25 sestav neboli 70–120 položek týdně.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 2</span><h3>Vstupní audit místo slibů</h3><p>Na&nbsp;5–10 reálných výkresech jsme ověřili rozvržení i&nbsp;spolehlivost. Pilot začal u&nbsp;jednoho zákazníka s&nbsp;jednotným razítkem.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 3</span><h3>Záměrné rozhodnutí, co agentovi NEsvěřit</h3><p>Agent čte spolehlivé razítko a&nbsp;kusovník. Rozměry ze&nbsp;složitých výkresů nechává člověku.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 4</span><h3>Co agent zvládne sám</h3><p>Načte PDF, najde podobné položky a&nbsp;vytvoří strukturu včetně technologického postupu a&nbsp;časové normy.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 5</span><h3>Human-in-the-loop tam, kde vidí jen člověk</h3><p>Technolog v&nbsp;náhledu doplní nečitelné hodnoty; agent zbytek připraví pro&nbsp;import do&nbsp;Heliosu.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 6</span><h3>Integrace a&nbsp;fázování</h3><p>Helios API, PDF/DWG/DXF, OCR a&nbsp;CSV import. Nejprve vyráběné, potom nakupované a&nbsp;normalizované díly.</p></div>
+      <div class="jp-step reveal"><span class="sn">Krok 7</span><h3>Výsledek</h3><p>Agent zpracuje 70–120 položek týdně; technolog už jen kontroluje a&nbsp;doplňuje lidský úsudek.</p></div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -291,8 +310,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       <h2 class="h2">Máte proces, který žere čas vašich lidí?</h2>
       <p>Řekněte nám, co se u&nbsp;vás pořád dokola dělá ručně. Navrhneme řešení a&nbsp;spočítáme, kolik se vrátí.</p>
       <div class="cta-btns">
-        <a href="index.html#contact" class="btn green">Nezávazná konzultace <span class="arr">→</span></a>
-        <a href="index.html#solutions" class="btn outline">Katalog řešení</a>
+        <a href="/#contact" class="btn green">Nezávazná konzultace <span class="arr">→</span></a>
+        <a href="/#solutions" class="btn outline">Katalog řešení</a>
       </div>
     </div>
   </div>
@@ -303,7 +322,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <footer class="footer">
   <div class="wrap">
     <div class="foot-logo">
-      <img src="assets/decor/enty.svg" alt="" style="width:44px;height:44px">
+      <img src="assets/decor/enty.svg" alt="" style="width:44px;height:44px" width="160" height="160" decoding="async" loading="lazy">
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">

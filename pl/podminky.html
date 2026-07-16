@@ -26,8 +26,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Warunki handlowe — EnterIT">
 <meta name="twitter:description" content="Ogólne warunki handlowe — AI Enter s.r.o. (EnterIT).">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Warunki handlowe — EnterIT">
+<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+<meta name="twitter:image:alt" content="Warunki handlowe — EnterIT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","image":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/pl/podminky.html#webpage","url":"https://enterit.cz/pl/podminky.html","name":"Warunki handlowe — EnterIT","description":"Ogólne warunki handlowe — AI Enter s.r.o. (EnterIT).","inLanguage":"pl","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"breadcrumb":{"@id":"https://enterit.cz/pl/podminky.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/pl/podminky.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://enterit.cz/pl.html"},{"@type":"ListItem","position":2,"name":"Warunki handlowe","item":"https://enterit.cz/pl/podminky.html"}]}]}</script>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -70,7 +78,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;transition:background .
 .nav-links a{font-family:var(--mono);font-size:13.5px;color:var(--white);transition:color .2s}
 .nav-links a:hover{color:var(--green)}
 .nav-right{display:flex;align-items:center;gap:18px}
-@media(max-width:1000px){.nav-links{display:none}}
+@media(max-width:1180px){.nav-links{display:none}}
 .legal-hero{padding-top:clamp(120px,18vh,180px);padding-bottom:20px}
 .legal-body{max-width:760px;margin:0 auto;padding:20px 0 20px}
 .legal-body h2{font-family:var(--head);font-weight:900;font-size:clamp(19px,2.4vw,24px);color:var(--white);margin:38px 0 12px}
@@ -88,14 +96,17 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;transition:background .
 .foot-bar .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 </style>
+<link rel="stylesheet" href="/assets/site-ui.css">
+<script src="/assets/site-ui.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#home">Przejdź do treści</a>
 
 <header id="header">
   <div class="wrap">
     <nav class="nav">
       <a class="brand" href="/pl.html" aria-label="EnterIT — strona główna">
-        <img src="/assets/enter_logo_white.svg" alt="Enter">
+        <img src="/assets/enter_logo_white.svg" alt="Enter" width="477" height="200" decoding="async">
         <span class="it">IT</span>
       </a>
       <div class="nav-links">
@@ -105,13 +116,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
         <a href="/pl.html#work">Realizacje</a>
       </div>
       <div class="nav-right">
+        <div class="page-lang legal-lang" role="group" aria-label="Język"><a href="/podminky.html" lang="cs" hreflang="cs">CZ</a><a href="/en/podminky.html" lang="en" hreflang="en">EN</a><a href="/de/podminky.html" lang="de" hreflang="de">DE</a><a href="/pl/podminky.html" lang="pl" hreflang="pl" aria-current="page">PL</a></div>
         <a class="btn green" href="/pl.html#contact">Skontaktuj się</a>
       </div>
     </nav>
   </div>
 </header>
 
-<main id="home">
+<main id="home" tabindex="-1">
 <section class="block legal-hero">
   <div class="wrap">
     <span class="eyebrow">Informacje prawne</span>
@@ -125,11 +137,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
       <h2>Usługodawca</h2>
       <p>Usługodawcą jest spółka <strong>AI Enter s.r.o.</strong> (marka handlowa EnterIT), z siedzibą pod adresem Zahradní 2004/46d, 792 01 Bruntál, numer identyfikacyjny (IČO): 19086652, numer VAT (DIČ): CZ19086652, wpisana do rejestru handlowego (dalej „EnterIT" lub „usługodawca").</p>
-      <p>Kontaktowy adres e-mail: <a href="mailto:milo@enterit.cz">milo@enterit.cz</a><br>
+      <p>Adres e-mail do&nbsp;kontaktu: <a href="mailto:milo@enterit.cz">milo@enterit.cz</a><br>
       Telefon: <a href="tel:+420608969263">+420 608 969 263</a></p>
 
       <h2>Przedmiot i zakres warunków</h2>
-      <p>Niniejsze ogólne warunki handlowe (dalej „OWH") regulują stosunek umowny pomiędzy EnterIT jako usługodawcą a klientem jako zamawiającym w zakresie świadczenia usług analizy procesów, rozwoju i wdrażania automatyzacji AI, agentów, integracji oraz powiązanego oprogramowania szytego na miarę.</p>
+      <p>Niniejsze ogólne warunki handlowe (dalej „OWH") regulują stosunek umowny pomiędzy EnterIT jako usługodawcą a klientem jako zamawiającym w zakresie świadczenia usług analizy procesów, rozwoju i wdrażania automatyzacji AI, agentów, integracji oraz powiązanego oprogramowania dedykowanego.</p>
 
       <h2>Zawarcie umowy</h2>
       <p>Umowa o świadczenie usług zostaje zawarta z chwilą:</p>
@@ -146,7 +158,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       <p>Wszelkie materiały, metodyki, szablony i rezultaty wytworzone przez EnterIT w ramach zlecenia po zapłacie uzgodnionej ceny stają się własnością klienta, o ile w umowie nie uzgodniono inaczej. EnterIT zastrzega sobie prawo do podawania klienta jako referencji, o ile klient wyraźnie się temu nie sprzeciwi.</p>
 
       <h2>Odpowiedzialność za szkody</h2>
-      <p>EnterIT ponosi odpowiedzialność za szkody wyrządzone z winy. Całkowita odpowiedzialność EnterIT za szkody z jednego zlecenia jest ograniczona do wysokości ceny zapłaconej za dane zlecenie. EnterIT nie ponosi odpowiedzialności za szkody pośrednie, utracone korzyści ani za szkody wyrządzone przez osoby trzecie lub siłę wyższą.</p>
+      <p>EnterIT ponosi odpowiedzialność za szkody wyrządzone z&nbsp;własnej winy. Całkowita odpowiedzialność EnterIT za szkody z jednego zlecenia jest ograniczona do wysokości ceny zapłaconej za dane zlecenie. EnterIT nie ponosi odpowiedzialności za szkody pośrednie, utracone korzyści ani za szkody wyrządzone przez osoby trzecie lub siłę wyższą.</p>
 
       <h2>Poufność</h2>
       <p>Obie strony zobowiązują się do zachowania poufności w odniesieniu do informacji poufnych drugiej strony oraz do niewykorzystywania ich do celów innych niż wykonanie zobowiązań umownych. Obowiązek zachowania poufności trwa również po zakończeniu stosunku umownego.</p>
@@ -169,7 +181,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <footer class="footer">
   <div class="wrap">
     <div class="foot-logo">
-      <img src="/assets/enter_logo_black.svg" alt="" style="height:36px;width:auto">
+      <img src="/assets/enter_logo_black.svg" alt="" style="height:36px;width:auto" width="477" height="200" decoding="async" loading="lazy">
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">
