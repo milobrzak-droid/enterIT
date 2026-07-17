@@ -1,1026 +1,495 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" class="no-js">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Automatyzacja AI i agenci z mierzalnym ROI | EnterIT</title>
-<meta name="description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
-<link rel="alternate" hreflang="cs" href="https://enterit.cz/">
-<link rel="alternate" hreflang="en" href="https://enterit.cz/en.html">
-<link rel="alternate" hreflang="de" href="https://enterit.cz/de.html">
-<link rel="alternate" hreflang="pl" href="https://enterit.cz/pl.html">
-<link rel="alternate" hreflang="x-default" href="https://enterit.cz/">
-<link rel="canonical" href="https://enterit.cz/pl.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" href="favicon.ico" sizes="any">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#17202E">
-<meta name="author" content="AI Enter s.r.o.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="EnterIT">
-<meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
-<meta property="og:description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
-<meta property="og:url" content="https://enterit.cz/pl.html">
-<meta property="og:image" content="https://enterit.cz/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
-<meta name="twitter:description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
-<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
-<meta name="twitter:image:alt" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/pl.html#webpage","url":"https://enterit.cz/pl.html","name":"Automatyzacja AI i agenci z mierzalnym ROI | EnterIT","description":"75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.","inLanguage":"pl","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"}}]}</script>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/FiraMono-Medium.ttf" as="font" type="font/ttf" crossorigin>
-<style>
-/* ============================================================
-   FONTS — Greycliff CF (display) + Fira Mono (text/labels)
-   ============================================================ */
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-
-/* ============================================================
-   DESIGN TOKENS — "Enter" old playful theme
-   ============================================================ */
-:root{
-  --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
-  --white:#FBFBFB; --text:#C6CEDC; --muted:#8A95A8;
-  --green:#41E39E; --green-soft:#7CF0BE; --green-deep:#27B981;
-  --blue:#6ECEFF; --purple:#E399FF; --violet:#B790FF; --yellow:#F8E354; --coral:#FF848C;
-  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.14);
-  --green-line:rgba(65,227,158,.35); --green-wash:rgba(65,227,158,.08);
-  --head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
-  --mono:'Fira Mono',ui-monospace,Menlo,monospace;
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:24px;
-  --maxw:1280px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--navy);color:var(--text);font-family:var(--mono);font-weight:500;
-  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--head);font-weight:900;color:var(--white);margin:0}
-a{color:inherit;text-decoration:none}
-img,svg{max-width:100%}
-::selection{background:rgba(65,227,158,.3);color:var(--white)}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-@media(min-width:640px){.wrap{padding:0 36px}}
-@media(min-width:1024px){.wrap{padding:0 60px}}
-.block{padding:clamp(56px,9vh,104px) 0;position:relative}
-.block.tight{padding:44px 0}
-
-/* eyebrow / mono label */
-.eyebrow{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
-.eyebrow.dark{color:var(--navy)}
-.h1{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(40px,6.4vw,76px);line-height:.95;letter-spacing:-.02em;margin:0 0 22px}
-.h2{font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(30px,4vw,52px);line-height:.98;letter-spacing:-.02em;margin:0 0 14px}
-.gt{color:var(--green)}
-.lead{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:62ch;margin:0 0 8px}
-
-/* buttons (old style: navy → green on hover) */
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:14px;
-  letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);
-  background:var(--navy);color:var(--white);padding:15px 24px;border-radius:12px;transition:all .25s var(--ease);white-space:nowrap}
-.btn:hover{background:var(--green);border-color:var(--green);color:var(--navy);transform:translateY(-2px)}
-.btn .arr{transition:transform .25s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn.green{background:var(--green);border-color:var(--green);color:var(--navy)}
-.btn.green:hover{background:var(--green-soft);border-color:var(--green-soft)}
-.btn.outline{background:transparent;border-color:var(--line-2);color:var(--white)}
-.btn.outline:hover{background:var(--white);border-color:var(--white);color:var(--navy)}
-.btn.onlight{border-color:var(--navy)}
-.tlink{font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);transition:color .2s}
-.tlink:hover{color:var(--green-soft)}
-.tlink .arr{transition:transform .2s var(--ease);display:inline-block}
-.tlink:hover .arr{transform:translateX(4px)}
-
-/* ============================================================
-   NAVBAR
-   ============================================================ */
-header{position:fixed;top:0;left:0;width:100%;z-index:60;transition:background .3s,border-color .3s;border-bottom:2px solid transparent}
-header.scrolled{background:rgba(23,32,46,.92);backdrop-filter:blur(10px);border-bottom-color:#000}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:42px;width:auto}
-.brand .it{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--muted);align-self:center}
-.nav-links{display:flex;align-items:center;gap:26px}
-.nav-links a{font-family:var(--mono);font-size:13.5px;color:var(--white);transition:color .2s}
-.nav-links a:hover{color:var(--green)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.langsw{display:flex;gap:2px;font-family:var(--mono);font-size:12px}
-.langsw a{padding:4px 7px;border-radius:7px;color:var(--muted);transition:all .2s}
-.langsw a.active,.langsw a:hover{color:var(--navy);background:var(--green)}
-.mtoggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
-.mtoggle span{width:26px;height:2px;background:var(--white);transition:.3s}
-.mtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.mtoggle.open span:nth-child(2){opacity:0}
-.mtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;inset:74px 0 0;background:var(--navy);border-top:2px solid var(--green);z-index:55;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
-  transform:translateX(100%);transition:transform .35s var(--ease);overflow-y:auto;padding:40px}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{font-family:var(--head);font-weight:700;font-size:28px;color:var(--white)}
-.mobile-menu a:hover{color:var(--green)}
-@media(max-width:1180px){
-  .nav-links{display:none}
-  .langsw.lang-desktop{display:none}
-  .nav-right .btn{display:none}
-  .mtoggle{display:flex}
-}
-@media(min-width:1181px){.mobile-menu{display:none}}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{padding-top:clamp(120px,18vh,180px);padding-bottom:clamp(50px,8vh,80px)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:34px}}
-.hero-copy .h1{position:relative}
-.mascot-wave{position:absolute;width:74px;height:auto;top:-58px;right:8%}
-@media(max-width:980px){.mascot-wave{width:58px;top:-44px;right:auto;left:62%}}
-.hero-sub{font-family:var(--mono);font-size:16px;line-height:1.7;color:var(--text);max-width:52ch;margin:0 0 30px}
-/* email capture (old signature) */
-.capture{display:flex;gap:0;max-width:520px;border-radius:12px;overflow:hidden;border:2px solid var(--white);background:var(--white)}
-.capture input{flex:1;min-width:0;border:0;outline:none;background:var(--white);color:#24303f;
-  font-family:var(--mono);font-size:14px;padding:16px 18px}
-.capture input::placeholder{color:#64748B}
-.capture button{flex:none;border:0;cursor:pointer;background:var(--navy);color:var(--white);
-  font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:0 22px;transition:all .25s var(--ease)}
-.capture button:hover{background:var(--green);color:var(--navy)}
-@media(max-width:520px){.capture{flex-direction:column;border-radius:14px}.capture button{padding:15px}}
-.capture-note{font-family:var(--mono);font-size:11px;color:var(--muted);margin:14px 0 0;max-width:480px}
-.capture-note a{color:var(--white);text-decoration:underline}
-.hero-alt{margin-top:18px}
-
-/* hero console card */
-.console{background:var(--navy-2);border:2px solid var(--line-2);border-radius:var(--r-xl);overflow:hidden;
-  box-shadow:0 30px 70px -34px rgba(0,0,0,.8)}
-.cons-top{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
-.cons-dots{display:flex;gap:6px}.cons-dots i{width:11px;height:11px;border-radius:50%;background:var(--navy-3)}
-.cons-dots i:first-child{background:var(--coral)}.cons-dots i:nth-child(2){background:var(--yellow)}.cons-dots i:nth-child(3){background:var(--green)}
-.cons-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-.cons-live{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;color:var(--green)}
-.cons-live .ld{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.cons-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
-.cons-kpi{background:var(--navy-2);padding:16px 16px}
-.cons-kpi b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:24px;line-height:1}
-.cons-kpi span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:6px}
-.cons-rows{padding:14px 16px;display:flex;flex-direction:column;gap:11px}
-.cons-row{background:var(--navy-1);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px}
-.cons-row .rh{display:flex;align-items:center;gap:9px;margin-bottom:8px}
-.cons-row .sd{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 7px var(--green);flex:none;animation:pulse 1.8s infinite}
-.cons-row .nm{font-family:var(--mono);font-size:12.5px;color:var(--white)}
-.cons-row .pct{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
-.cons-row .tk{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:8px}
-.cons-row .bar{display:block;height:5px;border-radius:99px;background:var(--navy-3);overflow:hidden}
-.cons-row .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green-deep),var(--green));border-radius:99px;width:0;animation:fill var(--d,4s) var(--ease) infinite}
-@keyframes fill{0%{width:6%}70%{width:96%}100%{width:100%}}
-
-/* hero stats strip */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:46px;background:var(--line);
-  border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
-.stats div{background:var(--navy-1);padding:22px 20px}
-.stats b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:clamp(19px,2.1vw,25px);line-height:1.05}
-.stats span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-top:8px}
-@media(max-width:720px){.stats{grid-template-columns:1fr 1fr}}
-
-/* ============================================================
-   PARTNERS
-   ============================================================ */
-.partners{text-align:center}
-.partners .plab{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
-.partners-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
-.partners-row img{height:34px;width:auto;object-fit:contain;opacity:.9}
-.ms-logo{display:inline-flex;align-items:center;gap:11px}
-.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:24px;height:24px}
-.ms-sq i{display:block;border-radius:1px}
-.ms-tx{display:flex;flex-direction:column;line-height:1.1;text-align:left}
-.ms-tx b{font-family:var(--head);font-weight:700;color:var(--white);font-size:15px}
-.ms-tx span{font-family:var(--mono);font-size:10px;color:var(--muted)}
-
-/* ============================================================
-   GENERIC CARD HELPERS
-   ============================================================ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-
-/* ============================================================
-   PROBLEMS — configurator
-   ============================================================ */
-.cfg{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-top:36px;align-items:start}
-@media(max-width:920px){.cfg{grid-template-columns:1fr}}
-.cfg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:560px){.cfg-grid{grid-template-columns:1fr}}
-.cfg-card{text-align:left;cursor:pointer;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);
-  padding:18px 18px;position:relative;transition:border-color .2s,transform .2s,background .2s;font-family:var(--mono)}
-.cfg-card:hover{border-color:var(--green-line);transform:translateY(-2px)}
-.cfg-card.on{border-color:var(--green);background:var(--green-wash)}
-.cfg-card .chk{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line-2);
-  display:flex;align-items:center;justify-content:center;transition:all .2s}
-.cfg-card .chk svg{width:13px;height:13px;color:var(--navy);opacity:0;transition:opacity .2s}
-.cfg-card.on .chk{background:var(--green);border-color:var(--green)}
-.cfg-card.on .chk svg{opacity:1}
-.cfg-card .hrs{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--green);
-  background:var(--green-wash);border:1px solid var(--green-line);border-radius:99px;padding:3px 10px;margin-bottom:12px}
-.cfg-card .pain{display:block;font-family:var(--head);font-weight:700;color:var(--white);font-size:16px;line-height:1.25;margin-bottom:10px;padding-right:26px}
-.cfg-card .sol{display:block;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--muted)}
-.cfg-card .sol b{color:var(--text);font-weight:500}
-.cfg-panel{background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);
-  border-radius:var(--r-xl);padding:30px 28px;position:sticky;top:100px;text-align:center;overflow:hidden}
-.cfg-panel::before{content:"";position:absolute;top:-40%;right:-25%;width:300px;height:300px;background:radial-gradient(circle,var(--green-wash),transparent 70%);pointer-events:none}
-.cfg-panel .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cfg-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(48px,7vw,72px);line-height:1;margin:8px 0 2px}
-.cfg-unit{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:20px}
-.cfg-bar{height:8px;border-radius:99px;background:var(--navy-3);overflow:hidden;margin-bottom:10px}
-.cfg-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green-deep),var(--green));border-radius:99px;transition:width .5s var(--ease)}
-.cfg-count{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:22px}
-.cfg-money{font-family:var(--head);font-weight:900;color:var(--white);font-size:28px;line-height:1}
-.cfg-moneyl{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:24px}
-.cfg-panel .btn{width:100%;justify-content:center}
-.cfg-hint{font-family:var(--mono);font-size:11px;line-height:1.55;color:var(--muted);margin-top:16px}
-
-/* ============================================================
-   SOLUTIONS — GREEN BLOCK with white bordered cards (signature)
-   ============================================================ */
-.sol-block{background:var(--green);position:relative;overflow:hidden}
-.sol-block .tc-vec{position:absolute;pointer-events:none;opacity:.5;z-index:0}
-.sol-block .tc-vec.l{left:-50px;top:-30px;width:180px}
-.sol-block .tc-vec.r{right:-50px;bottom:-30px;width:230px}
-.sol-block .wrap{position:relative;z-index:1}
-.sol-block .eyebrow{color:#15412f}
-.sol-block .h2{color:var(--navy)}
-.sol-block .lead{color:#173b2c}
-.prj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
-@media(max-width:1080px){.prj-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.prj-grid{grid-template-columns:1fr}}
-.prj-wrap{position:relative}
-.prj{position:relative;z-index:1;background:var(--white);border:2px solid var(--navy);border-radius:var(--r-lg);
-  padding:22px 20px;height:100%;transition:transform .3s var(--ease)}
-.prj-wrap::before{content:"";position:absolute;inset:0;border-radius:var(--r-lg);background:var(--navy);z-index:0;transition:transform .3s var(--ease)}
-.prj-wrap:hover::before{transform:translate(8px,8px)}
-.prj-wrap:hover .prj{transform:translate(-2px,-2px)}
-.prj-ic{width:44px;height:44px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.prj-ic svg{width:23px;height:23px;color:var(--green)}
-.prj h3{font-family:var(--head);font-weight:900;color:var(--navy);font-size:19px;line-height:1.1;margin-bottom:10px}
-.prj .solves{font-family:var(--mono);font-size:12.5px;line-height:1.55;color:#3a4654;margin:0 0 16px}
-.prj-io{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:14px}
-.prj-io span{font-family:var(--mono);font-size:10.5px;padding:4px 8px;border-radius:7px;line-height:1.3}
-.prj-io .b4{background:#eef1f4;color:#46505d;border:1px solid #dfe4e9}
-.prj-io .ar{color:var(--green-deep);font-weight:700;padding:0 2px}
-.prj-io .af{background:var(--green-wash);color:#176147;border:1px solid var(--green-line)}
-.prj .save{font-family:var(--mono);font-size:12px;color:#3a4654;border-top:1px solid #e7eaee;padding-top:13px}
-.prj .save b{font-family:var(--head);font-weight:900;color:var(--navy);font-size:14px}
-.prj-more{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--green-deep);margin-top:12px}
-.prj-more .arr{display:inline-block;transition:transform .2s var(--ease)}
-.prj-wrap:hover .prj-more .arr{transform:translateX(4px)}
-.sol-foot{margin-top:34px}
-.sol-foot .tlink{color:var(--navy)}
-.sol-foot .tlink:hover{color:#15412f}
-
-/* ============================================================
-   REFERENCES — KPI cards
-   ============================================================ */
-.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-@media(max-width:920px){.wk-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.wk-grid{grid-template-columns:1fr}}
-.wk{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:26px 24px;transition:border-color .25s,transform .25s}
-.wk:hover{border-color:var(--green-line);transform:translateY(-4px)}
-.wk .ob{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.wk .kpi{font-family:var(--head);font-weight:900;color:var(--green);font-size:34px;letter-spacing:-.01em;margin:13px 0 10px;line-height:1}
-.wk p{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--text);margin:0}
-.wk .tech{margin-top:15px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-
-/* ============================================================
-   INTEGRATIONS
-   ============================================================ */
-.intg-search{display:flex;align-items:center;gap:12px;max-width:520px;margin:30px 0 26px;
-  background:var(--navy-1);border:2px solid var(--line-2);border-radius:14px;padding:0 18px}
-.intg-search svg{width:20px;height:20px;color:var(--muted);flex:none}
-.intg-search input{flex:1;border:0;outline:none;background:none;color:var(--white);font-family:var(--mono);font-size:14px;padding:15px 0}
-.intg-search input::placeholder{color:var(--muted)}
-.intg-row{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
-@media(max-width:680px){.intg-row{grid-template-columns:1fr;gap:12px}}
-.intg-cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);padding-top:6px}
-.intg-chips{display:flex;flex-wrap:wrap;gap:9px}
-.intg-chips span{font-family:var(--mono);font-size:12.5px;color:var(--text);padding:7px 13px;background:var(--navy-1);border:1px solid var(--line-2);border-radius:99px;transition:all .2s}
-.intg-chips span:hover{border-color:var(--green-line);color:var(--white)}
-.intg-empty{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:20px}
-
-/* ============================================================
-   HOW — colored bordered panel with numbered steps
-   ============================================================ */
-.how-panel{margin-top:40px;background:var(--blue);border:2px solid var(--navy);border-radius:var(--r-xl);padding:clamp(26px,4vw,48px)}
-.how-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:26px 40px}
-@media(max-width:760px){.how-list{grid-template-columns:1fr;gap:22px}}
-.how-list li{display:flex;gap:18px;align-items:flex-start}
-.how-num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);
-  display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:18px}
-.how-list h3{font-family:var(--head);font-weight:900;color:var(--navy);font-size:19px;margin:4px 0 6px;line-height:1.1}
-.how-list .kk{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#16466a;display:block;margin-bottom:6px}
-.how-list p{font-family:var(--mono);font-size:13px;line-height:1.6;color:#15364d;margin:0}
-.how-cta{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px}
-
-/* ============================================================
-   START HERE — "Nejste si jistí?"
-   ============================================================ */
-.start-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-@media(max-width:920px){.start-grid{grid-template-columns:1fr}}
-.start-card{display:block;background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:26px 24px;transition:border-color .25s,transform .25s}
-.start-card:hover{border-color:var(--green-line);transform:translateY(-3px)}
-.start-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:var(--green-wash);border:1px solid var(--green-line);border-radius:99px;padding:3px 10px;margin-bottom:14px}
-.start-card h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;line-height:1.32;margin:0 0 8px}
-.start-card p{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--text);margin:0 0 16px}
-
-/* ============================================================
-   CALCULATOR
-   ============================================================ */
-.kc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;align-items:stretch}
-@media(max-width:880px){.kc-wrap{grid-template-columns:1fr}}
-.kc-form{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-xl);padding:30px 28px}
-.kc-field{margin-bottom:26px}.kc-field:last-child{margin-bottom:0}
-.kc-field label{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:12px;gap:14px}
-.kc-field label b{font-family:var(--head);font-weight:900;color:var(--green);font-size:19px;white-space:nowrap}
-.kc-field input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:99px;background:var(--navy-3);outline:none}
-.kc-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:21px;height:21px;border-radius:50%;background:var(--green);cursor:pointer;box-shadow:0 0 12px var(--green-line)}
-.kc-field input[type=range]::-moz-range-thumb{width:21px;height:21px;border:0;border-radius:50%;background:var(--green);cursor:pointer}
-.kc-hint{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px}
-.kc-result{background:linear-gradient(180deg,var(--navy-2),var(--navy-1));border:2px solid var(--green-line);border-radius:var(--r-xl);padding:32px 30px;position:relative;overflow:hidden}
-.kc-result::before{content:"";position:absolute;top:-40%;right:-20%;width:320px;height:320px;background:radial-gradient(circle,var(--green-wash),transparent 70%);pointer-events:none}
-.kc-result .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.kc-big{font-family:var(--head);font-weight:900;color:var(--green);font-size:clamp(38px,5.5vw,58px);line-height:1;margin:8px 0 4px}
-.kc-sub{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:24px}
-.kc-split{display:flex;gap:14px;margin-bottom:24px}
-.kc-split div{flex:1;background:var(--navy-1);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
-.kc-split b{display:block;font-family:var(--head);font-weight:900;color:var(--white);font-size:22px}
-.kc-split span{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.kc-result .btn{width:100%;justify-content:center}
-.kc-or{font-family:var(--mono);font-size:11px;letter-spacing:.03em;text-align:center;margin:14px 0;color:var(--muted)}
-.kc-capture.capture{max-width:none;width:100%}
-.kc-capture-note{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.5}
-.kc-disc{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:16px;line-height:1.6}
-
-/* ============================================================
-   CONTACT (signup style)
-   ============================================================ */
-.contact{position:relative;overflow:hidden}
-.contact .book{position:absolute;left:-20px;top:50%;transform:translateY(-50%) scaleX(-1);width:200px;opacity:.9;pointer-events:none}
-@media(max-width:980px){.contact .book{display:none}}
-.cta-card{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.cta-card p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 28px}
-.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-
-/* ============================================================
-   FOOTER — purple block
-   ============================================================ */
-.footer{background:var(--purple);color:var(--navy);position:relative;overflow:hidden}
-.footer .wrap{position:relative;z-index:1}
-.foot-top{display:grid;grid-template-columns:300px 1fr;gap:40px;padding:64px 0 40px}
-@media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:32px}}
-.foot-logo{display:flex;align-items:center;gap:12px}
-.foot-logo .enty{width:54px;height:54px}
-.foot-logo .ft-name{font-family:var(--head);font-weight:900;color:var(--navy);font-size:30px;letter-spacing:-.01em}
-.foot-cta{font-family:var(--head);font-weight:900;color:var(--navy);font-size:clamp(26px,3.4vw,42px);line-height:.98;letter-spacing:-.01em;margin-bottom:36px;max-width:18ch}
-.foot-cols{display:flex;flex-wrap:wrap;gap:40px 64px;justify-content:space-between}
-.foot-h{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3a2358;margin-bottom:18px}
-.foot-contact a{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;color:var(--navy);font-size:22px;line-height:1.3;margin-bottom:12px}
-.foot-contact a:hover{text-decoration:underline}
-.foot-contact svg{width:24px;height:24px;flex:none}
-.foot-menu a{display:block;font-family:var(--mono);font-size:14px;color:var(--navy);margin-bottom:9px}
-.foot-menu a:hover{text-decoration:underline}
-.foot-soc{display:flex;gap:14px}
-.foot-soc a{display:flex}.foot-soc svg{width:30px;height:30px;color:var(--navy)}
-.foot-bar{border-top:1px solid rgba(23,32,46,.35);padding:20px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
-  font-family:var(--mono);font-size:11px;color:#3a2358}
-.foot-bar a{text-decoration:underline}
-.foot-bar .legal{display:flex;flex-wrap:wrap;gap:8px 22px}
-
-/* visible keyboard focus (a11y) */
-a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
-.kc-field input[type=range]:focus-visible{outline:none}
-.kc-field input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--green-line)}
-.kc-field input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px var(--green-line)}
-[inert]{filter:none}
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-</style>
-<link rel="stylesheet" href="/assets/site-ui.css">
-<link rel="stylesheet" href="assets/home-pillars.css">
-<script src="assets/home-enhancements.js" defer></script>
-<script src="/assets/site-ui.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>document.documentElement.classList.replace("no-js", "js")</script>
+  <title>Automatyzacja AI i agenci z mierzalnym ROI | EnterIT</title>
+  <meta name="description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="AI Enter s.r.o.">
+  <meta name="theme-color" content="#f5f7f2">
+  <link rel="canonical" href="https://enterit.cz/pl.html">
+  <link rel="alternate" hreflang="cs" href="https://enterit.cz/">
+  <link rel="alternate" hreflang="en" href="https://enterit.cz/en.html">
+  <link rel="alternate" hreflang="de" href="https://enterit.cz/de.html">
+  <link rel="alternate" hreflang="pl" href="https://enterit.cz/pl.html">
+  <link rel="alternate" hreflang="x-default" href="https://enterit.cz/">
+  <link rel="sitemap" type="application/xml" href="https://enterit.cz/sitemap.xml">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260717-enter-symbol">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260717-enter-symbol">
+  <link rel="icon" href="/favicon.ico?v=20260717-enter-symbol" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20260717-enter-symbol">
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
+  <link rel="stylesheet" href="/assets/home.css?v=20260717-28">
+  <script src="/assets/home.js?v=20260717-16" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EnterIT">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
+  <meta property="og:description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
+  <meta property="og:url" content="https://enterit.cz/pl.html">
+  <meta property="og:image" content="https://enterit.cz/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
+  <meta name="twitter:description" content="75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.">
+  <meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+  <meta name="twitter:image:alt" content="Automatyzacja AI i agenci z mierzalnym ROI | EnterIT">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://enterit.cz/#organization","name":"EnterIT","alternateName":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz/","logo":{"@type":"ImageObject","@id":"https://enterit.cz/#logo","url":"https://enterit.cz/assets/enter_logo_color.svg","contentUrl":"https://enterit.cz/assets/enter_logo_color.svg","width":477,"height":200},"image":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652","sameAs":["https://www.facebook.com/profile.php?id=61579684083040","https://www.instagram.com/enterco/","https://www.linkedin.com/company/enterin/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"milo@enterit.cz","telephone":"+420608969263","availableLanguage":["cs","en","de","pl"]},"knowsAbout":["AI agents","business process automation","systems integration","custom software development","data platforms"]},{"@type":"WebSite","@id":"https://enterit.cz/#website","url":"https://enterit.cz/","name":"EnterIT","alternateName":"Enter IT","inLanguage":["cs","en","de","pl"],"publisher":{"@id":"https://enterit.cz/#organization"}},{"@type":"WebPage","@id":"https://enterit.cz/pl.html#webpage","url":"https://enterit.cz/pl.html","name":"Automatyzacja AI i agenci z mierzalnym ROI | EnterIT","description":"75 specjalistów tworzy i utrzymuje agentów AI, automatyzacje i integracje ERP. Oszczędność czasu i ROI potwierdzamy na Państwa danych od pilota.","inLanguage":"pl","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"}}]}</script>
 </head>
 <body>
-<a class="skip-link" href="#home">Przejdź do treści</a>
-
-<!-- ============ HEADER ============ -->
-<header id="header">
-  <div class="wrap">
-    <nav class="nav">
-      <a class="brand" href="#home" aria-label="Enter IT — strona główna">
-        <img src="assets/enter_logo_white.svg" alt="Enter" width="477" height="200" decoding="async">
-        <span class="it">IT</span>
-      </a>
-      <div class="nav-links">
-        <a href="#problems">Co rozwiązujemy</a>
-        <a href="#solutions">Gotowe rozwiązania</a>
-        <a href="#how">Jak to robimy</a>
-        <a href="#integ">Integracje</a>
-        <a href="#work">Realizacje</a>
-        <a href="pl/tym.html">Zespół</a>
-      </div>
-      <div class="nav-right">
-        <div class="langsw lang-desktop" role="group" aria-label="Język">
-        <a href="/" lang="cs" hreflang="cs">CZ</a><a href="/en.html" lang="en" hreflang="en">EN</a><a href="/de.html" lang="de" hreflang="de">DE</a><a href="/pl.html" lang="pl" hreflang="pl" class="active" aria-current="page">PL</a>
-        </div>
-        <a class="btn green" href="#contact">Kontakt</a>
-        <button class="mtoggle" id="mtoggle" aria-controls="mmenu" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-    </nav>
+<a class="skip-link" href="#main-content">Przejdź do treści</a>
+<header class="site-header" id="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href="/pl.html" aria-label="EnterIT — strona główna">
+      <img src="/assets/enter_logo_black.svg" alt="EnterIT" width="477" height="200">
+    </a>
+    <nav class="desktop-nav" aria-label="Główna nawigacja">
+    <a href="#services">Co budujemy</a>
+    <a href="#results">Wyniki</a>
+    <a href="#process">Jak pracujemy</a>
+    <a href="#integrations">Integracje</a>
+    <a href="#team">Zespół</a></nav>
+    <div class="nav-actions">
+      <details class="language-menu">
+  <summary class="language-menu__trigger"><span class="sr-only">Język: Polski</span><span class="language-menu__current" aria-hidden="true">PL</span><svg class="language-menu__chevron" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></summary>
+  <ul class="language-menu__popover"><li><a class="language-menu__option" href="/" lang="cs" hreflang="cs"><span>Čeština</span><small aria-hidden="true">CZ</small></a></li><li><a class="language-menu__option" href="/en.html" lang="en" hreflang="en"><span>English</span><small aria-hidden="true">EN</small></a></li><li><a class="language-menu__option" href="/de.html" lang="de" hreflang="de"><span>Deutsch</span><small aria-hidden="true">DE</small></a></li><li><a class="language-menu__option" href="/pl.html" lang="pl" hreflang="pl" aria-current="page"><span>Polski</span><small aria-hidden="true">PL</small></a></li></ul>
+</details>
+      <a class="button button--small" href="#contact">Porozmawiajmy o projekcie <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Otwórz menu" data-open-label="Otwórz menu" data-close-label="Zamknij menu" aria-controls="mobile-panel" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-panel" aria-hidden="true" inert hidden>
+    <nav class="mobile-nav" aria-label="Nawigacja mobilna">
+    <a href="#services">Co budujemy</a>
+    <a href="#results">Wyniki</a>
+    <a href="#process">Jak pracujemy</a>
+    <a href="#integrations">Integracje</a>
+    <a href="#team">Zespół</a></nav>
+    <div class="mobile-panel__bottom">
+      <a class="button button--small" href="#contact">Porozmawiajmy o projekcie <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+    </div>
   </div>
 </header>
-<nav class="mobile-menu" id="mmenu">
-  <a href="#problems">Co rozwiązujemy</a>
-  <a href="#solutions">Gotowe rozwiązania</a>
-  <a href="#how">Jak to robimy</a>
-  <a href="#integ">Integracje</a>
-  <a href="#work">Realizacje</a>
-  <a href="pl/tym.html">Zespół</a>
-  <a href="#contact">Kontakt</a>
-  <div class="langsw" role="group" aria-label="Język" style="font-size:16px">
-        <a href="/" lang="cs" hreflang="cs">CZ</a><a href="/en.html" lang="en" hreflang="en">EN</a><a href="/de.html" lang="de" hreflang="de">DE</a><a href="/pl.html" lang="pl" hreflang="pl" class="active" aria-current="page">PL</a>
-  </div>
-</nav>
-
-<main id="home" tabindex="-1">
-
-<!-- ============ HERO ============ -->
-<section class="block hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Rozwój rozwiązań AI · automatyzacja · agenci</span>
-        <h1 class="h1">Niech komputer wykonuje <span class="gt">nudną pracę</span> za Państwa zespół.
-          <img class="mascot-wave" src="assets/decor/mascot-wave.svg" alt="" aria-hidden="true" width="910" height="960" decoding="async">
-        </h1>
-      <p class="hero-sub">Agenci przejmują faktury, zamówienia, raporty i&nbsp;typowe pytania klientów. Łączymy ich z&nbsp;Państwa systemami i&nbsp;wdrażamy produkcyjnie.</p>
-        <form class="capture" id="heroCapture" autocomplete="on">
-          <input type="email" id="heroEmail" placeholder="Podaj e-mail do wyliczenia" aria-label="E-mail">
-          <button type="submit">Oblicz oszczędność →</button>
-        </form>
-        <p class="capture-note">Wysłanie formularza oznacza zgodę na&nbsp;<a href="pl/gdpr.html">Oświadczenie o&nbsp;przetwarzaniu danych osobowych</a>.</p>
-        <div class="hero-alt"><a class="tlink" href="#problems">Co można zaoszczędzić <span class="arr">→</span></a></div>
-      </div>
-      <div class="hero-viz">
-        <div class="console reveal">
-          <div class="cons-top">
-            <span class="cons-dots"><i></i><i></i><i></i></span>
-            <span class="cons-title">Agent Ops · demo</span>
-            <span class="cons-live"><span class="ld"></span>DEMO · monitoring 24/7</span>
-          </div>
-          <div class="cons-kpis">
-            <div class="cons-kpi"><b class="num" data-val="12480">0</b><span>zadań dzisiaj</span></div>
-            <div class="cons-kpi"><b class="num" data-val="99" data-suf=" %">0</b><span>bez błędu</span></div>
-            <div class="cons-kpi"><b class="num" data-val="612" data-suf=" h">0</b><span>zaoszczędzono / mies.</span></div>
-          </div>
-          <div class="cons-rows">
-            <div class="cons-row" style="--d:4.2s"><span class="rh"><span class="sd"></span><span class="nm">Agent fakturowy</span><span class="pct">działa</span></span><span class="tk">OCR faktury #4821 → ERP</span><span class="bar"><i></i></span></div>
-            <div class="cons-row" style="--d:5.1s"><span class="rh"><span class="sd"></span><span class="nm">Agent zamówień</span><span class="pct">przetwarza</span></span><span class="tk">odczytuję zamówienie #2207</span><span class="bar"><i></i></span></div>
-            <div class="cons-row" style="--d:3.6s"><span class="rh"><span class="sd"></span><span class="nm">Agent wiedzy</span><span class="pct">działa</span></span><span class="tk">wyszukuję cenę w&nbsp;cenniku K2</span><span class="bar"><i></i></span></div>
-          </div>
-        </div>
+<main id="main-content" tabindex="-1">
+<section class="hero" id="home">
+  <div class="shell hero__inner">
+    <h1>Automatyzacja, która oddaje zespołowi <em>czas.</em></h1>
+    <div class="hero__bottom">
+      <p class="hero__lead">Projektujemy, budujemy i utrzymujemy agentów AI, integracje oraz systemy wewnętrzne. Zaczynamy od konkretnego procesu i mierzymy efekt na Państwa danych.</p>
+      <div class="hero__actions">
+        <a class="button" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener">Porozmawiajmy o Państwa procesie <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+        <a class="button button--ghost" href="#results">Zobacz wyniki</a>
       </div>
     </div>
-    <div class="stats reveal">
-      <div><b>4–8 tygodni</b><span>do wdrożenia</span></div>
-      <div><b>efekt w kilka tygodni</b><span>ROI potwierdza pilotaż</span></div>
-      <div><b>Dane pod kontrolą</b><span>on-prem lub chmura UE</span></div>
-      <div><b>120+ projektów</b><span>za nami</span></div>
+    <div class="proof-strip"><div class="proof-item"><strong>75</strong><span>specjalistów pod jednym dachem</span></div><div class="proof-item"><strong>120+</strong><span>zrealizowanych projektów</span></div><div class="proof-item"><strong>4–8 tygodni</strong><span>od pilotażu do wdrożenia produkcyjnego</span></div></div>
+  </div>
+</section>
+<section class="partner-bar" aria-label="Partnerzy technologiczni">
+  <div class="shell partner-bar__inner">
+    <span class="partner-bar__label">Partnerzy technologiczni</span>
+    <div class="partner-logos">
+      <img class="partner-logo partner-logo--microsoft" src="/assets/logos/microsoft.png" alt="Microsoft Solutions Partner" width="1000" height="200" loading="lazy" decoding="async">
+      <img class="partner-logo partner-logo--tdsynnex" src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" width="1300" height="460" loading="lazy" decoding="async">
+      <img class="partner-logo partner-logo--techmates" src="/assets/logos/techmates.png" alt="Techmates" width="1854" height="299" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
-
-<!-- ============ PARTNERS ============ -->
-<section class="block tight partners">
-  <div class="wrap reveal">
-    <span class="plab">Budujemy na&nbsp;sprawdzonych technologiach · partnerzy</span>
-    <div class="partners-row">
-      <span class="ms-logo">
-        <span class="ms-sq"><i style="background:#F25022"></i><i style="background:#7FBA00"></i><i style="background:#00A4EF"></i><i style="background:#FFB900"></i></span>
-        <span class="ms-tx"><b>Microsoft</b><span>Solutions Partner</span></span>
-      </span>
-      <img src="assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy" width="1300" height="460" decoding="async">
-      <img src="assets/logos/techmates-white.png" alt="Techmates" loading="lazy" width="1854" height="299" decoding="async">
+<section class="section" id="services">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Od procesu do działającego rozwiązania</span><h2 class="section-title">Technologia ma wykonywać pracę. Nie tylko dobrze wyglądać.</h2></div>
+      <p class="section-intro">Łączymy biznes, inżynierię i utrzymanie. Rozwiązanie jest zintegrowane z Państwa systemami, ma jasno określonego właściciela i przynosi mierzalne efekty.</p>
     </div>
+    <div class="services-grid"><article class="service-card">
+        <span class="service-card__number">01</span>
+        <h3>Agenci AI do realnej pracy</h3>
+        <p>Agenci pracują z dokumentami, e-mailami i wiedzą firmy. Wyjątki przekazują ludziom, a każdy krok można audytować.</p>
+        <ul class="service-list"><li>Faktury i zamówienia</li><li>Obsługa klienta i wsparcie wewnętrzne</li><li>Dokumenty i wiedza firmowa</li></ul>
+        <a class="text-link" href="pl/jak-stavime-agenty.html">Jak budujemy agentów AI</a>
+      </article><article class="service-card">
+        <span class="service-card__number">02</span>
+        <h3>Automatyzacja i integracja</h3>
+        <p>Łączymy ERP, CRM, magazyn, e-commerce i e-mail w jeden niezawodny przepływ — także starsze systemy bez nowoczesnego API.</p>
+        <ul class="service-list"><li>Integracje ERP, CRM i WMS</li><li>Akceptacje i raportowanie</li><li>Systemy legacy i warstwy API</li></ul>
+        <a class="text-link" href="pl/jak-stavime-automatizace.html">Jak budujemy automatyzacje</a>
+      </article><article class="service-card">
+        <span class="service-card__number">03</span>
+        <h3>Dedykowane oprogramowanie i dane</h3>
+        <p>Budujemy aplikacje wewnętrzne, platformy danych i rozwiązania chmurowe, gdy gotowy produkt nie pasuje do procesu.</p>
+        <ul class="service-list"><li>Aplikacje i portale wewnętrzne</li><li>Platformy danych i BI</li><li>Chmura, DevOps i utrzymanie zgodne z SLA</li></ul>
+        <a class="text-link" href="pl/tym.html">Poznaj cały zespół</a>
+      </article></div>
   </div>
 </section>
-
-<!-- ============ THREE PILLARS ============ -->
-<section class="block pillars" id="filary" aria-labelledby="filary-title">
-  <div class="wrap">
-    <div class="pillars-head">
-      <span class="eyebrow reveal">Trzy filary każdego wdrożenia</span>
-      <h2 class="h2 reveal" id="filary-title">Mierzalny efekt. Kompleksowe wdrożenie. <span class="gt">75 ekspertów odpowiedzialnych za wynik.</span></h2>
-    <p class="lead reveal">Efekt biznesowy, kompleksowa realizacja i&nbsp;jeden odpowiedzialny zespół.</p>
+<section class="section section--white solutions" id="solutions">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Gotowe rozwiązania</span><h2 class="section-title">Konkretne zadania, które zdejmujemy z Państwa zespołu.</h2></div>
+      <p class="section-intro">Osiem sprawdzonych rozwiązań ograniczających przepisywanie, wyszukiwanie i ręczne formularze.</p>
     </div>
-    <div class="pillar-grid">
-      <article class="pillar-card reveal" style="--pc:#41E39E">
-        <div class="pillar-kicker"><span>ROI i czas</span><span class="pillar-no">01</span></div>
-        <h3>Najpierw punkt odniesienia. Potem efekt w&nbsp;godzinach i&nbsp;pieniądzach.</h3>
-        <p>Mierzymy czas, błędy i&nbsp;koszty. Skalujemy tylko to, co działa na&nbsp;Państwa danych.</p>
-        <div class="pillar-proof">
-          <div class="pillar-metric"><strong>1&nbsp;420 godz./rok</strong><span>zaoszczędzone w&nbsp;firmie zatrudniającej 82 osoby · zwrot w&nbsp;3&nbsp;miesiące</span></div>
-          <a class="tlink" href="#calc">Oblicz potencjalny efekt <span class="arr">→</span></a>
-        </div>
-      </article>
-      <article class="pillar-card reveal d1" style="--pc:#6ECEFF">
-        <div class="pillar-kicker"><span>Kompleksowe wdrożenie</span><span class="pillar-no">02</span></div>
-        <h3>Od e-maila do&nbsp;ERP — wraz ze&nbsp;ścieżką audytu i&nbsp;SLA.</h3>
-        <p>Projektujemy, integrujemy, wdrażamy i&nbsp;bezpiecznie utrzymujemy rozwiązanie.</p>
-        <div class="pillar-proof">
-          <div class="pillar-flow" aria-label="Przykładowy przepływ rozwiązania"><span class="node">E-mail / PDF</span><span class="flow-arr">→</span><span class="node">Agent AI</span><span class="flow-arr">→</span><span class="node">ERP / CRM</span><span class="flow-arr">→</span><span class="node">Akceptacja</span><span class="flow-arr">→</span><span class="node">Audyt</span></div>
-          <a class="tlink" href="#work">Zobacz wdrożenia produkcyjne <span class="arr">→</span></a>
-        </div>
-      </article>
-      <article class="pillar-card reveal d2" style="--pc:#B790FF">
-        <div class="pillar-kicker"><span>Zespół produkcyjny</span><span class="pillar-no">03</span></div>
-        <h3>75 specjalistów. Trzy wyspecjalizowane zespoły. Jeden odpowiedzialny partner.</h3>
-        <p>Architektura, AI engineering, produkty, infrastruktura i&nbsp;utrzymanie 24/7.</p>
-        <div class="pillar-proof">
-          <div class="pillar-team"><span><b>45</b>Enterprise</span><span><b>25</b>AI &amp; Agents</span><span><b>5</b>Studio</span></div>
-          <a class="tlink" href="pl/tym.html">Poznaj cały zespół <span class="arr">→</span></a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROBLEMS — configurator ============ -->
-<section class="block" id="problems">
-  <div class="wrap">
-    <span class="eyebrow reveal">Co rozwiązujemy</span>
-    <h2 class="h2 reveal">Co każdego dnia spowalnia Państwa firmę?</h2>
-    <p class="lead reveal">Proszę wybrać obszary i&nbsp;zobaczyć orientacyjny odzysk czasu.</p>
-    <div class="cfg">
-      <div class="cfg-grid reveal" id="cfgGrid">
-        <button class="cfg-card" data-hrs="30" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~30 h/mies.</span><span class="pain">Ręcznie przepisujemy zamówienia i&nbsp;faktury</span><span class="sol"><b>Rozwiązanie:</b> agent odczyta dokument i&nbsp;wpisze go do&nbsp;ERP ze&nbsp;wskaźnikiem błędów poniżej&nbsp;1&nbsp;%.</span></button>
-        <button class="cfg-card" data-hrs="25" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~25 h/mies.</span><span class="pain">Szukamy informacji w&nbsp;dokumentach i&nbsp;mailach</span><span class="sol"><b>Rozwiązanie:</b> asystent znajdzie odpowiedź i&nbsp;wskaże źródło.</span></button>
-        <button class="cfg-card" data-hrs="20" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~20 h/mies.</span><span class="pain">Co tydzień wypełniamy raporty</span><span class="sol"><b>Rozwiązanie:</b> agent przygotuje raport z&nbsp;ERP i&nbsp;hurtowni danych.</span></button>
-        <button class="cfg-card" data-hrs="35" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~35 h/mies.</span><span class="pain">Klienci zadają te same pytania</span><span class="sol"><b>Rozwiązanie:</b> chatbot odpowiada 24/7, a&nbsp;wyjątki przekazuje pracownikowi.</span></button>
-        <button class="cfg-card" data-hrs="18" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~18 h/mies.</span><span class="pain">Obecność i&nbsp;urlopy są w&nbsp;Excelu</span><span class="sol"><b>Rozwiązanie:</b> agent przygotuje dane do&nbsp;naliczenia wynagrodzeń.</span></button>
-        <button class="cfg-card" data-hrs="40" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~40 h/mies.</span><span class="pain">Produkcję planujemy w&nbsp;wielu Excelach</span><span class="sol"><b>Rozwiązanie:</b> jeden harmonogram połączony z&nbsp;magazynem i&nbsp;ERP.</span></button>
-        <button class="cfg-card" data-hrs="28" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~28 h/mies.</span><span class="pain">Ręcznie sortujemy zapytania</span><span class="sol"><b>Rozwiązanie:</b> agent sklasyfikuje załącznik i&nbsp;przygotuje ofertę.</span></button>
-        <button class="cfg-card" data-hrs="22" type="button"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg></span><span class="hrs">~22 h/mies.</span><span class="pain">Dane przepisujemy między systemami</span><span class="sol"><b>Rozwiązanie:</b> integracja połączy CRM, ERP i&nbsp;e-sklep.</span></button>
-        <button class="sol-toggle cfg-more-toggle" type="button" data-solution-toggle data-more="Pokaż 4 kolejne opcje" data-less="Pokaż mniej" aria-controls="cfgGrid" aria-expanded="false"><span>Pokaż 4 kolejne opcje</span><i aria-hidden="true">+</i></button>
-      </div>
-      <div class="cfg-panel reveal">
-        <span class="lbl">Zwrócimy czas Państwa zespołowi</span>
-        <div class="cfg-big" id="cfgHrs">0 h</div>
-        <div class="cfg-unit">pracy każdego miesiąca</div>
-        <div class="cfg-bar"><i id="cfgBar"></i></div>
-        <div class="cfg-count" id="cfgCount">Proszę wybrać obszary powyżej ↑</div>
-        <div class="cfg-money" id="cfgMoney">~ 0 zł</div>
-        <div class="cfg-moneyl">rocznie (orientacyjnie, 85 zł/godz.)</div>
-        <a href="#contact" class="btn green">Chcę to rozwiązać <span class="arr">→</span></a>
-        <div class="cfg-hint">Szacunek orientacyjny. Dokładny wpływ zmierzymy w&nbsp;pilotażu na&nbsp;Państwa danych.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOLUTIONS — green block ============ -->
-<section class="block sol-block" id="solutions">
-  <img class="tc-vec l" src="assets/decor/tc-leftVector.svg" alt="" aria-hidden="true" width="175" height="185" decoding="async" loading="lazy">
-  <img class="tc-vec r" src="assets/decor/tc-rightVector.svg" alt="" aria-hidden="true" width="260" height="227" decoding="async" loading="lazy">
-  <div class="wrap">
-    <span class="eyebrow reveal">Gotowe rozwiązania</span>
-    <h2 class="h2 reveal">Konkretne rozwiązania, które odciążą zespół.</h2>
-    <p class="lead reveal">Gotowe wdrożenia ograniczające przepisywanie, wyszukiwanie i&nbsp;wypełnianie danych.</p>
-    <div class="prj-grid" id="solutionGrid">
-      <a class="prj-wrap reveal" href="pl/reseni-dochazka.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+    <div class="solution-grid"><a class="solution-card" href="pl/reseni-dochazka.html">
+        <div class="solution-card__top"><span>01</span><span aria-hidden="true">↗</span></div>
         <h3>Ewidencja obecności</h3>
-        <p class="solves">Koniec ręcznego sumowania godzin z&nbsp;czytników i&nbsp;Excela na&nbsp;koniec miesiąca.</p>
-        <div class="prj-io"><span class="b4">Czytniki + Excel</span><span class="ar">→</span><span class="af">zestawienie godzin + dane płacowe</span></div>
-        <div class="save"><b>~15 h/mies.</b> zaoszczędzi księgowa płacowa</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-objednavky.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20M7 13h6"/></svg></div>
-        <h3>Przyjmowanie zamówień z&nbsp;e-maili</h3>
-        <p class="solves">Zamówienie przychodzi mailem w&nbsp;dowolnym formacie — nikt go&nbsp;nie przepisuje.</p>
-        <div class="prj-io"><span class="b4">Zamówienie e-mail</span><span class="ar">→</span><span class="af">założone + potwierdzone</span></div>
-        <div class="save"><b>~25 h/mies.</b> zaoszczędzi dział handlowy</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-reklamace.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/><path d="M9.5 12l2 2 3.5-4"/></svg></div>
-        <h3>Reklamacje pod&nbsp;kontrolą</h3>
-        <p class="solves">Żadna reklamacja nie&nbsp;zginie w&nbsp;mailach — każda zostaje automatycznie zarejestrowana i&nbsp;objęta monitoringiem.</p>
-        <div class="prj-io"><span class="b4">Reklamacja w&nbsp;mailu</span><span class="ar">→</span><span class="af">założona + monitorowana</span></div>
-        <div class="save"><b>szybsza</b> obsługa, bardziej zadowolony klient</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-sklad-bez-papiru.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></div>
-        <h3>Magazyn bez&nbsp;papierów</h3>
-        <p class="solves">Wystarczy sfotografować dowód dostawy — agent rejestruje przyjęcie i&nbsp;łączy je z&nbsp;zamówieniem.</p>
-        <div class="prj-io"><span class="b4">Dowód dostawy (zdjęcie)</span><span class="ar">→</span><span class="af">przyjęte + sparowane</span></div>
-        <div class="save"><b>~20 h/mies.</b> zaoszczędzi magazynier</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-dovolene.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg></div>
+        <p>Koniec ręcznego sumowania godzin z czytników i Excela na koniec miesiąca.</p>
+        <div class="solution-card__flow" aria-label="Czytniki + Excel → zestawienie godzin + dane płacowe">
+          <span>Czytniki + Excel</span><b aria-hidden="true">→</b><span>zestawienie godzin + dane płacowe</span>
+        </div>
+        <strong class="solution-card__proof">~15 h/mies. oszczędza księgowość płacowa</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-objednavky.html">
+        <div class="solution-card__top"><span>02</span><span aria-hidden="true">↗</span></div>
+        <h3>Przyjmowanie zamówień z e-maili</h3>
+        <p>Zamówienie przychodzi e-mailem w dowolnym formacie — nikt go nie przepisuje.</p>
+        <div class="solution-card__flow" aria-label="Zamówienie e-mail → utworzone + potwierdzone">
+          <span>Zamówienie e-mail</span><b aria-hidden="true">→</b><span>utworzone + potwierdzone</span>
+        </div>
+        <strong class="solution-card__proof">~25 h/mies. oszczędza dział handlowy</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-reklamace.html">
+        <div class="solution-card__top"><span>03</span><span aria-hidden="true">↗</span></div>
+        <h3>Reklamacje pod kontrolą</h3>
+        <p>Żadna reklamacja nie zginie w e-mailach — zostaje automatycznie zarejestrowana i objęta monitoringiem.</p>
+        <div class="solution-card__flow" aria-label="Reklamacja w e-mailu → utworzona + monitorowana">
+          <span>Reklamacja w e-mailu</span><b aria-hidden="true">→</b><span>utworzona + monitorowana</span>
+        </div>
+        <strong class="solution-card__proof">Szybsza obsługa, bardziej zadowoleni klienci</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-sklad-bez-papiru.html">
+        <div class="solution-card__top"><span>04</span><span aria-hidden="true">↗</span></div>
+        <h3>Magazyn bez papieru</h3>
+        <p>Wystarczy sfotografować dowód dostawy — przyjęcie i powiązanie z zamówieniem przebiegają automatycznie.</p>
+        <div class="solution-card__flow" aria-label="Dowód dostawy (zdjęcie) → przyjęte + sparowane">
+          <span>Dowód dostawy (zdjęcie)</span><b aria-hidden="true">→</b><span>przyjęte + sparowane</span>
+        </div>
+        <strong class="solution-card__proof">~20 h/mies. oszczędza magazynier</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-dovolene.html">
+        <div class="solution-card__top"><span>05</span><span aria-hidden="true">↗</span></div>
         <h3>Zatwierdzanie urlopów</h3>
-        <p class="solves">Koniec z&nbsp;papierowymi wnioskami — wniosek, zatwierdzenie i&nbsp;pilnowanie salda w&nbsp;jednym miejscu.</p>
-        <div class="prj-io"><span class="b4">Wniosek urlopowy</span><span class="ar">→</span><span class="af">zatwierdzone + zapisane</span></div>
-        <div class="save"><b>przegląd</b> dla&nbsp;przełożonych i&nbsp;HR w&nbsp;czasie rzeczywistym</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-kniha-jizd.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-6.5a2 2 0 0 0-2-1.5h-7a2 2 0 0 0-2 1.5L5 17z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
-        <h3>Ewidencja przejazdów automatycznie</h3>
-        <p class="solves">Agent przekształca dane o&nbsp;tankowaniach i&nbsp;trasach w&nbsp;gotową ewidencję przejazdów oraz pilnuje przeglądów i&nbsp;serwisów.</p>
-        <div class="prj-io"><span class="b4">Tankowania + trasy</span><span class="ar">→</span><span class="af">ewidencja przejazdów + alerty</span></div>
-        <div class="save"><b>~10 h/mies.</b> zaoszczędzi fleet manager</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-faktury.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
-        <h3>Faktury same do&nbsp;księgowości</h3>
-        <p class="solves">Otrzymana faktura zostaje odczytana, sparowana z&nbsp;zamówieniem i&nbsp;wysłana do&nbsp;zatwierdzenia.</p>
-        <div class="prj-io"><span class="b4">Faktura w&nbsp;PDF</span><span class="ar">→</span><span class="af">w&nbsp;księgowości, błędowość &lt;1 %</span></div>
-        <div class="save"><b>~30 h/mies.</b> zaoszczędzi księgowość</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-      <a class="prj-wrap reveal" href="pl/reseni-pracovni-vykazy.html"><div class="prj">
-        <div class="prj-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h6M9 5a2 2 0 1 0-4 0M9 5v14M5 5v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M13 11h4M13 15h4"/></svg></div>
+        <p>Koniec z papierowymi wnioskami — wniosek, zatwierdzenie i saldo w jednym miejscu.</p>
+        <div class="solution-card__flow" aria-label="Wniosek urlopowy → zatwierdzone + zapisane">
+          <span>Wniosek urlopowy</span><b aria-hidden="true">→</b><span>zatwierdzone + zapisane</span>
+        </div>
+        <strong class="solution-card__proof">Bieżący przegląd dla przełożonych i HR</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-kniha-jizd.html">
+        <div class="solution-card__top"><span>06</span><span aria-hidden="true">↗</span></div>
+        <h3>Automatyczna ewidencja przejazdów</h3>
+        <p>Tankowania i trasy tworzą gotową ewidencję przejazdów; system pilnuje też przeglądów i serwisów.</p>
+        <div class="solution-card__flow" aria-label="Tankowania + trasy → ewidencja przejazdów + alerty">
+          <span>Tankowania + trasy</span><b aria-hidden="true">→</b><span>ewidencja przejazdów + alerty</span>
+        </div>
+        <strong class="solution-card__proof">~10 h/mies. oszczędza zarządca floty</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-faktury.html">
+        <div class="solution-card__top"><span>07</span><span aria-hidden="true">↗</span></div>
+        <h3>Faktury bezpośrednio do księgowości</h3>
+        <p>Otrzymana faktura zostaje odczytana, sparowana z zamówieniem i wysłana do zatwierdzenia.</p>
+        <div class="solution-card__flow" aria-label="Faktura w PDF → w księgowości, błędowość &lt;1 %">
+          <span>Faktura w PDF</span><b aria-hidden="true">→</b><span>w księgowości, błędowość &lt;1 %</span>
+        </div>
+        <strong class="solution-card__proof">~30 h/mies. oszczędza księgowość</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a><a class="solution-card" href="pl/reseni-pracovni-vykazy.html">
+        <div class="solution-card__top"><span>08</span><span aria-hidden="true">↗</span></div>
         <h3>Karty pracy</h3>
-        <p class="solves">Karty pracy techników i&nbsp;pracowników są zbierane, zatwierdzane i&nbsp;przygotowane do&nbsp;fakturowania i&nbsp;płac.</p>
-        <div class="prj-io"><span class="b4">Karty z&nbsp;terenu</span><span class="ar">→</span><span class="af">zatwierdzone + do fakturacji</span></div>
-        <div class="save"><b>~12 h/mies.</b> i&nbsp;mniej błędów w&nbsp;fakturowaniu</div><span class="prj-more">Jak to działa <span class="arr">→</span></span>
-      </div></a>
-    </div>
-    <button class="sol-toggle" type="button" data-solution-toggle data-more="Pokaż 4 kolejne rozwiązania" data-less="Pokaż mniej" aria-controls="solutionGrid" aria-expanded="false"><span>Pokaż 4 kolejne rozwiązania</span><i aria-hidden="true">+</i></button>
-    <div class="sol-foot reveal"><a class="tlink" href="#contact">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na&nbsp;miarę <span class="arr">→</span></a></div>
+        <p>Karty pracy techników i pracowników są zbierane, zatwierdzane i przygotowane do fakturowania oraz płac.</p>
+        <div class="solution-card__flow" aria-label="Karty z terenu → zatwierdzone + gotowe do fakturacji">
+          <span>Karty z terenu</span><b aria-hidden="true">→</b><span>zatwierdzone + gotowe do fakturacji</span>
+        </div>
+        <strong class="solution-card__proof">~12 h/mies. i mniej błędów w fakturowaniu</strong>
+        <span class="solution-card__link" aria-hidden="true">→</span>
+      </a></div>
+    <div class="solution-catalog__cta"><a class="text-link" href="#contact">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę.</a></div>
   </div>
 </section>
-
-<!-- ============ REFERENCES ============ -->
-<section class="block" id="work">
-  <div class="wrap">
-    <span class="eyebrow reveal">Realizacje</span>
-    <h2 class="h2 reveal">Co zbudowaliśmy. I&nbsp;co to przyniosło.</h2>
-    <p class="lead reveal">Wybrane realizacje anonimowo według&nbsp;branż — konkretne referencje przedstawimy na&nbsp;spotkaniu.</p>
-    <div class="wk-grid">
-      <div class="wk reveal"><span class="ob">Produkcja · ~600 osób</span><div class="kpi">17 → 78 %</div><p>Codzienne wykorzystanie AI zintegrowanego z&nbsp;Business Central.</p><div class="tech">Copilot · Business Central</div></div>
-      <div class="wk reveal"><span class="ob">Tłumaczenia · holding 8 krajów</span><div class="kpi">−90 %</div><p>Lokalny LLM obniżył koszty, a&nbsp;dane zostały w&nbsp;firmie.</p><div class="tech">Llama 3 · Make · Claude</div></div>
-      <div class="wk reveal"><span class="ob">Energetyka · kogeneracja</span><div class="kpi">9 agentów</div><p>Dokumenty, serwis i&nbsp;raporty połączone w&nbsp;dwóch krajach.</p><div class="tech">Claude · Helios · n8n</div></div>
-      <div class="wk reveal"><span class="ob">Handel metalami · 82 osoby</span><div class="kpi">3 miesiące</div><p>~1&nbsp;420 godzin i&nbsp;~710&nbsp;tys.&nbsp;CZK oszczędności rocznie.</p><div class="tech">Copilot · n8n</div></div>
-      <div class="wk reveal"><span class="ob">Grupa budowlana</span><div class="kpi">−180 h/mies.</div><p>Bez&nbsp;ręcznego przepisywania, z&nbsp;jednym widokiem zleceń.</p><div class="tech">Aplikacja · API · Power BI</div></div>
-      <div class="wk reveal"><span class="ob">Logistyka · migracja</span><div class="kpi">−41 %</div><p>Automatyzacja przepływu magazyn ↔ transport.</p><div class="tech">Cloud · n8n · integracje</div></div>
+<section class="section results" id="results">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Realizacje</span><h2 class="section-title">Co zbudowaliśmy. I co to przyniosło.</h2></div>
+      <p class="section-intro">Wybrane projekty są zanonimizowane według branż. Konkretne referencje przedstawimy podczas spotkania.</p>
     </div>
+    <div class="case-grid"><article class="case-card">
+        <span class="case-card__context">Produkcja · ~600 osób</span>
+        <strong>17 → 78 %</strong>
+        <p>Warstwa agentowa oparta na Business Central. Pracownicy korzystają z AI codziennie, oszczędzając około 40 minut tygodniowo na użytkownika.</p>
+        <div class="case-card__tech"><span>Copilot</span><span>Business Central</span></div>
+      </article><article class="case-card">
+        <span class="case-card__context">Tłumaczenia · holding w 8 krajach</span>
+        <strong>−90 %</strong>
+        <p>GenAI w procesach operacyjnych oraz lokalny LLM na firmowym sprzęcie obniżyły koszty narzędzi, a dane pozostały w firmie.</p>
+        <div class="case-card__tech"><span>Llama 3</span><span>Make</span><span>Claude</span></div>
+      </article><article class="case-card">
+        <span class="case-card__context">Energetyka · kogeneracja</span>
+        <strong>9 agentów</strong>
+        <p>Dokumenty, serwis, raporty i notatki ze spotkań zamieniają się w zadania. Dwa kraje, jeden widok.</p>
+        <div class="case-card__tech"><span>Claude</span><span>Helios</span><span>n8n</span></div>
+      </article><article class="case-card">
+        <span class="case-card__context">Handel metalami · 82 osoby</span>
+        <strong>3 miesiące</strong>
+        <p>Program zwrócił się w trzy miesiące, oszczędzając około 1 420 godzin i 710 tys. CZK rocznie.</p>
+        <div class="case-card__tech"><span>Copilot</span><span>n8n</span></div>
+      </article><article class="case-card">
+        <span class="case-card__context">Grupa budowlana</span>
+        <strong>−180 h/mies.</strong>
+        <p>Dedykowany system wewnętrzny wyeliminował ręczne przepisywanie i zapewnił jeden widok zleceń.</p>
+        <div class="case-card__tech"><span>Aplikacja</span><span>API</span><span>Power BI</span></div>
+      </article><article class="case-card">
+        <span class="case-card__context">Logistyka · migracja</span>
+        <strong>−41 %</strong>
+        <p>Migracja stosu i automatyzacja przepływów między magazynem a transportem obniżyły koszty operacyjne.</p>
+        <div class="case-card__tech"><span>Cloud</span><span>n8n</span><span>integracje</span></div>
+      </article></div>
+    <p class="results-note"><span>Liczby pochodzą z danych operacyjnych poszczególnych projektów.</span><a class="text-link" href="#contact">Porozmawiajmy o podobnym przypadku</a></p>
   </div>
 </section>
-
-<!-- ============ INTEGRATIONS ============ -->
-<section class="block" id="integ">
-  <div class="wrap">
-    <span class="eyebrow reveal">Integracje</span>
-    <h2 class="h2 reveal">Połączymy systemy, których Państwo już używają.</h2>
-    <p class="lead reveal">Łączymy ERP, CRM, e-commerce, księgowość i&nbsp;modele AI bez&nbsp;wymiany narzędzi.</p>
-    <div class="intg-search reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input id="intgSearch" type="text" placeholder="Wpisz swój system (SAP, Pohoda, Shoptet…)" aria-label="Szukaj systemu">
+<section class="section section--white implementation" id="implementation">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Architektura modelowa</span><h2 class="section-title">Platforma dokumentowa oparta na Business Central</h2></div>
+      <p class="section-intro">Krótki przebieg od dokumentu wejściowego przez weryfikację aż po ERP, audyt i utrzymanie.</p>
     </div>
-    <div id="intgWrap" class="reveal">
-      <div class="intg-row"><div class="intg-cat">ERP</div><div class="intg-chips"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span><span>Karat</span></div></div>
-      <div class="intg-row"><div class="intg-cat">CRM</div><div class="intg-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div></div>
-      <div class="intg-row"><div class="intg-cat">E-sklep</div><div class="intg-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div></div>
-      <div class="intg-row"><div class="intg-cat">Komunikacja &amp; dane</div><div class="intg-chips"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div></div>
-      <div class="intg-row"><div class="intg-cat">Automatyzacja</div><div class="intg-chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div></div>
-      <div class="intg-row"><div class="intg-cat">Modele AI</div><div class="intg-chips"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div></div>
-    </div>
-    <p class="intg-empty" id="intgEmpty" style="display:none">Tego systemu nie ma na&nbsp;liście? Nie szkodzi — podłączymy także ten system. <a class="tlink" href="#contact">Proszę zapytać →</a></p>
-  </div>
-</section>
-
-<!-- ============ HOW ============ -->
-<section class="block" id="how">
-  <div class="wrap">
-    <span class="eyebrow reveal">Jak to robimy</span>
-    <h2 class="h2 reveal">Od&nbsp;pierwszego pytania do&nbsp;eksploatacji. Mierzalnie.</h2>
-    <p class="lead reveal">Cztery kroki do&nbsp;działającego rozwiązania z&nbsp;mierzalnym efektem.</p>
-    <div class="how-panel reveal">
-      <ul class="how-list">
-        <li><span class="how-num">1</span><div><span class="kk">01 · 1–2 tyg.</span><h3>Wskażemy największe straty</h3><p>Wybierzemy priorytety i&nbsp;zmierzymy stan wyjściowy.</p></div></li>
-        <li><span class="how-num">2</span><div><span class="kk">02 · 2–3 tyg.</span><h3>Zbudujemy pilotaż</h3><p>Prototyp na&nbsp;Państwa danych w&nbsp;bezpiecznym trybie. Dopracowujemy wyjątki.</p></div></li>
-        <li><span class="how-num">3</span><div><span class="kk">03 · 1–2 tyg.</span><h3>Wdrożymy</h3><p>Połączymy systemy, uruchomimy produkcję i&nbsp;zmierzymy efekt.</p></div></li>
-        <li><span class="how-num">4</span><div><span class="kk">04 · na bieżąco</span><h3>Rozwijamy</h3><p>Utrzymanie, optymalizacja i&nbsp;kolejne rozwiązania na&nbsp;tej samej platformie.</p></div></li>
-      </ul>
-    </div>
-    <div class="how-cta reveal">
-      <a class="tlink" href="pl/jak-stavime-automatizace.html">Szczegóły: jak budujemy automatyzacje <span class="arr">→</span></a>
-      <a class="tlink" href="pl/jak-stavime-agenty.html">Jak budujemy agentów <span class="arr">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEJSTE SI JISTÍ? ============ -->
-<section class="block alt" id="start-here">
-  <div class="wrap">
-    <span class="eyebrow reveal">Następny krok</span>
-    <h2 class="h2 reveal">Warto zacząć tutaj.</h2>
-    <div class="start-grid">
-      <a class="start-card reveal" href="pl/firma-2030.html">
-        <span class="start-tag">Wizja 2030</span>
-        <h3>Mapa drogowa firmy opartej na&nbsp;agentach AI do&nbsp;2030 roku</h3>
-        <p>Jak przygotować firmę na&nbsp;pracę z&nbsp;agentami AI.</p>
-        <span class="tlink">Przeczytaj przegląd <span class="arr">→</span></span>
-      </a>
-      <a class="start-card reveal" href="pl/firma-2030.html#urovne">
-        <span class="start-tag">Samoocena</span>
-        <h3>Na jakim etapie automatyzacji jest Państwa firma?</h3>
-        <p>Pięć poziomów dojrzałości i&nbsp;ich cechy.</p>
-        <span class="tlink">Sprawdź poziom dojrzałości <span class="arr">→</span></span>
-      </a>
-      <a class="start-card reveal" href="#work">
-        <span class="start-tag">Realizacje</span>
-        <h3>Przykłady wdrożeń</h3>
-        <p>Wdrożenia i&nbsp;ich wyniki w&nbsp;liczbach.</p>
-        <span class="tlink">Zobacz <span class="arr">→</span></span>
-      </a>
+    <div class="implementation-panel">
+      <div class="implementation-panel__top"><span>Model poglądowy — nie referencja klienta</span><span>Wejście → odczyt → zatwierdzenie → zapis</span></div>
+      <ol class="implementation-flow"><li class="implementation-step">
+        <span>01</span><div><h3>Dokument trafia do systemu</h3><p>E-mail, PDF lub skan — w dowolnym formacie.</p></div>
+      </li><li class="implementation-step">
+        <span>02</span><div><h3>System odczytuje i weryfikuje</h3><p>Porównuje dane z ERP i zachowuje pełną ścieżkę audytową.</p></div>
+      </li><li class="implementation-step implementation-step--human">
+        <span>03</span><div><h3>Człowiek zatwierdza wyjątek</h3><p>Zespół interweniuje tylko tam, gdzie potrzebna jest ocena człowieka.</p></div>
+      </li><li class="implementation-step">
+        <span>04</span><div><h3>Zweryfikowane dane są zapisywane</h3><p>Business Central, magazyn i DMS otrzymują zatwierdzone dane.</p></div>
+      </li></ol>
+      <div class="implementation-outcomes"><div class="implementation-outcome"><strong>~40 h/tydz.</strong><span>modelowo uwolnionej pracy</span></div><div class="implementation-outcome"><strong>3 → 1</strong><span>miejsca przechowywania dokumentów</span></div><div class="implementation-outcome"><strong>&lt;1 dzień</strong><span>modelowy czas przetwarzania</span></div></div>
+      <p class="implementation-note">To modelowa architektura z parametrami poglądowymi, a nie wynik konkretnego projektu klienta. Zweryfikowane rezultaty znajdują się w sekcji Realizacje.</p>
     </div>
   </div>
 </section>
-
-<!-- ============ CALCULATOR ============ -->
-<section class="block" id="calc">
-  <div class="wrap">
-    <span class="eyebrow reveal">Kalkulator oszczędności</span>
-    <h2 class="h2 reveal">Potrzebują Państwo dokładniejszej kalkulacji?</h2>
-    <p class="lead reveal">Szczegółowy kalkulator można otworzyć w&nbsp;dowolnym momencie.</p>
-    <details class="calc-details">
-      <summary>Otwórz szczegółowy kalkulator oszczędności <i aria-hidden="true">+</i></summary>
-    <div class="kc-wrap">
-      <div class="kc-form reveal">
-        <div class="kc-field"><label for="kc-people">Liczba osób wykonujących rutynę <b id="kc-people-v">10</b></label><input id="kc-people" type="range" min="1" max="200" step="1" value="10"><div class="kc-hint">Ilu pracowników zajmuje się&nbsp;powtarzalnymi zadaniami.</div></div>
-        <div class="kc-field"><label for="kc-hours">Godzin rutyny tygodniowo na&nbsp;osobę <b id="kc-hours-v">8 h</b></label><input id="kc-hours" type="range" min="1" max="40" step="1" value="8"><div class="kc-hint">Przepisywanie, wyszukiwanie, wypełnianie, dochodzenie…</div></div>
-        <div class="kc-field"><label for="kc-rate">Stawka godzinowa <b id="kc-rate-v">85 zł</b></label><input id="kc-rate" type="range" min="40" max="340" step="5" value="85"><div class="kc-hint">Średni koszt godziny pracy wraz&nbsp;z&nbsp;narzutem.</div></div>
-        <div class="kc-field"><label for="kc-share">Udział, który przejmie AI <b id="kc-share-v">45 %</b></label><input id="kc-share" type="range" min="20" max="70" step="5" value="45"><div class="kc-hint">Przy&nbsp;odpowiednich procesach zwykle 30–60&nbsp;% rutyny.</div></div>
+<section class="section section--white" id="process">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Jak pracujemy</span><h2 class="section-title">Pokazujemy pierwsze efekty, zanim zaczniemy skalować.</h2></div>
+      <p class="section-intro">Każdy etap ma jasny rezultat, punkt decyzyjny i właściciela. Nie sprzedajemy niekończącego się eksperymentu.</p>
+    </div>
+    <div class="process-grid"><article class="process-step"><span class="process-step__timing">1–2 tyg.</span><h3>Znajdujemy właściwy proces</h3><p>Określamy nakład pracy, wyjątki, dane i rzeczywisty koszt obecnego sposobu działania.</p></article><article class="process-step"><span class="process-step__timing">2–3 tyg.</span><h3>Tworzymy uzasadnienie biznesowe</h3><p>Określamy punkt wyjścia, oczekiwane oszczędności, ryzyka i kryteria sukcesu pilotażu.</p></article><article class="process-step"><span class="process-step__timing">1–2 tyg.</span><h3>Realizujemy pilotaż</h3><p>Łączymy rozwiązanie z systemami produkcyjnymi i mierzymy jego efekty na rzeczywistych danych.</p></article><article class="process-step"><span class="process-step__timing">na bieżąco</span><h3>Bierzemy odpowiedzialność za utrzymanie</h3><p>Monitoring, bezpieczeństwo, SLA i rozwój mają konkretnego właściciela.</p></article></div>
+    <div class="process-links">
+      <a class="text-link" href="pl/jak-stavime-agenty.html">Szczegółowo: jak budujemy agentów</a>
+      <a class="text-link" href="pl/jak-stavime-automatizace.html">Szczegółowo: jak budujemy automatyzacje</a>
+    </div>
+  </div>
+</section>
+<section class="section" id="integrations">
+  <div class="shell integration-layout">
+    <div class="integration-copy">
+      <span class="section-kicker">Integracje</span>
+      <h2 class="section-title">Łączymy systemy, których Państwo już używają.</h2>
+      <p class="section-intro">Łączymy ERP, CRM, e-commerce, księgowość i AI bez zbędnej wymiany istniejących narzędzi.</p>
+      <ul class="integration-points"><li>Integracja przez API, bazy danych, pliki lub interfejs użytkownika</li><li>Akceptacja przez człowieka przy wrażliwych krokach i pełna ścieżka audytu</li><li>Monitoring, role, uprawnienia i odpowiedzialność operacyjna od pierwszego dnia</li></ul>
+      <p class="integration-proof"><strong>60+</strong><span>Mamy doświadczenie z integracją ponad 60 systemów, również starszych rozwiązań bez nowoczesnego API.</span></p>
+    </div>
+    <div class="integration-catalog">
+      <div class="integration-catalog__head">
+        <label class="integration-search">
+          <span class="sr-only">Szukaj systemu</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="search" data-integration-search placeholder="Wpisz system (SAP, Pohoda, Shoptet…)" aria-label="Szukaj systemu">
+        </label>
+        <span class="integration-count" data-integration-count data-count-one="system w katalogu" data-count-few="systemy w katalogu" data-count-many="systemów w katalogu" data-count-other="systemu w katalogu" aria-live="polite" aria-atomic="true">44 systemy w katalogu</span>
       </div>
-      <div class="kc-result reveal">
-        <span class="lbl">Roczna oszczędność kosztów</span>
-        <div class="kc-big" id="kc-money">140 760 zł</div>
-        <p class="kc-sub">przy&nbsp;automatyzacji wybranego procesu</p>
-        <div class="kc-split"><div><b id="kc-hrs">1656 h</b><span>zaoszczędzonych rocznie</span></div><div><b id="kc-fte">0,9×</b><span>etatu uwolnione</span></div></div>
-        <a href="#contact" class="btn green">Omówmy Państwa procesy <span class="arr">→</span></a>
-        <div class="kc-or">albo poproś o&nbsp;przesłanie wyniku z&nbsp;rekomendacją na&nbsp;e-mail</div>
-        <form class="capture kc-capture" id="kcCapture" autocomplete="on">
-          <input type="email" id="kcEmail" placeholder="E-mail służbowy" aria-label="E-mail" required>
-          <button type="submit">Wyślij obliczenie</button>
-        </form>
-        <p class="kc-capture-note">Otworzy się program pocztowy z&nbsp;gotowym wynikiem. Odpowiemy trzema rekomendacjami dopasowanymi do&nbsp;Państwa sytuacji. Bez spamu.</p>
-        <p class="kc-disc">Szacunek orientacyjny dla&nbsp;wyobrażenia rzędu wielkości, nie&nbsp;oferta. Rzeczywistą korzyść zweryfikujemy w&nbsp;pilotażu.</p>
-      </div>
-    </div>
-    </details>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="block contact" id="contact">
-  <img class="book" src="assets/decor/book.svg" alt="" aria-hidden="true" width="139" height="142" decoding="async" loading="lazy">
-  <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Działajmy</span>
-      <h2 class="h2">Pokażemy to na&nbsp;Państwa procesach.</h2>
-      <p>W&nbsp;30 minut wskażemy priorytet, możliwy efekt i&nbsp;następny krok.</p>
-      <div class="cta-btns">
-        <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener" class="btn green">Zarezerwuj 30 min <span class="arr">→</span></a>
-        <a href="mailto:milo@enterit.cz" class="btn outline">milo@enterit.cz</a>
-      </div>
+      <div class="system-groups"><div class="system-group">
+        <h3>ERP</h3>
+        <div class="system-list"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span><span>Karat</span></div>
+      </div><div class="system-group">
+        <h3>CRM</h3>
+        <div class="system-list"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div>
+      </div><div class="system-group">
+        <h3>E-commerce</h3>
+        <div class="system-list"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div>
+      </div><div class="system-group">
+        <h3>Komunikacja i dane</h3>
+        <div class="system-list"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div>
+      </div><div class="system-group">
+        <h3>Automatyzacja</h3>
+        <div class="system-list"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div>
+      </div><div class="system-group">
+        <h3>Modele AI</h3>
+        <div class="system-list"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div>
+      </div></div>
+      <p class="integration-empty" data-integration-empty hidden>Nie ma Państwa systemu na liście? To nie problem — podłączymy również ten system.</p>
     </div>
   </div>
 </section>
-
+<section class="section operations" id="operations">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Utrzymanie i gwarancje</span><h2 class="section-title">Nie tylko budujemy. Zapewniamy działanie i przejrzyste przekazanie.</h2></div>
+      <p class="section-intro">SLA, własność, bezpieczeństwo i plan wyjścia uwzględniamy już na etapie projektu.</p>
+    </div>
+    <div class="operations-grid"><article class="operation-card">
+        <span class="operation-card__tag">SLA i utrzymanie</span>
+        <h3>Po wdrożeniu nadal odpowiadamy za działanie</h3>
+        <p>Dostępność, czasy reakcji, monitoring 24/7, kopie zapasowe i aktualizacje w ramach jednego SLA.</p>
+        <span class="operation-card__meta">dostępność · reakcja · monitoring</span>
+      </article><article class="operation-card">
+        <span class="operation-card__tag">Własność i plan wyjścia</span>
+        <h3>Z góry wiadomo, do kogo należą kod, dane i dokumentacja</h3>
+        <p>Umowa jasno określa własność kodu, danych i dokumentacji oraz praktyczny plan przekazania i zakończenia współpracy.</p>
+        <span class="operation-card__meta">kod · dane · dokumentacja · plan wyjścia</span>
+      </article><article class="operation-card">
+        <span class="operation-card__tag">Bezpieczeństwo i governance</span>
+        <h3>Bezpieczeństwo jest częścią projektu</h3>
+        <p>Chmura w UE lub on-premise, szyfrowanie, role, uprawnienia i pełna ścieżka audytowa.</p>
+        <span class="operation-card__meta">chmura UE · on-premise · dostępy · audyt</span>
+      </article></div>
+    <div class="operation-cta"><a class="text-link" href="#contact">Omówmy odpowiedzialność i utrzymanie</a></div>
+  </div>
+</section>
+<section class="section section--white" id="team">
+  <div class="shell team-layout">
+    <div class="team-copy">
+      <span class="section-kicker">Jeden partner od projektu po utrzymanie</span>
+      <h2 class="section-title">75 specjalistów. Trzy zespoły. Jedna odpowiedzialność.</h2>
+      <p class="section-intro">Architektura, inżynieria AI, produkt, infrastruktura i długoterminowe utrzymanie są w jednym miejscu.</p>
+      <div class="team-stats"><div class="team-stat"><strong>45</strong><span>enterprise</span></div><div class="team-stat"><strong>25</strong><span>AI i agenci</span></div><div class="team-stat"><strong>5</strong><span>studio produktowe</span></div></div>
+      <a class="button" href="pl/tym.html">Poznaj cały zespół <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+    </div>
+    <div class="team-portraits">
+      <figure class="portrait"><img src="/assets/team/gaspar-nagy.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Gašpar Nagy · Founder</figcaption></figure>
+      <figure class="portrait"><img src="/assets/team/nedvidek.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Honza Nedvídek · CEO</figcaption></figure>
+      <figure class="portrait"><img src="/assets/team/hanigovsky.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Ondřej Hanigovský · CTO</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="section section--white resources" id="resources">
+  <div class="shell">
+    <div class="section-head section-head--compact">
+      <div><span class="section-kicker">Dowiedz się więcej</span><h2 class="section-title">Proszę wybrać potrzebny poziom szczegółowości.</h2></div>
+    </div>
+    <div class="resources-grid"><article class="resource-card">
+        <span class="resource-card__tag">Jak budujemy</span>
+        <h3>Od architektury do produkcji</h3>
+        <p>Szczegóły architektury, bezpieczeństwa, testów i przekazania do utrzymania.</p>
+        <div class="resource-card__links"><a class="text-link" href="pl/jak-stavime-agenty.html">Jak budujemy agentów AI</a><a class="text-link" href="pl/jak-stavime-automatizace.html">Jak budujemy automatyzacje</a></div>
+      </article><article class="resource-card">
+        <span class="resource-card__tag">Firma 2030</span>
+        <h3>Na jakim etapie drogi do operacji opartych na agentach jest Państwa firma?</h3>
+        <p>Pięć poziomów dojrzałości i konkretny kolejny krok dla każdego z nich.</p>
+        <div class="resource-card__links"><a class="text-link" href="pl/firma-2030.html">Sprawdź poziom</a></div>
+      </article><article class="resource-card">
+        <span class="resource-card__tag">Wyniki i kolejny krok</span>
+        <h3>Najpierw dowód. Potem decyzja.</h3>
+        <p>Proszę przejrzeć zanonimizowane wyniki lub pokazać nam proces, który spowalnia zespół.</p>
+        <div class="resource-card__links"><a class="text-link" href="#results">Zobacz wyniki</a><a class="text-link" href="#contact">Omów projekt</a></div>
+      </article></div>
+  </div>
+</section>
+<section class="section calculator" id="calc" data-calculator data-locale="pl-PL" data-currency="PLN" data-weeks="46" data-fte-hours="1840">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="section-kicker">Kalkulator oszczędności</span><h2 class="section-title">Proszę oszacować skalę potencjału.</h2></div>
+      <p class="section-intro">Cztery parametry można dopasować do własnej organizacji. Wynik jest orientacyjny; rzeczywisty efekt weryfikujemy w pilotażu.</p>
+    </div>
+    <div class="calculator-grid">
+      <div class="calculator-form" role="group" aria-label="Proszę oszacować skalę potencjału."><div class="calculator-field">
+        <div class="calculator-field__label"><label for="calc-people">Liczba osób wykonujących rutynową pracę</label><output data-calc-output="people" for="calc-people">10</output></div>
+        <input id="calc-people" type="range" data-calc-field="people" data-suffix="" min="1" max="200" step="1" value="10" aria-describedby="calc-people-hint" aria-valuetext="10">
+        <p id="calc-people-hint">Ilu pracowników zajmuje się powtarzalnymi zadaniami.</p>
+      </div><div class="calculator-field">
+        <div class="calculator-field__label"><label for="calc-hours">Godziny rutyny tygodniowo na osobę</label><output data-calc-output="hours" for="calc-hours">8 h</output></div>
+        <input id="calc-hours" type="range" data-calc-field="hours" data-suffix=" h" min="1" max="40" step="1" value="8" aria-describedby="calc-hours-hint" aria-valuetext="8 h">
+        <p id="calc-hours-hint">Przepisywanie, wyszukiwanie, wypełnianie i sprawdzanie.</p>
+      </div><div class="calculator-field">
+        <div class="calculator-field__label"><label for="calc-rate">Stawka godzinowa</label><output data-calc-output="rate" for="calc-rate">85 zł</output></div>
+        <input id="calc-rate" type="range" data-calc-field="rate" data-suffix="" min="40" max="340" step="5" value="85" aria-describedby="calc-rate-hint" aria-valuetext="85 zł">
+        <p id="calc-rate-hint">Średni koszt godziny pracy wraz z narzutem.</p>
+      </div><div class="calculator-field">
+        <div class="calculator-field__label"><label for="calc-share">Część rutyny możliwa do automatyzacji</label><output data-calc-output="share" for="calc-share">45 %</output></div>
+        <input id="calc-share" type="range" data-calc-field="share" data-suffix=" %" min="20" max="70" step="5" value="45" aria-describedby="calc-share-hint" aria-valuetext="45 %">
+        <p id="calc-share-hint">W odpowiednich procesach zwykle 30–60 % rutynowej pracy.</p>
+      </div></div>
+      <aside class="calculator-result">
+        <span class="calculator-result__label">Roczna oszczędność kosztów</span>
+        <strong class="calculator-result__money" data-calc-money aria-live="polite" aria-atomic="true">140 760 zł</strong>
+        <p>przy automatyzacji wybranej rutyny</p>
+        <div class="calculator-result__split">
+          <div><strong data-calc-hours>1656 h</strong><span>godzin zaoszczędzonych rocznie</span></div>
+          <div><strong data-calc-fte>0,9×</strong><span>uwolnionego etatu</span></div>
+        </div>
+        <a class="button" href="#contact">Omówmy Państwa procesy <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+        <small>Orientacyjny szacunek rzędu wielkości, nie oferta. Rzeczywisty efekt zweryfikujemy w pilotażu na Państwa danych.</small>
+      </aside>
+    </div>
+  </div>
+</section>
+<section class="contact-section" id="contact">
+  <div class="shell">
+    <div class="contact-card">
+      <div class="contact-card__content">
+        <span class="section-kicker">Pierwszy krok zajmuje 30 minut</span>
+        <h2>Porozmawiajmy o procesie, który Państwa spowalnia.</h2>
+        <p>Wspólnie ustalimy, czy warto zastosować automatyzację, integrację lub zmianę systemu — i co najpierw potwierdzić.</p>
+        <div class="contact-actions">
+          <a class="button" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener">Umówmy 30-minutową rozmowę <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+          <a class="button button--light" href="mailto:milo@enterit.cz">Wyślij e-mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="foot-logo">
-          <img class="enty" src="assets/decor/enty.svg" alt="" width="160" height="160" decoding="async" loading="lazy">
-          <span class="ft-name">Enter&nbsp;IT</span>
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-intro">
+      <a class="footer-brand" href="/pl.html" aria-label="EnterIT — strona główna">
+        <img src="/assets/enter_logo_white.svg" alt="EnterIT" width="477" height="200" loading="lazy" decoding="async">
+      </a>
+      <h2 class="footer-statement">Czas wejść do świata automatyzacji. Wystarczy jeden klik.</h2>
+    </div>
+    <div class="footer-main">
+      <section class="footer-contact" aria-labelledby="footer-contact-heading">
+        <h2 class="footer-heading" id="footer-contact-heading">Pytania?</h2>
+        <div class="footer-contact-links">
+          <a href="mailto:milo@enterit.cz"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>milo@enterit.cz</span></a>
+          <a href="tel:+420608969263"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>+420 608 969 263</span></a>
         </div>
-      </div>
-      <div>
-        <h2 class="foot-cta">Czas wejść do&nbsp;świata automatyzacji. Wystarczy jeden klik.</h2>
-        <div class="foot-cols">
-          <div class="foot-contact">
-            <div class="foot-h">Pytania?</div>
-            <a href="mailto:milo@enterit.cz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>milo@enterit.cz</a>
-            <a href="tel:+420608969263"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>+420 608 969 263</a>
-          </div>
-          <div class="foot-menu">
-            <div class="foot-h">Menu</div>
-            <a href="#problems">Co rozwiązujemy</a>
-            <a href="#solutions">Gotowe rozwiązania</a>
-            <a href="#work">Realizacje</a>
-            <a href="https://enterai.cz/" target="_blank" rel="noopener">EnterAI</a>
-          </div>
-          <div class="foot-menu">
-            <div class="foot-h">Rozwiązania</div>
-            <a href="pl/reseni-faktury.html">Faktury do&nbsp;księgowości</a>
-            <a href="pl/reseni-objednavky.html">Zamówienia z&nbsp;e-maili</a>
-            <a href="pl/reseni-reklamace.html">Reklamacje</a>
-            <a href="pl/reseni-sklad-bez-papiru.html">Magazyn bez&nbsp;papierów</a>
-            <a href="pl/reseni-dochazka.html">Ewidencja obecności</a>
-            <a href="pl/reseni-dovolene.html">Zatwierdzanie urlopów</a>
-            <a href="pl/reseni-kniha-jizd.html">Ewidencja przejazdów</a>
-            <a href="pl/reseni-pracovni-vykazy.html">Karty pracy</a>
-          </div>
-          <div class="foot-soc-wrap">
-            <div class="foot-h">Bądź na&nbsp;bieżąco</div>
-            <div class="foot-soc">
-              <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
-              <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-              <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
-            </div>
-          </div>
+        <address class="footer-address"><strong>AI Enter s.r.o.</strong><span>IČO 19086652 · DIČ CZ19086652</span><span>Zahradní 2004/46d</span><span>792 01 Bruntál, Czechia</span></address>
+      </section>
+      <nav class="footer-column" aria-labelledby="footer-menu-heading">
+        <h2 class="footer-heading" id="footer-menu-heading">Menu</h2>
+        <div class="footer-links">
+          <a href="/pl.html#services">Co budujemy</a>
+          <a href="/pl.html#results">Wyniki</a>
+          <a href="/pl.html#process">Jak pracujemy</a>
+          <a href="/pl.html#integrations">Integracje</a>
+          <a href="/pl/tym.html">Zespół</a>
+          <a href="https://enterai.cz/" target="_blank" rel="noopener">EnterAI</a>
         </div>
+      </nav>
+      <nav class="footer-column footer-solutions" aria-labelledby="footer-solutions-heading">
+        <h2 class="footer-heading" id="footer-solutions-heading">Rozwiązania</h2>
+        <div class="footer-links"><a href="/pl/reseni-faktury.html">Faktury do księgowości</a><a href="/pl/reseni-objednavky.html">Zamówienia z e-maili</a><a href="/pl/reseni-reklamace.html">Reklamacje</a><a href="/pl/reseni-sklad-bez-papiru.html">Magazyn bez papierów</a><a href="/pl/reseni-dochazka.html">Ewidencja obecności</a><a href="/pl/reseni-dovolene.html">Zatwierdzanie urlopów</a><a href="/pl/reseni-kniha-jizd.html">Ewidencja przejazdów</a><a href="/pl/reseni-pracovni-vykazy.html">Karty pracy</a></div>
+      </nav>
+      <div class="footer-social">
+        <h2 class="footer-heading">Bądź na bieżąco</h2>
+        <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+    <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+  </div>
       </div>
     </div>
-    <div class="foot-bar">
-      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-      <span class="legal"><a href="pl/gdpr.html">Ochrona danych osobowych</a><a href="pl/podminky.html">Ogólne warunki handlowe</a></span>
+    <div class="footer-bottom">
+      <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="footer-legal"><a href="/pl/gdpr.html">Polityka prywatności</a><a href="/pl/podminky.html">Ogólne warunki handlowe</a></span>
     </div>
   </div>
 </footer>
-<script>
-(function(){
-  "use strict";
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- header scroll ---- */
-  var header = document.getElementById('header');
-  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 12); };
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-  /* ---- mobile menu ---- */
-  var mt = document.getElementById('mtoggle'), mm = document.getElementById('mmenu');
-  var pageMain = document.getElementById('home'), pageFoot = document.querySelector('.footer');
-  function setBehind(on){ [pageMain,pageFoot].forEach(function(el){ if(!el) return; if(on) el.setAttribute('inert',''); else el.removeAttribute('inert'); }); }
-  function closeMenu(){ mt.classList.remove('open'); mm.classList.remove('open'); mt.setAttribute('aria-expanded','false'); document.body.style.overflow=''; setBehind(false); mt.focus(); }
-  function openMenu(){ mt.classList.add('open'); mm.classList.add('open'); mt.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; setBehind(true); var first=mm.querySelector('a'); if(first) first.focus(); }
-  mt.addEventListener('click', function(){ mt.classList.contains('open') ? closeMenu() : openMenu(); });
-  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && mt.classList.contains('open')) closeMenu(); });
-
-  /* ---- reveal on scroll ---- */
-  var reveals = document.querySelectorAll('.reveal');
-  if(prefersReduced || !('IntersectionObserver' in window)){
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
-    reveals.forEach(function(el){ io.observe(el); });
-  }
-
-  /* ---- number counters ---- */
-  function animateNum(el){
-    var target = parseFloat(el.getAttribute('data-val')) || 0;
-    var suf = el.getAttribute('data-suf') || '';
-    if(prefersReduced){ el.textContent = target.toLocaleString('pl-PL')+suf; return; }
-    var dur = 1400, start = null;
-    function step(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts-start)/dur, 1);
-      var eased = 1-Math.pow(1-p,3);
-      el.textContent = Math.round(target*eased).toLocaleString('pl-PL')+suf;
-      if(p<1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  var nums = document.querySelectorAll('.num');
-  if('IntersectionObserver' in window){
-    var io2 = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ animateNum(e.target); io2.unobserve(e.target); } });
-    }, {threshold:.4});
-    nums.forEach(function(el){ io2.observe(el); });
-  } else { nums.forEach(animateNum); }
-
-  /* ---- helpers ---- */
-  function cz(n){ return Math.round(n).toLocaleString('pl-PL'); }
-
-  /* ---- problems configurator ---- */
-  var grid = document.getElementById('cfgGrid');
-  if(grid){
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.cfg-card'));
-    var elHrs = document.getElementById('cfgHrs'), elBar = document.getElementById('cfgBar'),
-        elCount = document.getElementById('cfgCount'), elMoney = document.getElementById('cfgMoney');
-    var maxHrs = cards.reduce(function(s,c){ return s+(parseInt(c.dataset.hrs,10)||0); },0);
-    function fmtMoney(n){ return n>=1e6 ? (n/1e6).toFixed(1).replace('.',',')+' mln zł' : cz(n)+' zł'; }
-    function plural(n){
-      if(n===1) return 'obszar';
-      var d=n%10, h=n%100;
-      return (d>=2&&d<=4&&!(h>=12&&h<=14)) ? 'obszary' : 'obszarów';
-    }
-    function updateCfg(){
-      var sel = cards.filter(function(c){ return c.classList.contains('on'); });
-      var n = sel.length;
-      var hrs = sel.reduce(function(s,c){ return s+(parseInt(c.dataset.hrs,10)||0); },0);
-      elHrs.textContent = cz(hrs)+' h';
-      elBar.style.width = (maxHrs?Math.min(hrs/maxHrs*100,100):0)+'%';
-      elMoney.textContent = '~ '+fmtMoney(hrs*12*85);
-      elCount.textContent = n===0 ? 'Proszę wybrać obszary powyżej ↑' : ('Rozwiązujemy '+n+' '+plural(n));
-    }
-    cards.forEach(function(c){
-      c.addEventListener('click', function(){ c.classList.toggle('on'); updateCfg(); });
-    });
-    updateCfg();
-  }
-
-  /* ---- savings calculator ---- */
-  var people = document.getElementById('kc-people'), hours = document.getElementById('kc-hours'),
-      rate = document.getElementById('kc-rate'), share = document.getElementById('kc-share');
-  if(people && hours && rate && share){
-    var WEEKS = 46, FTE = 1840;
-    var pv=document.getElementById('kc-people-v'), hv=document.getElementById('kc-hours-v'),
-        rv=document.getElementById('kc-rate-v'), sv=document.getElementById('kc-share-v'),
-        money=document.getElementById('kc-money'), hrsEl=document.getElementById('kc-hrs'), fte=document.getElementById('kc-fte');
-    function calc(){
-      var p=+people.value, h=+hours.value, r=+rate.value, s=+share.value/100;
-      pv.textContent=p; hv.textContent=h+' h'; rv.textContent=cz(r)+' zł'; sv.textContent=(s*100)+' %';
-      var savedHrs = p*h*s*WEEKS;
-      money.textContent = cz(savedHrs*r)+' zł';
-      hrsEl.textContent = cz(savedHrs)+' h';
-      fte.textContent = (savedHrs/FTE).toFixed(1).replace('.',',')+'×';
-    }
-    [people,hours,rate,share].forEach(function(el){ el.addEventListener('input', calc); });
-    calc();
-  }
-
-  /* ---- integrations search ---- */
-  var search = document.getElementById('intgSearch');
-  if(search){
-    var rows = Array.prototype.slice.call(document.querySelectorAll('#intgWrap .intg-row'));
-    var empty = document.getElementById('intgEmpty');
-    search.addEventListener('input', function(){
-      var q = search.value.trim().toLowerCase();
-      var anyVisible = false;
-      rows.forEach(function(row){
-        var chips = Array.prototype.slice.call(row.querySelectorAll('.intg-chips span'));
-        var rowHas = false;
-        chips.forEach(function(ch){
-          var match = !q || ch.textContent.toLowerCase().indexOf(q) !== -1;
-          ch.style.display = match ? '' : 'none';
-          if(match) rowHas = true;
-        });
-        row.style.display = rowHas ? '' : 'none';
-        if(rowHas) anyVisible = true;
-      });
-      empty.style.display = (q && !anyVisible) ? '' : 'none';
-    });
-  }
-
-  /* ---- hero email capture → contact ---- */
-  var cap = document.getElementById('heroCapture');
-  if(cap){
-    cap.addEventListener('submit', function(e){
-      e.preventDefault();
-      var email = (document.getElementById('heroEmail').value||'').trim();
-      var url = 'mailto:milo@enterit.cz?subject='+encodeURIComponent('Chcę obliczyć oszczędność')+
-                '&body='+encodeURIComponent('Dzień dobry,\n\nproszę o niezobowiązujące obliczenie oszczędności.\nAdres e-mail: '+email);
-      window.location.href = url;
-    });
-  }
-
-  /* ---- kalkulačka → poslat výsledek e-mailem ---- */
-  var kcCap = document.getElementById('kcCapture');
-  if(kcCap){
-    kcCap.addEventListener('submit', function(e){
-      e.preventDefault();
-      var email = (document.getElementById('kcEmail').value||'').trim();
-      var body = 'Dzień dobry,\n\nproszę o wynik kalkulatora oszczędności wraz z rekomendacjami.\nAdres e-mail: '+email+
-        '\n\n— Wynik kalkulatora —\n'+
-        'Liczba osób: '+(document.getElementById('kc-people-v')||{}).textContent+'\n'+
-        'Godzin rutyny tygodniowo na osobę: '+(document.getElementById('kc-hours-v')||{}).textContent+'\n'+
-        'Stawka godzinowa: '+(document.getElementById('kc-rate-v')||{}).textContent+'\n'+
-        'Udział, który przejmie AI: '+(document.getElementById('kc-share-v')||{}).textContent+'\n'+
-        'Roczna oszczędność: '+(document.getElementById('kc-money')||{}).textContent+'\n'+
-        'Zaoszczędzonych godzin rocznie: '+(document.getElementById('kc-hrs')||{}).textContent+'\n'+
-        'Uwolniony etat: '+(document.getElementById('kc-fte')||{}).textContent;
-      window.location.href = 'mailto:milo@enterit.cz?subject='+encodeURIComponent('Wynik kalkulatora oszczędności')+
-        '&body='+encodeURIComponent(body);
-    });
-  }
-})();
-</script>
 </body>
 </html>

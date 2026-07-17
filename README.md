@@ -1,8 +1,39 @@
-# enterit
+# EnterIT web
 
-Statická landing page webu EnterIT — jeden self-contained soubor [`index.html`](index.html).
+Statický vícejazyčný web bez build frameworku.
 
-## Struktura
+## Homepage
 
-- `index.html` — aktuální web (jedna HTML stránka, fonty a obrázky přes externí URL / inline).
-- `old/` — předchozí verze webu (Nuxt/Vue aplikace), archivovaná pro referenci.
+Homepage pro CZ, EN, DE a PL používají jeden společný design a generují se z jednoho zdroje:
+
+- `scripts/homepage-content.mjs` — lokalizovaný obsah,
+- `scripts/build-homepages.mjs` — společná HTML šablona,
+- `assets/home.css` a `assets/home.js` — homepage vizuál a motion systém,
+- `assets/site-shell.css` — společná hlavička, jazykový dropdown a patička,
+- `index.html`, `en.html`, `de.html`, `pl.html` — vygenerované výstupy.
+
+Po změně obsahu nebo šablony spusťte:
+
+```sh
+node scripts/build-homepages.mjs
+```
+
+## Produkční podstránky
+
+Všech 56 produkčních podstránek EnterIT používá společný světlý design z
+`assets/subpage.css` a sdílené chování z `assets/site-ui.js`. Jejich hlavička,
+patička, jazykový dropdown a odkazy na homepage se obnoví příkazem:
+
+```sh
+node scripts/build-subpages.mjs
+```
+
+Skript záměrně neupravuje `old/`, noindex redesignová dema ani externí web EnterAI.
+
+## Lokální spuštění
+
+```sh
+python3 scripts/serve-local.py --port 8000
+```
+
+Web poběží na [http://localhost:8000](http://localhost:8000) a lokální server zachová produkční přesměrování `/en`, `/de` a `/pl`.

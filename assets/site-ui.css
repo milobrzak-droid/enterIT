@@ -1,6 +1,17 @@
-/* Shared accessibility and language-navigation utilities. */
-.skip-link{position:fixed;z-index:999;top:10px;left:10px;padding:11px 15px;border-radius:9px;background:#41E39E;color:#17202E;font-family:var(--mono,ui-monospace,monospace);font-size:13px;font-weight:700;transform:translateY(-160%);transition:transform .2s ease}
-.skip-link:focus{transform:translateY(0);outline:3px solid #FBFBFB;outline-offset:3px}
+/* Shared accessibility, typography and language-navigation utilities. */
+:root{
+  --body:'Greycliff CF','Avenir Next','Segoe UI',sans-serif;
+  --head:'Greycliff CF','Avenir Next','Segoe UI',sans-serif;
+  /* Legacy page styles use --mono for all interface and body copy. Pointing it
+     at the brand sans removes the terminal aesthetic without a 60-page fork. */
+  --mono:var(--body);
+  --code:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+body{font-family:var(--body);font-weight:500;letter-spacing:-.01em;text-rendering:optimizeLegibility}
+button,input,select,textarea{font-family:inherit}
+p,li{letter-spacing:-.006em}
+.skip-link{position:fixed;z-index:999;top:10px;left:10px;padding:11px 15px;border-radius:9px;background:#14231f;color:#fff;font-family:var(--body,sans-serif);font-size:13px;font-weight:700;transform:translateY(-160%);transition:transform .2s ease}
+.skip-link:focus{transform:translateY(0);outline:3px solid #55e3a4;outline-offset:3px}
 .page-lang{display:flex;align-items:center;gap:2px;font-family:var(--mono,ui-monospace,monospace);font-size:11px}
 .page-lang a{padding:4px 6px;border-radius:7px;color:var(--muted,#8A95A8);transition:color .2s,background .2s}
 .page-lang a:hover,.page-lang a[aria-current="page"]{background:var(--green,#41E39E);color:var(--navy,#17202E)}

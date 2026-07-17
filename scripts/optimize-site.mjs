@@ -400,10 +400,10 @@ for (const file of files) {
     if (organizationBlock) html = html.replace(organizationBlock[0], replacement);
   }
 
-  if (!/href="\/assets\/site-ui\.css"/i.test(html)) html = html.replace('</style>', '</style>\n<link rel="stylesheet" href="/assets/site-ui.css">');
+  if (!/href="\/assets\/site-ui\.css(?:\?[^\"]*)?"/i.test(html)) html = html.replace('</style>', '</style>\n<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-5">');
   if (!/src="\/assets\/site-ui\.js"/i.test(html)) html = html.replace('</head>', '<script src="/assets/site-ui.js" defer></script>\n</head>');
   if (!/rel="preload"[^>]+GreycliffCF-Heavy/i.test(html)) {
-    html = html.replace('<style>', '<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>\n<link rel="preload" href="/assets/fonts/FiraMono-Medium.ttf" as="font" type="font/ttf" crossorigin>\n<style>');
+    html = html.replace('<style>', '<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>\n<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>\n<style>');
   }
 
   const mainTag = html.match(/<main\b[^>]*>/i)?.[0];
