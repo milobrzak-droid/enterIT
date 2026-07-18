@@ -4,7 +4,7 @@
 (function(){
   'use strict';
 
-  var GA_ID = 'G-XXXXXXXXXX'; // TODO: replace with real enterit.cz Measurement ID
+  var GA_ID = 'G-QYW51GZHKX';
 
   var STORAGE_KEY = 'eit_consent'; // 'granted' | 'denied'
   var LANG = (document.documentElement.lang || 'cs').slice(0, 2);
