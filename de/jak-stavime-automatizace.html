@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wie wir Automatisierungen bauen — Enter IT</title>
+<title>Wie wir Automatisierungen bauen — EnterIT</title>
 <meta name="description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit. Wir zeigen, was wir real automatisieren, wie wir in 4 Phasen vorgehen und ein reales Beispiel für den Einsatz eines Agenten im ERP Helios.">
 <link rel="canonical" href="https://enterit.cz/de/jak-stavime-automatizace.html">
 <link rel="alternate" hreflang="cs" href="https://enterit.cz/jak-stavime-automatizace.html">
@@ -17,20 +17,14 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="AI Enter s.r.o.">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Enter IT">
+<meta property="og:site_name" content="EnterIT">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Wie wir Automatisierungen bauen — Enter IT">
+<meta property="og:title" content="Wie wir Automatisierungen bauen — EnterIT">
 <meta property="og:description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit.">
 <meta property="og:url" content="https://enterit.cz/de/jak-stavime-automatizace.html">
 <meta property="og:image" content="https://enterit.cz/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wie wir Automatisierungen bauen — Enter IT">
-<meta name="twitter:description" content="Automatisierung, die den Menschen die Routine abnimmt, nicht die Arbeit.">
-<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -136,31 +130,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <header id="header">
   <div class="wrap">
     <nav class="nav">
-      <a class="brand" href="/de.html" aria-label="Enter IT — Startseite">
+      <a class="brand" href="../de.html" aria-label="EnterIT — Startseite">
         <img src="/assets/enter_logo_white.svg" alt="Enter">
         <span class="it">IT</span>
       </a>
       <div class="nav-links">
-        <a href="/de.html#problems">Probleme</a>
-        <a href="/de.html#solutions">Lösungen</a>
-        <a href="/de.html#how">Wie wir arbeiten</a>
-        <a href="/de.html#integ">Integrationen</a>
-        <a href="/de.html#work">Referenzen</a>
+        <a href="../de.html#problems">Probleme</a>
+        <a href="../de.html#solutions">Lösungen</a>
+        <a href="../de.html#how">Wie wir arbeiten</a>
+        <a href="../de.html#integ">Integrationen</a>
+        <a href="../de.html#work">Referenzen</a>
       </div>
       <div class="nav-right">
-        <a class="btn green" href="/de.html#contact">Kontakt</a>
+        <a class="btn green" href="../de.html#contact">Kontakt</a>
         <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 <nav class="mobile-menu" id="mmenu">
-  <a href="/de.html#problems">Probleme</a>
-  <a href="/de.html#solutions">Lösungen</a>
-  <a href="/de.html#how">Wie wir arbeiten</a>
-  <a href="/de.html#integ">Integrationen</a>
-  <a href="/de.html#work">Referenzen</a>
-  <a href="/de.html#contact">Kontakt</a>
+  <a href="../de.html#problems">Probleme</a>
+  <a href="../de.html#solutions">Lösungen</a>
+  <a href="../de.html#how">Wie wir arbeiten</a>
+  <a href="../de.html#integ">Integrationen</a>
+  <a href="../de.html#work">Referenzen</a>
+  <a href="../de.html#contact">Kontakt</a>
 </nav>
 
 <main>
@@ -169,20 +163,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Wie wir vorgehen</span>
     <h1 class="h1 reveal">Automatisierung, die den Menschen die Routine abnimmt, nicht die&nbsp;Arbeit</h1>
-    <p class="hero-sub reveal">Bestellungen aus E-Mails ins System abtippen, Preise in zehn Preislisten suchen, immer wieder dieselben Formulare ausfüllen — das soll eine Maschine erledigen, nicht ein Mensch. Wir bauen Automatisierungen, die auf Ihre realen Prozesse und Systeme zugeschnitten sind, keine Universalvorlagen, die am Ende niemand nutzt.</p>
+    <p class="hero-sub reveal">Eine Bestellung aus der&nbsp;E-Mail ins&nbsp;System abtippen, einen Preis quer über zehn Preislisten suchen, immer wieder dieselben Formulare ausfüllen — das ist Arbeit für&nbsp;eine Maschine, nicht für&nbsp;einen Menschen. Wir bauen Automatisierungen, die auf&nbsp;Ihre realen Prozesse und&nbsp;Systeme zugeschnitten sind, keine allgemeinen Vorlagen, die am&nbsp;Ende niemand nutzt.</p>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">Warum wir uns überhaupt damit befassen</span>
-    <h2 class="h2 reveal">Routine kostet nicht nur Zeit. Sie kostet Menschen und Know-how.</h2>
-    <p class="lead reveal">Das sind keine Hypothesen aus einer Präsentation. Es sind Dinge, die wir genau so bei realen Firmen gesehen haben — und die sich in Stunden und Geld beziffern lassen.</p>
+    <h2 class="h2 reveal">Routine kostet nicht nur Zeit. Sie kostet Menschen und&nbsp;Know-how.</h2>
+    <p class="lead reveal">Das sind keine Hypothesen aus einer Präsentation. Es sind Dinge, die wir genau so bei realen Firmen gesehen haben — und die sich in&nbsp;Stunden und&nbsp;Geld beziffern lassen.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Die Bestellung kommt per Mail und jemand tippt sie ab</h4><p>Bei einem Großhandel mit IT-Technik kamen Bestellungen per E-Mail und die Verwaltung tippte sie ins System ab — Position für Position, Tag für Tag. Genauso die Zeiterfassung: manuell geführt, fehleranfällig. Klassische Arbeit, die niemand machen will und bei der ein einziger Tippfehler genügt.</p></div>
-      <div class="jp-block reveal"><h4>Der Technologe legt stundenlang immer wieder ähnliche Positionen an</h4><p>In einem Maschinenbaubetrieb kommt der Auftrag als einzige Kopfposition ins ERP. Der Technologe lädt dann zu jedem Teil manuell das PDF herunter, legt in Helios die Komponentenpositionen an, speichert Zeichnungen, ergänzt Arbeitsablauf und Norm. Wöchentlich 15–25 Baugruppen, also 70–120 Positionen — und alles tippt ein Mensch ab.</p></div>
-      <div class="jp-block reveal"><h4>Der Vertriebler klickt sich durch Exporte, um einen Preis herauszufinden</h4><p>Bei einem Hersteller von Beschattungstechnik zog der Vertrieb die Daten manuell aus dem ERP K2 und aus Excel-Preislisten. Herauszufinden, welche Produkte die Kombination Maß–Material–Farbe–Preis erfüllen, bedeutete dutzende Minuten Klickerei — und bei jeder Anfrage das Risiko, eine neuere Version der Preisliste zu übersehen.</p></div>
-      <div class="jp-block reveal"><h4>Die Leitung unterschreibt, weiß aber nicht, wer das Dokument gesehen hat</h4><p>In einem Handelsunternehmen unterzeichnete die Leitung Dokumente von über 20 Seiten, ohne sicher zu sein, dass sie alle Personen durchlaufen hatten, die sie sehen sollten. Die Freigabe lief per E-Mail, ohne jede Audit-Spur. Bei Handelsverträgen war das ein reales rechtliches Risiko, nicht bloß ein Ärgernis.</p></div>
+      <div class="jp-block reveal"><h4>Die Bestellung kommt per Mail und&nbsp;jemand tippt sie ab</h4><p>Bei einem Großhandel mit&nbsp;IT-Hardware kamen die Bestellungen per Mail und&nbsp;die Vertriebsverwaltung tippte sie ins&nbsp;System ab — Position für&nbsp;Position, Tag für&nbsp;Tag. Genauso die Zeiterfassung: manuell geführt, fehleranfällig. Klassische Arbeit, die niemand machen will und&nbsp;bei der ein einziger Tippfehler schon ein Problem ist.</p></div>
+      <div class="jp-block reveal"><h4>Der Technologe legt stundenlang fast identische Positionen an</h4><p>In einem Maschinenbaubetrieb kommt der Auftrag als eine einzige Kopfposition ins&nbsp;ERP. Der Prozesstechnologe lädt dann zu&nbsp;jedem Teil manuell das&nbsp;PDF herunter, legt danach in&nbsp;Helios die Komponentenpositionen an, speichert Zeichnungen und&nbsp;ergänzt Arbeitsablauf und&nbsp;Zeitnorm. Das sind 15–25&nbsp;Baugruppen pro&nbsp;Woche, also 70–120&nbsp;Positionen — alles von&nbsp;Hand eingegeben.</p></div>
+      <div class="jp-block reveal"><h4>Der Vertriebler klickt sich durch Exporte, um&nbsp;einen Preis zu&nbsp;finden</h4><p>Bei einem Hersteller von&nbsp;Beschattungstechnik suchte der Vertrieb die Daten manuell im&nbsp;ERP K2 und&nbsp;in&nbsp;Excel-Preislisten. Herauszufinden, welche Produkte der Kombination Maß–Material–Farbe–Preis entsprechen, bedeutete dutzende Minuten Klickerei — und&nbsp;bei jeder Anfrage das&nbsp;Risiko, eine neuere Version der Preisliste zu&nbsp;übersehen.</p></div>
+      <div class="jp-block reveal"><h4>Die Leitung unterschreibt, weiß aber nicht, wer das&nbsp;Dokument gesehen hat</h4><p>In einem Handelsunternehmen unterzeichnete die Leitung Dokumente von&nbsp;über 20&nbsp;Seiten, ohne die Gewissheit, dass sie alle durchlaufen hatten, die sie sehen sollten. Die Freigabe lief per Mail, ohne Audit-Trail. Bei Handelsverträgen war das&nbsp;nicht bloß ein Ärgernis, sondern ein reales rechtliches Risiko.</p></div>
     </div>
   </div>
 </section>
@@ -190,14 +184,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">Was wir lösen können</span>
-    <h2 class="h2 reveal">Fünf Ebenen, auf denen die Maschine die Routine besser erledigt als der Mensch</h2>
-    <p class="lead reveal">Nicht jede Automatisierung ist gleich. Das sind fünf Typen von Problemen, die wir lösen — und zu jedem ein reales Beispiel aus der Praxis, kein Marketingsatz.</p>
+    <h2 class="h2 reveal">Fünf Ebenen, auf&nbsp;denen die Maschine die Routine besser erledigt als der Mensch</h2>
+    <p class="lead reveal">Nicht jede Automatisierung ist gleich. Das sind fünf Typen von&nbsp;Problemen, die wir lösen — jeder mit&nbsp;einem realen Beispiel, keinem Marketingsatz.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Transaktional — Daten, die abgetippt werden</h4><p>Anhänge auslesen, CRM und ERP synchronisieren, Aufgaben und Positionen anlegen, Angebote generieren. Beispiel: ein Agent „e-mail to order", der aus der Bestellung im Mail die Positionen ausliest und sie statt manuellen Abtippens im System anlegt.</p></div>
-      <div class="jp-block reveal"><h4>Wissensbasiert — Antworten, die in Dokumenten versteckt sind</h4><p>Assistenten über firmeneigener Dokumentation und Know-how. Beispiel: ein KI-Tool, das bei einem Hersteller von Beschattungstechnik Fragen zu Parametern und Preisen in natürlicher Sprache beantwortet und in PDF-Preislisten, Excel und Zeichnungen sucht — immer mit der Quelle der Antwort.</p></div>
-      <div class="jp-block reveal"><h4>Reporting — Zahlen, auf die man wartet</h4><p>Daten aus dem ERP oder dem Data Warehouse in natürlicher Sprache, ohne darauf zu warten, dass sie jemand manuell zusammenstellt. Beispiel: ein Executive-Dashboard bei einem Motorenhersteller, in dem der Geschäftsführer erstmals einen „Helicopter View" hatte statt Daten, die zwischen Helios, SharePoint, Outlook und WhatsApp verstreut waren.</p></div>
-      <div class="jp-block reveal"><h4>Kommunikation — Anfragen, die immer wieder kommen</h4><p>Chatbots und das Abwickeln von Anfragen auf der Website, per E-Mail oder über WhatsApp, gerne rund um die Uhr. Beispiel: Antwortentwürfe für wiederkehrende E-Mails und ein Chatbot, der die eingehende Post filtert, damit die Menschen nur das Wesentliche erreicht.</p></div>
-      <div class="jp-block reveal"><h4>Monitoring — Termine und Abweichungen, die übersehen werden</h4><p>Überwachung von Fristen, Abweichungen und Ereignissen, von denen Sie sonst zu spät erfahren. Beispiel: eine Datenschicht über den Firmenprozessen, die abbildet, was geschieht, und selbst auf eine Abweichung hinweist — die Entscheidung aber beim Menschen belässt.</p></div>
+      <div class="jp-block reveal"><h4>Transaktional — Daten, die abgetippt werden</h4><p>Daten, die abgetippt werden — Auslesen aus&nbsp;Anhängen, Sync CRM↔ERP, Anlegen von&nbsp;Positionen.</p></div>
+      <div class="jp-block reveal"><h4>Wissensbasiert — Antworten, die in&nbsp;Dokumenten versteckt sind</h4><p>Antworten, die in&nbsp;Dokumenten versteckt sind — ein Assistent über&nbsp;Ihrem Know-how, immer mit&nbsp;Quelle.</p></div>
+      <div class="jp-block reveal"><h4>Reporting — Zahlen, auf&nbsp;die man wartet</h4><p>Zahlen, auf&nbsp;die man wartet — Daten aus&nbsp;dem ERP in&nbsp;natürlicher Sprache, sofort.</p></div>
+      <div class="jp-block reveal"><h4>Kommunikation — Anfragen, die immer wieder kommen</h4><p>Anfragen, die immer wieder kommen — Chatbot und&nbsp;E-Mail-Abwicklung rund&nbsp;um&nbsp;die&nbsp;Uhr.</p></div>
+      <div class="jp-block reveal"><h4>Monitoring — Termine und&nbsp;Abweichungen, die durchs Netz fallen</h4><p>Termine und&nbsp;Abweichungen — überwacht und&nbsp;weist hin, die Entscheidung bleibt beim Menschen.</p></div>
     </div>
   </div>
 </section>
@@ -205,13 +199,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">Wie wir es bauen</span>
-    <h2 class="h2 reveal">Vier Phasen, die Sie vor einem teuren Irrtum schützen</h2>
-    <p class="lead reveal">Wir beginnen nie mit dem Satz „lasst uns KI einsetzen". Wir beginnen damit, zu messen, was Sie der jeweilige Prozess heute kostet. Jede Phase hat eine einzige Aufgabe — dafür zu sorgen, dass der nächste Schritt auf etwas Geprüftem steht, nicht auf Hoffnung.</p>
+    <h2 class="h2 reveal">Vier Phasen, die Sie vor&nbsp;einem teuren Irrtum schützen</h2>
+    <p class="lead reveal">Wir beginnen nie mit&nbsp;dem Slogan „lasst uns KI einsetzen". Wir beginnen damit, zu&nbsp;messen, was Sie der Prozess heute kostet. Jede Phase hat eine einzige Aufgabe — dafür zu&nbsp;sorgen, dass der nächste Schritt auf&nbsp;einem geprüften Fundament steht, nicht auf&nbsp;Hoffnung.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>1. Analyse — zuerst messen wir, was es heute kostet</h4><p>Eine detaillierte Prozesskarte: wo genau Routine entsteht, wie die Eingaben aussehen (Exporte aus dem ERP, Aufbau der Preislisten, Layout der Stempel auf Zeichnungen), wo Duplikate und alte Versionen entstehen. Dazu eine Baseline für Zeit, Kosten und Qualität. Ohne diese Zahl ergibt es keinen Sinn, die Rentabilität zu berechnen — und wir wollen sie berechnen.</p></div>
-      <div class="jp-block reveal"><h4>2. Pilot — wir prüfen es in der Realität, nicht auf dem Papier</h4><p>Ein schneller Prototyp im Betrieb, mit echten Daten und echten Dokumenten. Beim Maschinenbau geht dem ein Eingangsaudit von 5–10 echten Zeichnungen voraus, damit wir wissen, ob verschiedene Abnehmer unterschiedliche Stempel-Layouts haben — denn davon hängen Zuverlässigkeit und Preis ab. Der Pilot beantwortet eine einzige Frage: funktioniert es wirklich?</p></div>
-      <div class="jp-block reveal"><h4>3. Implementierung — Anbindung an Ihre Systeme und Rollen</h4><p>Einführung und Integration in das, was die Firma tatsächlich nutzt: bestehende Systeme, Daten, Rollen und Entscheidungspunkte. Die Lösung wird nicht neben die Firma gestellt, sondern in sie hinein — einschließlich der Frage, wer was freigibt und wo der Mensch das letzte Wort hat.</p></div>
-      <div class="jp-block reveal"><h4>4. Support — Betrieb, Messung und Feinabstimmung</h4><p>Eine Automatisierung wird nicht übergeben und vergessen. Wir betreiben sie, werten sie aus und optimieren sie. Bei der Datenplattform über K2 hatten wir deshalb das Hosting für zwei Jahre im Preis und den Quellcode beim Lieferanten mit einer Option auf Ankauf — die Lösung ist eine langfristig gepflegte Schicht der Firma, kein einmaliges Spielzeug.</p></div>
+      <div class="jp-block reveal"><h4>1. Analyse — zuerst messen wir, was es heute kostet</h4><p>Zuerst messen wir, was Sie die Routine heute kostet. Ohne diese Zahl rechnen wir keine Rentabilität.</p></div>
+      <div class="jp-block reveal"><h4>2. Pilot — wir prüfen es in&nbsp;der Praxis, nicht auf&nbsp;dem Papier</h4><p>Wir prüfen es im&nbsp;laufenden Betrieb mit&nbsp;echten Daten. Er beantwortet eine einzige Frage: funktioniert es?</p></div>
+      <div class="jp-block reveal"><h4>3. Einführung — Anbindung an&nbsp;Ihre Systeme und&nbsp;Rollen</h4><p>Anbindung an&nbsp;das, was die Firma nutzt — Systeme, Rollen, Entscheidungspunkte.</p></div>
+      <div class="jp-block reveal"><h4>4. Support — Betrieb, Messung und&nbsp;Feinabstimmung</h4><p>Wir betreiben, messen und&nbsp;optimieren. Kein Übergeben und&nbsp;Vergessen.</p></div>
     </div>
   </div>
 </section>
@@ -219,12 +213,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">Warum das kein Spielzeug ist</span>
-    <h2 class="h2 reveal">Zu wissen, wo man die Maschine einsetzt und wo man den Menschen lässt, ist für sich genommen Expertise</h2>
-    <p class="lead reveal">Der Unterschied zwischen einer funktionierenden und einer nicht funktionierenden Lösung sind oft nicht die Modelle oder Werkzeuge. Es sind bewusste Entscheidungen, wo man der Maschine vertraut und wo man ihr im Gegenteil bewusst nicht vertraut. Das ist die Arbeit, für die man bezahlt wird.</p>
+    <h2 class="h2 reveal">Zu&nbsp;wissen, wo man die Maschine einsetzt und&nbsp;wo man den Menschen lässt, ist für&nbsp;sich genommen Expertise</h2>
+    <p class="lead reveal">Der Unterschied zwischen einer funktionierenden und&nbsp;einer nicht funktionierenden Lösung sind oft nicht die Modelle oder Werkzeuge. Es sind bewusste Entscheidungen, wo man der Maschine vertraut und&nbsp;wo bewusst nicht. Das ist die Arbeit, für&nbsp;die man bezahlt wird.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Wir lesen bewusst nicht, was die Maschine unzuverlässig liest</h4><p>Beim Maschinenbau-TPV-Agenten haben wir entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Stattdessen lesen wir nur den Eckstempel und die Stückliste, wo die Erkennung zuverlässig ist. Eine weniger ambitionierte Aufgabe, aber eine Lösung, der man vertrauen kann.</p></div>
-      <div class="jp-block reveal"><h4>Was nur der Mensch sieht, überlassen wir dem Menschen</h4><p>Die Blechdicke oder die Anzahl der Biegungen liest aus der Zeichnung nur der Technologe zuverlässig ab. Deshalb gibt es einen Dialog mit PDF-Vorschau, in dem er diesen Wert ergänzt. Die Daten werden in eine CSV gesammelt und per Import wird die Struktur im ERP angelegt. Die Maschine erledigt die Routine, das Urteil bleibt beim Menschen.</p></div>
-      <div class="jp-block reveal"><h4>Realismus ist Teil des Vertrags, kein Versprechen</h4><p>Eine gute Lösung rechnet mit der Realität. Bei der Datenplattform über K2 verschieben sich deshalb die Fristen vertraglich um Verzögerungen auf Kundenseite (Daten aus dem ERP) sowie um Urlaub und Ferien. Keine Fantasietermine, die am Ende ohnehin niemand einhält.</p></div>
+      <div class="jp-block reveal"><h4>Wir lesen bewusst nicht, was die Maschine unzuverlässig liest</h4><p>Beim Agenten für&nbsp;die Fertigungsvorbereitung in&nbsp;einem Maschinenbaubetrieb haben wir entschieden, keine Maße aus&nbsp;komplexen Zeichnungen zu&nbsp;lesen — OCR ist dort unzuverlässig. Wir lesen nur den Eckstempel und&nbsp;die Stückliste, wo die Erkennung zuverlässig ist. Ein weniger ambitionierter Zuschnitt, aber eine Lösung, der man vertrauen kann.</p></div>
+      <div class="jp-block reveal"><h4>Was nur der Mensch sieht, überlassen wir dem Menschen</h4><p>Die Blechdicke oder die Anzahl der Biegungen liest aus&nbsp;der Zeichnung nur der Prozesstechnologe zuverlässig ab. Deshalb gibt es einen Dialog mit&nbsp;PDF-Vorschau, in&nbsp;dem er diesen Wert ergänzt. Die Daten werden in&nbsp;eine CSV gesammelt und&nbsp;per Import entsteht die Struktur im&nbsp;ERP. Die Maschine erledigt die Routine, das&nbsp;Urteil bleibt beim Menschen.</p></div>
+      <div class="jp-block reveal"><h4>Realismus ist Teil des Vertrags, kein Versprechen</h4><p>Eine gute Lösung rechnet mit&nbsp;der Realität. Bei der Datenplattform über&nbsp;K2 verschieben sich die Fristen deshalb vertraglich bei Verzögerungen auf&nbsp;Kundenseite (Daten aus&nbsp;dem ERP) sowie durch Urlaub und&nbsp;Feiertage. Keine Fantasietermine, die am&nbsp;Ende ohnehin niemand einhält.</p></div>
     </div>
   </div>
 </section>
@@ -233,24 +227,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Human-in-the-loop</span>
     <h2 class="h2 reveal">Der Agent empfiehlt, der Mensch entscheidet</h2>
-    <p class="lead reveal">KI ist bei uns keine Blackbox, die selbst entscheidet. Sie ist ein Werkzeug, das die Arbeit vorbereitet und sie dort an den Menschen übergibt, wo Urteilsvermögen oder Verantwortung gefragt sind. Das ist keine Einschränkung — das ist der Grund, warum man ihr vertrauen kann.</p>
+    <p class="lead reveal">KI ist bei uns keine Blackbox, die selbst entscheidet. Sie ist ein Werkzeug, das die Arbeit vorbereitet und&nbsp;sie dort an&nbsp;den Menschen übergibt, wo Urteilsvermögen oder Verantwortung gefragt sind. Das ist keine Einschränkung — das ist der Grund, warum man ihr vertrauen kann.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Der Agent legt die Struktur an, der Technologe verfeinert sie</h4><p>Der TPV-Agent liest Stempel und Stückliste, findet ähnliche bestehende Positionen, legt die Komponentenstruktur an und übernimmt auch den technologischen Arbeitsablauf und die Zeitnorm aus der ursprünglichen Position. Der Technologe kontrolliert nur noch und ergänzt das, was wirklich menschliches Urteilsvermögen verlangt.</p></div>
-      <div class="jp-block reveal"><h4>Das System protokolliert, aber unterschreiben tut der Mensch</h4><p>Bei der digitalen Vertragsfreigabe erfasst das System, wer wann auf „Freigegeben" geklickt hat — und lässt eine Freigabe nicht zu, solange der Nutzer das Dokument nicht geöffnet hat. Es misst sogar, wie lange nach dem Öffnen freigegeben wurde, als Nachweis des tatsächlichen Lesens. Die eigentliche elektronische Unterschrift bleibt aber beim Menschen.</p></div>
-      <div class="jp-block reveal"><h4>Es bildet ab und warnt, aber entscheidet nicht</h4><p>Die Daten- und KI-Schicht über den Prozessen deckt eine Abweichung auf und weist darauf hin. Was mit der Abweichung geschieht, entscheidet immer der Mensch. Das ist der Unterschied zwischen einem vertrauenswürdigen Werkzeug und einem System, dem in der Firma niemand vertraut.</p></div>
+      <div class="jp-block reveal"><h4>Der Agent legt die Struktur an, der Technologe verfeinert sie</h4><p>Der Agent für&nbsp;die Fertigungsvorbereitung liest Stempel und&nbsp;Stückliste, findet ähnliche bestehende Positionen, legt die Komponentenstruktur an&nbsp;und übernimmt sogar den technologischen Arbeitsablauf und&nbsp;die Zeitnorm aus&nbsp;der ursprünglichen Position. Der Prozesstechnologe kontrolliert dann nur noch und&nbsp;ergänzt das, was wirklich menschliches Urteilsvermögen verlangt.</p></div>
+      <div class="jp-block reveal"><h4>Das System protokolliert, aber unterschreiben tut der Mensch</h4><p>Bei der digitalen Vertragsfreigabe erfasst das&nbsp;System, wer wann auf&nbsp;„Freigegeben" geklickt hat — und lässt eine Freigabe nicht zu, solange der Nutzer das&nbsp;Dokument nicht geöffnet hat. Es misst sogar, wie lange nach&nbsp;dem Öffnen freigegeben wurde, als Nachweis des tatsächlichen Lesens. Die eigentliche elektronische Unterschrift bleibt aber beim Menschen.</p></div>
+      <div class="jp-block reveal"><h4>Es bildet ab&nbsp;und warnt, aber entscheidet nicht</h4><p>Die Daten- und&nbsp;KI-Schicht über&nbsp;den Prozessen deckt eine Abweichung auf&nbsp;und weist darauf hin. Was mit&nbsp;der Abweichung geschieht, entscheidet immer der Mensch. Das ist der Unterschied zwischen einem vertrauenswürdigen Werkzeug und&nbsp;einem System, dem in&nbsp;der Firma niemand vertraut.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Integration, Sicherheit und Messung</span>
-    <h2 class="h2 reveal">Wir binden uns an das an, was Sie haben. Sicherheit denken wir von Anfang an mit. Und wir messen immer.</h2>
-    <p class="lead reveal">Drei Dinge, die ein seriöses Projekt von einer Demo trennen: Wir bauen auf Ihren bestehenden Systemen, Sicherheit ist Teil des Entwurfs und jede Lösung hat eine Baseline und einen definierten Nutzen.</p>
+    <span class="eyebrow reveal">Integration, Sicherheit und&nbsp;Messung</span>
+    <h2 class="h2 reveal">Wir binden uns an&nbsp;das an, was Sie haben. Sicherheit denken wir von&nbsp;Anfang an&nbsp;mit. Und wir messen immer.</h2>
+    <p class="lead reveal">Drei Dinge, die ein seriöses Projekt von&nbsp;einer Demo trennen: Wir bauen auf&nbsp;Ihren bestehenden Systemen, Sicherheit ist Teil des Entwurfs und&nbsp;jede Lösung hat eine Baseline und&nbsp;einen definierten Nutzen.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Wir bauen auf Ihren Systemen, wir ersetzen sie nicht</h4><p>Wir binden uns real an ERP (K2, Helios, Business Central), SharePoint, Microsoft 365, Buchhaltungssysteme, PDM/CAD, E-Mail und WhatsApp an. Für die Orchestrierung nutzen wir primär n8n, dazu Make, Zapier, Power Automate oder Copilot Studio. Wir zwingen die Firma nicht, die Werkzeuge zu wechseln, an die sie gewöhnt ist.</p></div>
-      <div class="jp-block reveal"><h4>Sicherheit steckt im Entwurf, nicht als Zusatz am Ende</h4><p>Die Daten bleiben bei der Firma, Übertragung und Speicher sind verschlüsselt, die Lösung respektiert die DSGVO und die tschechische Gesetzgebung. Für sensible Daten bieten wir On-Prem- oder lokale Modelle an. Dazu gehört eine „KI-Ampel" — klare Regeln, was in die KI darf und was nicht. In regulierten Branchen ist das eine Bedingung, kein Bonus.</p></div>
-      <div class="jp-block reveal"><h4>Keine Lösung ohne Baseline und Nutzendefinition</h4><p>Wir messen Prozess- und Reaktionszeit, Kosten pro Transaktion, Qualität des Ergebnisses, Fehlerquote und Rework sowie die Kapazität des Teams. Die typische Amortisation liegt bei 3–12 Monaten. Ohne eine Zahl zu Beginn lässt sich nicht ehrlich sagen, ob es Sinn ergibt — und wir wollen, dass es Sinn ergibt.</p></div>
+      <div class="jp-block reveal"><h4>Wir bauen auf&nbsp;Ihren Systemen, wir ersetzen sie nicht</h4><p>Wir binden uns real an&nbsp;ERP (K2, Helios, Business Central), SharePoint, Microsoft 365, Buchhaltungssysteme, PDM/CAD, E-Mail und&nbsp;WhatsApp an. Für&nbsp;die Orchestrierung nutzen wir vor&nbsp;allem n8n, dazu Make, Zapier, Power Automate oder Copilot Studio. Wir zwingen die Firma nicht, die Werkzeuge zu&nbsp;wechseln, an&nbsp;die sie gewöhnt ist.</p></div>
+      <div class="jp-block reveal"><h4>Sicherheit steckt im&nbsp;Entwurf, nicht als Zusatz am&nbsp;Ende</h4><p>Die Daten bleiben in&nbsp;der Firma, Übertragung und&nbsp;Speicher sind verschlüsselt und&nbsp;die Lösung respektiert die DSGVO und&nbsp;die tschechische Gesetzgebung. Für&nbsp;sensible Daten bieten wir On-Prem- oder lokale Modelle an. Teil davon ist eine „KI-Ampel" — klare Regeln, was in&nbsp;die KI darf und&nbsp;was nicht. In&nbsp;regulierten Branchen ist das&nbsp;eine Anforderung, kein Bonus.</p></div>
+      <div class="jp-block reveal"><h4>Keine Lösung ohne Baseline und&nbsp;definierten Nutzen</h4><p>Wir messen Prozess- und&nbsp;Reaktionszeit, Kosten pro&nbsp;Transaktion, Qualität des Ergebnisses, Fehlerquote und&nbsp;Rework sowie die Kapazität des Teams. Die typische Amortisation liegt bei 3–12&nbsp;Monaten. Ohne eine Zahl zu&nbsp;Beginn lässt sich nicht ehrlich sagen, ob es Sinn ergibt — und wir wollen, dass es Sinn ergibt.</p></div>
     </div>
   </div>
 </section>
@@ -258,14 +252,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">Reales Beispiel</span>
-    <h2 class="h2 reveal">Ein Maschinenbaubetrieb: wie wir den Agenten gebaut haben, der ERP-Positionen statt des Technologen anlegt</h2>
+    <h2 class="h2 reveal">Ein Maschinenbaubetrieb: wie wir einen Agenten gebaut haben, der ERP-Positionen statt des Technologen anlegt</h2>
     <div class="jp-walk">
-      <div class="jp-step reveal"><span class="sn">Schritt 1</span><h4>Ausgangslage: stundenlange Routine täglich</h4><p>Die Firma fertigt Teile für große ausländische Abnehmer. Ein Auftrag kommt herein, im ERP Helios ist nur die Kopfposition des Projekts mit hochgeladenen Daten (PDF, DWG, DXF) angelegt. Der Technologe lädt dann zu jedem Teil manuell das PDF herunter, legt im ERP die Komponentenpositionen an, erstellt die Positionsstruktur, speichert zu jeder Position das PDF und ergänzt den technologischen Arbeitsablauf und die Zeitnorm. Wöchentlich bedeutet das 15–25 Baugruppen, also 70–120 Positionen — immer sehr ähnliche, und alles legt ein Mensch an und tippt es ab.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 2</span><h4>Eingangsaudit echter Zeichnungen</h4><p>Noch vor der Preisermittlung haben wir 5–10 echte PDF-Zeichnungen durchgesehen, um zu prüfen, ob verschiedene Abnehmer unterschiedliche Layouts der Eckstempel haben. Davon hängen Zuverlässigkeit und Preis der Lösung direkt ab. Deshalb bauen wir den Piloten auf einem Hauptabnehmer auf, bei dem der Stempel einheitlich und die Erkennung am zuverlässigsten ist.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 3</span><h4>Bewusste Entscheidung: was lesen und was nicht</h4><p>Wir haben entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig und würde Fehler einbringen. Wir lesen nur den Eckstempel und die Stückliste (Bezeichnung, Zeichnungsnummer, Stahlgüte, Gewicht), wo die Erkennung zuverlässig ist. Diese Entscheidung ist für sich genommen Expertise: sie hält die Lösung in den Grenzen, in denen man ihr vertrauen kann.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 4</span><h4>Der Agent legt die Struktur an und übernimmt die Normen</h4><p>Der Agent lädt das PDF der Kopfposition, liest Stempel und Stückliste, findet anhand der Stückliste im ERP bereits bestehende ähnliche Positionen und legt die Komponentenstruktur an — einschließlich der Übernahme des technologischen Arbeitsablaufs und der Zeitnorm aus der ursprünglichen Position. Die Ähnlichkeitssuche läuft über Felder der Stammkarte plus Metadaten aus dem Formular. Helios wird per API gemäß der Wiki-Dokumentation angebunden.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 5</span><h4>Human-in-the-loop dort, wo der Mensch entscheidet</h4><p>Was maschinell nicht lesbar ist — etwa die Blechdicke oder die Anzahl der Biegungen — ergänzt der Technologe in einem Dialogformular mit PDF-Vorschau: er sieht die Zeichnung, wählt im Pop-up eine Kategorie und gibt einen Zahlenwert ein. Die ergänzten Metadaten werden in eine CSV gesammelt und legen per Import ins ERP automatisch die Positionsstruktur an. Die Maschine erledigt die Routine, das Urteil bleibt beim Menschen.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 6</span><h4>Aufteilung in Phasen und Ergebnis</h4><p>Das Projekt haben wir in zwei Phasen aufgeteilt: zuerst die gefertigten Positionen, in der zweiten Phase die zugekauften und normierten Teile, mit der Möglichkeit der Erweiterung auch auf die Preisermittlung. Das Ergebnis: von stundenlangem Routine-Abtippen bei 70–120 Positionen wöchentlich zu einem Agenten, der die Struktur anlegt und die Normen übernimmt — und der Technologe kontrolliert nur noch und ergänzt das, was wirklich menschliches Urteilsvermögen verlangt. Das Konkurrenzangebot für denselben Use Case war dabei teurer.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 1</span><h4>Ausgangslage: stundenlange Routine jeden Tag</h4><p>Die Firma fertigt Teile für&nbsp;große ausländische Abnehmer. Ein Auftrag kommt herein und&nbsp;im&nbsp;ERP Helios entsteht nur die Kopfposition des Projekts mit&nbsp;hochgeladenen Daten (PDF, DWG, DXF). Der Prozesstechnologe lädt dann zu&nbsp;jedem Teil manuell das&nbsp;PDF herunter, legt im&nbsp;ERP die Komponentenpositionen an, baut die Positionsstruktur auf, speichert das&nbsp;PDF zu&nbsp;jeder Position und&nbsp;ergänzt den technologischen Arbeitsablauf und&nbsp;die Zeitnorm. Wöchentlich bedeutet das&nbsp;15–25&nbsp;Baugruppen, also 70–120&nbsp;Positionen — alle sehr ähnlich, und&nbsp;alle von&nbsp;einem Menschen angelegt und&nbsp;abgetippt.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 2</span><h4>Eingangsaudit echter Zeichnungen</h4><p>Noch vor&nbsp;dem Angebot haben wir 5–10&nbsp;echte PDF-Zeichnungen durchgesehen, um&nbsp;zu&nbsp;prüfen, ob verschiedene Abnehmer ein anderes Layout des Stempels haben. Davon hängen Zuverlässigkeit und&nbsp;Preis direkt ab. Deshalb bauen wir den Piloten auf&nbsp;einem Hauptabnehmer auf, bei dem der Stempel einheitlich und&nbsp;die Erkennung am&nbsp;zuverlässigsten ist.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 3</span><h4>Bewusste Entscheidung: was lesen und&nbsp;was nicht</h4><p>Wir haben entschieden, keine Maße aus&nbsp;komplexen Zeichnungen zu&nbsp;lesen — OCR wäre dort unzuverlässig und&nbsp;würde Fehler einbringen. Wir lesen nur den Eckstempel und&nbsp;die Stückliste (Bezeichnung, Zeichnungsnummer, Materialgüte, Gewicht), wo die Erkennung zuverlässig ist. Diese Entscheidung ist für&nbsp;sich genommen Expertise: sie hält die Lösung in&nbsp;den Grenzen, in&nbsp;denen man ihr vertrauen kann.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 4</span><h4>Der Agent legt die Struktur an&nbsp;und überträgt die Standards</h4><p>Der Agent lädt das&nbsp;PDF der Kopfposition, liest Stempel und&nbsp;Stückliste, findet anhand der Stückliste im&nbsp;ERP ähnliche bestehende Positionen und&nbsp;legt die Komponentenstruktur an&nbsp;— einschließlich der Übernahme des technologischen Arbeitsablaufs und&nbsp;der Zeitnorm aus&nbsp;der ursprünglichen Position. Die Ähnlichkeitssuche läuft über&nbsp;die Felder des Stammsatzes und&nbsp;die Metadaten aus&nbsp;dem Formular. Helios ist per API gemäß der Wiki-Dokumentation angebunden.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 5</span><h4>Human-in-the-loop dort, wo der Mensch entscheidet</h4><p>Was maschinell nicht lesbar ist — etwa die Blechdicke oder die Anzahl der Biegungen — ergänzt der Prozesstechnologe über&nbsp;ein Dialogfenster mit&nbsp;PDF-Vorschau: er sieht die Zeichnung, wählt eine Kategorie aus&nbsp;dem Menü und&nbsp;gibt einen Zahlenwert ein. Die ergänzten Metadaten werden in&nbsp;eine CSV gesammelt und&nbsp;der Import ins&nbsp;ERP legt automatisch die Positionsstruktur an. Die Maschine erledigt die Routine, das&nbsp;Urteil bleibt beim Menschen.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 6</span><h4>Aufteilung in&nbsp;Phasen und&nbsp;Ergebnis</h4><p>Das Projekt haben wir in&nbsp;zwei Phasen aufgeteilt: zuerst die gefertigten Positionen, in&nbsp;der zweiten Phase die zugekauften und&nbsp;normierten Teile, mit&nbsp;der Möglichkeit, es bis zur&nbsp;Preisermittlung zu&nbsp;erweitern. Das Ergebnis: von&nbsp;stundenlangem Routine-Abtippen bei 70–120&nbsp;Positionen pro&nbsp;Woche zu&nbsp;einem Agenten, der die Struktur anlegt und&nbsp;die Standards überträgt — der Prozesstechnologe kontrolliert heute nur noch und&nbsp;ergänzt das, was wirklich menschliches Urteilsvermögen verlangt. Das Konkurrenzangebot für&nbsp;dieselbe Aufgabe war zudem teurer.</p></div>
     </div>
   </div>
 </section>
@@ -274,11 +268,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <div class="cta-card reveal">
       <span class="eyebrow">Gehen wir es an</span>
-      <h2 class="h2">Haben Sie einen Prozess, der Menschen Zeit raubt?</h2>
-      <p>Sagen Sie uns, was bei Ihnen immer wieder von Hand gemacht wird. Wir entwerfen eine Lösung und rechnen aus, wie viel sie zurückbringt.</p>
+      <h2 class="h2">Haben Sie einen Prozess, der die Zeit Ihrer Leute frisst?</h2>
+      <p>Sagen Sie uns, was bei Ihnen immer wieder von&nbsp;Hand gemacht wird. Wir entwerfen eine Lösung und&nbsp;rechnen aus, wie viel sie zurückbringt.</p>
       <div class="cta-btns">
-        <a href="/de.html#contact" class="btn green">Unverbindliche Beratung <span class="arr">→</span></a>
-        <a href="/de.html#solutions" class="btn outline">Lösungskatalog</a>
+        <a href="../de.html#contact" class="btn green">Unverbindliche Beratung <span class="arr">→</span></a>
+        <a href="../de.html#solutions" class="btn outline">Lösungskatalog</a>
       </div>
     </div>
   </div>
@@ -293,8 +287,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">
-      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-      <span class="legal"><a href="/de/gdpr.html">Datenschutz</a><a href="/de/podminky.html">Geschäftsbedingungen</a></span>
+      <span>© 2026 EnterIT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="legal"><a href="gdpr.html">Datenschutz</a><a href="podminky.html">Geschäftsbedingungen</a></span>
     </div>
   </div>
 </footer>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Field timesheets — by voice into invoicing | Enter IT</title>
+<title>Field timesheets — by voice into invoicing | EnterIT</title>
 <meta name="description" content="The technician dictates the timesheet into a phone, the agent prepares invoicing and payroll. Fewer forgotten hours.">
 <link rel="alternate" hreflang="cs" href="https://enterit.cz/reseni-pracovni-vykazy.html">
 <link rel="alternate" hreflang="en" href="https://enterit.cz/en/reseni-pracovni-vykazy.html">
@@ -17,18 +17,18 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="AI Enter s.r.o.">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Enter IT">
+<meta property="og:site_name" content="EnterIT">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Field timesheets — by voice into invoicing | Enter IT">
+<meta property="og:title" content="Field timesheets — by voice into invoicing | EnterIT">
 <meta property="og:description" content="The technician dictates the timesheet into a phone, the agent prepares invoicing and payroll. Fewer forgotten hours.">
 <meta property="og:url" content="https://enterit.cz/en/reseni-pracovni-vykazy.html">
 <meta property="og:image" content="https://enterit.cz/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Field timesheets — by voice into invoicing | Enter IT">
+<meta name="twitter:title" content="Field timesheets — by voice into invoicing | EnterIT">
 <meta name="twitter:description" content="The technician dictates the timesheet into a phone, the agent prepares invoicing and payroll. Fewer forgotten hours.">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Our lads won’t type anything into a phone.", "acceptedAnswer": {"@type": "Answer", "text": "That’s why it’s voice. Anyone can dictate for 20 seconds on the drive."}}, {"@type": "Question", "name": "We bill both flat rates and hourly.", "acceptedAnswer": {"@type": "Answer", "text": "Rules per job — the agent knows what’s in the flat rate and what’s on top."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Our lads won’t type anything into a phone.", "acceptedAnswer": {"@type": "Answer", "text": "That’s why it’s voice. Anyone can dictate for 20 seconds on the drive."}}, {"@type": "Question", "name": "We bill both flat rates and hourly.", "acceptedAnswer": {"@type": "Answer", "text": "Rules per job — the agent knows what’s in the flat rate and what’s on top."}}]}</script>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -147,6 +147,24 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .reveal.in{opacity:1;transform:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+
+.rs-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+@media(max-width:820px){.rs-badges{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.rs-badges{grid-template-columns:1fr}}
+.rs-badge{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:20px 18px}
+.rs-badge .ic{width:38px;height:38px;border-radius:10px;background:var(--green-wash);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;color:var(--green);margin-bottom:12px}
+.rs-badge .ic svg{width:20px;height:20px}
+.rs-badge b{display:block;font-family:var(--head);font-weight:800;color:var(--white);font-size:14.5px;margin-bottom:5px;letter-spacing:-.005em}
+.rs-badge .cap{font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--muted)}
+
+.rs-flow{counter-reset:rsstep;padding-left:46px}
+.rs-flow-step{counter-increment:rsstep}
+.rs-flow-step::before{content:counter(rsstep);left:-60px;top:-4px;width:28px;height:28px;background:var(--navy-1);border:2px solid var(--green);color:var(--green);font-family:var(--head);font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--navy)}
+.rs-flow-step.esc::before{content:"👤";background:rgba(110,206,255,.14);border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 4px var(--navy),0 0 10px rgba(110,206,255,.4)}
+.rs-flow-step.esc b{color:var(--blue)}
+
+.rs-pain{position:relative;border-color:rgba(255,132,140,.22)}
+.rs-pain::before{content:"!";display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9px;background:rgba(255,132,140,.14);border:1px solid rgba(255,132,140,.35);color:var(--coral);font-family:var(--head);font-weight:900;font-size:19px;margin-bottom:14px}
 </style>
 </head>
 <body>
@@ -154,7 +172,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <header id="header">
   <div class="wrap">
     <nav class="nav">
-      <a class="brand" href="/en.html" aria-label="Enter IT — home">
+      <a class="brand" href="/en.html" aria-label="EnterIT — home">
         <img src="/assets/enter_logo_white.svg" alt="Enter">
         <span class="it">IT</span>
       </a>
@@ -187,7 +205,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Ready-made solutions · Timesheets</span>
     <h1 class="h1 reveal">Technicians’ timesheets collect, approve and prepare themselves for invoicing.</h1>
-    <p class="hero-sub reveal">Technicians and workers write timesheets on paper or in Excel, the office re-keys them, and at month-end everyone hunts for what should be billed to whom. The agent collects timesheets continuously, matches them to jobs and prepares the inputs for invoicing and payroll.</p>
+    <p class="hero-sub reveal">Technicians and workers write timesheets on&nbsp;paper or in&nbsp;Excel, the office re-keys them, and at&nbsp;month-end everyone hunts for what should be&nbsp;billed to&nbsp;whom. The agent collects timesheets continuously, matches them to&nbsp;jobs and prepares the inputs for&nbsp;invoicing and payroll.</p>
     <div class="rs-hero-num reveal"><b>~12 h/mo</b><span>saved by the back office</span></div>
   </div>
 </section>
@@ -197,8 +215,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     <span class="eyebrow reveal">Where it hurts today</span>
     <h2 class="h2 reveal">Where the time really goes</h2>
     <div class="rs-pains">
-      <div class="rs-pain reveal"><p>Technicians and workers write timesheets on paper or in Excel, and the office re-keys them.</p></div>
-      <div class="rs-pain reveal"><p>At month-end, everyone hunts for what should be billed to whom.</p></div>
+      <div class="rs-pain reveal"><p>Technicians and workers write timesheets on&nbsp;paper or in&nbsp;Excel, and the office re-keys them.</p></div>
+      <div class="rs-pain reveal"><p>At&nbsp;month-end, everyone hunts for what should be&nbsp;billed to&nbsp;whom.</p></div>
       <div class="rs-pain reveal"><p>Forgotten billable hours are a&nbsp;direct loss of revenue that nobody sees.</p></div>
     </div>
   </div>
@@ -207,14 +225,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">How the agent works</span>
-    <h2 class="h2 reveal">Step by step</h2>
-    <p class="lead reveal">A concrete flow — not promises. And just as important: what the agent deliberately does not do.</p>
+    <h2 class="h2 reveal">Step by&nbsp;step</h2>
+    <p class="lead reveal">A concrete flow — not promises. And just as important is what the agent deliberately does not do.</p>
     <div class="rs-flow">
-      <div class="rs-flow-step reveal"><b>1. The technician dictates the timesheet</b><p>By voice on the way back, if they like: “Today, 6 hours at the Novák place, switchboard replacement, materials 2× circuit breaker.”</p></div>
-      <div class="rs-flow-step reveal"><b>2. The agent structures it</b><p>Job, hours, activity, materials — matched to the job in the system.</p></div>
-      <div class="rs-flow-step reveal"><b>3. Checks</b><p>Do the hours match attendance? Has the material been issued from stock? Is yesterday’s timesheet missing?</p></div>
-      <div class="rs-flow-step reveal"><b>4. The manager approves</b><p>The daily overview with a&nbsp;single click.</p></div>
-      <div class="rs-flow-step esc reveal"><b>5. Prepares the inputs, exceptions go to the manager</b><p>Invoicing by job, payroll by person, margins by job for management. A&nbsp;timesheet that doesn’t match attendance, or an unknown job, goes to the manager for review.</p></div>
+      <div class="rs-flow-step reveal"><b>The technician dictates the timesheet</b><p>By voice on the way back, if they like: “Today, 6 hours at the Novák place, switchboard replacement, materials 2× circuit breaker.”</p></div>
+      <div class="rs-flow-step reveal"><b>The agent structures it</b><p>Job, hours, activity, materials — matched to the job in the system.</p></div>
+      <div class="rs-flow-step reveal"><b>Checks</b><p>Do the hours match attendance? Has the material been issued from stock? Is yesterday’s timesheet missing?</p></div>
+      <div class="rs-flow-step reveal"><b>The manager approves</b><p>The daily overview with a&nbsp;single click.</p></div>
+      <div class="rs-flow-step esc reveal"><b>Prepares the inputs, exceptions go to the manager</b><p>Invoicing by job, payroll by person, margins by job for management. A&nbsp;timesheet that doesn’t match attendance, or an unknown job, goes to the manager for review.</p></div>
     </div>
   </div>
 </section>
@@ -233,7 +251,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">What we need from you</span>
+    <span class="eyebrow reveal">What we need for this</span>
     <h2 class="h2 reveal">The input from you is deliberately small</h2>
     <ul class="rs-need">
       <li class="reveal">A&nbsp;list of jobs (ERP/Excel).</li>
@@ -247,10 +265,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Security and compliance</span>
     <h2 class="h2 reveal">Your data stays with you</h2>
-    <div class="rs-sec-box reveal">
-      <p>We process data in your own infrastructure or in an&nbsp;EU cloud, as you prefer; both transfer and storage are encrypted.</p>
-      <p>Processing complies with GDPR and the&nbsp;AI Act; for sensitive data we offer on-prem operation.</p>
-      <p>Only the roles that should have access to the data do, with an approval and audit trail.</p>
+    <div class="rs-badges reveal">
+      <div class="rs-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><b>Data stays in-house</b><span class="cap">Your infrastructure or an&nbsp;EU cloud.</span></div>
+      <div class="rs-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/></svg></span><b>Encrypted &amp;&nbsp;on-prem</b><span class="cap">In transit and at&nbsp;rest; on-prem for sensitive data.</span></div>
+      <div class="rs-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><b>GDPR &amp;&nbsp;AI&nbsp;Act</b><span class="cap">Compliance built in.</span></div>
+      <div class="rs-badge"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Audit trail</b><span class="cap">Access only for the roles that should have it.</span></div>
     </div>
   </div>
 </section>
@@ -305,7 +324,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">
-      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span>© 2026 EnterIT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
       <span class="legal"><a href="/en/gdpr.html">Privacy policy</a><a href="/en/podminky.html">Terms &amp; conditions</a></span>
     </div>
   </div>

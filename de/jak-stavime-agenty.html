@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wie wir KI-Agenten bauen | Enter IT</title>
+<title>Wie wir KI-Agenten bauen | EnterIT</title>
 <meta name="description" content="Architektur, Sicherheit, Human-in-the-loop und Messung. Wie ein KI-Agent aussieht, der im Unternehmen real läuft — Schritt für Schritt.">
 <link rel="canonical" href="https://enterit.cz/de/jak-stavime-agenty.html">
 <link rel="alternate" hreflang="cs" href="https://enterit.cz/jak-stavime-agenty.html">
@@ -17,20 +17,14 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="AI Enter s.r.o.">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Enter IT">
+<meta property="og:site_name" content="EnterIT">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Wie wir KI-Agenten bauen | Enter IT">
+<meta property="og:title" content="Wie wir KI-Agenten bauen | EnterIT">
 <meta property="og:description" content="Architektur, Sicherheit, Human-in-the-loop und Messung. Wie ein KI-Agent aussieht, der im Unternehmen real läuft — Schritt für Schritt.">
 <meta property="og:url" content="https://enterit.cz/de/jak-stavime-agenty.html">
 <meta property="og:image" content="https://enterit.cz/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wie wir KI-Agenten bauen | Enter IT">
-<meta name="twitter:description" content="Architektur, Sicherheit, Human-in-the-loop und Messung. Wie ein KI-Agent aussieht, der im Unternehmen real läuft — Schritt für Schritt.">
-<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Enter IT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
 <style>
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -145,53 +139,53 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <header id="header">
   <div class="wrap">
     <nav class="nav">
-      <a class="brand" href="/de.html" aria-label="Enter IT — Startseite">
+      <a class="brand" href="../de.html" aria-label="EnterIT — Startseite">
         <img src="/assets/enter_logo_white.svg" alt="Enter">
         <span class="it">IT</span>
       </a>
       <div class="nav-links">
-        <a href="/de.html#problems">Probleme</a>
-        <a href="/de.html#solutions">Lösungen</a>
-        <a href="/de.html#how">Wie wir arbeiten</a>
-        <a href="/de.html#integ">Integrationen</a>
-        <a href="/de.html#work">Referenzen</a>
+        <a href="../de.html#problems">Was wir lösen</a>
+        <a href="../de.html#solutions">Fertige Lösungen</a>
+        <a href="../de.html#how">Wie wir arbeiten</a>
+        <a href="../de.html#integ">Integrationen</a>
+        <a href="../de.html#work">Referenzen</a>
       </div>
       <div class="nav-right">
-        <a class="btn green" href="/de.html#contact">Kontakt</a>
+        <a class="btn green" href="../de.html#contact">Kontaktieren</a>
         <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 <nav class="mobile-menu" id="mmenu">
-  <a href="/de.html#problems">Probleme</a>
-  <a href="/de.html#solutions">Lösungen</a>
-  <a href="/de.html#how">Wie wir arbeiten</a>
-  <a href="/de.html#integ">Integrationen</a>
-  <a href="/de.html#work">Referenzen</a>
-  <a href="/de.html#contact">Kontakt</a>
+  <a href="../de.html#problems">Was wir lösen</a>
+  <a href="../de.html#solutions">Fertige Lösungen</a>
+  <a href="../de.html#how">Wie wir arbeiten</a>
+  <a href="../de.html#integ">Integrationen</a>
+  <a href="../de.html#work">Referenzen</a>
+  <a href="../de.html#contact">Kontakt</a>
 </nav>
 
 <main>
 
 <section class="block jp-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Wie wir vorgehen</span>
+    <span class="eyebrow reveal">Wie wir arbeiten</span>
     <h1 class="h1 reveal">Ein Agent ist kein Chatbot. Er ist ein digitaler Kollege mit klar beschriebener Aufgabe.</h1>
-    <p class="hero-sub reveal">Wir bauen einen Agenten, der ein Dokument lesen, nach Ihren Regeln entscheiden und überall dort an einen Menschen übergeben kann, wo Urteilsvermögen gefragt ist. Das funktioniert aber nur dann, wenn er eine exakt definierte Rolle, einen Input, einen Output und Leitplanken hat. Genau das tun wir — und hier zeigen wir, wie.</p>
+    <p class="hero-sub reveal">Wir bauen einen Agenten, der ein Dokument lesen, nach Ihren Regeln entscheiden und dort, wo Urteilsvermögen gefragt ist, an einen Menschen übergeben kann. Das funktioniert aber nur dann, wenn er eine exakt definierte Rolle, einen Input, einen Output und Leitplanken hat. Genau das tun wir — und hier zeigen wir, wie.</p>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Beginnen wir beim Wesentlichen</span>
-    <h2 class="h2 reveal">Was ein KI-Agent eigentlich ist — und worin er sich von gewöhnlicher Automatisierung unterscheidet</h2>
-    <p class="lead reveal">Automatisierung fährt auf einem festen Gleis: Kommt X, mach Y. Großartig für das, was sich nie ändert. Ein Agent bekommt ein Ziel und einen Kontext und entscheidet selbst, welche Schritte dorthin führen — er liest ein Dokument, findet Ähnlichkeiten, führt ein Gespräch, und wenn er an seine Grenzen stößt, eskaliert er an einen Menschen. Das ist der Unterschied zwischen einem Skript und einem digitalen Kollegen.</p>
+    <span class="eyebrow reveal">Zuerst das Wesentliche</span>
+    <h2 class="h2 reveal">Was ein KI-Agent ist — und worin er sich von gewöhnlicher Automatisierung unterscheidet</h2>
+    <p class="lead reveal">Automatisierung fährt auf einem festen Gleis: Kommt X, mach Y. Großartig für das, was sich nie ändert. Ein Agent bekommt ein Ziel und einen Kontext und entscheidet selbst, mit welchen Schritten er dorthin gelangt — er liest ein Dokument, findet Ähnlichkeiten, führt ein Gespräch, und wenn etwas seine Kräfte übersteigt, eskaliert er an einen Menschen. Das ist der Unterschied zwischen einem Skript und einem digitalen Kollegen.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Automatisierung = festes Gleis</h4><p>Fester Ablauf, keine Entscheidungen. Kommt eine Rechnung im erwarteten Format, wird sie ins System übertragen. Zuverlässig, günstig, aber blind für die Ausnahme. Ein anderes Layout genügt, und sie steht still.</p></div>
-      <div class="jp-block reveal"><h4>Agent = Ziel plus Urteilsvermögen</h4><p>Wir sagen ihm „lege aus dieser Bestellung Positionen im ERP an", und er kommt auch damit zurecht, dass jeder Kunde seine Mail anders schreibt. Er versteht den Inhalt, nicht nur das Format. Unser E-Mail-to-Order-Agent liest kein Formular — er versteht die Bestellung.</p></div>
-      <div class="jp-block reveal"><h4>Warum das für Entscheider zählt</h4><p>Ein Agent bewältigt Prozesse, bei denen früher ein Mensch sitzen musste, weil es um Urteilsvermögen über Texte und Dokumente ging. Genau diese teure, zermürbende Routine ließ sich nicht „skripten" — und genau hier gehen heute Zeit und Know-how verloren.</p></div>
-      <div class="jp-block reveal"><h4>Das ist keine Magie, das ist Ingenieurskunst</h4><p>Ein Agent funktioniert nur dann zuverlässig, wenn er einen handwerklich gebauten Rahmen hat: Rolle, Inputs, Outputs, Regeln, Anbindung und Metriken. Ohne das ist es eine effektvolle Demo, die im scharfen Betrieb abstürzt. Wir bauen das Erstere.</p></div>
+      <div class="jp-block reveal"><h4>Automatisierung = festes Gleis</h4><p>Fester Ablauf, keine Entscheidungen. Kommt eine Rechnung im erwarteten Format, wird sie ins System übertragen. Zuverlässig, günstig, aber blind für die Ausnahme. Ein anderes Format, und es steht still.</p></div>
+      <div class="jp-block reveal"><h4>Agent = Ziel und Urteilsvermögen</h4><p>Wir sagen ihm „lege aus dieser Bestellung Positionen im ERP an", und er kommt auch damit zurecht, dass jeder Kunde seine E-Mail anders schreibt. Er versteht den Inhalt, nicht nur das Format. Unser Agent für Bestellungen aus E-Mails liest kein Formular — er versteht die Bestellung.</p></div>
+      <div class="jp-block reveal"><h4>Warum das für Entscheider zählt</h4><p>Ein Agent bewältigt Prozesse, für die früher ein Mensch nötig war, weil es um Urteilsvermögen über Texte und Dokumente ging. Genau das ist die teure, zermürbende Routine, die sich nicht „skripten" ließ — und wo heute Zeit und Know-how verloren gehen.</p></div>
+      <div class="jp-block reveal"><h4>Das ist keine Magie, das ist Ingenieurskunst</h4><p>Ein Agent funktioniert nur dann zuverlässig, wenn er einen richtig gebauten Rahmen hat: Rolle, Inputs, Outputs, Regeln, Integrationen und Metriken. Ohne das ist es nur eine effektvolle Demo, die im scharfen Betrieb zerfällt. Wir bauen das Erstere.</p></div>
     </div>
   </div>
 </section>
@@ -200,16 +194,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <span class="eyebrow reveal">Anatomie eines Agenten</span>
     <h2 class="h2 reveal">Woraus ein zuverlässiger Agent besteht — Schritt für Schritt</h2>
-    <p class="lead reveal">Das ist der Kern der gesamten Arbeit. Ein Agent ist kein einzelnes „cleveres Modell", sondern ein System aus klar beschriebenen Bestandteilen. Lassen Sie auch nur einen davon weg, und der Agent läuft Ihnen langfristig nicht — deshalb ist es keine günstige Arbeit, sondern ein Projekt mit Gewicht. So bauen wir ihn.</p>
+    <p class="lead reveal">Das ist der Kern der gesamten Arbeit. Ein Agent ist kein einzelnes „cleveres Modell", sondern ein System aus klar definierten Komponenten. Lassen Sie eine davon weg, und der Agent dient Ihnen langfristig nicht — deshalb ist es keine günstige Arbeit, sondern ein Projekt mit Gewicht. So bauen wir ihn.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal jp-num"><i>1</i><div><h4>Rolle — was er tut und was er NICHT tut</h4><p>Zuerst beschreiben wir den Prozess und seine Abhängigkeiten genau, dann die Rolle des Agenten. „Lade die Hauptposition, lies das Schriftfeld und die Stückliste, lege die Komponentenstruktur an." Und genauso wichtig: was er nicht tun soll. Die Grenze der Rolle ist die halbe Zuverlässigkeit.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>2</i><div><h4>Input und Output in jedem Schritt</h4><p>Was der Agent bekommt (PDF-Zeichnung, E-Mail, Anfrage) und was er genau zurückgibt (Zeilen ins ERP, Antwort-Draft, CSV zum Import). Klarer Input und Output bedeuten, dass sich das Ergebnis prüfen und messen lässt — nicht nur „irgendwie läuft es".</p></div></div>
-      <div class="jp-block reveal jp-num"><i>3</i><div><h4>Regeln und Leitplanken — darf / darf nicht</h4><p>Wozu der Agent befugt ist, es selbst zu tun, und wo er anhalten muss. Leitplanken sind keine zusätzliche Einschränkung, sie sind die Gleise, auf denen man dem Agenten vertrauen kann. Ohne sie geben Sie einem Agenten niemals Zugriff auf das scharfe ERP.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>4</i><div><h4>Werkzeuge und Integrationen — die Hände des Agenten</h4><p>Ein Agent ergibt nur Sinn, wenn er an die Realität der Firma angebunden ist. Wir binden ihn an ERP (K2, Helios, Business Central), SharePoint, M365, CRM, PDM/CAD, E-Mail, WhatsApp an — über API und über RPA dort, wo es keine API gibt. Eine zentrale Datenschicht als Nervensystem, über dem die Agenten arbeiten.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>5</i><div><h4>Gedächtnis und Kontext — RAG</h4><p>Damit der Agent über Firmendaten antwortet, konsolidieren wir Dokumente aus ERP/SharePoint/DMS/NAS in eine Vektordatenbank (Qdrant, Weaviate, pgvector). Eingescannte und PDF-Dokumente durchlaufen OCR (ABBYY, Tesseract). Der Agent antwortet dann aus dem Kontext der Firma — und immer mit Quelle.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>6</i><div><h4>Human-in-the-loop — wo der Mensch entscheidet</h4><p>Der Agent empfiehlt, der Mensch genehmigt. Wir definieren die genauen Punkte, an denen die Arbeit übergeben wird: Der Technologe ergänzt das, was nur er aus der Zeichnung sieht; die Unterschrift macht ein Mensch, keine Maschine. Das ist der Unterschied zwischen einem vertrauenswürdigen Werkzeug und einer Black Box.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>7</i><div><h4>Metriken — wonach ausgewertet wird</h4><p>Fehlerquote, Reaktionszeit, wie viel Arbeit er einspart, wie die Adoption wächst. Ein Agent wird nicht ausgerollt und vergessen — er wird ausgewertet und nachjustiert. Ohne Baseline und Definition des Nutzens bauen wir keinen Agenten.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>8</i><div><h4>Governance und Sicherheit von Anfang an</h4><p>Regeln, was in die KI darf und was nicht (KI-Ampel), wer der Eigentümer ist, wie auf Daten zugegriffen wird. Für sensible Daten private KI auf eigener Infrastruktur (on-prem, lokales Llama/LLaVA, NVIDIA-Stack). Sicherheit ist Teil des Entwurfs, kein Anhängsel am Ende.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>1</i><div><h4>Rolle — was er tut und was NICHT</h4><p>Die genaue Rolle und ihre Grenzen — was er tut und vor allem was NICHT. Die Grenze ist die halbe Zuverlässigkeit.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>2</i><div><h4>Input und Output in jedem Schritt</h4><p>Klarer Input (PDF, E-Mail) und Output (Zeilen ins ERP). Lässt sich prüfen und messen.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>3</i><div><h4>Regeln und Leitplanken — darf / darf nicht</h4><p>Was er selbst darf und wo er anhält. Die Gleise, dank derer man dem Agenten am scharfen ERP vertrauen kann.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>4</i><div><h4>Werkzeuge und Integrationen — die Hände des Agenten</h4><p>Anbindung an ERP, E-Mail, CRM und CAD — die Hände des Agenten direkt in Ihren Systemen.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>5</i><div><h4>Gedächtnis und Kontext — RAG</h4><p>Er antwortet aus Ihren Dokumenten — und zeigt immer die Quelle.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>6</i><div><h4>Human-in-the-loop — wo der Mensch entscheidet</h4><p>Der Agent empfiehlt, der Mensch genehmigt. Die Unterschrift macht ein Mensch, keine Maschine.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>7</i><div><h4>Metriken — wonach wir ihn beurteilen</h4><p>Fehlerquote, Ersparnis, Nutzung. Wir messen und justieren nach — nicht ausrollen und vergessen.</p></div></div>
+      <div class="jp-block reveal jp-num"><i>8</i><div><h4>Governance und Sicherheit von Anfang an</h4><p>Wer was darf, wie auf Daten zugegriffen wird, bei sensiblen Daten private KI on-prem. Sicherheit ist im Entwurf, kein Anhängsel am Ende.</p></div></div>
     </div>
     <div class="jp-callout reveal">
       <p><b>Was der Agent nicht tut:</b> Er sendet ohne Freigabe nichts aus dem Unternehmen. Er löscht keine Daten. Er entscheidet nicht über Geld — die Freigabe bleibt bei den Menschen. Er lernt nicht auf Ihren Daten für irgendjemand anderen.</p>
@@ -233,15 +227,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">Typen von Agenten</span>
-    <h2 class="h2 reveal">Was Agenten in unserer Praxis real können</h2>
-    <p class="lead reveal">Das sind keine abstrakten Kategorien aus einer Präsentation. Jeden Typ haben wir in einem realen Projekt gebaut. Modell und Werkzeug wählen wir nach Aufgabe und Datensensibilität — Claude, GPT, Gemini, Copilot, Azure OpenAI oder ein lokales Modell — nicht nach Mode.</p>
+    <h2 class="h2 reveal">Was Agenten in unserer Praxis wirklich können</h2>
+    <p class="lead reveal">Das sind keine abstrakten Kategorien aus einer Folie. Jeden Typ haben wir in einem realen Projekt gebaut. Modell und Werkzeug wählen wir nach Aufgabe und Datensensibilität — Claude, GPT, Gemini, Copilot, Azure OpenAI oder ein lokales Modell — nicht nach Mode.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Lese- / Extraktionsagent</h4><p>Liest eine PDF-Zeichnung, das Schriftfeld, die Stückliste, eine Rechnung, einen Vertrag und extrahiert daraus strukturierte Daten. Die Basis sowohl für den Maschinenbau als auch für das Auslesen von Anhängen.</p></div>
-      <div class="jp-block reveal"><h4>E-Mail-Agent</h4><p>Die Bestellung kommt per Mail, der Agent extrahiert daraus die Positionen und legt sie im ERP an — statt manuellem Abtippen Position für Position. Er beherrscht auch Antwort-Drafts auf wiederkehrende Anfragen.</p></div>
-      <div class="jp-block reveal"><h4>Wissens- / RAG-Agent</h4><p>Antwortet über der Firmendokumentation in natürlicher Sprache und zeigt immer die Quelle. Service-Know-how, das früher mit den Technikern abwanderte, bleibt in der Firma.</p></div>
-      <div class="jp-block reveal"><h4>Prozessagent</h4><p>Aus dem Protokoll einer Besprechung macht er Aufgaben und Eskalationen. Ein Self-Service-Skill, den jeder Mitarbeiter selbst startet, nicht nur die IT.</p></div>
+      <div class="jp-block reveal"><h4>Lese- / Extraktionsagent</h4><p>Er liest eine PDF-Zeichnung, das Schriftfeld, die Stückliste, eine Rechnung, einen Vertrag und extrahiert daraus strukturierte Daten. Die Basis für Maschinenbaubetriebe wie auch für das Auslesen von Anhängen.</p></div>
+      <div class="jp-block reveal"><h4>E-Mail-Agent</h4><p>Die Bestellung kommt per Mail, der Agent extrahiert daraus die Positionen und legt sie im ERP an — statt manuellem Abtippen Position für Position. Er kann auch Antworten auf wiederkehrende Anfragen vorschlagen.</p></div>
+      <div class="jp-block reveal"><h4>Wissens- / RAG-Agent</h4><p>Er antwortet über der Firmendokumentation in natürlicher Sprache und zeigt immer die Quelle. Service-Know-how, das früher mit den Technikern abwanderte, bleibt in der Firma.</p></div>
+      <div class="jp-block reveal"><h4>Prozessagent</h4><p>Aus dem Protokoll einer Besprechung macht er Aufgaben und Eskalationen. Ein Self-Service-Skill, den jeder Mitarbeiter starten kann, nicht nur die IT.</p></div>
       <div class="jp-block reveal"><h4>Reporting-Agent</h4><p>Daten aus dem ERP oder dem Data Warehouse in natürlicher Sprache. Statt sich durch Exporte zu klicken, fragt der Vertriebsmitarbeiter und bekommt eine gefilterte Antwort.</p></div>
-      <div class="jp-block reveal"><h4>Kommunikationsagent / Chatbot</h4><p>Web, WhatsApp, 24/7. Bearbeitet eine Anfrage, filtert die Post, beantwortet eine wiederkehrende Frage und schickt den Rest an einen Menschen.</p></div>
+      <div class="jp-block reveal"><h4>Kommunikationsagent / Chatbot</h4><p>Web, WhatsApp, 24/7. Er bearbeitet eine Anfrage, filtert die Post, beantwortet eine wiederkehrende Frage und schickt den Rest an einen Menschen.</p></div>
     </div>
   </div>
 </section>
@@ -249,13 +243,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">Vertrauenswürdigkeit</span>
-    <h2 class="h2 reveal">Wie wir einen Agenten bauen, dem man vertrauen kann</h2>
-    <p class="lead reveal">Zuverlässigkeit ist kein Versprechen, sie ist eine Arbeitsweise. Ein ehrlicher Agent kann „das weiß ich nicht" sagen und kann „das überlasse ich einem Menschen" sagen. Bestimmen zu können, wo man die Maschine einsetzt und wo man den Menschen lässt, ist für sich genommen eine Expertise, die Geld kostet — und der häufigste Grund, warum günstige Lösungen im Betrieb scheitern.</p>
+    <h2 class="h2 reveal">Wie wir einen Agenten bauen, dem Sie vertrauen können</h2>
+    <p class="lead reveal">Zuverlässigkeit ist kein Versprechen, sie ist eine Arbeitsweise. Ein ehrlicher Agent kann „das weiß ich nicht" sagen und „das überlasse ich einem Menschen". Zu wissen, wo man die Maschine einsetzt und wo man sie bewusst dem Menschen überlässt, ist für sich genommen eine Expertise — und der häufigste Grund, warum günstige Lösungen im Betrieb scheitern.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Antwort immer mit Quelle</h4><p>Der RAG-Agent antwortet nicht „aus dem Kopf". Zu jeder Antwort zeigt er, aus welcher Preisliste, Zeichnung oder welchem Dokument er schöpft. Die Firma sieht, woher die Antwort stammt — und das ist der Schlüssel zum Vertrauen, keine Dekoration.</p></div>
-      <div class="jp-block reveal"><h4>Bewusstes Zurückweichen dort, wo OCR es nicht schafft</h4><p>Beim Maschinenbau haben wir uns entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Wir lesen nur das Schriftfeld und die Stückliste, wo die Erkennung zuverlässig ist. Den Rest ergänzt der Mensch. Zu wissen, was man dem Agenten nicht anvertraut, ist Teil des Handwerks.</p></div>
-      <div class="jp-block reveal"><h4>Dokumenten-Audit vor der Bepreisung</h4><p>Bevor Enter IT irgendetwas bepreist, gehen wir 5–10 reale PDFs durch und prüfen, ob verschiedene Abnehmer unterschiedliche Schriftfeld-Layouts haben. Davon hängen Zuverlässigkeit und Preis ab. Keine Versprechen ins Blaue hinein.</p></div>
-      <div class="jp-block reveal"><h4>Der Mensch bei der Entscheidung, nicht bei der Routine</h4><p>Der Agent übernimmt das Abtippen und Anlegen, der Mensch behält das Urteilsvermögen und die Genehmigung. Das ist kein Kompromiss — das ist der Entwurf, der in regulierten Branchen (Energiewirtschaft, Produktion, sensible Verträge) den KI-Einsatz überhaupt erst ermöglicht.</p></div>
+      <div class="jp-block reveal"><h4>Immer eine Antwort mit Quelle</h4><p>Der RAG-Agent antwortet nicht „aus dem Kopf". Zu jeder Antwort zeigt er, aus welcher Preisliste, Zeichnung oder welchem Dokument sie stammt. Die Firma sieht, woher die Antwort kommt — und das ist der Schlüssel zum Vertrauen, keine Dekoration.</p></div>
+      <div class="jp-block reveal"><h4>Bewusster Schritt zurück dort, wo OCR es nicht schafft</h4><p>In einer Maschinenbaufirma haben wir uns entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Wir lesen nur das Schriftfeld und die Stückliste, wo die Erkennung zuverlässig ist. Den Rest ergänzt der Mensch. Zu wissen, was man dem Agenten nicht anvertraut, ist Teil des Handwerks.</p></div>
+      <div class="jp-block reveal"><h4>Dokumenten-Audit vor dem Angebot</h4><p>Bevor EnterIT irgendetwas bepreist, gehen wir 5–10 reale PDFs durch und prüfen, ob verschiedene Abnehmer unterschiedliche Schriftfeld-Layouts haben. Davon hängen Zuverlässigkeit und Preis ab. Keine Versprechen ins Blaue hinein.</p></div>
+      <div class="jp-block reveal"><h4>Der Mensch bei der Entscheidung, nicht bei der Routine</h4><p>Der Agent übernimmt das Abtippen und Anlegen, der Mensch behält das Urteilsvermögen und die Genehmigung. Das ist kein Kompromiss — es ist der Entwurf, der den KI-Einsatz in regulierten Branchen (Energiewirtschaft, Produktion, sensible Verträge) überhaupt erst ermöglicht.</p></div>
     </div>
   </div>
 </section>
@@ -263,13 +257,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block">
   <div class="wrap">
     <span class="eyebrow reveal">Messung und Betrieb</span>
-    <h2 class="h2 reveal">Was ein Agent misst und wie wir ihn langfristig betreuen</h2>
-    <p class="lead reveal">Ein Agent wird ausgerollt, vor allem aber wird er ausgewertet und nachjustiert. Ohne Baseline und Definition des Nutzens bauen wir hier keinen — das unterscheidet ein ernsthaftes Projekt von einer kleinen Demo. Und wir übergeben ihn nicht und verschwinden: Betrieb und langfristige Betreuung sind Teil der Vereinbarung.</p>
+    <h2 class="h2 reveal">Was ein Agent misst und wie wir ihn langfristig steuern</h2>
+    <p class="lead reveal">Ein Agent wird ausgerollt, aber vor allem wird er ausgewertet und nachjustiert. Ohne Ausgangswert und definierten Nutzen bauen wir hier keinen — das unterscheidet ein ernsthaftes Projekt von einer kleinen Demo. Und wir übergeben ihn nicht und verschwinden: Betrieb und langfristige Betreuung sind Teil der Vereinbarung.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Was jeder Agent misst</h4><p>Reaktionszeit und Zeit des gesamten Prozesses, Fehlerquote und Rework, wie viel Arbeit er real einspart, wie die Adoption wächst. Zahlen, keine Gefühle — gegen den gemessenen Ausgangswert vor dem Einsatz.</p></div>
+      <div class="jp-block reveal"><h4>Was jeder Agent misst</h4><p>Reaktionszeit und Zeit des gesamten Prozesses, Fehlerquote und Rework, wie viel Arbeit er real einspart, wie die Nutzung wächst. Zahlen, keine Gefühle — gegen den gemessenen Ausgangswert vor dem Einsatz.</p></div>
       <div class="jp-block reveal"><h4>Typische Amortisation 3–12 Monate</h4><p>Wir bauen so, dass der Ertrag auch die weitere Entwicklung deckt. Ein Agent ist kein einmaliges Spielzeug, sondern eine langfristig betreute Schicht der Firma, die sich im Betrieb verbessert.</p></div>
-      <div class="jp-block reveal"><h4>Betrieb und Feintuning, nicht Übergabe und Tschüss</h4><p>Wir beobachten, wo der Agent Fehler macht, ergänzen Regeln, erweitern den Umfang. Pilot bei einem Abnehmer mit erprobter Logik, dann Ausweitung dort, wo es sich rechnet.</p></div>
-      <div class="jp-block reveal"><h4>Die Daten bleiben bei der Firma</h4><p>Verschlüsselte Übertragung und Speicherung, DSGVO und tschechische Gesetzgebung, On-prem-Option für sensible Daten. Governance und Sicherheitsrahmen laufen vom ersten Tag an, nicht als Flicken am Ende.</p></div>
+      <div class="jp-block reveal"><h4>Betrieb und Feintuning, nicht Übergabe und Tschüss</h4><p>Wir beobachten, wo der Agent Fehler macht, ergänzen Regeln, erweitern den Umfang. Ein Pilot bei einem Abnehmer mit erprobter Logik, dann Ausweitung dort, wo es sich lohnt.</p></div>
+      <div class="jp-block reveal"><h4>Die Daten bleiben in der Firma</h4><p>Verschlüsselte Übertragung und Speicherung, DSGVO und tschechische Gesetzgebung, On-prem-Option für sensible Daten. Der Rahmen aus Governance und Sicherheit läuft vom ersten Tag an, nicht als Flicken am Ende.</p></div>
     </div>
   </div>
 </section>
@@ -277,15 +271,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <section class="block alt">
   <div class="wrap">
     <span class="eyebrow reveal">Reales Beispiel</span>
-    <h2 class="h2 reveal">TPV-Agent im ERP Helios — Maschinenbau- und Konstruktionsfirma</h2>
+    <h2 class="h2 reveal">Agent für die TPV im ERP Helios — Maschinenbau- und Konstruktionsfirma</h2>
     <div class="jp-walk">
-      <div class="jp-step reveal"><span class="sn">Schritt 1</span><h4>Der Schmerz, den wir gelöst haben</h4><p>Die technologische Produktionsvorbereitung bedeutete täglich Stunden an Routine. Ein Auftrag kam herein, im ERP nur die Hauptposition des Projekts mit hochgeladenen Daten (PDF + DWG + DXF). Der Technologe lud dann bei jedem Teil manuell das PDF herunter, legte danach in Helios die Komponentenpositionen an, erstellte die Positionsstruktur, speicherte zu jeder Position die Zeichnung und ergänzte den technologischen Ablauf und die Zeitnorm. Immer wieder sehr ähnliche Positionen — wöchentlich 15–25 Baugruppen, also 70–120 Positionen, alles tippt und legt ein Mensch an.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 2</span><h4>Eingangs-Audit statt Versprechen</h4><p>Bevor wir irgendetwas bepreist haben, gingen wir 5–10 reale Zeichnungen durch und prüften, ob verschiedene Abnehmer unterschiedliche Layouts der Schriftfelder haben. Davon hängen Zuverlässigkeit und Preis ab. Den Piloten haben wir bewusst auf einem Hauptabnehmer aufgebaut — dasselbe Schriftfeld bedeutet höhere Lesezuverlässigkeit.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 3</span><h4>Bewusste Entscheidung, was wir dem Agenten NICHT anvertrauen</h4><p>Wir haben uns entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Der Agent liest nur das Schriftfeld und die Stückliste (Bezeichnung, Zeichnungsnummer, Stahlgüte, Gewicht), wo die Erkennung zuverlässig ist. Diese Grenze ist für sich genommen eine Expertise: Sie hält den Unterschied zwischen einer funktionierenden und einer nicht funktionierenden Lösung.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 4</span><h4>Was der Agent selbst tut</h4><p>Er lädt das PDF der Hauptposition, liest das Schriftfeld und die Stückliste, findet anhand der Stückliste bereits existierende ähnliche Positionen im ERP und legt die Komponentenstruktur an — einschließlich der Übernahme des technologischen Ablaufs und der Zeitnorm von der ursprünglichen ähnlichen Position. Die Ähnlichkeit sucht er anhand der Felder auf der Stammkarte und der Metadaten aus dem Formular.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 5</span><h4>Human-in-the-loop bei dem, was nur der Mensch sieht</h4><p>Dort, wo Daten in der Zeichnung maschinell nicht lesbar sind (Anzahl der Biegungen, Blechdicke), öffnet sich ein Dialog mit PDF-Vorschau und einem Zahlenfeld. Der Technologe ergänzt den Wert aus der Zeichnung. Die ergänzten Metadaten werden in einer CSV gesammelt und per Import wird in Helios automatisch die Positionsstruktur angelegt. Der Agent empfiehlt und legt an, der Technologe prüft und ergänzt das Urteilsvermögen.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 6</span><h4>Anbindung und Phasierung</h4><p>Der Agent steht auf dem ERP Helios (über API gemäß der Wiki-Dokumentation), liest PDF/DWG/DXF-Zeichnungen, nutzt OCR auf Schriftfeld und Stückliste sowie CSV-Import ins ERP. Wir haben es in zwei Phasen aufgeteilt: zuerst die gefertigten Positionen, in der zweiten Phase die zugekauften und normierten Teile — mit der Möglichkeit der Erweiterung bis hin zur Bepreisung.</p></div>
-      <div class="jp-step reveal"><span class="sn">Schritt 7</span><h4>Das Ergebnis</h4><p>Von Stunden routinemäßigen Abtippens bei 70–120 Positionen wöchentlich zu einem Agenten, der die Struktur anlegt und die Normen überträgt. Der Technologe prüft und ergänzt nur noch das, was wirklich menschliches Urteilsvermögen erfordert. Der Pilot läuft auf einem Hauptabnehmer mit erprobter Logik und Raum für Erweiterung. Das Konkurrenzangebot für denselben Use Case war zudem teurer.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 1</span><h4>Der Schmerz, den wir gelöst haben</h4><p>Die technologische Produktionsvorbereitung bedeutete täglich Stunden an Routine. Ein Auftrag kam herein, im ERP entstand nur die Hauptposition des Projekts mit hochgeladenen Daten (PDF + DWG + DXF). Der Prozesstechnologe lud dann bei jedem Teil manuell das PDF herunter, legte danach in Helios die Komponentenpositionen an, erstellte die Positionsstruktur, hängte an jede Position die Zeichnung und ergänzte den technologischen Ablauf und die Zeitnorm. Immer wieder dieselben, sehr ähnlichen Positionen — 15–25 Baugruppen pro Woche, also 70–120 Positionen, alles von einem Menschen abgetippt und angelegt.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 2</span><h4>Eingangs-Audit statt Versprechen</h4><p>Bevor wir irgendetwas bepreist haben, gingen wir 5–10 reale Zeichnungen durch und prüften, ob verschiedene Abnehmer unterschiedliche Schriftfeld-Layouts haben. Davon hängen Zuverlässigkeit und Preis ab. Den Piloten haben wir bewusst auf einem Hauptabnehmer aufgebaut — dasselbe Schriftfeld bedeutet höhere Lesezuverlässigkeit.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 3</span><h4>Bewusste Entscheidung, was wir dem Agenten NICHT anvertrauen</h4><p>Wir haben uns entschieden, keine Maße aus komplexen Zeichnungen zu lesen — OCR ist dort unzuverlässig. Der Agent liest nur das Schriftfeld und die Stückliste (Bezeichnung, Zeichnungsnummer, Materialgüte, Gewicht), wo die Erkennung zuverlässig ist. Diese Grenze ist für sich genommen eine Expertise: Sie hält die Linie zwischen einer funktionierenden und einer nicht funktionierenden Lösung.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 4</span><h4>Was der Agent selbst schafft</h4><p>Er lädt das PDF der Hauptposition, liest das Schriftfeld und die Stückliste, findet anhand der Stückliste bereits existierende ähnliche Positionen im ERP und legt die Komponentenstruktur an — einschließlich der Übernahme des technologischen Ablaufs und der Zeitnorm von der ursprünglichen ähnlichen Position. Die Ähnlichkeitssuche läuft über den Feldern des Hauptdatensatzes und den Metadaten aus dem Formular.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 5</span><h4>Human-in-the-loop dort, wo nur der Mensch etwas sieht</h4><p>Dort, wo Daten in der Zeichnung maschinell nicht lesbar sind (Anzahl der Biegungen, Blechdicke), öffnet sich ein Dialog mit PDF-Vorschau und einem Zahlenfeld. Der Prozesstechnologe ergänzt den Wert anhand der Zeichnung. Die ergänzten Metadaten werden in einer CSV gesammelt und per Import wird in Helios automatisch die Positionsstruktur angelegt. Der Agent empfiehlt und legt an, der Technologe prüft und ergänzt das Urteilsvermögen.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 6</span><h4>Anbindung und Phasierung</h4><p>Der Agent steht auf dem ERP Helios (Anbindung über API gemäß der Wiki-Dokumentation), liest PDF/DWG/DXF-Zeichnungen, nutzt OCR auf Schriftfeld und Stückliste und schreibt per CSV-Import ins ERP. Wir haben es in zwei Phasen aufgeteilt: zuerst die gefertigten Positionen, in der zweiten Phase die zugekauften und normierten Teile — mit der Möglichkeit, es bis hin zur Bepreisung zu erweitern.</p></div>
+      <div class="jp-step reveal"><span class="sn">Schritt 7</span><h4>Das Ergebnis</h4><p>Von Stunden routinemäßigen Abtippens über 70–120 Positionen pro Woche zu einem Agenten, der die Struktur anlegt und die Standards überträgt. Der Prozesstechnologe prüft und ergänzt jetzt nur noch das, was wirklich menschliches Urteilsvermögen erfordert. Der Pilot läuft auf einem Hauptabnehmer mit erprobter Logik und Raum für Erweiterung. Das Konkurrenzangebot für denselben Auftrag war zudem teurer.</p></div>
     </div>
   </div>
 </section>
@@ -294,11 +288,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
   <div class="wrap">
     <div class="cta-card reveal">
       <span class="eyebrow">Gehen wir es an</span>
-      <h2 class="h2">Haben Sie einen Prozess, der Menschen Zeit raubt?</h2>
-      <p>Sagen Sie uns, was bei Ihnen immer wieder von Hand gemacht wird. Wir entwerfen eine Lösung und rechnen aus, wie viel sie zurückbringt.</p>
+      <h2 class="h2">Haben Sie einen Prozess, der Ihren Leuten Zeit raubt?</h2>
+      <p>Sagen Sie uns, was bei Ihnen immer wieder von Hand gemacht wird. Wir entwerfen eine Lösung und rechnen aus, wie viel zurückkommt.</p>
       <div class="cta-btns">
-        <a href="/de.html#contact" class="btn green">Unverbindliche Beratung <span class="arr">→</span></a>
-        <a href="/de.html#solutions" class="btn outline">Lösungskatalog</a>
+        <a href="../de.html#contact" class="btn green">Unverbindliche Beratung <span class="arr">→</span></a>
+        <a href="../de.html#solutions" class="btn outline">Lösungskatalog</a>
       </div>
     </div>
   </div>
@@ -313,8 +307,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       <span class="ft-name">Enter&nbsp;IT</span>
     </div>
     <div class="foot-bar">
-      <span>© 2026 Enter IT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-      <span class="legal"><a href="/de/gdpr.html">Datenschutz</a><a href="/de/podminky.html">Geschäftsbedingungen</a></span>
+      <span>© 2026 EnterIT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="legal"><a href="gdpr.html">Datenschutz</a><a href="podminky.html">Allgemeine Geschäftsbedingungen</a></span>
     </div>
   </div>
 </footer>
