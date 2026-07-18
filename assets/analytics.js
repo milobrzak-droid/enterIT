@@ -140,6 +140,37 @@
     }
   }
 
+  /* ---- conversion tracking (fires only once consent is granted) ---- */
+  function trackEvent(name, params){
+    var stored;
+    try { stored = localStorage.getItem(STORAGE_KEY); } catch(e){ stored = null; }
+    if(stored !== 'granted') return;
+    gtag('event', name, params || {});
+  }
+
+  function bindConversionTracking(){
+    document.addEventListener('submit', function(e){
+      var form = e.target;
+      if(form && form.classList && form.classList.contains('capture')){
+        trackEvent('generate_lead', { form_id: form.id || 'unknown', page_lang: LANG });
+      }
+    }, true);
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href]');
+      if(!a) return;
+      var href = a.getAttribute('href') || '';
+      if(href.indexOf('outlook.office.com/bookwithme') !== -1){
+        trackEvent('book_meeting_click', { page_lang: LANG });
+      } else if(href.indexOf('mailto:') === 0){
+        trackEvent('contact_click', { method: 'email', page_lang: LANG });
+      } else if(href.indexOf('tel:') === 0){
+        trackEvent('contact_click', { method: 'phone', page_lang: LANG });
+      }
+    }, true);
+  }
+  bindConversionTracking();
+
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', init);
   } else {
