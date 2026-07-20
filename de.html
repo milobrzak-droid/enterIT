@@ -20,11 +20,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260717-enter-symbol">
   <link rel="icon" href="/favicon.ico?v=20260717-enter-symbol" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20260717-enter-symbol">
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-  <link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-  <link rel="stylesheet" href="/assets/home.css?v=20260717-28">
-  <script src="/assets/home.js?v=20260717-16" defer></script>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site-shell.css?v=20260720-13">
+  <link rel="stylesheet" href="/assets/home.css?v=20260720-13">
+  <script src="/assets/home.js?v=20260720-13" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EnterIT">
   <meta property="og:locale" content="de_DE">
@@ -88,7 +88,7 @@
         <a class="button button--ghost" href="#results">Ergebnisse ansehen</a>
       </div>
     </div>
-    <div class="proof-strip"><div class="proof-item"><strong>75</strong><span>Spezialisten unter einem Dach</span></div><div class="proof-item"><strong>120+</strong><span>abgeschlossene Projekte</span></div><div class="proof-item"><strong>4–8 Wochen</strong><span>vom Pilotprojekt bis zum Produktivbetrieb</span></div></div>
+    <div class="proof-strip"><div class="proof-item"><strong data-count-up>75</strong><span>Spezialisten unter einem Dach</span></div><div class="proof-item"><strong data-count-up>120+</strong><span>abgeschlossene Projekte</span></div><div class="proof-item"><strong data-count-up>4–8 Wochen</strong><span>vom Pilotprojekt bis zum Produktivbetrieb</span></div></div>
   </div>
 </section>
 <section class="partner-bar" aria-label="Technologiepartner">
@@ -97,30 +97,26 @@
     <div class="partner-logos">
       <img class="partner-logo partner-logo--microsoft" src="/assets/logos/microsoft.png" alt="Microsoft Solutions Partner" width="1000" height="200" loading="lazy" decoding="async">
       <img class="partner-logo partner-logo--tdsynnex" src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" width="1300" height="460" loading="lazy" decoding="async">
-      <img class="partner-logo partner-logo--techmates" src="/assets/logos/techmates.png" alt="Techmates" width="1854" height="299" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 <section class="section" id="services">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Vom Prozess zum produktiven Betrieb</span><h2 class="section-title">Technologie soll Arbeit erledigen. Nicht nur klug aussehen.</h2></div>
+      <div><h2 class="section-title">Technologie soll Arbeit erledigen. Nicht nur klug aussehen.</h2></div>
       <p class="section-intro">Wir verbinden Business, Engineering und Betrieb. Das Ergebnis ist in Ihre Systeme integriert, hat einen klaren Verantwortlichen und liefert messbaren Nutzen.</p>
     </div>
     <div class="services-grid"><article class="service-card">
-        <span class="service-card__number">01</span>
         <h3>KI-Agenten für den realen Betrieb</h3>
         <p>Agenten arbeiten mit Dokumenten, E-Mails und Unternehmenswissen. Ausnahmen übergeben sie an Mitarbeitende; jeder Schritt bleibt nachvollziehbar.</p>
         <ul class="service-list"><li>Rechnungen und Bestellungen</li><li>Kunden- und interner Support</li><li>Dokumente und Unternehmenswissen</li></ul>
         <a class="text-link" href="de/jak-stavime-agenty.html">So bauen wir KI-Agenten</a>
       </article><article class="service-card">
-        <span class="service-card__number">02</span>
         <h3>Automatisierung und Integration</h3>
         <p>Wir verbinden ERP, CRM, Lager, E-Commerce und E-Mail zu einem verlässlichen Ablauf — einschließlich älterer Systeme ohne moderne API.</p>
         <ul class="service-list"><li>ERP-, CRM- und WMS-Integration</li><li>Freigaben und Reporting</li><li>Altsysteme und API-Schichten</li></ul>
         <a class="text-link" href="de/jak-stavime-automatizace.html">So bauen wir Automatisierungen</a>
       </article><article class="service-card">
-        <span class="service-card__number">03</span>
         <h3>Individuelle Software und Datenlösungen</h3>
         <p>Wir entwickeln interne Anwendungen, Datenplattformen und Cloud-Lösungen, wenn Standardsoftware nicht zu Ihrem Prozess passt.</p>
         <ul class="service-list"><li>Interne Anwendungen und Portale</li><li>Datenplattformen und BI</li><li>Cloud, DevOps und SLA-Betrieb</li></ul>
@@ -131,80 +127,80 @@
 <section class="section section--white solutions" id="solutions">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Fertige Lösungen</span><h2 class="section-title">Konkrete Aufgaben, die wir Ihrem Team abnehmen.</h2></div>
+      <div><h2 class="section-title">Konkrete Aufgaben, die wir Ihrem Team abnehmen.</h2></div>
       <p class="section-intro">Acht bewährte Lösungen gegen Abtippen, Suchen und manuelles Ausfüllen.</p>
     </div>
     <div class="solution-grid"><a class="solution-card" href="de/reseni-dochazka.html">
-        <div class="solution-card__top"><span>01</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Anwesenheitserfassung</h3>
         <p>Stunden aus Stechuhr und Excel am Monatsende nicht mehr manuell zusammenzählen.</p>
         <div class="solution-card__flow" aria-label="Stechuhr + Excel → Stundenübersicht + Lohnunterlage">
           <span>Stechuhr + Excel</span><b aria-hidden="true">→</b><span>Stundenübersicht + Lohnunterlage</span>
         </div>
-        <strong class="solution-card__proof">~15 h/Mon. spart die Lohnbuchhaltung</strong>
+        <strong class="solution-card__proof" data-count-up>~15 h/Mon. spart die Lohnbuchhaltung</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-objednavky.html">
-        <div class="solution-card__top"><span>02</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Bestellannahme aus E-Mails</h3>
         <p>Bestellungen kommen in beliebigen Formaten per E-Mail — niemand tippt sie ab.</p>
         <div class="solution-card__flow" aria-label="E-Mail-Bestellung → angelegt + bestätigt">
           <span>E-Mail-Bestellung</span><b aria-hidden="true">→</b><span>angelegt + bestätigt</span>
         </div>
-        <strong class="solution-card__proof">~25 h/Mon. spart der Vertrieb</strong>
+        <strong class="solution-card__proof" data-count-up>~25 h/Mon. spart der Vertrieb</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-reklamace.html">
-        <div class="solution-card__top"><span>03</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Reklamationen unter Kontrolle</h3>
         <p>Keine Reklamation geht in E-Mails verloren — sie wird automatisch erfasst und nachverfolgt.</p>
         <div class="solution-card__flow" aria-label="Reklamation per E-Mail → angelegt + nachverfolgt">
           <span>Reklamation per E-Mail</span><b aria-hidden="true">→</b><span>angelegt + nachverfolgt</span>
         </div>
-        <strong class="solution-card__proof">Schnellere Bearbeitung, zufriedenere Kunden</strong>
+        <strong class="solution-card__proof" data-count-up>Schnellere Bearbeitung, zufriedenere Kunden</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-sklad-bez-papiru.html">
-        <div class="solution-card__top"><span>04</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Lager ohne Papier</h3>
         <p>Lieferschein fotografieren — Einlagerung und Abgleich mit der Bestellung laufen automatisch.</p>
         <div class="solution-card__flow" aria-label="Lieferschein (Foto) → eingelagert + abgeglichen">
           <span>Lieferschein (Foto)</span><b aria-hidden="true">→</b><span>eingelagert + abgeglichen</span>
         </div>
-        <strong class="solution-card__proof">~20 h/Mon. spart der Lagerist</strong>
+        <strong class="solution-card__proof" data-count-up>~20 h/Mon. spart der Lagerist</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-dovolene.html">
-        <div class="solution-card__top"><span>05</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Urlaubsfreigabe</h3>
         <p>Keine Papierformulare mehr — Antrag, Freigabe und Urlaubssaldo an einem Ort.</p>
         <div class="solution-card__flow" aria-label="Urlaubsantrag → freigegeben + erfasst">
           <span>Urlaubsantrag</span><b aria-hidden="true">→</b><span>freigegeben + erfasst</span>
         </div>
-        <strong class="solution-card__proof">Echtzeitüberblick für Führungskräfte und HR</strong>
+        <strong class="solution-card__proof" data-count-up>Echtzeitüberblick für Führungskräfte und HR</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-kniha-jizd.html">
-        <div class="solution-card__top"><span>06</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Automatisches Fahrtenbuch</h3>
         <p>Tankvorgänge und Routen werden zum fertigen Fahrtenbuch; Prüf- und Servicetermine bleiben im Blick.</p>
         <div class="solution-card__flow" aria-label="Tankvorgänge + Routen → Fahrtenbuch + Hinweise">
           <span>Tankvorgänge + Routen</span><b aria-hidden="true">→</b><span>Fahrtenbuch + Hinweise</span>
         </div>
-        <strong class="solution-card__proof">~10 h/Mon. spart das Fuhrparkmanagement</strong>
+        <strong class="solution-card__proof" data-count-up>~10 h/Mon. spart das Fuhrparkmanagement</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-faktury.html">
-        <div class="solution-card__top"><span>07</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Rechnungen direkt in die Buchhaltung</h3>
         <p>Eingangsrechnungen werden ausgelesen, mit der Bestellung abgeglichen und zur Freigabe gesendet.</p>
         <div class="solution-card__flow" aria-label="Rechnung als PDF → in der Buchhaltung, Fehlerquote &lt;1 %">
           <span>Rechnung als PDF</span><b aria-hidden="true">→</b><span>in der Buchhaltung, Fehlerquote &lt;1 %</span>
         </div>
-        <strong class="solution-card__proof">~30 h/Mon. spart die Buchhaltung</strong>
+        <strong class="solution-card__proof" data-count-up>~30 h/Mon. spart die Buchhaltung</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="de/reseni-pracovni-vykazy.html">
-        <div class="solution-card__top"><span>08</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Arbeitsnachweise</h3>
         <p>Stundennachweise werden gesammelt, freigegeben und für Lohn sowie Abrechnung vorbereitet.</p>
         <div class="solution-card__flow" aria-label="Nachweise aus dem Feld → freigegeben + abrechnungsbereit">
           <span>Nachweise aus dem Feld</span><b aria-hidden="true">→</b><span>freigegeben + abrechnungsbereit</span>
         </div>
-        <strong class="solution-card__proof">~12 h/Mon. und weniger Abrechnungsfehler</strong>
+        <strong class="solution-card__proof" data-count-up>~12 h/Mon. und weniger Abrechnungsfehler</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a></div>
     <div class="solution-catalog__cta"><a class="text-link" href="#contact">Ihr Prozess ist nicht dabei? Wir bauen die passende Lösung.</a></div>
@@ -218,32 +214,32 @@
     </div>
     <div class="case-grid"><article class="case-card">
         <span class="case-card__context">Produktion · ~600 Mitarbeitende</span>
-        <strong>17 → 78 %</strong>
+        <strong data-count-up>17 → 78 %</strong>
         <p>Eine agentengestützte Schicht auf Business Central. Mitarbeitende nutzen KI täglich und sparen pro Nutzer etwa 40 Minuten pro Woche.</p>
         <div class="case-card__tech"><span>Copilot</span><span>Business Central</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Übersetzungen · Holding in 8 Ländern</span>
-        <strong>−90 %</strong>
+        <strong data-count-up>−90 %</strong>
         <p>GenAI in operativen Abläufen und ein lokales LLM auf eigener Hardware senkten Tool-Kosten, während die Daten im Unternehmen blieben.</p>
         <div class="case-card__tech"><span>Llama 3</span><span>Make</span><span>Claude</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Energie · Kraft-Wärme-Kopplung</span>
-        <strong>9 Agenten</strong>
+        <strong data-count-up>9 Agenten</strong>
         <p>Dokumente, Service, Reporting und Besprechungsnotizen werden zu Aufgaben. Zwei Länder, ein Überblick.</p>
         <div class="case-card__tech"><span>Claude</span><span>Helios</span><span>n8n</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Metallhandel · 82 Mitarbeitende</span>
-        <strong>3 Monate</strong>
+        <strong data-count-up>3 Monate</strong>
         <p>Das Programm amortisierte sich in drei Monaten und spart jährlich rund 1.420 Stunden sowie 710 Tsd. CZK.</p>
         <div class="case-card__tech"><span>Copilot</span><span>n8n</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Unternehmensgruppe Bau</span>
-        <strong>−180 h/Mon.</strong>
+        <strong data-count-up>−180 h/Mon.</strong>
         <p>Ein maßgeschneidertes internes System beseitigte manuelles Abtippen und schuf einen einheitlichen Auftragsüberblick.</p>
         <div class="case-card__tech"><span>Anwendung</span><span>API</span><span>Power BI</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Logistik · Migration</span>
-        <strong>−41 %</strong>
+        <strong data-count-up>−41 %</strong>
         <p>Stack-Migration und automatisierte Abläufe zwischen Lager und Transport senkten die Betriebskosten.</p>
         <div class="case-card__tech"><span>Cloud</span><span>n8n</span><span>Integration</span></div>
       </article></div>
@@ -267,7 +263,7 @@
       </li><li class="implementation-step">
         <span>04</span><div><h3>Geprüfte Daten werden gebucht</h3><p>Business Central, Lager und DMS erhalten die freigegebenen Daten.</p></div>
       </li></ol>
-      <div class="implementation-outcomes"><div class="implementation-outcome"><strong>~40 h/Woche</strong><span>illustrativ freigesetzte Kapazität</span></div><div class="implementation-outcome"><strong>3 → 1</strong><span>Ablageorte für Dokumente</span></div><div class="implementation-outcome"><strong>&lt;1 Tag</strong><span>illustrative Bearbeitungszeit</span></div></div>
+      <div class="implementation-outcomes"><div class="implementation-outcome"><strong data-count-up>~40 h/Woche</strong><span>illustrativ freigesetzte Kapazität</span></div><div class="implementation-outcome"><strong data-count-up>3 → 1</strong><span>Ablageorte für Dokumente</span></div><div class="implementation-outcome"><strong data-count-up>&lt;1 Tag</strong><span>illustrative Bearbeitungszeit</span></div></div>
       <p class="implementation-note">Dies ist eine Modellarchitektur mit illustrativen Parametern, nicht das Ergebnis eines konkreten Kundenprojekts. Verifizierte Resultate stehen unter Referenzen.</p>
     </div>
   </div>
@@ -275,10 +271,10 @@
 <section class="section section--white" id="process">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">So arbeiten wir</span><h2 class="section-title">Wir belegen den ersten Nutzen, bevor wir skalieren.</h2></div>
+      <div><h2 class="section-title">Wir belegen den ersten Nutzen, bevor wir skalieren.</h2></div>
       <p class="section-intro">Jede Phase hat ein klares Ergebnis, einen Entscheidungspunkt und einen Verantwortlichen. Wir verkaufen kein endloses Experiment.</p>
     </div>
-    <div class="process-grid"><article class="process-step"><span class="process-step__timing">1–2 Wochen</span><h3>Den richtigen Prozess finden</h3><p>Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und die tatsächlichen Kosten des heutigen Ablaufs.</p></article><article class="process-step"><span class="process-step__timing">2–3 Wochen</span><h3>Business Case erstellen</h3><p>Wir definieren Baseline, erwartete Einsparungen, Risiken und Erfolgskriterien für das Pilotprojekt.</p></article><article class="process-step"><span class="process-step__timing">1–2 Wochen</span><h3>Pilotprojekt liefern</h3><p>Wir verbinden die Lösung mit realen Systemen und belegen ihren Nutzen anhand realer Daten.</p></article><article class="process-step"><span class="process-step__timing">laufend</span><h3>Betrieb verantworten</h3><p>Monitoring, Sicherheit, SLA und Weiterentwicklung haben einen klaren Verantwortlichen.</p></article></div>
+    <div class="process-grid"><article class="process-step"><div class="process-step__meta"><span class="process-step__index">01</span><span class="process-step__timing">1–2 Wochen</span></div><h3>Den richtigen Prozess finden</h3><p>Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und die tatsächlichen Kosten des heutigen Ablaufs.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">02</span><span class="process-step__timing">2–3 Wochen</span></div><h3>Business Case erstellen</h3><p>Wir definieren Baseline, erwartete Einsparungen, Risiken und Erfolgskriterien für das Pilotprojekt.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">03</span><span class="process-step__timing">1–2 Wochen</span></div><h3>Pilotprojekt liefern</h3><p>Wir verbinden die Lösung mit realen Systemen und belegen ihren Nutzen anhand realer Daten.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">04</span><span class="process-step__timing">laufend</span></div><h3>Betrieb verantworten</h3><p>Monitoring, Sicherheit, SLA und Weiterentwicklung haben einen klaren Verantwortlichen.</p></article></div>
     <div class="process-links">
       <a class="text-link" href="de/jak-stavime-agenty.html">Im Detail: So bauen wir Agenten</a>
       <a class="text-link" href="de/jak-stavime-automatizace.html">Im Detail: So bauen wir Automatisierungen</a>
@@ -288,11 +284,10 @@
 <section class="section" id="integrations">
   <div class="shell integration-layout">
     <div class="integration-copy">
-      <span class="section-kicker">Integrationen</span>
       <h2 class="section-title">Wir verbinden, was Sie bereits nutzen.</h2>
       <p class="section-intro">ERP, CRM, Online-Shop, Buchhaltung und KI verbinden wir, ohne Ihre Systemlandschaft unnötig zu ersetzen.</p>
       <ul class="integration-points"><li>Anbindung über APIs, Datenbanken, Dateien oder die Benutzeroberfläche</li><li>Freigabe durch einen Menschen bei sensiblen Schritten und ein vollständiger Audit-Trail</li><li>Monitoring, Rollen, Berechtigungen und Betriebsverantwortung ab Tag eins</li></ul>
-      <p class="integration-proof"><strong>60+</strong><span>Wir haben Erfahrung mit mehr als 60 Systemen — auch mit Legacy-Software ohne moderne API.</span></p>
+      <p class="integration-proof"><strong data-count-up>60+</strong><span>Wir haben Erfahrung mit mehr als 60 Systemen — auch mit Legacy-Software ohne moderne API.</span></p>
     </div>
     <div class="integration-catalog">
       <div class="integration-catalog__head">
@@ -329,7 +324,7 @@
 <section class="section operations" id="operations">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Betrieb und Garantien</span><h2 class="section-title">Wir bauen nicht nur. Wir betreiben zuverlässig und übergeben sauber.</h2></div>
+      <div><h2 class="section-title">Wir bauen nicht nur. Wir betreiben zuverlässig und übergeben sauber.</h2></div>
       <p class="section-intro">SLA, Eigentum, Sicherheit und Exit-Plan sind von Anfang an Teil des Konzepts.</p>
     </div>
     <div class="operations-grid"><article class="operation-card">
@@ -357,7 +352,7 @@
       <span class="section-kicker">Ein Partner von der Konzeption bis zum Betrieb</span>
       <h2 class="section-title">75 Spezialisten. Drei Teams. Eine Verantwortung.</h2>
       <p class="section-intro">Architektur, KI-Engineering, Produkt, Infrastruktur und langfristiger Betrieb kommen aus einer Hand.</p>
-      <div class="team-stats"><div class="team-stat"><strong>45</strong><span>Enterprise</span></div><div class="team-stat"><strong>25</strong><span>KI und Agenten</span></div><div class="team-stat"><strong>5</strong><span>Product Studio</span></div></div>
+      <div class="team-stats"><div class="team-stat"><strong data-count-up>45</strong><span>Enterprise</span></div><div class="team-stat"><strong data-count-up>25</strong><span>KI und Agenten</span></div><div class="team-stat"><strong data-count-up>5</strong><span>Product Studio</span></div></div>
       <a class="button" href="de/tym.html">Das ganze Team kennenlernen <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
     </div>
     <div class="team-portraits">
@@ -370,7 +365,7 @@
 <section class="section section--white resources" id="resources">
   <div class="shell">
     <div class="section-head section-head--compact">
-      <div><span class="section-kicker">Mehr erfahren</span><h2 class="section-title">Wählen Sie die Detailtiefe, die Sie gerade brauchen.</h2></div>
+      <div><h2 class="section-title">Wählen Sie die Detailtiefe, die Sie gerade brauchen.</h2></div>
     </div>
     <div class="resources-grid"><article class="resource-card">
         <span class="resource-card__tag">Wie wir bauen</span>
@@ -393,7 +388,7 @@
 <section class="section calculator" id="calc" data-calculator data-locale="de-DE" data-currency="EUR" data-weeks="46" data-fte-hours="1840">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Einsparungsrechner</span><h2 class="section-title">Schätzen Sie das Potenzial in Ihrer Größenordnung.</h2></div>
+      <div><h2 class="section-title">Schätzen Sie das Potenzial in Ihrer Größenordnung.</h2></div>
       <p class="section-intro">Passen Sie vier Werte an Ihren Betrieb an. Das Ergebnis ist ein Richtwert; den tatsächlichen Nutzen prüfen wir im Pilotprojekt.</p>
     </div>
     <div class="calculator-grid">
@@ -432,7 +427,6 @@
   <div class="shell">
     <div class="contact-card">
       <div class="contact-card__content">
-        <span class="section-kicker">Der erste Schritt dauert 30 Minuten</span>
         <h2>Zeigen Sie uns den Prozess, der Sie ausbremst.</h2>
         <p>Gemeinsam klären wir, ob Automatisierung, Integration oder ein Systemwechsel sinnvoll ist — und was zuerst belegt werden sollte.</p>
         <div class="contact-actions">

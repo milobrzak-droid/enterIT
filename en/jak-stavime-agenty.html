@@ -36,12 +36,9 @@
 <meta name="twitter:image:alt" content="How we build AI agents | Enter IT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/en/jak-stavime-agenty.html#webpage","url":"https://enterit.cz/en/jak-stavime-agenty.html","name":"How we build AI agents | Enter IT","description":"Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.","inLanguage":"en","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#article"},"breadcrumb":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#breadcrumb"}},{"@type":"TechArticle","@id":"https://enterit.cz/en/jak-stavime-agenty.html#article","headline":"An agent isn't a chatbot. It's a digital colleague with a clearly defined job.","description":"Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.","inLanguage":"en","url":"https://enterit.cz/en/jak-stavime-agenty.html","image":"https://enterit.cz/assets/og.png","author":{"@id":"https://enterit.cz/#organization"},"publisher":{"@id":"https://enterit.cz/#organization"},"mainEntityOfPage":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#webpage"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/en/jak-stavime-agenty.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://enterit.cz/en.html"},{"@type":"ListItem","position":2,"name":"An agent isn't a chatbot. It's a digital colleague with a clearly defined job.","item":"https://enterit.cz/en/jak-stavime-agenty.html"}]}]}</script>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
 :root{
   --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
@@ -146,10 +143,11 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-9">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-<link rel="stylesheet" href="/assets/subpage.css?v=20260717-17">
-<script src="/assets/site-ui.js?v=20260717-9" defer></script>
+<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=20260720-6">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260720-4">
+<link rel="stylesheet" href="/assets/subpage.css?v=20260720-6">
+<script src="/assets/site-ui.js?v=20260720-6" defer></script>
 </head>
 <body class="subpage">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -191,43 +189,41 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block jp-hero">
   <div class="wrap">
-    <!-- enterit-icon:workflow-user:start --><span class="subpage-hero-icon reveal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end -->
-    <span class="eyebrow reveal">How we do it</span>
-    <h1 class="h1 reveal">An agent isn't a chatbot. It's a digital colleague with a clearly defined job.</h1>
-    <p class="hero-sub reveal">We build agents that read documents, act on your rules and hand judgment calls to people. Here is how we define their role, inputs, outputs and guardrails.</p>
+    <!-- enterit-icon:workflow-user:start --><span class="subpage-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end -->
+    <span class="eyebrow">How we do it</span>
+    <h1 class="h1">An agent isn't a chatbot. It's a digital colleague with a clearly defined job.</h1>
+    <p class="hero-sub">We build agents that read documents, act on your rules and hand judgment calls to people. Here is how we define their role, inputs, outputs and guardrails.</p>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Let's start with the basics</span>
-    <h2 class="h2 reveal">What an AI agent actually is — and how it differs from ordinary automation</h2>
-    <p class="lead reveal">Automation follows a fixed rule. An agent works toward a goal using context, then escalates anything outside its limits. That is the difference between a script and a digital colleague.</p>
+    <h2 class="h2">What an AI agent actually is — and how it differs from ordinary automation</h2>
+    <p class="lead">Automation follows a fixed rule. An agent works toward a goal using context, then escalates anything outside its limits. That is the difference between a script and a digital colleague.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>Automation = a fixed track</h3><p>A fixed procedure handles predictable input reliably and cheaply, but stalls on exceptions.</p></div>
-      <div class="jp-block reveal"><h3>Agent = a goal plus judgment</h3><p>Ask it to create ERP line items and it can interpret differently written orders because it understands content, not only format.</p></div>
-      <div class="jp-block reveal"><h3>Why it matters to a decision-maker</h3><p>Agents can take on document-heavy routine that once required human interpretation — where time and know-how leak today.</p></div>
-      <div class="jp-block reveal"><h3>It's not magic, it's engineering</h3><p>Production reliability comes from a defined role, rules, integrations and metrics. Without them, an agent remains a demo.</p></div>
+      <div class="jp-block"><h3>Automation = a fixed track</h3><p>A fixed procedure handles predictable input reliably and cheaply, but stalls on exceptions.</p></div>
+      <div class="jp-block"><h3>Agent = a goal plus judgment</h3><p>Ask it to create ERP line items and it can interpret differently written orders because it understands content, not only format.</p></div>
+      <div class="jp-block"><h3>Why it matters to a decision-maker</h3><p>Agents can take on document-heavy routine that once required human interpretation — where time and know-how leak today.</p></div>
+      <div class="jp-block"><h3>It's not magic, it's engineering</h3><p>Production reliability comes from a defined role, rules, integrations and metrics. Without them, an agent remains a demo.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Anatomy of an agent</span>
-    <h2 class="h2 reveal">What a reliable agent is made of — step by step</h2>
-    <p class="lead reveal">An agent is a system of defined components, not one “smart model”. Each component below is needed for dependable long-term operation.</p>
+    <h2 class="h2">What a reliable agent is made of — step by step</h2>
+    <p class="lead">An agent is a system of defined components, not one “smart model”. Each component below is needed for dependable long-term operation.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal jp-num"><i>1</i><div><h3>Role — what it does and what it does NOT</h3><p>We map the process, then define the agent's job and its boundaries. Clear limits are central to reliability.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>2</i><div><h3>Input and output at every step</h3><p>Every PDF, email or query has an explicit output such as ERP rows, a draft reply or an import file. That makes results testable and measurable.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>3</i><div><h3>Rules and guardrails — may / may not</h3><p>We specify what the agent may do alone and where it must stop. Those guardrails make access to live systems trustworthy.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>4</i><div><h3>Tools and integrations — the agent's hands</h3><p>We connect ERP, SharePoint, M365, CRM, PDM/CAD, email and WhatsApp through APIs or RPA, supported by a central data layer.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>5</i><div><h3>Memory and context — RAG</h3><p>We consolidate company documents, run scanned files through OCR and let the agent answer from approved context — always with a source.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>6</i><div><h3>Human-in-the-loop — where the person decides</h3><p>The agent recommends; a person approves. We define each handover point so judgment and sign-off remain human.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>7</i><div><h3>Metrics — what it's evaluated by</h3><p>We track errors, response time, saved work and adoption against a baseline, then tune the agent in production.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>8</i><div><h3>Governance and security from the start</h3><p>Ownership, access and AI-use rules are designed upfront. Sensitive workloads can run privately on your own infrastructure.</p></div></div>
+      <div class="jp-block jp-num"><i>1</i><div><h3>Role — what it does and what it does NOT</h3><p>We map the process, then define the agent's job and its boundaries. Clear limits are central to reliability.</p></div></div>
+      <div class="jp-block jp-num"><i>2</i><div><h3>Input and output at every step</h3><p>Every PDF, email or query has an explicit output such as ERP rows, a draft reply or an import file. That makes results testable and measurable.</p></div></div>
+      <div class="jp-block jp-num"><i>3</i><div><h3>Rules and guardrails — may / may not</h3><p>We specify what the agent may do alone and where it must stop. Those guardrails make access to live systems trustworthy.</p></div></div>
+      <div class="jp-block jp-num"><i>4</i><div><h3>Tools and integrations — the agent's hands</h3><p>We connect ERP, SharePoint, M365, CRM, PDM/CAD, email and WhatsApp through APIs or RPA, supported by a central data layer.</p></div></div>
+      <div class="jp-block jp-num"><i>5</i><div><h3>Memory and context — RAG</h3><p>We consolidate company documents, run scanned files through OCR and let the agent answer from approved context — always with a source.</p></div></div>
+      <div class="jp-block jp-num"><i>6</i><div><h3>Human-in-the-loop — where the person decides</h3><p>The agent recommends; a person approves. We define each handover point so judgment and sign-off remain human.</p></div></div>
+      <div class="jp-block jp-num"><i>7</i><div><h3>Metrics — what it's evaluated by</h3><p>We track errors, response time, saved work and adoption against a baseline, then tune the agent in production.</p></div></div>
+      <div class="jp-block jp-num"><i>8</i><div><h3>Governance and security from the start</h3><p>Ownership, access and AI-use rules are designed upfront. Sensitive workloads can run privately on your own infrastructure.</p></div></div>
     </div>
-    <div class="jp-callout reveal">
+    <div class="jp-callout">
       <p><b>What the agent does not do:</b> send data externally without approval, delete data, make financial decisions or train for anyone else on your data.</p>
     </div>
   </div>
@@ -235,75 +231,70 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">What it runs on</span>
-    <h2 class="h2 reveal">The technology under the hood</h2>
+    <h2 class="h2">The technology under the hood</h2>
     <div class="jp-stack">
-      <div class="jp-stack-item reveal"><!-- enterit-icon:cpu:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3M10 10h4v4h-4z"/></svg></span><!-- enterit-icon:end --><b>Models</b><span>Claude, GPT, Gemini or a local Llama/Mistral, selected for the task and data sensitivity.</span></div>
-      <div class="jp-stack-item reveal"><!-- enterit-icon:workflow:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h4a4 4 0 0 1 4 4v5M15 18h-4a4 4 0 0 1-4-4V9"/></svg></span><!-- enterit-icon:end --><b>Orchestration</b><span>n8n, Make or Power Automate, matched to your stack and maintainers.</span></div>
-      <div class="jp-stack-item reveal"><!-- enterit-icon:plug:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12 4 8m12 4 4-4M7 7l3-3m7 3-3-3M8 12h8v2a4 4 0 0 1-8 0v-2Zm4 6v4"/></svg></span><!-- enterit-icon:end --><b>Integrations</b><span>Official APIs for SAP, Business Central, Helios, K2, Pohoda and other systems.</span></div>
-      <div class="jp-stack-item reveal"><!-- enterit-icon:server-lock:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M7 6.5h.01M3 14h10M7 17.5h.01"/><rect x="13" y="14" width="8" height="7" rx="1.5"/><path d="M15 14v-2a2 2 0 0 1 4 0v2"/></svg></span><!-- enterit-icon:end --><b>Where the data runs</b><span>Your Azure/M365 tenant, your server or an EU cloud, with GDPR and AI Act controls designed in.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:cpu:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3M10 10h4v4h-4z"/></svg></span><!-- enterit-icon:end --><b>Models</b><span>Claude, GPT, Gemini or a local Llama/Mistral, selected for the task and data sensitivity.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:workflow:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h4a4 4 0 0 1 4 4v5M15 18h-4a4 4 0 0 1-4-4V9"/></svg></span><!-- enterit-icon:end --><b>Orchestration</b><span>n8n, Make or Power Automate, matched to your stack and maintainers.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:plug:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12 4 8m12 4 4-4M7 7l3-3m7 3-3-3M8 12h8v2a4 4 0 0 1-8 0v-2Zm4 6v4"/></svg></span><!-- enterit-icon:end --><b>Integrations</b><span>Official APIs for SAP, Business Central, Helios, K2, Pohoda and other systems.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:server-lock:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M7 6.5h.01M3 14h10M7 17.5h.01"/><rect x="13" y="14" width="8" height="7" rx="1.5"/><path d="M15 14v-2a2 2 0 0 1 4 0v2"/></svg></span><!-- enterit-icon:end --><b>Where the data runs</b><span>Your Azure/M365 tenant, your server or an EU cloud, with GDPR and AI Act controls designed in.</span></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Types of agents</span>
-    <h2 class="h2 reveal">What our agents can do in&nbsp;practice</h2>
-    <p class="lead reveal">Each type below has been delivered in a real project. We select the model and tool for the task and data sensitivity.</p>
+    <h2 class="h2">What our agents can do in&nbsp;practice</h2>
+    <p class="lead">Each type below has been delivered in a real project. We select the model and tool for the task and data sensitivity.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><!-- enterit-icon:file-scan:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6zM14 2v5h5"/><path d="M9 13h6M9 17h4M3 8V5h3M21 8V5h-3"/></svg></span><!-- enterit-icon:end --><h3>Reading / extraction agent</h3><p>Turns drawings, bills of materials, invoices and contracts into structured data.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:mail:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><!-- enterit-icon:end --><h3>Email agent</h3><p>Extracts order lines into ERP and drafts replies to recurring queries.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:book-search:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a3 3 0 0 1 3-3h5v17H7a3 3 0 0 0-3 3V5Zm16 7V2h-5a3 3 0 0 0-3 3"/><circle cx="17" cy="17" r="3"/><path d="m19.2 19.2 2 2"/></svg></span><!-- enterit-icon:end --><h3>Knowledge / RAG agent</h3><p>Answers from company documentation with sources, keeping know-how inside the business.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:workflow-user:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end --><h3>Process agent</h3><p>Turns meeting transcripts into tasks and escalations that teams can run themselves.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><!-- enterit-icon:end --><h3>Reporting agent</h3><p>Answers natural-language questions over ERP or warehouse data.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:message:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v7Z"/><path d="M8 9h8M8 13h5"/></svg></span><!-- enterit-icon:end --><h3>Communication agent / chatbot</h3><p>Handles 24/7 web or WhatsApp inquiries and escalates the rest.</p></div>
+      <div class="jp-block"><!-- enterit-icon:file-scan:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6zM14 2v5h5"/><path d="M9 13h6M9 17h4M3 8V5h3M21 8V5h-3"/></svg></span><!-- enterit-icon:end --><h3>Reading / extraction agent</h3><p>Turns drawings, bills of materials, invoices and contracts into structured data.</p></div>
+      <div class="jp-block"><!-- enterit-icon:mail:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><!-- enterit-icon:end --><h3>Email agent</h3><p>Extracts order lines into ERP and drafts replies to recurring queries.</p></div>
+      <div class="jp-block"><!-- enterit-icon:book-search:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a3 3 0 0 1 3-3h5v17H7a3 3 0 0 0-3 3V5Zm16 7V2h-5a3 3 0 0 0-3 3"/><circle cx="17" cy="17" r="3"/><path d="m19.2 19.2 2 2"/></svg></span><!-- enterit-icon:end --><h3>Knowledge / RAG agent</h3><p>Answers from company documentation with sources, keeping know-how inside the business.</p></div>
+      <div class="jp-block"><!-- enterit-icon:workflow-user:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end --><h3>Process agent</h3><p>Turns meeting transcripts into tasks and escalations that teams can run themselves.</p></div>
+      <div class="jp-block"><!-- enterit-icon:chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><!-- enterit-icon:end --><h3>Reporting agent</h3><p>Answers natural-language questions over ERP or warehouse data.</p></div>
+      <div class="jp-block"><!-- enterit-icon:message:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v7Z"/><path d="M8 9h8M8 13h5"/></svg></span><!-- enterit-icon:end --><h3>Communication agent / chatbot</h3><p>Handles 24/7 web or WhatsApp inquiries and escalates the rest.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Trustworthiness</span>
-    <h2 class="h2 reveal">How we build an agent you can trust</h2>
-    <p class="lead reveal">A trustworthy agent knows when information is insufficient and hands the decision to a person. We design that boundary before deployment.</p>
+    <h2 class="h2">How we build an agent you can trust</h2>
+    <p class="lead">A trustworthy agent knows when information is insufficient and hands the decision to a person. We design that boundary before deployment.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>Always an answer with a source</h3><p>RAG answers show the price list, drawing or document used, so users can verify them.</p></div>
-      <div class="jp-block reveal"><h3>Human review where OCR falls short</h3><p>We read reliable fields such as title blocks and bills of materials, while people complete ambiguous drawing details.</p></div>
-      <div class="jp-block reveal"><h3>A document audit before quoting</h3><p>We inspect 5–10 real PDFs first because layouts determine reliability, scope and price.</p></div>
-      <div class="jp-block reveal"><h3>People make decisions; the agent handles routine</h3><p>The agent handles transcription and creation; judgment and approval stay with people — essential in regulated work.</p></div>
+      <div class="jp-block"><h3>Always an answer with a source</h3><p>RAG answers show the price list, drawing or document used, so users can verify them.</p></div>
+      <div class="jp-block"><h3>Human review where OCR falls short</h3><p>We read reliable fields such as title blocks and bills of materials, while people complete ambiguous drawing details.</p></div>
+      <div class="jp-block"><h3>A document audit before quoting</h3><p>We inspect 5–10 real PDFs first because layouts determine reliability, scope and price.</p></div>
+      <div class="jp-block"><h3>People make decisions; the agent handles routine</h3><p>The agent handles transcription and creation; judgment and approval stay with people — essential in regulated work.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Measurement and operation</span>
-    <h2 class="h2 reveal">What we measure and&nbsp;how we operate agents long term</h2>
-    <p class="lead reveal">After go-live, we evaluate and tune every agent against its baseline and business case.</p>
+    <h2 class="h2">What we measure and&nbsp;how we operate agents long term</h2>
+    <p class="lead">After go-live, we evaluate and tune every agent against its baseline and business case.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>What every agent measures</h3><p>Response and process time, errors, rework, saved capacity and adoption — all against a measured baseline.</p></div>
-      <div class="jp-block reveal"><h3>Typical payback of 3–12 months</h3><p>We target returns that fund further development, not a one-off demo.</p></div>
-      <div class="jp-block reveal"><h3>Operation and tuning, not handover and goodbye</h3><p>We monitor errors, refine rules and expand a verified pilot where it pays.</p></div>
-      <div class="jp-block reveal"><h3>The data stays with the company</h3><p>Encrypted transfer and storage, GDPR controls and on-prem options protect sensitive data from day one.</p></div>
+      <div class="jp-block"><h3>What every agent measures</h3><p>Response and process time, errors, rework, saved capacity and adoption — all against a measured baseline.</p></div>
+      <div class="jp-block"><h3>Typical payback of 3–12 months</h3><p>We target returns that fund further development, not a one-off demo.</p></div>
+      <div class="jp-block"><h3>Operation and tuning, not handover and goodbye</h3><p>We monitor errors, refine rules and expand a verified pilot where it pays.</p></div>
+      <div class="jp-block"><h3>The data stays with the company</h3><p>Encrypted transfer and storage, GDPR controls and on-prem options protect sensitive data from day one.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">A real example</span>
-    <h2 class="h2 reveal">A production-engineering agent in ERP Helios — an engineering and design firm</h2>
-    <details class="content-details reveal">
+    <h2 class="h2">A production-engineering agent in ERP Helios — an engineering and design firm</h2>
+    <details class="content-details">
       <summary><span>See the full step-by-step delivery</span><i aria-hidden="true">+</i></summary>
       <div class="jp-walk">
-        <div class="jp-step reveal"><span class="sn">Step 1</span><h3>The pain we were solving</h3><p>Process engineers manually created 70–120 similar Helios items each week from PDF, DWG and DXF files, including structures, drawings, routings and time standards.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 2</span><h3>An entry audit instead of promises</h3><p>We reviewed 5–10 real drawings before quoting, then limited the pilot to one customer with a consistent title block.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 3</span><h3>A deliberate decision on what NOT to entrust to the agent</h3><p>OCR reads the reliable title block and bill of materials, while complex dimensions stay with the engineer.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 4</span><h3>What the agent does on its own</h3><p>It reads the files, finds similar ERP items and creates the component structure with inherited routing and time standards.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 5</span><h3>Human-in-the-loop for what only a person can see</h3><p>A PDF preview asks the engineer for ambiguous values such as bends or sheet thickness; verified metadata then enters Helios by CSV import.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 6</span><h3>Integration and phasing</h3><p>Helios connects through its API. Phase one covers manufactured items; phase two adds purchased and standardized parts, with quoting as a later option.</p></div>
-        <div class="jp-step reveal"><span class="sn">Step 7</span><h3>The result</h3><p>The agent creates structures and carries over standards across 70–120 items a week; the engineer checks only what requires judgment.</p></div>
+        <div class="jp-step"><span class="sn">Step 1</span><h3>The pain we were solving</h3><p>Process engineers manually created 70–120 similar Helios items each week from PDF, DWG and DXF files, including structures, drawings, routings and time standards.</p></div>
+        <div class="jp-step"><span class="sn">Step 2</span><h3>An entry audit instead of promises</h3><p>We reviewed 5–10 real drawings before quoting, then limited the pilot to one customer with a consistent title block.</p></div>
+        <div class="jp-step"><span class="sn">Step 3</span><h3>A deliberate decision on what NOT to entrust to the agent</h3><p>OCR reads the reliable title block and bill of materials, while complex dimensions stay with the engineer.</p></div>
+        <div class="jp-step"><span class="sn">Step 4</span><h3>What the agent does on its own</h3><p>It reads the files, finds similar ERP items and creates the component structure with inherited routing and time standards.</p></div>
+        <div class="jp-step"><span class="sn">Step 5</span><h3>Human-in-the-loop for what only a person can see</h3><p>A PDF preview asks the engineer for ambiguous values such as bends or sheet thickness; verified metadata then enters Helios by CSV import.</p></div>
+        <div class="jp-step"><span class="sn">Step 6</span><h3>Integration and phasing</h3><p>Helios connects through its API. Phase one covers manufactured items; phase two adds purchased and standardized parts, with quoting as a later option.</p></div>
+        <div class="jp-step"><span class="sn">Step 7</span><h3>The result</h3><p>The agent creates structures and carries over standards across 70–120 items a week; the engineer checks only what requires judgment.</p></div>
       </div>
     </details>
   </div>
@@ -311,8 +302,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block jp-final">
   <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Let's do it</span>
+    <div class="cta-card">
       <h2 class="h2">Got a process that eats up your people's time?</h2>
       <p>Tell us which tasks keep repeating in&nbsp;your company. We'll design a&nbsp;solution and&nbsp;calculate the business case.</p>
       <div class="cta-btns">

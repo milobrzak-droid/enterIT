@@ -36,12 +36,9 @@
 <meta name="twitter:image:alt" content="Tým — infrastrukturní tým, který to postaví a nasadí | EnterIT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://enterit.cz/tym.html#webpage","url":"https://enterit.cz/tym.html","name":"75členný tým pro AI, integrace a vývoj | EnterIT","description":"75 specialistů ve třech týmech: enterprise systémy, AI agenti a produktový vývoj. Jeden partner od architektury a integrací až po provoz 24/7.","inLanguage":"cs","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/#organization"},"breadcrumb":{"@id":"https://enterit.cz/tym.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/tym.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://enterit.cz/"},{"@type":"ListItem","position":2,"name":"Infrastrukturní tým, který to postaví, nasadí a ubrání.","item":"https://enterit.cz/tym.html"}]}]}</script>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
 :root{
   --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
@@ -147,7 +144,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 @media(max-width:560px){.tm-featured{grid-template-columns:1fr;gap:20px}.tm-featured .tm-photo{max-width:230px}}
 .tm-featured .tm-name{margin-top:0}
 .tm-featured .tm-bio{max-width:52ch}
-.tm-quote{font-family:var(--head);font-weight:700;font-style:italic;color:#fff;font-size:clamp(15px,1.7vw,17px);line-height:1.5;margin:15px 0 0;border-left:3px solid var(--green);padding-left:15px}
+.tm-quote{font-family:var(--head);font-weight:700;font-style:italic;color:#fff;font-size:clamp(15px,1.7vw,17px);line-height:1.5;margin:15px 0 0;border-left:0;padding-left:15px}
 .tm-featured.tm-lead{align-items:start;max-width:840px}
 .tm-caps-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:17px 0 0;display:block}
 .tm-caps{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
@@ -229,10 +226,11 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-9">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-<link rel="stylesheet" href="/assets/subpage.css?v=20260717-17">
-<script src="/assets/site-ui.js?v=20260717-9" defer></script>
+<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=20260720-6">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260720-4">
+<link rel="stylesheet" href="/assets/subpage.css?v=20260720-6">
+<script src="/assets/site-ui.js?v=20260720-6" defer></script>
 </head>
 <body class="subpage">
 <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
@@ -275,10 +273,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ HERO ============ -->
 <section class="block tym-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Tým za EnterIT</span>
-    <h1 class="h1 reveal d1">Infrastrukturní tým, který to <span class="gt">postaví, nasadí a&nbsp;ubrání.</span></h1>
-    <p class="hero-sub reveal d1">75 vývojářů pro&nbsp;architekturu, agentní AI a&nbsp;produktový vývoj. Převezmeme celou implementaci — od&nbsp;návrhu po&nbsp;provoz 24/7.</p>
-    <div class="tym-hero-badges reveal d2">
+    <span class="eyebrow">Tým za EnterIT</span>
+    <h1 class="h1 d1">Infrastrukturní tým, který to <span class="gt">postaví, nasadí a&nbsp;ubrání.</span></h1>
+    <p class="hero-sub d1">75 vývojářů pro&nbsp;architekturu, agentní AI a&nbsp;produktový vývoj. Převezmeme celou implementaci — od&nbsp;návrhu po&nbsp;provoz 24/7.</p>
+    <div class="tym-hero-badges d2">
       <span class="tym-badge"><b>75</b><span>vývojářů</span></span>
       <span class="tym-badge"><b>3</b><span>specializované týmy</span></span>
       <span class="tym-badge"><b>25+</b><span>referencí</span></span>
@@ -290,11 +288,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ ENGINEERING CAPACITY ============ -->
 <section class="block alt" id="engineering">
   <div class="wrap">
-    <span class="eyebrow reveal">01 · Inženýrská kapacita</span>
-    <h2 class="h2 reveal">75 vývojářů. Tři specializované týmy. <span class="gt">Jeden partner.</span></h2>
-    <p class="lead reveal">Jeden odpovědný tým pro&nbsp;AI, architekturu, vývoj, infrastrukturu i&nbsp;provoz.</p>
+    <h2 class="h2">75 vývojářů. Tři specializované týmy. <span class="gt">Jeden partner.</span></h2>
+    <p class="lead">Jeden odpovědný tým pro&nbsp;AI, architekturu, vývoj, infrastrukturu i&nbsp;provoz.</p>
 
-    <div class="eng-stats reveal">
+    <div class="eng-stats">
       <div class="eng-stat"><div class="v">75</div><div class="l">vývojářů</div></div>
       <div class="eng-stat"><div class="v">3</div><div class="l">specializované týmy</div></div>
       <div class="eng-stat"><div class="v">10+</div><div class="l">let zkušeností</div></div>
@@ -302,7 +299,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     </div>
 
     <div class="eng-grid">
-      <div class="eng-card reveal" style="--acc:#6ECEFF">
+      <div class="eng-card" style="--acc:#6ECEFF">
         <div class="eng-top"><span class="eng-name">Enter Enterprise</span><span class="eng-size">45 lidí</span></div>
         <p class="eng-tag">Velké systémy, které unesou zátěž.</p>
           <p class="eng-p">Architektura, custom systémy, integrace a&nbsp;modernizace pro&nbsp;velké firmy.</p>
@@ -313,7 +310,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
           <span class="eng-more2">+43 dalších v&nbsp;týmu</span>
         </div>
       </div>
-      <div class="eng-card reveal d1" style="--acc:#B790FF">
+      <div class="eng-card d1" style="--acc:#B790FF">
         <div class="eng-top"><span class="eng-name">Enter Agents</span><span class="eng-size">25 lidí</span></div>
         <p class="eng-tag">AI agenti, kteří pracují 24/7.</p>
           <p class="eng-p">AI agenty nasazujeme přímo do&nbsp;procesů — od&nbsp;datové vrstvy po&nbsp;ostrý provoz.</p>
@@ -324,7 +321,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
           <span class="eng-more2">+23 dalších v&nbsp;týmu</span>
         </div>
       </div>
-      <div class="eng-card reveal d2" style="--acc:#41E39E">
+      <div class="eng-card d2" style="--acc:#41E39E">
         <div class="eng-top"><span class="eng-name">Enter Studio</span><span class="eng-size">5 lidí</span></div>
         <p class="eng-tag">Naši lidé. Rychle, agilně, blízko.</p>
           <p class="eng-p">Náš in-house tým dodává produkty, weby, aplikace i&nbsp;datové základy od&nbsp;MVP po&nbsp;škálování.</p>
@@ -342,46 +339,45 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ CAPABILITIES ============ -->
 <section class="block" id="capabilities">
   <div class="wrap">
-    <span class="eyebrow reveal">02 · Co pro vás postavíme</span>
-    <h2 class="h2 reveal">Celá infrastruktura. <span class="gt">Jeden tým.</span></h2>
-    <p class="lead reveal">Kompletní stack od&nbsp;architektury a&nbsp;integrací po&nbsp;bezpečný provoz.</p>
+    <h2 class="h2">Celá infrastruktura. <span class="gt">Jeden tým.</span></h2>
+    <p class="lead">Kompletní stack od&nbsp;architektury a&nbsp;integrací po&nbsp;bezpečný provoz.</p>
     <div class="cap-grid">
-      <div class="cap reveal">
+      <div class="cap">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
         <h3>Architektura &amp; custom systémy</h3>
         <p>Systémy na&nbsp;míru, které unesou zátěž a&nbsp;rostou s&nbsp;firmou.</p>
       </div>
-      <div class="cap reveal d1">
+      <div class="cap d1">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M8 7h8a2 2 0 0 1 2 2v3a6 6 0 0 1-12 0V9a2 2 0 0 1 2-2z"/><path d="M12 18v4"/></svg></div>
         <h3>Integrace do vašich systémů</h3>
         <p>ERP, CRM, WMS, e-shop i&nbsp;účetnictví bez&nbsp;výměny vašeho stacku.</p>
       </div>
-      <div class="cap reveal d2">
+      <div class="cap d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
         <h3>AI agenti do provozu</h3>
         <p>Agenti, kteří přebírají rutinu přímo ve&nbsp;vašich procesech.</p>
       </div>
-      <div class="cap reveal d3">
+      <div class="cap d3">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
         <h3>Datové platformy &amp; vrstvy</h3>
         <p>Jeden zdroj pravdy pro&nbsp;agenty i&nbsp;reporting.</p>
       </div>
-      <div class="cap reveal">
+      <div class="cap">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div>
         <h3>DevOps, servery &amp; infrastruktura</h3>
         <p>Cloud i&nbsp;on-prem s&nbsp;monitoringem, zálohami a&nbsp;údržbou.</p>
       </div>
-      <div class="cap reveal d1">
+      <div class="cap d1">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6-1.5A4 4 0 0 0 6 19z"/><path d="M12 12v6M9.5 15l2.5 3 2.5-3"/></svg></div>
         <h3>Cloud migrace &amp; modernizace</h3>
         <p>Legacy do&nbsp;cloudu bez&nbsp;výpadku provozu.</p>
       </div>
-      <div class="cap reveal d2">
+      <div class="cap d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M9.5 6.5h.01"/></svg></div>
         <h3>Weby, aplikace &amp; produkty</h3>
         <p>Webové, mobilní i&nbsp;interní produkty od&nbsp;MVP po&nbsp;škálování.</p>
       </div>
-      <div class="cap reveal d3">
+      <div class="cap d3">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Provoz, bezpečnost &amp; údržba</h3>
         <p>SLA, GDPR, AI&nbsp;Act, human-in-the-loop a&nbsp;auditní stopa.</p>
@@ -393,10 +389,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ STACK ============ -->
 <section class="block alt" id="stack">
   <div class="wrap">
-    <span class="eyebrow reveal">03 · Na čem stavíme</span>
-    <h2 class="h2 reveal">Pracujeme s&nbsp;tím, <span class="gt">co už máte.</span></h2>
-    <p class="lead reveal">Přes 60 systémů, platforem a&nbsp;modelů. Váš stack může zůstat.</p>
-    <div class="stack reveal">
+    <h2 class="h2">Pracujeme s&nbsp;tím, <span class="gt">co už máte.</span></h2>
+    <p class="lead">Přes 60 systémů, platforem a&nbsp;modelů. Váš stack může zůstat.</p>
+    <div class="stack">
       <div class="stack-row"><span class="stack-cat">ERP</span><div class="stack-chips"><span>SAP</span><span>Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Pohoda</span><span>Oracle NetSuite</span></div></div>
       <div class="stack-row"><span class="stack-cat">CRM</span><div class="stack-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span></div></div>
       <div class="stack-row"><span class="stack-cat">E-shop</span><div class="stack-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Magento</span></div></div>
@@ -411,30 +406,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ PROOF ============ -->
 <section class="block" id="proof">
   <div class="wrap">
-    <span class="eyebrow reveal">04 · Co jsme postavili</span>
-    <h2 class="h2 reveal">Ne sliby. <span class="gt">Běžící systémy s&nbsp;čísly.</span></h2>
-    <p class="lead reveal">Vybrané realizace anonymně po&nbsp;odvětvích — konkrétní reference doložíme na&nbsp;schůzce.</p>
+    <h2 class="h2">Ne sliby. <span class="gt">Běžící systémy s&nbsp;čísly.</span></h2>
+    <p class="lead">Vybrané realizace anonymně po&nbsp;odvětvích — konkrétní reference doložíme na&nbsp;schůzce.</p>
     <div class="proof-grid">
-      <div class="proof reveal"><span class="ob">Výroba · ~600 lidí</span><div class="kpi">~40 h/týd</div><p>Agentní vrstva nad&nbsp;Business Central — vytěžování dokladů, integrace do&nbsp;ERP a&nbsp;audit trail.</p></div>
-      <div class="proof reveal d1"><span class="ob">Energetika · kogenerace</span><div class="kpi">9 agentů</div><p>Dokumenty, servis, reporting i&nbsp;zápisy ze&nbsp;schůzek → úkoly. Dvě země, jeden přehled.</p></div>
-      <div class="proof reveal d2"><span class="ob">Obchod s&nbsp;kovy · 82 lidí</span><div class="kpi">3 měsíce</div><p>Návratnost investice. ~1&nbsp;420&nbsp;hodin ročně ušetřeno, přínos ~710&nbsp;tis.&nbsp;Kč/rok.</p></div>
-      <div class="proof reveal"><span class="ob">Stavební skupina</span><div class="kpi">−180 h/měs</div><p>Interní systém na&nbsp;míru. Konec ručního přepisování, jednotný přehled zakázek.</p></div>
-      <div class="proof reveal d1"><span class="ob">Překlady · holding 8&nbsp;zemí</span><div class="kpi">−90 %</div><p>GenAI do&nbsp;procesů + lokální LLM na&nbsp;firemním HW. Nižší náklady, data ve&nbsp;firmě.</p></div>
-      <div class="proof reveal d2"><span class="ob">Logistika · migrace</span><div class="kpi">−41 %</div><p>Migrace stacku a&nbsp;automatizace toků sklad ↔ doprava. Nižší provozní náklady.</p></div>
+      <div class="proof"><span class="ob">Výroba · ~600 lidí</span><div class="kpi">~40 h/týd</div><p>Agentní vrstva nad&nbsp;Business Central — vytěžování dokladů, integrace do&nbsp;ERP a&nbsp;audit trail.</p></div>
+      <div class="proof d1"><span class="ob">Energetika · kogenerace</span><div class="kpi">9 agentů</div><p>Dokumenty, servis, reporting i&nbsp;zápisy ze&nbsp;schůzek → úkoly. Dvě země, jeden přehled.</p></div>
+      <div class="proof d2"><span class="ob">Obchod s&nbsp;kovy · 82 lidí</span><div class="kpi">3 měsíce</div><p>Návratnost investice. ~1&nbsp;420&nbsp;hodin ročně ušetřeno, přínos ~710&nbsp;tis.&nbsp;Kč/rok.</p></div>
+      <div class="proof"><span class="ob">Stavební skupina</span><div class="kpi">−180 h/měs</div><p>Interní systém na&nbsp;míru. Konec ručního přepisování, jednotný přehled zakázek.</p></div>
+      <div class="proof d1"><span class="ob">Překlady · holding 8&nbsp;zemí</span><div class="kpi">−90 %</div><p>GenAI do&nbsp;procesů + lokální LLM na&nbsp;firemním HW. Nižší náklady, data ve&nbsp;firmě.</p></div>
+      <div class="proof d2"><span class="ob">Logistika · migrace</span><div class="kpi">−41 %</div><p>Migrace stacku a&nbsp;automatizace toků sklad ↔ doprava. Nižší provozní náklady.</p></div>
     </div>
-    <div class="proof-foot reveal"><a class="tlink" href="/#results">Všechny reference →</a></div>
+    <div class="proof-foot"><a class="tlink" href="/#results">Všechny reference →</a></div>
   </div>
 </section>
 
 <!-- ============ PEOPLE ============ -->
 <section class="block alt" id="lide">
   <div class="wrap">
-    <span class="eyebrow reveal">05 · Lidé, kteří to vedou</span>
-    <h2 class="h2 reveal">Jádro, které za&nbsp;to <span class="gt">ručí.</span></h2>
-    <p class="lead reveal">Jádro odpovědné za&nbsp;strategii, dodávku a&nbsp;provoz.</p>
+    <h2 class="h2">Jádro, které za&nbsp;to <span class="gt">ručí.</span></h2>
+    <p class="lead">Jádro odpovědné za&nbsp;strategii, dodávku a&nbsp;provoz.</p>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">01</span><h3>Zakladatel</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Zakladatel</h3><span class="team-gl"></span></div>
       <div class="tm tm-featured">
         <div class="tm-photo"><img src="assets/team/milo.jpg" alt="Milo Brzák" loading="lazy" width="440" height="440" decoding="async"></div>
         <div>
@@ -447,8 +440,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       </div>
     </div>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">02</span><h3>Provoz &amp; dodávka</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Provoz &amp; dodávka</h3><span class="team-gl"></span></div>
       <div class="tm tm-featured tm-lead">
         <div class="tm-photo"><img src="assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy" width="440" height="440" decoding="async"></div>
         <div>
@@ -467,8 +460,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       </div>
     </div>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">03</span><h3>Specialisté &amp; konzultanti</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Specialisté &amp; konzultanti</h3><span class="team-gl"></span></div>
       <div class="team-grid compact">
         <div class="tm"><div class="tm-photo"><img src="/assets/team/dolezal.jpg" alt="Tomáš Doležal" loading="lazy" width="388" height="440" decoding="async"></div><h3 class="tm-name">Tomáš Doležal</h3><span class="tm-role">AI adopce · transformace</span><div class="tm-links"><a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn — Tomáš Doležal"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div>
         <div class="tm"><div class="tm-photo"><img src="/assets/team/soucek.jpg" alt="Ondra Souček" loading="lazy" width="293" height="440" decoding="async"></div><h3 class="tm-name">Ondra Souček</h3><span class="tm-role">AI pro sociální sítě</span><div class="tm-links"><a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn — Ondra Souček"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div>
@@ -485,8 +478,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ CTA ============ -->
 <section class="block tym-final">
   <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Pojďme do&nbsp;toho</span>
+    <div class="cta-card">
       <h2 class="h2">Postavíme to <span class="gt">i u vás.</span></h2>
       <p>Za&nbsp;30 minut ukážeme, kde začít a&nbsp;jak řešení dostat do&nbsp;provozu.</p>
       <div class="cta-btns">

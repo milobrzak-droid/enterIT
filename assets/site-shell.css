@@ -1,4 +1,28 @@
-/* Shared EnterIT navigation, language picker, buttons and footer. */
+/* Shared EnterIT type, navigation, language picker, buttons and footer. */
+@font-face {
+  font-family: "Greycliff CF";
+  src: url("/assets/fonts/GreycliffCF-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url("/assets/fonts/GreycliffCF-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url("/assets/fonts/GreycliffCF-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #101c18;
   --ink-soft: #42504b;
@@ -14,7 +38,16 @@
   --line: rgba(16, 28, 24, 0.14);
   --line-light: rgba(255, 255, 255, 0.17);
   --font: "Greycliff CF", "Avenir Next", "Segoe UI", sans-serif;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-fast: 140ms;
+  --motion-ui: 220ms;
+  --motion-section: 640ms;
+  --section-space-sm: clamp(76px, 8vw, 112px);
+  --section-space-md: clamp(94px, 10vw, 142px);
+  --section-space-lg: clamp(116px, 12vw, 168px);
   --max: 1240px;
 }
 
@@ -39,6 +72,15 @@
   margin-inline: auto;
 }
 
+.header-sentinel {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -61,17 +103,7 @@
   border: 1px solid transparent;
   border-radius: 16px;
   pointer-events: auto;
-  transition: opacity 0.62s var(--ease), transform 0.62s var(--ease), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.motion-ready .site-header .nav-shell {
-  opacity: 0;
-  transform: translateY(-18px) scale(0.99);
-}
-
-.motion-ready.is-loaded .site-header .nav-shell {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  transition: background var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 
 .site-header.scrolled .nav-shell,
@@ -79,7 +111,7 @@
 .site-header.language-active .nav-shell {
   border-color: var(--line);
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 12px 40px rgba(16, 28, 24, 0.08);
+  box-shadow: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
@@ -125,7 +157,7 @@
   background: var(--mint-dark);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.22s ease;
+  transition: transform var(--motion-ui) var(--ease-out);
 }
 
 .desktop-nav a:hover::after,
@@ -163,7 +195,7 @@
   color: var(--ink);
   cursor: pointer;
   list-style: none;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--motion-ui) ease, background var(--motion-ui) ease;
 }
 
 .language-menu__trigger::-webkit-details-marker {
@@ -174,7 +206,7 @@
 .language-menu[open] .language-menu__trigger {
   border-color: rgba(16, 28, 24, 0.34);
   background: #fff;
-  box-shadow: 0 8px 24px rgba(16, 28, 24, 0.08);
+  box-shadow: none;
 }
 
 .language-menu__current {
@@ -186,7 +218,7 @@
 .language-menu__chevron {
   width: 14px;
   height: 14px;
-  transition: transform 0.2s var(--ease);
+  transition: transform var(--motion-ui) var(--ease-in-out);
 }
 
 .language-menu[open] .language-menu__chevron {
@@ -206,13 +238,13 @@
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 20px 55px rgba(16, 28, 24, 0.15);
+  box-shadow: 0 6px 8px rgba(16, 28, 24, 0.1);
   list-style: none;
   transform-origin: top right;
 }
 
 .language-menu[open] .language-menu__popover {
-  animation: language-popover 0.22s var(--ease) both;
+  animation: language-popover var(--motion-ui) var(--ease-out) both;
 }
 
 .language-menu__option {
@@ -268,28 +300,61 @@
   font-size: 15px;
   font-weight: 700;
   line-height: 1.15;
-  transition: transform 0.2s var(--ease), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: transform var(--motion-fast) var(--ease-out), background var(--motion-ui) ease, border-color var(--motion-ui) ease, color var(--motion-ui) ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
   background: var(--navy-soft);
 }
 
 .button svg {
   width: 17px;
   height: 17px;
-  transition: transform 0.2s var(--ease);
+  transition: transform var(--motion-fast) var(--ease-out);
 }
 
-.button:hover svg {
-  transform: translateX(3px);
+.button:active {
+  transform: scale(0.97);
 }
 
 .button--small {
   min-height: 43px;
   padding: 10px 16px;
   font-size: 13px;
+}
+
+.button--mint {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: var(--navy);
+}
+
+.button--mint:hover {
+  border-color: #75edb8;
+  background: #75edb8;
+}
+
+.button--ghost {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button--ghost:hover {
+  border-color: var(--ink);
+  background: transparent;
+}
+
+.button--light {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+}
+
+.button--light:hover {
+  border-color: #fff;
+  background: #fff;
+  color: var(--navy);
 }
 
 .menu-toggle {
@@ -313,7 +378,7 @@
   display: block;
   border-radius: 2px;
   background: var(--ink);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform var(--motion-ui) var(--ease-in-out), opacity var(--motion-fast) ease;
 }
 
 .menu-toggle span { position: relative; }
@@ -334,17 +399,28 @@
   border: 1px solid var(--line);
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 22px 60px rgba(16, 28, 24, 0.14);
+  box-shadow: 0 6px 8px rgba(16, 28, 24, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.985);
+  transform-origin: top center;
+  transition:
+    opacity 180ms var(--ease-out),
+    transform 280ms var(--ease-drawer),
+    visibility 0s linear 280ms;
   pointer-events: auto;
 }
 
-.mobile-panel:not([hidden]) {
-  animation: mobile-panel-in 0.34s var(--ease) both;
+.mobile-panel[data-state="opening"],
+.mobile-panel[data-state="closing"] {
+  visibility: visible;
 }
 
-@keyframes mobile-panel-in {
-  from { opacity: 0; transform: translateY(-12px) scale(0.985); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+.mobile-panel[data-state="open"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
 }
 
 .mobile-nav { display: grid; }
@@ -396,7 +472,7 @@
   font-size: clamp(38px, 5.1vw, 66px);
   font-weight: 900;
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
@@ -476,6 +552,11 @@
 .footer-legal { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 18px; }
 .footer-legal a:hover { color: #fff; }
 
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { transform: translateY(-2px); }
+  .button:hover svg { transform: translateX(3px); }
+}
+
 .site-header a:focus-visible,
 .site-header button:focus-visible,
 .site-header summary:focus-visible,
@@ -506,6 +587,12 @@
 }
 
 @media (max-width: 620px) {
+  :root {
+    --section-space-sm: 64px;
+    --section-space-md: 78px;
+    --section-space-lg: 94px;
+  }
+
   .site-header { padding-top: 8px; }
   .mobile-panel { margin-top: 5px; }
   .language-menu__trigger { min-width: 50px; padding-inline: 8px; }
@@ -523,8 +610,13 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
-  .motion-ready .site-header .nav-shell,
-  .motion-ready.is-loaded .site-header .nav-shell { opacity: 1; transform: none; }
-  .site-header *,
-  .site-footer * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+  .language-menu[open] .language-menu__popover { animation: none; }
+  .language-menu__chevron,
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after { transition: none; }
+  .mobile-panel { transform: none; transition-duration: 120ms, 120ms, 0s; }
+  .button:hover,
+  .button:active,
+  .button:hover svg { transform: none; }
 }

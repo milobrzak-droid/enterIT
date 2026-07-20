@@ -20,11 +20,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260717-enter-symbol">
   <link rel="icon" href="/favicon.ico?v=20260717-enter-symbol" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20260717-enter-symbol">
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-  <link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-  <link rel="stylesheet" href="/assets/home.css?v=20260717-28">
-  <script src="/assets/home.js?v=20260717-16" defer></script>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site-shell.css?v=20260720-13">
+  <link rel="stylesheet" href="/assets/home.css?v=20260720-13">
+  <script src="/assets/home.js?v=20260720-13" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EnterIT">
   <meta property="og:locale" content="en_US">
@@ -88,7 +88,7 @@
         <a class="button button--ghost" href="#results">See the results</a>
       </div>
     </div>
-    <div class="proof-strip"><div class="proof-item"><strong>75</strong><span>specialists under one roof</span></div><div class="proof-item"><strong>120+</strong><span>projects delivered</span></div><div class="proof-item"><strong>4–8 weeks</strong><span>from pilot to production</span></div></div>
+    <div class="proof-strip"><div class="proof-item"><strong data-count-up>75</strong><span>specialists under one roof</span></div><div class="proof-item"><strong data-count-up>120+</strong><span>projects delivered</span></div><div class="proof-item"><strong data-count-up>4–8 weeks</strong><span>from pilot to production</span></div></div>
   </div>
 </section>
 <section class="partner-bar" aria-label="Technology partners">
@@ -97,30 +97,26 @@
     <div class="partner-logos">
       <img class="partner-logo partner-logo--microsoft" src="/assets/logos/microsoft.png" alt="Microsoft Solutions Partner" width="1000" height="200" loading="lazy" decoding="async">
       <img class="partner-logo partner-logo--tdsynnex" src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" width="1300" height="460" loading="lazy" decoding="async">
-      <img class="partner-logo partner-logo--techmates" src="/assets/logos/techmates.png" alt="Techmates" width="1854" height="299" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 <section class="section" id="services">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">From process to production</span><h2 class="section-title">Technology should do the work. Not just look clever.</h2></div>
+      <div><h2 class="section-title">Technology should do the work. Not just look clever.</h2></div>
       <p class="section-intro">We bring business, engineering and operations together. The result is integrated into your systems, has a clear owner and delivers measurable impact.</p>
     </div>
     <div class="services-grid"><article class="service-card">
-        <span class="service-card__number">01</span>
         <h3>AI agents for real operations</h3>
         <p>Agents work with documents, e-mails and company knowledge. They hand off exceptions to people and keep every step auditable.</p>
         <ul class="service-list"><li>Invoices and orders</li><li>Customer and internal support</li><li>Documents and company knowledge</li></ul>
         <a class="text-link" href="en/jak-stavime-agenty.html">How we build AI agents</a>
       </article><article class="service-card">
-        <span class="service-card__number">02</span>
         <h3>Automation and integration</h3>
         <p>We connect ERP, CRM, warehouse, e-commerce and e-mail into one reliable flow — including legacy systems without a modern API.</p>
         <ul class="service-list"><li>ERP, CRM and WMS integration</li><li>Approvals and reporting</li><li>Legacy systems and API layers</li></ul>
         <a class="text-link" href="en/jak-stavime-automatizace.html">How we build automation</a>
       </article><article class="service-card">
-        <span class="service-card__number">03</span>
         <h3>Custom software and data</h3>
         <p>We build internal apps, data platforms and cloud solutions when off-the-shelf software does not fit your process.</p>
         <ul class="service-list"><li>Internal apps and portals</li><li>Data platforms and BI</li><li>Cloud, DevOps and SLA operations</li></ul>
@@ -131,80 +127,80 @@
 <section class="section section--white solutions" id="solutions">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Ready-made solutions</span><h2 class="section-title">Concrete work we take off your team&#039;s plate.</h2></div>
+      <div><h2 class="section-title">Concrete work we take off your team&#039;s plate.</h2></div>
       <p class="section-intro">Eight proven solutions that replace retyping, searching and manual forms.</p>
     </div>
     <div class="solution-grid"><a class="solution-card" href="en/reseni-dochazka.html">
-        <div class="solution-card__top"><span>01</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Attendance tracking</h3>
         <p>No more adding up hours by hand from time clocks and Excel at the end of the month.</p>
         <div class="solution-card__flow" aria-label="Time clocks + Excel → hours overview + payroll input">
           <span>Time clocks + Excel</span><b aria-hidden="true">→</b><span>hours overview + payroll input</span>
         </div>
-        <strong class="solution-card__proof">~15 h/mo saved for the payroll accountant</strong>
+        <strong class="solution-card__proof" data-count-up>~15 h/mo saved for the payroll accountant</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-objednavky.html">
-        <div class="solution-card__top"><span>02</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Orders from e-mails</h3>
         <p>The order arrives by e-mail in any format — nobody retypes it.</p>
         <div class="solution-card__flow" aria-label="E-mail order → filed + confirmed">
           <span>E-mail order</span><b aria-hidden="true">→</b><span>filed + confirmed</span>
         </div>
-        <strong class="solution-card__proof">~25 h/mo saved for the sales team</strong>
+        <strong class="solution-card__proof" data-count-up>~25 h/mo saved for the sales team</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-reklamace.html">
-        <div class="solution-card__top"><span>03</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Complaints under control</h3>
         <p>No complaint gets lost in e-mails — it is filed and tracked automatically.</p>
         <div class="solution-card__flow" aria-label="Complaint by e-mail → filed + tracked">
           <span>Complaint by e-mail</span><b aria-hidden="true">→</b><span>filed + tracked</span>
         </div>
-        <strong class="solution-card__proof">Faster handling, happier customers</strong>
+        <strong class="solution-card__proof" data-count-up>Faster handling, happier customers</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-sklad-bez-papiru.html">
-        <div class="solution-card__top"><span>04</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Paperless warehouse</h3>
         <p>Snap a photo of the delivery note — stock-in and order matching happen automatically.</p>
         <div class="solution-card__flow" aria-label="Delivery note (photo) → stocked in + matched">
           <span>Delivery note (photo)</span><b aria-hidden="true">→</b><span>stocked in + matched</span>
         </div>
-        <strong class="solution-card__proof">~20 h/mo saved for the warehouse worker</strong>
+        <strong class="solution-card__proof" data-count-up>~20 h/mo saved for the warehouse worker</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-dovolene.html">
-        <div class="solution-card__top"><span>05</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Leave approvals</h3>
         <p>No more paper slips — request, approval and balance tracking in one place.</p>
         <div class="solution-card__flow" aria-label="Leave request → approved + recorded">
           <span>Leave request</span><b aria-hidden="true">→</b><span>approved + recorded</span>
         </div>
-        <strong class="solution-card__proof">A real-time overview for managers and HR</strong>
+        <strong class="solution-card__proof" data-count-up>A real-time overview for managers and HR</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-kniha-jizd.html">
-        <div class="solution-card__top"><span>06</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Logbook on autopilot</h3>
         <p>Fuel-ups and routes turn into a ready-made logbook. The system also tracks inspections and servicing.</p>
         <div class="solution-card__flow" aria-label="Fuel-ups + routes → logbook + alerts">
           <span>Fuel-ups + routes</span><b aria-hidden="true">→</b><span>logbook + alerts</span>
         </div>
-        <strong class="solution-card__proof">~10 h/mo saved for the fleet manager</strong>
+        <strong class="solution-card__proof" data-count-up>~10 h/mo saved for the fleet manager</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-faktury.html">
-        <div class="solution-card__top"><span>07</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Invoices straight into accounting</h3>
         <p>An incoming invoice is extracted, matched with the order and sent for approval.</p>
         <div class="solution-card__flow" aria-label="Invoice in PDF → in accounting, &lt;1% errors">
           <span>Invoice in PDF</span><b aria-hidden="true">→</b><span>in accounting, &lt;1% errors</span>
         </div>
-        <strong class="solution-card__proof">~30 h/mo saved for the accounting team</strong>
+        <strong class="solution-card__proof" data-count-up>~30 h/mo saved for the accounting team</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a><a class="solution-card" href="en/reseni-pracovni-vykazy.html">
-        <div class="solution-card__top"><span>08</span><span aria-hidden="true">↗</span></div>
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>Work timesheets</h3>
         <p>Technicians&#039; and workers&#039; timesheets are collected, approved and prepared for billing and payroll.</p>
         <div class="solution-card__flow" aria-label="Field timesheets → approved + ready to bill">
           <span>Field timesheets</span><b aria-hidden="true">→</b><span>approved + ready to bill</span>
         </div>
-        <strong class="solution-card__proof">~12 h/mo and fewer billing errors</strong>
+        <strong class="solution-card__proof" data-count-up>~12 h/mo and fewer billing errors</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a></div>
     <div class="solution-catalog__cta"><a class="text-link" href="#contact">Do not see your process? We will build the right solution for it.</a></div>
@@ -218,32 +214,32 @@
     </div>
     <div class="case-grid"><article class="case-card">
         <span class="case-card__context">Manufacturing · ~600 people</span>
-        <strong>17 → 78%</strong>
+        <strong data-count-up>17 → 78%</strong>
         <p>An agentic layer built on Business Central. Employees use AI daily, saving ~40 minutes per week for each user.</p>
         <div class="case-card__tech"><span>Copilot</span><span>Business Central</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Translation · 8-country holding</span>
-        <strong>−90%</strong>
+        <strong data-count-up>−90%</strong>
         <p>GenAI embedded in operational workflows plus a local LLM on company hardware. Lower tooling costs, with data kept in-house.</p>
         <div class="case-card__tech"><span>Llama 3</span><span>Make</span><span>Claude</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Energy · cogeneration</span>
-        <strong>9 agents</strong>
+        <strong data-count-up>9 agents</strong>
         <p>Documents, service, reporting and meeting notes become tasks. Two countries, one overview.</p>
         <div class="case-card__tech"><span>Claude</span><span>Helios</span><span>n8n</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Metals trading · 82 people</span>
-        <strong>3 months</strong>
+        <strong data-count-up>3 months</strong>
         <p>The programme paid back in three months, saving ~1,420 hours and ~CZK 710k per year.</p>
         <div class="case-card__tech"><span>Copilot</span><span>n8n</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Construction group</span>
-        <strong>−180 h/mo</strong>
+        <strong data-count-up>−180 h/mo</strong>
         <p>A tailored internal system removed manual retyping and created one unified view of jobs.</p>
         <div class="case-card__tech"><span>App</span><span>API</span><span>Power BI</span></div>
       </article><article class="case-card">
         <span class="case-card__context">Logistics · migration</span>
-        <strong>−41%</strong>
+        <strong data-count-up>−41%</strong>
         <p>Stack migration and automation of warehouse-to-transport flows lowered operating costs.</p>
         <div class="case-card__tech"><span>Cloud</span><span>n8n</span><span>integration</span></div>
       </article></div>
@@ -267,7 +263,7 @@
       </li><li class="implementation-step">
         <span>04</span><div><h3>Validated data is posted</h3><p>Business Central, the warehouse and DMS receive the approved data.</p></div>
       </li></ol>
-      <div class="implementation-outcomes"><div class="implementation-outcome"><strong>~40 h/week</strong><span>illustrative capacity returned</span></div><div class="implementation-outcome"><strong>3 → 1</strong><span>places where documents live</span></div><div class="implementation-outcome"><strong>&lt;1 day</strong><span>illustrative processing time</span></div></div>
+      <div class="implementation-outcomes"><div class="implementation-outcome"><strong data-count-up>~40 h/week</strong><span>illustrative capacity returned</span></div><div class="implementation-outcome"><strong data-count-up>3 → 1</strong><span>places where documents live</span></div><div class="implementation-outcome"><strong data-count-up>&lt;1 day</strong><span>illustrative processing time</span></div></div>
       <p class="implementation-note">This is a model architecture with illustrative parameters, not the result of a specific client project. Verified outcomes are listed in Case studies.</p>
     </div>
   </div>
@@ -275,10 +271,10 @@
 <section class="section section--white" id="process">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">How we work</span><h2 class="section-title">We prove value before we scale.</h2></div>
+      <div><h2 class="section-title">We prove value before we scale.</h2></div>
       <p class="section-intro">Every stage has a clear output, decision point and owner. We do not sell an endless experiment.</p>
     </div>
-    <div class="process-grid"><article class="process-step"><span class="process-step__timing">1–2 weeks</span><h3>Find the right process</h3><p>We map workload, exceptions, data and the real cost of the current way of working.</p></article><article class="process-step"><span class="process-step__timing">2–3 weeks</span><h3>Build the business case</h3><p>We define the baseline, expected savings, risks and success criteria for the pilot.</p></article><article class="process-step"><span class="process-step__timing">1–2 weeks</span><h3>Deliver the pilot</h3><p>We connect the solution to real systems and measure its impact using real data.</p></article><article class="process-step"><span class="process-step__timing">ongoing</span><h3>Run it in production</h3><p>Monitoring, security, SLA and continued development have one accountable owner.</p></article></div>
+    <div class="process-grid"><article class="process-step"><div class="process-step__meta"><span class="process-step__index">01</span><span class="process-step__timing">1–2 weeks</span></div><h3>Find the right process</h3><p>We map workload, exceptions, data and the real cost of the current way of working.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">02</span><span class="process-step__timing">2–3 weeks</span></div><h3>Build the business case</h3><p>We define the baseline, expected savings, risks and success criteria for the pilot.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">03</span><span class="process-step__timing">1–2 weeks</span></div><h3>Deliver the pilot</h3><p>We connect the solution to real systems and measure its impact using real data.</p></article><article class="process-step"><div class="process-step__meta"><span class="process-step__index">04</span><span class="process-step__timing">ongoing</span></div><h3>Run it in production</h3><p>Monitoring, security, SLA and continued development have one accountable owner.</p></article></div>
     <div class="process-links">
       <a class="text-link" href="en/jak-stavime-agenty.html">In detail: how we build agents</a>
       <a class="text-link" href="en/jak-stavime-automatizace.html">In detail: how we build automation</a>
@@ -288,11 +284,10 @@
 <section class="section" id="integrations">
   <div class="shell integration-layout">
     <div class="integration-copy">
-      <span class="section-kicker">Integrations</span>
       <h2 class="section-title">We connect to what you already use.</h2>
       <p class="section-intro">We connect ERP, CRM, e-commerce, accounting and AI without forcing you to replace your stack.</p>
       <ul class="integration-points"><li>Integration through APIs, databases, files or the user interface</li><li>Human approval for sensitive steps and a complete audit trail</li><li>Monitoring, roles, permissions and operational ownership from day one</li></ul>
-      <p class="integration-proof"><strong>60+</strong><span>We have connected 60+ systems, including legacy software without a modern API.</span></p>
+      <p class="integration-proof"><strong data-count-up>60+</strong><span>We have connected 60+ systems, including legacy software without a modern API.</span></p>
     </div>
     <div class="integration-catalog">
       <div class="integration-catalog__head">
@@ -329,7 +324,7 @@
 <section class="section operations" id="operations">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Operations and guarantees</span><h2 class="section-title">We do not just build it. We keep it running and hand it over cleanly.</h2></div>
+      <div><h2 class="section-title">We do not just build it. We keep it running and hand it over cleanly.</h2></div>
       <p class="section-intro">SLA, ownership, security and the exit plan are part of the design from day one.</p>
     </div>
     <div class="operations-grid"><article class="operation-card">
@@ -357,7 +352,7 @@
       <span class="section-kicker">One partner from design to operations</span>
       <h2 class="section-title">75 specialists. Three teams. One responsibility.</h2>
       <p class="section-intro">Architecture, AI engineering, product, infrastructure and long-term operations all sit under one roof.</p>
-      <div class="team-stats"><div class="team-stat"><strong>45</strong><span>enterprise</span></div><div class="team-stat"><strong>25</strong><span>AI and agents</span></div><div class="team-stat"><strong>5</strong><span>product studio</span></div></div>
+      <div class="team-stats"><div class="team-stat"><strong data-count-up>45</strong><span>enterprise</span></div><div class="team-stat"><strong data-count-up>25</strong><span>AI and agents</span></div><div class="team-stat"><strong data-count-up>5</strong><span>product studio</span></div></div>
       <a class="button" href="en/tym.html">Meet the full team <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
     </div>
     <div class="team-portraits">
@@ -370,7 +365,7 @@
 <section class="section section--white resources" id="resources">
   <div class="shell">
     <div class="section-head section-head--compact">
-      <div><span class="section-kicker">Explore</span><h2 class="section-title">Choose the level of detail you need.</h2></div>
+      <div><h2 class="section-title">Choose the level of detail you need.</h2></div>
     </div>
     <div class="resources-grid"><article class="resource-card">
         <span class="resource-card__tag">How we build</span>
@@ -393,7 +388,7 @@
 <section class="section calculator" id="calc" data-calculator data-locale="en-GB" data-currency="EUR" data-weeks="46" data-fte-hours="1840">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">Savings calculator</span><h2 class="section-title">Estimate the scale of the opportunity.</h2></div>
+      <div><h2 class="section-title">Estimate the scale of the opportunity.</h2></div>
       <p class="section-intro">Set four inputs to match your operation. The result is directional; we validate the real impact in a pilot.</p>
     </div>
     <div class="calculator-grid">
@@ -432,7 +427,6 @@
   <div class="shell">
     <div class="contact-card">
       <div class="contact-card__content">
-        <span class="section-kicker">The first step takes 30 minutes</span>
         <h2>Show us the process holding you back.</h2>
         <p>Together we will decide whether automation, integration or a system change makes sense — and what is worth proving first.</p>
         <div class="contact-actions">

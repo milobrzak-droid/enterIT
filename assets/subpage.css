@@ -31,12 +31,20 @@ body.subpage .wrap {
 
 body.subpage .block {
   position: relative;
-  padding: clamp(78px, 8.5vw, 118px) 0;
+  padding: var(--section-space-md) 0;
   border-top: 1px solid var(--line);
   background: var(--paper);
 }
 
 body.subpage .block.alt { background: var(--surface); }
+
+body.subpage .block:has(:is(.rs-flow, .jp-walk, .f30-levels, .team-grid)) {
+  padding-block: var(--section-space-lg);
+}
+
+body.subpage .block:has(:is(.rs-badges, .rs-faq, .jp-callout, .f30-quote)) {
+  padding-block: var(--section-space-sm);
+}
 
 body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) {
   position: relative;
@@ -84,7 +92,7 @@ body.subpage .h1 {
   font-size: clamp(52px, 7.4vw, 96px);
   font-weight: 900;
   line-height: 0.94;
-  letter-spacing: -0.058em;
+  letter-spacing: -0.04em;
   hyphens: none;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -103,7 +111,7 @@ body.subpage .h2 {
   font-size: clamp(38px, 4.8vw, 64px);
   font-weight: 900;
   line-height: 0.99;
-  letter-spacing: -0.048em;
+  letter-spacing: -0.04em;
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
@@ -153,11 +161,49 @@ body.subpage .btn {
   transition: transform 0.25s var(--ease), background 0.2s ease, color 0.2s ease;
 }
 
-body.subpage .btn:hover { border-color: var(--navy-soft); background: var(--navy-soft); color: #fff; transform: translateY(-3px); }
+body.subpage .btn:hover { border-color: var(--navy-soft); background: var(--navy-soft); color: #fff; }
 body.subpage .btn.green { border-color: var(--navy); background: var(--navy); color: #fff; }
 body.subpage .btn.green:hover { border-color: var(--navy-soft); background: var(--navy-soft); }
 body.subpage .btn.outline { border-color: rgba(20, 35, 31, 0.35); background: transparent; color: var(--navy); }
 body.subpage .btn.outline:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
+
+/* Prepared entrance states. The early bootstrap adds subpage-motion only when
+   the matching WAAPI/IntersectionObserver runtime can take ownership. */
+html.subpage-motion body.subpage .nav-shell:not([data-motion-state="done"]),
+html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > :not(.h1):not([data-motion-state="done"]) {
+  opacity: 0.12;
+  transform: translateY(17px);
+}
+
+html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > .h1:not([data-motion-state="done"]) {
+  opacity: 0.01;
+  transform: translateY(24px);
+  clip-path: inset(0 0 23% 0);
+}
+
+html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) .h2:not(.cta-card .h2):not([data-motion-state="done"]) {
+  opacity: 0.28;
+  transform: translateY(18px);
+  clip-path: inset(0 0 18% 0);
+}
+
+html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) .lead:not(.cta-card .lead):not([data-motion-state="done"]),
+html.subpage-motion body.subpage :is(.rs-pains, .rs-donts, .rs-flow, .rs-need, .rs-badges, .rs-stats, .rs-faq, .jp-blocks, .jp-stack, .jp-walk, .f30-stats, .f30-levels, .eng-grid, .cap-grid, .proof-grid, .team-grid) > :not([data-motion-state="done"]) {
+  opacity: 0.32;
+  transform: translateY(16px);
+}
+
+html.subpage-motion body.subpage :is(.rs-sec-box, .rs-case, .jp-callout, .f30-quote, .stack, .team-group:not(:has(.team-grid))):not([data-motion-state="done"]) {
+  opacity: 0.42;
+  transform: translateY(10px);
+  clip-path: inset(0 0 0 9%);
+}
+
+html.subpage-motion body.subpage .cta-card:not([data-motion-state="done"]) {
+  opacity: 0.48;
+  transform: translateY(10px);
+  clip-path: inset(0 12% 0 0 round 16px);
+}
 
 /* Solution pages */
 body.subpage .rs-hero-num {
@@ -186,9 +232,39 @@ body.subpage :is(.rs-pain, .rs-dont, .rs-badge, .jp-block, .jp-stack-item, .f30-
   box-shadow: none;
 }
 
-body.subpage :is(.rs-pain, .rs-dont, .jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card) {
+body.subpage :is(.jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card) {
   padding: 25px 26px;
   transition: transform 0.35s var(--ease), border-color 0.25s ease, background 0.25s ease;
+}
+
+body.subpage :is(.rs-pains, .rs-donts) {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+body.subpage .rs-pains > .rs-pain,
+body.subpage .rs-donts > .rs-dont {
+  padding: 22px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+body.subpage .jp-blocks:not(:has(.subpage-card-icon)):not(:has(.jp-num)) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+  border-top: 1px solid var(--line);
+}
+
+body.subpage .jp-blocks:not(:has(.subpage-card-icon)):not(:has(.jp-num)) > .jp-block {
+  padding: 23px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  transform: none;
 }
 
 body.subpage .subpage-card-icon {
@@ -200,9 +276,8 @@ body.subpage .subpage-card-icon {
   pointer-events: none;
 }
 
-body.subpage :is(.rs-pain, .rs-dont, .jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card):hover {
+body.subpage :is(.jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card):hover {
   border-color: rgba(15, 117, 80, 0.35);
-  transform: translateY(-5px);
 }
 
 body.subpage .rs-pain p,
@@ -437,6 +512,7 @@ body.subpage .jp-num { grid-template-columns: 36px 1fr; gap: 12px; }
 body.subpage .jp-num i { color: var(--mint-dark); font-family: var(--font); font-size: 15px; }
 
 body.subpage .content-details { margin-top: 32px; }
+body.subpage .content-details:not([open]) > .jp-walk { display: none; }
 body.subpage .content-details > summary {
   padding: 18px 20px;
   border: 1px solid var(--line);
@@ -508,7 +584,12 @@ body.subpage .tm-bio,
 body.subpage .tm-caps li { color: var(--ink-soft); font-family: var(--font); font-size: 14px; }
 body.subpage .tm-links a { border-color: var(--line); color: var(--ink-muted); }
 body.subpage .tm-links a:hover { border-color: var(--mint-dark); color: var(--mint-dark); }
-body.subpage .tm-quote { border-color: var(--mint-dark); color: var(--ink); font-family: var(--font); }
+body.subpage .tm-quote {
+  padding-left: 0;
+  border-left: 0;
+  color: var(--ink);
+  font-family: var(--font);
+}
 body.subpage .tm-caps-h { color: var(--ink-muted); font-family: var(--font); }
 body.subpage .tm-caps li b { color: var(--ink); }
 body.subpage .tm-caps li::before { background: var(--mint-dark); }
@@ -610,47 +691,6 @@ body.subpage .cta-card .h2 { margin-inline: auto; color: var(--navy); }
 body.subpage :is(.rs-final, .jp-final, .f30-final, .tym-final) p { max-width: 620px; margin: 0 auto 30px; color: rgba(20, 35, 31, 0.78); font-family: var(--font); font-size: 18px; line-height: 1.55; }
 body.subpage .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 
-/* Progressive motion: visible by default, enhanced only after JS is ready. */
-body.subpage .reveal { opacity: 1; transform: none; }
-
-.motion-ready body.subpage .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.62s var(--ease), transform 0.62s var(--ease);
-  transition-delay: calc(var(--reveal-index, 0) * 42ms);
-  will-change: opacity, transform;
-}
-
-.motion-ready body.subpage .reveal[data-motion-variant="text"] {
-  transform: translateY(22px);
-}
-
-.motion-ready body.subpage .reveal[data-motion-variant="card"] {
-  transform: translateY(20px) scale(0.985);
-}
-
-.motion-ready body.subpage .reveal[data-motion-variant="step"] {
-  transform: translateY(18px);
-}
-
-.motion-ready body.subpage .reveal[data-motion-variant="scale"] {
-  transform: translateY(16px) scale(0.99);
-}
-
-.motion-ready body.subpage .reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-  will-change: auto;
-}
-
-.motion-ready body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .reveal {
-  transform: translateY(18px);
-}
-
-.motion-ready body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .reveal.in {
-  transform: translateY(0) scale(1);
-}
-
 @media (max-width: 1120px) {
   body.subpage .cap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -661,6 +701,7 @@ body.subpage .reveal { opacity: 1; transform: none; }
 
 @media (max-width: 820px) {
   body.subpage :is(.rs-pains, .rs-donts, .jp-blocks, .jp-stack, .f30-stats) { grid-template-columns: 1fr; }
+  body.subpage .jp-blocks:not(:has(.subpage-card-icon)):not(:has(.jp-num)) { grid-template-columns: 1fr; }
   body.subpage .rs-badges { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body.subpage .proof-grid { grid-template-columns: 1fr; }
   body.subpage .stack-row { grid-template-columns: 1fr; }
@@ -669,13 +710,12 @@ body.subpage .reveal { opacity: 1; transform: none; }
 @media (max-width: 620px) {
   body.subpage { font-size: 16px; }
   body.subpage .wrap { width: min(calc(100% - 28px), var(--max)); }
-  body.subpage .block { padding: 68px 0; }
   body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) { padding-top: 130px; padding-bottom: 70px; }
   body.subpage .subpage-hero-icon { width: 44px; height: 44px; margin-bottom: 22px; }
   body.subpage .subpage-card-icon { width: 27px; height: 27px; margin-bottom: 19px; }
   body.subpage .eyebrow { margin-bottom: 19px; font-size: 12px; }
   body.subpage .h1,
-  body.subpage .legal-hero .h1 { font-size: clamp(42px, 14.5vw, 62px); line-height: 0.95; letter-spacing: -0.052em; }
+  body.subpage .legal-hero .h1 { font-size: clamp(42px, 14.5vw, 62px); line-height: 0.95; letter-spacing: -0.04em; }
   html[lang="de"] body.subpage .h1 { font-size: clamp(38px, 12.6vw, 54px); }
   body.subpage .h2 { font-size: clamp(35px, 11.8vw, 49px); }
   body.subpage .lead,
@@ -702,12 +742,22 @@ body.subpage .reveal { opacity: 1; transform: none; }
   body.subpage .rs-badges { grid-template-columns: 1fr; }
 }
 
-@media (hover: none) {
-  body.subpage :is(.rs-pain, .rs-dont, .jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card):hover,
-  body.subpage .tm:hover .tm-photo { transform: none; }
+@media (hover: hover) and (pointer: fine) {
+  body.subpage .btn:hover { transform: translateY(-2px); }
+  body.subpage :is(.jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card):hover { transform: translateY(-4px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
-  .motion-ready body.subpage .reveal { opacity: 1 !important; transform: none !important; }
+  html.subpage-motion body.subpage .nav-shell,
+  html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > *,
+  html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) :is(.h2, .lead),
+  html.subpage-motion body.subpage :is(.rs-pains, .rs-donts, .rs-flow, .rs-need, .rs-badges, .rs-stats, .rs-faq, .jp-blocks, .jp-stack, .jp-walk, .f30-stats, .f30-levels, .eng-grid, .cap-grid, .proof-grid, .team-grid) > *,
+  html.subpage-motion body.subpage :is(.rs-sec-box, .rs-case, .jp-callout, .f30-quote, .stack, .team-group, .cta-card) {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  body.subpage .btn:hover,
+  body.subpage .btn:active { transform: none; }
 }

@@ -111,11 +111,11 @@ function head(page) {
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=${faviconVersion}">
   <link rel="icon" href="/favicon.ico?v=${faviconVersion}" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=${faviconVersion}">
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-  <link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-  <link rel="stylesheet" href="/assets/home.css?v=20260717-28">
-  <script src="/assets/home.js?v=20260717-16" defer></script>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site-shell.css?v=20260720-13">
+  <link rel="stylesheet" href="/assets/home.css?v=20260720-13">
+  <script src="/assets/home.js?v=20260720-13" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EnterIT">
   <meta property="og:locale" content="${page.ogLocale}">
@@ -169,7 +169,7 @@ function hero(page) {
   const proof = page.proof
     .map(
       ([value, label]) =>
-        `<div class="proof-item"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`,
+        `<div class="proof-item"><strong data-count-up>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`,
     )
     .join("");
 
@@ -195,7 +195,6 @@ function partners(page) {
     <div class="partner-logos">
       <img class="partner-logo partner-logo--microsoft" src="/assets/logos/microsoft.png" alt="Microsoft Solutions Partner" width="1000" height="200" loading="lazy" decoding="async">
       <img class="partner-logo partner-logo--tdsynnex" src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" width="1300" height="460" loading="lazy" decoding="async">
-      <img class="partner-logo partner-logo--techmates" src="/assets/logos/techmates.png" alt="Techmates" width="1854" height="299" loading="lazy" decoding="async">
     </div>
   </div>
 </section>`;
@@ -204,8 +203,7 @@ function partners(page) {
 function services(page) {
   const cards = page.services.cards
     .map(
-      (card, index) => `<article class="service-card">
-        <span class="service-card__number">0${index + 1}</span>
+      (card) => `<article class="service-card">
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.text)}</p>
         <ul class="service-list">${card.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
@@ -217,7 +215,7 @@ function services(page) {
   return `<section class="section" id="services">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">${escapeHtml(page.services.kicker)}</span><h2 class="section-title">${escapeHtml(page.services.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(page.services.title)}</h2></div>
       <p class="section-intro">${escapeHtml(page.services.intro)}</p>
     </div>
     <div class="services-grid">${cards}</div>
@@ -228,14 +226,14 @@ function services(page) {
 function solutionCatalog(content) {
   const cards = content.cards
     .map(
-      (card, index) => `<a class="solution-card" href="${escapeHtml(card.href)}">
-        <div class="solution-card__top"><span>0${index + 1}</span><span aria-hidden="true">↗</span></div>
+      (card) => `<a class="solution-card" href="${escapeHtml(card.href)}">
+        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.description)}</p>
         <div class="solution-card__flow" aria-label="${escapeHtml(`${card.input} → ${card.output}`)}">
           <span>${escapeHtml(card.input)}</span><b aria-hidden="true">→</b><span>${escapeHtml(card.output)}</span>
         </div>
-        <strong class="solution-card__proof">${escapeHtml(card.proof)}</strong>
+        <strong class="solution-card__proof" data-count-up>${escapeHtml(card.proof)}</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
       </a>`,
     )
@@ -244,7 +242,7 @@ function solutionCatalog(content) {
   return `<section class="section section--white solutions" id="solutions">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
       <p class="section-intro">${escapeHtml(content.intro)}</p>
     </div>
     <div class="solution-grid">${cards}</div>
@@ -258,7 +256,7 @@ function results(page, content) {
     .map(
       (item) => `<article class="case-card">
         <span class="case-card__context">${escapeHtml(item.context)}</span>
-        <strong>${escapeHtml(item.metric)}</strong>
+        <strong data-count-up>${escapeHtml(item.metric)}</strong>
         <p>${escapeHtml(item.text)}</p>
         <div class="case-card__tech">${item.tech.map((tech) => `<span>${escapeHtml(tech)}</span>`).join("")}</div>
       </article>`,
@@ -287,7 +285,7 @@ function implementation(content) {
     .join("");
   const outcomes = content.outcomes
     .map(
-      (outcome) => `<div class="implementation-outcome"><strong>${escapeHtml(outcome.value)}</strong><span>${escapeHtml(outcome.label)}</span></div>`,
+      (outcome) => `<div class="implementation-outcome"><strong data-count-up>${escapeHtml(outcome.value)}</strong><span>${escapeHtml(outcome.label)}</span></div>`,
     )
     .join("");
 
@@ -311,14 +309,14 @@ function processSection(page, timings) {
   const steps = page.process.steps
     .map(
       ([title, text], index) =>
-        `<article class="process-step"><span class="process-step__timing">${escapeHtml(timings[index] || "")}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p></article>`,
+        `<article class="process-step"><div class="process-step__meta"><span class="process-step__index">0${index + 1}</span><span class="process-step__timing">${escapeHtml(timings[index] || "")}</span></div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p></article>`,
     )
     .join("");
 
   return `<section class="section section--white" id="process">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">${escapeHtml(page.process.kicker)}</span><h2 class="section-title">${escapeHtml(page.process.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(page.process.title)}</h2></div>
       <p class="section-intro">${escapeHtml(page.process.intro)}</p>
     </div>
     <div class="process-grid">${steps}</div>
@@ -344,11 +342,10 @@ function integrations(page, content) {
   return `<section class="section" id="integrations">
   <div class="shell integration-layout">
     <div class="integration-copy">
-      <span class="section-kicker">${escapeHtml(content.kicker)}</span>
       <h2 class="section-title">${escapeHtml(content.title)}</h2>
       <p class="section-intro">${escapeHtml(content.intro)}</p>
       <ul class="integration-points">${points}</ul>
-      <p class="integration-proof"><strong>60+</strong><span>${escapeHtml(content.proof || "")}</span></p>
+      <p class="integration-proof"><strong data-count-up>60+</strong><span>${escapeHtml(content.proof || "")}</span></p>
     </div>
     <div class="integration-catalog">
       <div class="integration-catalog__head">
@@ -381,7 +378,7 @@ function operations(content) {
   return `<section class="section operations" id="operations">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
       <p class="section-intro">${escapeHtml(content.intro)}</p>
     </div>
     <div class="operations-grid">${cards}</div>
@@ -392,7 +389,7 @@ function operations(content) {
 
 function team(page) {
   const stats = page.team.stats
-    .map(([value, label]) => `<div class="team-stat"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`)
+    .map(([value, label]) => `<div class="team-stat"><strong data-count-up>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`)
     .join("");
 
   return `<section class="section section--white" id="team">
@@ -430,7 +427,7 @@ function resources(content) {
   return `<section class="section section--white resources" id="resources">
   <div class="shell">
     <div class="section-head section-head--compact">
-      <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
     </div>
     <div class="resources-grid">${cards}</div>
   </div>
@@ -473,7 +470,7 @@ function calculator(content) {
   return `<section class="section calculator" id="calc" data-calculator data-locale="${escapeHtml(content.currency.locale)}" data-currency="${escapeHtml(content.currency.code)}" data-weeks="${content.weeksPerYear}" data-fte-hours="${content.fteHoursPerYear}">
   <div class="shell">
     <div class="section-head">
-      <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
+      <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
       <p class="section-intro">${escapeHtml(content.intro)}</p>
     </div>
     <div class="calculator-grid">
@@ -499,7 +496,6 @@ function contact(page) {
   <div class="shell">
     <div class="contact-card">
       <div class="contact-card__content">
-        <span class="section-kicker">${escapeHtml(page.contact.kicker)}</span>
         <h2>${escapeHtml(page.contact.title)}</h2>
         <p>${escapeHtml(page.contact.text)}</p>
         <div class="contact-actions">

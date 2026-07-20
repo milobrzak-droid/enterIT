@@ -6,9 +6,9 @@ import { localeOrder, locales } from "./homepage-content.mjs";
 import { arrow, escapeHtml, languageMenu, siteFooter } from "./site-shell.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const assetVersion = "20260717-17";
-const shellAssetVersion = "20260717-6";
-const uiAssetVersion = "20260717-9";
+const assetVersion = "20260720-6";
+const shellAssetVersion = "20260720-4";
+const uiAssetVersion = "20260720-6";
 const faviconVersion = "20260717-enter-symbol";
 
 const subpageIconPaths = {
@@ -93,6 +93,49 @@ const calculatorCtaLabels = {
   pl: "Oblicz oszczędność w kalkulatorze",
 };
 
+const solutionMetaDescriptions = {
+  cs: {
+    "reseni-dochazka.html": "Automatizovaná evidence docházky spojí data z píchaček, Excelů i papírů, zkontroluje směny a připraví podklady pro mzdy. Úspora přibližně 15 h/měs.",
+    "reseni-dovolene.html": "Automatizované žádosti o dovolenou v Teams: vedoucí schválí jedním kliknutím, zůstatky se aktualizují a HR má přehled v reálném čase. Nasazení za 2–4 týdny.",
+    "reseni-faktury.html": "Automatizace přijatých faktur: agent vytěží data, spáruje fakturu s objednávkou a pošle ji ke schválení. Chybovost pod 1 % a úspora přibližně 30 h/měs.",
+    "reseni-kniha-jizd.html": "Automatická kniha jízd vzniká průběžně z GPS, tankovacích karet a kalendářů. Hlídá STK, servis i pojistky a šetří přibližně 10 h/měs. Nasazení za 3–4 týdny.",
+    "reseni-objednavky.html": "Automatizace objednávek z e-mailu: agent rozpozná libovolný formát, založí objednávku v ERP a potvrdí ji zákazníkovi. Obchod ušetří přibližně 25 h/měs.",
+    "reseni-pracovni-vykazy.html": "Automatizace pracovních výkazů sbírá data z terénu, páruje je se zakázkami a připravuje podklady pro fakturaci i mzdy. Administrativa ušetří ~12 h/měs.",
+    "reseni-reklamace.html": "Automatizace reklamací zachytí podněty z e-mailu, telefonu i e-shopu, přiřadí je, hlídá lhůty a informuje zákazníka. Odpověď odešle během minut.",
+    "reseni-sklad-bez-papiru.html": "Papírový dodací list stačí vyfotit: agent vytěží data, spáruje je s objednávkou a naskladní zboží. Skladník ušetří ~20 h/měs a stav skladu je aktuální do minut.",
+  },
+  en: {
+    "reseni-dochazka.html": "Automated attendance tracking combines clocking terminals, Excel and leave records, checks shifts, prepares payroll input and saves about 15 hours a month.",
+    "reseni-dovolene.html": "Automated leave requests in Teams: managers approve in one click, balances update automatically and HR gets a real-time overview. Deployment takes 2–4 weeks.",
+    "reseni-faktury.html": "Invoice automation extracts data, matches purchase orders and routes invoices for approval. Error rates stay below 1%, saving about 30 hours a month.",
+    "reseni-kniha-jizd.html": "Automated logbooks use GPS, fuel cards and calendars to record journeys, track roadworthiness tests, service and insurance, and save about 10 hours monthly.",
+    "reseni-objednavky.html": "Email order automation reads any format, creates orders in your ERP and sends customer confirmation within minutes, saving sales about 25 hours a month.",
+    "reseni-pracovni-vykazy.html": "Automated field timesheets are matched to jobs and prepared for invoicing and payroll. The back office saves about 12 hours a month, with fewer forgotten hours.",
+    "reseni-reklamace.html": "Complaint automation logs cases from email, phone and online shops, tracks deadlines and updates customers within minutes, preventing missed deadlines.",
+    "reseni-sklad-bez-papiru.html": "Paperless warehouse automation reads delivery note photos, matches them to orders and books goods in. Stock updates in minutes, saving about 20 hours monthly.",
+  },
+  de: {
+    "reseni-dochazka.html": "Automatisierte Anwesenheitserfassung bündelt Daten aus Stechuhren und Excel, prüft Schichten und erstellt die Lohnunterlage. Ersparnis: rund 15 Std./Monat.",
+    "reseni-dovolene.html": "Urlaubsanträge in Teams automatisch verwalten: Freigabe per Klick, aktuelle Salden und Echtzeit-Übersicht für HR. Go-live innerhalb von 2–4 Wochen.",
+    "reseni-faktury.html": "Automatisierung liest Eingangsrechnungen aus, gleicht Bestellungen ab und sendet sie zur Freigabe. Unter 1 % Fehlerquote und rund 30 Std. Ersparnis pro Monat.",
+    "reseni-kniha-jizd.html": "Das automatische Fahrtenbuch entsteht laufend aus GPS, Tankkarten und Kalendern, überwacht TÜV, Service und Versicherung und spart rund 10 Std. pro Monat.",
+    "reseni-objednavky.html": "Bestellungen aus E-Mails automatisch ins ERP übernehmen: Der Agent erkennt jedes Format und bereitet die Bestätigung vor. Der Vertrieb spart rund 25 Std./Monat.",
+    "reseni-pracovni-vykazy.html": "Automatisierte Technikernachweise werden Aufträgen zugeordnet und für Abrechnung sowie Löhne vorbereitet. Die Verwaltung spart rund 12 Std. pro Monat.",
+    "reseni-reklamace.html": "Reklamationsbearbeitung erfasst Fälle aus allen Kanälen, weist sie zu, überwacht Fristen und informiert Kunden in Minuten. Keine versäumten Fristen.",
+    "reseni-sklad-bez-papiru.html": "Papierloses Lager: Lieferschein fotografieren, auslesen, Bestellung abgleichen und Ware einlagern. Lagerbestand in Minuten aktuell, rund 20 Std./Monat gespart.",
+  },
+  pl: {
+    "reseni-dochazka.html": "Automatyczna ewidencja czasu pracy łączy dane z czytników i Excela, sprawdza grafiki i przygotowuje dane do płac. Dział płac oszczędza około 15 godz./mies.",
+    "reseni-dovolene.html": "Automatyczne wnioski urlopowe w Teams: akceptacja jednym kliknięciem, bieżące salda i podgląd dla HR w czasie rzeczywistym. Wdrożenie w 2–4 tygodnie.",
+    "reseni-faktury.html": "Automatyzacja faktur zakupowych odczytuje dane, paruje je z zamówieniami i wysyła do zatwierdzenia. Poziom błędów poniżej 1%, oszczędność ~30 godz./mies.",
+    "reseni-kniha-jizd.html": "Automatyczna ewidencja przejazdów powstaje z GPS, kart paliwowych i kalendarzy, pilnuje przeglądów, serwisu i ubezpieczeń oraz oszczędza ~10 godz./mies.",
+    "reseni-objednavky.html": "Automatyzacja zamówień z e-maili rozpoznaje każdy format, zapisuje zamówienie w ERP i wysyła potwierdzenie klientowi. Dział handlowy oszczędza ~25 godz./mies.",
+    "reseni-pracovni-vykazy.html": "Automatyczne raporty terenowe są łączone ze zleceniami i przygotowywane do fakturowania oraz płac. Mniej pominiętych godzin i ~12 godz./mies. oszczędności.",
+    "reseni-reklamace.html": "Automatyzacja reklamacji rejestruje zgłoszenia z każdego kanału, przypisuje je, pilnuje terminów i informuje klienta o statusie w kilka minut.",
+    "reseni-sklad-bez-papiru.html": "Magazyn bez papieru: agent odczytuje dowód dostawy, paruje go z zamówieniem i przyjmuje towar. Stan magazynu aktualny w kilka minut; oszczędność ~20 godz./mies.",
+  },
+};
+
 function pagePath(code, pageName) {
   return code === "cs" ? pageName : `${code}/${pageName}`;
 }
@@ -133,14 +176,62 @@ function navigation(page, code, pageName) {
 }
 
 function refreshAssets(html) {
+  html = html.replace(/<script data-subpage-motion-bootstrap>[\s\S]*?<\/script>\n?/g, "");
   html = html.replace(/^<link rel="stylesheet" href="\/assets\/(?:site-ui|home|site-shell|subpage)\.css(?:\?[^\"]*)?">\n?/gm, "");
   html = html.replace(/^<script src="\/assets\/(?:site-ui|home|subpage)\.js(?:\?[^\"]*)?" defer><\/script>\n?/gm, "");
   html = html.replace(/<\/style>\s*<\/head>/, "</style>\n</head>");
-  const assets = `<link rel="stylesheet" href="/assets/site-ui.css?v=${uiAssetVersion}">
+  const assets = `<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=${uiAssetVersion}">
 <link rel="stylesheet" href="/assets/site-shell.css?v=${shellAssetVersion}">
 <link rel="stylesheet" href="/assets/subpage.css?v=${assetVersion}">
 <script src="/assets/site-ui.js?v=${uiAssetVersion}" defer></script>`;
   return html.replace("</head>", `${assets}\n</head>`);
+}
+
+function normalizeFonts(html) {
+  return html
+    .replace(/^@font-face\{font-family:(['"])Greycliff CF\1;[^\n]*\}\n?/gm, "")
+    .replace(/GreycliffCF-(Medium|Bold|Heavy)\.otf/g, "GreycliffCF-$1.woff2")
+    .replace(/type="font\/otf"/g, 'type="font/woff2"')
+    .replace(/format\((['"])opentype\1\)/g, 'format("woff2")');
+}
+
+function updateStructuredDescriptions(value, description) {
+  if (Array.isArray(value)) {
+    value.forEach((item) => updateStructuredDescriptions(item, description));
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+
+  const types = Array.isArray(value["@type"]) ? value["@type"] : [value["@type"]];
+  if (types.includes("WebPage") || types.includes("Service")) value.description = description;
+  Object.values(value).forEach((item) => updateStructuredDescriptions(item, description));
+}
+
+function refreshSolutionMetadata(html, code, pageName) {
+  if (!pageName.startsWith("reseni-")) return html;
+  const description = solutionMetaDescriptions[code]?.[pageName];
+  if (!description) throw new Error(`${code}/${pageName}: missing solution meta description`);
+  const escapedDescription = escapeHtml(description);
+
+  html = html
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapedDescription}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapedDescription}">`)
+    .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${escapedDescription}">`);
+
+  return html.replace(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+    (script, jsonText) => {
+      let structuredData;
+      try {
+        structuredData = JSON.parse(jsonText);
+      } catch (error) {
+        throw new Error(`${code}/${pageName}: invalid JSON-LD (${error.message})`);
+      }
+      updateStructuredDescriptions(structuredData, description);
+      return `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
+    },
+  );
 }
 
 function refreshFavicons(html) {
@@ -186,12 +277,13 @@ function removeResidualEffects(html) {
     .replaceAll(
       "filter:drop-shadow(0 18px 34px rgba(0,0,0,.5));",
       "filter:none;",
-    );
+    )
+    .replaceAll("border-left:3px solid var(--green);", "border-left:0;");
 }
 
 function unwrapFaqDetails(html) {
   return html.replace(
-    /<details class="content-details reveal">\s*<summary>[\s\S]*?<\/summary>\s*(<div class="(?:rs-faq-grid|rs-faq)">[\s\S]*?<\/div>)\s*<\/details>/g,
+    /<details class="content-details(?: reveal)?">\s*<summary>[\s\S]*?<\/summary>\s*(<div class="(?:rs-faq-grid|rs-faq)">[\s\S]*?<\/div>)\s*<\/details>/g,
     "$1",
   );
 }
@@ -245,7 +337,7 @@ function decorateMethodIcons(html, pageName) {
   if (!blockIcons) return html;
 
   let blockIndex = 0;
-  html = html.replace(/<div class="jp-block reveal">/g, (match) => {
+  html = html.replace(/<div class="jp-block(?: reveal)?">/g, (match) => {
     const iconName = blockIcons[blockIndex];
     blockIndex += 1;
     return iconName
@@ -261,7 +353,7 @@ function decorateMethodIcons(html, pageName) {
   if (pageName === "jak-stavime-agenty.html") {
     const stackIcons = ["cpu", "workflow", "plug", "server-lock"];
     let stackIndex = 0;
-    html = html.replace(/<div class="jp-stack-item reveal">/g, (match) => {
+    html = html.replace(/<div class="jp-stack-item(?: reveal)?">/g, (match) => {
       const iconName = stackIcons[stackIndex];
       stackIndex += 1;
       return `${match}${generatedIcon(iconName, "subpage-card-icon")}`;
@@ -278,13 +370,13 @@ function decorateFirmaStats(html, pageName) {
   if (pageName !== "firma-2030.html") return html;
 
   html = html.replace(
-    /(<div class="f30-stat reveal">)\s*<p>([\s\S]*?)<cite>([\s\S]*?)<\/cite><\/p>(\s*<\/div>)/g,
+    /(<div class="f30-stat(?: reveal)?">)\s*<p>([\s\S]*?)<cite>([\s\S]*?)<\/cite><\/p>(\s*<\/div>)/g,
     "$1<p>$2</p><cite>$3</cite>$4",
   );
 
   const statIcons = ["levels", "coins", "users", "ruler-chart"];
   let statIndex = 0;
-  html = html.replace(/<div class="f30-stat reveal">/g, (match) => {
+  html = html.replace(/<div class="f30-stat(?: reveal)?">/g, (match) => {
     const iconName = statIcons[statIndex];
     statIndex += 1;
     return `${match}${generatedIcon(iconName, "subpage-card-icon")}`;
@@ -332,6 +424,24 @@ function decorateSubpageIcons(html, pageName) {
   return html;
 }
 
+function simplifyEditorialScaffolding(html) {
+  let keptHeroEyebrow = false;
+  html = html.replace(
+    /\s*<span class="eyebrow(?: reveal)?">[\s\S]*?<\/span>/g,
+    (eyebrow) => {
+      if (keptHeroEyebrow) return "";
+      keptHeroEyebrow = true;
+      return eyebrow;
+    },
+  );
+  html = html.replace(/\s*<span class="n">\d{2}<\/span>/g, "");
+  html = html.replace(/\sclass="([^"]*)"/g, (_attribute, classNames) => {
+    const kept = classNames.split(/\s+/).filter((className) => className && className !== "reveal");
+    return kept.length ? ` class="${kept.join(" ")}"` : "";
+  });
+  return html.replace(/<([a-z][a-z0-9-]*)\s+>/gi, "<$1>");
+}
+
 function refreshPage(code, pageName) {
   const page = locales[code];
   const target = resolve(root, pagePath(code, pageName));
@@ -339,6 +449,8 @@ function refreshPage(code, pageName) {
 
   let html = readFileSync(target, "utf8");
   html = unwrapFaqDetails(html);
+  html = normalizeFonts(html);
+  html = refreshSolutionMetadata(html, code, pageName);
   html = html.replace(
     /<meta name="theme-color" content="[^"]*">/,
     '<meta name="theme-color" content="#f5f7f2">',
@@ -383,6 +495,7 @@ function refreshPage(code, pageName) {
   }
 
   html = decorateSubpageIcons(html, pageName);
+  html = simplifyEditorialScaffolding(html);
 
   html = refreshAssets(html);
   writeFileSync(target, html);

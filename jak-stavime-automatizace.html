@@ -36,12 +36,9 @@
 <meta name="twitter:image:alt" content="Jak stavíme automatizace — EnterIT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/jak-stavime-automatizace.html#webpage","url":"https://enterit.cz/jak-stavime-automatizace.html","name":"Jak stavíme automatizace — EnterIT","description":"Automatizace, která lidem sebere rutinu, ne práci. Ukazujeme, co reálně automatizujeme, jak postupujeme ve 4 fázích a reálný příklad nasazení agenta v ERP Helios.","inLanguage":"cs","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/jak-stavime-automatizace.html#article"},"breadcrumb":{"@id":"https://enterit.cz/jak-stavime-automatizace.html#breadcrumb"}},{"@type":"TechArticle","@id":"https://enterit.cz/jak-stavime-automatizace.html#article","headline":"Automatizace, která lidem sebere rutinu, ne práci","description":"Automatizace, která lidem sebere rutinu, ne práci. Ukazujeme, co reálně automatizujeme, jak postupujeme ve 4 fázích a reálný příklad nasazení agenta v ERP Helios.","inLanguage":"cs","url":"https://enterit.cz/jak-stavime-automatizace.html","image":"https://enterit.cz/assets/og.png","author":{"@id":"https://enterit.cz/#organization"},"publisher":{"@id":"https://enterit.cz/#organization"},"mainEntityOfPage":{"@id":"https://enterit.cz/jak-stavime-automatizace.html#webpage"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/jak-stavime-automatizace.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://enterit.cz/"},{"@type":"ListItem","position":2,"name":"Automatizace, která lidem sebere rutinu, ne práci","item":"https://enterit.cz/jak-stavime-automatizace.html"}]}]}</script>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
 :root{
   --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
@@ -137,10 +134,11 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-9">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-<link rel="stylesheet" href="/assets/subpage.css?v=20260717-17">
-<script src="/assets/site-ui.js?v=20260717-9" defer></script>
+<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=20260720-6">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260720-4">
+<link rel="stylesheet" href="/assets/subpage.css?v=20260720-6">
+<script src="/assets/site-ui.js?v=20260720-6" defer></script>
 </head>
 <body class="subpage">
 <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
@@ -182,108 +180,101 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block jp-hero">
   <div class="wrap">
-    <!-- enterit-icon:workflow:start --><span class="subpage-hero-icon reveal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h4a4 4 0 0 1 4 4v5M15 18h-4a4 4 0 0 1-4-4V9"/></svg></span><!-- enterit-icon:end -->
-    <span class="eyebrow reveal">Jak to děláme</span>
-    <h1 class="h1 reveal">Automatizace, která lidem sebere rutinu, ne&nbsp;práci</h1>
-    <p class="hero-sub reveal">Objednávky, hledání v&nbsp;cenících i&nbsp;opakované formuláře může převzít stroj. Automatizaci stavíme na&nbsp;vašich procesech a&nbsp;systémech.</p>
+    <!-- enterit-icon:workflow:start --><span class="subpage-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h4a4 4 0 0 1 4 4v5M15 18h-4a4 4 0 0 1-4-4V9"/></svg></span><!-- enterit-icon:end -->
+    <span class="eyebrow">Jak to děláme</span>
+    <h1 class="h1">Automatizace, která lidem sebere rutinu, ne&nbsp;práci</h1>
+    <p class="hero-sub">Objednávky, hledání v&nbsp;cenících i&nbsp;opakované formuláře může převzít stroj. Automatizaci stavíme na&nbsp;vašich procesech a&nbsp;systémech.</p>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Proč se do&nbsp;toho vůbec pouštíme</span>
-    <h2 class="h2 reveal">Rutina nestojí jen čas. Stojí lidi a&nbsp;know-how.</h2>
-    <p class="lead reveal">Reálné firemní problémy měřitelné v&nbsp;hodinách i&nbsp;penězích.</p>
+    <h2 class="h2">Rutina nestojí jen čas. Stojí lidi a&nbsp;know-how.</h2>
+    <p class="lead">Reálné firemní problémy měřitelné v&nbsp;hodinách i&nbsp;penězích.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>Objednávka přijde mailem a&nbsp;někdo ji&nbsp;přepisuje</h3><p>U&nbsp;velkoobchodu s&nbsp;IT hardwarem chodily objednávky mailem a&nbsp;obchodní administrativa je přepisovala do&nbsp;systému — položku po&nbsp;položce, den co&nbsp;den. Stejně tak docházka: ruční záznamy, náchylné na&nbsp;chyby. Klasická práce, kterou nikdo nechce dělat, kde stačí jeden překlep a&nbsp;je problém.</p></div>
-      <div class="jp-block reveal"><h3>Technolog tráví hodiny zakládáním skoro identických položek</h3><p>Ve&nbsp;strojírenské firmě přijde objednávka jako jedna hlavní položka v&nbsp;ERP. Procesní technolog pak pro&nbsp;každý díl ručně stáhne PDF, podle něj v&nbsp;Heliosu vytvoří položky komponent, uloží výkresy a&nbsp;doplní technologický postup a&nbsp;časovou normu. To je 15–25 sestav týdně, tedy 70–120 položek — všechno zadané ručně.</p></div>
-      <div class="jp-block reveal"><h3>Obchodník proklikává exporty, aby našel cenu</h3><p>U&nbsp;výrobce stínicí techniky obchod ručně dohledával data v&nbsp;ERP K2 a&nbsp;v&nbsp;excelových ceníkách. Zjistit, které produkty odpovídají kombinaci rozměr–materiál–barva–cena, znamenalo desítky minut proklikávání — a&nbsp;s&nbsp;každým dotazem riziko, že přehlédne novější verzi ceníku.</p></div>
-      <div class="jp-block reveal"><h3>Vedení podepisuje, ale neví, kdo dokument viděl</h3><p>V&nbsp;obchodní firmě podepisovalo vedení dokumenty přes 20 stran bez jistoty, že prošly všemi, kdo je měli vidět. Schvalování běželo mailem, bez auditní stopy. U&nbsp;obchodních smluv to nebyla jen nepříjemnost, ale reálné právní riziko.</p></div>
+      <div class="jp-block"><h3>Objednávka přijde mailem a&nbsp;někdo ji&nbsp;přepisuje</h3><p>U&nbsp;velkoobchodu s&nbsp;IT hardwarem chodily objednávky mailem a&nbsp;obchodní administrativa je přepisovala do&nbsp;systému — položku po&nbsp;položce, den co&nbsp;den. Stejně tak docházka: ruční záznamy, náchylné na&nbsp;chyby. Klasická práce, kterou nikdo nechce dělat, kde stačí jeden překlep a&nbsp;je problém.</p></div>
+      <div class="jp-block"><h3>Technolog tráví hodiny zakládáním skoro identických položek</h3><p>Ve&nbsp;strojírenské firmě přijde objednávka jako jedna hlavní položka v&nbsp;ERP. Procesní technolog pak pro&nbsp;každý díl ručně stáhne PDF, podle něj v&nbsp;Heliosu vytvoří položky komponent, uloží výkresy a&nbsp;doplní technologický postup a&nbsp;časovou normu. To je 15–25 sestav týdně, tedy 70–120 položek — všechno zadané ručně.</p></div>
+      <div class="jp-block"><h3>Obchodník proklikává exporty, aby našel cenu</h3><p>U&nbsp;výrobce stínicí techniky obchod ručně dohledával data v&nbsp;ERP K2 a&nbsp;v&nbsp;excelových ceníkách. Zjistit, které produkty odpovídají kombinaci rozměr–materiál–barva–cena, znamenalo desítky minut proklikávání — a&nbsp;s&nbsp;každým dotazem riziko, že přehlédne novější verzi ceníku.</p></div>
+      <div class="jp-block"><h3>Vedení podepisuje, ale neví, kdo dokument viděl</h3><p>V&nbsp;obchodní firmě podepisovalo vedení dokumenty přes 20 stran bez jistoty, že prošly všemi, kdo je měli vidět. Schvalování běželo mailem, bez auditní stopy. U&nbsp;obchodních smluv to nebyla jen nepříjemnost, ale reálné právní riziko.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Co umíme řešit</span>
-    <h2 class="h2 reveal">Pět vrstev, kde stroj zvládne rutinu lépe než&nbsp;člověk</h2>
-    <p class="lead reveal">Pět typů rutiny, které umíme převzít.</p>
+    <h2 class="h2">Pět vrstev, kde stroj zvládne rutinu lépe než&nbsp;člověk</h2>
+    <p class="lead">Pět typů rutiny, které umíme převzít.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><!-- enterit-icon:database-arrows:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3 1 0 2-.1 2.8-.2M4 11v6c0 1.7 3.6 3 8 3"/><path d="m17 12 3 3-3 3m3-3h-6"/></svg></span><!-- enterit-icon:end --><h3>Transakční — data, která se přepisují</h3><p>Data, která se přepisují — vytěžení z&nbsp;příloh, sync CRM↔ERP, zakládání položek.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:book-search:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a3 3 0 0 1 3-3h5v17H7a3 3 0 0 0-3 3V5Zm16 7V2h-5a3 3 0 0 0-3 3"/><circle cx="17" cy="17" r="3"/><path d="m19.2 19.2 2 2"/></svg></span><!-- enterit-icon:end --><h3>Znalostní — odpovědi schované v&nbsp;dokumentech</h3><p>Odpovědi schované v&nbsp;dokumentech — asistent nad&nbsp;vaším know-how, vždy se zdrojem.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><!-- enterit-icon:end --><h3>Reportovací — čísla, na&nbsp;která lidé čekají</h3><p>Čísla, na&nbsp;která lidé čekají — data z&nbsp;ERP přirozeným jazykem, hned.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:message:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v7Z"/><path d="M8 9h8M8 13h5"/></svg></span><!-- enterit-icon:end --><h3>Komunikační — dotazy, které se stále vrací</h3><p>Dotazy, které se vrací — chatbot a&nbsp;odbavení mailů 24/7.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:bell:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span><!-- enterit-icon:end --><h3>Monitoring — termíny a&nbsp;odchylky, které propadnou sítí</h3><p>Termíny a&nbsp;odchylky — hlídá a&nbsp;upozorní, rozhodnutí nechá na&nbsp;člověku.</p></div>
+      <div class="jp-block"><!-- enterit-icon:database-arrows:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3 1 0 2-.1 2.8-.2M4 11v6c0 1.7 3.6 3 8 3"/><path d="m17 12 3 3-3 3m3-3h-6"/></svg></span><!-- enterit-icon:end --><h3>Transakční — data, která se přepisují</h3><p>Data, která se přepisují — vytěžení z&nbsp;příloh, sync CRM↔ERP, zakládání položek.</p></div>
+      <div class="jp-block"><!-- enterit-icon:book-search:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a3 3 0 0 1 3-3h5v17H7a3 3 0 0 0-3 3V5Zm16 7V2h-5a3 3 0 0 0-3 3"/><circle cx="17" cy="17" r="3"/><path d="m19.2 19.2 2 2"/></svg></span><!-- enterit-icon:end --><h3>Znalostní — odpovědi schované v&nbsp;dokumentech</h3><p>Odpovědi schované v&nbsp;dokumentech — asistent nad&nbsp;vaším know-how, vždy se zdrojem.</p></div>
+      <div class="jp-block"><!-- enterit-icon:chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><!-- enterit-icon:end --><h3>Reportovací — čísla, na&nbsp;která lidé čekají</h3><p>Čísla, na&nbsp;která lidé čekají — data z&nbsp;ERP přirozeným jazykem, hned.</p></div>
+      <div class="jp-block"><!-- enterit-icon:message:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v7Z"/><path d="M8 9h8M8 13h5"/></svg></span><!-- enterit-icon:end --><h3>Komunikační — dotazy, které se stále vrací</h3><p>Dotazy, které se vrací — chatbot a&nbsp;odbavení mailů 24/7.</p></div>
+      <div class="jp-block"><!-- enterit-icon:bell:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span><!-- enterit-icon:end --><h3>Monitoring — termíny a&nbsp;odchylky, které propadnou sítí</h3><p>Termíny a&nbsp;odchylky — hlídá a&nbsp;upozorní, rozhodnutí nechá na&nbsp;člověku.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Jak to stavíme</span>
-    <h2 class="h2 reveal">Čtyři fáze, které vás chrání před&nbsp;drahým omylem</h2>
-    <p class="lead reveal">Nejdřív změříme současný stav. Každý další krok stojí na&nbsp;ověřeném výsledku.</p>
+    <h2 class="h2">Čtyři fáze, které vás chrání před&nbsp;drahým omylem</h2>
+    <p class="lead">Nejdřív změříme současný stav. Každý další krok stojí na&nbsp;ověřeném výsledku.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>1. Analýza — nejdřív změříme, kolik to dnes stojí</h3><p>Nejdřív změříme, kolik vás rutina dnes stojí. Bez čísla nepočítáme návratnost.</p></div>
-      <div class="jp-block reveal"><h3>2. Pilot — ověříme to v&nbsp;praxi, ne&nbsp;na&nbsp;papíře</h3><p>Ověříme to v&nbsp;živém provozu na&nbsp;reálných datech. Odpoví to na&nbsp;jedno: funguje to?</p></div>
-      <div class="jp-block reveal"><h3>3. Nasazení — napojení na&nbsp;vaše systémy a&nbsp;role</h3><p>Napojení do&nbsp;toho, co firma používá — systémy, role, rozhodovací body.</p></div>
-      <div class="jp-block reveal"><h3>4. Podpora — provoz, měření a&nbsp;ladění</h3><p>Provozujeme, měříme a&nbsp;ladíme. Ne&nbsp;předat a&nbsp;zapomenout.</p></div>
+      <div class="jp-block"><h3>1. Analýza — nejdřív změříme, kolik to dnes stojí</h3><p>Nejdřív změříme, kolik vás rutina dnes stojí. Bez čísla nepočítáme návratnost.</p></div>
+      <div class="jp-block"><h3>2. Pilot — ověříme to v&nbsp;praxi, ne&nbsp;na&nbsp;papíře</h3><p>Ověříme to v&nbsp;živém provozu na&nbsp;reálných datech. Odpoví to na&nbsp;jedno: funguje to?</p></div>
+      <div class="jp-block"><h3>3. Nasazení — napojení na&nbsp;vaše systémy a&nbsp;role</h3><p>Napojení do&nbsp;toho, co firma používá — systémy, role, rozhodovací body.</p></div>
+      <div class="jp-block"><h3>4. Podpora — provoz, měření a&nbsp;ladění</h3><p>Provozujeme, měříme a&nbsp;ladíme. Ne&nbsp;předat a&nbsp;zapomenout.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Proč to není hračka</span>
-    <h2 class="h2 reveal">Vědět, kam nasadit stroj a&nbsp;kde nechat člověka, je expertíza sama o&nbsp;sobě</h2>
-    <p class="lead reveal">Klíčové je vědět, kde stroji věřit a&nbsp;kde rozhodnutí ponechat člověku.</p>
+    <h2 class="h2">Vědět, kam nasadit stroj a&nbsp;kde nechat člověka, je expertíza sama o&nbsp;sobě</h2>
+    <p class="lead">Klíčové je vědět, kde stroji věřit a&nbsp;kde rozhodnutí ponechat člověku.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>Záměrně nečteme to, co stroj čte nespolehlivě</h3><p>U&nbsp;agenta pro&nbsp;přípravu výroby ve&nbsp;strojírenské firmě jsme se rozhodli nečíst rozměry ze&nbsp;složitých výkresů — OCR je tam nespolehlivé. Čteme jen razítko a&nbsp;kusovník, kde je rozpoznávání spolehlivé. Méně ambiciózní záběr, ale řešení, kterému lze věřit.</p></div>
-      <div class="jp-block reveal"><h3>Co vidí jen člověk, necháváme na&nbsp;člověku</h3><p>Jen procesní technolog dokáže spolehlivě přečíst z&nbsp;výkresu tloušťku plechu nebo počet ohybů. Proto existuje dialog s&nbsp;náhledem PDF, kam tuto hodnotu doplní. Data se sesbírají do&nbsp;CSV a&nbsp;importem vznikne struktura v&nbsp;ERP. Stroj zvládá rutinu, úsudek zůstává na&nbsp;člověku.</p></div>
-      <div class="jp-block reveal"><h3>Realismus je součást smlouvy, ne&nbsp;slib</h3><p>Dobré řešení počítá s&nbsp;realitou. U&nbsp;datové platformy nad&nbsp;K2 se proto termíny smluvně posouvají při zpoždění na&nbsp;straně klienta (data z&nbsp;ERP) i&nbsp;kvůli dovoleným a&nbsp;svátkům. Žádná fantazijní data, která by stejně nikdo nedodržel.</p></div>
+      <div class="jp-block"><h3>Záměrně nečteme to, co stroj čte nespolehlivě</h3><p>U&nbsp;agenta pro&nbsp;přípravu výroby ve&nbsp;strojírenské firmě jsme se rozhodli nečíst rozměry ze&nbsp;složitých výkresů — OCR je tam nespolehlivé. Čteme jen razítko a&nbsp;kusovník, kde je rozpoznávání spolehlivé. Méně ambiciózní záběr, ale řešení, kterému lze věřit.</p></div>
+      <div class="jp-block"><h3>Co vidí jen člověk, necháváme na&nbsp;člověku</h3><p>Jen procesní technolog dokáže spolehlivě přečíst z&nbsp;výkresu tloušťku plechu nebo počet ohybů. Proto existuje dialog s&nbsp;náhledem PDF, kam tuto hodnotu doplní. Data se sesbírají do&nbsp;CSV a&nbsp;importem vznikne struktura v&nbsp;ERP. Stroj zvládá rutinu, úsudek zůstává na&nbsp;člověku.</p></div>
+      <div class="jp-block"><h3>Realismus je součást smlouvy, ne&nbsp;slib</h3><p>Dobré řešení počítá s&nbsp;realitou. U&nbsp;datové platformy nad&nbsp;K2 se proto termíny smluvně posouvají při zpoždění na&nbsp;straně klienta (data z&nbsp;ERP) i&nbsp;kvůli dovoleným a&nbsp;svátkům. Žádná fantazijní data, která by stejně nikdo nedodržel.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Human-in-the-loop</span>
-    <h2 class="h2 reveal">Agent doporučuje, člověk rozhoduje</h2>
-    <p class="lead reveal">Stroj připraví práci; úsudek a&nbsp;odpovědnost zůstávají člověku.</p>
+    <h2 class="h2">Agent doporučuje, člověk rozhoduje</h2>
+    <p class="lead">Stroj připraví práci; úsudek a&nbsp;odpovědnost zůstávají člověku.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h3>Agent vytvoří strukturu, technolog ji&nbsp;doladí</h3><p>Agent pro&nbsp;přípravu výroby přečte razítko a&nbsp;kusovník, najde podobné existující položky, vytvoří strukturu komponent a&nbsp;dokonce přenese technologický postup a&nbsp;časovou normu z&nbsp;původní položky. Procesní technolog pak jen zkontroluje a&nbsp;doplní to, co skutečně vyžaduje lidský úsudek.</p></div>
-      <div class="jp-block reveal"><h3>Systém zaznamená, ale podepisuje člověk</h3><p>Při digitálním schvalování smluv systém eviduje, kdo a&nbsp;kdy klikl na&nbsp;„schváleno" — a&nbsp;neumožní schválení, dokud uživatel dokument neotevřel. Dokonce měří, jak dlouho po&nbsp;otevření schválil, jako důkaz skutečného přečtení. Samotný elektronický podpis ale zůstává na&nbsp;člověku.</p></div>
-      <div class="jp-block reveal"><h3>Mapuje a&nbsp;upozorňuje, ale nerozhoduje</h3><p>Datová a&nbsp;AI vrstva nad&nbsp;procesy odhalí odchylku a&nbsp;upozorní na&nbsp;ni. Co se s&nbsp;odchylkou stane, je vždy rozhodnutí člověka. To je rozdíl mezi důvěryhodným nástrojem a&nbsp;systémem, kterému ve&nbsp;firmě nikdo nevěří.</p></div>
+      <div class="jp-block"><h3>Agent vytvoří strukturu, technolog ji&nbsp;doladí</h3><p>Agent pro&nbsp;přípravu výroby přečte razítko a&nbsp;kusovník, najde podobné existující položky, vytvoří strukturu komponent a&nbsp;dokonce přenese technologický postup a&nbsp;časovou normu z&nbsp;původní položky. Procesní technolog pak jen zkontroluje a&nbsp;doplní to, co skutečně vyžaduje lidský úsudek.</p></div>
+      <div class="jp-block"><h3>Systém zaznamená, ale podepisuje člověk</h3><p>Při digitálním schvalování smluv systém eviduje, kdo a&nbsp;kdy klikl na&nbsp;„schváleno" — a&nbsp;neumožní schválení, dokud uživatel dokument neotevřel. Dokonce měří, jak dlouho po&nbsp;otevření schválil, jako důkaz skutečného přečtení. Samotný elektronický podpis ale zůstává na&nbsp;člověku.</p></div>
+      <div class="jp-block"><h3>Mapuje a&nbsp;upozorňuje, ale nerozhoduje</h3><p>Datová a&nbsp;AI vrstva nad&nbsp;procesy odhalí odchylku a&nbsp;upozorní na&nbsp;ni. Co se s&nbsp;odchylkou stane, je vždy rozhodnutí člověka. To je rozdíl mezi důvěryhodným nástrojem a&nbsp;systémem, kterému ve&nbsp;firmě nikdo nevěří.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Integrace, bezpečnost a&nbsp;měření</span>
-    <h2 class="h2 reveal">Napojíme se na&nbsp;to, co máte. Bezpečnost řešíme od&nbsp;začátku. A&nbsp;vždy měříme.</h2>
-    <p class="lead reveal">Existující systémy, bezpečnost od&nbsp;návrhu a&nbsp;přínos měřený proti výchozímu stavu.</p>
+    <h2 class="h2">Napojíme se na&nbsp;to, co máte. Bezpečnost řešíme od&nbsp;začátku. A&nbsp;vždy měříme.</h2>
+    <p class="lead">Existující systémy, bezpečnost od&nbsp;návrhu a&nbsp;přínos měřený proti výchozímu stavu.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><!-- enterit-icon:plug:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12 4 8m12 4 4-4M7 7l3-3m7 3-3-3M8 12h8v2a4 4 0 0 1-8 0v-2Zm4 6v4"/></svg></span><!-- enterit-icon:end --><h3>Stavíme na&nbsp;vašich systémech, nenahrazujeme je</h3><p>Skutečně se napojujeme na&nbsp;ERP (K2, Helios, Business Central), SharePoint, Microsoft 365, účetní systémy, PDM/CAD, e-mail a&nbsp;WhatsApp. Pro&nbsp;orchestraci používáme hlavně n8n, dále Make, Zapier, Power Automate nebo Copilot Studio. Firmu nenutíme měnit nástroje, na&nbsp;které je zvyklá.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:shield-check:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><!-- enterit-icon:end --><h3>Bezpečnost je v&nbsp;návrhu, ne&nbsp;přišroubovaná na&nbsp;konci</h3><p>Data zůstávají ve&nbsp;firmě, přenos a&nbsp;úložiště jsou šifrované a&nbsp;řešení respektuje GDPR a&nbsp;českou legislativu. Pro&nbsp;citlivá data nabízíme on-prem nebo lokální modely. Součástí je „AI semafor" — jasná pravidla, co do&nbsp;AI smí a&nbsp;nesmí jít. V&nbsp;regulovaných oborech je to požadavek, ne&nbsp;bonus.</p></div>
-      <div class="jp-block reveal"><!-- enterit-icon:ruler-chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 18V9m5 9V5m5 13v-7m5 7V3"/><path d="M3 3h7M3 3v4m3-4v2"/></svg></span><!-- enterit-icon:end --><h3>Žádné řešení bez výchozí hodnoty a&nbsp;definovaného přínosu</h3><p>Měříme dobu procesu a&nbsp;odezvy, náklad na&nbsp;transakci, kvalitu výstupu, chybovost a&nbsp;přepracování, kapacitu týmu. Typická návratnost je 3–12 měsíců. Bez čísla na&nbsp;začátku se nedá poctivě říct, jestli to dává smysl — a&nbsp;my chceme, aby dávalo.</p></div>
+      <div class="jp-block"><!-- enterit-icon:plug:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12 4 8m12 4 4-4M7 7l3-3m7 3-3-3M8 12h8v2a4 4 0 0 1-8 0v-2Zm4 6v4"/></svg></span><!-- enterit-icon:end --><h3>Stavíme na&nbsp;vašich systémech, nenahrazujeme je</h3><p>Skutečně se napojujeme na&nbsp;ERP (K2, Helios, Business Central), SharePoint, Microsoft 365, účetní systémy, PDM/CAD, e-mail a&nbsp;WhatsApp. Pro&nbsp;orchestraci používáme hlavně n8n, dále Make, Zapier, Power Automate nebo Copilot Studio. Firmu nenutíme měnit nástroje, na&nbsp;které je zvyklá.</p></div>
+      <div class="jp-block"><!-- enterit-icon:shield-check:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span><!-- enterit-icon:end --><h3>Bezpečnost je v&nbsp;návrhu, ne&nbsp;přišroubovaná na&nbsp;konci</h3><p>Data zůstávají ve&nbsp;firmě, přenos a&nbsp;úložiště jsou šifrované a&nbsp;řešení respektuje GDPR a&nbsp;českou legislativu. Pro&nbsp;citlivá data nabízíme on-prem nebo lokální modely. Součástí je „AI semafor" — jasná pravidla, co do&nbsp;AI smí a&nbsp;nesmí jít. V&nbsp;regulovaných oborech je to požadavek, ne&nbsp;bonus.</p></div>
+      <div class="jp-block"><!-- enterit-icon:ruler-chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 18V9m5 9V5m5 13v-7m5 7V3"/><path d="M3 3h7M3 3v4m3-4v2"/></svg></span><!-- enterit-icon:end --><h3>Žádné řešení bez výchozí hodnoty a&nbsp;definovaného přínosu</h3><p>Měříme dobu procesu a&nbsp;odezvy, náklad na&nbsp;transakci, kvalitu výstupu, chybovost a&nbsp;přepracování, kapacitu týmu. Typická návratnost je 3–12 měsíců. Bez čísla na&nbsp;začátku se nedá poctivě říct, jestli to dává smysl — a&nbsp;my chceme, aby dávalo.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Reálný příklad</span>
-    <h2 class="h2 reveal">Strojírenská firma: jak jsme postavili agenta, který zakládá položky v&nbsp;ERP místo technologa</h2>
-    <details class="content-details reveal">
+    <h2 class="h2">Strojírenská firma: jak jsme postavili agenta, který zakládá položky v&nbsp;ERP místo technologa</h2>
+    <details class="content-details">
       <summary><span>Projít celý postup krok za&nbsp;krokem</span><i aria-hidden="true">+</i></summary>
     <div class="jp-walk">
-      <div class="jp-step reveal"><span class="sn">Krok 1</span><h3>Výchozí stav: hodiny rutiny každý den</h3><p>Technolog ručně zakládal komponenty, výkresy, postupy a&nbsp;normy: 70–120 položek týdně.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 2</span><h3>Vstupní audit reálných výkresů</h3><p>Na&nbsp;5–10 PDF jsme ověřili rozvržení i&nbsp;spolehlivost a&nbsp;podle toho nastavili pilot.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 3</span><h3>Záměrné rozhodnutí: co číst a&nbsp;co ne</h3><p>Agent čte spolehlivé razítko a&nbsp;kusovník. Složité rozměry nechává technologovi.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 4</span><h3>Agent vytvoří strukturu a&nbsp;přenese standardy</h3><p>Z&nbsp;PDF a&nbsp;kusovníku najde podobné položky a&nbsp;vytvoří strukturu v&nbsp;Heliosu přes API.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 5</span><h3>Human-in-the-loop tam, kde rozhoduje člověk</h3><p>Technolog v&nbsp;náhledu doplní nečitelné hodnoty; agent připraví zbytek pro&nbsp;ERP.</p></div>
-      <div class="jp-step reveal"><span class="sn">Krok 6</span><h3>Fázování a&nbsp;výsledek</h3><p>Nejdřív vyráběné, potom nakupované díly. Agent zpracuje 70–120 položek týdně a&nbsp;technolog pouze kontroluje výjimky.</p></div>
+      <div class="jp-step"><span class="sn">Krok 1</span><h3>Výchozí stav: hodiny rutiny každý den</h3><p>Technolog ručně zakládal komponenty, výkresy, postupy a&nbsp;normy: 70–120 položek týdně.</p></div>
+      <div class="jp-step"><span class="sn">Krok 2</span><h3>Vstupní audit reálných výkresů</h3><p>Na&nbsp;5–10 PDF jsme ověřili rozvržení i&nbsp;spolehlivost a&nbsp;podle toho nastavili pilot.</p></div>
+      <div class="jp-step"><span class="sn">Krok 3</span><h3>Záměrné rozhodnutí: co číst a&nbsp;co ne</h3><p>Agent čte spolehlivé razítko a&nbsp;kusovník. Složité rozměry nechává technologovi.</p></div>
+      <div class="jp-step"><span class="sn">Krok 4</span><h3>Agent vytvoří strukturu a&nbsp;přenese standardy</h3><p>Z&nbsp;PDF a&nbsp;kusovníku najde podobné položky a&nbsp;vytvoří strukturu v&nbsp;Heliosu přes API.</p></div>
+      <div class="jp-step"><span class="sn">Krok 5</span><h3>Human-in-the-loop tam, kde rozhoduje člověk</h3><p>Technolog v&nbsp;náhledu doplní nečitelné hodnoty; agent připraví zbytek pro&nbsp;ERP.</p></div>
+      <div class="jp-step"><span class="sn">Krok 6</span><h3>Fázování a&nbsp;výsledek</h3><p>Nejdřív vyráběné, potom nakupované díly. Agent zpracuje 70–120 položek týdně a&nbsp;technolog pouze kontroluje výjimky.</p></div>
     </div>
     </details>
   </div>
@@ -291,8 +282,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 <section class="block jp-final">
   <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Pojďme do&nbsp;toho</span>
+    <div class="cta-card">
       <h2 class="h2">Máte proces, který žere čas vašich lidí?</h2>
       <p>Řekněte nám, co se u&nbsp;vás pořád dokola dělá ručně. Navrhneme řešení a&nbsp;spočítáme, kolik se vrátí.</p>
       <div class="cta-btns">

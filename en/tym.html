@@ -36,12 +36,9 @@
 <meta name="twitter:image:alt" content="The team — who builds and deploys it for you | Enter IT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://enterit.cz/en/tym.html#webpage","url":"https://enterit.cz/en/tym.html","name":"75-Person AI & Software Engineering Team | EnterIT","description":"Meet 75 specialists across Enterprise, AI Agents and Studio. One accountable team for architecture, integrations, product development and 24/7 operations.","inLanguage":"en","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/#organization"},"breadcrumb":{"@id":"https://enterit.cz/en/tym.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/en/tym.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://enterit.cz/en.html"},{"@type":"ListItem","position":2,"name":"An engineering team that builds, deploys and secures your solution.","item":"https://enterit.cz/en/tym.html"}]}]}</script>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
 :root{
   --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
@@ -147,7 +144,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 @media(max-width:560px){.tm-featured{grid-template-columns:1fr;gap:20px}.tm-featured .tm-photo{max-width:230px}}
 .tm-featured .tm-name{margin-top:0}
 .tm-featured .tm-bio{max-width:52ch}
-.tm-quote{font-family:var(--head);font-weight:700;font-style:italic;color:#fff;font-size:clamp(15px,1.7vw,17px);line-height:1.5;margin:15px 0 0;border-left:3px solid var(--green);padding-left:15px}
+.tm-quote{font-family:var(--head);font-weight:700;font-style:italic;color:#fff;font-size:clamp(15px,1.7vw,17px);line-height:1.5;margin:15px 0 0;border-left:0;padding-left:15px}
 .tm-featured.tm-lead{align-items:start;max-width:840px}
 .tm-caps-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:17px 0 0;display:block}
 .tm-caps{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
@@ -229,10 +226,11 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-9">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20260717-6">
-<link rel="stylesheet" href="/assets/subpage.css?v=20260717-17">
-<script src="/assets/site-ui.js?v=20260717-9" defer></script>
+<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=20260720-6">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260720-4">
+<link rel="stylesheet" href="/assets/subpage.css?v=20260720-6">
+<script src="/assets/site-ui.js?v=20260720-6" defer></script>
 </head>
 <body class="subpage">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -275,10 +273,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ HERO ============ -->
 <section class="block tym-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">The team behind Enter IT</span>
-    <h1 class="h1 reveal d1">An engineering team that <span class="gt">builds, deploys and&nbsp;secures your solution.</span></h1>
-    <p class="hero-sub reveal d1">75 people across architecture, agentic AI and&nbsp;product development. One accountable team, from&nbsp;design to&nbsp;24/7 operations.</p>
-    <div class="tym-hero-badges reveal d2">
+    <span class="eyebrow">The team behind Enter IT</span>
+    <h1 class="h1 d1">An engineering team that <span class="gt">builds, deploys and&nbsp;secures your solution.</span></h1>
+    <p class="hero-sub d1">75 people across architecture, agentic AI and&nbsp;product development. One accountable team, from&nbsp;design to&nbsp;24/7 operations.</p>
+    <div class="tym-hero-badges d2">
       <span class="tym-badge"><b>75</b><span>specialists</span></span>
       <span class="tym-badge"><b>3</b><span>specialized teams</span></span>
       <span class="tym-badge"><b>25+</b><span>case studies</span></span>
@@ -290,11 +288,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ ENGINEERING CAPACITY ============ -->
 <section class="block alt" id="engineering">
   <div class="wrap">
-    <span class="eyebrow reveal">01 · Engineering capacity</span>
-    <h2 class="h2 reveal">75 specialists. Three specialized teams. <span class="gt">One partner.</span></h2>
-    <p class="lead reveal">Three specialist teams provide the capacity to&nbsp;deliver and&nbsp;one clear owner for&nbsp;the outcome.</p>
+    <h2 class="h2">75 specialists. Three specialized teams. <span class="gt">One partner.</span></h2>
+    <p class="lead">Three specialist teams provide the capacity to&nbsp;deliver and&nbsp;one clear owner for&nbsp;the outcome.</p>
 
-    <div class="eng-stats reveal">
+    <div class="eng-stats">
       <div class="eng-stat"><div class="v">75</div><div class="l">specialists</div></div>
       <div class="eng-stat"><div class="v">3</div><div class="l">specialized teams</div></div>
       <div class="eng-stat"><div class="v">10+</div><div class="l">years of experience</div></div>
@@ -302,7 +299,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
     </div>
 
     <div class="eng-grid">
-      <div class="eng-card reveal" style="--acc:#6ECEFF">
+      <div class="eng-card" style="--acc:#6ECEFF">
         <div class="eng-top"><span class="eng-name">Enter Enterprise</span><span class="eng-size">45 people</span></div>
         <p class="eng-tag">Scalable systems for&nbsp;demanding operations.</p>
         <p class="eng-p">Senior architects deliver custom systems, integrations and&nbsp;modernization for&nbsp;large companies as&nbsp;one team.</p>
@@ -313,7 +310,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
           <span class="eng-more2">+43 more on&nbsp;the team</span>
         </div>
       </div>
-      <div class="eng-card reveal d1" style="--acc:#B790FF">
+      <div class="eng-card d1" style="--acc:#B790FF">
         <div class="eng-top"><span class="eng-name">Enter Agents</span><span class="eng-size">25 people</span></div>
         <p class="eng-tag">AI agents that work 24/7.</p>
         <p class="eng-p">Forward-deployed engineers build agents inside&nbsp;your processes, from&nbsp;data design through live operations.</p>
@@ -324,7 +321,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
           <span class="eng-more2">+23 more on&nbsp;the team</span>
         </div>
       </div>
-      <div class="eng-card reveal d2" style="--acc:#41E39E">
+      <div class="eng-card d2" style="--acc:#41E39E">
         <div class="eng-top"><span class="eng-name">Enter Studio</span><span class="eng-size">5 people</span></div>
         <p class="eng-tag">Our own people. Fast, agile, close.</p>
         <p class="eng-p">Our in-house product team delivers websites, apps and&nbsp;the data foundations for&nbsp;agentic solutions from&nbsp;MVP onward.</p>
@@ -342,46 +339,45 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ CAPABILITIES ============ -->
 <section class="block" id="capabilities">
   <div class="wrap">
-    <span class="eyebrow reveal">02 · What we'll build for you</span>
-    <h2 class="h2 reveal">The whole infrastructure. <span class="gt">One team.</span></h2>
-    <p class="lead reveal">Architecture, integrations, agents, operations and&nbsp;security from&nbsp;one accountable team.</p>
+    <h2 class="h2">The whole infrastructure. <span class="gt">One team.</span></h2>
+    <p class="lead">Architecture, integrations, agents, operations and&nbsp;security from&nbsp;one accountable team.</p>
     <div class="cap-grid">
-      <div class="cap reveal">
+      <div class="cap">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
         <h3>Architecture &amp; custom systems</h3>
         <p>Bespoke systems designed to&nbsp;scale with&nbsp;your business.</p>
       </div>
-      <div class="cap reveal d1">
+      <div class="cap d1">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"/><path d="M8 7h8a2 2 0 0 1 2 2v3a6 6 0 0 1-12 0V9a2 2 0 0 1 2-2z"/><path d="M12 18v4"/></svg></div>
         <h3>Integration with your systems</h3>
         <p>ERP, CRM, WMS, e-shop and&nbsp;accounting connected without rip-and-replace.</p>
       </div>
-      <div class="cap reveal d2">
+      <div class="cap d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
         <h3>AI agents in operation</h3>
         <p>Agents that handle routine inside&nbsp;your processes 24/7.</p>
       </div>
-      <div class="cap reveal d3">
+      <div class="cap d3">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
         <h3>Data platforms &amp; layers</h3>
         <p>One trusted data layer for&nbsp;agents and&nbsp;reporting.</p>
       </div>
-      <div class="cap reveal">
+      <div class="cap">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div>
         <h3>DevOps, servers &amp; infrastructure</h3>
         <p>Secure cloud or on-prem operations with&nbsp;monitoring and&nbsp;backups.</p>
       </div>
-      <div class="cap reveal d1">
+      <div class="cap d1">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6-1.5A4 4 0 0 0 6 19z"/><path d="M12 12v6M9.5 15l2.5 3 2.5-3"/></svg></div>
         <h3>Cloud migration &amp; modernization</h3>
         <p>Legacy modernization and&nbsp;cloud migration with&nbsp;minimal disruption.</p>
       </div>
-      <div class="cap reveal d2">
+      <div class="cap d2">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M9.5 6.5h.01"/></svg></div>
         <h3>Websites, apps &amp; products</h3>
         <p>Web, mobile and&nbsp;internal products from&nbsp;MVP to&nbsp;scale.</p>
       </div>
-      <div class="cap reveal d3">
+      <div class="cap d3">
         <div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Operations, security &amp; maintenance</h3>
         <p>SLA operations with&nbsp;GDPR, AI&nbsp;Act, human review and&nbsp;audit trails.</p>
@@ -393,10 +389,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ STACK ============ -->
 <section class="block alt" id="stack">
   <div class="wrap">
-    <span class="eyebrow reveal">03 · What we build on</span>
-    <h2 class="h2 reveal">We work with&nbsp;<span class="gt">what you already have.</span></h2>
-    <p class="lead reveal">Over 60 systems, platforms and&nbsp;models integrated in&nbsp;live production.</p>
-    <div class="stack reveal">
+    <h2 class="h2">We work with&nbsp;<span class="gt">what you already have.</span></h2>
+    <p class="lead">Over 60 systems, platforms and&nbsp;models integrated in&nbsp;live production.</p>
+    <div class="stack">
       <div class="stack-row"><span class="stack-cat">ERP</span><div class="stack-chips"><span>SAP</span><span>Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Pohoda</span><span>Oracle NetSuite</span></div></div>
       <div class="stack-row"><span class="stack-cat">CRM</span><div class="stack-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span></div></div>
       <div class="stack-row"><span class="stack-cat">E-shop</span><div class="stack-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Magento</span></div></div>
@@ -411,30 +406,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ PROOF ============ -->
 <section class="block" id="proof">
   <div class="wrap">
-    <span class="eyebrow reveal">04 · What we've built</span>
-    <h2 class="h2 reveal">Beyond promises. <span class="gt">Production systems with&nbsp;measurable results.</span></h2>
-    <p class="lead reveal">Selected projects are anonymized by&nbsp;industry; we can share relevant references in&nbsp;a meeting.</p>
+    <h2 class="h2">Beyond promises. <span class="gt">Production systems with&nbsp;measurable results.</span></h2>
+    <p class="lead">Selected projects are anonymized by&nbsp;industry; we can share relevant references in&nbsp;a meeting.</p>
     <div class="proof-grid">
-      <div class="proof reveal"><span class="ob">Manufacturing · ~600 people</span><div class="kpi">17 → 78 %</div><p>An agentic layer built on&nbsp;Business Central. Employees use AI daily, saving ~40&nbsp;min/week per&nbsp;user.</p></div>
-      <div class="proof reveal d1"><span class="ob">Energy · cogeneration</span><div class="kpi">9 agents</div><p>Documents, service, reporting and&nbsp;meeting minutes → tasks. Two countries, one overview.</p></div>
-      <div class="proof reveal d2"><span class="ob">Metals trading · 82 people</span><div class="kpi">3 months</div><p>The programme paid back in&nbsp;3 months, saving ~1,420&nbsp;hours and&nbsp;~CZK&nbsp;710k per&nbsp;year.</p></div>
-      <div class="proof reveal"><span class="ob">Construction group</span><div class="kpi">−180 h/mo</div><p>Bespoke internal system. No more manual re-keying, one unified overview of&nbsp;jobs.</p></div>
-      <div class="proof reveal d1"><span class="ob">Translation · 8-country holding</span><div class="kpi">−90 %</div><p>GenAI embedded in&nbsp;operational workflows plus a&nbsp;local LLM on&nbsp;company hardware. Lower costs, with&nbsp;data kept in-house.</p></div>
-      <div class="proof reveal d2"><span class="ob">Logistics · migration</span><div class="kpi">−41 %</div><p>Stack migration and&nbsp;automation of warehouse ↔ transport flows. Lower operating costs.</p></div>
+      <div class="proof"><span class="ob">Manufacturing · ~600 people</span><div class="kpi">17 → 78 %</div><p>An agentic layer built on&nbsp;Business Central. Employees use AI daily, saving ~40&nbsp;min/week per&nbsp;user.</p></div>
+      <div class="proof d1"><span class="ob">Energy · cogeneration</span><div class="kpi">9 agents</div><p>Documents, service, reporting and&nbsp;meeting minutes → tasks. Two countries, one overview.</p></div>
+      <div class="proof d2"><span class="ob">Metals trading · 82 people</span><div class="kpi">3 months</div><p>The programme paid back in&nbsp;3 months, saving ~1,420&nbsp;hours and&nbsp;~CZK&nbsp;710k per&nbsp;year.</p></div>
+      <div class="proof"><span class="ob">Construction group</span><div class="kpi">−180 h/mo</div><p>Bespoke internal system. No more manual re-keying, one unified overview of&nbsp;jobs.</p></div>
+      <div class="proof d1"><span class="ob">Translation · 8-country holding</span><div class="kpi">−90 %</div><p>GenAI embedded in&nbsp;operational workflows plus a&nbsp;local LLM on&nbsp;company hardware. Lower costs, with&nbsp;data kept in-house.</p></div>
+      <div class="proof d2"><span class="ob">Logistics · migration</span><div class="kpi">−41 %</div><p>Stack migration and&nbsp;automation of warehouse ↔ transport flows. Lower operating costs.</p></div>
     </div>
-    <div class="proof-foot reveal"><a class="tlink" href="/en.html#results">All case studies →</a></div>
+    <div class="proof-foot"><a class="tlink" href="/en.html#results">All case studies →</a></div>
   </div>
 </section>
 
 <!-- ============ PEOPLE ============ -->
 <section class="block alt" id="lide">
   <div class="wrap">
-    <span class="eyebrow reveal">05 · The people who lead it</span>
-    <h2 class="h2 reveal">The core that <span class="gt">stands behind it.</span></h2>
-    <p class="lead reveal">Leadership aligns strategy, operations and&nbsp;adoption; specialists cover focused business and&nbsp;technical challenges.</p>
+    <h2 class="h2">The core that <span class="gt">stands behind it.</span></h2>
+    <p class="lead">Leadership aligns strategy, operations and&nbsp;adoption; specialists cover focused business and&nbsp;technical challenges.</p>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">01</span><h3>Founder</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Founder</h3><span class="team-gl"></span></div>
       <div class="tm tm-featured">
         <div class="tm-photo"><img src="/assets/team/milo.jpg" alt="Milo Brzák" loading="lazy" width="440" height="440" decoding="async"></div>
         <div>
@@ -447,8 +440,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       </div>
     </div>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">02</span><h3>Operations &amp; adoption</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Operations &amp; adoption</h3><span class="team-gl"></span></div>
       <div class="tm tm-featured tm-lead">
         <div class="tm-photo"><img src="/assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy" width="440" height="440" decoding="async"></div>
         <div>
@@ -467,8 +460,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
       </div>
     </div>
 
-    <div class="team-group reveal">
-      <div class="team-gh"><span class="n">03</span><h3>Specialists &amp; consultants</h3><span class="team-gl"></span></div>
+    <div class="team-group">
+      <div class="team-gh"><h3>Specialists &amp; consultants</h3><span class="team-gl"></span></div>
       <div class="team-grid compact">
         <div class="tm"><div class="tm-photo"><img src="/assets/team/dolezal.jpg" alt="Tomáš Doležal" loading="lazy" width="388" height="440" decoding="async"></div><h3 class="tm-name">Tomáš Doležal</h3><span class="tm-role">AI adoption · transformation</span><div class="tm-links"><a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn — Tomáš Doležal"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div>
         <div class="tm"><div class="tm-photo"><img src="/assets/team/soucek.jpg" alt="Ondra Souček" loading="lazy" width="293" height="440" decoding="async"></div><h3 class="tm-name">Ondra Souček</h3><span class="tm-role">AI for social media</span><div class="tm-links"><a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn — Ondra Souček"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div></div>
@@ -484,8 +477,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 <!-- ============ CTA ============ -->
 <section class="block tym-final">
   <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Let's get started</span>
+    <div class="cta-card">
       <h2 class="h2">We can build it <span class="gt">for your business.</span></h2>
       <p>In 30&nbsp;minutes, identify the best first use case and&nbsp;its path to&nbsp;production.</p>
       <div class="cta-btns">
