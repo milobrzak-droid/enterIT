@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>How we build AI agents | EnterIT</title>
+<title>How we build AI agents | Enter IT</title>
 <meta name="description" content="Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.">
 <link rel="canonical" href="https://enterit.cz/en/jak-stavime-agenty.html">
 <link rel="alternate" hreflang="cs" href="https://enterit.cz/jak-stavime-agenty.html">
@@ -11,27 +11,34 @@
 <link rel="alternate" hreflang="de" href="https://enterit.cz/de/jak-stavime-agenty.html">
 <link rel="alternate" hreflang="pl" href="https://enterit.cz/pl/jak-stavime-agenty.html">
 <link rel="alternate" hreflang="x-default" href="https://enterit.cz/jak-stavime-agenty.html">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<meta name="theme-color" content="#17202E">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260717-enter-symbol">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260717-enter-symbol">
+<link rel="icon" href="/favicon.ico?v=20260717-enter-symbol" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=20260717-enter-symbol">
+<meta name="theme-color" content="#f5f7f2">
 <meta name="robots" content="index,follow">
 <meta name="author" content="AI Enter s.r.o.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="EnterIT">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="How we build AI agents | EnterIT">
+<meta property="og:title" content="How we build AI agents | Enter IT">
 <meta property="og:description" content="Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.">
 <meta property="og:url" content="https://enterit.cz/en/jak-stavime-agenty.html">
 <meta property="og:image" content="https://enterit.cz/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How we build AI agents | EnterIT">
+<meta name="twitter:title" content="How we build AI agents | Enter IT">
 <meta name="twitter:description" content="Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How we build AI agents | Enter IT">
+<meta name="twitter:image" content="https://enterit.cz/assets/og.png">
+<meta name="twitter:image:alt" content="How we build AI agents | Enter IT">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnterIT","legalName":"AI Enter s.r.o.","url":"https://enterit.cz","logo":"https://enterit.cz/assets/og.png","email":"milo@enterit.cz","telephone":"+420608969263","address":{"@type":"PostalAddress","streetAddress":"Zahradní 2004/46d","postalCode":"792 01","addressLocality":"Bruntál","addressCountry":"CZ"},"vatID":"CZ19086652"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://enterit.cz/en/jak-stavime-agenty.html#webpage","url":"https://enterit.cz/en/jak-stavime-agenty.html","name":"How we build AI agents | Enter IT","description":"Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.","inLanguage":"en","isPartOf":{"@id":"https://enterit.cz/#website"},"about":{"@id":"https://enterit.cz/#organization"},"mainEntity":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#article"},"breadcrumb":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#breadcrumb"}},{"@type":"TechArticle","@id":"https://enterit.cz/en/jak-stavime-agenty.html#article","headline":"An agent isn't a chatbot. It's a digital colleague with a clearly defined job.","description":"Architecture, security, human-in-the-loop and measurement. What an AI agent that really runs in a company looks like — step by step.","inLanguage":"en","url":"https://enterit.cz/en/jak-stavime-agenty.html","image":"https://enterit.cz/assets/og.png","author":{"@id":"https://enterit.cz/#organization"},"publisher":{"@id":"https://enterit.cz/#organization"},"mainEntityOfPage":{"@id":"https://enterit.cz/en/jak-stavime-agenty.html#webpage"}},{"@type":"BreadcrumbList","@id":"https://enterit.cz/en/jak-stavime-agenty.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://enterit.cz/en.html"},{"@type":"ListItem","position":2,"name":"An agent isn't a chatbot. It's a digital colleague with a clearly defined job.","item":"https://enterit.cz/en/jak-stavime-agenty.html"}]}]}</script>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
 :root{
   --navy:#17202E; --navy-deep:#10171F; --navy-1:#1B2533; --navy-2:#1E2733; --navy-3:#27313F;
@@ -95,14 +102,14 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu a{font-family:var(--head);font-weight:700;font-size:26px;color:var(--white)}
 .mobile-menu a:hover{color:var(--green)}
-@media(max-width:1000px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
-@media(min-width:1001px){.mobile-menu{display:none}}
+@media(max-width:1180px){.nav-links{display:none}.nav-right .btn{display:none}.mtoggle{display:flex}}
+@media(min-width:1181px){.mobile-menu{display:none}}
 .jp-hero{padding-top:clamp(120px,18vh,180px);padding-bottom:12px}
 .jp-blocks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
 @media(max-width:820px){.jp-blocks{grid-template-columns:1fr}}
 .jp-block{background:var(--navy-1);border:2px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;transition:border-color .2s,transform .2s}
 .jp-block:hover{border-color:var(--green-line);transform:translateY(-2px)}
-.jp-block h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;margin:0 0 9px;line-height:1.25}
+.jp-block h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:17px;margin:0 0 9px;line-height:1.25}
 .jp-block p{font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--text);margin:0}
 .jp-num{display:grid;grid-template-columns:36px 1fr;gap:14px}
 .jp-num i{font-family:var(--head);font-weight:900;color:var(--green);font-size:16px;font-style:normal}
@@ -119,7 +126,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 .jp-step:last-child{padding-bottom:0}
 .jp-step::before{content:"";position:absolute;left:-34px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--navy),0 0 10px var(--green-line)}
 .jp-step .sn{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
-.jp-step h4{font-family:var(--head);font-weight:800;color:var(--white);font-size:18px;margin:6px 0 8px}
+.jp-step h3{font-family:var(--head);font-weight:800;color:var(--white);font-size:18px;margin:6px 0 8px}
 .jp-step p{font-family:var(--mono);font-size:13.5px;line-height:1.7;color:var(--text);margin:0;max-width:70ch}
 .jp-final .cta-card{max-width:680px;text-align:center;margin:0 auto}
 .jp-final p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--text);max-width:54ch;margin:0 auto 26px}
@@ -136,167 +143,172 @@ header{position:fixed;top:0;left:0;width:100%;z-index:60;background:rgba(23,32,4
 a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
 </style>
+<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+<link rel="stylesheet" href="/assets/site-ui.css?v=20260720-6">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260720-4">
+<link rel="stylesheet" href="/assets/subpage.css?v=20260720-6">
+<script src="/assets/site-ui.js?v=20260720-6" defer></script>
 <script defer src="/assets/analytics.js"></script>
 </head>
-<body>
+<body class="subpage">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<header id="header">
-  <div class="wrap">
-    <nav class="nav">
-      <a class="brand" href="/en.html" aria-label="EnterIT — home">
-        <img src="/assets/enter_logo_white.svg" alt="Enter">
-        <span class="it">IT</span>
-      </a>
-      <div class="nav-links">
-        <a href="/en.html#problems">What we solve</a>
-        <a href="/en.html#solutions">Ready-made solutions</a>
-        <a href="/en.html#how">How we do it</a>
-        <a href="/en.html#integ">Integrations</a>
-        <a href="/en.html#work">References</a>
-      </div>
-      <div class="nav-right">
-        <a class="btn green" href="/en.html#contact">Contact us</a>
-        <button class="mtoggle" id="mtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-    </nav>
+<header class="site-header" id="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href="/en.html" aria-label="EnterIT — home">
+      <img src="/assets/enter_logo_black.svg" alt="EnterIT" width="477" height="200">
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+    <a href="/en.html#services">What we build</a>
+    <a href="/en.html#results">Results</a>
+    <a href="/en.html#process">How we work</a>
+    <a href="/en.html#integrations">Integrations</a>
+    <a href="/en/tym.html">Team</a></nav>
+    <div class="nav-actions">
+      <details class="language-menu">
+  <summary class="language-menu__trigger"><span class="sr-only">Language: English</span><span class="language-menu__current" aria-hidden="true">EN</span><svg class="language-menu__chevron" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></summary>
+  <ul class="language-menu__popover"><li><a class="language-menu__option" href="/jak-stavime-agenty.html" lang="cs" hreflang="cs"><span>Čeština</span><small aria-hidden="true">CZ</small></a></li><li><a class="language-menu__option" href="/en/jak-stavime-agenty.html" lang="en" hreflang="en" aria-current="page"><span>English</span><small aria-hidden="true">EN</small></a></li><li><a class="language-menu__option" href="/de/jak-stavime-agenty.html" lang="de" hreflang="de"><span>Deutsch</span><small aria-hidden="true">DE</small></a></li><li><a class="language-menu__option" href="/pl/jak-stavime-agenty.html" lang="pl" hreflang="pl"><span>Polski</span><small aria-hidden="true">PL</small></a></li></ul>
+</details>
+      <a class="button button--small" href="/en.html#contact">Discuss a project <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" data-open-label="Open menu" data-close-label="Close menu" aria-controls="mobile-panel" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-panel" aria-hidden="true" inert hidden>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="/en.html#services">What we build</a>
+    <a href="/en.html#results">Results</a>
+    <a href="/en.html#process">How we work</a>
+    <a href="/en.html#integrations">Integrations</a>
+    <a href="/en/tym.html">Team</a></nav>
+    <div class="mobile-panel__bottom">
+      <a class="button button--small" href="/en.html#contact">Discuss a project <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+    </div>
   </div>
 </header>
-<nav class="mobile-menu" id="mmenu">
-  <a href="/en.html#problems">What we solve</a>
-  <a href="/en.html#solutions">Ready-made solutions</a>
-  <a href="/en.html#how">How we do it</a>
-  <a href="/en.html#integ">Integrations</a>
-  <a href="/en.html#work">References</a>
-  <a href="/en.html#contact">Contact</a>
-</nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <section class="block jp-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">How we do it</span>
-    <h1 class="h1 reveal">An agent isn't a chatbot. It's a digital colleague with a clearly defined job.</h1>
-    <p class="hero-sub reveal">We build an agent that can read a document, decide based on your rules, and hand things over to a person wherever judgment is needed. But it only works when it has a precisely defined role, input, output, and guardrails. That's exactly what we do — and here we show how.</p>
+    <!-- enterit-icon:workflow-user:start --><span class="subpage-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end -->
+    <span class="eyebrow">How we do it</span>
+    <h1 class="h1">An agent isn't a chatbot. It's a digital colleague with a clearly defined job.</h1>
+    <p class="hero-sub">We build agents that read documents, act on your rules and hand judgment calls to people. Here is how we define their role, inputs, outputs and guardrails.</p>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">First, the basics</span>
-    <h2 class="h2 reveal">What an AI agent is and how it differs from ordinary automation</h2>
-    <p class="lead reveal">Automation runs on a fixed track: when X arrives, do Y. Great for things that never change. An agent is given a goal and context and decides for itself which steps lead there — it reads a document, finds a similarity, holds a conversation, and when something is beyond it, it escalates to a person. That's the difference between a script and a digital colleague.</p>
+    <h2 class="h2">What an AI agent actually is — and how it differs from ordinary automation</h2>
+    <p class="lead">Automation follows a fixed rule. An agent works toward a goal using context, then escalates anything outside its limits. That is the difference between a script and a digital colleague.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Automation = a fixed track</h4><p>A fixed procedure, no decision-making. When an invoice arrives in the expected format, it gets transcribed into the system. Reliable, cheap, but blind to the exception. A different format and it stalls.</p></div>
-      <div class="jp-block reveal"><h4>Agent = a goal and judgment</h4><p>We tell it "create the line items in the ERP from this order" and it copes even with the fact that every customer writes their email differently. It understands content, not just format. Our email-to-order agent doesn't read a form — it understands the order.</p></div>
-      <div class="jp-block reveal"><h4>Why it matters to a decision-maker</h4><p>An agent can handle processes that used to require a person, because they involved judgment over text and documents. That's exactly the expensive, exhausting routine that couldn't be "scripted" — and where time and know-how are leaking today.</p></div>
-      <div class="jp-block reveal"><h4>It's not magic, it's engineering</h4><p>An agent works reliably only when it has a properly built framework: a role, inputs, outputs, rules, integrations, and metrics. Without those it's just a flashy demo that falls apart in real operation. We build the first kind.</p></div>
+      <div class="jp-block"><h3>Automation = a fixed track</h3><p>A fixed procedure handles predictable input reliably and cheaply, but stalls on exceptions.</p></div>
+      <div class="jp-block"><h3>Agent = a goal plus judgment</h3><p>Ask it to create ERP line items and it can interpret differently written orders because it understands content, not only format.</p></div>
+      <div class="jp-block"><h3>Why it matters to a decision-maker</h3><p>Agents can take on document-heavy routine that once required human interpretation — where time and know-how leak today.</p></div>
+      <div class="jp-block"><h3>It's not magic, it's engineering</h3><p>Production reliability comes from a defined role, rules, integrations and metrics. Without them, an agent remains a demo.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Anatomy of an agent</span>
-    <h2 class="h2 reveal">What a reliable agent is made of — step by step</h2>
-    <p class="lead reveal">This is the core of the whole job. An agent isn't one "smart model" but a system of clearly defined components. Leave any one of them out and the agent won't serve you long-term — which is why it isn't cheap work, but a project with weight. This is how we build it.</p>
+    <h2 class="h2">What a reliable agent is made of — step by step</h2>
+    <p class="lead">An agent is a system of defined components, not one “smart model”. Each component below is needed for dependable long-term operation.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal jp-num"><i>1</i><div><h4>Role — what it does and what it does NOT</h4><p>A precise role and its boundaries — what it does and, above all, what it does NOT. The boundary is half of reliability.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>2</i><div><h4>Input and output at every step</h4><p>A clear input (a PDF, an email) and output (rows into the ERP). It can be checked and measured.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>3</i><div><h4>Rules and guardrails — may / may not</h4><p>What it may do on its own and where it stops. The rails that make it possible to trust an agent with a live ERP.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>4</i><div><h4>Tools and integrations — the agent's hands</h4><p>Connection to the ERP, email, CRM and CAD — the agent's hands right inside your systems.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>5</i><div><h4>Memory and context — RAG</h4><p>It answers from your documents — and always shows the source.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>6</i><div><h4>Human-in-the-loop — where the person decides</h4><p>The agent recommends, the person approves. The sign-off is done by a person, not a machine.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>7</i><div><h4>Metrics — what we evaluate it by</h4><p>Error rate, savings, usage. We measure and tune — not deploy and forget.</p></div></div>
-      <div class="jp-block reveal jp-num"><i>8</i><div><h4>Governance and security from the start</h4><p>Who may do what, how data is accessed, and for sensitive data private AI on-prem. Security is in the design, not an add-on at the end.</p></div></div>
+      <div class="jp-block jp-num"><i>1</i><div><h3>Role — what it does and what it does NOT</h3><p>We map the process, then define the agent's job and its boundaries. Clear limits are central to reliability.</p></div></div>
+      <div class="jp-block jp-num"><i>2</i><div><h3>Input and output at every step</h3><p>Every PDF, email or query has an explicit output such as ERP rows, a draft reply or an import file. That makes results testable and measurable.</p></div></div>
+      <div class="jp-block jp-num"><i>3</i><div><h3>Rules and guardrails — may / may not</h3><p>We specify what the agent may do alone and where it must stop. Those guardrails make access to live systems trustworthy.</p></div></div>
+      <div class="jp-block jp-num"><i>4</i><div><h3>Tools and integrations — the agent's hands</h3><p>We connect ERP, SharePoint, M365, CRM, PDM/CAD, email and WhatsApp through APIs or RPA, supported by a central data layer.</p></div></div>
+      <div class="jp-block jp-num"><i>5</i><div><h3>Memory and context — RAG</h3><p>We consolidate company documents, run scanned files through OCR and let the agent answer from approved context — always with a source.</p></div></div>
+      <div class="jp-block jp-num"><i>6</i><div><h3>Human-in-the-loop — where the person decides</h3><p>The agent recommends; a person approves. We define each handover point so judgment and sign-off remain human.</p></div></div>
+      <div class="jp-block jp-num"><i>7</i><div><h3>Metrics — what it's evaluated by</h3><p>We track errors, response time, saved work and adoption against a baseline, then tune the agent in production.</p></div></div>
+      <div class="jp-block jp-num"><i>8</i><div><h3>Governance and security from the start</h3><p>Ownership, access and AI-use rules are designed upfront. Sensitive workloads can run privately on your own infrastructure.</p></div></div>
     </div>
-    <div class="jp-callout reveal">
-      <p><b>What the agent does not do:</b> it doesn't send anything outside the company without approval. It doesn't delete data. It doesn't decide about money — approvals stay with people. It doesn't train on your data for anyone else.</p>
+    <div class="jp-callout">
+      <p><b>What the agent does not do:</b> send data externally without approval, delete data, make financial decisions or train for anyone else on your data.</p>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">What it runs on</span>
-    <h2 class="h2 reveal">The technology under the hood</h2>
+    <h2 class="h2">The technology under the hood</h2>
     <div class="jp-stack">
-      <div class="jp-stack-item reveal"><b>Models</b><span>Depending on the task and your requirements — Claude, GPT, Gemini, or a local Llama/Mistral on your own hardware when the data must not leave the company.</span></div>
-      <div class="jp-stack-item reveal"><b>Orchestration</b><span>n8n, Make or Power Automate — depending on what you already have and who will maintain it on your side.</span></div>
-      <div class="jp-stack-item reveal"><b>Integrations</b><span>The official APIs of your systems — SAP, Business Central, Helios, K2, Pohoda and others (see Integrations on the main page).</span></div>
-      <div class="jp-stack-item reveal"><b>Where the data runs</b><span>In your tenant (Azure/M365), on your server, or in an EU cloud. You choose. We address GDPR and the AI Act in the design, not afterwards.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:cpu:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3M10 10h4v4h-4z"/></svg></span><!-- enterit-icon:end --><b>Models</b><span>Claude, GPT, Gemini or a local Llama/Mistral, selected for the task and data sensitivity.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:workflow:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h4a4 4 0 0 1 4 4v5M15 18h-4a4 4 0 0 1-4-4V9"/></svg></span><!-- enterit-icon:end --><b>Orchestration</b><span>n8n, Make or Power Automate, matched to your stack and maintainers.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:plug:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12 4 8m12 4 4-4M7 7l3-3m7 3-3-3M8 12h8v2a4 4 0 0 1-8 0v-2Zm4 6v4"/></svg></span><!-- enterit-icon:end --><b>Integrations</b><span>Official APIs for SAP, Business Central, Helios, K2, Pohoda and other systems.</span></div>
+      <div class="jp-stack-item"><!-- enterit-icon:server-lock:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M7 6.5h.01M3 14h10M7 17.5h.01"/><rect x="13" y="14" width="8" height="7" rx="1.5"/><path d="M15 14v-2a2 2 0 0 1 4 0v2"/></svg></span><!-- enterit-icon:end --><b>Where the data runs</b><span>Your Azure/M365 tenant, your server or an EU cloud, with GDPR and AI Act controls designed in.</span></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Types of agents</span>
-    <h2 class="h2 reveal">What agents in our practice can really do</h2>
-    <p class="lead reveal">These aren't abstract categories from a slide. We have each type built in a real project. We choose the model and the tool based on the task and the sensitivity of the data — Claude, GPT, Gemini, Copilot, Azure OpenAI, or a local model — not based on fashion.</p>
+    <h2 class="h2">What our agents can do in&nbsp;practice</h2>
+    <p class="lead">Each type below has been delivered in a real project. We select the model and tool for the task and data sensitivity.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Reading / extraction agent</h4><p>Reads a PDF drawing, a title block, a bill of materials, an invoice, a contract, and extracts structured data from them. The foundation for engineering shops as well as for mining data out of attachments.</p></div>
-      <div class="jp-block reveal"><h4>Email agent</h4><p>An order arrives by email, the agent extracts the line items from it and creates it in the ERP — instead of transcribing it by hand, item by item. It can also draft a reply to recurring queries.</p></div>
-      <div class="jp-block reveal"><h4>Knowledge / RAG agent</h4><p>Answers over company documentation in natural language and always shows the source. Service know-how that used to leave with the technicians stays in the company.</p></div>
-      <div class="jp-block reveal"><h4>Process agent</h4><p>Turns a meeting transcript into tasks and escalations. A self-service skill that every employee can run, not just IT.</p></div>
-      <div class="jp-block reveal"><h4>Reporting agent</h4><p>Data from the ERP or data warehouse in natural language. Instead of clicking through exports, a salesperson asks and gets a filtered answer.</p></div>
-      <div class="jp-block reveal"><h4>Communication agent / chatbot</h4><p>Web, WhatsApp, 24/7. Handles an inquiry, filters the mail, answers a recurring query, and sends the rest to a person.</p></div>
+      <div class="jp-block"><!-- enterit-icon:file-scan:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6zM14 2v5h5"/><path d="M9 13h6M9 17h4M3 8V5h3M21 8V5h-3"/></svg></span><!-- enterit-icon:end --><h3>Reading / extraction agent</h3><p>Turns drawings, bills of materials, invoices and contracts into structured data.</p></div>
+      <div class="jp-block"><!-- enterit-icon:mail:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><!-- enterit-icon:end --><h3>Email agent</h3><p>Extracts order lines into ERP and drafts replies to recurring queries.</p></div>
+      <div class="jp-block"><!-- enterit-icon:book-search:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a3 3 0 0 1 3-3h5v17H7a3 3 0 0 0-3 3V5Zm16 7V2h-5a3 3 0 0 0-3 3"/><circle cx="17" cy="17" r="3"/><path d="m19.2 19.2 2 2"/></svg></span><!-- enterit-icon:end --><h3>Knowledge / RAG agent</h3><p>Answers from company documentation with sources, keeping know-how inside the business.</p></div>
+      <div class="jp-block"><!-- enterit-icon:workflow-user:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 15a5 5 0 0 1 10 0M12 9v3M5 12H2v7h5v-3M19 12h3v7h-5v-3"/></svg></span><!-- enterit-icon:end --><h3>Process agent</h3><p>Turns meeting transcripts into tasks and escalations that teams can run themselves.</p></div>
+      <div class="jp-block"><!-- enterit-icon:chart:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><!-- enterit-icon:end --><h3>Reporting agent</h3><p>Answers natural-language questions over ERP or warehouse data.</p></div>
+      <div class="jp-block"><!-- enterit-icon:message:start --><span class="subpage-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v7Z"/><path d="M8 9h8M8 13h5"/></svg></span><!-- enterit-icon:end --><h3>Communication agent / chatbot</h3><p>Handles 24/7 web or WhatsApp inquiries and escalates the rest.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">Trustworthiness</span>
-    <h2 class="h2 reveal">How we build an agent you can trust</h2>
-    <p class="lead reveal">Reliability isn't a promise, it's a way of working. An honest agent knows how to say "I don't know this" and "I'll leave this to a person". Knowing where to deploy the machine and where to deliberately leave it to a person is an expertise in its own right — and the most common reason cheap solutions fail in operation.</p>
+    <h2 class="h2">How we build an agent you can trust</h2>
+    <p class="lead">A trustworthy agent knows when information is insufficient and hands the decision to a person. We design that boundary before deployment.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>Always an answer with a source</h4><p>A RAG agent doesn't answer "off the top of its head". For every answer it shows which price list, drawing, or document it draws on. The company sees where the answer comes from — and that's the key to trust, not decoration.</p></div>
-      <div class="jp-block reveal"><h4>A deliberate step back where OCR can't cope</h4><p>At an engineering firm we decided not to read dimensions from complex drawings — OCR is unreliable there. We read only the title block and bill of materials, where recognition is reliable. The rest is filled in by a person. Knowing what not to entrust to an agent is part of the craft.</p></div>
-      <div class="jp-block reveal"><h4>A document audit before the quote</h4><p>Before EnterIT quotes anything, we go through 5–10 real PDFs and verify whether different customers have different title-block layouts. Reliability and price follow from that. No blind promises.</p></div>
-      <div class="jp-block reveal"><h4>The person at the decision, not at the routine</h4><p>The agent takes over the transcribing and creating, the person keeps the judgment and the approval. That's not a compromise — it's a design that makes deploying AI in regulated fields (energy, manufacturing, sensitive contracts) possible at all.</p></div>
+      <div class="jp-block"><h3>Always an answer with a source</h3><p>RAG answers show the price list, drawing or document used, so users can verify them.</p></div>
+      <div class="jp-block"><h3>Human review where OCR falls short</h3><p>We read reliable fields such as title blocks and bills of materials, while people complete ambiguous drawing details.</p></div>
+      <div class="jp-block"><h3>A document audit before quoting</h3><p>We inspect 5–10 real PDFs first because layouts determine reliability, scope and price.</p></div>
+      <div class="jp-block"><h3>People make decisions; the agent handles routine</h3><p>The agent handles transcription and creation; judgment and approval stay with people — essential in regulated work.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <span class="eyebrow reveal">Measurement and operation</span>
-    <h2 class="h2 reveal">What an agent measures and how we manage it long-term</h2>
-    <p class="lead reveal">An agent gets deployed, but above all it gets evaluated and tuned. Without a baseline and a defined benefit, we don't build one here — that's what separates a serious project from a small demo. And we don't hand it over and vanish: operation and long-term management are part of the deal.</p>
+    <h2 class="h2">What we measure and&nbsp;how we operate agents long term</h2>
+    <p class="lead">After go-live, we evaluate and tune every agent against its baseline and business case.</p>
     <div class="jp-blocks">
-      <div class="jp-block reveal"><h4>What every agent measures</h4><p>The response time and the time of the whole process, error rate and rework, how much work it actually saves, how usage grows. Numbers, not feelings — against a measured baseline taken before deployment.</p></div>
-      <div class="jp-block reveal"><h4>Typical payback of 3–12 months</h4><p>We build so the return covers further development too. An agent isn't a one-off toy, but a long-term managed layer of the company that improves in operation.</p></div>
-      <div class="jp-block reveal"><h4>Operation and tuning, not handover and goodbye</h4><p>We watch where the agent makes mistakes, add rules, expand the scope. A pilot on a single customer with verified logic, then expansion where it pays off.</p></div>
-      <div class="jp-block reveal"><h4>The data stays with the company</h4><p>Encrypted transfer and storage, GDPR and Czech legislation, the option of on-prem for sensitive data. The governance and security framework runs from day one, not as a patch at the end.</p></div>
+      <div class="jp-block"><h3>What every agent measures</h3><p>Response and process time, errors, rework, saved capacity and adoption — all against a measured baseline.</p></div>
+      <div class="jp-block"><h3>Typical payback of 3–12 months</h3><p>We target returns that fund further development, not a one-off demo.</p></div>
+      <div class="jp-block"><h3>Operation and tuning, not handover and goodbye</h3><p>We monitor errors, refine rules and expand a verified pilot where it pays.</p></div>
+      <div class="jp-block"><h3>The data stays with the company</h3><p>Encrypted transfer and storage, GDPR controls and on-prem options protect sensitive data from day one.</p></div>
     </div>
   </div>
 </section>
 
 <section class="block alt">
   <div class="wrap">
-    <span class="eyebrow reveal">A real example</span>
-    <h2 class="h2 reveal">An agent for production planning in ERP Helios — an engineering and design firm</h2>
-    <div class="jp-walk">
-      <div class="jp-step reveal"><span class="sn">Step 1</span><h4>The pain we were solving</h4><p>Production process planning meant hours of routine every day. An order came in, in the ERP only the top-level project item was created with uploaded data (PDF + DWG + DXF). The process engineer then, for each part, manually downloaded the PDF, used it to create the component items in Helios, assembled the item structure, attached the drawing to each item, and filled in the manufacturing procedure and the time standard. The same, very similar items over and over — 15–25 assemblies a week, i.e. 70–120 items, all transcribed and created by a person.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 2</span><h4>An entry audit instead of promises</h4><p>Before we quoted anything, we went through 5–10 real drawings and verified whether different customers have different title-block layouts. Reliability and price follow from that. We deliberately built the pilot on one main customer — the same title block means higher reading reliability.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 3</span><h4>A deliberate decision on what NOT to entrust to the agent</h4><p>We decided not to read dimensions from complex drawings — OCR is unreliable there. The agent reads only the title block and bill of materials (name, drawing number, steel grade, weight), where recognition is reliable. This boundary is an expertise in itself: it holds the line between a working and a non-working solution.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 4</span><h4>What the agent does on its own</h4><p>It loads the PDF of the top-level item, reads the title block and bill of materials, uses the bill of materials to find already-existing similar items in the ERP, and creates the component structure — including carrying over the manufacturing procedure and time standard from the original similar item. The similarity search runs over fields on the master record and metadata from the form.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 5</span><h4>Human-in-the-loop where only a person can see</h4><p>Where the data isn't machine-readable from the drawing (the number of bends, the sheet thickness), a dialog opens with a PDF preview and a numeric field. The process engineer fills in the value from the drawing. The added metadata is collected into a CSV and, via import, the item structure is automatically created in Helios. The agent recommends and creates, the process engineer checks and adds the judgment.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 6</span><h4>Integration and phasing</h4><p>The agent stands on ERP Helios (connected via API per the Wiki documentation), reads PDF/DWG/DXF drawings, uses OCR on the title block and bill of materials, and writes into the ERP via CSV import. We split it into two phases: first the manufactured items, in the second phase the purchased and standardized parts — with the option to expand all the way to quoting.</p></div>
-      <div class="jp-step reveal"><span class="sn">Step 7</span><h4>The result</h4><p>From hours of routine transcribing across 70–120 items a week to an agent that creates the structure and carries over the standards. The process engineer now only checks and fills in what truly requires human judgment. The pilot runs on one main customer with verified logic and room to expand. On top of that, a competing quote for the same use case was more expensive.</p></div>
-    </div>
+    <h2 class="h2">A production-engineering agent in ERP Helios — an engineering and design firm</h2>
+    <details class="content-details">
+      <summary><span>See the full step-by-step delivery</span><i aria-hidden="true">+</i></summary>
+      <div class="jp-walk">
+        <div class="jp-step"><span class="sn">Step 1</span><h3>The pain we were solving</h3><p>Process engineers manually created 70–120 similar Helios items each week from PDF, DWG and DXF files, including structures, drawings, routings and time standards.</p></div>
+        <div class="jp-step"><span class="sn">Step 2</span><h3>An entry audit instead of promises</h3><p>We reviewed 5–10 real drawings before quoting, then limited the pilot to one customer with a consistent title block.</p></div>
+        <div class="jp-step"><span class="sn">Step 3</span><h3>A deliberate decision on what NOT to entrust to the agent</h3><p>OCR reads the reliable title block and bill of materials, while complex dimensions stay with the engineer.</p></div>
+        <div class="jp-step"><span class="sn">Step 4</span><h3>What the agent does on its own</h3><p>It reads the files, finds similar ERP items and creates the component structure with inherited routing and time standards.</p></div>
+        <div class="jp-step"><span class="sn">Step 5</span><h3>Human-in-the-loop for what only a person can see</h3><p>A PDF preview asks the engineer for ambiguous values such as bends or sheet thickness; verified metadata then enters Helios by CSV import.</p></div>
+        <div class="jp-step"><span class="sn">Step 6</span><h3>Integration and phasing</h3><p>Helios connects through its API. Phase one covers manufactured items; phase two adds purchased and standardized parts, with quoting as a later option.</p></div>
+        <div class="jp-step"><span class="sn">Step 7</span><h3>The result</h3><p>The agent creates structures and carries over standards across 70–120 items a week; the engineer checks only what requires judgment.</p></div>
+      </div>
+    </details>
   </div>
 </section>
 
 <section class="block jp-final">
   <div class="wrap">
-    <div class="cta-card reveal">
-      <span class="eyebrow">Let's do it</span>
+    <div class="cta-card">
       <h2 class="h2">Got a process that eats up your people's time?</h2>
-      <p>Tell us what gets done by hand over and over at your place. We'll design a solution and calculate how much comes back.</p>
+      <p>Tell us which tasks keep repeating in&nbsp;your company. We'll design a&nbsp;solution and&nbsp;calculate the business case.</p>
       <div class="cta-btns">
-        <a href="/en.html#contact" class="btn green">A no-obligation consultation <span class="arr">→</span></a>
-        <a href="/en.html#solutions" class="btn outline">Solutions catalog</a>
+        <a href="/en.html#contact" class="btn green">No-obligation consultation <span class="arr">→</span></a>
+        <a href="/en.html#services" class="btn outline">Solutions catalog</a>
       </div>
     </div>
   </div>
@@ -304,38 +316,53 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offs
 
 </main>
 
-<footer class="footer">
-  <div class="wrap">
-    <div class="foot-logo">
-      <img src="/assets/decor/enty.svg" alt="" style="width:44px;height:44px">
-      <span class="ft-name">Enter&nbsp;IT</span>
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-intro">
+      <a class="footer-brand" href="/en.html" aria-label="EnterIT — home">
+        <img src="/assets/enter_logo_white.svg" alt="EnterIT" width="477" height="200" loading="lazy" decoding="async">
+      </a>
+      <h2 class="footer-statement">Ready to put automation to work? Let’s start with one click.</h2>
     </div>
-    <div class="foot-bar">
-      <span>© 2026 EnterIT · AI Enter s.r.o. · IČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-      <span class="legal"><a href="/en/gdpr.html">Privacy Policy</a><a href="/en/podminky.html">Terms of Business</a></span>
+    <div class="footer-main">
+      <section class="footer-contact" aria-labelledby="footer-contact-heading">
+        <h2 class="footer-heading" id="footer-contact-heading">Got a question?</h2>
+        <div class="footer-contact-links">
+          <a href="mailto:milo@enterit.cz"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>milo@enterit.cz</span></a>
+          <a href="tel:+420608969263"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>+420 608 969 263</span></a>
+        </div>
+        <address class="footer-address"><strong>AI Enter s.r.o.</strong><span>IČO 19086652 · DIČ CZ19086652</span><span>Zahradní 2004/46d</span><span>792 01 Bruntál, Czechia</span></address>
+      </section>
+      <nav class="footer-column" aria-labelledby="footer-menu-heading">
+        <h2 class="footer-heading" id="footer-menu-heading">Menu</h2>
+        <div class="footer-links">
+          <a href="/en.html#services">What we build</a>
+          <a href="/en.html#results">Results</a>
+          <a href="/en.html#process">How we work</a>
+          <a href="/en.html#integrations">Integrations</a>
+          <a href="/en/tym.html">Team</a>
+          <a href="https://enterai.cz/" target="_blank" rel="noopener">EnterAI</a>
+        </div>
+      </nav>
+      <nav class="footer-column footer-solutions" aria-labelledby="footer-solutions-heading">
+        <h2 class="footer-heading" id="footer-solutions-heading">Solutions</h2>
+        <div class="footer-links"><a href="/en/reseni-faktury.html">Invoices into accounting</a><a href="/en/reseni-objednavky.html">Orders from e-mails</a><a href="/en/reseni-reklamace.html">Complaints</a><a href="/en/reseni-sklad-bez-papiru.html">Paperless warehouse</a><a href="/en/reseni-dochazka.html">Attendance tracking</a><a href="/en/reseni-dovolene.html">Leave approvals</a><a href="/en/reseni-kniha-jizd.html">Logbook</a><a href="/en/reseni-pracovni-vykazy.html">Work timesheets</a></div>
+      </nav>
+      <div class="footer-social">
+        <h2 class="footer-heading">Stay in the loop</h2>
+        <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+    <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg></a>
+  </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+      <span class="footer-legal"><a href="/en/gdpr.html">Privacy policy</a><a href="/en/podminky.html">Terms and conditions</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  "use strict";
-  var header = document.getElementById('header');
-  window.addEventListener('scroll', function(){ header.classList.toggle('scrolled', window.scrollY>12); }, {passive:true});
-  var mt = document.getElementById('mtoggle'), mm = document.getElementById('mmenu');
-  mt.addEventListener('click', function(){
-    var open = mt.classList.toggle('open'); mm.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mt.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow=''; }); });
-  var reveals = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
-    reveals.forEach(function(el){ io.observe(el); });
-  } else { reveals.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
 </body>
 </html>
