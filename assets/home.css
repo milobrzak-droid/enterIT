@@ -1987,6 +1987,16 @@ button:focus-visible {
     align-self: flex-start;
   }
 
+  #calc .shell {
+    padding-inline: 10px;
+  }
+
+  #calc .section-head,
+  #calc .calculator-form,
+  #calc .calculator-result {
+    padding-inline: 10px;
+  }
+
 }
 
 @media (hover: hover) and (pointer: fine) {

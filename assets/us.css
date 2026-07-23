@@ -128,6 +128,7 @@
   width: min(100%, 350px);
   height: auto;
   filter: none;
+  justify-self: center;
 }
 
 .us-page .us-proof-strip {
@@ -879,12 +880,18 @@
 
   .us-page .us-hero__visual {
     min-height: 240px;
-    place-items: end;
+    place-items: center;
+    justify-items: center;
   }
 
   .us-page .us-hero__visual img {
     width: min(62%, 310px);
-    margin-right: 8%;
+    margin-right: 0;
+    justify-self: center;
+  }
+
+  .us-page .us-scenario img {
+    justify-self: center;
   }
 
   .us-page .us-proof__metrics {
@@ -988,6 +995,7 @@
 
   .us-page .us-hero__visual img {
     width: 190px;
+    justify-self: center;
   }
 
   .us-page .us-proof {

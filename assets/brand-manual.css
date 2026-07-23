@@ -2365,10 +2365,10 @@ body.subpage.brand-manual .team-hero-scene__photo img {
 
 body.subpage.brand-manual .team-hero-scene__mascot {
   position: absolute;
-  right: -20px;
-  bottom: -42px;
-  width: 112px;
-  height: 122px;
+  right: clamp(-22px, -2.8vw, -8px);
+  bottom: clamp(-44px, -4vw, -16px);
+  width: clamp(84px, 8.6vw, 112px);
+  height: auto;
   object-fit: contain;
   transform-origin: 50% 78%;
   animation: brand-mascot-arrival 900ms cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
@@ -2512,10 +2512,10 @@ body.subpage.brand-manual .tym-hero .wrap:has(.team-hero-scene) {
   }
 
   body.subpage.brand-manual .team-hero-scene__mascot {
-    right: -6px;
-    bottom: -30px;
-    width: 84px;
-    height: 94px;
+    right: 0;
+    bottom: -12px;
+    width: clamp(68px, 14vw, 84px);
+    height: auto;
   }
 }
 
@@ -4010,9 +4010,9 @@ body.subpage.brand-manual :is(.rs-flow, .jp-walk, .f30-levels):not(:has(.story-f
 
   body.subpage.brand-manual .team-hero-scene__mascot {
     right: 8px;
-    bottom: 8px;
-    width: 68px;
-    height: 74px;
+    bottom: -2px;
+    width: clamp(56px, 12vw, 68px);
+    height: auto;
   }
 }
 
@@ -4795,7 +4795,8 @@ body.subpage.brand-manual .eng-grid > .eng-card:nth-child(3) {
   width: min(100%, 250px);
   justify-self: end;
   align-self: end;
-  transform: translateX(6.5%);
+  margin-inline-start: auto;
+  transform: none;
   pointer-events: none;
 }
 
@@ -4886,6 +4887,7 @@ body.subpage.brand-manual .eng-grid > .eng-card:nth-child(3) {
   .home-page #process .process-head__visual {
     width: 150px;
     margin-top: -8px;
+    transform: none;
   }
 
   .home-page #process .process-grid {
