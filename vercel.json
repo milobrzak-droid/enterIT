@@ -10,6 +10,12 @@
   "outputDirectory": ".",
   "cleanUrls": false,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/us",
+      "destination": "/us/index.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/index.html",

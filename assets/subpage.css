@@ -14,7 +14,7 @@ body.subpage {
 }
 
 body.subpage.menu-open { overflow: hidden; }
-body.subpage main { overflow: clip; }
+body.subpage main { overflow: visible; }
 body.subpage main h1,
 body.subpage main h2,
 body.subpage main h3,
@@ -32,7 +32,7 @@ body.subpage .wrap {
 body.subpage .block {
   position: relative;
   padding: var(--section-space-md) 0;
-  border-top: 1px solid var(--line);
+  border-top: 0;
   background: var(--paper);
 }
 
@@ -49,11 +49,11 @@ body.subpage .block:has(:is(.rs-badges, .rs-faq, .jp-callout, .f30-quote)) {
 body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   padding-top: clamp(164px, 17vw, 220px);
   padding-bottom: clamp(82px, 8vw, 118px);
   border-top: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
   background: var(--paper);
 }
 
@@ -94,7 +94,7 @@ body.subpage .h1 {
   line-height: 0.94;
   letter-spacing: -0.04em;
   hyphens: none;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   text-wrap: balance;
 }
 
@@ -112,7 +112,7 @@ body.subpage .h2 {
   font-weight: 900;
   line-height: 0.99;
   letter-spacing: -0.04em;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   text-wrap: balance;
 }
 
@@ -149,7 +149,7 @@ body.subpage .btn {
   gap: 10px;
   padding: 13px 21px;
   border: 1px solid var(--navy);
-  border-radius: 10px;
+  border-radius: 6px;
   background: var(--navy);
   color: #fff;
   font-family: var(--font);
@@ -167,44 +167,6 @@ body.subpage .btn.green:hover { border-color: var(--navy-soft); background: var(
 body.subpage .btn.outline { border-color: rgba(20, 35, 31, 0.35); background: transparent; color: var(--navy); }
 body.subpage .btn.outline:hover { border-color: var(--navy); background: var(--navy); color: #fff; }
 
-/* Prepared entrance states. The early bootstrap adds subpage-motion only when
-   the matching WAAPI/IntersectionObserver runtime can take ownership. */
-html.subpage-motion body.subpage .nav-shell:not([data-motion-state="done"]),
-html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > :not(.h1):not([data-motion-state="done"]) {
-  opacity: 0.12;
-  transform: translateY(17px);
-}
-
-html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > .h1:not([data-motion-state="done"]) {
-  opacity: 0.01;
-  transform: translateY(24px);
-  clip-path: inset(0 0 23% 0);
-}
-
-html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) .h2:not(.cta-card .h2):not([data-motion-state="done"]) {
-  opacity: 0.28;
-  transform: translateY(18px);
-  clip-path: inset(0 0 18% 0);
-}
-
-html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) .lead:not(.cta-card .lead):not([data-motion-state="done"]),
-html.subpage-motion body.subpage :is(.rs-pains, .rs-donts, .rs-flow, .rs-need, .rs-badges, .rs-stats, .rs-faq, .jp-blocks, .jp-stack, .jp-walk, .f30-stats, .f30-levels, .eng-grid, .cap-grid, .proof-grid, .team-grid) > :not([data-motion-state="done"]) {
-  opacity: 0.32;
-  transform: translateY(16px);
-}
-
-html.subpage-motion body.subpage :is(.rs-sec-box, .rs-case, .jp-callout, .f30-quote, .stack, .team-group:not(:has(.team-grid))):not([data-motion-state="done"]) {
-  opacity: 0.42;
-  transform: translateY(10px);
-  clip-path: inset(0 0 0 9%);
-}
-
-html.subpage-motion body.subpage .cta-card:not([data-motion-state="done"]) {
-  opacity: 0.48;
-  transform: translateY(10px);
-  clip-path: inset(0 12% 0 0 round 16px);
-}
-
 /* Solution pages */
 body.subpage .rs-hero-num {
   display: inline-flex;
@@ -213,7 +175,7 @@ body.subpage .rs-hero-num {
   margin-top: 32px;
   padding: 15px 19px;
   border: 1px solid rgba(15, 117, 80, 0.22);
-  border-radius: 12px;
+  border-radius: 4px;
   background: var(--mint-pale);
 }
 
@@ -227,7 +189,7 @@ body.subpage :is(.rs-pains, .rs-donts, .rs-badges, .jp-blocks, .jp-stack, .f30-s
 
 body.subpage :is(.rs-pain, .rs-dont, .rs-badge, .jp-block, .jp-stack-item, .f30-stat, .cap-grid > .cap, .eng-card, .rs-faq-item) {
   border: 1px solid var(--line);
-  border-radius: 15px;
+  border-radius: 4px;
   background: var(--surface);
   box-shadow: none;
 }
@@ -290,7 +252,7 @@ body.subpage .eng-p,
 body.subpage .eng-bul li {
   color: var(--ink-soft);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.58;
 }
 
@@ -378,7 +340,7 @@ body.subpage .f30-level p {
   max-width: 760px;
   color: var(--ink-soft);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -407,7 +369,7 @@ body.subpage :is(.rs-sec-box, .rs-badges, .jp-callout, .f30-quote) {
   margin-top: 34px;
   padding: 27px 29px;
   border: 1px solid rgba(15, 117, 80, 0.22);
-  border-radius: 15px;
+  border-radius: 4px;
   background: var(--mint-pale);
 }
 
@@ -450,7 +412,7 @@ body.subpage .rs-sec-box p::before {
 body.subpage :is(.rs-sec-box, .jp-callout, .f30-quote) p {
   color: var(--ink-soft);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -479,7 +441,7 @@ body.subpage .rs-stats {
   gap: 1px;
   margin-top: 36px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
@@ -492,16 +454,16 @@ body.subpage .rs-case {
   margin-top: 14px;
   padding: 27px 29px;
   border: 1px solid rgba(15, 117, 80, 0.22);
-  border-radius: 15px;
+  border-radius: 4px;
   background: var(--mint-pale);
 }
 
-body.subpage .rs-case p { color: var(--ink-soft); font-family: var(--font); font-size: 15px; line-height: 1.65; }
+body.subpage .rs-case p { color: var(--ink-soft); font-family: var(--font); font-size: 16px; line-height: 1.65; }
 
 body.subpage .rs-faq { gap: 9px; margin-top: 28px; }
 body.subpage .rs-faq-item { padding: 20px 22px; }
 body.subpage .rs-faq-item h3 { margin-bottom: 7px; color: var(--ink); font-family: var(--font); font-size: 16px; font-weight: 800; }
-body.subpage .rs-faq-item p { color: var(--ink-soft); font-family: var(--font); font-size: 14px; line-height: 1.58; }
+body.subpage .rs-faq-item p { color: var(--ink-soft); font-family: var(--font); font-size: 16px; line-height: 1.58; }
 
 /* Method pages */
 body.subpage .jp-blocks,
@@ -516,7 +478,7 @@ body.subpage .content-details:not([open]) > .jp-walk { display: none; }
 body.subpage .content-details > summary {
   padding: 18px 20px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 4px;
   background: var(--surface-soft);
   color: var(--ink);
   font-family: var(--font);
@@ -544,7 +506,7 @@ body.subpage .tym-hero-badges { gap: 9px; margin-top: 31px; }
 body.subpage .tym-badge {
   padding: 12px 16px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 4px;
   background: var(--surface);
 }
 body.subpage .tym-badge b { color: var(--mint-dark); font-family: var(--font); }
@@ -571,7 +533,7 @@ body.subpage .team-gh .team-gl { background: var(--line); }
 body.subpage .team-grid { gap: 32px 22px; }
 body.subpage .tm-photo {
   border: 1px solid var(--line);
-  border-radius: 15px;
+  border-radius: 4px;
   background: var(--surface-soft);
   filter: none;
   transition: transform 0.4s var(--ease), border-color 0.3s ease;
@@ -581,7 +543,7 @@ body.subpage .tm:hover .tm-photo { border-color: rgba(15, 117, 80, 0.35); transf
 body.subpage .tm-name { color: var(--ink); font-family: var(--font); }
 body.subpage .tm-role { color: var(--mint-dark); font-family: var(--font); font-size: 11px; font-weight: 700; letter-spacing: 0.035em; }
 body.subpage .tm-bio,
-body.subpage .tm-caps li { color: var(--ink-soft); font-family: var(--font); font-size: 14px; }
+body.subpage .tm-caps li { color: var(--ink-soft); font-family: var(--font); font-size: 15px; }
 body.subpage .tm-links a { border-color: var(--line); color: var(--ink-muted); }
 body.subpage .tm-links a:hover { border-color: var(--mint-dark); color: var(--mint-dark); }
 body.subpage .tm-quote {
@@ -595,7 +557,7 @@ body.subpage .tm-caps li b { color: var(--ink); }
 body.subpage .tm-caps li::before { background: var(--mint-dark); }
 
 body.subpage .cap-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-body.subpage .stack { gap: 0; border: 1px solid var(--line); border-radius: 15px; background: var(--line); }
+body.subpage .stack { gap: 0; border: 1px solid var(--line); border-radius: 4px; background: var(--line); }
 body.subpage .stack-row { border-bottom: 1px solid var(--line); background: var(--surface); }
 body.subpage .stack-row:last-child { border-bottom: 0; }
 body.subpage .stack-cat { color: var(--mint-dark); font-family: var(--font); font-weight: 700; }
@@ -606,13 +568,13 @@ body.subpage .stack-note a { color: var(--mint-dark); }
 body.subpage .proof-grid {
   gap: 1px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.12);
 }
 body.subpage .proof { padding: 28px; background: var(--navy); }
 body.subpage .proof .ob { color: rgba(255, 255, 255, 0.52); font-family: var(--font); }
 body.subpage .proof .kpi { color: var(--mint); font-family: var(--font); }
-body.subpage .proof p { color: rgba(255, 255, 255, 0.72); font-family: var(--font); font-size: 14px; }
+body.subpage .proof p { color: rgba(255, 255, 255, 0.72); font-family: var(--font); font-size: 15px; }
 
 @supports (grid-template-rows: subgrid) {
   @media (min-width: 821px) {
@@ -677,7 +639,7 @@ body.subpage .legal-body h2 { margin: 46px 0 14px; color: var(--ink); font-famil
 body.subpage .legal-body p,
 body.subpage .legal-body li { color: var(--ink-soft); font-family: var(--font); font-size: 16px; line-height: 1.72; }
 body.subpage .legal-body a { color: var(--mint-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-body.subpage .legal-note { padding: 22px 24px; border: 1px solid rgba(15, 117, 80, 0.22); border-radius: 13px; background: var(--mint-pale); color: var(--ink-soft); font-family: var(--font); font-size: 14px; }
+body.subpage .legal-note { padding: 22px 24px; border: 1px solid rgba(15, 117, 80, 0.22); border-radius: 4px; background: var(--mint-pale); color: var(--ink-soft); font-family: var(--font); font-size: 15px; }
 
 /* Shared closing CTA */
 body.subpage :is(.rs-final, .jp-final, .f30-final, .tym-final) {
@@ -732,7 +694,13 @@ body.subpage .cta-btns { display: flex; flex-wrap: wrap; justify-content: center
   body.subpage .cta-btns .btn { width: 100%; white-space: normal; }
   body.subpage .rs-stats { grid-template-columns: 1fr 1fr; }
   body.subpage .legal-body p,
-  body.subpage .legal-body li { font-size: 15px; }
+  body.subpage .legal-body li { font-size: 16px; }
+}
+
+@media (max-width: 520px) {
+  body.subpage .team-grid,
+  body.subpage .team-grid.compact,
+  body.subpage .rs-stats { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 390px) {
@@ -749,15 +717,6 @@ body.subpage .cta-btns { display: flex; flex-wrap: wrap; justify-content: center
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
-  html.subpage-motion body.subpage .nav-shell,
-  html.subpage-motion body.subpage :is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero) .wrap > *,
-  html.subpage-motion body.subpage .block:not(:is(.rs-hero, .jp-hero, .f30-hero, .tym-hero, .legal-hero)) :is(.h2, .lead),
-  html.subpage-motion body.subpage :is(.rs-pains, .rs-donts, .rs-flow, .rs-need, .rs-badges, .rs-stats, .rs-faq, .jp-blocks, .jp-stack, .jp-walk, .f30-stats, .f30-levels, .eng-grid, .cap-grid, .proof-grid, .team-grid) > *,
-  html.subpage-motion body.subpage :is(.rs-sec-box, .rs-case, .jp-callout, .f30-quote, .stack, .team-group, .cta-card) {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-  }
   body.subpage .btn:hover,
   body.subpage .btn:active { transform: none; }
 }

@@ -6,10 +6,10 @@ import { localeOrder, locales } from "./homepage-content.mjs";
 import { arrow, escapeHtml, languageMenu, siteFooter } from "./site-shell.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const assetVersion = "20260720-6";
-const shellAssetVersion = "20260720-4";
-const uiAssetVersion = "20260720-6";
-const faviconVersion = "20260717-enter-symbol";
+const assetVersion = "20260723-release-1";
+const shellAssetVersion = assetVersion;
+const uiAssetVersion = assetVersion;
+const faviconVersion = assetVersion;
 
 const subpageIconPaths = {
   receipt: '<path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2Z"/><path d="M9 7h6M9 11h6M9 15h4"/>',
@@ -54,6 +54,47 @@ const heroIcons = {
   "jak-stavime-automatizace.html": "workflow",
   "firma-2030.html": "levels",
 };
+
+const brandHeroMascots = {
+  "reseni-faktury.html": "mascot-red",
+  "reseni-objednavky.html": "mascot-blue",
+  "reseni-reklamace.html": "mascot-red",
+  "reseni-sklad-bez-papiru.html": "mascot-blue",
+  "reseni-dochazka.html": "mascot-blue",
+  "reseni-dovolene.html": "mascot-red",
+  "reseni-kniha-jizd.html": "mascot-blue",
+  "reseni-pracovni-vykazy.html": "mascot-red",
+  "jak-stavime-agenty.html": "mascot-blue",
+  "jak-stavime-automatizace.html": "mascot-red",
+  "firma-2030.html": "mascot-red",
+  "tym.html": null,
+  "gdpr.html": null,
+  "podminky.html": null,
+};
+
+const brandMascotDimensions = {
+  "mascot-red": [127, 99],
+  "mascot-blue": [130, 101],
+};
+
+const brandStoryArt = {
+  "jak-stavime-agenty.html": "illustration-documents",
+  "jak-stavime-automatizace.html": "illustration-modules",
+  "firma-2030.html": "illustration-team",
+};
+
+const legacyStyleBundles = {
+  "jak-stavime-agenty.html": "method-agents",
+  "jak-stavime-automatizace.html": "method-automation",
+  "firma-2030.html": "future",
+  "tym.html": "team",
+  "gdpr.html": "legal",
+  "podminky.html": "legal",
+};
+
+function legacyStyleBundle(pageName) {
+  return pageName.startsWith("reseni-") ? "solution" : legacyStyleBundles[pageName];
+}
 
 function generatedIcon(name, className) {
   const paths = subpageIconPaths[name];
@@ -175,24 +216,88 @@ function navigation(page, code, pageName) {
 </header>`;
 }
 
-function refreshAssets(html) {
+function refreshAssets(html, pageName) {
+  const legacyBundle = legacyStyleBundle(pageName);
+  if (!legacyBundle) throw new Error(`${pageName}: missing legacy style bundle`);
+  const legacyAsset = resolve(root, `assets/subpage-legacy-${legacyBundle}.css`);
+  if (!existsSync(legacyAsset)) throw new Error(`${pageName}: missing ${legacyAsset}`);
+
   html = html.replace(/<script data-subpage-motion-bootstrap>[\s\S]*?<\/script>\n?/g, "");
-  html = html.replace(/^<script defer src="\/assets\/analytics\.js"><\/script>\n?/gm, "");
-  html = html.replace(/^<link rel="stylesheet" href="\/assets\/(?:site-ui|home|site-shell|subpage)\.css(?:\?[^\"]*)?">\n?/gm, "");
-  html = html.replace(/^<script src="\/assets\/(?:site-ui|home|subpage)\.js(?:\?[^\"]*)?" defer><\/script>\n?/gm, "");
-  html = html.replace(/<\/style>\s*<\/head>/, "</style>\n</head>");
-  const assets = `<script data-subpage-motion-bootstrap>(function(){var d=document.documentElement,w=window,m=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!m&&"IntersectionObserver" in w&&typeof Element!=="undefined"&&"animate" in Element.prototype){d.classList.add("subpage-motion");w.__enterITSubpageMotionWatchdog=w.setTimeout(function(){d.classList.remove("subpage-motion");},2000);}})();</script>
+  html = html.replace(/^<script defer src="\/assets\/analytics\.js(?:\?v=[^"]+)?"><\/script>\n?/gm, "");
+  html = html.replace(/^<link rel="stylesheet" href="\/assets\/(?:site-ui|home|site-shell|subpage|subpage-legacy-[^\"]+|brand-manual)\.css(?:\?[^\"]*)?">\n?/gm, "");
+  html = html.replace(/^<script src="\/assets\/(?:site-ui|home|subpage|brand-manual)\.js(?:\?[^\"]*)?" defer><\/script>\n?/gm, "");
+  html = html.replace(/^<link rel="preload" href="\/assets\/fonts\/FiraMono-Medium\.woff2"[^>]*>\n?/gm, "");
+  const assets = `<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/subpage-legacy-${legacyBundle}.css?v=${assetVersion}">
 <link rel="stylesheet" href="/assets/site-ui.css?v=${uiAssetVersion}">
 <link rel="stylesheet" href="/assets/site-shell.css?v=${shellAssetVersion}">
 <link rel="stylesheet" href="/assets/subpage.css?v=${assetVersion}">
+<link rel="stylesheet" href="/assets/brand-manual.css?v=${assetVersion}">
 <script src="/assets/site-ui.js?v=${uiAssetVersion}" defer></script>
-<script defer src="/assets/analytics.js"></script>`;
+<script src="/assets/brand-manual.js?v=${assetVersion}" defer></script>
+<script defer src="/assets/analytics.js?v=${assetVersion}"></script>`;
   return html.replace("</head>", `${assets}\n</head>`);
+}
+
+function decorateBrandManual(html, pageName) {
+  html = html.replace(/\s*<!-- brand-manual:hero:start -->[\s\S]*?<!-- brand-manual:hero:end -->/g, "");
+  html = html.replace(/\s*<!-- brand-manual:team-hero:start -->[\s\S]*?<!-- brand-manual:team-hero:end -->/g, "");
+  if (pageName === "tym.html") {
+    const teamScene = `
+    <!-- brand-manual:team-hero:start -->
+    <div class="team-hero-scene" aria-hidden="true">
+      <div class="team-hero-scene__photo"><img src="/assets/decor/firmy.webp" alt="" width="900" height="675" loading="eager" decoding="async"></div>
+      <img class="team-hero-scene__mascot" src="/assets/decor/mascot-red.svg" alt="" width="127" height="99" loading="eager" decoding="async">
+    </div>
+    <!-- brand-manual:team-hero:end -->`;
+    return html.replace(
+      /(<section\b[^>]*class="[^"]*\btym-hero\b[^"]*"[^>]*>[\s\S]*?<div\b[^>]*class="[^"]*\bwrap\b[^"]*"[^>]*>)/,
+      `$1${teamScene}`,
+    );
+  }
+  const mascot = brandHeroMascots[pageName];
+  if (!mascot) return html;
+  const [mascotWidth, mascotHeight] = brandMascotDimensions[mascot];
+  const heroArt = `
+    <!-- brand-manual:hero:start -->
+    <div class="hero-brand-art brand-hero-art brand-hero-art--subpage" aria-hidden="true">
+      <span class="hero-brand-art__shape"><img src="/assets/decor/${mascot}.svg" alt="" width="${mascotWidth}" height="${mascotHeight}" decoding="async"></span>
+    </div>
+    <!-- brand-manual:hero:end -->`;
+  return html.replace(
+    /(<section\b[^>]*class="[^"]*\b(?:rs-hero|jp-hero|f30-hero|tym-hero|legal-hero)\b[^"]*"[^>]*>[\s\S]*?<div\b[^>]*class="[^"]*\bwrap\b[^"]*"[^>]*>)/,
+    `$1${heroArt}`,
+  );
+}
+
+function decorateStoryArt(html, pageName) {
+  html = html.replace(/\s*<!-- brand-manual:story:start -->[\s\S]*?<!-- brand-manual:story:end -->/g, "");
+  html = html.replace(/\s*<span class="story-flow-rail"[^>]*><\/span>/g, "");
+  const story = brandStoryArt[pageName];
+  if (!story) return html;
+
+  const flowClass = pageName.startsWith("reseni-")
+    ? "rs-flow"
+    : pageName === "firma-2030.html"
+      ? "f30-levels"
+      : "jp-walk";
+  const storyMarkup = `
+    <!-- brand-manual:story:start -->
+    <div class="brand-story-art" aria-hidden="true">
+      <img class="brand-story-art__illustration" src="/assets/decor/${story}.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+    </div>
+    <!-- brand-manual:story:end -->`;
+
+  return html.replace(
+    new RegExp(`(<div class="${flowClass}">)`),
+    `${storyMarkup}\n    $1<span class="story-flow-rail" aria-hidden="true"></span>`,
+  );
 }
 
 function normalizeFonts(html) {
   return html
     .replace(/^@font-face\{font-family:(['"])Greycliff CF\1;[^\n]*\}\n?/gm, "")
+    .replace(/^@font-face\{font-family:(['"])Fira Mono\1;[^\n]*\}\n?/gm, "")
     .replace(/GreycliffCF-(Medium|Bold|Heavy)\.otf/g, "GreycliffCF-$1.woff2")
     .replace(/type="font\/otf"/g, 'type="font/woff2"')
     .replace(/format\((['"])opentype\1\)/g, 'format("woff2")');
@@ -257,6 +362,14 @@ function removeLegacyUiScript(html) {
   );
 }
 
+function removeEmbeddedStyles(html, code, pageName) {
+  const styles = html.match(/<style(?:\s[^>]*)?>[\s\S]*?<\/style>/g) || [];
+  if (styles.length > 1) {
+    throw new Error(`${code}/${pageName}: expected at most one embedded style block, found ${styles.length}`);
+  }
+  return html.replace(/\s*<style(?:\s[^>]*)?>[\s\S]*?<\/style>\s*/g, "\n");
+}
+
 function normalizeSolutionSecurity(html) {
   const icon = '<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16.5 9"/></svg></span>';
   return html.replace(
@@ -283,11 +396,29 @@ function removeResidualEffects(html) {
     .replaceAll("border-left:3px solid var(--green);", "border-left:0;");
 }
 
-function unwrapFaqDetails(html) {
+function normalizeLegalConsentControl(html, pageName) {
+  if (pageName !== "gdpr.html") return html;
   return html.replace(
-    /<details class="content-details(?: reveal)?">\s*<summary>[\s\S]*?<\/summary>\s*(<div class="(?:rs-faq-grid|rs-faq)">[\s\S]*?<\/div>)\s*<\/details>/g,
-    "$1",
+    /<button type="button" onclick="window\.eitOpenConsent && window\.eitOpenConsent\(\)"(?:\s+class="[^"]*")?\s+style="[^"]*">/g,
+    '<button type="button" class="legal-consent-button" onclick="window.eitOpenConsent && window.eitOpenConsent()">',
   );
+}
+
+function removeLegalDraftNote(html, pageName) {
+  if (pageName !== "gdpr.html" && pageName !== "podminky.html") return html;
+  return html.replace(/\s*<div class="legal-note">[\s\S]*?<\/div>\s*/g, "\n");
+}
+
+function unwrapFaqDetails(html) {
+  return html
+    .replace(
+      /<details class="content-details(?: reveal)?">\s*<summary>[\s\S]*?<\/summary>\s*(<div class="(?:rs-faq-grid|rs-faq)">[\s\S]*?<\/div>)\s*<\/details>/g,
+      "$1",
+    )
+    .replace(
+      /<details class="content-details(?: reveal)?">\s*<summary>[\s\S]*?<\/summary>\s*(<div class="jp-walk">[\s\S]*?<\/div>)\s*<\/details>/g,
+      "$1",
+    );
 }
 
 function stripGeneratedIcons(html) {
@@ -444,22 +575,69 @@ function simplifyEditorialScaffolding(html) {
   return html.replace(/<([a-z][a-z0-9-]*)\s+>/gi, "<$1>");
 }
 
+function removeTeamConsultants(html, pageName) {
+  if (pageName !== "tym.html") return html;
+
+  const compactGrid = html.indexOf('class="team-grid compact"');
+  if (compactGrid === -1) return html;
+
+  const groupStart = html.lastIndexOf('<div class="team-group">', compactGrid);
+  if (groupStart === -1) throw new Error("tym.html: compact consultant group has no wrapper");
+
+  const divTag = /<\/?div\b[^>]*>/g;
+  divTag.lastIndex = groupStart;
+  let depth = 0;
+  let groupEnd = -1;
+  let match;
+
+  while ((match = divTag.exec(html))) {
+    depth += match[0].startsWith("</") ? -1 : 1;
+    if (depth === 0) {
+      groupEnd = divTag.lastIndex;
+      break;
+    }
+  }
+
+  if (groupEnd === -1) throw new Error("tym.html: compact consultant group is not balanced");
+
+  const lineStart = html.lastIndexOf("\n", groupStart) + 1;
+  let removeEnd = groupEnd;
+  while (html[removeEnd] === " " || html[removeEnd] === "\t") removeEnd += 1;
+  if (html[removeEnd] === "\r") removeEnd += 1;
+  if (html[removeEnd] === "\n") removeEnd += 1;
+  return html.slice(0, lineStart) + html.slice(removeEnd);
+}
+
 function refreshPage(code, pageName) {
   const page = locales[code];
   const target = resolve(root, pagePath(code, pageName));
   if (!existsSync(target)) throw new Error(`Missing production page: ${target}`);
 
   let html = readFileSync(target, "utf8");
+  html = removeTeamConsultants(html, pageName);
   html = unwrapFaqDetails(html);
   html = normalizeFonts(html);
   html = refreshSolutionMetadata(html, code, pageName);
   html = html.replace(
     /<meta name="theme-color" content="[^"]*">/,
-    '<meta name="theme-color" content="#f5f7f2">',
+    '<meta name="theme-color" content="#41E39E">',
   );
   if (!/<body\b[^>]*class="[^"]*\bsubpage\b/.test(html)) {
     html = html.replace("<body>", '<body class="subpage">');
   }
+  const pageFamily = pageName.startsWith("reseni-")
+    ? "solution"
+    : pageName.startsWith("jak-stavime-")
+      ? "method"
+      : pageName === "tym.html"
+        ? "team"
+        : pageName === "firma-2030.html"
+          ? "future"
+          : "legal";
+  html = html.replace(
+    /<body\b[^>]*>/,
+    `<body class="subpage brand-manual" data-locale="${code}" data-page-family="${pageFamily}" data-page="${pageName.replace(".html", "")}">`,
+  );
   html = html.replace(
     /<header\b[^>]*\bid="(?:header|site-header)"[^>]*>[\s\S]*?(?=<main\b)/,
     `${navigation(page, code, pageName)}\n\n`,
@@ -470,6 +648,8 @@ function refreshPage(code, pageName) {
   );
   html = removeLegacyUiScript(html);
   html = removeResidualEffects(html);
+  html = normalizeLegalConsentControl(html, pageName);
+  html = removeLegalDraftNote(html, pageName);
   html = refreshFavicons(html);
 
   while (html.includes(`${page.homeHref}#integrationsrations`)) {
@@ -497,9 +677,13 @@ function refreshPage(code, pageName) {
   }
 
   html = decorateSubpageIcons(html, pageName);
+  html = decorateBrandManual(html, pageName);
+  html = decorateStoryArt(html, pageName);
   html = simplifyEditorialScaffolding(html);
+  html = removeEmbeddedStyles(html, code, pageName);
 
-  html = refreshAssets(html);
+  html = refreshAssets(html, pageName);
+  html = html.replace(/[ \t]+$/gm, "");
   writeFileSync(target, html);
 }
 

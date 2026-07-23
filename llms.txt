@@ -1,6 +1,6 @@
 # EnterIT
 
-> EnterIT is a Czech IT/AI delivery agency. We build, integrate, and operate AI agents, workflow automations, and system integrations for mid-to-large companies — connecting old ERP/CRM/warehouse systems, automating manual document and data work, and running what we build in production with SLAs. Primary language of the site is Czech (cs); English, German, and Polish versions are available at /en, /de, /pl.
+> EnterIT is a European AI and software delivery partner. Our 75+ specialists design, build, integrate, and operate enterprise software, AI solutions, cloud platforms, and system integrations for mid-to-large companies and technology partners. Primary language of the site is Czech (cs); English, German, and Polish versions are available at /en, /de, /pl. A separate US partner page is available at /us.
 
 EnterIT is the delivery/execution team of the sister company EnterAI (enterai.cz), which focuses on AI adoption strategy and transformation. EnterIT focuses specifically on hands-on delivery: building and operating the actual automations, agents, and integrations — both as EnterAI's delivery arm and as standalone IT/AI projects for direct clients. EnterIT does not do adoption/change-management consulting — that is EnterAI's role.
 
@@ -8,9 +8,10 @@ Legal entity: AI Enter s.r.o. (brand: EnterIT), Bruntál, Czech Republic.
 
 ## Core pages
 
-- [Homepage](https://enterit.cz/): overview of what EnterIT builds, an interactive pain-point configurator, 8 ready-made solutions, references, integrations, process, savings calculator, operations & guarantees (SLA, ownership/exit, security/governance), and the relationship to EnterAI.
-- [Team](https://enterit.cz/tym.html): the ~75-person engineering team across three groups — Enterprise (ERP/system integration), Agents (AI agent development), Studio (product/in-house builds).
-- [How we build agents](https://enterit.cz/jak-stavime-agenty.html): technical anatomy of an AI agent build — architecture, guardrails, human-in-the-loop, security.
+- [Homepage](https://enterit.cz/): engineering-first overview of enterprise software and AI delivery from design through production, with structured case studies, integrations, process, savings calculator, operations, leadership, and the relationship to EnterAI.
+- [US Partner Page](https://enterit.cz/us): dedicated page for US consultancies, Microsoft partners, and systems integrators looking for a European AI and software delivery partner.
+- [Team](https://enterit.cz/tym.html): the ~75-person engineering team across three groups: Enterprise (ERP/system integration), Agents (AI agent development), and Studio (product/in-house builds).
+- [How we build agents](https://enterit.cz/jak-stavime-agenty.html): technical anatomy of an AI agent build including architecture, guardrails, human-in-the-loop, and security.
 - [How we build automations](https://enterit.cz/jak-stavime-automatizace.html): the 5-layer automation stack and 4-phase delivery process.
 
 ## Ready-made solutions (reseni-*.html)

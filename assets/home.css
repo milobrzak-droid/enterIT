@@ -89,225 +89,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-.home-focus-pending {
-  filter: blur(6px);
-  transition: filter 620ms var(--ease-out);
-}
-
-.home-focus-pending.home-focus-visible {
-  filter: blur(0);
-}
-
-html.home-fallback-motion .home-motion-target {
-  opacity: 0;
-  transition:
-    opacity 260ms var(--ease-in-out),
-    transform 260ms var(--ease-in-out);
-}
-
-html.home-fallback-motion .partner-bar__inner { transform: translateY(28px); }
-html.home-fallback-motion .section-head .section-kicker { transform: translateY(20px); }
-html.home-fallback-motion .section-head .section-title { transform: translateY(var(--motion-view-title-y)); }
-html.home-fallback-motion .section-head .section-intro { transform: translateX(var(--motion-view-side-x)); }
-html.home-fallback-motion .service-card { transform: translateX(-44px); }
-html.home-fallback-motion .solution-card,
-html.home-fallback-motion .case-card,
-html.home-fallback-motion .operation-card,
-html.home-fallback-motion .resource-card { transform: translateY(var(--motion-view-card-y)); }
-html.home-fallback-motion .implementation-step { transform: translateX(46px); }
-html.home-fallback-motion .implementation-outcome,
-html.home-fallback-motion .process-step { transform: translateY(42px); }
-html.home-fallback-motion .integration-copy,
-html.home-fallback-motion .team-copy,
-html.home-fallback-motion .calculator-form { transform: translateX(-44px); }
-html.home-fallback-motion .integration-catalog,
-html.home-fallback-motion .calculator-result { transform: translateX(var(--motion-view-side-x)); }
-html.home-fallback-motion .system-group { transform: translateY(30px); }
-html.home-fallback-motion .portrait { transform: translateY(54px); }
-html.home-fallback-motion .contact-card {
-  opacity: .12;
-  transform: translateY(54px);
-}
-html.home-fallback-motion .footer-intro,
-html.home-fallback-motion .footer-main > *,
-html.home-fallback-motion .footer-bottom { transform: translateY(36px); }
-
-html.home-fallback-motion .home-motion-target.home-fallback-in-view {
-  opacity: 1;
-  transform: none;
-  transition-duration: var(--motion-view-fallback);
-  transition-timing-function: var(--ease-out);
-}
-
-@keyframes home-view-partner {
-  from { opacity: 0; transform: translateY(28px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-kicker {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-title {
-  from { opacity: 0; transform: translateY(var(--motion-view-title-y)); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-intro {
-  from { opacity: 0; transform: translateX(var(--motion-view-side-x)); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-service {
-  from { opacity: 0; transform: translateX(-44px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-card {
-  from { opacity: 0; transform: translateY(var(--motion-view-card-y)); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-step-side {
-  from { opacity: 0; transform: translateX(46px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-step-up {
-  from { opacity: 0; transform: translateY(42px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-side-left {
-  from { opacity: 0; transform: translateX(-44px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-side-right {
-  from { opacity: 0; transform: translateX(var(--motion-view-side-x)); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-system {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-portrait {
-  from { opacity: 0; transform: translateY(54px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-contact {
-  from { opacity: .12; transform: translateY(54px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes home-view-footer {
-  from { opacity: 0; transform: translateY(36px); }
-  to { opacity: 1; transform: none; }
-}
-
-@supports (animation-timeline: view()) and (animation-range: entry 0% cover 35%) {
-  html.home-view-motion .partner-bar__inner,
-  html.home-view-motion .section-head .section-kicker,
-  html.home-view-motion .section-head .section-title,
-  html.home-view-motion .section-head .section-intro,
-  html.home-view-motion .service-card,
-  html.home-view-motion .solution-card,
-  html.home-view-motion .case-card,
-  html.home-view-motion .implementation-step,
-  html.home-view-motion .implementation-outcome,
-  html.home-view-motion .process-step,
-  html.home-view-motion .integration-copy,
-  html.home-view-motion .integration-catalog,
-  html.home-view-motion .system-group,
-  html.home-view-motion .operation-card,
-  html.home-view-motion .team-copy,
-  html.home-view-motion .portrait,
-  html.home-view-motion .resource-card,
-  html.home-view-motion .calculator-form,
-  html.home-view-motion .calculator-result,
-  html.home-view-motion .contact-card,
-  html.home-view-motion .footer-intro,
-  html.home-view-motion .footer-main > *,
-  html.home-view-motion .footer-bottom {
-    animation-duration: 1ms;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: view(block);
-  }
-
-  html.home-view-motion .partner-bar__inner {
-    animation-name: home-view-partner;
-    animation-range: entry 0% cover 24%;
-  }
-  html.home-view-motion .section-head .section-kicker {
-    animation-name: home-view-kicker;
-    animation-range: entry 0% cover 22%;
-  }
-  html.home-view-motion .section-head .section-title {
-    animation-name: home-view-title;
-    animation-range: entry 0% cover 36%;
-  }
-  html.home-view-motion .section-head .section-intro {
-    animation-name: home-view-intro;
-    animation-range: entry 0% cover 34%;
-  }
-  html.home-view-motion .service-card {
-    animation-name: home-view-service;
-    animation-range: entry 0% cover 32%;
-  }
-  html.home-view-motion .solution-card,
-  html.home-view-motion .case-card,
-  html.home-view-motion .operation-card,
-  html.home-view-motion .resource-card {
-    animation-name: home-view-card;
-    animation-range: entry 0% cover 34%;
-  }
-  html.home-view-motion .implementation-step {
-    animation-name: home-view-step-side;
-    animation-range: entry 0% cover 32%;
-  }
-  html.home-view-motion .implementation-outcome,
-  html.home-view-motion .process-step {
-    animation-name: home-view-step-up;
-    animation-range: entry 0% cover 33%;
-  }
-  html.home-view-motion .integration-copy,
-  html.home-view-motion .team-copy,
-  html.home-view-motion .calculator-form {
-    animation-name: home-view-side-left;
-    animation-range: entry 0% cover 34%;
-  }
-  html.home-view-motion .integration-catalog,
-  html.home-view-motion .calculator-result {
-    animation-name: home-view-side-right;
-    animation-range: entry 0% cover 34%;
-  }
-  html.home-view-motion .system-group {
-    animation-name: home-view-system;
-    animation-range: entry 0% cover 28%;
-  }
-  html.home-view-motion .portrait {
-    animation-name: home-view-portrait;
-    animation-range: entry 0% cover 38%;
-  }
-  html.home-view-motion .contact-card {
-    animation-name: home-view-contact;
-    animation-range: entry 0% cover 42%;
-  }
-  html.home-view-motion .footer-intro,
-  html.home-view-motion .footer-main > *,
-  html.home-view-motion .footer-bottom {
-    animation-name: home-view-footer;
-  }
-  html.home-view-motion .footer-intro { animation-range: entry 0% cover 36%; }
-  html.home-view-motion .footer-main > * { animation-range: entry 0% cover 30%; }
-  html.home-view-motion .footer-bottom { animation-range: entry 0% cover 26%; }
-}
-
 *,
 *::before,
 *::after {
@@ -1361,7 +1142,13 @@ html[lang="de"] .hero h1 {
 
 @supports (grid-template-rows: subgrid) {
   @media (min-width: 921px) {
-    .case-card,
+    .case-card {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      align-content: start;
+    }
+
     .operation-card,
     .resource-card {
       display: grid;
@@ -1930,10 +1717,6 @@ button:focus-visible {
 }
 
 @media (max-width: 620px) {
-  .home-focus-pending {
-    filter: blur(4px);
-  }
-
   body {
     font-size: 16px;
   }
@@ -2240,44 +2023,6 @@ button:focus-visible {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-  }
-
-  html.home-view-motion .partner-bar__inner,
-  html.home-view-motion .section-head .section-kicker,
-  html.home-view-motion .section-head .section-title,
-  html.home-view-motion .section-head .section-intro,
-  html.home-view-motion .service-card,
-  html.home-view-motion .solution-card,
-  html.home-view-motion .case-card,
-  html.home-view-motion .implementation-step,
-  html.home-view-motion .implementation-outcome,
-  html.home-view-motion .process-step,
-  html.home-view-motion .integration-copy,
-  html.home-view-motion .integration-catalog,
-  html.home-view-motion .system-group,
-  html.home-view-motion .operation-card,
-  html.home-view-motion .team-copy,
-  html.home-view-motion .portrait,
-  html.home-view-motion .resource-card,
-  html.home-view-motion .calculator-form,
-  html.home-view-motion .calculator-result,
-  html.home-view-motion .contact-card,
-  html.home-view-motion .footer-intro,
-  html.home-view-motion .footer-main > *,
-  html.home-view-motion .footer-bottom,
-  html.home-fallback-motion .home-motion-target {
-    opacity: 1 !important;
-    filter: none !important;
-    transform: none !important;
-    animation: none !important;
-    transition: opacity 180ms var(--ease-out) !important;
-  }
-
-  .home-focus-pending,
-  .home-focus-pending.home-focus-visible {
-    filter: none !important;
-    transition: none !important;
-    will-change: auto !important;
   }
 
   .skip-link,

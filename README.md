@@ -18,6 +18,21 @@ Po změně obsahu nebo šablony spusťte:
 node scripts/build-homepages.mjs
 ```
 
+## US partner landing page
+
+Samostatná akviziční stránka pro americké konzultační firmy, Microsoft partnery
+a systémové integrátory se generuje nezávisle od jazykových homepage:
+
+- `scripts/us-content.mjs` obsahuje positioning a texty,
+- `scripts/build-us.mjs` generuje `us/index.html`,
+- `assets/us.css` a `assets/us.js` drží Enter vizuál a motion.
+
+Po změně spusťte:
+
+```sh
+node scripts/build-us.mjs
+```
+
 ## Produkční podstránky
 
 Všech 56 produkčních podstránek EnterIT používá společný světlý design z
@@ -36,4 +51,5 @@ Skript záměrně neupravuje `old/`, noindex redesignová dema ani externí web 
 python3 scripts/serve-local.py --port 8000
 ```
 
-Web poběží na [http://localhost:8000](http://localhost:8000) a lokální server zachová produkční přesměrování `/en`, `/de` a `/pl`.
+Web poběží na [http://localhost:8000](http://localhost:8000). US landing page
+je dostupná na [http://localhost:8000/us/](http://localhost:8000/us/).

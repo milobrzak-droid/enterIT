@@ -184,7 +184,7 @@ function breadcrumbs(canonical, currentName, lang) {
 
 function structuredData(fileRel, lang, canonical, title, description, h1) {
   const isRootHome = fileRel === 'index.html';
-  const isHome = ['index.html', 'en.html', 'de.html', 'pl.html'].includes(fileRel);
+  const isHome = ['index.html', 'en.html', 'de.html', 'pl.html', 'us/index.html'].includes(fileRel);
   const fileName = path.posix.basename(fileRel);
   const graph = [];
   const page = {
@@ -367,6 +367,8 @@ let changed = 0;
 let imagesSized = 0;
 for (const file of files) {
   const fileRel = rel(file);
+  const isHome = ['index.html', 'en.html', 'de.html', 'pl.html', 'us/index.html'].includes(fileRel);
+  const isRedirectShim = /^(?:en|de|pl)\/index\.html$/.test(fileRel);
   let html = fs.readFileSync(file, 'utf8');
   const before = html;
   html = applySeoOverride(html, seoOverrides[fileRel]);
@@ -388,7 +390,7 @@ for (const file of files) {
   if (!/<link\s+rel="sitemap"/i.test(html)) html = html.replace(/(<script\s+type="application\/ld\+json")/i, '<link rel="sitemap" type="application/xml" href="/sitemap.xml">\n$1');
   html = socialMeta(html, title, description, lang);
 
-  if (canonical) {
+  if (canonical && fileRel !== 'us/index.html') {
     const replacement = `<script type="application/ld+json">${structuredData(fileRel, lang, canonical, textContent(title), description, h1)}</script>`;
     const blocks = [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
     const organizationBlock = blocks.find((match) => {
@@ -401,7 +403,14 @@ for (const file of files) {
   }
 
   if (!/href="\/assets\/site-ui\.css(?:\?[^\"]*)?"/i.test(html)) html = html.replace('</style>', '</style>\n<link rel="stylesheet" href="/assets/site-ui.css?v=20260717-5">');
-  if (!/src="\/assets\/site-ui\.js"/i.test(html)) html = html.replace('</head>', '<script src="/assets/site-ui.js" defer></script>\n</head>');
+  const siteUiScriptPattern = /<script\b(?=[^>]*\bsrc="\/assets\/site-ui\.js(?:\?[^\"]*)?")[^>]*><\/script>\s*/gi;
+  let hasSiteUiScript = false;
+  html = html.replace(siteUiScriptPattern, (script) => {
+    if (isHome || isRedirectShim || hasSiteUiScript) return '';
+    hasSiteUiScript = true;
+    return script;
+  });
+  if (!isHome && !isRedirectShim && !hasSiteUiScript) html = html.replace('</head>', '<script src="/assets/site-ui.js" defer></script>\n</head>');
   if (!/rel="preload"[^>]+GreycliffCF-Heavy/i.test(html)) {
     html = html.replace('<style>', '<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>\n<style>');
   }
@@ -418,7 +427,6 @@ for (const file of files) {
 
   html = html.replace(/<button\s+class="mtoggle"\s+id="mtoggle"(?![^>]*aria-controls)/i, '<button class="mtoggle" id="mtoggle" aria-controls="mmenu"');
 
-  const isHome = ['index.html', 'en.html', 'de.html', 'pl.html'].includes(fileRel);
   if (isHome) {
     const codes = { CZ: 'cs', EN: 'en', DE: 'de', PL: 'pl' };
     html = html.replace(/<a href="([^"]+)"( class="active")?>(CZ|EN|DE|PL)<\/a>/g, (match, href, active, label) => {

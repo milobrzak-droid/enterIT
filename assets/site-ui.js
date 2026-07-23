@@ -480,7 +480,7 @@
     initHeaderState();
     initLanguageMenus();
     initMobileMenu();
-    initMotion();
+    if (!document.body.classList.contains("brand-manual")) initMotion();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

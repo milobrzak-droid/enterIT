@@ -81,28 +81,42 @@
   function injectStyles(){
     if(document.getElementById('eit-consent-style')) return;
     var css = '#eit-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;'
-      + 'max-width:640px;margin:0 auto;background:#17202E;color:#EAF0FA;border:1px solid rgba(255,255,255,.12);'
-      + 'border-radius:14px;padding:18px 20px;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;'
-      + 'box-shadow:0 12px 40px rgba(0,0,0,.35);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}'
-      + '#eit-consent p{margin:0;flex:1 1 260px;color:#C7D2E3}'
+      + 'max-width:680px;margin:0 auto;background:#17202E;color:#FBFBFB;border:2px solid #41E39E;'
+      + 'border-radius:16px 16px 16px 3px;padding:18px 20px;font:500 13px/1.6 "Fira Mono","SFMono-Regular",Consolas,monospace;'
+      + 'display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}'
+      + '#eit-consent p{margin:0;flex:1 1 280px;color:rgba(251,251,251,.76)}'
       + '#eit-consent a{color:#41E39E;text-decoration:underline}'
       + '#eit-consent .eit-btns{display:flex;gap:8px;flex:0 0 auto}'
-      + '#eit-consent button{cursor:pointer;border-radius:9px;padding:9px 16px;font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;border:1px solid transparent}'
-      + '#eit-consent .eit-accept{background:#41E39E;color:#0B1018}'
-      + '#eit-consent .eit-reject{background:transparent;color:#EAF0FA;border-color:rgba(255,255,255,.25)}'
-      + '@media(max-width:520px){#eit-consent{left:10px;right:10px;bottom:10px;padding:16px}}';
+      + '#eit-consent button{min-height:44px;cursor:pointer;border-radius:10px 10px 10px 2px;padding:10px 16px;font:500 12px/1 "Fira Mono","SFMono-Regular",Consolas,monospace;border:2px solid transparent}'
+      + '#eit-consent button:focus-visible{outline:3px solid #FBFBFB;outline-offset:3px}'
+      + '#eit-consent .eit-accept{background:#41E39E;color:#17202E;border-color:#41E39E}'
+      + '#eit-consent .eit-reject{background:transparent;color:#FBFBFB;border-color:rgba(251,251,251,.32)}'
+      + '@media(max-width:520px){#eit-consent{left:8px;right:8px;bottom:8px;padding:12px;gap:10px;font-size:11px;line-height:1.4}'
+      + '#eit-consent p{flex-basis:100%}#eit-consent .eit-btns{width:100%}'
+      + '#eit-consent button{min-height:40px;flex:1;padding:8px 12px;font-size:11px}}';
     var style = document.createElement('style');
     style.id = 'eit-consent-style';
     style.textContent = css;
     document.head.appendChild(style);
   }
 
+  var closeActiveConsent = null;
+
   function showBanner(){
-    if(document.getElementById('eit-consent')) return;
+    var current = document.getElementById('eit-consent');
+    if(current){
+      var currentItems = current.querySelectorAll('a[href], button:not([disabled])');
+      if(currentItems.length){ currentItems[currentItems.length - 1].focus({ preventScroll: true }); }
+      return;
+    }
     injectStyles();
+    var previouslyFocused = document.activeElement;
+    var backgroundStates = new Map();
+    var backgroundObserver = null;
     var el = document.createElement('div');
     el.id = 'eit-consent';
     el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
     el.setAttribute('aria-label', t.settings);
     el.innerHTML = '<p>' + t.text + '<a href="' + GDPR_HREF + '">' + t.link + '</a>.</p>'
       + '<div class="eit-btns">'
@@ -110,20 +124,78 @@
       + '<button type="button" class="eit-accept">' + t.accept + '</button>'
       + '</div>';
     document.body.appendChild(el);
+
+    function makeBackgroundInert(node){
+      if(!(node instanceof HTMLElement) || node === el || backgroundStates.has(node)) return;
+      var hadInert = node.hasAttribute('inert');
+      backgroundStates.set(node, hadInert);
+      if(!hadInert){ node.setAttribute('inert', ''); }
+    }
+
+    Array.prototype.forEach.call(document.body.children, makeBackgroundInert);
+    backgroundObserver = new MutationObserver(function(records){
+      records.forEach(function(record){
+        Array.prototype.forEach.call(record.addedNodes, makeBackgroundInert);
+      });
+    });
+    backgroundObserver.observe(document.body, { childList: true });
+
+    function focusableItems(){
+      return Array.prototype.slice.call(
+        el.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+      ).filter(function(item){
+        return item.getClientRects().length > 0 && !item.hasAttribute('inert');
+      });
+    }
+
+    function closeBanner(){
+      if(backgroundObserver){ backgroundObserver.disconnect(); }
+      backgroundStates.forEach(function(hadInert, node){
+        if(!hadInert && node.isConnected){ node.removeAttribute('inert'); }
+      });
+      backgroundStates.clear();
+      el.remove();
+      if(closeActiveConsent === closeBanner){ closeActiveConsent = null; }
+      if(
+        previouslyFocused &&
+        previouslyFocused !== document.body &&
+        previouslyFocused.isConnected &&
+        typeof previouslyFocused.focus === 'function'
+      ){
+        previouslyFocused.focus({ preventScroll: true });
+      }
+    }
+
+    closeActiveConsent = closeBanner;
+    var initialItems = focusableItems();
+    if(initialItems.length){ initialItems[initialItems.length - 1].focus({ preventScroll: true }); }
+    el.addEventListener('keydown', function(event){
+      if(event.key !== 'Tab') return;
+      var items = focusableItems();
+      if(!items.length){
+        event.preventDefault();
+        return;
+      }
+      var first = items[0];
+      var last = items[items.length - 1];
+      if(event.shiftKey && document.activeElement === first){ event.preventDefault(); last.focus(); }
+      else if(!event.shiftKey && document.activeElement === last){ event.preventDefault(); first.focus(); }
+    });
     el.querySelector('.eit-accept').addEventListener('click', function(){
       setConsent('granted');
-      el.remove();
+      closeBanner();
     });
     el.querySelector('.eit-reject').addEventListener('click', function(){
       setConsent('denied');
-      el.remove();
+      closeBanner();
     });
   }
 
   /* Public API: lets the GDPR page offer a "change cookie settings" control */
   window.eitOpenConsent = function(){
     var existing = document.getElementById('eit-consent');
-    if(existing) existing.remove();
+    if(existing && closeActiveConsent){ closeActiveConsent(); }
+    else if(existing){ existing.remove(); }
     showBanner();
   };
 

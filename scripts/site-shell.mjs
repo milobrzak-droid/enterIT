@@ -51,6 +51,8 @@ export function siteFooter(page) {
   const solutionLinks = page.footer.solutions
     .map(([label, href]) => `<a href="/${page.prefix}${escapeHtml(href)}">${escapeHtml(label)}</a>`)
     .join("");
+  const teamHref = page.footerTeamHref || `/${page.prefix}tym.html`;
+  const usPartnerLink = page.lang === "en" ? '\n          <a href="/us">US delivery partnership</a>' : "";
 
   return `<footer class="site-footer">
   <div class="shell">
@@ -59,6 +61,9 @@ export function siteFooter(page) {
         <img src="/assets/enter_logo_white.svg" alt="EnterIT" width="477" height="200" loading="lazy" decoding="async">
       </a>
       <h2 class="footer-statement">${escapeHtml(page.footer.headline)}</h2>
+      <div class="footer-enty" aria-hidden="true">
+        <img class="footer-enty__mascot" src="/assets/decor/book.svg" alt="" width="139" height="142" loading="lazy" decoding="async">
+      </div>
     </div>
     <div class="footer-main">
       <section class="footer-contact" aria-labelledby="footer-contact-heading">
@@ -76,7 +81,7 @@ export function siteFooter(page) {
           <a href="${escapeHtml(page.homeHref)}#results">${escapeHtml(page.nav.results)}</a>
           <a href="${escapeHtml(page.homeHref)}#process">${escapeHtml(page.nav.process)}</a>
           <a href="${escapeHtml(page.homeHref)}#integrations">${escapeHtml(page.nav.integrations)}</a>
-          <a href="/${page.prefix}tym.html">${escapeHtml(page.nav.team)}</a>
+          <a href="${escapeHtml(teamHref)}">${escapeHtml(page.nav.team)}</a>${usPartnerLink}
           <a href="https://enterai.cz/" target="_blank" rel="noopener">EnterAI</a>
         </div>
       </nav>

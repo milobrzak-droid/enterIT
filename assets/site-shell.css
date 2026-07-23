@@ -612,6 +612,7 @@
   html { scroll-behavior: auto !important; }
   .language-menu[open] .language-menu__popover { animation: none; }
   .language-menu__chevron,
+  .nav-shell,
   .menu-toggle span,
   .menu-toggle span::before,
   .menu-toggle span::after { transition: none; }

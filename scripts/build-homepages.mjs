@@ -7,7 +7,26 @@ import { restorationContent } from "./homepage-restoration-content.mjs";
 import { arrow, escapeHtml, languageMenu, siteFooter } from "./site-shell.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const faviconVersion = "20260717-enter-symbol";
+const assetVersion = "20260723-release-1";
+const faviconVersion = assetVersion;
+
+const solutionIcons = [
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.8 7.8 7 10 4.2-2.2 7-5.4 7-10V6z"></path><path d="m9 12 2 2 4-5"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 8 8-4 8 4-8 4z"></path><path d="M4 8v8l8 4 8-4V8"></path><path d="M12 12v8"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v15H5z"></path><path d="M8 3v4M16 3v4M5 9h14"></path><path d="m9 14 2 2 4-4"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l-1-6-3-3H9l-3 3z"></path><circle cx="8" cy="18" r="1.5"></circle><circle cx="16" cy="18" r="1.5"></circle><path d="M9 8 7 5M15 8l2-3"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h10l3 3v15H6z"></path><path d="M16 3v4h4M9 11h6M9 15h6"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v17H7z"></path><path d="M9 2h6v4H9zM10 11h4M10 15h4"></path></svg>',
+];
+
+const implementationIcons = [
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"></path><path d="M16 4v4h4M8 12h8M8 16h5"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"></path><circle cx="8" cy="6" r="2"></circle><circle cx="15" cy="12" r="2"></circle><circle cx="11" cy="18" r="2"></circle></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"></circle><path d="M6 20c.6-4 2.6-6 6-6s5.4 2 6 6"></path><path d="m17 10 2 2 3-4"></path></svg>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"></path><path d="m8 12 3 3 5-6"></path></svg>',
+];
 
 function homepageLanguageMenu(current) {
   const page = locales[current];
@@ -99,7 +118,7 @@ ${page.lang === "cs" ? '  <meta name="google-site-verification" content="TIwBuUu
   <meta name="description" content="${escapeHtml(page.description)}">
   <meta name="robots" content="index,follow">
   <meta name="author" content="AI Enter s.r.o.">
-  <meta name="theme-color" content="#f5f7f2">
+  <meta name="theme-color" content="#41E39E">
   <link rel="canonical" href="${page.canonical}">
   <link rel="alternate" hreflang="cs" href="https://enterit.cz/">
   <link rel="alternate" hreflang="en" href="https://enterit.cz/en.html">
@@ -111,11 +130,13 @@ ${page.lang === "cs" ? '  <meta name="google-site-verification" content="TIwBuUu
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=${faviconVersion}">
   <link rel="icon" href="/favicon.ico?v=${faviconVersion}" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=${faviconVersion}">
-  <link rel="preload" href="/assets/fonts/GreycliffCF-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site-shell.css?v=20260720-13">
-  <link rel="stylesheet" href="/assets/home.css?v=20260720-13">
-  <script src="/assets/home.js?v=20260720-13" defer></script>
+  <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site-shell.css?v=${assetVersion}">
+  <link rel="stylesheet" href="/assets/home.css?v=${assetVersion}">
+  <link rel="stylesheet" href="/assets/brand-manual.css?v=${assetVersion}">
+  <script src="/assets/home.js?v=${assetVersion}" defer></script>
+  <script src="/assets/brand-manual.js?v=${assetVersion}" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="EnterIT">
   <meta property="og:locale" content="${page.ogLocale}">
@@ -133,7 +154,7 @@ ${page.lang === "cs" ? '  <meta name="google-site-verification" content="TIwBuUu
   <meta name="twitter:image" content="https://enterit.cz/assets/og.png">
   <meta name="twitter:image:alt" content="${escapeHtml(page.title)}">
   <script type="application/ld+json">${schemaFor(page)}</script>
-  <script defer src="/assets/analytics.js"></script>
+  <script defer src="/assets/analytics.js?v=${assetVersion}"></script>
 </head>`;
 }
 
@@ -174,14 +195,21 @@ function hero(page) {
     )
     .join("");
 
-  return `<section class="hero" id="home">
+  return `<section class="hero brand-section" id="home">
   <div class="shell hero__inner">
-    <h1>${escapeHtml(page.hero.title)} <em>${escapeHtml(page.hero.highlight)}</em></h1>
-    <div class="hero__bottom">
-      <p class="hero__lead">${escapeHtml(page.hero.lead)}</p>
-      <div class="hero__actions">
-        <a class="button" href="${escapeHtml(bookingUrl)}" target="_blank" rel="noopener">${escapeHtml(page.hero.primary)} ${arrow}</a>
-        <a class="button button--ghost" href="#results">${escapeHtml(page.hero.secondary)}</a>
+    <div class="hero__stage">
+      <div class="hero__copy">
+        <h1>${escapeHtml(page.hero.title)} <em>${escapeHtml(page.hero.highlight)}</em></h1>
+        <div class="hero__bottom">
+          <p class="hero__lead">${escapeHtml(page.hero.lead)}</p>
+          <div class="hero__actions">
+            <a class="button" href="${escapeHtml(bookingUrl)}" target="_blank" rel="noopener">${escapeHtml(page.hero.primary)} ${arrow}</a>
+            <a class="button button--ghost" href="#results">${escapeHtml(page.hero.secondary)}</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-brand-art" aria-hidden="true">
+        <span class="hero-brand-art__shape"><img src="/assets/decor/mascot-blue.svg" alt="" width="130" height="101"></span>
       </div>
     </div>
     <div class="proof-strip">${proof}</div>
@@ -213,12 +241,13 @@ function services(page) {
     )
     .join("");
 
-  return `<section class="section" id="services">
+  return `<section class="section brand-section" id="services">
   <div class="shell">
     <div class="section-head">
       <div><h2 class="section-title">${escapeHtml(page.services.title)}</h2></div>
       <p class="section-intro">${escapeHtml(page.services.intro)}</p>
     </div>
+    <div class="brand-illustration brand-illustration--services" aria-hidden="true"><img class="brand-illustration__scene" src="/assets/decor/illustration-workstation.webp" alt="" width="720" height="540" loading="lazy" decoding="async"><img class="brand-illustration__mascot" src="/assets/decor/mascot-red.svg" alt="" width="127" height="99" loading="lazy" decoding="async"></div>
     <div class="services-grid">${cards}</div>
   </div>
 </section>`;
@@ -227,12 +256,12 @@ function services(page) {
 function solutionCatalog(content) {
   const cards = content.cards
     .map(
-      (card) => `<a class="solution-card" href="${escapeHtml(card.href)}">
-        <div class="solution-card__top"><span aria-hidden="true">↗</span></div>
+      (card, index) => `<a class="solution-card" href="${escapeHtml(card.href)}">
+        <span class="solution-card__icon">${solutionIcons[index % solutionIcons.length]}</span>
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.description)}</p>
         <div class="solution-card__flow" aria-label="${escapeHtml(`${card.input} → ${card.output}`)}">
-          <span>${escapeHtml(card.input)}</span><b aria-hidden="true">→</b><span>${escapeHtml(card.output)}</span>
+          <span class="solution-card__input">${escapeHtml(card.input)}</span><b class="solution-card__arrow" aria-hidden="true">→</b><span class="solution-card__output">${escapeHtml(card.output)}</span>
         </div>
         <strong class="solution-card__proof" data-count-up>${escapeHtml(card.proof)}</strong>
         <span class="solution-card__link" aria-hidden="true">→</span>
@@ -240,7 +269,7 @@ function solutionCatalog(content) {
     )
     .join("");
 
-  return `<section class="section section--white solutions" id="solutions">
+  return `<section class="section section--white solutions brand-section" id="solutions">
   <div class="shell">
     <div class="section-head">
       <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
@@ -255,16 +284,32 @@ function solutionCatalog(content) {
 function results(page, content) {
   const cases = content.cards
     .map(
-      (item) => `<article class="case-card">
-        <span class="case-card__context">${escapeHtml(item.context)}</span>
-        <strong data-count-up>${escapeHtml(item.metric)}</strong>
-        <p>${escapeHtml(item.text)}</p>
-        <div class="case-card__tech">${item.tech.map((tech) => `<span>${escapeHtml(tech)}</span>`).join("")}</div>
+      (item, index) => `<article class="case-card" aria-labelledby="case-${index + 1}-title">
+        <div class="case-card__top">
+          <h3 class="case-card__context" id="case-${index + 1}-title">${escapeHtml(item.context)}</h3>
+          <strong data-count-up>${escapeHtml(item.metric)}</strong>
+        </div>
+        <div class="case-card__detail">
+          <span>${escapeHtml(content.labels.problem)}</span>
+          <p>${escapeHtml(item.problem)}</p>
+        </div>
+        <div class="case-card__detail">
+          <span>${escapeHtml(content.labels.solution)}</span>
+          <p>${escapeHtml(item.solution)}</p>
+        </div>
+        <div class="case-card__impact">
+          <span>${escapeHtml(content.labels.impact)}</span>
+          <p>${escapeHtml(item.impact)}</p>
+        </div>
+        <div class="case-card__technology">
+          <span>${escapeHtml(content.labels.technology)}</span>
+          <div class="case-card__tech">${item.tech.map((tech) => `<span>${escapeHtml(tech)}</span>`).join("")}</div>
+        </div>
       </article>`,
     )
     .join("");
 
-  return `<section class="section results" id="results">
+  return `<section class="section results brand-section" id="results">
   <div class="shell">
     <div class="section-head">
       <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
@@ -280,26 +325,19 @@ function implementation(content) {
   const stages = content.stages
     .map(
       (stage, index) => `<li class="implementation-step${stage.human ? " implementation-step--human" : ""}">
-        <span>0${index + 1}</span><div><h3>${escapeHtml(stage.title)}</h3><p>${escapeHtml(stage.text)}</p></div>
+        <span class="implementation-step__icon">${implementationIcons[index % implementationIcons.length]}</span><div><h3>${escapeHtml(stage.title)}</h3><p>${escapeHtml(stage.text)}</p></div>
       </li>`,
     )
     .join("");
-  const outcomes = content.outcomes
-    .map(
-      (outcome) => `<div class="implementation-outcome"><strong data-count-up>${escapeHtml(outcome.value)}</strong><span>${escapeHtml(outcome.label)}</span></div>`,
-    )
-    .join("");
 
-  return `<section class="section section--white implementation" id="implementation">
+  return `<section class="section section--white implementation brand-section" id="implementation">
   <div class="shell">
     <div class="section-head">
       <div><span class="section-kicker">${escapeHtml(content.kicker)}</span><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
       <p class="section-intro">${escapeHtml(content.intro)}</p>
     </div>
-    <div class="implementation-panel">
-      <div class="implementation-panel__top"><span>${escapeHtml(content.badge)}</span><span>${escapeHtml(content.flowLabel)}</span></div>
+    <div class="implementation-panel implementation-panel--editorial">
       <ol class="implementation-flow">${stages}</ol>
-      <div class="implementation-outcomes">${outcomes}</div>
       <p class="implementation-note">${escapeHtml(content.note)}</p>
     </div>
   </div>
@@ -310,15 +348,15 @@ function processSection(page, timings) {
   const steps = page.process.steps
     .map(
       ([title, text], index) =>
-        `<article class="process-step"><div class="process-step__meta"><span class="process-step__index">0${index + 1}</span><span class="process-step__timing">${escapeHtml(timings[index] || "")}</span></div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p></article>`,
+        `<article class="process-step"><span class="process-step__timing">${escapeHtml(timings[index] || "")}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p></article>`,
     )
     .join("");
 
-  return `<section class="section section--white" id="process">
+  return `<section class="section section--white brand-section" id="process">
   <div class="shell">
-    <div class="section-head">
-      <div><h2 class="section-title">${escapeHtml(page.process.title)}</h2></div>
-      <p class="section-intro">${escapeHtml(page.process.intro)}</p>
+    <div class="section-head process-head">
+      <div class="process-head__copy"><h2 class="section-title">${escapeHtml(page.process.title)}</h2><p class="section-intro">${escapeHtml(page.process.intro)}</p></div>
+      <div class="process-head__visual" aria-hidden="true"><img class="process-head__mascot" src="/assets/decor/mascot-red.svg" alt="" width="127" height="99" loading="eager" decoding="async"></div>
     </div>
     <div class="process-grid">${steps}</div>
     <div class="process-links">
@@ -340,13 +378,17 @@ function integrations(page, content) {
     )
     .join("");
 
-  return `<section class="section" id="integrations">
+  return `<section class="section brand-section" id="integrations">
   <div class="shell integration-layout">
     <div class="integration-copy">
-      <h2 class="section-title">${escapeHtml(content.title)}</h2>
-      <p class="section-intro">${escapeHtml(content.intro)}</p>
-      <ul class="integration-points">${points}</ul>
-      <p class="integration-proof"><strong data-count-up>60+</strong><span>${escapeHtml(content.proof || "")}</span></p>
+      <div class="integration-copy__primary">
+        <h2 class="section-title">${escapeHtml(content.title)}</h2>
+        <p class="integration-proof"><strong data-count-up>60+</strong><span>${escapeHtml(content.proof || "")}</span></p>
+      </div>
+      <div class="integration-copy__details">
+        <p class="section-intro">${escapeHtml(content.intro)}</p>
+        <ul class="integration-points">${points}</ul>
+      </div>
     </div>
     <div class="integration-catalog">
       <div class="integration-catalog__head">
@@ -376,7 +418,7 @@ function operations(content) {
     )
     .join("");
 
-  return `<section class="section operations" id="operations">
+  return `<section class="section operations brand-section" id="operations">
   <div class="shell">
     <div class="section-head">
       <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
@@ -392,21 +434,38 @@ function team(page) {
   const stats = page.team.stats
     .map(([value, label]) => `<div class="team-stat"><strong data-count-up>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`)
     .join("");
+  const leaders = page.team.leaders
+    .map(
+      (leader) => `<article class="leader-card">
+        <img src="${escapeHtml(leader.image)}" alt="${escapeHtml(`${leader.name}, ${leader.role}`)}" width="600" height="600" loading="lazy" decoding="async">
+        <div class="leader-card__copy">
+          <h3>${escapeHtml(leader.name)}</h3>
+          <span>${escapeHtml(leader.role)}</span>
+          <p>${escapeHtml(leader.text)}</p>
+        </div>
+      </article>`,
+    )
+    .join("");
 
-  return `<section class="section section--white" id="team">
-  <div class="shell team-layout">
-    <div class="team-copy">
-      <span class="section-kicker">${escapeHtml(page.team.kicker)}</span>
-      <h2 class="section-title">${escapeHtml(page.team.title)}</h2>
-      <p class="section-intro">${escapeHtml(page.team.intro)}</p>
-      <div class="team-stats">${stats}</div>
-      <a class="button" href="${page.prefix}tym.html">${escapeHtml(page.team.link)} ${arrow}</a>
+  return `<section class="section section--white brand-section" id="team">
+  <div class="shell team-section">
+    <div class="team-story">
+      <div class="team-copy">
+        <span class="section-kicker">${escapeHtml(page.team.kicker)}</span>
+        <h2 class="section-title">${escapeHtml(page.team.title)}</h2>
+        <p class="section-intro">${escapeHtml(page.team.intro)}</p>
+        <div class="team-stats">${stats}</div>
+        <a class="button" href="/${page.prefix}tym.html">${escapeHtml(page.team.link)} ${arrow}</a>
+      </div>
+      <figure class="team-photo">
+        <img src="/assets/decor/firmy.webp" alt="${escapeHtml(page.team.photoAlt)}" width="900" height="675" loading="lazy" decoding="async">
+      </figure>
     </div>
-    <div class="team-portraits">
-      <figure class="portrait"><img src="/assets/team/gaspar-nagy.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Gašpar Nagy · Founder</figcaption></figure>
-      <figure class="portrait"><img src="/assets/team/nedvidek.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Honza Nedvídek · CEO</figcaption></figure>
-      <figure class="portrait"><img src="/assets/team/hanigovsky.jpg" alt="" width="600" height="600" loading="lazy" decoding="async"><figcaption>Ondřej Hanigovský · CTO</figcaption></figure>
+    <div class="leadership-head">
+      <h3>${escapeHtml(page.team.leadershipTitle)}</h3>
+      <p>${escapeHtml(page.team.leadershipIntro)}</p>
     </div>
+    <div class="leadership-grid">${leaders}</div>
   </div>
 </section>`;
 }
@@ -425,10 +484,11 @@ function resources(content) {
     )
     .join("");
 
-  return `<section class="section section--white resources" id="resources">
+  return `<section class="section section--white resources brand-section" id="resources">
   <div class="shell">
     <div class="section-head section-head--compact">
       <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
+      <div class="brand-illustration brand-illustration--resources" aria-hidden="true"><img class="brand-illustration__scene" src="/assets/decor/illustration-modules.webp" alt="" width="720" height="540" loading="lazy" decoding="async"></div>
     </div>
     <div class="resources-grid">${cards}</div>
   </div>
@@ -468,7 +528,7 @@ function calculator(content) {
     })
     .join("");
 
-  return `<section class="section calculator" id="calc" data-calculator data-locale="${escapeHtml(content.currency.locale)}" data-currency="${escapeHtml(content.currency.code)}" data-weeks="${content.weeksPerYear}" data-fte-hours="${content.fteHoursPerYear}">
+  return `<section class="section calculator brand-section" id="calc" data-calculator data-locale="${escapeHtml(content.currency.locale)}" data-currency="${escapeHtml(content.currency.code)}" data-weeks="${content.weeksPerYear}" data-fte-hours="${content.fteHoursPerYear}">
   <div class="shell">
     <div class="section-head">
       <div><h2 class="section-title">${escapeHtml(content.title)}</h2></div>
@@ -493,7 +553,7 @@ function calculator(content) {
 }
 
 function contact(page) {
-  return `<section class="contact-section" id="contact">
+  return `<section class="contact-section brand-section" id="contact">
   <div class="shell">
     <div class="contact-card">
       <div class="contact-card__content">
@@ -504,6 +564,7 @@ function contact(page) {
           <a class="button button--light" href="mailto:milo@enterit.cz">${escapeHtml(page.contact.secondary)}</a>
         </div>
       </div>
+      <div class="contact-brand-art" aria-hidden="true"><img src="/assets/decor/mascot-wave.svg" alt="" width="91" height="96" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>`;
@@ -512,7 +573,7 @@ function contact(page) {
 function renderHomepage(page, code) {
   const restored = restorationContent[code];
   return `${head(page)}
-<body>
+<body class="home-page brand-manual" data-locale="${code}">
 <a class="skip-link" href="#main-content">${escapeHtml(page.skip)}</a>
 ${navigation(page, code)}
 <main id="main-content" tabindex="-1">
