@@ -89,6 +89,18 @@ const arrow = '<span class="arr">→</span>';
 /* Accent rotation used across card grids. */
 const accents = ["turquoise", "blue", "violet", "pink", "yellow", "red"];
 
+/* Enter's line-art artwork, matched to each ready-made solution in catalogue order. */
+const solutionArt = [
+  "illustration-calendar.webp",
+  "illustration-conversation.webp",
+  "illustration-team.webp",
+  "illustration-workstation.webp",
+  "illustration-calendar.webp",
+  "illustration-system.webp",
+  "illustration-documents.webp",
+  "illustration-modules.webp",
+];
+
 function languageSwitcher(current, extraStyle = "") {
   const items = betaOrder
     .map((code) => {
@@ -250,7 +262,7 @@ function hero(page, code) {
 function services(page, content) {
   const pillars = page.services.cards
     .map(
-      (card, i) => `      <article class="pillar">
+      (card, i) => `      <article class="pillar sticker">
         <span class="p-no">0${i + 1}</span>
         <h3>${e(card.title)}</h3>
         <p>${e(card.text)}</p>
@@ -260,17 +272,20 @@ function services(page, content) {
 
   const solutions = content.solutions.cards
     .map((card, i) => {
-      const link = page.services.solutionLinks[i];
-      const href = link ? `/${link[1]}` : "#contact";
-      return `      <a class="sol" href="${href}">
+      const art = solutionArt[i % solutionArt.length];
+      return `      <a class="sol sticker accent-${accents[i % accents.length]}" href="/${card.href}">
+        <span class="illus-wrap"><img class="illus" src="/assets/decor/${art}" alt="" loading="lazy"></span>
         <h4>${e(card.title)}</h4>
         <p>${e(card.description)}</p>
-        <span class="go">${e(content.solutions.cta)} ${arrow}</span>
+        <span class="sol-flow"><b>${e(card.input)}</b><i>→</i><b>${e(card.output)}</b></span>
+        <span class="sol-proof">${e(card.proof)}</span>
       </a>`;
     })
     .join("\n");
 
-  return `<section class="section section--surface" id="services">
+  return `<section class="section section--surface has-decor" id="services">
+  <span class="squig squig--curl" style="width:190px;top:56px;right:-42px;--accent:var(--blue)"></span>
+  <span class="squig squig--wave" style="width:420px;bottom:40px;left:-90px;--accent:var(--violet);opacity:.32"></span>
   <div class="wrap">
     <div class="kicker"><span><b>01</b> · ${e(page.services.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.services.title)}</h2>
@@ -284,6 +299,8 @@ ${pillars}
     <div class="sol-grid" style="margin-top:clamp(28px,3.5vw,44px)">
 ${solutions}
     </div>
+
+    <p class="sol-cta">${e(content.solutions.cta)} <a href="#contact">${e(page.contact.primary)} ${arrow}</a></p>
   </div>
 </section>`;
 }
@@ -362,7 +379,8 @@ function process(page, content) {
     )
     .join("\n");
 
-  return `<section class="section section--surface" id="process">
+  return `<section class="section section--surface has-decor" id="process">
+  <span class="squig squig--wave" style="width:520px;top:34px;right:-120px;--accent:var(--turquoise);opacity:.34"></span>
   <div class="wrap">
     <div class="kicker"><span><b>03</b> · ${e(page.process.kicker)}</span></div>
     <h2 style="max-width:18ch">${e(page.process.title)}</h2>
@@ -393,7 +411,8 @@ function integrations(page, content) {
     )
     .join("\n");
 
-  return `<section class="section section--deep" id="integrations">
+  return `<section class="section section--deep has-decor" id="integrations">
+  <span class="squig squig--loop" style="width:210px;top:70px;right:-40px;--accent:var(--yellow);opacity:.4"></span>
   <div class="wrap">
     <div class="kicker"><span><b>04</b> · ${e(page.integrations.kicker)}</span></div>
     <h2 style="max-width:18ch">${e(page.integrations.title)}</h2>

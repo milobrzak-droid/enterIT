@@ -296,3 +296,59 @@ p{margin:0}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ==========================================================================
+   Figma personality layer — decoration, stickers, illustrations, mascots.
+   Navy stays the ground; colour arrives through these elements.
+   ========================================================================== */
+
+/* ---------- Hand-drawn squiggles ----------
+   Source SVGs have a baked-in fill, so they are used as masks: the element's
+   background supplies the colour, which lets one file serve every accent. */
+.squig{position:absolute;pointer-events:none;z-index:0;
+  background:var(--accent);opacity:.55;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:contain;mask-size:contain;
+  -webkit-mask-position:center;mask-position:center}
+.squig--wave{-webkit-mask-image:url('/assets/decor/cs-leftVector.svg');mask-image:url('/assets/decor/cs-leftVector.svg');aspect-ratio:690/115}
+.squig--curl{-webkit-mask-image:url('/assets/decor/cs-rightVector.svg');mask-image:url('/assets/decor/cs-rightVector.svg');aspect-ratio:233/185}
+.squig--loop{-webkit-mask-image:url('/assets/decor/tc-rightVector.svg');mask-image:url('/assets/decor/tc-rightVector.svg');aspect-ratio:260/227}
+.squig--hook{-webkit-mask-image:url('/assets/decor/tc-leftVector.svg');mask-image:url('/assets/decor/tc-leftVector.svg');aspect-ratio:175/185}
+.squig--arc{-webkit-mask-image:url('/assets/decor/leftVector.svg');mask-image:url('/assets/decor/leftVector.svg');aspect-ratio:506/363}
+@media(max-width:760px){.squig{display:none}}
+
+/* ---------- Sticker card ----------
+   The Figma card: thick outline plus a hard offset shadow. On navy the outline
+   carries the accent and the shadow is a solid colour block, not a blur. */
+.sticker{position:relative;background:var(--surface-2);
+  border:2px solid color-mix(in srgb,var(--accent) 42%,var(--line-2));
+  border-radius:var(--r-lg);
+  box-shadow:7px 7px 0 color-mix(in srgb,var(--accent) 26%,transparent);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+.sticker:hover{transform:translate(-3px,-3px);
+  box-shadow:12px 12px 0 color-mix(in srgb,var(--accent) 34%,transparent);
+  border-color:var(--accent)}
+
+/* ---------- Illustration block ----------
+   Enter's line-art artwork ships on a solid coral field; it is used whole so the
+   colour block itself becomes the accent against navy. */
+.illus{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;
+  border-radius:var(--r-md);background:var(--red)}
+.illus-wrap{position:relative;overflow:hidden;border-radius:var(--r-md);
+  margin-bottom:var(--s4)}
+
+/* ---------- Mascots ---------- */
+.mascot{position:absolute;pointer-events:none;z-index:1}
+.mascot--float{animation:bob 5.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(prefers-reduced-motion:reduce){.mascot--float{animation:none}}
+
+/* ---------- Photo frame ---------- */
+.photo{position:relative;border-radius:var(--r-xl);overflow:hidden;
+  border:2px solid var(--line-2);background:var(--surface-2)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo--tall{aspect-ratio:4/5}
+.photo--wide{aspect-ratio:16/10}
+
+/* Sections that host squiggles need a positioning context and must clip them. */
+.has-decor{position:relative;overflow:hidden}

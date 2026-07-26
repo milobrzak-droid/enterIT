@@ -363,3 +363,18 @@
 .foot-bar .legal{display:flex;flex-wrap:wrap;gap:var(--s5)}
 .foot-bar a{color:var(--text-4);text-decoration:none}
 .foot-bar a:hover{color:var(--text-2)}
+
+/* solution card: input → output line, and the measured proof */
+.sol-flow{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+  font-family:var(--font-mono);font-size:11px;line-height:1.4;color:var(--text-3)}
+.sol-flow b{font-weight:500;color:var(--text-2)}
+.sol-flow i{font-style:normal;color:var(--accent)}
+.sol-proof{position:relative;z-index:1;display:flex;gap:8px;
+  margin-top:auto;padding-top:var(--s3);border-top:1px solid var(--line);
+  font-family:var(--font-mono);font-size:11px;line-height:1.5;color:var(--accent)}
+.sol-proof::before{content:"";flex:none;width:6px;height:6px;margin-top:5px;
+  border-radius:50%;background:var(--accent)}
+.sol-cta{margin-top:clamp(36px,4vw,52px);font-family:var(--font-mono);
+  font-size:var(--t-body);color:var(--text-3);display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+.sol-cta a{color:var(--turquoise);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.sol-cta a:hover{text-decoration:underline}
