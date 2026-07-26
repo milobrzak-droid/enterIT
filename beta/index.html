@@ -64,6 +64,10 @@
 .hero-mascot{position:absolute;right:-4px;top:-56px;width:82px;pointer-events:none}
 .hero-head{position:relative}
 @media(max-width:1000px){.hero-mascot{width:62px;top:-44px}}
+@media(max-width:680px){
+  .hero-mascot{width:54px;top:-38px;right:0}
+  .hero-head .kicker{padding-right:64px}
+}
 
 /* ---- Agent Ops console ---- */
 .console{position:relative;border-radius:var(--r-xl);border:1px solid var(--line-2);
@@ -79,7 +83,12 @@
 .cons-title{font-family:var(--font-mono);font-size:var(--t-body-sm);letter-spacing:.14em;
   text-transform:uppercase;color:var(--text-3)}
 .cons-live{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--font-mono);
-  font-size:11px;color:var(--text-3);letter-spacing:.04em}
+  font-size:11px;color:var(--text-3);letter-spacing:.04em;white-space:nowrap}
+@media(max-width:520px){
+  .cons-bar{flex-wrap:wrap;row-gap:8px}
+  .cons-live{margin-left:0;flex-basis:100%;font-size:10px}
+  .cons-title{font-size:11px}
+}
 .ld{width:7px;height:7px;border-radius:50%;background:var(--turquoise);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--turquoise) 60%,transparent)}
   70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
@@ -322,6 +331,50 @@
   color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:7px}
 .detail .d-links a .arr{transition:transform .18s var(--ease)}
 .detail .d-links a:hover .arr{transform:translateX(3px)}
+
+/* ============ CONTACT ============ */
+.contact-card{position:relative;overflow:hidden;border-radius:var(--r-2xl);
+  background:linear-gradient(150deg,color-mix(in srgb,var(--turquoise) 13%,var(--surface-2)),var(--surface-2) 62%);
+  border:1px solid var(--line-2);padding:clamp(32px,5vw,72px)}
+.contact-card::before{content:"";position:absolute;inset:auto -8% -60% auto;width:46%;height:120%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--turquoise) 20%,transparent),transparent 66%);
+  pointer-events:none}
+.contact-card > *{position:relative;z-index:1}
+.contact-card h2{max-width:18ch;margin-bottom:var(--s4)}
+.contact-card .c-lead{font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:var(--text-2);
+  max-width:62ch;margin-bottom:clamp(28px,3.5vw,40px)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:var(--s3)}
+
+/* ============ FOOTER ============ */
+.site-footer{background:var(--surface);border-top:1px solid var(--line);
+  padding-block:clamp(48px,6vw,88px) var(--s6)}
+.foot-claim{font-family:var(--font-head);font-weight:900;font-size:clamp(24px,3vw,40px);
+  line-height:1.05;color:var(--text);max-width:20ch;margin-bottom:clamp(36px,4.5vw,60px)}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(28px,4vw,56px)}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.foot-grid{grid-template-columns:1fr}}
+.foot-col h3{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-4);margin-bottom:var(--s4)}
+.foot-col a{display:block;font-size:var(--t-body);color:var(--text-2);text-decoration:none;
+  padding:5px 0;transition:color .18s var(--ease)}
+.foot-col a:hover{color:var(--accent)}
+.foot-contact a{font-family:var(--font-head);font-weight:700;font-size:clamp(17px,1.7vw,20px);
+  color:var(--text);padding:3px 0}
+.foot-contact a:hover{color:var(--turquoise)}
+.foot-addr{font-family:var(--font-mono);font-size:var(--t-body-sm);line-height:1.7;
+  color:var(--text-4);margin-top:var(--s5)}
+.socials{display:flex;gap:var(--s2);margin-top:var(--s5)}
+.socials a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;
+  border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--surface-2);
+  color:var(--text-3);transition:all .18s var(--ease)}
+.socials a:hover{color:var(--turquoise);border-color:var(--turquoise)}
+.socials svg{width:17px;height:17px}
+.foot-bar{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s5);align-items:center;
+  justify-content:space-between;margin-top:clamp(40px,5vw,64px);padding-top:var(--s5);
+  border-top:1px solid var(--line);font-family:var(--font-mono);font-size:var(--t-body-sm);color:var(--text-4)}
+.foot-bar .legal{display:flex;flex-wrap:wrap;gap:var(--s5)}
+.foot-bar a{color:var(--text-4);text-decoration:none}
+.foot-bar a:hover{color:var(--text-2)}
 </style>
 </head>
 <body>
@@ -781,6 +834,84 @@
     </div>
   </div>
 </section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--surface" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="kicker"><span><b>07</b> · Contact</span></div>
+      <h2>Let's map the project you need to deliver.</h2>
+      <p class="c-lead">In 30 minutes, we will align on the outcome, systems, delivery risks and the right first step for enterprise software, integrations or AI.</p>
+      <div class="contact-actions">
+        <a class="btn btn--lg" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&amp;ismsaljsauthenabled&amp;ep=plink" target="_blank" rel="noopener">Book a 30-minute call <span class="arr">→</span></a>
+        <a class="btn btn--outline btn--lg" href="mailto:milo@enterit.cz">Send an e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="foot-claim">Enterprise software and AI that make it to production.</p>
+
+    <div class="foot-grid">
+      <div class="foot-col foot-contact">
+        <h3>Got a question?</h3>
+        <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+        <a href="tel:+420608969263">+420 608 969 263</a>
+        <p class="foot-addr">
+          AI Enter s.r.o.<br>
+          IČO 19086652 · DIČ CZ19086652<br>
+          Zahradní 2004/46d<br>
+          792 01 Bruntál, Czechia
+        </p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.4 2.5 4.4 5.8V21h-4v-5.6c0-1.35-.02-3.1-1.9-3.1s-2.2 1.48-2.2 3v5.7H9z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.13-2.45-.13-2.42 0-4.08 1.48-4.08 4.2v2.22H7.5V13h2.67v8z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h3>Menu</h3>
+        <a href="#services">What we build</a>
+        <a href="#results">Results</a>
+        <a href="#process">How we work</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#team">Team</a>
+        <a href="/us/">US delivery partnership</a>
+        <a href="https://enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      </div>
+
+      <div class="foot-col">
+        <h3>Solutions</h3>
+        <a href="/en/reseni-faktury.html">Invoices into accounting</a>
+        <a href="/en/reseni-objednavky.html">Orders from e-mails</a>
+        <a href="/en/reseni-reklamace.html">Complaints</a>
+        <a href="/en/reseni-sklad-bez-papiru.html">Paperless warehouse</a>
+        <a href="/en/reseni-dochazka.html">Attendance tracking</a>
+        <a href="/en/reseni-dovolene.html">Leave approvals</a>
+        <a href="/en/reseni-kniha-jizd.html">Logbook</a>
+        <a href="/en/reseni-pracovni-vykazy.html">Work timesheets</a>
+      </div>
+    </div>
+
+    <div class="foot-bar">
+      <span>© 2026 EnterIT · AI Enter s.r.o.</span>
+      <span class="legal">
+        <a href="/en/gdpr.html">Privacy policy</a>
+        <a href="/en/podminky.html">Terms and conditions</a>
+      </span>
+    </div>
+  </div>
+</footer>
 
 <script>
 (function(){
