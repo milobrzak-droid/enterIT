@@ -132,10 +132,10 @@ export const restorationContent = {
       cards: [
         {
           context: "Výroba | přibližně 600 lidí",
-          metric: "17 → 78 %",
-          problem: "Nízké využití AI a ruční dohledávání informací kolem Business Central.",
+          metric: "40 min / uživatel / týden",
+          problem: "Ruční dohledávání informací kolem Business Central zdržovalo běžnou práci.",
           solution: "Agentní vrstva nad Business Central zpřístupnila firemní data v každodenní práci.",
-          impact: "Adopce vzrostla ze 17 na 78 % a každý uživatel ušetří přibližně 40 minut týdně.",
+          impact: "Každý uživatel ušetří přibližně 40 minut týdně, s kompletní auditní stopou u každého dotazu.",
           tech: ["Copilot", "Business Central"],
         },
         {
@@ -397,10 +397,10 @@ export const restorationContent = {
       cards: [
         {
           context: "Manufacturing | ~600 people",
-          metric: "17 → 78%",
-          problem: "Low AI adoption and manual information lookup around Business Central.",
+          metric: "40 min / user / week",
+          problem: "Manual information lookup around Business Central slowed down everyday work.",
           solution: "An agentic layer over Business Central made company data accessible in daily work.",
-          impact: "Adoption grew from 17% to 78%, saving approximately 40 minutes per user every week.",
+          impact: "Approximately 40 minutes saved per user every week, with a complete audit trail over every query.",
           tech: ["Copilot", "Business Central"],
         },
         {
@@ -661,10 +661,10 @@ export const restorationContent = {
       cards: [
         {
           context: "Produktion | ~600 Mitarbeitende",
-          metric: "17 → 78 %",
-          problem: "Geringe KI-Nutzung und manuelle Informationssuche rund um Business Central.",
+          metric: "40 Min / Nutzer / Woche",
+          problem: "Manuelle Informationssuche rund um Business Central bremste die tägliche Arbeit.",
           solution: "Eine agentengestützte Schicht über Business Central machte Unternehmensdaten im Arbeitsalltag zugänglich.",
-          impact: "Die Nutzung stieg von 17 auf 78 %, bei rund 40 Minuten Zeitgewinn pro Person und Woche.",
+          impact: "Rund 40 Minuten Zeitgewinn pro Person und Woche — mit vollständigem Audit-Trail über jede Abfrage.",
           tech: ["Copilot", "Business Central"],
         },
         {
@@ -924,10 +924,10 @@ export const restorationContent = {
       cards: [
         {
           context: "Produkcja | ~600 osób",
-          metric: "17 → 78 %",
-          problem: "Niskie wykorzystanie AI i ręczne wyszukiwanie informacji wokół Business Central.",
+          metric: "40 min / użytkownik / tydzień",
+          problem: "Ręczne wyszukiwanie informacji wokół Business Central spowalniało codzienną pracę.",
           solution: "Warstwa agentowa nad Business Central udostępniła dane firmy w codziennej pracy.",
-          impact: "Adopcja wzrosła z 17 do 78 %, a każdy użytkownik oszczędza około 40 minut tygodniowo.",
+          impact: "Około 40 minut oszczędności na użytkownika tygodniowo, z pełną ścieżką audytu każdego zapytania.",
           tech: ["Copilot", "Business Central"],
         },
         {
