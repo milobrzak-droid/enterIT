@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Oprogramowanie enterprise i AI od projektu po produkcję | EnterIT — beta</title>
+<meta name="description" content="75-osobowy zespół projektuje, buduje i utrzymuje oprogramowanie enterprise, AI, chmurę i integracje. Jeden partner od architektury po produkcję.">
+<meta property="og:locale" content="pl_PL">
+<link rel="alternate" hreflang="en" href="https://enterit.cz/beta/">
+<link rel="alternate" hreflang="cs" href="https://enterit.cz/beta/cs.html">
+<link rel="alternate" hreflang="de" href="https://enterit.cz/beta/de.html">
+<link rel="alternate" hreflang="pl" href="https://enterit.cz/beta/pl.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/beta/assets/ds.css">
+<link rel="stylesheet" href="/beta/assets/page.css">
+</head>
+<body>
+
+<div class="notice">
+  <span>Zespół wykonawczy <b>EnterAI</b> — budujemy i utrzymujemy to, co określa strategia.</span>
+  <a href="https://enterai.cz" target="_blank" rel="noopener">O EnterAI <span class="arr">→</span></a>
+</div>
+
+<header class="site-header">
+  <div class="wrap hd">
+    <a class="brand" href="/beta/pl.html" aria-label="EnterIT - strona główna">
+      <img src="/assets/enter_logo_white.svg" alt="Enter">
+      <span class="it">IT</span>
+    </a>
+
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#services">Co budujemy</a>
+      <a href="#results">Wyniki</a>
+      <a href="#process">Jak pracujemy</a>
+      <a href="#integrations">Integracje</a>
+      <a href="#team">Zespół</a>
+      <span class="lang"><a href="/beta/">EN</a><a href="/beta/cs.html">CZ</a><a href="/beta/de.html">DE</a><a class="on" href="/beta/pl.html">PL</a></span>
+      <a class="btn btn--sm" href="#contact">Porozmawiajmy o projekcie <span class="arr">→</span></a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" style="margin-left:auto">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Nawigacja mobilna">
+    <a href="#services">Co budujemy</a>
+      <a href="#results">Wyniki</a>
+      <a href="#process">Jak pracujemy</a>
+      <a href="#integrations">Integracje</a>
+      <a href="#team">Zespół</a>
+    <span class="lang" style="align-self:flex-start"><a href="/beta/">EN</a><a href="/beta/cs.html">CZ</a><a href="/beta/de.html">DE</a><a class="on" href="/beta/pl.html">PL</a></span>
+    <a class="btn" href="#contact">Porozmawiajmy o projekcie <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<section class="hero section--deep" id="home">
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <div class="wrap rel">
+    <div class="hero-grid">
+
+      <div class="hero-copy">
+        <div class="hero-head">
+          <div class="kicker"><span>Enterprise software · AI · integracje</span></div>
+          <img class="hero-mascot" src="/assets/decor/mascot-wave.svg" alt="" aria-hidden="true">
+          <h1>Oprogramowanie enterprise i AI. <em>Gotowe na produkcję.</em></h1>
+        </div>
+
+        <p class="lead">Projektujemy, budujemy i utrzymujemy aplikacje enterprise, rozwiązania AI oraz integracje w jednym odpowiedzialnym zespole inżynierskim.</p>
+
+        <div class="hero-actions">
+          <a class="btn" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Porozmawiajmy o projekcie <span class="arr">→</span></a>
+          <a class="btn btn--outline" href="#results">Zobacz wyniki</a>
+        </div>
+      </div>
+
+      <div class="console">
+        <div class="cons-bar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="cons-title">Agent Ops</span>
+          <span class="cons-live"><span class="ld"></span>LIVE · uptime 99.98 %</span>
+        </div>
+        <div class="cons-kpis">
+          <div class="cons-kpi"><b class="num" data-val="12480">0</b><span>tasks today</span></div>
+          <div class="cons-kpi"><b class="num" data-val="99" data-suf=" %">0</b><span>error-free</span></div>
+          <div class="cons-kpi"><b class="num" data-val="612" data-suf=" h">0</b><span>saved / mo</span></div>
+        </div>
+        <div class="cons-rows">
+          <div class="cons-row" style="--d:4.2s">
+            <span class="rh"><span class="sd"></span><span class="nm">Invoicing agent</span><span class="pct">running</span></span>
+            <span class="tk">OCR invoice #4821 → ERP</span>
+            <span class="bar"><i></i></span>
+          </div>
+          <div class="cons-row" style="--d:5.1s">
+            <span class="rh"><span class="sd"></span><span class="nm">Order agent</span><span class="pct">processing</span></span>
+            <span class="tk">extracting order #2207</span>
+            <span class="bar"><i></i></span>
+          </div>
+          <div class="cons-row" style="--d:3.6s">
+            <span class="rh"><span class="sd"></span><span class="nm">Knowledge agent</span><span class="pct">running</span></span>
+            <span class="tk">looking up price in&nbsp;K2 price list</span>
+            <span class="bar"><i></i></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stats">
+      <div><b>75</b><span>specjalistów pod jednym dachem</span></div>
+      <div><b>120+</b><span>zrealizowanych projektów</span></div>
+      <div><b>60+</b><span>zintegrowanych systemów</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners section--deep">
+  <div class="wrap">
+    <div class="partners-row">
+      <span class="p-lbl">Partnerzy technologiczni</span>
+      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy">
+      <span class="ms-logo">
+        <span class="ms-sq"><i></i><i></i><i></i><i></i></span>
+        <span><b>Microsoft</b>Solutions Partner</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="services">
+  <div class="wrap">
+    <div class="kicker"><span><b>01</b> · Od procesu do działającego rozwiązania</span></div>
+    <h2 style="max-width:20ch">Engineering, który nie kończy się przy przekazaniu kodu.</h2>
+
+    <div class="pillars" style="margin-top:clamp(32px,4vw,56px)">
+      <article class="pillar">
+        <span class="p-no">01</span>
+        <h3>Oprogramowanie enterprise i integracje</h3>
+        <p>Projektujemy aplikacje wewnętrzne, portale i warstwy integracyjne tam, gdzie gotowe oprogramowanie nie wystarcza.</p>
+      </article>
+      <article class="pillar">
+        <span class="p-no">02</span>
+        <h3>AI, agenci i dane</h3>
+        <p>Agenci pracują z dokumentami, e-mailami i wiedzą firmy. Ludzie zatwierdzają wrażliwe kroki, a każdą akcję można audytować.</p>
+      </article>
+      <article class="pillar">
+        <span class="p-no">03</span>
+        <h3>Chmura i utrzymanie produkcyjne</h3>
+        <p>Bierzemy odpowiedzialność za wdrożenie, infrastrukturę, monitoring i dalszy rozwój. Rozwiązanie ma właściciela także po starcie.</p>
+      </article>
+    </div>
+
+    <h2 style="max-width:22ch;margin-top:clamp(56px,7vw,104px)">Konkretne zadania, które zdejmujemy z Państwa zespołu.</h2>
+
+    <div class="sol-grid" style="margin-top:clamp(28px,3.5vw,44px)">
+      <a class="sol" href="/pl/reseni-faktury.html">
+        <h4>Ewidencja obecności</h4>
+        <p>Koniec ręcznego sumowania godzin z czytników i Excela na koniec miesiąca.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="/pl/reseni-objednavky.html">
+        <h4>Przyjmowanie zamówień z e-maili</h4>
+        <p>Zamówienie przychodzi e-mailem w dowolnym formacie — nikt go nie przepisuje.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="/pl/reseni-reklamace.html">
+        <h4>Reklamacje pod kontrolą</h4>
+        <p>Żadna reklamacja nie zginie w e-mailach — zostaje automatycznie zarejestrowana i objęta monitoringiem.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="/pl/reseni-sklad-bez-papiru.html">
+        <h4>Magazyn bez papieru</h4>
+        <p>Wystarczy sfotografować dowód dostawy — przyjęcie i powiązanie z zamówieniem przebiegają automatycznie.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="/pl/reseni-pracovni-vykazy.html">
+        <h4>Zatwierdzanie urlopów</h4>
+        <p>Koniec z papierowymi wnioskami — wniosek, zatwierdzenie i saldo w jednym miejscu.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="#contact">
+        <h4>Automatyczna ewidencja przejazdów</h4>
+        <p>Tankowania i trasy tworzą gotową ewidencję przejazdów; system pilnuje też przeglądów i serwisów.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="#contact">
+        <h4>Faktury bezpośrednio do księgowości</h4>
+        <p>Otrzymana faktura zostaje odczytana, sparowana z zamówieniem i wysłana do zatwierdzenia.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+      <a class="sol" href="#contact">
+        <h4>Karty pracy</h4>
+        <p>Karty pracy techników i pracowników są zbierane, zatwierdzane i przygotowane do fakturowania oraz płac.</p>
+        <span class="go">Nie ma tu Państwa procesu? Zbudujemy rozwiązanie na miarę. <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--deep" id="results">
+  <div class="wrap">
+    <div class="kicker"><span><b>02</b> · Wybrane wyniki wdrożeń</span></div>
+    <h2 style="max-width:20ch">Mniej obietnic. Więcej odzyskanego czasu.</h2>
+
+    <div class="case-grid" style="margin-top:clamp(32px,4vw,56px)">
+      <article class="case">
+        <span class="case-ob">Produkcja | ~600 osób</span>
+        <span class="case-kpi">40 min / użytkownik / tydzień</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Ręczne wyszukiwanie informacji wokół Business Central spowalniało codzienną pracę.</dd></div>
+          <div><dt>Rozwiązanie</dt><dd>Warstwa agentowa nad Business Central udostępniła dane firmy w codziennej pracy.</dd></div>
+          <div><dt>Wpływ biznesowy</dt><dd>Około 40 minut oszczędności na użytkownika tygodniowo, z pełną ścieżką audytu każdego zapytania.</dd></div>
+        </dl>
+        <div class="tech"><span>Copilot</span><span>Business Central</span></div>
+      </article>
+      <article class="case">
+        <span class="case-ob">Handel metalami | 82 osoby</span>
+        <span class="case-kpi">3 miesiące</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Powtarzalne procesy operacyjne pochłaniały tysiące godzin pracy zespołu rocznie.</dd></div>
+          <div><dt>Rozwiązanie</dt><dd>Copilot i n8n przejęły wybrane rutynowe kroki i przekazują wyjątki ludziom.</dd></div>
+          <div><dt>Wpływ biznesowy</dt><dd>Zwrot w 3 miesiące, około 1 420 godzin i 710 tys. CZK oszczędności rocznie.</dd></div>
+        </dl>
+        <div class="tech"><span>Copilot</span><span>n8n</span></div>
+      </article>
+      <article class="case">
+        <span class="case-ob">Grupa budowlana</span>
+        <span class="case-kpi">180 h / miesiąc</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Ręczne przepisywanie i rozproszone dane utrudniały kontrolę nad zleceniami.</dd></div>
+          <div><dt>Rozwiązanie</dt><dd>Aplikacja wewnętrzna z API i Power BI ujednoliciła pracę z danymi i raportowanie.</dd></div>
+          <div><dt>Wpływ biznesowy</dt><dd>Około 180 godzin miesięcznie wróciło do zespołu, a zlecenia mają jeden wspólny widok.</dd></div>
+        </dl>
+        <div class="tech"><span>Aplikacja</span><span>API</span><span>Power BI</span></div>
+      </article>
+    </div>
+
+    <p class="case-note">
+      <span>Liczby pochodzą z danych operacyjnych poszczególnych projektów.</span>
+      <a href="#contact">Porozmawiajmy o podobnym przypadku →</a>
+    </p>
+
+    <div class="feature">
+      <span class="feature-tag">Model poglądowy — nie referencja klienta</span>
+      <h3>Platforma dokumentowa oparta na Business Central</h3>
+      <p class="f-lead">Krótki przebieg od dokumentu wejściowego przez weryfikację aż po ERP, audyt i utrzymanie.</p>
+
+      <ol class="flow accent-blue">
+        <li>
+          <h4>Dokument trafia do systemu</h4>
+          <p>E-mail, PDF lub skan — w dowolnym formacie.</p>
+        </li>
+        <li>
+          <h4>System odczytuje i weryfikuje</h4>
+          <p>Porównuje dane z ERP i zachowuje pełną ścieżkę audytową.</p>
+        </li>
+        <li>
+          <h4>Człowiek zatwierdza wyjątek</h4>
+          <p>Zespół interweniuje tylko tam, gdzie potrzebna jest ocena człowieka.</p>
+        </li>
+        <li>
+          <h4>Zweryfikowane dane są zapisywane</h4>
+          <p>Business Central, magazyn i DMS otrzymują zatwierdzone dane.</p>
+        </li>
+      </ol>
+
+      <p class="disclaimer">To modelowa architektura z parametrami poglądowymi, a nie wynik konkretnego projektu klienta. Zweryfikowane rezultaty znajdują się w sekcji Realizacje.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="process">
+  <div class="wrap">
+    <div class="kicker"><span><b>03</b> · Jak pracujemy</span></div>
+    <h2 style="max-width:18ch">Pokazujemy pierwsze efekty, zanim zaczniemy skalować.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,64px)">Każdy etap ma jasny rezultat, punkt decyzyjny i właściciela. Nie sprzedajemy niekończącego się eksperymentu.</p>
+
+    <div class="steps">
+      <article class="step">
+        <h3>Znajdujemy właściwy proces</h3>
+        <p>Określamy nakład pracy, wyjątki, dane i rzeczywisty koszt obecnego sposobu działania.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">1-2 tyg.</p>
+      </article>
+      <article class="step">
+        <h3>Tworzymy uzasadnienie biznesowe</h3>
+        <p>Określamy punkt wyjścia, oczekiwane oszczędności, ryzyka i kryteria sukcesu pilotażu.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">2-3 tyg.</p>
+      </article>
+      <article class="step">
+        <h3>Realizujemy pilotaż</h3>
+        <p>Łączymy rozwiązanie z systemami produkcyjnymi i mierzymy jego efekty na rzeczywistych danych.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">1-2 tyg.</p>
+      </article>
+      <article class="step">
+        <h3>Bierzemy odpowiedzialność za utrzymanie</h3>
+        <p>Monitoring, bezpieczeństwo, SLA i rozwój mają konkretnego właściciela.</p>
+        <p style="margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">na bieżąco</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--deep" id="integrations">
+  <div class="wrap">
+    <div class="kicker"><span><b>04</b> · Integracja i bezpieczeństwo</span></div>
+    <h2 style="max-width:18ch">Dopasowuje się do Państwa systemów. Nie odwrotnie.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(28px,3.5vw,40px)">Odczytujemy, sprawdzamy i zapisujemy dane tam, gdzie zespół już pracuje. Rozwiązanie może działać w chmurze UE lub w Państwa środowisku.</p>
+
+    <div class="intg-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="field" id="intgSearch" type="search" placeholder="Wpisz system (SAP, Pohoda, Shoptet…)" aria-label="Szukaj systemu" autocomplete="off">
+    </div>
+
+    <div id="intgWrap">
+      <div class="intg-row accent-turquoise">
+        <h3>ERP</h3>
+        <div class="intg-chips"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span><span>Karat</span></div>
+      </div>
+      <div class="intg-row accent-blue">
+        <h3>CRM</h3>
+        <div class="intg-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div>
+      </div>
+      <div class="intg-row accent-violet">
+        <h3>E-commerce</h3>
+        <div class="intg-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div>
+      </div>
+      <div class="intg-row accent-pink">
+        <h3>Komunikacja i dane</h3>
+        <div class="intg-chips"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div>
+      </div>
+      <div class="intg-row accent-yellow">
+        <h3>Automatyzacja</h3>
+        <div class="intg-chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div>
+      </div>
+      <div class="intg-row accent-red">
+        <h3>Modele AI</h3>
+        <div class="intg-chips"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div>
+      </div>
+    </div>
+    <p class="intg-empty" id="intgEmpty">Nie ma Państwa systemu na liście? To nie problem — podłączymy również ten system.</p>
+
+    <div class="intg-principles">
+      <div class="card accent-turquoise"><ul class="check-list"><li>Integracja przez API, bazy danych, pliki lub interfejs użytkownika</li></ul></div>
+      <div class="card accent-blue"><ul class="check-list"><li>Akceptacja przez człowieka przy wrażliwych krokach i pełna ścieżka audytu</li></ul></div>
+      <div class="card accent-violet"><ul class="check-list"><li>Monitoring, role, uprawnienia i odpowiedzialność operacyjna od pierwszego dnia</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="operations">
+  <div class="wrap">
+    <div class="kicker"><span><b>05</b> · Utrzymanie i gwarancje</span></div>
+    <h2 style="max-width:24ch">Nie tylko budujemy. Zapewniamy działanie i przejrzyste przekazanie.</h2>
+
+    <div class="ops-grid" style="margin-top:clamp(32px,4vw,56px)">
+      <article class="ops">
+        <span class="ops-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9 8 10 4.6-1 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h3>Po wdrożeniu nadal odpowiadamy za działanie</h3>
+        <p>Dostępność, czasy reakcji, monitoring 24/7, kopie zapasowe i aktualizacje w ramach jednego SLA.</p>
+      </article>
+      <article class="ops">
+        <span class="ops-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></span>
+        <h3>Z góry wiadomo, do kogo należą kod, dane i dokumentacja</h3>
+        <p>Umowa jasno określa własność kodu, danych i dokumentacji oraz praktyczny plan przekazania i zakończenia współpracy.</p>
+      </article>
+      <article class="ops">
+        <span class="ops-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h3>Bezpieczeństwo jest częścią projektu</h3>
+        <p>Chmura w UE lub on-premise, szyfrowanie, role, uprawnienia i pełna ścieżka audytowa.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--deep" id="team">
+  <div class="wrap">
+    <div class="kicker"><span><b>06</b> · Jeden partner od projektu po utrzymanie</span></div>
+    <h2 style="max-width:20ch">75 specjalistów. Trzy zespoły. Jedna odpowiedzialność.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,60px)">Architektura, software engineering, AI, infrastruktura i długoterminowe utrzymanie są w jednym miejscu.</p>
+
+    <h3 style="font-size:clamp(19px,2vw,23px);max-width:34ch;margin-bottom:var(--s3)">Osoby odpowiedzialne za strategię, delivery i architekturę.</h3>
+    <p style="font-size:var(--t-body);color:var(--text-3);max-width:60ch;margin-bottom:clamp(28px,3.5vw,44px)">Każdy krytyczny obszar ma konkretnego właściciela. Partner wie, kto decyduje i kto odpowiada za rezultat.</p>
+
+    <div class="people">
+      <article class="person">
+        <img src="/assets/team/milo.jpg" alt="Milo Brzák" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">Founder &amp; CEO</span>
+          <h3>Milo Brzák</h3>
+          <p>120+ firm i 800+ przeszkolonych osób. Odpowiada za strategię, produkt i metodykę.</p>
+        </div>
+      </article>
+      <article class="person">
+        <img src="/assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">Operations &amp; Delivery</span>
+          <h3>Michaela Klesnárová</h3>
+          <p>Prawie 20 lat na stanowiskach C-level. Prowadzi delivery dla klientów i utrzymanie produkcyjne.</p>
+        </div>
+      </article>
+      <article class="person">
+        <img src="/assets/team/hanigovsky.jpg" alt="Ondřej Hanigovský" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">CTO, Enter Agents</span>
+          <h3>Ondřej Hanigovský</h3>
+          <p>Odpowiada za architekturę rozwiązań AI, jakość inżynierską i wdrożenia produkcyjne.</p>
+        </div>
+      </article>
+    </div>
+
+    <div style="margin-top:var(--s6)">
+      <a class="btn btn--outline" href="/pl/tym.html">Poznaj cały zespół <span class="arr">→</span></a>
+    </div>
+
+    <h2 style="max-width:22ch;margin-top:clamp(56px,7vw,104px)">Proszę wybrać potrzebny poziom szczegółowości.</h2>
+
+    <div class="detail-grid" style="margin-top:clamp(28px,3.5vw,44px)">
+      <article class="detail">
+        <h3>Od architektury do produkcji</h3>
+        <p>Szczegóły architektury, bezpieczeństwa, testów i przekazania do utrzymania.</p>
+        <div class="d-links">
+          <a href="/pl/jak-stavime-agenty.html">Jak budujemy agentów AI <span class="arr">→</span></a>
+          <a href="/pl/jak-stavime-automatizace.html">Jak budujemy automatyzacje <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="detail">
+        <h3>Na jakim etapie drogi do operacji opartych na agentach jest Państwa firma?</h3>
+        <p>Pięć poziomów dojrzałości i konkretny kolejny krok dla każdego z nich.</p>
+        <div class="d-links">
+          <a href="/pl/firma-2030.html">Sprawdź poziom <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="detail">
+        <h3>Najpierw dowód. Potem decyzja.</h3>
+        <p>Proszę przejrzeć zanonimizowane wyniki lub pokazać nam proces, który spowalnia zespół.</p>
+        <div class="d-links">
+          <a href="#results">Zobacz wyniki <span class="arr">→</span></a>
+          <a href="#contact">Omów projekt <span class="arr">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="kicker"><span><b>07</b> · Pierwszy krok zajmuje 30 minut</span></div>
+      <h2>Porozmawiajmy o projekcie, który chcą Państwo zrealizować.</h2>
+      <p class="c-lead">W 30 minut ustalimy cel, systemy, ryzyka delivery i właściwy pierwszy krok dla oprogramowania enterprise, integracji lub AI.</p>
+      <div class="contact-actions">
+        <a class="btn btn--lg" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Umówmy 30-minutową rozmowę <span class="arr">→</span></a>
+        <a class="btn btn--outline btn--lg" href="mailto:milo@enterit.cz">Wyślij e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="foot-claim">Oprogramowanie enterprise i AI, które trafiają na produkcję.</p>
+
+    <div class="foot-grid">
+      <div class="foot-col foot-contact">
+        <h3>Pytania?</h3>
+        <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+        <a href="tel:+420608969263">+420 608 969 263</a>
+        <p class="foot-addr">
+          AI Enter s.r.o.<br>
+          IČO 19086652 · DIČ CZ19086652<br>
+          Zahradní 2004/46d<br>
+          792 01 Bruntál, Czechia
+        </p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/enterin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.4 2.5 4.4 5.8V21h-4v-5.6c0-1.35-.02-3.1-1.9-3.1s-2.2 1.48-2.2 3v5.7H9z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/enterco/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61579684083040" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.13-2.45-.13-2.42 0-4.08 1.48-4.08 4.2v2.22H7.5V13h2.67v8z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h3>Menu</h3>
+        <a href="#services">Co budujemy</a>
+        <a href="#results">Wyniki</a>
+        <a href="#process">Jak pracujemy</a>
+        <a href="#integrations">Integracje</a>
+        <a href="#team">Zespół</a>
+        <a href="/us/">US delivery partnership</a>
+        <a href="https://enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      </div>
+
+      <div class="foot-col">
+        <h3>Rozwiązania</h3>
+        <a href="/pl/reseni-faktury.html">Faktury do księgowości</a>
+        <a href="/pl/reseni-objednavky.html">Zamówienia z e-maili</a>
+        <a href="/pl/reseni-reklamace.html">Reklamacje</a>
+        <a href="/pl/reseni-sklad-bez-papiru.html">Magazyn bez papierów</a>
+        <a href="/pl/reseni-dochazka.html">Ewidencja obecności</a>
+        <a href="/pl/reseni-dovolene.html">Zatwierdzanie urlopów</a>
+        <a href="/pl/reseni-kniha-jizd.html">Ewidencja przejazdów</a>
+        <a href="/pl/reseni-pracovni-vykazy.html">Karty pracy</a>
+      </div>
+    </div>
+
+    <div class="foot-bar">
+      <span>© 2026 EnterIT · AI Enter s.r.o.</span>
+      <span class="legal">
+        <a href="/pl/gdpr.html">Polityka prywatności</a>
+        <a href="/pl/podminky.html">Ogólne warunki handlowe</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b = document.getElementById('burger'), m = document.getElementById('mobileNav');
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
+  });
+
+  /* count-up uses setInterval: requestAnimationFrame stalls in headless preview */
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el){
+    var target = +el.dataset.val, suf = el.dataset.suf || '', dur = 1600, t0 = Date.now();
+    if(reduced){ el.textContent = target.toLocaleString('en-GB') + suf; return; }
+    var id = setInterval(function(){
+      var p = Math.min((Date.now() - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-GB') + suf;
+      if(p >= 1) clearInterval(id);
+    }, 32);
+  }
+  var seen = false, k = document.querySelector('.cons-kpis');
+  function startCounters(){
+    if(seen || !k) return;
+    var r = k.getBoundingClientRect();
+    if(r.top >= window.innerHeight || r.bottom <= 0) return;
+    seen = true;
+    document.querySelectorAll('.num').forEach(countUp);
+    window.removeEventListener('scroll', startCounters);
+  }
+  startCounters();
+  window.addEventListener('scroll', startCounters, {passive:true});
+  setTimeout(startCounters, 400);
+
+  var search = document.getElementById('intgSearch');
+  if(search){
+    var rows = [].slice.call(document.querySelectorAll('#intgWrap .intg-row'));
+    var empty = document.getElementById('intgEmpty');
+    search.addEventListener('input', function(){
+      var q = search.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function(row){
+        var chips = [].slice.call(row.querySelectorAll('.intg-chips span'));
+        var rowHas = false;
+        chips.forEach(function(ch){
+          var match = !q || ch.textContent.toLowerCase().indexOf(q) !== -1;
+          ch.style.display = match ? '' : 'none';
+          ch.classList.toggle('hit', !!q && match);
+          if(match) rowHas = true;
+        });
+        row.style.display = rowHas ? '' : 'none';
+        if(rowHas) anyVisible = true;
+      });
+      empty.style.display = (q && !anyVisible) ? 'block' : 'none';
+    });
+  }
+})();
+</script>
+</body>
+</html>
