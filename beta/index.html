@@ -229,6 +229,48 @@
 .feature .flow p{font-size:var(--t-body-sm)}
 .disclaimer{margin-top:clamp(28px,3.5vw,40px);padding-top:var(--s5);border-top:1px solid var(--line);
   font-family:var(--font-mono);font-size:var(--t-body-sm);line-height:1.6;color:var(--text-4);max-width:78ch}
+
+/* ============ PROCESS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5);counter-reset:st;position:relative}
+@media(max-width:960px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{counter-increment:st;position:relative;padding-top:var(--s6)}
+.step::before{content:counter(st,decimal-leading-zero);position:absolute;top:0;left:0;
+  font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--accent);
+  letter-spacing:.04em}
+.step::after{content:"";position:absolute;top:8px;left:34px;right:-14px;height:1px;
+  background:linear-gradient(90deg,var(--line-2),transparent)}
+.step:last-child::after{display:none}
+@media(max-width:960px){.step:nth-child(2)::after{display:none}}
+@media(max-width:560px){.step::after{display:none}}
+.steps .step:nth-child(1){--accent:var(--turquoise)}
+.steps .step:nth-child(2){--accent:var(--blue)}
+.steps .step:nth-child(3){--accent:var(--violet)}
+.steps .step:nth-child(4){--accent:var(--pink)}
+.step h3{font-size:19px;margin-bottom:var(--s3);line-height:1.2}
+.step p{font-size:var(--t-body);line-height:1.6;color:var(--text-3)}
+
+/* ============ INTEGRATIONS ============ */
+.intg-search{position:relative;max-width:420px;margin-bottom:clamp(28px,3.5vw,40px)}
+.intg-search .field{padding-left:42px}
+.intg-search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;color:var(--text-4);pointer-events:none}
+.intg-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:var(--s5);
+  padding:var(--s5) 0;border-top:1px solid var(--line);align-items:start}
+@media(max-width:760px){.intg-row{grid-template-columns:1fr;gap:var(--s3)}}
+.intg-row:last-of-type{border-bottom:1px solid var(--line)}
+.intg-row h3{font-size:17px;color:var(--text)}
+.intg-chips{display:flex;flex-wrap:wrap;gap:8px}
+.intg-chips span{font-family:var(--font-mono);font-size:var(--t-body-sm);color:var(--text-2);
+  padding:7px 13px;border-radius:var(--r-pill);border:1px solid var(--line-2);
+  background:var(--surface-2);transition:all .18s var(--ease)}
+.intg-chips span.hit{border-color:var(--accent);color:var(--text);
+  background:color-mix(in srgb,var(--accent) 14%,var(--surface-2))}
+.intg-empty{font-family:var(--font-mono);font-size:var(--t-body);color:var(--text-4);
+  padding:var(--s6) 0;display:none}
+.intg-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);
+  margin-top:clamp(32px,4vw,52px)}
+@media(max-width:860px){.intg-principles{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -508,6 +550,82 @@
   </div>
 </section>
 
+<!-- ============ 03 · HOW WE WORK ============ -->
+<section class="section section--surface" id="process">
+  <div class="wrap">
+    <div class="kicker"><span><b>03</b> · How we work</span></div>
+    <h2 style="max-width:18ch">We prove value before we scale.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,64px)">Every stage has a clear output, decision point and owner. We do not sell an endless experiment.</p>
+
+    <div class="steps">
+      <article class="step">
+        <h3>Find the right process</h3>
+        <p>We map workload, exceptions, data and the real cost of the current way of working.</p>
+      </article>
+      <article class="step">
+        <h3>Build the business case</h3>
+        <p>We define the baseline, expected savings, risks and success criteria for the pilot.</p>
+      </article>
+      <article class="step">
+        <h3>Deliver the pilot</h3>
+        <p>We connect the solution to real systems and measure its impact using real data.</p>
+      </article>
+      <article class="step">
+        <h3>Run it in production</h3>
+        <p>Monitoring, security, SLA and continued development have one accountable owner.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · INTEGRATIONS ============ -->
+<section class="section section--deep" id="integrations">
+  <div class="wrap">
+    <div class="kicker"><span><b>04</b> · Integrations</span></div>
+    <h2 style="max-width:18ch">We connect to what you already use.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(28px,3.5vw,40px)">Type your system and see whether we speak its language.</p>
+
+    <div class="intg-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="field" id="intgSearch" type="search" placeholder="e.g. SAP, Shopify, Teams…" autocomplete="off">
+    </div>
+
+    <div id="intgWrap">
+      <div class="intg-row accent-turquoise">
+        <h3>ERP</h3>
+        <div class="intg-chips"><span>SAP</span><span>Microsoft Dynamics 365</span><span>Business Central</span><span>Helios</span><span>K2</span><span>Abra</span><span>Money S5</span><span>Pohoda</span><span>Oracle NetSuite</span><span>Byznys</span></div>
+      </div>
+      <div class="intg-row accent-blue">
+        <h3>CRM</h3>
+        <div class="intg-chips"><span>Salesforce</span><span>HubSpot</span><span>Dynamics CRM</span><span>Pipedrive</span><span>Raynet</span><span>Zoho</span><span>Anabix</span></div>
+      </div>
+      <div class="intg-row accent-violet">
+        <h3>E-commerce</h3>
+        <div class="intg-chips"><span>Shoptet</span><span>Shopify</span><span>WooCommerce</span><span>PrestaShop</span><span>Upgates</span><span>Magento</span></div>
+      </div>
+      <div class="intg-row accent-pink">
+        <h3>Communication and data</h3>
+        <div class="intg-chips"><span>Microsoft 365</span><span>Teams</span><span>Outlook</span><span>Slack</span><span>WhatsApp Business</span><span>SharePoint</span><span>Google Workspace</span><span>Power BI</span></div>
+      </div>
+      <div class="intg-row accent-yellow">
+        <h3>Automation</h3>
+        <div class="intg-chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Power Automate</span><span>Power Apps</span></div>
+      </div>
+      <div class="intg-row accent-red">
+        <h3>AI models</h3>
+        <div class="intg-chips"><span>OpenAI / GPT</span><span>Claude (Anthropic)</span><span>Google Gemini</span><span>Azure OpenAI</span><span>Mistral</span><span>Llama</span><span>Microsoft Copilot</span></div>
+      </div>
+    </div>
+    <p class="intg-empty" id="intgEmpty">No match in the list — but we most likely integrate it anyway. <a href="#contact" style="color:var(--turquoise)">Ask us →</a></p>
+
+    <div class="intg-principles">
+      <div class="card"><ul class="check-list"><li>Integration through APIs, databases, files or the user interface</li></ul></div>
+      <div class="card accent-blue"><ul class="check-list"><li>Human approval for sensitive steps and a complete audit trail</li></ul></div>
+      <div class="card accent-violet"><ul class="check-list"><li>Monitoring, roles, permissions and operational ownership from day one</li></ul></div>
+    </div>
+  </div>
+</section>
+
 <script>
 (function(){
   /* mobile menu */
@@ -543,6 +661,30 @@
   startCounters();
   window.addEventListener('scroll', startCounters, {passive:true});
   setTimeout(startCounters, 400);
+
+  /* integrations live filter */
+  var search = document.getElementById('intgSearch');
+  if(search){
+    var rows = [].slice.call(document.querySelectorAll('#intgWrap .intg-row'));
+    var empty = document.getElementById('intgEmpty');
+    search.addEventListener('input', function(){
+      var q = search.value.trim().toLowerCase();
+      var anyVisible = false;
+      rows.forEach(function(row){
+        var chips = [].slice.call(row.querySelectorAll('.intg-chips span'));
+        var rowHas = false;
+        chips.forEach(function(ch){
+          var match = !q || ch.textContent.toLowerCase().indexOf(q) !== -1;
+          ch.style.display = match ? '' : 'none';
+          ch.classList.toggle('hit', !!q && match);
+          if(match) rowHas = true;
+        });
+        row.style.display = rowHas ? '' : 'none';
+        if(rowHas) anyVisible = true;
+      });
+      empty.style.display = (q && !anyVisible) ? 'block' : 'none';
+    });
+  }
 
   /* reveal */
   var rio = new IntersectionObserver(function(es){
