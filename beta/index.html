@@ -271,6 +271,57 @@
 .intg-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);
   margin-top:clamp(32px,4vw,52px)}
 @media(max-width:860px){.intg-principles{grid-template-columns:1fr}}
+
+/* ============ OPERATIONS ============ */
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+@media(max-width:900px){.ops-grid{grid-template-columns:1fr}}
+.ops{position:relative;overflow:hidden;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:var(--s6);transition:border-color .2s var(--ease)}
+.ops-grid .ops:nth-child(1){--accent:var(--turquoise)}
+.ops-grid .ops:nth-child(2){--accent:var(--blue)}
+.ops-grid .ops:nth-child(3){--accent:var(--violet)}
+.ops:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.ops-ico{width:38px;height:38px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);
+  color:var(--accent);margin-bottom:var(--s4)}
+.ops-ico svg{width:18px;height:18px}
+.ops h3{font-size:19px;line-height:1.22;margin-bottom:var(--s3)}
+.ops p{font-size:var(--t-body);line-height:1.6;color:var(--text-3)}
+
+/* ============ TEAM ============ */
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+@media(max-width:900px){.people{grid-template-columns:1fr}}
+.person{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.people .person:nth-child(1){--accent:var(--turquoise)}
+.people .person:nth-child(2){--accent:var(--blue)}
+.people .person:nth-child(3){--accent:var(--violet)}
+.person:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));transform:translateY(-3px)}
+.person img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 22%;
+  background:var(--surface-3);filter:saturate(.92)}
+.person .p-body{padding:var(--s5)}
+.person .p-role{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:8px}
+.person h3{font-size:20px;margin-bottom:10px}
+.person p{font-size:var(--t-body);line-height:1.55;color:var(--text-3)}
+
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+@media(max-width:900px){.detail-grid{grid-template-columns:1fr}}
+.detail{display:flex;flex-direction:column;gap:var(--s3);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s6);
+  transition:border-color .2s var(--ease)}
+.detail-grid .detail:nth-child(1){--accent:var(--turquoise)}
+.detail-grid .detail:nth-child(2){--accent:var(--pink)}
+.detail-grid .detail:nth-child(3){--accent:var(--yellow)}
+.detail:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.detail h3{font-size:18px;line-height:1.25}
+.detail p{font-size:var(--t-body);line-height:1.6;color:var(--text-3);flex:1}
+.detail .d-links{display:flex;flex-direction:column;gap:9px;margin-top:var(--s2)}
+.detail .d-links a{font-family:var(--font-mono);font-size:var(--t-body-sm);letter-spacing:.05em;
+  color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.detail .d-links a .arr{transition:transform .18s var(--ease)}
+.detail .d-links a:hover .arr{transform:translateX(3px)}
 </style>
 </head>
 <body>
@@ -622,6 +673,111 @@
       <div class="card"><ul class="check-list"><li>Integration through APIs, databases, files or the user interface</li></ul></div>
       <div class="card accent-blue"><ul class="check-list"><li>Human approval for sensitive steps and a complete audit trail</li></ul></div>
       <div class="card accent-violet"><ul class="check-list"><li>Monitoring, roles, permissions and operational ownership from day one</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · OPERATIONS ============ -->
+<section class="section section--surface" id="operations">
+  <div class="wrap">
+    <div class="kicker"><span><b>05</b> · Operations &amp; guarantees</span></div>
+    <h2 style="max-width:24ch">We do not just build it. We keep it running and hand it over cleanly.</h2>
+
+    <div class="ops-grid" style="margin-top:clamp(32px,4vw,56px)">
+      <article class="ops">
+        <span class="ops-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9 8 10 4.6-1 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <h3>We remain accountable after launch</h3>
+        <p>Availability, response times, 24/7 monitoring, backups and updates under one SLA.</p>
+      </article>
+
+      <article class="ops">
+        <span class="ops-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg>
+        </span>
+        <h3>You know who owns the code, data and documentation</h3>
+        <p>The contract clearly defines ownership of code, data and documentation, plus a practical exit and handover plan.</p>
+      </article>
+
+      <article class="ops">
+        <span class="ops-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </span>
+        <h3>Security is designed in, not added later</h3>
+        <p>EU cloud or on-premises, encryption, roles, permissions and a complete audit trail.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · TEAM ============ -->
+<section class="section section--deep" id="team">
+  <div class="wrap">
+    <div class="kicker"><span><b>06</b> · Team</span></div>
+    <h2 style="max-width:20ch">75 specialists. Three teams. One responsibility.</h2>
+    <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,60px)">Architecture, software engineering, AI, infrastructure and long-term operations all sit under one roof.</p>
+
+    <h3 style="font-size:clamp(19px,2vw,23px);max-width:34ch;margin-bottom:var(--s3)">The people accountable for strategy, delivery and architecture.</h3>
+    <p style="font-size:var(--t-body);color:var(--text-3);max-width:60ch;margin-bottom:clamp(28px,3.5vw,44px)">Every critical area has a named owner. Partners know who makes decisions and who is responsible for the outcome.</p>
+
+    <div class="people">
+      <article class="person">
+        <img src="/assets/team/milo.jpg" alt="Milo Brzák" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">Founder &amp; CEO</span>
+          <h3>Milo Brzák</h3>
+          <p>120+ companies and 800+ people trained. Responsible for strategy, product and methodology.</p>
+        </div>
+      </article>
+      <article class="person">
+        <img src="/assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">Operations &amp; Delivery</span>
+          <h3>Michaela Klesnárová</h3>
+          <p>Nearly 20 years in C-level roles. Leads client delivery and production operations.</p>
+        </div>
+      </article>
+      <article class="person">
+        <img src="/assets/team/hanigovsky.jpg" alt="Ondřej Hanigovský" loading="lazy">
+        <div class="p-body">
+          <span class="p-role">CTO, Enter Agents</span>
+          <h3>Ondřej Hanigovský</h3>
+          <p>Responsible for AI solution architecture, engineering quality and production deployment.</p>
+        </div>
+      </article>
+    </div>
+
+    <div style="margin-top:var(--s6)">
+      <a class="btn btn--outline" href="/en/tym.html">Meet the full team <span class="arr">→</span></a>
+    </div>
+
+    <h2 style="max-width:22ch;margin-top:clamp(56px,7vw,104px)">Choose the level of detail you need.</h2>
+
+    <div class="detail-grid" style="margin-top:clamp(28px,3.5vw,44px)">
+      <article class="detail">
+        <h3>From architecture to production</h3>
+        <p>See how we handle architecture, security, testing and production handover.</p>
+        <div class="d-links">
+          <a href="/en/jak-stavime-agenty.html">How we build AI agents <span class="arr">→</span></a>
+          <a href="/en/jak-stavime-automatizace.html">How we build automation <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="detail">
+        <h3>Where are you on the road to agentic operations?</h3>
+        <p>Five maturity levels and a practical next step for each one.</p>
+        <div class="d-links">
+          <a href="/en/firma-2030.html">Find your level <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="detail">
+        <h3>Evidence first. Then a decision.</h3>
+        <p>Review anonymized outcomes or show us the process that is holding your team back.</p>
+        <div class="d-links">
+          <a href="#results">See the results <span class="arr">→</span></a>
+          <a href="#contact">Discuss my processes <span class="arr">→</span></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
