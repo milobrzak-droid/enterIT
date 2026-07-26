@@ -175,6 +175,60 @@
   text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:6px}
 .sol:hover .go .arr{transform:translateX(3px)}
 .sol .go .arr{transition:transform .18s var(--ease)}
+
+/* ============ RESULTS ============ */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+@media(max-width:1000px){.case-grid{grid-template-columns:1fr}}
+.case{position:relative;overflow:hidden;display:flex;flex-direction:column;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s6)}
+.case-grid .case:nth-child(1){--accent:var(--turquoise)}
+.case-grid .case:nth-child(2){--accent:var(--blue)}
+.case-grid .case:nth-child(3){--accent:var(--violet)}
+.case::after{content:"";position:absolute;inset:auto -24% -50% auto;width:58%;height:58%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,transparent),transparent 68%);
+  opacity:0;transition:opacity .28s var(--ease);pointer-events:none}
+.case:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.case:hover::after{opacity:.55}
+.case > *{position:relative;z-index:1}
+.case-ob{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-4);display:block;margin-bottom:var(--s3)}
+.case-kpi{font-family:var(--font-head);font-weight:900;font-size:clamp(30px,3.4vw,42px);line-height:1;
+  color:var(--accent);display:block;margin-bottom:var(--s5)}
+.case dl{margin:0;display:flex;flex-direction:column;gap:var(--s4);flex:1}
+.case dt{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-4);margin-bottom:5px}
+.case dd{margin:0;font-size:var(--t-body);line-height:1.55;color:var(--text-2)}
+.case .tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s5);padding-top:var(--s5);
+  border-top:1px solid var(--line)}
+.case .tech span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-3);padding:5px 10px;border-radius:var(--r-pill);
+  border:1px solid var(--line-2);background:var(--surface)}
+.case-note{font-family:var(--font-mono);font-size:var(--t-body-sm);color:var(--text-4);
+  margin-top:var(--s5);display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+.case-note a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.case-note a:hover{border-color:currentColor}
+
+/* featured model architecture */
+.feature{margin-top:clamp(48px,6vw,88px);background:var(--surface-2);border:1px solid var(--line-2);
+  border-radius:var(--r-xl);padding:clamp(28px,4vw,56px);position:relative;overflow:hidden}
+.feature::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(90% 70% at 100% 0%,color-mix(in srgb,var(--blue) 10%,transparent),transparent 62%);
+  pointer-events:none}
+.feature > *{position:relative;z-index:1}
+.feature-tag{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:var(--r-pill);
+  background:color-mix(in srgb,var(--blue) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--blue) 42%,transparent);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:var(--s4)}
+.feature h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:var(--s3);max-width:22ch}
+.feature .f-lead{font-size:var(--t-body);color:var(--text-3);max-width:64ch;margin-bottom:clamp(28px,3.5vw,44px)}
+.feature .flow{grid-template-columns:repeat(4,1fr)}
+@media(max-width:960px){.feature .flow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.feature .flow{grid-template-columns:1fr}}
+.feature .flow h4{font-size:16px}
+.feature .flow p{font-size:var(--t-body-sm)}
+.disclaimer{margin-top:clamp(28px,3.5vw,40px);padding-top:var(--s5);border-top:1px solid var(--line);
+  font-family:var(--font-mono);font-size:var(--t-body-sm);line-height:1.6;color:var(--text-4);max-width:78ch}
 </style>
 </head>
 <body>
@@ -372,6 +426,84 @@
         <p>Technicians' and workers' timesheets are collected, approved and prepared for billing and payroll.</p>
         <span class="go">See solution <span class="arr">→</span></span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · RESULTS ============ -->
+<section class="section section--deep" id="results">
+  <div class="wrap">
+    <div class="kicker"><span><b>02</b> · Results</span></div>
+    <h2 style="max-width:20ch">Problem, solution and impact. No generic claims.</h2>
+
+    <div class="case-grid" style="margin-top:clamp(32px,4vw,56px)">
+
+      <article class="case">
+        <span class="case-ob">Manufacturing · ~600 people</span>
+        <span class="case-kpi">17 → 78%</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Low AI adoption and manual information lookup around Business Central.</dd></div>
+          <div><dt>Solution</dt><dd>An agentic layer over Business Central made company data accessible in daily work.</dd></div>
+          <div><dt>Business impact</dt><dd>Adoption grew from 17% to 78%, saving approximately 40 minutes per user every week.</dd></div>
+        </dl>
+        <div class="tech"><span>Copilot</span><span>Business Central</span></div>
+      </article>
+
+      <article class="case">
+        <span class="case-ob">Metals trading · 82 people</span>
+        <span class="case-kpi">3 months</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Repetitive operational processes consumed thousands of team hours every year.</dd></div>
+          <div><dt>Solution</dt><dd>Copilot and n8n took over selected routine steps and hand exceptions to people.</dd></div>
+          <div><dt>Business impact</dt><dd>Three-month payback, with approximately 1,420 hours and CZK&nbsp;710k saved each year.</dd></div>
+        </dl>
+        <div class="tech"><span>Copilot</span><span>n8n</span></div>
+      </article>
+
+      <article class="case">
+        <span class="case-ob">Construction group</span>
+        <span class="case-kpi">180 h / month</span>
+        <dl>
+          <div><dt>Problem</dt><dd>Manual retyping and fragmented data made project oversight difficult.</dd></div>
+          <div><dt>Solution</dt><dd>An internal application with APIs and Power BI unified data work and reporting.</dd></div>
+          <div><dt>Business impact</dt><dd>Approximately 180 team hours returned every month and one shared view of all projects.</dd></div>
+        </dl>
+        <div class="tech"><span>App</span><span>API</span><span>Power BI</span></div>
+      </article>
+
+    </div>
+
+    <p class="case-note">
+      <span>Figures are based on operational data from the respective projects.</span>
+      <a href="#contact">Discuss a similar case →</a>
+    </p>
+
+    <!-- featured model architecture -->
+    <div class="feature">
+      <span class="feature-tag">Model architecture</span>
+      <h3>A document platform built on Business Central</h3>
+      <p class="f-lead">A compact walkthrough from the incoming document through validation to ERP, audit and operations.</p>
+
+      <ol class="flow accent-blue">
+        <li>
+          <h4>A document arrives</h4>
+          <p>E-mail, PDF or scan — in any format.</p>
+        </li>
+        <li>
+          <h4>The system extracts and validates</h4>
+          <p>It checks the data against ERP and preserves a complete audit trail.</p>
+        </li>
+        <li>
+          <h4>A person approves the exception</h4>
+          <p>People step in only when their judgment is needed.</p>
+        </li>
+        <li>
+          <h4>Validated data is posted</h4>
+          <p>Business Central, the warehouse and DMS receive the approved data.</p>
+        </li>
+      </ol>
+
+      <p class="disclaimer">This is a model architecture with illustrative parameters, not the result of a specific client project. Verified outcomes are listed in the case studies above.</p>
     </div>
   </div>
 </section>
