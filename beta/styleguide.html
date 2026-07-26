@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>EnterIT — Design System (beta)</title>
+<link rel="stylesheet" href="/beta/assets/ds.css">
+<style>
+  .sg-head{padding-block:var(--s8) var(--s6);border-bottom:1px solid var(--line)}
+  .sg-sec{padding-block:var(--s8);border-bottom:1px solid var(--line)}
+  .sg-title{display:flex;align-items:baseline;gap:var(--s4);margin-bottom:var(--s6)}
+  .sg-title h2{font-size:clamp(22px,2vw,28px)}
+  .sg-title span{font-family:var(--font-mono);font-size:var(--t-body-sm);color:var(--text-4);
+    letter-spacing:.1em;text-transform:uppercase}
+  .sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s4)}
+  .sw{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--surface-2)}
+  .sw-chip{height:76px}
+  .sw-meta{padding:10px 12px;font-size:var(--t-body-sm);line-height:1.45}
+  .sw-meta b{display:block;color:var(--text);font-family:var(--font-head);font-weight:700}
+  .sw-meta code{color:var(--text-4);font-size:11px}
+  .type-row{display:flex;align-items:baseline;gap:var(--s5);padding-block:var(--s4);
+    border-bottom:1px dashed var(--line)}
+  .type-row .t-meta{font-family:var(--font-mono);font-size:11px;color:var(--text-4);
+    flex:none;width:150px;letter-spacing:.06em}
+  .demo-row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+  .note{font-size:var(--t-body-sm);color:var(--text-4);margin-top:var(--s3);max-width:64ch}
+</style>
+</head>
+<body>
+
+<div class="notice">
+  <span><b style="color:var(--accent)">BETA</b> — design system preview, not the live site</span>
+</div>
+
+<header class="wrap sg-head">
+  <div class="kicker"><b>00</b> Foundation</div>
+  <h1>EnterIT<br>design system.</h1>
+  <p class="lead" style="margin-top:var(--s5)">Dark navy base, white type. Tokens from the official Enter Figma library — the colour values, the Greycliff&nbsp;CF / Fira&nbsp;Mono pairing and the type scale are unchanged. What changes is the surface strategy: instead of full-colour section backgrounds, a navy scale carries the page and the palette is spent on accents.</p>
+</header>
+
+<!-- SURFACES -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Surfaces</h2><span>Navy scale</span></div>
+  <div class="sw-grid">
+    <div class="sw"><div class="sw-chip" style="background:#10171F"></div><div class="sw-meta"><b>Floor</b><code>#10171F</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#17202E"></div><div class="sw-meta"><b>Surface</b><code>#17202E · Figma "Dark"</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#1B2533"></div><div class="sw-meta"><b>Raised</b><code>#1B2533</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#212C3C"></div><div class="sw-meta"><b>Higher</b><code>#212C3C</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#FBFBFB"></div><div class="sw-meta"><b>White</b><code>#FBFBFB · type</code></div></div>
+  </div>
+  <p class="note">Three navy steps are enough to build depth. Cards sit on Raised, hovers lift to Higher, the page floor is darkest so sections can breathe above it.</p>
+</section>
+
+<!-- ACCENTS -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Accents</h2><span>Figma palette 1 + 2</span></div>
+  <div class="sw-grid">
+    <div class="sw"><div class="sw-chip" style="background:#41E39E"></div><div class="sw-meta"><b>Turquoise</b><code>#41E39E · primary</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#6ECEFF"></div><div class="sw-meta"><b>Blue</b><code>#6ECEFF</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#B790FF"></div><div class="sw-meta"><b>Violet</b><code>#B790FF</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#E399FF"></div><div class="sw-meta"><b>Pink</b><code>#E399FF</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#F8E354"></div><div class="sw-meta"><b>Yellow</b><code>#F8E354</code></div></div>
+    <div class="sw"><div class="sw-chip" style="background:#FF848C"></div><div class="sw-meta"><b>Red</b><code>#FF848C</code></div></div>
+  </div>
+  <p class="note">Accents are scoped per section (<code>.accent-blue</code>, <code>.accent-violet</code>…). Everything inside — kicker, checkmarks, button, glow — follows automatically, so a section can shift hue without restyling its parts.</p>
+</section>
+
+<!-- TYPE -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Typography</h2><span>Greycliff CF · Fira Mono</span></div>
+  <div class="type-row"><span class="t-meta">H1 · 72 / 900</span><h1>Automation that runs</h1></div>
+  <div class="type-row"><span class="t-meta">H2 · 48 / 900</span><h2>Built, measured, operated</h2></div>
+  <div class="type-row"><span class="t-meta">H3 · 32 / 700</span><h3>Invoices into accounting</h3></div>
+  <div class="type-row"><span class="t-meta">H4 · 24 / 700</span><h4>SLA &amp; operations</h4></div>
+  <div class="type-row"><span class="t-meta">H5 · 20 / 700</span><h5>Ownership &amp; exit</h5></div>
+  <div class="type-row"><span class="t-meta">Body L · 16</span><p style="font-size:16px">We build agents that rewrite invoices and look up orders — instead of your people.</p></div>
+  <div class="type-row"><span class="t-meta">Body M · 14</span><p style="font-size:14px">We connect them to your systems and put them into production.</p></div>
+  <div class="type-row"><span class="t-meta">Label · 12 / .1em</span><span class="label">01 · What we solve</span></div>
+  <p class="note">Headlines keep Figma's confident scale — H1 is 72px on desktop, fluid down to 40px on mobile. Body stays Fira Mono, which is what gives the brand its engineering voice.</p>
+</section>
+
+<!-- BUTTONS -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Buttons</h2><span>4 variants · 3 sizes</span></div>
+  <div class="demo-row">
+    <a class="btn" href="#">Book 30 min <span class="arr">→</span></a>
+    <a class="btn btn--outline" href="#">See solutions</a>
+    <a class="btn btn--dark" href="#">Contact</a>
+    <a class="btn btn--ghost" href="#">Read more <span class="arr">→</span></a>
+  </div>
+  <div class="demo-row" style="margin-top:var(--s4)">
+    <a class="btn btn--sm" href="#">Small</a>
+    <a class="btn" href="#">Medium</a>
+    <a class="btn btn--lg" href="#">Large</a>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Cards</h2><span>Checklist · metric · quote</span></div>
+  <div class="grid grid-3">
+
+    <article class="card card--hover card--glow">
+      <div class="label" style="margin-bottom:var(--s3)">~30 h/mo</div>
+      <h4 style="margin-bottom:var(--s3)">Invoices that post themselves</h4>
+      <p style="font-size:var(--t-body);color:var(--text-3);margin-bottom:var(--s5)">The agent extracts the document and writes it straight into the ERP. Error rate under 1%.</p>
+      <ul class="check-list">
+        <li>Extraction from PDF and e-mail</li>
+        <li>Matched against the order</li>
+        <li>Full audit trail</li>
+      </ul>
+    </article>
+
+    <div class="stack stack-5">
+      <div class="kpi accent-blue">
+        <span class="kpi-ob">Metals trading · 82 people</span>
+        <span class="kpi-num">3 months</span>
+        <p>Return on investment. ~1,420 hours saved per year.</p>
+      </div>
+      <div class="kpi accent-violet">
+        <span class="kpi-ob">Isotra · Business Central</span>
+        <span class="kpi-num">~40 h/wk</span>
+        <p>Agentic layer over the ERP, with an audit trail.</p>
+      </div>
+    </div>
+
+    <figure class="quote">
+      <blockquote>“AI and automation belong directly in operations — built, measured and connected to your systems, not as a demo.”</blockquote>
+      <figcaption>
+        <div class="avatar"></div>
+        <div>
+          <div class="who">Milo Brzák</div>
+          <div class="role">Founder, EnterIT</div>
+        </div>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- CHIPS + BADGES -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Chips &amp; badges</h2><span>Filters · trust markers</span></div>
+  <div class="chip-row" style="margin-bottom:var(--s6)">
+    <button class="chip is-on">Finance</button>
+    <button class="chip">Sales &amp; orders</button>
+    <button class="chip">Warehouse</button>
+    <button class="chip">HR &amp; payroll</button>
+    <button class="chip">Field service</button>
+  </div>
+  <div class="badges">
+    <span class="badge"><span class="ico">🔒</span> Data stays in your tenant / EU / on-prem</span>
+    <span class="badge"><span class="ico">🛡</span> GDPR &amp; AI Act ready</span>
+    <span class="badge"><span class="ico">✅</span> Human-in-the-loop on exceptions</span>
+    <span class="badge"><span class="ico">👁</span> Full audit trail</span>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Process flow</h2><span>Auto-numbered</span></div>
+  <ol class="flow grid grid-4">
+    <li><h4>Map</h4><p>We sit with the team and find where the hours actually go.</p></li>
+    <li><h4>Pilot</h4><p>One process, in production, in 4–8 weeks. Measured against a baseline.</p></li>
+    <li><h4>Roll out</h4><p>What works gets extended to neighbouring processes.</p></li>
+    <li><h4>Operate</h4><p>We run it, monitor it and stay on the hook under an SLA.</p></li>
+  </ol>
+</section>
+
+<!-- FORM + MEDIA -->
+<section class="wrap sg-sec">
+  <div class="sg-title"><h2>Capture &amp; media</h2><span>Hero building blocks</span></div>
+  <div class="grid grid-2" style="align-items:center">
+    <div>
+      <form class="inline-form" onsubmit="return false">
+        <input class="field" type="email" placeholder="Enter your e-mail">
+        <button class="btn" type="submit">Work out my savings <span class="arr">→</span></button>
+      </form>
+      <p class="form-note">By submitting you agree to the <a href="#">privacy statement</a>.</p>
+    </div>
+    <div class="media media--placeholder">
+      Photo / video — to be added
+      <button class="play" aria-label="Play">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DUO -->
+<section class="wrap sg-sec" style="border-bottom:none">
+  <div class="sg-title"><h2>Closing CTA</h2><span>Two-up</span></div>
+  <div class="cta-duo">
+    <div class="cta-card cta-card--solid">
+      <h3>Stop guessing where the hours go.</h3>
+      <a class="btn" href="#">Book 30 min <span class="arr">→</span></a>
+    </div>
+    <div class="cta-card cta-card--outline">
+      <h3>Not sure what you need?</h3>
+      <p style="font-size:var(--t-body);color:var(--text-3)">Send us one process and we'll tell you straight whether it's worth automating.</p>
+      <a class="btn btn--outline" href="#">Ask us <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('is-on'); });
+  });
+})();
+</script>
+</body>
+</html>

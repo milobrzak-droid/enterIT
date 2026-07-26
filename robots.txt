@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /beta/
 
 # AI assistants & LLM crawlers — explicitly welcome
 User-agent: GPTBot
