@@ -373,6 +373,10 @@
 .sol-cta a{color:var(--turquoise);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .sol-cta a:hover{text-decoration:underline}
 
+.rail-hint{font-family:var(--font-mono);font-size:var(--t-body-sm);color:var(--text-4);margin:0}
+/* Tiles inside a rail stretch to equal height. */
+.rail-track .sol,.rail-track .case{height:100%}
+
 /* ============ CALCULATOR ============
    Brand manual web pattern: rounded info panel on the left at roughly 30% of the
    width, working area on the right. */

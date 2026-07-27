@@ -158,7 +158,16 @@
 
     <h2 style="max-width:22ch;margin-top:clamp(56px,7vw,104px)">Konkrete Aufgaben, die wir Ihrem Team abnehmen.</h2>
 
-    <div class="sol-grid" style="margin-top:clamp(28px,3.5vw,44px)">
+    <div style="margin-top:clamp(28px,3.5vw,44px)">
+    <div class="rail">
+      <div class="rail-head">
+        <p class="rail-hint">Wischen oder Pfeile für mehr nutzen</p>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" aria-label="Zurück"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="rail-btn" type="button" data-rail="next" aria-label="Weiter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="rail-track">
       <a class="sol sticker" href="/de/reseni-dochazka.html">
         <span class="illus-wrap"><img class="illus" src="/assets/decor/illustration-calendar.webp" alt="" loading="lazy"></span>
         <h4>Anwesenheitserfassung</h4>
@@ -199,6 +208,8 @@
         <h4>Arbeitsnachweise</h4>
         <span class="sol-proof">~12 h/Mon. und weniger Abrechnungsfehler</span>
       </a>
+      </div>
+    </div>
     </div>
 
     <p class="sol-cta">Ihr Prozess ist nicht dabei? Wir bauen die passende Lösung. <a href="#contact">30 Minuten buchen <span class="arr">→</span></a></p>
@@ -213,7 +224,16 @@
     <div class="kicker"><span><b>02</b> · Ausgewählte Ergebnisse im Betrieb</span></div>
     <h2 style="max-width:20ch">Weniger Versprechen. Mehr gewonnene Zeit.</h2>
 
-    <div class="case-grid" style="margin-top:clamp(32px,4vw,56px)">
+    <div style="margin-top:clamp(32px,4vw,56px)">
+    <div class="rail">
+      <div class="rail-head">
+        <p class="rail-hint">Wischen oder Pfeile für mehr nutzen</p>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" aria-label="Zurück"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="rail-btn" type="button" data-rail="next" aria-label="Weiter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="rail-track">
       <article class="case">
         <span class="case-ob">Produktion | ~600 Mitarbeitende</span>
         <span class="case-kpi">40 Min / Nutzer / Woche</span>
@@ -253,6 +273,8 @@
         </details>
         <div class="tech"><span>Anwendung</span><span>API</span><span>Power BI</span></div>
       </article>
+      </div>
+    </div>
     </div>
 
     <p class="case-note">
@@ -647,6 +669,55 @@
   startCounters();
   window.addEventListener('scroll', startCounters, {passive:true});
   setTimeout(startCounters, 400);
+
+  /* horizontal tile rails */
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var track = rail.querySelector('.rail-track');
+    var prev = rail.querySelector('[data-rail="prev"]');
+    var next = rail.querySelector('[data-rail="next"]');
+    if(!track) return;
+
+    function step(){
+      var first = track.firstElementChild;
+      return first ? first.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
+    }
+    var head = rail.querySelector('.rail-head');
+    function sync(){
+      var max = track.scrollWidth - track.clientWidth;
+      /* Nothing hidden means no affordance: promising "more" when the tiles
+         already fit would be a lie the user pays for with a wasted click. */
+      var scrollable = max > 2;
+      if(head) head.hidden = !scrollable;
+      rail.dataset.static = !scrollable;
+      if(!scrollable){ rail.dataset.atStart = true; rail.dataset.atEnd = true; return; }
+      var atStart = track.scrollLeft <= 2;
+      var atEnd = track.scrollLeft >= max - 2;
+      rail.dataset.atStart = atStart;
+      rail.dataset.atEnd = atEnd;
+      if(prev) prev.disabled = atStart;
+      if(next) next.disabled = atEnd;
+    }
+    /* Own tween instead of behavior:'smooth' — the native option is a no-op in
+       some embedded webviews, which would leave the arrows doing nothing. */
+    var anim = null;
+    function glide(delta){
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+        track.scrollLeft += delta; sync(); return;
+      }
+      clearInterval(anim);
+      var from = track.scrollLeft, to = from + delta, t0 = Date.now(), dur = 380;
+      anim = setInterval(function(){
+        var p = Math.min((Date.now() - t0) / dur, 1);
+        track.scrollLeft = from + (to - from) * (1 - Math.pow(1 - p, 3));
+        if(p >= 1){ clearInterval(anim); sync(); }
+      }, 16);
+    }
+    if(prev) prev.addEventListener('click', function(){ glide(-step()); });
+    if(next) next.addEventListener('click', function(){ glide(step()); });
+    track.addEventListener('scroll', sync, {passive:true});
+    window.addEventListener('resize', sync);
+    sync();
+  });
 
   /* savings calculator */
   var calc = document.querySelector('.calc-work');

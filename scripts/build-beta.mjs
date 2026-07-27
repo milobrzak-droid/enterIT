@@ -71,6 +71,35 @@ const betaCopy = {
 const e = (v) => escapeHtml(v ?? "");
 const arrow = '<span class="arr">→</span>';
 
+const chev = (dir) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${
+    dir === "prev" ? "m15 18-6-6 6-6" : "m9 18 6-6-6-6"
+  }"/></svg>`;
+
+/** Wraps tiles in a horizontally scrollable rail with prev/next controls. */
+function rail(tilesHtml, labels) {
+  return `    <div class="rail">
+      <div class="rail-head">
+        <p class="rail-hint">${e(labels.hint)}</p>
+        <div class="rail-nav">
+          <button class="rail-btn" type="button" data-rail="prev" aria-label="${e(labels.prev)}">${chev("prev")}</button>
+          <button class="rail-btn" type="button" data-rail="next" aria-label="${e(labels.next)}">${chev("next")}</button>
+        </div>
+      </div>
+      <div class="rail-track">
+${tilesHtml}
+      </div>
+    </div>`;
+}
+
+/* Rail affordance copy — no home in the production content model. */
+const railLabels = {
+  en: { hint: "Swipe or use the arrows for more", prev: "Previous", next: "Next" },
+  cs: { hint: "Posuňte nebo použijte šipky pro další", prev: "Předchozí", next: "Další" },
+  de: { hint: "Wischen oder Pfeile für mehr nutzen", prev: "Zurück", next: "Weiter" },
+  pl: { hint: "Przesuń lub użyj strzałek, by zobaczyć więcej", prev: "Poprzedni", next: "Następny" },
+};
+
 /**
  * Colour discipline, per the Enter brand manual.
  *
@@ -257,7 +286,7 @@ function hero(page, code) {
 </section>`;
 }
 
-function services(page, content) {
+function services(page, content, code) {
   const pillars = page.services.cards
     .map(
       (card, i) => `      <article class="pillar sticker">
@@ -294,8 +323,8 @@ ${pillars}
 
     <h2 style="max-width:22ch;margin-top:clamp(56px,7vw,104px)">${e(content.solutions.title)}</h2>
 
-    <div class="sol-grid" style="margin-top:clamp(28px,3.5vw,44px)">
-${solutions}
+    <div style="margin-top:clamp(28px,3.5vw,44px)">
+${rail(solutions, railLabels[code])}
     </div>
 
     <p class="sol-cta">${e(content.solutions.cta)} <a href="#contact">${e(page.contact.primary)} ${arrow}</a></p>
@@ -346,8 +375,8 @@ function results(page, content, code) {
     <div class="kicker"><span><b>02</b> · ${e(page.results.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.results.title)}</h2>
 
-    <div class="case-grid" style="margin-top:clamp(32px,4vw,56px)">
-${cards}
+    <div style="margin-top:clamp(32px,4vw,56px)">
+${rail(cards, railLabels[code])}
     </div>
 
     <p class="case-note">
@@ -713,6 +742,55 @@ const behaviour = `<script>
   window.addEventListener('scroll', startCounters, {passive:true});
   setTimeout(startCounters, 400);
 
+  /* horizontal tile rails */
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var track = rail.querySelector('.rail-track');
+    var prev = rail.querySelector('[data-rail="prev"]');
+    var next = rail.querySelector('[data-rail="next"]');
+    if(!track) return;
+
+    function step(){
+      var first = track.firstElementChild;
+      return first ? first.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
+    }
+    var head = rail.querySelector('.rail-head');
+    function sync(){
+      var max = track.scrollWidth - track.clientWidth;
+      /* Nothing hidden means no affordance: promising "more" when the tiles
+         already fit would be a lie the user pays for with a wasted click. */
+      var scrollable = max > 2;
+      if(head) head.hidden = !scrollable;
+      rail.dataset.static = !scrollable;
+      if(!scrollable){ rail.dataset.atStart = true; rail.dataset.atEnd = true; return; }
+      var atStart = track.scrollLeft <= 2;
+      var atEnd = track.scrollLeft >= max - 2;
+      rail.dataset.atStart = atStart;
+      rail.dataset.atEnd = atEnd;
+      if(prev) prev.disabled = atStart;
+      if(next) next.disabled = atEnd;
+    }
+    /* Own tween instead of behavior:'smooth' — the native option is a no-op in
+       some embedded webviews, which would leave the arrows doing nothing. */
+    var anim = null;
+    function glide(delta){
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+        track.scrollLeft += delta; sync(); return;
+      }
+      clearInterval(anim);
+      var from = track.scrollLeft, to = from + delta, t0 = Date.now(), dur = 380;
+      anim = setInterval(function(){
+        var p = Math.min((Date.now() - t0) / dur, 1);
+        track.scrollLeft = from + (to - from) * (1 - Math.pow(1 - p, 3));
+        if(p >= 1){ clearInterval(anim); sync(); }
+      }, 16);
+    }
+    if(prev) prev.addEventListener('click', function(){ glide(-step()); });
+    if(next) next.addEventListener('click', function(){ glide(step()); });
+    track.addEventListener('scroll', sync, {passive:true});
+    window.addEventListener('resize', sync);
+    sync();
+  });
+
   /* savings calculator */
   var calc = document.querySelector('.calc-work');
   if(calc){
@@ -779,7 +857,7 @@ ${header(page, code)}
 
 ${hero(page, code)}
 
-${services(page, content)}
+${services(page, content, code)}
 
 ${results(page, content, code)}
 
