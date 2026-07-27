@@ -524,11 +524,66 @@ ${details}
 </section>`;
 }
 
+/**
+ * Savings calculator.
+ *
+ * Laid out on the brand manual's web pattern: a rounded info panel holding about
+ * 30% of the width on the left, the working area on the right.
+ */
+function calculator(content) {
+  const c = content.calculator;
+  const f = c.fields;
+  const slider = (key, field) => `        <div class="calc-field">
+          <label for="calc-${key}">${e(field.label)} <b id="calc-${key}-v"></b></label>
+          <input id="calc-${key}" type="range" min="${field.min}" max="${field.max}" step="${field.step}" value="${field.defaultValue}">
+          <span class="calc-hint">${e(field.hint)}</span>
+        </div>`;
+
+  return `<section class="section section--surface accent-turquoise" id="calculator">
+  <div class="wrap">
+    <div class="calc-layout">
+
+      <aside class="calc-panel">
+        <div class="kicker"><span><b>07</b> · ${e(c.kicker)}</span></div>
+        <h2>${e(c.title)}</h2>
+        <p class="calc-intro">${e(c.intro)}</p>
+        <p class="calc-disclaimer">${e(c.disclaimer)}</p>
+      </aside>
+
+      <div class="calc-work"
+           data-weeks="${c.weeksPerYear}" data-fte="${c.fteHoursPerYear}"
+           data-symbol="${e(c.currency.symbol)}" data-locale="${e(c.currency.locale)}">
+        <div class="calc-fields">
+${slider("people", f.people)}
+${slider("hours", f.hours)}
+${slider("rate", f.rate)}
+${slider("share", f.share)}
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-primary">
+            <b id="calc-out-money">—</b>
+            <span>${e(c.results.annualSavings)}</span>
+            <small>${e(c.results.annualSavingsHint)}</small>
+          </div>
+          <div class="calc-secondary">
+            <div><b id="calc-out-hours">—</b><span>${e(c.results.hoursSaved)}</span></div>
+            <div><b id="calc-out-fte">—</b><span>${e(c.results.fteFreed)}</span></div>
+          </div>
+          <a class="btn" href="#contact">${e(c.results.cta)} ${arrow}</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>`;
+}
+
 function contact(page, code) {
   return `<section class="section section--surface" id="contact">
   <div class="wrap">
     <div class="contact-card">
-      <div class="kicker"><span><b>07</b> · ${e(page.contact.kicker)}</span></div>
+      <div class="kicker"><span><b>08</b> · ${e(page.contact.kicker)}</span></div>
       <h2>${e(page.contact.title)}</h2>
       <p class="c-lead">${e(page.contact.text)}</p>
       <div class="contact-actions">
@@ -658,6 +713,35 @@ const behaviour = `<script>
   window.addEventListener('scroll', startCounters, {passive:true});
   setTimeout(startCounters, 400);
 
+  /* savings calculator */
+  var calc = document.querySelector('.calc-work');
+  if(calc){
+    var WEEKS = +calc.dataset.weeks, FTE = +calc.dataset.fte;
+    var SYM = calc.dataset.symbol, LOC = calc.dataset.locale;
+    var ids = ['people','hours','rate','share'];
+    var el = {};
+    ids.forEach(function(k){ el[k] = document.getElementById('calc-'+k); });
+    var out = {
+      money: document.getElementById('calc-out-money'),
+      hours: document.getElementById('calc-out-hours'),
+      fte: document.getElementById('calc-out-fte')
+    };
+    function fmt(n){ return Math.round(n).toLocaleString(LOC); }
+    function run(){
+      var p = +el.people.value, h = +el.hours.value, r = +el.rate.value, s = +el.share.value / 100;
+      document.getElementById('calc-people-v').textContent = p;
+      document.getElementById('calc-hours-v').textContent = h + ' h';
+      document.getElementById('calc-rate-v').textContent = SYM + r;
+      document.getElementById('calc-share-v').textContent = (s * 100) + ' %';
+      var savedHrs = p * h * s * WEEKS;
+      out.money.textContent = SYM + fmt(savedHrs * r);
+      out.hours.textContent = fmt(savedHrs);
+      out.fte.textContent = (savedHrs / FTE).toFixed(1).replace('.', ',') + '×';
+    }
+    ids.forEach(function(k){ el[k].addEventListener('input', run); });
+    run();
+  }
+
   var search = document.getElementById('intgSearch');
   if(search){
     var rows = [].slice.call(document.querySelectorAll('#intgWrap .intg-row'));
@@ -706,6 +790,8 @@ ${integrations(page, content)}
 ${operations(content)}
 
 ${team(page, content)}
+
+${calculator(content)}
 
 ${contact(page, code)}
 

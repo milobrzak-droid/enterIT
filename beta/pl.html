@@ -467,10 +467,65 @@
   </div>
 </section>
 
+<section class="section section--surface accent-turquoise" id="calculator">
+  <div class="wrap">
+    <div class="calc-layout">
+
+      <aside class="calc-panel">
+        <div class="kicker"><span><b>07</b> · Kalkulator oszczędności</span></div>
+        <h2>Proszę oszacować skalę potencjału.</h2>
+        <p class="calc-intro">Cztery parametry można dopasować do własnej organizacji. Wynik jest orientacyjny; rzeczywisty efekt weryfikujemy w pilotażu.</p>
+        <p class="calc-disclaimer">Orientacyjny szacunek rzędu wielkości, nie oferta. Rzeczywisty efekt zweryfikujemy w pilotażu na Państwa danych.</p>
+      </aside>
+
+      <div class="calc-work"
+           data-weeks="46" data-fte="1840"
+           data-symbol="zł" data-locale="pl-PL">
+        <div class="calc-fields">
+        <div class="calc-field">
+          <label for="calc-people">Liczba osób wykonujących rutynową pracę <b id="calc-people-v"></b></label>
+          <input id="calc-people" type="range" min="1" max="200" step="1" value="10">
+          <span class="calc-hint">Ilu pracowników zajmuje się powtarzalnymi zadaniami.</span>
+        </div>
+        <div class="calc-field">
+          <label for="calc-hours">Godziny rutyny tygodniowo na osobę <b id="calc-hours-v"></b></label>
+          <input id="calc-hours" type="range" min="1" max="40" step="1" value="8">
+          <span class="calc-hint">Przepisywanie, wyszukiwanie, wypełnianie i sprawdzanie.</span>
+        </div>
+        <div class="calc-field">
+          <label for="calc-rate">Stawka godzinowa <b id="calc-rate-v"></b></label>
+          <input id="calc-rate" type="range" min="40" max="340" step="5" value="85">
+          <span class="calc-hint">Średni koszt godziny pracy wraz z narzutem.</span>
+        </div>
+        <div class="calc-field">
+          <label for="calc-share">Część rutyny możliwa do automatyzacji <b id="calc-share-v"></b></label>
+          <input id="calc-share" type="range" min="20" max="70" step="5" value="45">
+          <span class="calc-hint">W odpowiednich procesach zwykle 30–60 % rutynowej pracy.</span>
+        </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-primary">
+            <b id="calc-out-money">—</b>
+            <span>Roczna oszczędność kosztów</span>
+            <small>przy automatyzacji wybranej rutyny</small>
+          </div>
+          <div class="calc-secondary">
+            <div><b id="calc-out-hours">—</b><span>godzin zaoszczędzonych rocznie</span></div>
+            <div><b id="calc-out-fte">—</b><span>uwolnionego etatu</span></div>
+          </div>
+          <a class="btn" href="#contact">Omówmy Państwa procesy <span class="arr">→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="section section--surface" id="contact">
   <div class="wrap">
     <div class="contact-card">
-      <div class="kicker"><span><b>07</b> · Pierwszy krok zajmuje 30 minut</span></div>
+      <div class="kicker"><span><b>08</b> · Pierwszy krok zajmuje 30 minut</span></div>
       <h2>Porozmawiajmy o projekcie, który chcą Państwo zrealizować.</h2>
       <p class="c-lead">W 30 minut ustalimy cel, systemy, ryzyka delivery i właściwy pierwszy krok dla oprogramowania enterprise, integracji lub AI.</p>
       <div class="contact-actions">
@@ -592,6 +647,35 @@
   startCounters();
   window.addEventListener('scroll', startCounters, {passive:true});
   setTimeout(startCounters, 400);
+
+  /* savings calculator */
+  var calc = document.querySelector('.calc-work');
+  if(calc){
+    var WEEKS = +calc.dataset.weeks, FTE = +calc.dataset.fte;
+    var SYM = calc.dataset.symbol, LOC = calc.dataset.locale;
+    var ids = ['people','hours','rate','share'];
+    var el = {};
+    ids.forEach(function(k){ el[k] = document.getElementById('calc-'+k); });
+    var out = {
+      money: document.getElementById('calc-out-money'),
+      hours: document.getElementById('calc-out-hours'),
+      fte: document.getElementById('calc-out-fte')
+    };
+    function fmt(n){ return Math.round(n).toLocaleString(LOC); }
+    function run(){
+      var p = +el.people.value, h = +el.hours.value, r = +el.rate.value, s = +el.share.value / 100;
+      document.getElementById('calc-people-v').textContent = p;
+      document.getElementById('calc-hours-v').textContent = h + ' h';
+      document.getElementById('calc-rate-v').textContent = SYM + r;
+      document.getElementById('calc-share-v').textContent = (s * 100) + ' %';
+      var savedHrs = p * h * s * WEEKS;
+      out.money.textContent = SYM + fmt(savedHrs * r);
+      out.hours.textContent = fmt(savedHrs);
+      out.fte.textContent = (savedHrs / FTE).toFixed(1).replace('.', ',') + '×';
+    }
+    ids.forEach(function(k){ el[k].addEventListener('input', run); });
+    run();
+  }
 
   var search = document.getElementById('intgSearch');
   if(search){
