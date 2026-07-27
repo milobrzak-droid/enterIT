@@ -71,8 +71,21 @@ const betaCopy = {
 const e = (v) => escapeHtml(v ?? "");
 const arrow = '<span class="arr">→</span>';
 
-/* Accent rotation used across card grids. */
-const accents = ["turquoise", "blue", "violet", "pink", "yellow", "red"];
+/**
+ * Colour discipline, per the Enter brand manual.
+ *
+ * Turquoise is the primary and dominates; pink, blue, violet, red and yellow are
+ * accents, not equal partners. So colour is assigned per SECTION, never per card
+ * — a grid of cards in six different colours reads as noise, not as a system.
+ */
+const sectionAccent = {
+  services: "turquoise",
+  results: "blue",
+  process: "turquoise",
+  integrations: "violet",
+  operations: "turquoise",
+  team: "pink",
+};
 
 /* Enter's line-art artwork, matched to each ready-made solution in catalogue order. */
 const solutionArt = [
@@ -232,9 +245,9 @@ function hero(page, code) {
 
 <section class="partners section--deep">
   <div class="wrap">
-    <div class="partners-row">
+    <div class="partners-band">
       <span class="p-lbl">${e(page.partnerLabel)}</span>
-      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" loading="lazy">
+      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
       <span class="ms-logo">
         <span class="ms-sq"><i></i><i></i><i></i><i></i></span>
         <span><b>Microsoft</b>Solutions Partner</span>
@@ -258,19 +271,19 @@ function services(page, content) {
   const solutions = content.solutions.cards
     .map((card, i) => {
       const art = solutionArt[i % solutionArt.length];
-      return `      <a class="sol sticker accent-${accents[i % accents.length]}" href="/${card.href}">
+      /* Card carries the outcome only. The how — inputs, outputs, walkthrough —
+         lives on the solution page a click away. */
+      return `      <a class="sol sticker" href="/${card.href}">
         <span class="illus-wrap"><img class="illus" src="/assets/decor/${art}" alt="" loading="lazy"></span>
         <h4>${e(card.title)}</h4>
-        <p>${e(card.description)}</p>
-        <span class="sol-flow"><b>${e(card.input)}</b><i>→</i><b>${e(card.output)}</b></span>
         <span class="sol-proof">${e(card.proof)}</span>
       </a>`;
     })
     .join("\n");
 
-  return `<section class="section section--surface has-decor" id="services">
-  <span class="squig squig--curl" style="width:190px;top:56px;right:-42px;--accent:var(--blue)"></span>
-  <span class="squig squig--wave" style="width:420px;bottom:40px;left:-90px;--accent:var(--violet);opacity:.32"></span>
+  return `<section class="section section--surface has-decor accent-turquoise" id="services">
+  <span class="squig squig--curl" style="width:190px;top:56px;right:-42px"></span>
+  <span class="squig squig--wave" style="width:420px;bottom:40px;left:-90px;opacity:.32"></span>
   <div class="wrap">
     <div class="kicker"><span><b>01</b> · ${e(page.services.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.services.title)}</h2>
@@ -297,14 +310,19 @@ function results(page, content, code) {
       const tech = (item.tech || [])
         .map((t) => `<span>${e(t)}</span>`)
         .join("");
+      /* The card states outcome only. Problem and solution sit behind a toggle so
+         the grid stays scannable and the detail is one click away, not a wall. */
       return `      <article class="case">
         <span class="case-ob">${e(item.context)}</span>
         <span class="case-kpi">${e(item.metric)}</span>
-        <dl>
-          <div><dt>${e(labels.problem)}</dt><dd>${e(item.problem)}</dd></div>
-          <div><dt>${e(labels.solution)}</dt><dd>${e(item.solution)}</dd></div>
-          <div><dt>${e(labels.impact)}</dt><dd>${e(item.impact)}</dd></div>
-        </dl>
+        <p class="case-impact">${e(item.impact)}</p>
+        <details class="case-more">
+          <summary>${e(labels.problem)} &amp; ${e(labels.solution)}</summary>
+          <dl>
+            <div><dt>${e(labels.problem)}</dt><dd>${e(item.problem)}</dd></div>
+            <div><dt>${e(labels.solution)}</dt><dd>${e(item.solution)}</dd></div>
+          </dl>
+        </details>
         <div class="tech">${tech}</div>
       </article>`;
     })
@@ -320,10 +338,10 @@ function results(page, content, code) {
     )
     .join("\n");
 
-  return `<section class="section section--deep has-decor" id="results">
+  return `<section class="section section--deep has-decor accent-blue" id="results">
   <span class="blob blob--violet" style="width:520px;height:520px;top:-180px;right:-190px"></span>
   <span class="blob blob--blue" style="width:420px;height:420px;bottom:-160px;left:-170px"></span>
-  <span class="squig squig--hook" style="width:150px;top:120px;left:-34px;--accent:var(--pink);opacity:.4"></span>
+  <span class="squig squig--hook" style="width:150px;top:120px;left:-34px;opacity:.4"></span>
   <div class="wrap rel">
     <div class="kicker"><span><b>02</b> · ${e(page.results.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.results.title)}</h2>
@@ -364,8 +382,8 @@ function process(page, content) {
     )
     .join("\n");
 
-  return `<section class="section section--surface has-decor" id="process">
-  <span class="squig squig--wave" style="width:520px;top:34px;right:-120px;--accent:var(--turquoise);opacity:.34"></span>
+  return `<section class="section section--surface has-decor accent-turquoise" id="process">
+  <span class="squig squig--wave" style="width:520px;top:34px;right:-120px;opacity:.34"></span>
   <div class="wrap">
     <div class="kicker"><span><b>03</b> · ${e(page.process.kicker)}</span></div>
     <h2 style="max-width:18ch">${e(page.process.title)}</h2>
@@ -382,7 +400,7 @@ function integrations(page, content) {
   const groups = content.integrations.groups
     .map((g, i) => {
       const chips = g.systems.map((s) => `<span>${e(s)}</span>`).join("");
-      return `      <div class="intg-row accent-${accents[i % accents.length]}">
+      return `      <div class="intg-row">
         <h3>${e(g.title)}</h3>
         <div class="intg-chips">${chips}</div>
       </div>`;
@@ -392,12 +410,12 @@ function integrations(page, content) {
   const points = page.integrations.points
     .map(
       (p, i) =>
-        `      <div class="card accent-${accents[i % accents.length]}"><ul class="check-list"><li>${e(p)}</li></ul></div>`
+        `      <div class="card"><ul class="check-list"><li>${e(p)}</li></ul></div>`
     )
     .join("\n");
 
-  return `<section class="section section--deep has-decor" id="integrations">
-  <span class="squig squig--loop" style="width:210px;top:70px;right:-40px;--accent:var(--yellow);opacity:.4"></span>
+  return `<section class="section section--deep has-decor accent-violet" id="integrations">
+  <span class="squig squig--loop" style="width:210px;top:70px;right:-40px;opacity:.4"></span>
   <div class="wrap">
     <div class="kicker"><span><b>04</b> · ${e(page.integrations.kicker)}</span></div>
     <h2 style="max-width:18ch">${e(page.integrations.title)}</h2>
@@ -437,7 +455,7 @@ function operations(content) {
     )
     .join("\n");
 
-  return `<section class="section section--surface" id="operations">
+  return `<section class="section section--surface accent-turquoise" id="operations">
   <div class="wrap">
     <div class="kicker"><span><b>05</b> · ${e(content.operations.kicker)}</span></div>
     <h2 style="max-width:24ch">${e(content.operations.title)}</h2>
@@ -478,9 +496,9 @@ function team(page, content) {
     })
     .join("\n");
 
-  return `<section class="section section--deep has-decor" id="team">
+  return `<section class="section section--deep has-decor accent-pink" id="team">
   <span class="blob blob--turquoise" style="width:460px;height:460px;top:-140px;left:-180px"></span>
-  <span class="squig squig--curl" style="width:170px;top:90px;right:-30px;--accent:var(--violet);opacity:.42"></span>
+  <span class="squig squig--curl" style="width:170px;top:90px;right:-30px;opacity:.42"></span>
   <div class="wrap rel">
     <div class="kicker"><span><b>06</b> · ${e(page.team.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.team.title)}</h2>
