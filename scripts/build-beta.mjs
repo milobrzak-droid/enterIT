@@ -25,37 +25,6 @@ const betaFile = { en: "index.html", cs: "cs.html", de: "de.html", pl: "pl.html"
 const betaLabel = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
 /**
- * Beta content overrides.
- *
- * The manufacturing case ships an AI-adoption metric ("17 → 78%") on the live
- * site. Adoption is EnterAI's story; EnterIT's proof is delivery outcome, so the
- * beta states the time saved instead. Same project, same source data — only the
- * headline figure and its framing change.
- */
-const caseOverrides = {
-  en: {
-    metric: "40 min / user / week",
-    problem: "Manual information lookup around Business Central slowed down everyday work.",
-    impact: "Approximately 40 minutes saved per user every week, with a complete audit trail over every query.",
-  },
-  cs: {
-    metric: "40 min / uživatel / týden",
-    problem: "Ruční dohledávání informací kolem Business Central zdržovalo běžnou práci.",
-    impact: "Zhruba 40 minut ušetřených na uživatele týdně, s kompletní auditní stopou u každého dotazu.",
-  },
-  de: {
-    metric: "40 Min / Nutzer / Woche",
-    problem: "Manuelles Nachschlagen von Informationen rund um Business Central bremste die tägliche Arbeit.",
-    impact: "Rund 40 Minuten Einsparung pro Nutzer und Woche — mit vollständigem Audit-Trail über jede Abfrage.",
-  },
-  pl: {
-    metric: "40 min / użytkownik / tydzień",
-    problem: "Ręczne wyszukiwanie informacji wokół Business Central spowalniało codzienną pracę.",
-    impact: "Około 40 minut oszczędności na użytkownika tygodniowo, z pełną ścieżką audytu każdego zapytania.",
-  },
-};
-
-/**
  * Beta-only chrome. These strings have no home in the production content model
  * (the live site carries the EnterAI relationship elsewhere), so the beta keeps
  * its own copy for the notice bar and the hero eyebrow.
@@ -65,21 +34,37 @@ const betaCopy = {
     notice: "Delivery team of <b>EnterAI</b> — we build and run what strategy specifies.",
     noticeLink: "About EnterAI",
     eyebrow: "Enterprise software · AI · integrations",
+    usTitle: "US delivery partnership",
+    usText: "A European engineering partner for US consultancies, Microsoft partners and systems integrators.",
+    aiTitle: "Looking for strategy first?",
+    aiText: "EnterAI maps where AI pays off before anything gets built. We deliver what it specifies.",
   },
   cs: {
     notice: "Exekuční tým sesterské <b>EnterAI</b> — stavíme a provozujeme to, co strategie zadá.",
     noticeLink: "O EnterAI",
     eyebrow: "Enterprise software · AI · integrace",
+    usTitle: "Dodavatelské partnerství pro US",
+    usText: "Evropský engineering partner pro americké konzultanty, Microsoft partnery a systémové integrátory.",
+    aiTitle: "Potřebujete nejdřív strategii?",
+    aiText: "EnterAI zmapuje, kde se AI vyplatí, ještě než se začne stavět. My pak dodáme, co zadá.",
   },
   de: {
     notice: "Umsetzungsteam von <b>EnterAI</b> — wir bauen und betreiben, was die Strategie vorgibt.",
     noticeLink: "Über EnterAI",
     eyebrow: "Enterprise-Software · KI · Integrationen",
+    usTitle: "Delivery-Partnerschaft für die USA",
+    usText: "Ein europäischer Engineering-Partner für US-Beratungen, Microsoft-Partner und Systemintegratoren.",
+    aiTitle: "Zuerst die Strategie?",
+    aiText: "EnterAI zeigt, wo sich KI rechnet, bevor gebaut wird. Wir liefern anschließend die Umsetzung.",
   },
   pl: {
     notice: "Zespół wykonawczy <b>EnterAI</b> — budujemy i utrzymujemy to, co określa strategia.",
     noticeLink: "O EnterAI",
     eyebrow: "Enterprise software · AI · integracje",
+    usTitle: "Partnerstwo wdrożeniowe dla USA",
+    usText: "Europejski partner inżynieryjny dla amerykańskich konsultingów, partnerów Microsoftu i integratorów.",
+    aiTitle: "Najpierw strategia?",
+    aiText: "EnterAI wskazuje, gdzie AI się opłaca, zanim cokolwiek powstanie. My realizujemy to, co określi.",
   },
 };
 
@@ -308,21 +293,17 @@ ${solutions}
 function results(page, content, code) {
   const labels = content.cases.labels;
   const cards = content.cases.cards
-    .map((item, i) => {
-      const patch = i === 0 ? caseOverrides[code] : null;
-      const metric = patch ? patch.metric : item.metric;
-      const problem = patch ? patch.problem : item.problem;
-      const impact = patch ? patch.impact : item.impact;
+    .map((item) => {
       const tech = (item.tech || [])
         .map((t) => `<span>${e(t)}</span>`)
         .join("");
       return `      <article class="case">
         <span class="case-ob">${e(item.context)}</span>
-        <span class="case-kpi">${e(metric)}</span>
+        <span class="case-kpi">${e(item.metric)}</span>
         <dl>
-          <div><dt>${e(labels.problem)}</dt><dd>${e(problem)}</dd></div>
+          <div><dt>${e(labels.problem)}</dt><dd>${e(item.problem)}</dd></div>
           <div><dt>${e(labels.solution)}</dt><dd>${e(item.solution)}</dd></div>
-          <div><dt>${e(labels.impact)}</dt><dd>${e(impact)}</dd></div>
+          <div><dt>${e(labels.impact)}</dt><dd>${e(item.impact)}</dd></div>
         </dl>
         <div class="tech">${tech}</div>
       </article>`;
@@ -339,8 +320,11 @@ function results(page, content, code) {
     )
     .join("\n");
 
-  return `<section class="section section--deep" id="results">
-  <div class="wrap">
+  return `<section class="section section--deep has-decor" id="results">
+  <span class="blob blob--violet" style="width:520px;height:520px;top:-180px;right:-190px"></span>
+  <span class="blob blob--blue" style="width:420px;height:420px;bottom:-160px;left:-170px"></span>
+  <span class="squig squig--hook" style="width:150px;top:120px;left:-34px;--accent:var(--pink);opacity:.4"></span>
+  <div class="wrap rel">
     <div class="kicker"><span><b>02</b> · ${e(page.results.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.results.title)}</h2>
 
@@ -354,6 +338,7 @@ ${cards}
     </p>
 
     <div class="feature">
+      <img class="mascot mascot--peek mascot--float" src="/assets/decor/mascot-blue.svg" alt="" aria-hidden="true" style="top:-40px;right:34px">
       <span class="feature-tag">${e(impl.badge)}</span>
       <h3>${e(impl.title)}</h3>
       <p class="f-lead">${e(impl.intro)}</p>
@@ -493,8 +478,10 @@ function team(page, content) {
     })
     .join("\n");
 
-  return `<section class="section section--deep" id="team">
-  <div class="wrap">
+  return `<section class="section section--deep has-decor" id="team">
+  <span class="blob blob--turquoise" style="width:460px;height:460px;top:-140px;left:-180px"></span>
+  <span class="squig squig--curl" style="width:170px;top:90px;right:-30px;--accent:var(--violet);opacity:.42"></span>
+  <div class="wrap rel">
     <div class="kicker"><span><b>06</b> · ${e(page.team.kicker)}</span></div>
     <h2 style="max-width:20ch">${e(page.team.title)}</h2>
     <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,60px)">${e(page.team.intro)}</p>
@@ -519,7 +506,7 @@ ${details}
 </section>`;
 }
 
-function contact(page) {
+function contact(page, code) {
   return `<section class="section section--surface" id="contact">
   <div class="wrap">
     <div class="contact-card">
@@ -530,6 +517,21 @@ function contact(page) {
         <a class="btn btn--lg" href="${bookingUrl}" target="_blank" rel="noopener">${e(page.contact.primary)} ${arrow}</a>
         <a class="btn btn--outline btn--lg" href="mailto:milo@enterit.cz">${e(page.contact.secondary)}</a>
       </div>
+      <img class="mascot mascot--float" src="/assets/decor/mascot-red.svg" alt="" aria-hidden="true" style="top:clamp(28px,4vw,56px);right:clamp(28px,5vw,80px);width:clamp(64px,8vw,116px)">
+    </div>
+
+    <!-- Figma's two-up closing pair: one dark card, one gradient card. -->
+    <div class="cta-duo" style="margin-top:clamp(28px,3.5vw,44px)">
+      <a class="cta-card cta-card--dark" href="/us/">
+        <h3>${e(betaCopy[code].usTitle)}</h3>
+        <p>${e(betaCopy[code].usText)}</p>
+        <span class="cta-go">↗</span>
+      </a>
+      <a class="cta-card cta-card--grad" href="https://enterai.cz" target="_blank" rel="noopener">
+        <h3>${e(betaCopy[code].aiTitle)}</h3>
+        <p>${e(betaCopy[code].aiText)}</p>
+        <span class="cta-go">${arrow}</span>
+      </a>
     </div>
   </div>
 </section>`;
@@ -687,7 +689,7 @@ ${operations(content)}
 
 ${team(page, content)}
 
-${contact(page)}
+${contact(page, code)}
 
 ${footer(page)}
 

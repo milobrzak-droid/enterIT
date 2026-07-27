@@ -352,3 +352,28 @@ p{margin:0}
 
 /* Sections that host squiggles need a positioning context and must clip them. */
 .has-decor{position:relative;overflow:hidden}
+
+/* ---------- Gradient blobs ----------
+   Figma anchors its dark sections with soft gradient shapes bleeding in from the
+   edges. Reproduced as blurred radial fills so they sit behind the content. */
+.blob{position:absolute;pointer-events:none;z-index:0;border-radius:50%;
+  filter:blur(70px);opacity:.3}
+.blob--violet{background:radial-gradient(circle,var(--violet),transparent 68%)}
+.blob--blue{background:radial-gradient(circle,var(--blue),transparent 68%)}
+.blob--pink{background:radial-gradient(circle,var(--pink),transparent 68%)}
+.blob--turquoise{background:radial-gradient(circle,var(--turquoise),transparent 68%)}
+@media(max-width:760px){.blob{opacity:.18}}
+
+/* ---------- Mascot peeking over an edge ----------
+   In Figma the characters overlap the element they belong to rather than sitting
+   beside it, which is what stops them reading as pasted-on clip art. */
+.mascot--peek{position:absolute;z-index:2;width:78px}
+@media(max-width:760px){.mascot--peek{width:54px}}
+
+/* ---------- Side step markers ----------
+   The numbered pills Figma runs down the edge of a stepped section. */
+.side-steps{display:flex;flex-direction:column;gap:var(--s2)}
+.side-steps span{width:26px;height:26px;border-radius:7px;display:flex;
+  align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;
+  border:1px solid var(--line-2);background:var(--surface-2);color:var(--text-4)}
+.side-steps span.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
