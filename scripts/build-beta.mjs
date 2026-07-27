@@ -276,8 +276,10 @@ function hero(page, code) {
   <div class="wrap">
     <div class="partners-band">
       <span class="p-lbl">${e(page.partnerLabel)}</span>
-      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
-      <span class="ms-logo">
+      <span class="partner-chip">
+        <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
+      </span>
+      <span class="partner-chip ms-logo">
         <span class="ms-sq"><i></i><i></i><i></i><i></i></span>
         <span><b>Microsoft</b>Solutions Partner</span>
       </span>

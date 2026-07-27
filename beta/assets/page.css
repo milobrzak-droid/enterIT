@@ -116,24 +116,45 @@
 /* ---- partners ---- */
 /* Partner credibility band. These two marks do more selling than any paragraph
    on the page, so they are given real size instead of a muted logo strip. */
-.partners{padding-block:clamp(40px,5vw,72px)}
-.partners-band{padding:clamp(28px,3.4vw,44px) clamp(24px,3vw,48px);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  display:flex;align-items:center;gap:clamp(28px,5vw,72px);flex-wrap:wrap;
-  justify-content:center}
-.partners-band .p-lbl{font-family:var(--font-mono);font-size:var(--t-body-sm);
-  letter-spacing:.16em;text-transform:uppercase;color:var(--text-4);
-  flex:1 1 100%;text-align:center;margin-bottom:var(--s2)}
-.partners-band img{height:clamp(48px,5.6vw,74px);width:auto;opacity:1}
-.ms-logo{display:flex;align-items:center;gap:clamp(12px,1.4vw,18px)}
-.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3px,.4vw,4px);
-  width:clamp(38px,4.4vw,56px);height:clamp(38px,4.4vw,56px);flex:none}
+/* Partner marks sit in restrained chips: quiet at rest so they never shout over
+   the headline, lifting to full strength on hover. */
+.partners{padding-block:clamp(36px,4.5vw,64px)}
+.partners-band{display:flex;align-items:center;justify-content:center;
+  gap:clamp(14px,1.8vw,22px);flex-wrap:wrap}
+.partners-band .p-lbl{font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--text-4);
+  flex:1 1 100%;text-align:center;margin-bottom:var(--s3)}
+
+.partner-chip{position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:12px;
+  /* locked so marks with different aspect ratios still line up */
+  min-height:60px;padding:12px 20px;border-radius:var(--r-lg);
+  border:1px solid var(--line);background:var(--surface-2);
+  opacity:.68;filter:saturate(.85);
+  transition:opacity .28s var(--ease),transform .28s var(--ease),
+             border-color .28s var(--ease),filter .28s var(--ease)}
+.partner-chip:hover{opacity:1;filter:none;transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--turquoise) 42%,var(--line-2))}
+/* A quiet Empatická vlna sheen sweeps across on hover. */
+.partner-chip::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 35%,
+    color-mix(in srgb,var(--pink) 22%,transparent) 50%,
+    color-mix(in srgb,var(--blue) 22%,transparent) 62%,transparent 78%);
+  transform:translateX(-120%);transition:transform .7s var(--ease);pointer-events:none}
+.partner-chip:hover::after{transform:translateX(120%)}
+
+.partner-chip img{height:clamp(26px,2.6vw,34px);width:auto;position:relative;z-index:1}
+.ms-logo{gap:11px}
+.ms-sq{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;
+  width:26px;height:26px;flex:none;position:relative;z-index:1}
 .ms-sq i{display:block;background:#EAEDF3}
-.ms-logo span{font-family:var(--font-head);font-size:clamp(17px,1.9vw,25px);
-  color:var(--text-2);line-height:1.15;font-weight:500}
+.ms-logo span{position:relative;z-index:1;font-family:var(--font-mono);
+  font-size:11px;letter-spacing:.02em;color:var(--text-3);line-height:1.3}
 .ms-logo span b{display:block;font-family:var(--font-head);font-weight:700;
-  font-size:clamp(20px,2.3vw,30px);color:var(--text)}
-@media(max-width:620px){.partners-band{gap:var(--s5)}}
+  font-size:15px;letter-spacing:0;color:var(--text)}
+@media(prefers-reduced-motion:reduce){
+  .partner-chip,.partner-chip::after{transition:none}
+}
 
 /* ============ SERVICES ============ */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
