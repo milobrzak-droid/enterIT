@@ -311,11 +311,9 @@ function services(page, content, code) {
     .join("\n");
 
   return `<section class="section section--surface has-decor accent-turquoise" id="services">
-  <span class="squig squig--curl" style="width:190px;top:56px;right:-42px"></span>
-  <span class="squig squig--wave" style="width:420px;bottom:40px;left:-90px;opacity:.32"></span>
   <div class="wrap">
     <div class="kicker"><span><b>01</b> · ${e(page.services.kicker)}</span></div>
-    <h2 style="max-width:20ch">${e(page.services.title)}</h2>
+    <div class="sec-head"><h2 style="max-width:20ch">${e(page.services.title)}</h2><span class="squig squig--curl" style="width:118px;top:-46px;right:-104px"></span></div>
 
     <div class="pillars" style="margin-top:clamp(32px,4vw,56px)">
 ${pillars}
@@ -370,10 +368,9 @@ function results(page, content, code) {
   return `<section class="section section--deep has-decor accent-blue" id="results">
   <span class="blob blob--violet" style="width:520px;height:520px;top:-180px;right:-190px"></span>
   <span class="blob blob--blue" style="width:420px;height:420px;bottom:-160px;left:-170px"></span>
-  <span class="squig squig--hook" style="width:150px;top:120px;left:-34px;opacity:.4"></span>
   <div class="wrap rel">
     <div class="kicker"><span><b>02</b> · ${e(page.results.kicker)}</span></div>
-    <h2 style="max-width:20ch">${e(page.results.title)}</h2>
+    <div class="sec-head"><h2 style="max-width:20ch">${e(page.results.title)}</h2><span class="squig squig--loop" style="width:126px;top:-40px;right:-116px"></span></div>
 
     <div style="margin-top:clamp(32px,4vw,56px)">
 ${rail(cards, railLabels[code])}
@@ -412,10 +409,9 @@ function process(page, content) {
     .join("\n");
 
   return `<section class="section section--surface has-decor accent-turquoise" id="process">
-  <span class="squig squig--wave" style="width:520px;top:34px;right:-120px;opacity:.34"></span>
   <div class="wrap">
     <div class="kicker"><span><b>03</b> · ${e(page.process.kicker)}</span></div>
-    <h2 style="max-width:18ch">${e(page.process.title)}</h2>
+    <div class="sec-head"><h2 style="max-width:18ch">${e(page.process.title)}</h2><span class="squig squig--wave" style="width:230px;bottom:-34px;right:-190px"></span></div>
     <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,64px)">${e(page.process.intro)}</p>
 
     <div class="steps">
@@ -444,10 +440,9 @@ function integrations(page, content) {
     .join("\n");
 
   return `<section class="section section--deep has-decor accent-violet" id="integrations">
-  <span class="squig squig--loop" style="width:210px;top:70px;right:-40px;opacity:.4"></span>
   <div class="wrap">
     <div class="kicker"><span><b>04</b> · ${e(page.integrations.kicker)}</span></div>
-    <h2 style="max-width:18ch">${e(page.integrations.title)}</h2>
+    <div class="sec-head"><h2 style="max-width:18ch">${e(page.integrations.title)}</h2><span class="squig squig--hook" style="width:104px;top:-38px;right:-92px"></span></div>
     <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(28px,3.5vw,40px)">${e(page.integrations.intro)}</p>
 
     <div class="intg-search">
@@ -527,10 +522,9 @@ function team(page, content) {
 
   return `<section class="section section--deep has-decor accent-pink" id="team">
   <span class="blob blob--turquoise" style="width:460px;height:460px;top:-140px;left:-180px"></span>
-  <span class="squig squig--curl" style="width:170px;top:90px;right:-30px;opacity:.42"></span>
   <div class="wrap rel">
     <div class="kicker"><span><b>06</b> · ${e(page.team.kicker)}</span></div>
-    <h2 style="max-width:20ch">${e(page.team.title)}</h2>
+    <div class="sec-head"><h2 style="max-width:20ch">${e(page.team.title)}</h2><span class="squig squig--curl" style="width:120px;top:-42px;right:-108px"></span></div>
     <p class="lead" style="margin-top:var(--s4);margin-bottom:clamp(36px,4.5vw,60px)">${e(page.team.intro)}</p>
 
     <h3 style="font-size:clamp(19px,2vw,23px);max-width:34ch;margin-bottom:var(--s3)">${e(page.team.leadershipTitle)}</h3>

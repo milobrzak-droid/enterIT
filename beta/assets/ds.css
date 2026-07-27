@@ -303,10 +303,14 @@ p{margin:0}
    ========================================================================== */
 
 /* ---------- Hand-drawn squiggles ----------
-   Source SVGs have a baked-in fill, so they are used as masks: the element's
-   background supplies the colour, which lets one file serve every accent. */
+   Brand manual: a decorative line never stands alone, it always accompanies text,
+   a shape, a photo or an illustration — so these sit against a heading rather
+   than floating in a corner. Colour is Stabilní černá by default and white on a
+   clean dark ground; on this navy that means white, kept quiet.
+   Source SVGs have a baked-in fill, so they are applied as masks and take their
+   colour from the element background. */
 .squig{position:absolute;pointer-events:none;z-index:0;
-  background:var(--accent);opacity:.55;
+  background:var(--text);opacity:.16;
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
   -webkit-mask-size:contain;mask-size:contain;
   -webkit-mask-position:center;mask-position:center}
@@ -316,6 +320,25 @@ p{margin:0}
 .squig--hook{-webkit-mask-image:url('/assets/decor/tc-leftVector.svg');mask-image:url('/assets/decor/tc-leftVector.svg');aspect-ratio:175/185}
 .squig--arc{-webkit-mask-image:url('/assets/decor/leftVector.svg');mask-image:url('/assets/decor/leftVector.svg');aspect-ratio:506/363}
 @media(max-width:760px){.squig{display:none}}
+
+/* Heading that carries a decorative line. The line is anchored to the text it
+   accompanies, so it moves and wraps with the heading instead of drifting. */
+.sec-head{position:relative;display:inline-block;max-width:100%}
+
+/* Hover: an "Empatická vlna" bar wipes in under the heading and the squiggle
+   wakes up. The gradient rides a shape, never the type, which is what the brand
+   manual allows. */
+.sec-head::after{content:"";position:absolute;left:0;bottom:-14px;height:4px;width:100%;
+  border-radius:var(--r-pill);
+  background:linear-gradient(135deg,var(--pink),var(--blue));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .45s var(--ease)}
+.sec-head:hover::after{transform:scaleX(1)}
+.sec-head .squig{transition:opacity .35s var(--ease),transform .45s var(--ease)}
+.sec-head:hover .squig{opacity:.42;transform:translateX(5px) rotate(-5deg)}
+@media(prefers-reduced-motion:reduce){
+  .sec-head::after,.sec-head .squig{transition:none}
+}
 
 /* ---------- Sticker card ----------
    The Figma card: thick outline plus a hard offset shadow. On navy the outline
