@@ -9,9 +9,9 @@
    manual does not have any.
 
    Turquoise is the primary, so it is the only colour ever given to a whole cap.
-   The other five are accents: one is assigned per CHAPTER and it stays in the
-   small parts — the chapter number, the hairline along the top of a white cap,
-   the list marks, the flow arrow. The set of chapter accents is offset one step
+   Four accents remain — blue, violet, red, yellow. One is assigned per CHAPTER
+   and it stays in the small parts: the chapter number, the hairline along the
+   top of a white cap, the list marks, the flow arrow. The set is offset one step
    on each visit, so the board turns over without any accent taking a surface it
    was not given.
    ========================================================================== */
@@ -29,12 +29,12 @@
   --turquoise:#41E39E;
   --blue:#6ECEFF;
   --violet:#B790FF;
-  --pink:#E399FF;
   --yellow:#F8E354;
   --red:#FF848C;
-  /* Empatická vlna — the manual's B2B default, and the only gradient here.
-     It rides shapes only: never type, never the navy. */
-  --wave:linear-gradient(122deg,#E399FF 0%,#6ECEFF 100%);
+  /* Dynamická růžová #E399FF is defined by the manual as a secondary accent and
+     is the upper stop of the "Empatická vlna" gradient. It is deliberately not
+     used on this board — brand owner's call — which is also why there is no
+     gradient here: the manual's only sanctioned one starts in that pink. */
 
   --navy-soft:#222D3D;      /* the manual's second dark step */
 
@@ -53,14 +53,10 @@
   --press:90ms cubic-bezier(.3,.7,.3,1);
 }
 
-/* One accent per chapter, and only the manual's own values — nothing is tinted,
-   lightened or mixed. Turquoise is the primary and it is the only colour that
-   is ever given a whole cap; the other five are accents and stay in the small
-   parts: the chapter number, the hairline above a white cap, the list marks. */
+/* The chapter accents, at the manual's exact values. */
 .ch--turquoise{--accent:#41E39E}
 .ch--blue     {--accent:#6ECEFF}
 .ch--violet   {--accent:#B790FF}
-.ch--pink     {--accent:#E399FF}
 .ch--yellow   {--accent:#F8E354}
 .ch--red      {--accent:#FF848C}
 
@@ -132,7 +128,6 @@ a.key--white:hover,a.key--white:focus-visible,a.key--white:active{
 .key--turquoise{background:var(--turquoise)}
 .key--soft{background:var(--navy-soft);color:var(--white)}
 .key--navy,.key--photo-hire{background:var(--navy);color:var(--white)}
-.key--grad{background:var(--wave);color:var(--navy)}
 
 /* Letter stamped in the corner, like a keycap legend. */
 .key-legend{position:absolute;top:14px;right:16px;width:24px;height:24px;

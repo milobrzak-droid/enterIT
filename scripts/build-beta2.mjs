@@ -32,6 +32,7 @@ import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { voice } from "./beta2-copy.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
@@ -342,7 +343,11 @@ ${keys.filter(Boolean).join("\n")}
 function render(code) {
   const page = locales[code];
   const c = restorationContent[code];
-  const t = chrome[code];
+  const v = voice[code];
+  /* The voice layer wins wherever it defines something; the board chrome keeps
+     the rest. */
+  const t = { ...chrome[code], ...v.labels };
+  const ch = (i) => v.chapters[i];
   const prefix = page.prefix;
   const at = (f) => `/${prefix}${f}`;
 
@@ -358,17 +363,18 @@ function render(code) {
   const disciplineTones = ["turquoise", "navy", "white"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
-    kicker: page.services.kicker, title: page.services.title, ask: t.asks[0],
+    kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
     keys: [
       ...page.services.cards.map((card, i) =>
         key({
           span: 4, tone: disciplineTones[i], legend: ["E", "A", "C"][i],
-          title: card.title, size: "big", sub: card.text, bullets: card.bullets,
+          title: v.disciplines[i].title, size: "big", sub: v.disciplines[i].text,
+          bullets: card.bullets,
           mascot: i === 1 ? "wave" : undefined,
           go: card.link, href: at(card.href),
         })),
       key({
-        span: 8, tone: "grad", legend: "U", eyebrow: t.reachEyebrow,
+        span: 8, tone: "soft", legend: "U", eyebrow: t.reachEyebrow,
         title: t.reachTitle, size: "big", sub: t.reachSub, go: t.reachGo, href: "/us/",
       }),
       slot({ span: 4, hint: t.artHint, brief: t.slots[3] }),
@@ -378,7 +384,7 @@ function render(code) {
   /* ---- 02 · where it starts ------------------------------------------- */
   const solutions = chapter({
     id: "solutions", no: "02", hue: 1,
-    kicker: c.solutions.kicker, title: c.solutions.title, ask: t.asks[1],
+    kicker: ch(1).kicker, title: ch(1).title, ask: ch(1).ask,
     keys: [
       ...c.solutions.cards.map((card, i) =>
         key({
@@ -405,7 +411,7 @@ function render(code) {
 
   const results = chapter({
     id: "results", no: "03", hue: 2,
-    kicker: cs.kicker, title: cs.title, ask: cs.intro,
+    kicker: ch(2).kicker, title: ch(2).title, ask: ch(2).ask,
     keys: [
       key({
         span: 6, tone: "turquoise", legend: "1", eyebrow: lead.client,
@@ -445,12 +451,12 @@ function render(code) {
   /* ---- 04 · how it runs ------------------------------------------------ */
   const process = chapter({
     id: "process", no: "04", hue: 3,
-    kicker: page.process.kicker, title: page.process.title, ask: t.asks[3],
+    kicker: ch(3).kicker, title: ch(3).title, ask: ch(3).ask,
     keys: [
-      ...page.process.steps.map(([title, text], i) =>
+      ...v.stages.map((step, i) =>
         key({
           span: 3, tone: i === 3 ? "turquoise" : "white", legend: String(i + 1),
-          eyebrow: `${t.stepLabel} ${i + 1}`, title, size: "sm", sub: text,
+          eyebrow: `${t.stepLabel} ${i + 1}`, title: step.title, size: "sm", sub: step.text,
           meta: c.processTimings[i], mark: false,
         })),
       key({
@@ -467,7 +473,7 @@ function render(code) {
   /* ---- 05 · what it plugs into ---------------------------------------- */
   const integrations = chapter({
     id: "integrations", no: "05", hue: 4,
-    kicker: page.integrations.kicker, title: page.integrations.title, ask: t.asks[4],
+    kicker: ch(4).kicker, title: ch(4).title, ask: ch(4).ask,
     keys: [
       ...page.integrations.groups.map(([name, items], i) =>
         key({
@@ -491,13 +497,13 @@ function render(code) {
   /* ---- 06 · who carries it after -------------------------------------- */
   const operations = chapter({
     id: "operations", no: "06", hue: 5,
-    kicker: c.operations.kicker, title: c.operations.title, ask: t.asks[5],
+    kicker: ch(5).kicker, title: ch(5).title, ask: ch(5).ask,
     keys: [
       ...c.operations.cards.map((card, i) =>
         key({
           span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "soft",
           legend: ["S", "O", "G"][i], eyebrow: card.tag,
-          title: card.title, sub: card.text, meta: card.meta,
+          title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined, href: i === 2 ? at("podminky.html") : "#start",
         })),
     ],
@@ -506,7 +512,7 @@ function render(code) {
   /* ---- 07 · who is behind it ------------------------------------------ */
   const team = chapter({
     id: "team", no: "07", hue: 0,
-    kicker: page.team.kicker, title: page.team.title, ask: t.asks[6],
+    kicker: ch(6).kicker, title: ch(6).title, ask: ch(6).ask,
     keys: [
       key({
         span: 7, tone: "navy", legend: "T", eyebrow: page.team.kicker,
@@ -541,9 +547,9 @@ function render(code) {
     <div class="chap-head">
       <span class="chap-no">08</span>
       <div>
-        <span class="chap-kicker">${e(page.contact.kicker)}</span>
-        <h2>${e(page.contact.title)}</h2>
-        <p>${e(t.asks[7])}</p>
+        <span class="chap-kicker">${e(ch(7).kicker)}</span>
+        <h2>${e(ch(7).title)}</h2>
+        <p>${e(ch(7).ask)}</p>
       </div>
     </div>
     <div class="keys">
@@ -602,9 +608,9 @@ ${rack}
 
   <div class="hero-bar">
     <div class="hero-say">
-      <h1>${e(t.hello)} ${e(page.hero.title)} ${e(page.hero.highlight)}</h1>
-      <p>${e(t.heroWhat)}</p>
-      <span class="hero-note">${e(t.heroNote)}</span>
+      <h1>${e(v.hero.hello)} ${e(page.hero.title)} ${e(page.hero.highlight)}</h1>
+      <p>${e(v.hero.lead)}</p>
+      <span class="hero-note">${e(v.hero.note)}</span>
     </div>
     <div class="hero-side">
       <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
@@ -646,7 +652,7 @@ ${start}
    letting an accent take over a page it was not given. Turquoise leads the
    list, so it keeps the largest share of the board. */
 (function(){
-  var PALETTE = ["turquoise","blue","violet","pink","yellow","red"];
+  var PALETTE = ["turquoise","blue","violet","red","yellow"];
   var offset = Math.floor(Math.random() * PALETTE.length);
   document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
     var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
