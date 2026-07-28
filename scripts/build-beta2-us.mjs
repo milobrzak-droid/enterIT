@@ -304,7 +304,7 @@ function safeBlock() {
     id: "safe", no: s.no, eyebrow: s.eyebrow, h2: s.h2, hue: 2,
     body: `    <div class="keys">
 ${cards}
-      <a class="key key--white close" href="/en/podminky.html" style="grid-column:span 12">
+      <a class="key key--white close" href="/beta2/engagement.html" style="grid-column:span 12">
         <span class="key-arrow">${chevron}</span>
         <span class="key-go">${e(s.go)}</span>
       </a>
@@ -457,7 +457,7 @@ ${nextBlock()}
 
 <footer class="site-foot">
   <span>© 2026 EnterIT · AI Enter s.r.o. · Reg. No. 19086652</span>
-  <span><a href="/en/gdpr.html">Privacy</a> · <a href="/en/podminky.html">Terms</a> · <a href="/beta/">beta 1</a></span>
+  <span><a href="/en/gdpr.html">Privacy</a> · <a href="/beta2/engagement.html">Terms</a> · <a href="/beta/">beta 1</a></span>
 </footer>
 
 <script>

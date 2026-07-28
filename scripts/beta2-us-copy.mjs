@@ -444,8 +444,8 @@ export const us = {
     primary: "Book 30 minutes",
     secondary: "Send a description instead",
     tools: [
-      { title: "Savings calculator", body: "Four inputs, an order-of-magnitude estimate of what routine work costs you today. Deliberately rough; we verify it properly in stage one.", go: "Run the numbers →", href: "/en/kalkulacka.html" },
-      { title: "Company 2030 self-check", body: "Five maturity levels and the specific next move for each. Ten questions, no email required.", go: "Find your level →", href: "/en/firma-2030.html" },
+      { title: "Savings calculator", body: "Four inputs, an order-of-magnitude estimate of what routine work costs you today. Deliberately rough; we verify it properly in stage one.", go: "Run the numbers →", href: "/beta2/calculator.html" },
+      { title: "Company 2030 self-check", body: "Five maturity levels and the specific next move for each. Ten questions, no email required.", go: "Find your level →", href: "/beta2/company-2030.html" },
     ],
     contact: [
       "Milo Brzák, Founder & CEO",

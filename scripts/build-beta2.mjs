@@ -35,6 +35,7 @@ import { fileURLToPath } from "node:url";
 import { writeAgents } from "./build-beta2-agents.mjs";
 import { writeAutomation } from "./build-beta2-automation.mjs";
 import { writeRoutines } from "./build-beta2-routines.mjs";
+import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { writeUs } from "./build-beta2-us.mjs";
 import { voice } from "./beta2-copy.mjs";
@@ -379,7 +380,9 @@ function render(code) {
           title: v.disciplines[i].title, size: "big", sub: v.disciplines[i].text,
           bullets: card.bullets,
           mascot: i === 1 ? "wave" : undefined,
-          go: card.link, href: at(card.href),
+          /* card.href already carries the locale prefix for de and pl —
+             putting at() around it produced /de/de/... */
+          go: card.link, href: `/${card.href}`,
         })),
       key({
         span: 8, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
@@ -499,7 +502,7 @@ function render(code) {
       key({
         span: 5, tone: "navy", legend: "I", eyebrow: c.integrations.catalogLabel,
         title: c.integrations.proof, size: "big", mascot: "blue",
-        go: t.systemsGo, href: at("integrace.html"),
+        go: t.systemsGo, href: "#integrations",
       }),
       key({
         span: 7, tone: "white", legend: "S", eyebrow: page.integrations.kicker,
@@ -570,7 +573,7 @@ function render(code) {
     <div class="keys">
 ${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
         title: c.calculator.title, size: "sm", sub: c.calculator.intro,
-        go: t.roiGo, href: at("kalkulacka.html") })}
+        go: t.roiGo, href: "#start" })}
 ${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
         go: t.selfGo, href: at("firma-2030.html") })}
@@ -686,6 +689,7 @@ writeAgents();
 writeAutomation();
 writeRoutines();
 writeTeamAndIntegrations();
+writeEngagement();
 for (const code of order) {
   writeFileSync(resolve(root, "beta2", file[code]), render(code), "utf8");
   console.log(`beta2/${file[code]}  (${code})`);
