@@ -660,7 +660,7 @@ ${rack}
 
   <div class="hero-bar">
     <div class="hero-say">
-      <h1>${e(v.hero.hello)} ${e(page.hero.title)} ${e(page.hero.highlight)}</h1>
+      <h1>${e(v.hero.h1)}</h1>
       <p>${e(v.hero.lead)}</p>
       <span class="hero-note">${e(v.hero.note)}</span>
     </div>

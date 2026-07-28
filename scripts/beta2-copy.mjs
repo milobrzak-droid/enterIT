@@ -24,9 +24,9 @@
 export const voice = {
   cs: {
     hero: {
-      hello: "Dobrý den.",
-      lead: "Postavíme AI agenty, automatizace a integrace přímo do systémů, které už máte — a pak je za vás provozujeme. Přes 120 projektů v ostrém provozu, od vytěžování faktur po agentní vrstvu nad Business Central.",
-      note: "Český engineering tým · 75 lidí · dodáváme po celé Evropě",
+      h1: "Od webu až po ERP. Jeden tým na všechno mezi tím.",
+      lead: "Většina firem na to má tři dodavatele: jednoho na web, jednoho na automatizace, jednoho na ERP. Ve spárách mezi nimi projekty umírají. My to pokryjeme celé — postavíme to a pak to i provozujeme, takže není na koho ukázat, když v sedm ráno něco spadne.",
+      note: "120+ projektů v ostrém provozu · 60+ napojených systémů · 75 lidí pod jednou smlouvou",
     },
     chapters: [
       {
@@ -118,9 +118,9 @@ export const voice = {
 
   en: {
     hero: {
-      hello: "Hello.",
-      lead: "We build AI agents, automations and integrations straight into the systems you already run — and then we operate them for you. Over 120 projects live, from invoice extraction to an agent layer on top of Business Central.",
-      note: "Czech engineering team · 75 people · delivering across Europe",
+      h1: "From your website to your ERP. One team for everything in between.",
+      lead: "Most companies end up with three suppliers: one for the site, one for automation, one for the ERP. Projects die in the seams between them. We cover the whole span — we build it and then we run it, so there is nobody left to point at when something breaks at seven in the morning.",
+      note: "120+ projects in production · 60+ systems connected · 75 people under one contract",
     },
     chapters: [
       {
@@ -222,9 +222,9 @@ export const voice = {
 
   de: {
     hero: {
-      hello: "Guten Tag.",
-      lead: "Wir bauen KI-Agenten, Automatisierungen und Integrationen direkt in die Systeme, die Sie schon betreiben — und betreiben sie danach für Sie. Über 120 Projekte im Echtbetrieb, von der Rechnungsextraktion bis zur Agentenschicht über Business Central.",
-      note: "Tschechisches Engineering-Team · 75 Personen · Lieferung in ganz Europa",
+      h1: "Von der Website bis zum ERP. Ein Team für alles dazwischen.",
+      lead: "Die meisten Unternehmen haben dafür drei Dienstleister: einen für die Website, einen für Automatisierung, einen für das ERP. In den Fugen dazwischen sterben Projekte. Wir decken die ganze Spanne ab — wir bauen es und betreiben es danach, sodass es niemanden mehr gibt, auf den man zeigen kann, wenn morgens um sieben etwas ausfällt.",
+      note: "120+ Projekte im Echtbetrieb · 60+ angebundene Systeme · 75 Personen unter einem Vertrag",
     },
     chapters: [
       {
@@ -316,9 +316,9 @@ export const voice = {
 
   pl: {
     hero: {
-      hello: "Dzień dobry.",
-      lead: "Budujemy agentów AI, automatyzacje i integracje prosto w systemy, których już używacie — a potem je za was utrzymujemy. Ponad 120 projektów na produkcji, od ekstrakcji faktur po warstwę agentową nad Business Central.",
-      note: "Czeski zespół inżynierski · 75 osób · dostarczamy w całej Europie",
+      h1: "Od strony internetowej po ERP. Jeden zespół do wszystkiego pomiędzy.",
+      lead: "Większość firm ma na to trzech dostawców: jednego od strony, jednego od automatyzacji, jednego od ERP. W szczelinach między nimi projekty umierają. My pokrywamy całość — budujemy i potem to utrzymujemy, więc nie ma na kogo wskazać, gdy o siódmej rano coś padnie.",
+      note: "120+ projektów na produkcji · 60+ podłączonych systemów · 75 osób pod jedną umową",
     },
     chapters: [
       {
