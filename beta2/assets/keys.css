@@ -134,6 +134,13 @@ a.key--white:hover,a.key--white:focus-visible,a.key--white:active{
    palette is light enough to carry Stabilní černá, so type stays navy. */
 .key--accent{background:var(--accent);color:var(--navy)}
 .key--turquoise{background:var(--turquoise);color:var(--navy)}
+/* A cap can also be given a named colour outright, independent of its chapter.
+   Used where the tiles are equal peers — the routine grid — so the set reads as
+   a full palette rather than as one accent repeated. */
+.key--blue  {background:var(--blue);color:var(--navy)}
+.key--violet{background:var(--violet);color:var(--navy)}
+.key--red   {background:var(--red);color:var(--navy)}
+.key--yellow{background:var(--yellow);color:var(--navy)}
 .key--soft{background:var(--navy-soft);color:var(--white)}
 .key--navy,.key--photo-hire{background:var(--navy);color:var(--white)}
 
@@ -179,8 +186,10 @@ a.key:hover .key-go{opacity:1}
 .key-list li{position:relative;padding-left:16px;margin-top:7px;opacity:.8}
 .key-list li::before{content:"";position:absolute;left:0;top:.46em;
   width:8px;height:3px;border-radius:2px;background:var(--accent)}
-.key--turquoise .key-list li::before,
-.key--accent .key-list li::before{background:var(--navy);opacity:.55}
+.key--turquoise .key-list li::before,.key--accent .key-list li::before,
+.key--blue .key-list li::before,.key--violet .key-list li::before,
+.key--red .key-list li::before,.key--yellow .key-list li::before{
+  background:var(--navy);opacity:.55}
 
 /* What goes in, what comes out — the whole promise of a routine in one row. */
 .key-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
@@ -188,8 +197,9 @@ a.key:hover .key-go{opacity:1}
   font-size:10px;letter-spacing:.03em}
 .key-flow b{font-weight:500;opacity:.85}
 .key-flow i{font-style:normal;color:var(--accent)}
-.key--turquoise .key-flow i,
-.key--accent .key-flow i{color:var(--navy);opacity:.5}
+.key--turquoise .key-flow i,.key--accent .key-flow i,
+.key--blue .key-flow i,.key--violet .key-flow i,
+.key--red .key-flow i,.key--yellow .key-flow i{color:var(--navy);opacity:.5}
 .key--navy .key-flow{border-top-color:rgba(251,251,251,.22)}
 
 /* A number that leads instead of a sentence. */

@@ -381,14 +381,21 @@ function render(code) {
     ],
   });
 
-  /* ---- 02 · where it starts ------------------------------------------- */
+  /* ---- 02 · where it starts -------------------------------------------
+     Eight equal peers, so this grid gets the whole palette rather than one
+     chapter accent: every routine has its own colour, and no two that touch —
+     across or down the 4x2 grid — carry the same one. */
+  const routineTones = [
+    "turquoise", "violet", "yellow", "blue",
+    "red", "navy", "turquoise", "violet",
+  ];
   const solutions = chapter({
     id: "solutions", no: "02", hue: 1,
     kicker: ch(1).kicker, title: ch(1).title, ask: ch(1).ask,
     keys: [
       ...c.solutions.cards.map((card, i) =>
         key({
-          span: 3, tone: i % 4 === 0 ? "turquoise" : i % 4 === 2 ? "accent" : "white",
+          span: 3, tone: routineTones[i],
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
           href: `/${card.href}`, mark: false,
