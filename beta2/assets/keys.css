@@ -4,10 +4,16 @@
    Tiles are physical keys: a solid side under the cap, which collapses as the
    key travels into it on press. The ground is white; colour lives in the caps.
 
-   Colour is assigned per CHAPTER rather than per key. Each chapter carries an
-   accent and its own tint, so a chapter reads as one family, neighbouring caps
-   never fight, and the board still turns over — the whole set of chapter
-   accents is offset one step on each visit.
+   Every colour on this board is a literal value from the brand manual. Nothing
+   is tinted, lightened or mixed — there are no in-between shades, because the
+   manual does not have any.
+
+   Turquoise is the primary, so it is the only colour ever given to a whole cap.
+   The other five are accents: one is assigned per CHAPTER and it stays in the
+   small parts — the chapter number, the hairline along the top of a white cap,
+   the list marks, the flow arrow. The set of chapter accents is offset one step
+   on each visit, so the board turns over without any accent taking a surface it
+   was not given.
    ========================================================================== */
 
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.woff2') format('woff2'),url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
@@ -30,8 +36,11 @@
      It rides shapes only: never type, never the navy. */
   --wave:linear-gradient(122deg,#E399FF 0%,#6ECEFF 100%);
 
+  --navy-soft:#222D3D;      /* the manual's second dark step */
+
+  /* The chapter accent. It never fills a cap — it lands on the chapter number,
+     the hairline above a white cap, the list marks and the flow arrow. */
   --accent:var(--turquoise);
-  --tint:#E4FAF0;
 
   --font-head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
   --font-mono:'Fira Mono',ui-monospace,Menlo,monospace;
@@ -44,14 +53,16 @@
   --press:90ms cubic-bezier(.3,.7,.3,1);
 }
 
-/* One accent family per chapter. Every colour is straight from the manual;
-   the tints are the same hue laid down light enough to carry body copy. */
-.ch--turquoise{--accent:#41E39E;--tint:#E4FAF0}
-.ch--blue     {--accent:#6ECEFF;--tint:#E5F5FF}
-.ch--violet   {--accent:#B790FF;--tint:#F0E9FF}
-.ch--pink     {--accent:#E399FF;--tint:#F9EBFF}
-.ch--yellow   {--accent:#F8E354;--tint:#FDF7D9}
-.ch--red      {--accent:#FF848C;--tint:#FFE9EB}
+/* One accent per chapter, and only the manual's own values — nothing is tinted,
+   lightened or mixed. Turquoise is the primary and it is the only colour that
+   is ever given a whole cap; the other five are accents and stay in the small
+   parts: the chapter number, the hairline above a white cap, the list marks. */
+.ch--turquoise{--accent:#41E39E}
+.ch--blue     {--accent:#6ECEFF}
+.ch--violet   {--accent:#B790FF}
+.ch--pink     {--accent:#E399FF}
+.ch--yellow   {--accent:#F8E354}
+.ch--red      {--accent:#FF848C}
 
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--floor);color:var(--navy);
@@ -108,9 +119,18 @@ a.key:hover,a.key:focus-visible,a.key:active{
 }
 .key:focus-visible{outline:2px solid var(--navy);outline-offset:4px}
 
-.key--white{background:var(--white)}
-.key--accent{background:var(--accent)}
-.key--tint{background:var(--tint)}
+/* A white cap wears its chapter's accent as a hairline along the top edge — the
+   only place the accent touches a large surface. */
+.key--white{background:var(--white);
+  box-shadow:inset 0 4px 0 var(--accent),
+             inset 0 0 0 1.5px rgba(23,32,46,.12),
+             var(--travel) var(--travel) 0 var(--key-side)}
+a.key--white:hover,a.key--white:focus-visible,a.key--white:active{
+  box-shadow:inset 0 4px 0 var(--accent),
+             inset 0 0 0 1.5px rgba(23,32,46,.12),
+             0 0 0 var(--key-side)}
+.key--turquoise{background:var(--turquoise)}
+.key--soft{background:var(--navy-soft);color:var(--white)}
 .key--navy,.key--photo-hire{background:var(--navy);color:var(--white)}
 .key--grad{background:var(--wave);color:var(--navy)}
 
@@ -154,15 +174,17 @@ a.key:hover .key-go{opacity:1}
 .key-list{margin:14px 0 0;padding:0;list-style:none;
   font-size:11.5px;line-height:1.5}
 .key-list li{position:relative;padding-left:16px;margin-top:7px;opacity:.8}
-.key-list li::before{content:"";position:absolute;left:0;top:.52em;
-  width:7px;height:2px;background:currentColor;opacity:.6}
+.key-list li::before{content:"";position:absolute;left:0;top:.46em;
+  width:8px;height:3px;border-radius:2px;background:var(--accent)}
+.key--turquoise .key-list li::before{background:var(--navy);opacity:.55}
 
 /* What goes in, what comes out — the whole promise of a routine in one row. */
 .key-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
   margin-top:14px;padding-top:13px;border-top:1.5px solid rgba(23,32,46,.14);
   font-size:10px;letter-spacing:.03em}
 .key-flow b{font-weight:500;opacity:.85}
-.key-flow i{font-style:normal;opacity:.45}
+.key-flow i{font-style:normal;color:var(--accent)}
+.key--turquoise .key-flow i{color:var(--navy);opacity:.5}
 .key--navy .key-flow{border-top-color:rgba(251,251,251,.22)}
 
 /* A number that leads instead of a sentence. */
@@ -206,7 +228,7 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
    The manual approves the avatar with a bubble, and the avatar speaks in the
    first person — so this cap is the one place the product talks directly.
    The tail is a rotated square, which keeps it crisp at any size. */
-.key--bubble{background:var(--accent);color:var(--navy);overflow:visible;
+.key--bubble{background:var(--turquoise);color:var(--navy);overflow:visible;
   padding:30px 30px 26px;cursor:pointer;
   box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.12),
              var(--travel) var(--travel) 0 var(--key-side);
@@ -215,7 +237,7 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
   transform:translate(var(--travel),var(--travel));
   box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.12),0 0 0 var(--key-side)}
 .key--bubble::after{content:"";position:absolute;left:46px;bottom:-11px;
-  width:26px;height:26px;background:var(--accent);
+  width:26px;height:26px;background:var(--turquoise);
   transform:rotate(45deg);border-radius:0 0 6px 0;z-index:-1}
 .bubble-by{display:flex;align-items:center;gap:12px;margin-top:22px;
   padding-top:18px;border-top:1.5px solid rgba(23,32,46,.18)}
@@ -257,12 +279,12 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
    printed on it. It is not a link and it does not press — it is a hole in the
    board, and it should look like one until the picture arrives. */
 .key--slot{background:repeating-linear-gradient(135deg,
-    transparent 0 14px, rgba(23,32,46,.035) 14px 28px), var(--tint);
-  box-shadow:none;border:2px dashed rgba(23,32,46,.26);
+    transparent 0 15px, rgba(23,32,46,.04) 15px 30px), var(--white);
+  box-shadow:none;border:2px dashed var(--accent);
   align-items:center;justify-content:center;text-align:center;
   min-height:200px;padding:30px}
 .slot-mascot{width:66px;height:auto;opacity:.4;margin-bottom:16px}
-.slot-hint{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+.slot-hint{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
 .slot-brief{margin-top:10px;font-size:12.5px;line-height:1.55;opacity:.72;max-width:44ch}
 
 /* ---------- Hero bar ---------- */

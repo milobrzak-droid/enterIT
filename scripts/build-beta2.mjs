@@ -355,7 +355,7 @@ function render(code) {
     .join("\n");
 
   /* ---- 01 · what we build --------------------------------------------- */
-  const disciplineTones = ["accent", "navy", "tint"];
+  const disciplineTones = ["turquoise", "navy", "white"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: page.services.kicker, title: page.services.title, ask: t.asks[0],
@@ -382,7 +382,7 @@ function render(code) {
     keys: [
       ...c.solutions.cards.map((card, i) =>
         key({
-          span: 3, tone: i % 4 === 0 ? "accent" : i % 4 === 2 ? "tint" : "white",
+          span: 3, tone: i % 6 === 0 ? "turquoise" : "white",
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
           href: `/${card.href}`, mark: false,
@@ -401,14 +401,14 @@ function render(code) {
   const cs = caseStudies[code];
   const pick = (id) => cs.cards.find((x) => x.id === id);
   const [lead, second, ...rest] = boardOrder.map(pick);
-  const smallTones = ["white", "tint", "white", "tint"];
+  const smallTones = ["white", "white", "white", "white"];
 
   const results = chapter({
     id: "results", no: "03", hue: 2,
     kicker: cs.kicker, title: cs.title, ask: cs.intro,
     keys: [
       key({
-        span: 6, tone: "accent", legend: "1", eyebrow: lead.client,
+        span: 6, tone: "turquoise", legend: "1", eyebrow: lead.client,
         title: lead.title, size: "big", sub: lead.impact,
         meta: `${lead.industry} · ${lead.tech.join(" · ")} · ${cs.byLabel[lead.by]}`,
         href: "#start",
@@ -449,7 +449,7 @@ function render(code) {
     keys: [
       ...page.process.steps.map(([title, text], i) =>
         key({
-          span: 3, tone: i === 3 ? "accent" : "white", legend: String(i + 1),
+          span: 3, tone: i === 3 ? "turquoise" : "white", legend: String(i + 1),
           eyebrow: `${t.stepLabel} ${i + 1}`, title, size: "sm", sub: text,
           meta: c.processTimings[i], mark: false,
         })),
@@ -471,7 +471,7 @@ function render(code) {
     keys: [
       ...page.integrations.groups.map(([name, items], i) =>
         key({
-          span: 4, tone: i === 1 ? "accent" : "tint", legend: ["E", "C", "D"][i],
+          span: 4, tone: i === 1 ? "turquoise" : "white", legend: ["E", "C", "D"][i],
           eyebrow: name, title: items.join(" · "), size: "sm",
           mark: false,
         })),
@@ -495,7 +495,7 @@ function render(code) {
     keys: [
       ...c.operations.cards.map((card, i) =>
         key({
-          span: 4, tone: i === 0 ? "accent" : i === 1 ? "white" : "tint",
+          span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "soft",
           legend: ["S", "O", "G"][i], eyebrow: card.tag,
           title: card.title, sub: card.text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined, href: i === 2 ? at("podminky.html") : "#start",
@@ -516,7 +516,7 @@ function render(code) {
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt,
       }),
       key({
-        span: 5, tone: "accent", legend: "L", eyebrow: t.leadersEyebrow,
+        span: 5, tone: "turquoise", legend: "L", eyebrow: t.leadersEyebrow,
         title: page.team.leadershipTitle, size: "sm", sub: page.team.leadershipIntro,
         bullets: page.team.leaders.map((l) => `${l.name} — ${l.role}`),
         go: t.teamGo, href: at("tym.html"), mascot: "red",
@@ -547,10 +547,10 @@ function render(code) {
       </div>
     </div>
     <div class="keys">
-${key({ span: 4, tone: "tint", legend: "R", eyebrow: c.calculator.kicker,
+${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
         title: c.calculator.title, size: "sm", sub: c.calculator.intro,
         go: t.roiGo, href: at("kalkulacka.html") })}
-${key({ span: 4, tone: "accent", legend: "F", eyebrow: t.selfEyebrow,
+${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
         go: t.selfGo, href: at("firma-2030.html") })}
 ${slot({ span: 4, hint: t.artHint, brief: t.slots[4] })}
