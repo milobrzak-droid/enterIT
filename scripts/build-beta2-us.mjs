@@ -328,7 +328,6 @@ function engageBlock() {
 ${cards}
       <div class="key key--white panel" style="grid-column:span 12">
         <p class="key-sub">${e(g.foot)}</p>
-${nd(g.footNeed)}
       </div>
     </div>`,
   });

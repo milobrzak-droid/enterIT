@@ -45,15 +45,15 @@ const models = section({
 const money = section({
   id: "money", no: "02", hue: 1,
   kicker: "What it costs",
-  h2: "The number you came here for.",
+  h2: "No price list, and the reason is not coyness.",
   keys: [
     key({
       span: 8, tone: "white",
       body: [
-        "A buyer who cannot find even an order of magnitude usually leaves rather than asking, so we would rather publish a range than look coy. Time to a working pilot is 4 to 7 weeks from kickoff.",
-        "What moves the number: how many systems have to be reached, whether they have APIs, how clean the master data is, and how many exception paths the process really has. The discovery phase exists to answer exactly those four before anyone commits to a build.",
+        "We do not publish a price list. For work that is built rather than licensed, a range honest enough to be true is too wide to help you, and a narrow one is a guess dressed up as a number — and either way it anchors the conversation before anyone knows what is being built.",
+        "Four things move the figure, and you can assess three of them yourself right now: how many systems have to be reached, whether they have usable APIs, how clean the master data underneath is, and how many exception paths the process really has. That last one is almost always larger than people expect, which is exactly why we measure it before quoting rather than after.",
+        "What we can commit to up front is the shape of the risk. The smallest possible first step is the discovery phase: fixed fee, agreed before it starts, and it ends with a process map, a measured baseline and a business case that is yours to keep whether or not you build with us. If the numbers do not work, that document is what tells you so — and we have handed over exactly that more than once.",
       ],
-      needs: need("typical first-engagement range in USD, and the fixed discovery fee — both are blocking for this page"),
     }),
     key({
       span: 4, tone: "turquoise", mascot: "wave",

@@ -37,7 +37,6 @@ import { writeAutomation } from "./build-beta2-automation.mjs";
 import { writeRoutines } from "./build-beta2-routines.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
-import { writeUs } from "./build-beta2-us.mjs";
 import { voice } from "./beta2-copy.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -47,10 +46,12 @@ import { escapeHtml } from "./site-shell.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const e = (v) => escapeHtml(v ?? "");
 
-/* English is built by build-beta2-us.mjs from the US copy deck; the other three
-   still run the older eight-chapter board until that deck is signed off, so the
-   structure is translated once rather than twice. */
-const order = ["cs", "de", "pl"];
+/* All four locales run the keycap board. The English one carries more keys —
+   five disciplines instead of three, plus the engagement and boundary keys from
+   the US copy deck — but it is the same board, pressed the same way. The
+   fourteen-section document that briefly replaced it was the wrong shape: this
+   is a keyboard you press, not a page you read. */
+const order = ["en", "cs", "de", "pl"];
 const file = { en: "index.html", cs: "cs.html", de: "de.html", pl: "pl.html" };
 const label = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
@@ -369,21 +370,28 @@ function render(code) {
     .join("\n");
 
   /* ---- 01 · what we build --------------------------------------------- */
-  const disciplineTones = ["turquoise", "navy", "accent"];
+  const disciplineTones = ["turquoise", "white", "navy", "accent", "white"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
     keys: [
-      ...page.services.cards.map((card, i) =>
-        key({
-          span: 4, tone: disciplineTones[i], legend: ["E", "A", "C"][i],
-          title: v.disciplines[i].title, size: "big", sub: v.disciplines[i].text,
-          bullets: card.bullets,
-          mascot: i === 1 ? "wave" : undefined,
+      /* Disciplines drive the row, so English carries five keys and the other
+         locales three, off the same code. */
+      ...v.disciplines.map((d, i) => {
+        const card = page.services.cards[i];
+        return key({
+          span: v.disciplines.length === 5 && i >= 3 ? 6 : 4,
+          tone: disciplineTones[i % disciplineTones.length],
+          legend: ["W", "A", "G", "D", "E"][i],
+          title: d.title, size: "big", sub: d.text,
+          bullets: d.list || (card && card.bullets),
+          mascot: i === 2 ? "wave" : undefined,
+          go: d.go || (card && card.link),
           /* card.href already carries the locale prefix for de and pl —
-             putting at() around it produced /de/de/... */
-          go: card.link, href: `/${card.href}`,
-        })),
+             wrapping it in at() produced /de/de/... */
+          href: d.href || (card ? `/${card.href}` : "#start"),
+        });
+      }),
       key({
         span: 8, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
         title: t.reachTitle, size: "big", sub: t.reachSub, go: t.reachGo, href: "/us/",
@@ -391,6 +399,10 @@ function render(code) {
       slot({ span: 4, hint: t.artHint, brief: t.slots[3] }),
     ],
   });
+
+  /* Board order matches beta2-routines.mjs. */
+  const routineSlugs = ["invoices", "orders", "warehouse", "attendance",
+    "timesheets", "mileage", "complaints", "time-off"];
 
   /* ---- 02 · where it starts -------------------------------------------
      Eight equal peers, so this grid gets the whole palette rather than one
@@ -409,7 +421,8 @@ function render(code) {
           span: 3, tone: routineTones[i],
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
-          href: `/${card.href}`, mark: false,
+          href: code === "en" ? `/beta2/routines/${routineSlugs[i]}.html` : `/${card.href}`,
+          mark: false,
         })),
       key({
         span: 12, tone: "navy", legend: "?", title: c.solutions.cta, size: "big",
@@ -459,7 +472,7 @@ function render(code) {
         span: 7, tone: "navy", legend: "N", eyebrow: t.proofLabel,
         title: page.proof.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.results.note,
-        go: t.teamGo, href: at("tym.html"),
+        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"),
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
       slot({ span: 5, hint: t.artHint, brief: t.slots[0] }),
@@ -481,7 +494,7 @@ function render(code) {
         span: 7, tone: "navy", legend: "P", eyebrow: c.implementation.kicker,
         title: c.implementation.title, size: "big", sub: c.implementation.intro,
         meta: c.implementation.flowLabel,
-        go: t.processGo, href: at("jak-stavime-automatizace.html"),
+        go: t.processGo, href: code === "en" ? "/beta2/automation.html" : at("jak-stavime-automatizace.html"),
         photo: "/assets/decor/guy.webp", alt: t.processPhotoAlt,
       }),
       slot({ span: 5, hint: t.artHint, brief: t.slots[1] }),
@@ -502,7 +515,7 @@ function render(code) {
       key({
         span: 5, tone: "navy", legend: "I", eyebrow: c.integrations.catalogLabel,
         title: c.integrations.proof, size: "big", mascot: "blue",
-        go: t.systemsGo, href: "#integrations",
+        go: t.systemsGo, href: code === "en" ? "/beta2/integrations.html" : "#integrations",
       }),
       key({
         span: 7, tone: "white", legend: "S", eyebrow: page.integrations.kicker,
@@ -522,8 +535,29 @@ function render(code) {
           span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "accent",
           legend: ["S", "O", "G"][i], eyebrow: card.tag,
           title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
-          go: i === 2 ? t.opsGo : undefined, href: i === 2 ? at("podminky.html") : "#start",
+          go: i === 2 ? t.opsGo : undefined,
+          href: code === "en" ? "/beta2/engagement.html" : (i === 2 ? at("podminky.html") : "#start"),
         })),
+      ...(code === "en" ? [
+        key({
+          span: 4, tone: "white", legend: "$", eyebrow: "How it is bought",
+          title: "Four ways to work with us.", size: "sm",
+          sub: "Fixed scope, discovery only, a dedicated team inside yours, or we run what already exists.",
+          go: "Commercial models →", href: "/beta2/engagement.html",
+        }),
+        key({
+          span: 4, tone: "white", legend: "US", eyebrow: "Across the Atlantic",
+          title: "Six hours ahead, and it works.", size: "sm",
+          sub: "Overlap until 11am Eastern, a written status before your day starts, and your data wherever you say.",
+          go: "The practical answers →", href: "/beta2/engagement.html#atlantic",
+        }),
+        key({
+          span: 4, tone: "navy", legend: "✕", eyebrow: "Boundaries",
+          title: "What we turn down.", size: "sm",
+          sub: "No build without a baseline. No proof of concept with no path to production. No agent in front of a decision that should stay human.",
+          go: "The whole list →", href: "/beta2/engagement.html#limits",
+        }),
+      ] : []),
     ],
   });
 
@@ -536,25 +570,25 @@ function render(code) {
         span: 7, tone: "navy", legend: "T", eyebrow: page.team.kicker,
         title: page.team.stats.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.team.intro,
-        go: t.teamGo, href: at("tym.html"),
+        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"),
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt,
       }),
       key({
         span: 5, tone: "turquoise", legend: "L", eyebrow: t.leadersEyebrow,
         title: page.team.leadershipTitle, size: "sm", sub: page.team.leadershipIntro,
         bullets: page.team.leaders.map((l) => `${l.name} — ${l.role}`),
-        go: t.teamGo, href: at("tym.html"), mascot: "red",
+        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"), mascot: "red",
       }),
       ...page.team.leaders.map((l, i) =>
         key({
           span: 3, tone: "navy", photo: l.image, alt: l.name,
           eyebrow: l.role, title: l.name, size: "sm", sub: l.text,
-          href: at("tym.html"), mark: false,
+          href: code === "en" ? "/beta2/team.html" : at("tym.html"), mark: false,
         })),
       key({
         span: 3, tone: "photo-hire", legend: "H", photo: "/assets/team/studio-1.jpg",
         pill: t.hiringPill, title: t.hiringTitle, size: "sm", sub: t.hiringSub,
-        go: t.hiringGo, href: at("tym.html"), mark: false,
+        go: t.hiringGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"), mark: false,
       }),
       slot({ span: 12, hint: t.artHint, brief: t.slots[2] }),
     ],
@@ -573,10 +607,10 @@ function render(code) {
     <div class="keys">
 ${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
         title: c.calculator.title, size: "sm", sub: c.calculator.intro,
-        go: t.roiGo, href: "#start" })}
+        go: t.roiGo, href: code === "en" ? "/beta2/calculator.html" : "#start" })}
 ${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
-        go: t.selfGo, href: at("firma-2030.html") })}
+        go: t.selfGo, href: code === "en" ? "/beta2/company-2030.html" : at("firma-2030.html") })}
 ${slot({ span: 4, hint: t.artHint, brief: t.slots[4] })}
       <a class="key key--bubble" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:span 8">
         <span class="key-legend">⏎</span>
@@ -684,7 +718,6 @@ ${start}
 `;
 }
 
-writeUs();
 writeAgents();
 writeAutomation();
 writeRoutines();

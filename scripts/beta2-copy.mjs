@@ -126,7 +126,7 @@ export const voice = {
       {
         kicker: "What we build",
         title: "We build it. Then we run it with you.",
-        ask: "You have a process that costs more than it should. We can take the whole thing — design, code, and Monday morning in production. Three disciplines, one team, one phone number.",
+        ask: "From the website to the ERP, and everything in between. Five disciplines, one team, one contract — so nobody gets to blame the supplier next door.",
       },
       {
         kicker: "Ready-made solutions",
@@ -164,10 +164,20 @@ export const voice = {
         ask: "Size it yourself first, or just ask. Half an hour is enough for us to tell you straight whether this is worth doing at all.",
       },
     ],
+    /* Five, not three. The old board never used the words website, platform or
+       portal, so a reader came away thinking "AI automation shop" — about half
+       of what we do. Each one is a door, not a paragraph. */
     disciplines: [
-      { title: "Enterprise software and integration", text: "Internal applications, portals and integration layers for the places where off-the-shelf software simply is not enough." },
-      { title: "AI, agents and data", text: "Agents work with documents, e-mail and company knowledge. A human approves the sensitive steps, and every action stays traceable." },
-      { title: "Cloud and production operations", text: "Deployment, infrastructure, monitoring and continued development. The solution has an owner after launch too — us." },
+      { title: "Websites and products", text: "Marketing sites, online-store front ends, portals and apps — from an MVP to something that survives real traffic.",
+        list: ["Corporate and product sites", "Portals and customer apps", "MVP to scale"], go: "Enter Studio builds these →", href: "/beta2/team.html" },
+      { title: "Automation", text: "A fixed track for predictable work, with an exception queue and a person at the end of it. The cheapest place to start.",
+        list: ["Documents into the ERP", "CRM and ERP in sync", "Approvals with an audit trail"], go: "How we build automation →", href: "/beta2/automation.html" },
+      { title: "AI agents", text: "A goal, a boundary and a set of tools. It decides the steps; a person approves anything sensitive.",
+        list: ["Extraction and email agents", "Knowledge agents that cite", "Reporting over the ERP"], go: "How we build agents →", href: "/beta2/agents.html" },
+      { title: "Data and platforms", text: "The layer everything else stands on. No amount of AI fixes the same customer sitting in four systems.",
+        list: ["Warehouses and reporting", "Internal tooling", "Integration layers"], go: "See the systems →", href: "/beta2/integrations.html" },
+      { title: "Enterprise systems", text: "Custom applications, ERP and CRM integration, legacy modernization, and the architecture around it. Our largest team.",
+        list: ["Applications and portals", "SAP, Dynamics, Business Central", "Cloud, DevOps, SLA"], go: "Meet the team →", href: "/beta2/team.html" },
     ],
     stages: [
       { title: "Find where it actually hurts", text: "We map the volume of work, the exceptions, the data, and what today's way of doing it really costs you." },
@@ -184,7 +194,7 @@ export const voice = {
       stepLabel: "Stage",
       proofLabel: "The house, in three numbers",
       leadersEyebrow: "Leadership",
-      buildGo: "Three disciplines, one team →",
+      buildGo: "Five disciplines, one team →",
       solutionsGo: "All eight routines →",
       processGo: "The four stages in detail →",
       systemsGo: "The whole catalogue →",

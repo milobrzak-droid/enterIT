@@ -374,8 +374,7 @@ export const us = {
     no: "10", eyebrow: "Commercial models",
     h2: "Four ways to work with us.",
     intro: "Pick the one that matches how much of the problem you want to hand over.",
-    footNeed: need("typical first engagement range, e.g. USD 15–40k — a US buyer who cannot find even an order of magnitude usually leaves instead of asking"),
-    foot: "Typical time to a working pilot: 4 to 7 weeks from kickoff.",
+    foot: "We do not publish a price list, because for custom work an honest range is too wide to be useful and a narrow one is a guess. What we can tell you up front: the smallest possible first commitment is the discovery phase, it is fixed-fee, and it ends with a document you own whether or not you build with us. Typical time to a working pilot after that is 4 to 7 weeks.",
     cards: [
       {
         title: "Fixed-scope build",
@@ -383,8 +382,7 @@ export const us = {
       },
       {
         title: "Discovery and business case",
-        body: "Stages one and two on their own, at a fixed fee. You get a process map, a baseline and a documented business case — and no obligation to build with us. Credited against the build if you go ahead.",
-        need: need("fixed fee for the discovery phase"),
+        body: "Stages one and two on their own, at a fixed fee agreed before it starts. You get a process map, a measured baseline and a documented business case — yours to keep, with no obligation to build with us. If you do go ahead, it is credited against the build.",
       },
       {
         title: "Dedicated team",
