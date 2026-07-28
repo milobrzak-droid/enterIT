@@ -32,6 +32,7 @@ import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { writeUs } from "./build-beta2-us.mjs";
 import { voice } from "./beta2-copy.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -41,7 +42,10 @@ import { escapeHtml } from "./site-shell.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const e = (v) => escapeHtml(v ?? "");
 
-const order = ["en", "cs", "de", "pl"];
+/* English is built by build-beta2-us.mjs from the US copy deck; the other three
+   still run the older eight-chapter board until that deck is signed off, so the
+   structure is translated once rather than twice. */
+const order = ["cs", "de", "pl"];
 const file = { en: "index.html", cs: "cs.html", de: "de.html", pl: "pl.html" };
 const label = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
@@ -673,6 +677,7 @@ ${start}
 `;
 }
 
+writeUs();
 for (const code of order) {
   writeFileSync(resolve(root, "beta2", file[code]), render(code), "utf8");
   console.log(`beta2/${file[code]}  (${code})`);

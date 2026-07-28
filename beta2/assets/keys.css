@@ -385,3 +385,137 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 @media(prefers-reduced-motion:reduce){
   .key,.rack-key,.key-bg,.key-mascot{transition:none}
 }
+
+/* ==========================================================================
+   The US board (/beta2/index.html) — fourteen sections instead of eight.
+   Everything below is additive; the CS/DE/PL boards do not use it.
+   ========================================================================== */
+
+/* ---------- A fact we do not have yet ----------
+   Printed where it will be missed rather than quietly left out. Nothing on this
+   page is typeset as a claim unless it is one, so an unverified number, an
+   unconfirmed certification or a client name without written consent shows up
+   here instead of in the prose. Grep for "needs" before launch. */
+.needs{display:block;margin:12px 0;padding:9px 14px;border-radius:10px;
+  border:1.5px dashed var(--red);background:rgba(255,132,140,.10);
+  color:var(--navy);font-size:10.5px;line-height:1.5}
+.needs b{display:block;font-family:var(--font-head);font-weight:700;
+  font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);margin-bottom:3px}
+.key--navy .needs,.key--photo .needs{color:var(--white);
+  background:rgba(255,132,140,.16)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;
+  height:46px;padding:0 24px;border-radius:8px;
+  font-family:var(--font-mono);font-weight:500;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+  transition:transform var(--press),box-shadow var(--press)}
+.btn--go{background:var(--turquoise);color:var(--navy);
+  box-shadow:5px 5px 0 rgba(0,0,0,.35)}
+.btn--go:hover{transform:translate(5px,5px);box-shadow:0 0 0 rgba(0,0,0,.35)}
+.btn--ghost{color:var(--white);box-shadow:inset 0 0 0 1.5px rgba(251,251,251,.4)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1.5px var(--white)}
+.btn--dark{background:var(--navy);color:var(--white);box-shadow:5px 5px 0 rgba(23,32,46,.25)}
+.btn--dark:hover{transform:translate(5px,5px);box-shadow:0 0 0 rgba(23,32,46,.25)}
+.btn--line{color:var(--navy);box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.35)}
+.btn--line:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn--sm{height:36px;padding:0 16px;font-size:10px;
+  background:var(--navy);color:var(--white)}
+.btn--sm:hover{background:var(--turquoise);color:var(--navy)}
+
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-cta--stack{flex-direction:column;align-items:stretch;margin-bottom:20px}
+.hero-cta--stack .btn{width:100%}
+.head-right{display:flex;align-items:center;gap:16px}
+
+/* ---------- Stat strip under the hero ---------- */
+.strip{display:flex;flex-wrap:wrap;gap:0 44px;margin-top:26px;
+  padding:22px 4px 0;border-top:1.5px solid rgba(23,32,46,.12)}
+.strip .stat{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  font-size:11.5px;opacity:.72;padding:6px 0}
+.strip .stat b{font-family:var(--font-head);font-weight:900;font-size:26px;
+  letter-spacing:-.02em;opacity:1}
+.strip .needs{flex-basis:100%;margin:6px 0 0}
+
+/* ---------- Prose panel ----------
+   Section 01 and the other read-it-whole blocks. No tiles, no icons: the text is
+   short enough to be read straight through, which is the entire point of it. */
+.panel p{margin:0 0 14px;font-size:14px;line-height:1.7;max-width:78ch}
+.panel p:last-child{margin-bottom:0}
+.key--navy.panel p{opacity:.86}
+.panel .key-go{margin-top:18px}
+
+/* ---------- Discipline card ---------- */
+.disc .key-eyebrow{background:transparent;color:inherit;padding:0;
+  opacity:.62;letter-spacing:.14em}
+.key--navy.disc .key-eyebrow,.key--turquoise.disc .key-eyebrow,
+.key--blue.disc .key-eyebrow,.key--violet.disc .key-eyebrow,
+.key--yellow.disc .key-eyebrow{background:transparent;color:inherit}
+.disc .key-title{margin-top:8px;padding-top:0}
+.disc .key-sub{max-width:70ch}
+.disc .key-legend{border-radius:7px;font-size:9px;width:auto;padding:0 7px}
+.kinds{margin:16px 0 0;padding:0;list-style:none;font-size:12px;line-height:1.55}
+.kinds li{margin-top:9px;padding-left:16px;position:relative;opacity:.85}
+.kinds li::before{content:"";position:absolute;left:0;top:.5em;
+  width:8px;height:3px;border-radius:2px;background:currentColor;opacity:.5}
+.kinds b{font-weight:500;opacity:1}
+.key-meta--rule{margin-top:16px;padding-top:14px;
+  border-top:1.5px solid rgba(23,32,46,.16);font-size:11.5px;opacity:.75}
+.key--navy .key-meta--rule{border-top-color:rgba(251,251,251,.22)}
+
+/* A cap that is only a link out of the section. */
+.close{flex-direction:row;align-items:center;justify-content:space-between;
+  gap:24px;padding:22px 26px}
+.close .key-title{margin:0;padding:0}
+.close .key-go{margin:0}
+.close .key-arrow{position:static}
+
+/* ---------- Case card ---------- */
+.case .key-stat{margin-top:14px;padding-top:0}
+.case .key-title{margin-top:16px;padding-top:0;opacity:.72;
+  font-family:var(--font-mono);font-weight:500;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase}
+.case-line{margin:12px 0 0;font-size:12.5px;line-height:1.6;opacity:.82;max-width:62ch}
+.case-line b{font-weight:500;opacity:1}
+.also{flex-direction:column;gap:4px}
+
+/* ---------- The eight patterns, as a table ---------- */
+.sheet{padding:26px}
+.grid{width:100%;border-collapse:collapse;font-size:12px;line-height:1.5}
+.grid th,.grid td{text-align:left;padding:12px 14px 12px 0;
+  border-bottom:1px solid rgba(23,32,46,.10);vertical-align:top}
+.grid thead th{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  opacity:.5;padding-bottom:10px}
+.grid tbody th{font-family:var(--font-head);font-weight:700;font-size:14px;
+  white-space:nowrap;padding-right:22px}
+.grid td{opacity:.78}
+.grid .arrow{color:var(--accent);opacity:1;padding-right:14px}
+.grid .effect{white-space:nowrap;opacity:.6;font-size:11px}
+.sheet .key-meta{margin-top:18px}
+.sheet .key-go{display:inline-block;margin-top:14px}
+
+/* Nested grid — the integration groups inside one cap. */
+.keys--nested{gap:14px;width:100%}
+.keys--nested .key{box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.12);padding:18px}
+.keys--nested .key--turquoise,.keys--nested .key--accent{box-shadow:none}
+.keys--nested .key-title{margin-top:10px;padding-top:0;font-size:15px;line-height:1.35}
+
+/* Two links side by side. */
+.links{flex-direction:row;gap:32px;align-items:center;padding:22px 26px}
+.links .key-go{margin:0}
+
+/* ---------- Question and answer ---------- */
+.qa{padding:18px 0;border-top:1.5px solid rgba(23,32,46,.12)}
+.qa:first-child{border-top:none;padding-top:0}
+.qa b{display:block;font-family:var(--font-head);font-weight:700;font-size:16px;
+  margin-bottom:8px}
+.qa p{margin:0;font-size:13px;line-height:1.65;opacity:.8;max-width:76ch}
+
+@media(max-width:900px){
+  .grid thead{display:none}
+  .grid tr{display:block;padding:12px 0;border-bottom:1px solid rgba(23,32,46,.10)}
+  .grid th,.grid td{display:block;border:none;padding:2px 0}
+  .grid .arrow{display:none}
+  .strip{gap:0 24px}
+}
