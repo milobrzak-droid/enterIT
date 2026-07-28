@@ -89,13 +89,46 @@ a{color:var(--turquoise);text-decoration:none}
   font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
 .key--navy .key-eyebrow{background:var(--white);color:var(--navy)}
 
-.key-title{margin-top:auto;padding-top:20px;font-family:var(--font-head);
-  font-weight:900;font-size:clamp(24px,2.1vw,31px);line-height:.98;
-  letter-spacing:-.015em}
-.key-title--big{font-size:clamp(30px,3vw,44px)}
-.key-meta{margin-top:12px;font-size:10.5px;line-height:1.5;opacity:.75}
-.key-go{margin-top:12px;font-size:10px;letter-spacing:.1em;
-  text-transform:uppercase;opacity:.7}
+/* The headline owns the cap. It is the first thing read and it should carry the
+   point on its own, so it runs large and tight across the full tile. */
+.key-title{margin-top:auto;padding-top:18px;font-family:var(--font-head);
+  font-weight:900;font-size:clamp(26px,2.6vw,40px);line-height:.94;
+  letter-spacing:-.02em;text-wrap:balance}
+.key-title--big{font-size:clamp(34px,4.2vw,64px)}
+.key-title--xl{font-size:clamp(40px,5.4vw,86px);line-height:.9}
+
+/* One explaining line under the headline — the "why it matters". */
+.key-sub{margin-top:14px;font-size:13px;line-height:1.55;opacity:.8;max-width:46ch}
+.key-meta{margin-top:10px;font-size:10.5px;line-height:1.5;opacity:.62}
+.key-go{margin-top:16px;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;opacity:.7;display:inline-flex;align-items:center;gap:7px}
+.key:hover .key-go{opacity:1}
+
+/* A number that leads instead of a sentence. */
+.key-stat{font-family:var(--font-head);font-weight:900;
+  font-size:clamp(44px,6vw,96px);line-height:.86;letter-spacing:-.03em;
+  margin-top:auto;padding-top:18px}
+.key-stat small{display:block;font-family:var(--font-mono);font-weight:500;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  margin-top:14px;opacity:.7}
+
+/* ---------- Photo caps ----------
+   The image is the cap face; type sits on a scrim so it stays readable, and the
+   photo lifts slightly as the key is pressed. */
+.key--photo{overflow:hidden;color:var(--white);justify-content:flex-end;
+  padding:26px;isolation:isolate}
+.key--photo img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:-2;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.key--photo::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(10,17,28,.25) 0%,rgba(10,17,28,.55) 45%,rgba(10,17,28,.9) 100%)}
+.key--photo:hover img{transform:scale(1.05)}
+.key--photo .key-eyebrow{background:var(--white);color:var(--navy)}
+.key--photo .key-legend{border-color:var(--white);color:var(--white)}
+@media(prefers-reduced-motion:reduce){.key--photo img{transition:none}}
+.key--photo:hover img{transform:none}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .key--photo:hover img{transform:scale(1.05)}
+}
 
 /* ---------- Hero bar ---------- */
 .hero-bar{grid-column:1 / span 12;border-radius:var(--r-key);

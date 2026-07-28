@@ -50,6 +50,16 @@ const chrome = {
     agentsMeta: "Every sensitive step waits for a human. Every action lands in an audit trail your auditor can read.",
     intgTitle: "SAP, Pohoda + 58 more systems we already speak.",
     selfTitle: "Where is your company on the agentic road?",
+    buildGo: "Three disciplines, one team →",
+    factsLabel: "given back per user, every week",
+    agentsGo: "How we build agents →",
+    teamPhotoAlt: "The EnterIT team at work",
+    processPhotoAlt: "An engineer working on a client system",
+    selfSub: "Five maturity levels, and the one practical step that moves you to the next.",
+    reachEyebrow: "Beyond Czechia",
+    reachTitle: "A European delivery partner.",
+    reachSub: "US consultancies, Microsoft partners and systems integrators use us as their engineering bench in Europe.",
+    reachGo: "US partnership →",
     rack: ["What we build", "Results", "How we work", "Integrations", "Team", "Calculator", "Contact"],
   },
   cs: {
@@ -72,6 +82,16 @@ const chrome = {
     agentsMeta: "Každý citlivý krok čeká na člověka. Každá akce má auditní stopu, kterou auditor přečte.",
     intgTitle: "SAP, Pohoda a dalších 58 systémů, kterým rozumíme.",
     selfTitle: "Kde je vaše firma na cestě k agentnímu provozu?",
+    buildGo: "Tři disciplíny, jeden tým →",
+    factsLabel: "vráceno každému uživateli, každý týden",
+    agentsGo: "Jak stavíme agenty →",
+    teamPhotoAlt: "Tým EnterIT při práci",
+    processPhotoAlt: "Vývojář pracuje na klientském systému",
+    selfSub: "Pět úrovní zralosti a jeden praktický krok, který vás posune na další.",
+    reachEyebrow: "Za hranice Česka",
+    reachTitle: "Evropský dodavatelský partner.",
+    reachSub: "Americké konzultanty, Microsoft partnery a systémové integrátory obsluhujeme jako jejich engineering zázemí v Evropě.",
+    reachGo: "Partnerství pro US →",
     rack: ["Co stavíme", "Výsledky", "Jak pracujeme", "Integrace", "Tým", "Kalkulačka", "Kontakt"],
   },
   de: {
@@ -94,6 +114,16 @@ const chrome = {
     agentsMeta: "Jeder sensible Schritt wartet auf einen Menschen. Jede Aktion landet im Audit-Trail.",
     intgTitle: "SAP, Pohoda und 58 weitere Systeme, die wir sprechen.",
     selfTitle: "Wo steht Ihr Unternehmen auf dem Weg zum agentischen Betrieb?",
+    buildGo: "Drei Disziplinen, ein Team →",
+    factsLabel: "pro Nutzer zurückgewonnen, jede Woche",
+    agentsGo: "Wie wir Agenten bauen →",
+    teamPhotoAlt: "Das EnterIT-Team bei der Arbeit",
+    processPhotoAlt: "Ein Entwickler arbeitet an einem Kundensystem",
+    selfSub: "Fünf Reifegrade und der eine praktische Schritt zur nächsten Stufe.",
+    reachEyebrow: "Über Tschechien hinaus",
+    reachTitle: "Ein europäischer Delivery-Partner.",
+    reachSub: "US-Beratungen, Microsoft-Partner und Systemintegratoren nutzen uns als ihre Engineering-Bank in Europa.",
+    reachGo: "US-Partnerschaft →",
     rack: ["Was wir bauen", "Ergebnisse", "So arbeiten wir", "Integrationen", "Team", "Rechner", "Kontakt"],
   },
   pl: {
@@ -116,17 +146,37 @@ const chrome = {
     agentsMeta: "Każdy wrażliwy krok czeka na człowieka. Każde działanie trafia do ścieżki audytu.",
     intgTitle: "SAP, Pohoda i 58 innych systemów, które znamy.",
     selfTitle: "Gdzie jest Twoja firma na drodze do operacji agentowych?",
+    buildGo: "Trzy dyscypliny, jeden zespół →",
+    factsLabel: "zwrócone każdemu użytkownikowi, co tydzień",
+    agentsGo: "Jak budujemy agentów →",
+    teamPhotoAlt: "Zespół EnterIT w pracy",
+    processPhotoAlt: "Inżynier pracuje nad systemem klienta",
+    selfSub: "Pięć poziomów dojrzałości i jeden praktyczny krok na wyższy.",
+    reachEyebrow: "Poza Czechami",
+    reachTitle: "Europejski partner wdrożeniowy.",
+    reachSub: "Amerykańskie konsultingi, partnerzy Microsoftu i integratorzy korzystają z nas jako zaplecza inżynierskiego w Europie.",
+    reachGo: "Partnerstwo dla USA →",
     rack: ["Co budujemy", "Wyniki", "Jak pracujemy", "Integracje", "Zespół", "Kalkulator", "Kontakt"],
   },
 };
 
-/** One pressable key. `span`/`row` place it on the 12-column board. */
-function key({ col, span, row, tone, legend, eyebrow, title, meta, go, href, big }) {
+/**
+ * One pressable key.
+ *
+ * `title` is the load-bearing element — it runs large across the cap and should
+ * carry the point without the support beneath it. `sub` explains, `stat` leads
+ * with a figure instead of a sentence, `photo` turns the cap into an image.
+ */
+function key({ col, span, row, tone, legend, eyebrow, title, size, sub, meta, stat, statLabel, go, href, photo, alt }) {
   const place = `grid-column:${col} / span ${span};grid-row:${row}`;
-  return `      <a class="key key--${tone}" href="${href}" style="${place}">
+  const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : "";
+  return `      <a class="key key--${tone}${photo ? " key--photo" : ""}" href="${href}" style="${place}">
+        ${photo ? `<img src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${legend ? `<span class="key-legend">${legend}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
-        <span class="key-title${big ? " key-title--big" : ""}">${e(title)}</span>
+        ${stat ? `<span class="key-stat">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}
+        ${title ? `<span class="key-title${sizeClass}">${e(title)}</span>` : ""}
+        ${sub ? `<span class="key-sub">${e(sub)}</span>` : ""}
         ${meta ? `<span class="key-meta">${e(meta)}</span>` : ""}
         ${go ? `<span class="key-go">${e(go)}</span>` : ""}
       </a>`;
@@ -189,48 +239,67 @@ function render(code) {
     </div>
   </div>
 
-${key({ col: 1, span: 3, row: 2, tone: "red", legend: "C", eyebrow: t.caseEyebrow,
-        title: metals.metric, meta: `${metals.context} · ${metals.impact}`, go: t.casesGo, href: "#results" })}
+${key({ col: 1, span: 7, row: 2, tone: "turquoise", legend: "W", eyebrow: page.services.kicker,
+        title: page.services.title, size: "big",
+        sub: page.services.cards.map((x) => x.title).join(" · "),
+        go: t.buildGo, href: "#build" })}
 
-${key({ col: 4, span: 9, row: 2, tone: "navy", legend: "T", eyebrow: t.teamEyebrow,
-        title: page.team.title, meta: page.team.stats.map((s) => s.join(" ")).join(" · "), go: t.teamGo,
-        href: `/${prefix}tym.html`, big: true })}
+${key({ col: 8, span: 5, row: 2, tone: "navy", legend: "T", eyebrow: t.teamEyebrow,
+        title: page.team.title, size: "big", sub: page.team.intro,
+        go: t.teamGo, href: `/${prefix}tym.html`,
+        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt })}
 
 ${key({ col: 1, span: 3, row: 3, tone: "blue", legend: "N", eyebrow: t.factsEyebrow,
-        title: manufacturing.metric, meta: manufacturing.solution, href: "#results" })}
+        stat: manufacturing.metric, statLabel: t.factsLabel,
+        sub: manufacturing.solution, href: "#results" })}
 
-${key({ col: 4, span: 3, row: 3, tone: "yellow", legend: "D", eyebrow: t.canEyebrow,
-        title: t.docsTitle, meta: t.docsMeta, go: t.solutionsGo, href: "#build" })}
+${key({ col: 4, span: 4, row: 3, tone: "red", legend: "C", eyebrow: t.caseEyebrow,
+        stat: metals.metric, statLabel: metals.context,
+        sub: metals.impact, go: t.casesGo, href: "#results" })}
 
-      <a class="key key--enter" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:7 / span 6;grid-row:3">
+${key({ col: 8, span: 5, row: 3, tone: "violet", legend: "A", eyebrow: t.canEyebrow,
+        title: t.agentsTitle, size: "big", sub: t.agentsMeta,
+        go: t.agentsGo, href: `/${prefix}jak-stavime-agenty.html` })}
+
+      <a class="key key--enter" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:1 / span 5;grid-row:4">
         <span class="key-legend">⏎</span>
         <span class="key-eyebrow">${e(t.startEyebrow)}</span>
-        <span class="key-title">${e(page.contact.primary)}</span>
-        <span class="key-meta">${e(page.contact.text)}</span>
+        <span class="key-title key-title--big">${e(page.contact.primary)}</span>
+        <span class="key-sub">${e(page.contact.text)}</span>
         <span class="key-go">${e(t.startPress)} · milo@enterit.cz · +420 608 969 263</span>
       </a>
 
-${key({ col: 1, span: 6, row: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
-        title: t.selfTitle, go: t.selfGo, href: `/${prefix}firma-2030.html` })}
-
-      <div class="rack" style="grid-column:7 / span 6;grid-row:4">
+      <div class="rack" style="grid-column:6 / span 7;grid-row:4">
 ${rack}
       </div>
 
-${key({ col: 1, span: 3, row: 5, tone: "white", legend: "I", eyebrow: t.intgEyebrow,
-        title: t.intgTitle, go: t.intgGo, href: "#integrations" })}
+${key({ col: 1, span: 4, row: 5, tone: "yellow", legend: "D", eyebrow: t.canEyebrow,
+        title: t.docsTitle, sub: t.docsMeta, go: t.solutionsGo, href: "#build" })}
 
-${key({ col: 4, span: 5, row: 5, tone: "violet", legend: "A", eyebrow: t.canEyebrow,
-        title: t.agentsTitle, meta: t.agentsMeta, href: `/${prefix}jak-stavime-agenty.html` })}
+${key({ col: 5, span: 4, row: 5, tone: "white", legend: "I", eyebrow: t.intgEyebrow,
+        title: t.intgTitle, sub: page.integrations.intro,
+        go: t.intgGo, href: "#integrations" })}
 
 ${key({ col: 9, span: 4, row: 5, tone: "white", legend: "R", eyebrow: t.roiEyebrow,
-        title: t.roiTitle, go: t.roiOpen, href: "#roi" })}
+        title: t.roiTitle, sub: c.calculator.intro, go: t.roiOpen, href: "#roi" })}
 
-${key({ col: 1, span: 5, row: 6, tone: "navy", legend: "P", eyebrow: t.processEyebrow,
-        title: page.process.title, go: t.processGo, href: "#process" })}
+${key({ col: 1, span: 5, row: 6, tone: "navy", legend: "P", eyebrow: page.process.kicker,
+        title: page.process.title, size: "big", sub: page.process.intro,
+        go: t.processGo, href: "#process",
+        photo: "/assets/decor/guy.webp", alt: t.processPhotoAlt })}
 
-${key({ col: 6, span: 7, row: 6, tone: "pink", legend: "S", eyebrow: t.slaEyebrow,
-        title: c.operations.cards[1].title, go: t.slaGo, href: `/${prefix}podminky.html` })}
+${key({ col: 6, span: 7, row: 6, tone: "pink", legend: "S", eyebrow: c.operations.kicker,
+        title: c.operations.title, size: "big",
+        sub: c.operations.cards.map((x) => x.title).join(" · "),
+        go: t.slaGo, href: `/${prefix}podminky.html` })}
+
+${key({ col: 1, span: 6, row: 7, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
+        title: t.selfTitle, size: "big", sub: t.selfSub,
+        go: t.selfGo, href: `/${prefix}firma-2030.html` })}
+
+${key({ col: 7, span: 6, row: 7, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
+        title: t.reachTitle, size: "big", sub: t.reachSub,
+        go: t.reachGo, href: "/us/" })}
 
 </main>
 
