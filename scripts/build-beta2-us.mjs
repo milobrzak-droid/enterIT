@@ -242,7 +242,7 @@ function teamBlock() {
         <p class="key-sub">${e(x.body)}</p>
         <ul class="key-list">${x.people.map((p) => `<li>${e(p)}</li>`).join("")}</ul>
       </div>`).join("\n");
-  const group = t.group.map((g) => `      <a class="key key--navy key--photo" href="/en/tym.html" style="grid-column:span 4">
+  const group = t.group.map((g) => `      <a class="key key--navy key--photo" href="/beta2/team.html" style="grid-column:span 4">
         <img class="key-bg" src="${g.image}" alt="${e(g.name)}" loading="lazy">
         <span class="key-eyebrow">${e(g.role)}</span>
         <span class="key-title key-title--sm">${e(g.name)}</span>
@@ -257,7 +257,7 @@ ${cards}
         <span class="key-eyebrow">${e(t.groupLabel)}</span>
         <p class="key-sub">${e(t.titlesNote)}</p>
         <p class="key-sub">${e(t.close)}</p>
-        <a class="key-go" href="/en/tym.html">${e(t.go)}</a>
+        <a class="key-go" href="/beta2/team.html">${e(t.go)}</a>
       </div>
 ${group}
     </div>`,
@@ -279,7 +279,7 @@ function stackBlock() {
         <span class="key-eyebrow">${e(s.catalogLabel)}</span>
         <ul class="key-list">${s.principles.map((p) => `<li>${e(p)}</li>`).join("")}</ul>
         <p class="key-meta">${e(s.catalogNote)}</p>
-        <a class="key-go" href="/en/integrace.html">${e(s.go)}</a>
+        <a class="key-go" href="/beta2/integrations.html">${e(s.go)}</a>
       </div>
       <div class="key key--white sheet" style="grid-column:span 7">
         <div class="keys keys--nested">
