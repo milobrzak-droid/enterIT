@@ -370,28 +370,22 @@ function render(code) {
     .join("\n");
 
   /* ---- 01 · what we build --------------------------------------------- */
-  const disciplineTones = ["turquoise", "white", "navy", "accent", "white"];
+  const disciplineTones = ["turquoise", "navy", "accent"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
     keys: [
-      /* Disciplines drive the row, so English carries five keys and the other
-         locales three, off the same code. */
-      ...v.disciplines.map((d, i) => {
-        const card = page.services.cards[i];
-        return key({
-          span: v.disciplines.length === 5 && i >= 3 ? 6 : 4,
-          tone: disciplineTones[i % disciplineTones.length],
-          legend: ["W", "A", "G", "D", "E"][i],
-          title: d.title, size: "big", sub: d.text,
-          bullets: d.list || (card && card.bullets),
-          mascot: i === 2 ? "wave" : undefined,
-          go: d.go || (card && card.link),
+      ...page.services.cards.map((card, i) =>
+        key({
+          span: 4, tone: disciplineTones[i], legend: ["A", "G", "C"][i],
+          title: v.disciplines[i].title, size: "big", sub: v.disciplines[i].text,
+          bullets: v.disciplines[i].list || card.bullets,
+          mascot: i === 1 ? "wave" : undefined,
+          go: card.link,
           /* card.href already carries the locale prefix for de and pl —
              wrapping it in at() produced /de/de/... */
-          href: d.href || (card ? `/${card.href}` : "#start"),
-        });
-      }),
+          href: v.disciplines[i].href || `/${card.href}`,
+        })),
       key({
         span: 8, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
         title: t.reachTitle, size: "big", sub: t.reachSub, go: t.reachGo, href: "/us/",
@@ -536,28 +530,10 @@ function render(code) {
           legend: ["S", "O", "G"][i], eyebrow: card.tag,
           title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined,
-          href: code === "en" ? "/beta2/engagement.html" : (i === 2 ? at("podminky.html") : "#start"),
+          href: i === 2
+            ? (code === "en" ? "/beta2/engagement.html" : at("podminky.html"))
+            : "#start",
         })),
-      ...(code === "en" ? [
-        key({
-          span: 4, tone: "white", legend: "$", eyebrow: "How it is bought",
-          title: "Four ways to work with us.", size: "sm",
-          sub: "Fixed scope, discovery only, a dedicated team inside yours, or we run what already exists.",
-          go: "Commercial models →", href: "/beta2/engagement.html",
-        }),
-        key({
-          span: 4, tone: "white", legend: "US", eyebrow: "Across the Atlantic",
-          title: "Six hours ahead, and it works.", size: "sm",
-          sub: "Overlap until 11am Eastern, a written status before your day starts, and your data wherever you say.",
-          go: "The practical answers →", href: "/beta2/engagement.html#atlantic",
-        }),
-        key({
-          span: 4, tone: "navy", legend: "✕", eyebrow: "Boundaries",
-          title: "What we turn down.", size: "sm",
-          sub: "No build without a baseline. No proof of concept with no path to production. No agent in front of a decision that should stay human.",
-          go: "The whole list →", href: "/beta2/engagement.html#limits",
-        }),
-      ] : []),
     ],
   });
 

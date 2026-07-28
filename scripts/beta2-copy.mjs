@@ -24,8 +24,8 @@
 export const voice = {
   cs: {
     hero: {
-      h1: "Od webu až po ERP. Jeden tým na všechno mezi tím.",
-      lead: "Většina firem na to má tři dodavatele: jednoho na web, jednoho na automatizace, jednoho na ERP. Ve spárách mezi nimi projekty umírají. My to pokryjeme celé — postavíme to a pak to i provozujeme, takže není na koho ukázat, když v sedm ráno něco spadne.",
+      h1: "Performance AI tým. Stavíme agenty a automatizace, které jedou v ostrém provozu.",
+      lead: "Sofistikované automatizace, AI agenti a řešení na míru — postavené přímo do systémů, které už máte, a pak námi provozované. Ne pilot, ne demo. Přes 120 projektů v ostrém provozu, od vytěžování faktur po agentní vrstvu nad Business Central.",
       note: "120+ projektů v ostrém provozu · 60+ napojených systémů · 75 lidí pod jednou smlouvou",
     },
     chapters: [
@@ -71,9 +71,12 @@ export const voice = {
       },
     ],
     disciplines: [
-      { title: "Enterprise software a integrace", text: "Interní aplikace, portály a integrační vrstvy pro místa, kde krabicový software prostě nestačí." },
-      { title: "AI, agenti a data", text: "Agenti pracují s dokumenty, e-maily a firemními znalostmi. Citlivé kroky schvaluje člověk a každý zásah je dohledatelný." },
-      { title: "Cloud a provoz", text: "Nasazení, infrastruktura, monitoring i další rozvoj. Řešení má vlastníka i po spuštění — a jsme to my." },
+      { title: "Sofistikované automatizace", text: "Rutina, která dnes žere lidem hodiny, běží sama. Výjimky jdou na člověka — a přesně tam, kde je potřeba.",
+        list: ["Doklady rovnou do ERP", "CRM a ERP v jednom rytmu", "Schvalování s auditní stopou"] },
+      { title: "AI agenti v provozu", text: "Agent dostane cíl, hranice a nástroje a sám volí kroky. Citlivé věci schvaluje člověk a každý zásah je dohledatelný.",
+        list: ["Vytěžování dokumentů a e-mailů", "Znalostní agenti, kteří citují zdroj", "Reporting nad ERP běžnou řečí"] },
+      { title: "Řešení na míru", text: "Když krabicový software nestačí: vlastní aplikace, integrační a datová vrstva — a provoz, který za to ručí i po spuštění.",
+        list: ["Vlastní aplikace a portály", "Integrace i na systémy bez API", "Provoz pod SLA s konkrétním vlastníkem"] },
     ],
     stages: [
       { title: "Najdeme, kde to opravdu drhne", text: "Zmapujeme objem práce, výjimky, data a to, co vás dnešní postup reálně stojí." },
@@ -118,15 +121,15 @@ export const voice = {
 
   en: {
     hero: {
-      h1: "From your website to your ERP. One team for everything in between.",
-      lead: "Most companies end up with three suppliers: one for the site, one for automation, one for the ERP. Projects die in the seams between them. We cover the whole span — we build it and then we run it, so there is nobody left to point at when something breaks at seven in the morning.",
+      h1: "A performance AI team. We build agents and automation that survive production.",
+      lead: "Sophisticated automation, AI agents and custom-built solutions — put straight into the systems you already run, then operated by us. Not a pilot, not a demo. Over 120 projects live, from invoice extraction to an agent layer on top of Business Central.",
       note: "120+ projects in production · 60+ systems connected · 75 people under one contract",
     },
     chapters: [
       {
         kicker: "What we build",
         title: "We build it. Then we run it with you.",
-        ask: "From the website to the ERP, and everything in between. Five disciplines, one team, one contract — so nobody gets to blame the supplier next door.",
+        ask: "You have a process that costs more than it should. We can take the whole thing — design, code, and Monday morning in production. Three disciplines, one team, one phone number.",
       },
       {
         kicker: "Ready-made solutions",
@@ -164,20 +167,13 @@ export const voice = {
         ask: "Size it yourself first, or just ask. Half an hour is enough for us to tell you straight whether this is worth doing at all.",
       },
     ],
-    /* Five, not three. The old board never used the words website, platform or
-       portal, so a reader came away thinking "AI automation shop" — about half
-       of what we do. Each one is a door, not a paragraph. */
     disciplines: [
-      { title: "Websites and products", text: "Marketing sites, online-store front ends, portals and apps — from an MVP to something that survives real traffic.",
-        list: ["Corporate and product sites", "Portals and customer apps", "MVP to scale"], go: "Enter Studio builds these →", href: "/beta2/team.html" },
-      { title: "Automation", text: "A fixed track for predictable work, with an exception queue and a person at the end of it. The cheapest place to start.",
-        list: ["Documents into the ERP", "CRM and ERP in sync", "Approvals with an audit trail"], go: "How we build automation →", href: "/beta2/automation.html" },
-      { title: "AI agents", text: "A goal, a boundary and a set of tools. It decides the steps; a person approves anything sensitive.",
-        list: ["Extraction and email agents", "Knowledge agents that cite", "Reporting over the ERP"], go: "How we build agents →", href: "/beta2/agents.html" },
-      { title: "Data and platforms", text: "The layer everything else stands on. No amount of AI fixes the same customer sitting in four systems.",
-        list: ["Warehouses and reporting", "Internal tooling", "Integration layers"], go: "See the systems →", href: "/beta2/integrations.html" },
-      { title: "Enterprise systems", text: "Custom applications, ERP and CRM integration, legacy modernization, and the architecture around it. Our largest team.",
-        list: ["Applications and portals", "SAP, Dynamics, Business Central", "Cloud, DevOps, SLA"], go: "Meet the team →", href: "/beta2/team.html" },
+      { title: "Sophisticated automation", text: "The routine that eats your people's hours runs itself. Exceptions go to a person, exactly where a person is needed.",
+        list: ["Documents straight into the ERP", "CRM and ERP in step", "Approvals with an audit trail"] },
+      { title: "AI agents in production", text: "An agent gets a goal, a boundary and a set of tools, and picks the steps itself. A human approves anything sensitive, and every action stays traceable.",
+        list: ["Document and email extraction", "Knowledge agents that cite the source", "Plain-language reporting over the ERP"] },
+      { title: "Custom-built solutions", text: "For where off-the-shelf software runs out: your own application, the integration and data layer under it, and operations that answer for it after launch.",
+        list: ["Your own applications and portals", "Integration even where there is no API", "Operations under SLA, with a named owner"] },
     ],
     stages: [
       { title: "Find where it actually hurts", text: "We map the volume of work, the exceptions, the data, and what today's way of doing it really costs you." },
@@ -194,7 +190,7 @@ export const voice = {
       stepLabel: "Stage",
       proofLabel: "The house, in three numbers",
       leadersEyebrow: "Leadership",
-      buildGo: "Five disciplines, one team →",
+      buildGo: "Three disciplines, one team →",
       solutionsGo: "All eight routines →",
       processGo: "The four stages in detail →",
       systemsGo: "The whole catalogue →",
@@ -222,8 +218,8 @@ export const voice = {
 
   de: {
     hero: {
-      h1: "Von der Website bis zum ERP. Ein Team für alles dazwischen.",
-      lead: "Die meisten Unternehmen haben dafür drei Dienstleister: einen für die Website, einen für Automatisierung, einen für das ERP. In den Fugen dazwischen sterben Projekte. Wir decken die ganze Spanne ab — wir bauen es und betreiben es danach, sodass es niemanden mehr gibt, auf den man zeigen kann, wenn morgens um sieben etwas ausfällt.",
+      h1: "Ein Performance-KI-Team. Wir bauen Agenten und Automatisierung, die den Echtbetrieb überstehen.",
+      lead: "Anspruchsvolle Automatisierung, KI-Agenten und maßgeschneiderte Lösungen — direkt in die Systeme gebaut, die Sie schon betreiben, und danach von uns betrieben. Kein Pilot, keine Demo. Über 120 Projekte im Echtbetrieb, von der Rechnungsextraktion bis zur Agentenschicht über Business Central.",
       note: "120+ Projekte im Echtbetrieb · 60+ angebundene Systeme · 75 Personen unter einem Vertrag",
     },
     chapters: [
@@ -269,9 +265,12 @@ export const voice = {
       },
     ],
     disciplines: [
-      { title: "Enterprise-Software und Integration", text: "Interne Anwendungen, Portale und Integrationsschichten für Stellen, an denen Standardsoftware schlicht nicht reicht." },
-      { title: "KI, Agenten und Daten", text: "Agenten arbeiten mit Dokumenten, E-Mails und Unternehmenswissen. Sensible Schritte genehmigt ein Mensch, jede Aktion bleibt nachvollziehbar." },
-      { title: "Cloud und Produktionsbetrieb", text: "Deployment, Infrastruktur, Monitoring und Weiterentwicklung. Die Lösung hat auch nach dem Start einen Eigentümer — uns." },
+      { title: "Anspruchsvolle Automatisierung", text: "Die Routine, die Ihren Leuten heute Stunden frisst, läuft von selbst. Ausnahmen gehen an einen Menschen — genau dort, wo einer gebraucht wird.",
+        list: ["Belege direkt ins ERP", "CRM und ERP im Gleichtakt", "Freigaben mit Audit-Trail"] },
+      { title: "KI-Agenten im Echtbetrieb", text: "Ein Agent bekommt ein Ziel, eine Grenze und Werkzeuge und wählt die Schritte selbst. Sensibles genehmigt ein Mensch, jede Aktion bleibt nachvollziehbar.",
+        list: ["Dokumenten- und E-Mail-Extraktion", "Wissensagenten, die die Quelle nennen", "Reporting über das ERP in normaler Sprache"] },
+      { title: "Maßgeschneiderte Lösungen", text: "Für den Punkt, an dem Standardsoftware endet: eigene Anwendung, die Integrations- und Datenschicht darunter, und ein Betrieb, der auch danach dafür haftet.",
+        list: ["Eigene Anwendungen und Portale", "Integration auch ohne API", "Betrieb unter SLA, mit benanntem Eigentümer"] },
     ],
     stages: [
       { title: "Finden, wo es wirklich weh tut", text: "Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und das, was der heutige Weg Sie tatsächlich kostet." },
@@ -316,8 +315,8 @@ export const voice = {
 
   pl: {
     hero: {
-      h1: "Od strony internetowej po ERP. Jeden zespół do wszystkiego pomiędzy.",
-      lead: "Większość firm ma na to trzech dostawców: jednego od strony, jednego od automatyzacji, jednego od ERP. W szczelinach między nimi projekty umierają. My pokrywamy całość — budujemy i potem to utrzymujemy, więc nie ma na kogo wskazać, gdy o siódmej rano coś padnie.",
+      h1: "Performance AI team. Budujemy agentów i automatyzacje, które wytrzymują produkcję.",
+      lead: "Zaawansowane automatyzacje, agenci AI i rozwiązania szyte na miarę — wbudowane prosto w systemy, których już używacie, a potem utrzymywane przez nas. Nie pilot, nie demo. Ponad 120 projektów na produkcji, od ekstrakcji faktur po warstwę agentową nad Business Central.",
       note: "120+ projektów na produkcji · 60+ podłączonych systemów · 75 osób pod jedną umową",
     },
     chapters: [
@@ -363,9 +362,12 @@ export const voice = {
       },
     ],
     disciplines: [
-      { title: "Enterprise software i integracje", text: "Aplikacje wewnętrzne, portale i warstwy integracyjne tam, gdzie pudełkowe oprogramowanie po prostu nie wystarcza." },
-      { title: "AI, agenci i dane", text: "Agenci pracują z dokumentami, e-mailami i wiedzą firmową. Wrażliwe kroki zatwierdza człowiek, a każde działanie pozostaje możliwe do prześledzenia." },
-      { title: "Chmura i utrzymanie produkcji", text: "Wdrożenie, infrastruktura, monitoring i dalszy rozwój. Rozwiązanie ma właściciela także po starcie — nas." },
+      { title: "Zaawansowane automatyzacje", text: "Rutyna, która dziś zjada waszym ludziom godziny, działa sama. Wyjątki idą do człowieka — dokładnie tam, gdzie jest potrzebny.",
+        list: ["Dokumenty prosto do ERP", "CRM i ERP w jednym rytmie", "Zatwierdzanie ze ścieżką audytu"] },
+      { title: "Agenci AI na produkcji", text: "Agent dostaje cel, granice i narzędzia i sam wybiera kroki. Wrażliwe rzeczy zatwierdza człowiek, a każde działanie zostaje prześledzone.",
+        list: ["Ekstrakcja dokumentów i e-maili", "Agenci wiedzy, którzy cytują źródło", "Raportowanie nad ERP zwykłym językiem"] },
+      { title: "Rozwiązania szyte na miarę", text: "Tam, gdzie kończy się pudełkowe oprogramowanie: własna aplikacja, warstwa integracji i danych pod nią, i utrzymanie, które odpowiada za to po starcie.",
+        list: ["Własne aplikacje i portale", "Integracja nawet bez API", "Utrzymanie w SLA, z imiennym właścicielem"] },
     ],
     stages: [
       { title: "Znajdujemy, gdzie naprawdę boli", text: "Mapujemy wolumen pracy, wyjątki, dane i to, ile dzisiejszy sposób naprawdę was kosztuje." },
