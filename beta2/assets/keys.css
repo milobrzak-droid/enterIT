@@ -1,7 +1,13 @@
 /* ==========================================================================
    EnterIT beta2 — the keycap board.
+
    Tiles are physical keys: a solid side under the cap, which collapses as the
-   key travels down on press. Colour lives in the caps; the ground stays navy.
+   key travels into it on press. The ground is white; colour lives in the caps.
+
+   Colour is assigned per CHAPTER rather than per key. Each chapter carries an
+   accent and its own tint, so a chapter reads as one family, neighbouring caps
+   never fight, and the board still turns over — the whole set of chapter
+   accents is offset one step on each visit.
    ========================================================================== */
 
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.woff2') format('woff2'),url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
@@ -11,8 +17,6 @@
 :root{
   --floor:#FBFBFB;          /* board ground — Jednoduchá bílá */
   --key-side:#17202E;       /* Stabilní černá — the solid edge under every cap */
-  --panel:#0E1624;          /* recessed surfaces */
-  --panel-line:#22303F;
 
   --navy:#17202E;
   --white:#FBFBFB;
@@ -22,35 +26,71 @@
   --pink:#E399FF;
   --yellow:#F8E354;
   --red:#FF848C;
+  /* Empatická vlna — the manual's B2B default, and the only gradient here.
+     It rides shapes only: never type, never the navy. */
+  --wave:linear-gradient(122deg,#E399FF 0%,#6ECEFF 100%);
+
+  --accent:var(--turquoise);
+  --tint:#E4FAF0;
 
   --font-head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
   --font-mono:'Fira Mono',ui-monospace,Menlo,monospace;
 
   --travel:9px;             /* how far a big key falls */
+  --gap:26px;               /* air between caps — they are separate objects */
   --r-key:22px;
   --board-max:1512px;
   --gutter:36px;
   --press:90ms cubic-bezier(.3,.7,.3,1);
 }
 
+/* One accent family per chapter. Every colour is straight from the manual;
+   the tints are the same hue laid down light enough to carry body copy. */
+.ch--turquoise{--accent:#41E39E;--tint:#E4FAF0}
+.ch--blue     {--accent:#6ECEFF;--tint:#E5F5FF}
+.ch--violet   {--accent:#B790FF;--tint:#F0E9FF}
+.ch--pink     {--accent:#E399FF;--tint:#F9EBFF}
+.ch--yellow   {--accent:#F8E354;--tint:#FDF7D9}
+.ch--red      {--accent:#FF848C;--tint:#FFE9EB}
+
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--floor);color:var(--navy);
   font-family:var(--font-mono);font-weight:500;text-wrap:pretty;
   -webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
-a{color:var(--turquoise);text-decoration:none}
+a{color:var(--navy);text-decoration:none}
 ::selection{background:var(--turquoise);color:var(--navy)}
 
-.shell{max-width:var(--board-max);margin:0 auto;padding-inline:var(--gutter)}
-
 /* ---------- Board ---------- */
-.board{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;
-  padding:10px var(--gutter) 0;max-width:var(--board-max);margin:0 auto}
+.board{max-width:var(--board-max);margin:0 auto;padding:8px var(--gutter) 0}
+
+/* ---------- Chapter ----------
+   Chapters are the reader's staircase: a number, the question this stop
+   answers, and the keys that answer it. */
+.chap{margin-top:96px;scroll-margin-top:24px}
+.chap-head{display:flex;gap:22px;align-items:flex-start;
+  margin:0 0 30px;padding-bottom:24px;
+  border-bottom:1.5px solid rgba(23,32,46,.12)}
+.chap-no{flex:none;width:52px;height:52px;border-radius:14px;
+  background:var(--accent);color:var(--navy);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-weight:900;font-size:19px;
+  box-shadow:5px 5px 0 var(--key-side)}
+.chap-kicker{display:inline-block;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;opacity:.55}
+.chap-head h2{margin:8px 0 0;font-family:var(--font-head);font-weight:900;
+  font-size:clamp(30px,3.4vw,54px);line-height:.96;letter-spacing:-.025em;
+  max-width:20ch}
+.chap-head p{margin:14px 0 0;font-size:13.5px;line-height:1.65;opacity:.68;
+  max-width:70ch}
+
+.keys{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);
+  align-items:stretch}
 
 /* ---------- Key ---------- */
 .key{
   position:relative;display:flex;flex-direction:column;text-align:left;
-  padding:26px;border:none;cursor:pointer;border-radius:var(--r-key);
+  padding:26px;border:none;border-radius:var(--r-key);
   font-family:var(--font-mono);background:var(--white);color:var(--navy);
   /* The cap rests above its own solid edge, offset diagonally. */
   box-shadow:
@@ -58,85 +98,124 @@ a{color:var(--turquoise);text-decoration:none}
     var(--travel) var(--travel) 0 var(--key-side);
   transition:transform var(--press),box-shadow var(--press);
 }
+a.key{cursor:pointer}
 /* Pressing collapses the side and drops the cap onto the board. */
-.key:hover,.key:focus-visible,.key:active{
+a.key:hover,a.key:focus-visible,a.key:active{
   transform:translate(var(--travel),var(--travel));
   box-shadow:
     inset 0 0 0 1.5px rgba(23,32,46,.12),
     0 0 0 var(--key-side);
 }
-.key:focus-visible{outline:2px solid var(--turquoise);outline-offset:4px}
+.key:focus-visible{outline:2px solid var(--navy);outline-offset:4px}
 
-.key--navy{background:var(--navy);color:var(--white)}
-.key--red{background:var(--red)}
-.key--blue{background:var(--blue)}
-.key--yellow{background:var(--yellow)}
-.key--turquoise{background:var(--turquoise)}
-.key--violet{background:var(--violet)}
-.key--pink{background:var(--pink)}
+.key--white{background:var(--white)}
+.key--accent{background:var(--accent)}
+.key--tint{background:var(--tint)}
+.key--navy,.key--photo-hire{background:var(--navy);color:var(--white)}
+.key--grad{background:var(--wave);color:var(--navy)}
 
 /* Letter stamped in the corner, like a keycap legend. */
 .key-legend{position:absolute;top:14px;right:16px;width:24px;height:24px;
-  border-radius:7px;border:1.5px solid currentColor;opacity:.55;
+  border-radius:7px;border:1.5px solid currentColor;opacity:.5;
   display:inline-flex;align-items:center;justify-content:center;
   font-size:10px;pointer-events:none}
 
 .key-eyebrow{align-self:flex-start;padding:6px 14px;border-radius:999px;
-  background:var(--navy);color:var(--white);
+  background:var(--navy);color:var(--white);max-width:100%;
   font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
-.key--navy .key-eyebrow{background:var(--white);color:var(--navy)}
+.key--navy .key-eyebrow,.key--photo-hire .key-eyebrow{background:var(--white);color:var(--navy)}
+
+.key-tag{align-self:flex-start;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;opacity:.6}
 
 /* The headline owns the cap. It is the first thing read and it should carry the
    point on its own, so it runs large and tight across the full tile. */
+/* On a tall cap the headline is pushed to the foot, so it reads as the
+   conclusion of the tile. A cap that carries a list is the exception: there the
+   headline introduces the list and has to sit above it. */
+.key:has(.key-list) .key-title{margin-top:0;padding-top:6px}
 .key-title{margin-top:auto;padding-top:18px;font-family:var(--font-head);
-  font-weight:900;font-size:clamp(26px,2.6vw,40px);line-height:.94;
+  font-weight:900;font-size:clamp(24px,2.4vw,36px);line-height:.96;
   letter-spacing:-.02em;text-wrap:balance}
-.key-title--big{font-size:clamp(34px,4.2vw,64px)}
+.key-title--sm{font-size:clamp(19px,1.7vw,26px);line-height:1.02}
+.key-title--big{font-size:clamp(30px,3.6vw,54px)}
 .key-title--xl{font-size:clamp(40px,5.4vw,86px);line-height:.9}
 
 /* One explaining line under the headline — the "why it matters". */
-.key-sub{margin-top:14px;font-size:13px;line-height:1.55;opacity:.8;max-width:46ch}
-.key-meta{margin-top:10px;font-size:10.5px;line-height:1.5;opacity:.62}
+.key-sub{margin-top:13px;font-size:12.5px;line-height:1.6;opacity:.78;max-width:46ch}
+.key-meta{margin-top:12px;font-size:10px;line-height:1.5;opacity:.6;
+  letter-spacing:.04em}
 .key-go{margin-top:16px;font-size:10px;letter-spacing:.1em;
-  text-transform:uppercase;opacity:.7;display:inline-flex;align-items:center;gap:7px}
-.key:hover .key-go{opacity:1}
+  text-transform:uppercase;opacity:.72;display:inline-flex;align-items:center;gap:7px}
+a.key:hover .key-go{opacity:1}
+
+/* Three claims under a headline, when the tile is a discipline rather than a
+   single point. Kept to one line each so the cap does not become a paragraph. */
+.key-list{margin:14px 0 0;padding:0;list-style:none;
+  font-size:11.5px;line-height:1.5}
+.key-list li{position:relative;padding-left:16px;margin-top:7px;opacity:.8}
+.key-list li::before{content:"";position:absolute;left:0;top:.52em;
+  width:7px;height:2px;background:currentColor;opacity:.6}
+
+/* What goes in, what comes out — the whole promise of a routine in one row. */
+.key-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  margin-top:14px;padding-top:13px;border-top:1.5px solid rgba(23,32,46,.14);
+  font-size:10px;letter-spacing:.03em}
+.key-flow b{font-weight:500;opacity:.85}
+.key-flow i{font-style:normal;opacity:.45}
+.key--navy .key-flow{border-top-color:rgba(251,251,251,.22)}
 
 /* A number that leads instead of a sentence. */
 .key-stat{font-family:var(--font-head);font-weight:900;
-  font-size:clamp(44px,6vw,96px);line-height:.86;letter-spacing:-.03em;
+  font-size:clamp(36px,4.4vw,68px);line-height:.88;letter-spacing:-.03em;
   margin-top:auto;padding-top:18px}
 .key-stat small{display:block;font-family:var(--font-mono);font-weight:500;
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-  margin-top:14px;opacity:.7}
+  font-size:10.5px;line-height:1.5;letter-spacing:.02em;
+  margin-top:14px;opacity:.72;text-transform:none}
 
 /* ---------- Brand mark on the cap ----------
    A small signature in the corner, the way a printed card carries its maker's
    mark. Quiet enough to ignore, present enough to tie the board together. */
 .key-mark{position:absolute;bottom:20px;right:22px;width:22px;height:auto;
-  opacity:.28;pointer-events:none;transition:opacity .2s}
-.key:hover .key-mark{opacity:.5}
+  opacity:.26;pointer-events:none;transition:opacity .2s}
+a.key:hover .key-mark{opacity:.5}
 .key--photo .key-mark,.key--navy .key-mark{filter:brightness(0) invert(1);opacity:.35}
+
+/* ---------- Mascot ----------
+   Enty leans into the corner of a handful of caps. It is the brand's own
+   character, so it appears where the tile is speaking rather than reporting —
+   and never often enough to become wallpaper. */
+.key-mascot{position:absolute;right:-14px;bottom:-10px;width:112px;height:auto;
+  opacity:.9;pointer-events:none;
+  transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+a.key:hover .key-mascot{transform:translateY(-6px) rotate(-3deg)}
+.key--navy .key-mascot{opacity:.85}
+.key-mascot + .key-mark{display:none}
 
 /* ---------- Circle affordance ----------
    Reads as "there is more behind this" without spending a line of copy on it. */
 .key-arrow{position:absolute;top:16px;right:52px;width:34px;height:34px;
-  border-radius:50%;border:1.5px solid currentColor;opacity:.45;
+  border-radius:50%;border:1.5px solid currentColor;opacity:.42;
   display:inline-flex;align-items:center;justify-content:center;
   transition:opacity .2s,transform .2s;pointer-events:none}
 .key-arrow svg{width:15px;height:15px}
-.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
+a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 
 /* ---------- Speech bubble cap ----------
-   The brand manual approves the avatar with a bubble, and the avatar speaks in
-   the first person — so this cap is the one place the product talks directly.
+   The manual approves the avatar with a bubble, and the avatar speaks in the
+   first person — so this cap is the one place the product talks directly.
    The tail is a rotated square, which keeps it crisp at any size. */
-.key--bubble{background:var(--pink);color:var(--navy);overflow:visible;
-  padding:30px 30px 26px}
+.key--bubble{background:var(--accent);color:var(--navy);overflow:visible;
+  padding:30px 30px 26px;cursor:pointer;
+  box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.12),
+             var(--travel) var(--travel) 0 var(--key-side);
+  transition:transform var(--press),box-shadow var(--press)}
+.key--bubble:hover,.key--bubble:focus-visible,.key--bubble:active{
+  transform:translate(var(--travel),var(--travel));
+  box-shadow:inset 0 0 0 1.5px rgba(23,32,46,.12),0 0 0 var(--key-side)}
 .key--bubble::after{content:"";position:absolute;left:46px;bottom:-11px;
-  width:26px;height:26px;background:var(--pink);
+  width:26px;height:26px;background:var(--accent);
   transform:rotate(45deg);border-radius:0 0 6px 0;z-index:-1}
-.key--bubble .key-title{font-family:var(--font-head);font-weight:900;
-  letter-spacing:-.02em}
 .bubble-by{display:flex;align-items:center;gap:12px;margin-top:22px;
   padding-top:18px;border-top:1.5px solid rgba(23,32,46,.18)}
 .bubble-by img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none}
@@ -145,10 +224,9 @@ a{color:var(--turquoise);text-decoration:none}
 
 /* ---------- Pill badge with icon ---------- */
 .key-pill{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;
-  padding:9px 18px;border-radius:999px;background:rgba(255,255,255,.92);
+  padding:9px 18px;border-radius:999px;background:rgba(251,251,251,.94);
   color:var(--navy);font-size:11px;letter-spacing:.02em}
 .key-pill svg{width:14px;height:14px}
-.key--photo .key-pill{background:rgba(251,251,251,.94)}
 
 /* ---------- Photo caps ----------
    The image is the cap face; type sits on a scrim so it stays readable, and the
@@ -160,41 +238,56 @@ a{color:var(--turquoise);text-decoration:none}
 .key-bg{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;z-index:-2;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .key--photo::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(10,17,28,.25) 0%,rgba(10,17,28,.55) 45%,rgba(10,17,28,.9) 100%)}
-.key--photo:hover img{transform:scale(1.05)}
+  background:linear-gradient(180deg,rgba(10,17,28,.22) 0%,rgba(10,17,28,.55) 45%,rgba(10,17,28,.9) 100%)}
 .key--photo .key-eyebrow{background:var(--white);color:var(--navy)}
 .key--photo .key-legend{border-color:var(--white);color:var(--white)}
-@media(prefers-reduced-motion:reduce){.key--photo img{transition:none}}
-.key--photo:hover img{transform:none}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
-  .key--photo:hover img{transform:scale(1.05)}
+  a.key--photo:hover .key-bg{transform:scale(1.05)}
 }
 
+/* ---------- Reserved artwork ----------
+   A tile we have deliberately left open, with the brief for the photograph
+   printed on it. It is not a link and it does not press — it is a hole in the
+   board, and it should look like one until the picture arrives. */
+.key--slot{background:repeating-linear-gradient(135deg,
+    transparent 0 14px, rgba(23,32,46,.035) 14px 28px), var(--tint);
+  box-shadow:none;border:2px dashed rgba(23,32,46,.26);
+  align-items:center;justify-content:center;text-align:center;
+  min-height:200px;padding:30px}
+.slot-mascot{width:66px;height:auto;opacity:.4;margin-bottom:16px}
+.slot-hint{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+.slot-brief{margin-top:10px;font-size:12.5px;line-height:1.55;opacity:.72;max-width:44ch}
+
 /* ---------- Hero bar ---------- */
-.hero-bar{grid-column:1 / span 12;border-radius:var(--r-key);
-  background:var(--navy);color:var(--white);padding:44px 48px;
+.hero-bar{position:relative;overflow:hidden;border-radius:var(--r-key);
+  background:var(--navy);color:var(--white);padding:46px 48px;
   display:flex;align-items:center;justify-content:space-between;gap:40px;
   flex-wrap:wrap}
+.hero-say{max-width:62ch}
 .hero-bar h1{margin:0;font-family:var(--font-head);font-weight:900;
   font-size:clamp(28px,3.4vw,50px);line-height:.98;letter-spacing:-.02em;
   max-width:20ch}
 .hero-bar p{margin:14px 0 0;font-size:14px;line-height:1.6;opacity:.78;max-width:56ch}
+.hero-note{display:inline-block;margin-top:18px;padding:7px 15px;
+  border-radius:999px;border:1.5px solid rgba(251,251,251,.28);
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
 .hero-side{display:flex;align-items:center;gap:clamp(24px,3vw,44px);flex-wrap:wrap}
 /* The two partner marks are the fastest credibility on the page, so on the dark
-   banner they run at real size rather than as a footnote. */
+   banner they run at real size rather than as a footnote — and both read white,
+   so neither one looks like the weaker of the pair. */
 .hero-side img{height:clamp(40px,4.4vw,62px);width:auto}
 .hero-ms{display:flex;align-items:center;gap:14px}
 .hero-ms .sq{display:grid;grid-template-columns:1fr 1fr;gap:3px;
   width:clamp(32px,3.4vw,46px);height:clamp(32px,3.4vw,46px);flex:none}
-.hero-ms .sq i{display:block;background:#EAEDF3}
+.hero-ms .sq i{display:block;background:var(--white)}
 .hero-ms b{display:block;font-family:var(--font-head);font-weight:700;
-  font-size:clamp(17px,1.9vw,25px);line-height:1.1}
-.hero-ms span{display:block;font-size:clamp(10px,1vw,12px);opacity:.62;margin-top:3px}
+  font-size:clamp(17px,1.9vw,25px);line-height:1.1;color:var(--white)}
+.hero-ms span{display:block;font-size:clamp(10px,1vw,12px);opacity:.72;margin-top:3px}
 
 /* ---------- Key rack (quick nav) ---------- */
 .rack{border-radius:var(--r-key);background:rgba(23,32,46,.045);
-  border:1.5px solid rgba(23,32,46,.10);padding:15px;
-  display:flex;flex-wrap:wrap;gap:8px;align-content:center}
+  border:1.5px solid rgba(23,32,46,.10);padding:18px;
+  display:flex;flex-wrap:wrap;gap:10px;align-content:center}
 .rack-key{height:38px;border-radius:11px;background:var(--white);color:var(--navy);
   border:none;cursor:pointer;font-family:var(--font-mono);font-weight:500;
   font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:0 15px;
@@ -204,13 +297,7 @@ a{color:var(--turquoise);text-decoration:none}
 .rack-key:hover,.rack-key:focus-visible,.rack-key:active{
   transform:translate(4px,4px);
   box-shadow:inset 0 0 0 1.2px rgba(23,32,46,.12),0 0 0 var(--key-side)}
-.rack-key:focus-visible{outline:2px solid var(--turquoise);outline-offset:3px}
-
-/* ---------- Start-here key (outlined, carries the ⏎) ---------- */
-.key--enter{background:var(--white);color:var(--navy);padding:26px}
-.key--enter .key-eyebrow{background:var(--turquoise);color:var(--navy)}
-.key--enter .key-legend{border-color:var(--turquoise);color:var(--turquoise);opacity:1}
-.key--enter .key-title{font-size:clamp(24px,2.3vw,34px)}
+.rack-key:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 
 /* ---------- Header / footer ---------- */
 .site-head{max-width:var(--board-max);margin:0 auto;padding:0 var(--gutter);
@@ -227,22 +314,30 @@ a{color:var(--turquoise);text-decoration:none}
 .lang a.on{background:var(--turquoise);color:var(--navy);opacity:1}
 
 .site-foot{max-width:var(--board-max);margin:0 auto;
-  padding:28px var(--gutter) 40px;display:flex;justify-content:space-between;
+  padding:60px var(--gutter) 44px;display:flex;justify-content:space-between;
   align-items:center;gap:24px;flex-wrap:wrap;
   font-size:10.5px;color:var(--navy);opacity:.55}
 
 /* ---------- Responsive ---------- */
 @media(max-width:1180px){
-  .board{padding-inline:20px;gap:10px}
-  .key{padding:18px}
+  :root{--gap:18px}
+  .board{padding-inline:20px}
+  .key{padding:20px}
+  .chap{margin-top:66px}
   .site-head{padding-inline:20px}
   .head-nav{display:none}
+  .key-mascot{width:88px}
+}
+@media(max-width:900px){
+  .keys{grid-template-columns:repeat(6,1fr)}
+  .keys > *{grid-column:span 6 !important;grid-row:auto !important}
 }
 @media(max-width:760px){
-  .board{display:flex;flex-direction:column}
   .hero-bar{padding:26px}
-  .key-title{font-size:26px}
+  .chap-head{flex-direction:column;gap:16px}
+  .key-title,.key-title--big{font-size:26px}
+  .key-stat{font-size:44px}
 }
 @media(prefers-reduced-motion:reduce){
-  .key,.rack-key{transition:none}
+  .key,.rack-key,.key-bg,.key-mascot{transition:none}
 }
