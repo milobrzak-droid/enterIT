@@ -8,12 +8,17 @@
    is tinted, lightened or mixed — there are no in-between shades, because the
    manual does not have any.
 
-   Turquoise is the primary, so it is the only colour ever given to a whole cap.
-   Four accents remain — blue, violet, red, yellow. One is assigned per CHAPTER
-   and it stays in the small parts: the chapter number, the hairline along the
-   top of a white cap, the list marks, the flow arrow. The set is offset one step
-   on each visit, so the board turns over without any accent taking a surface it
-   was not given.
+   Colour fills surfaces. The manual defines colour triples for web and areas
+   (p. 37) and puts turquoise down as the largest colour field on the page
+   (p. 35), so caps are painted, not merely trimmed.
+
+   Turquoise is the primary and always holds the biggest share. Each chapter also
+   draws one accent — blue, violet, red or yellow — and that accent paints a
+   couple of caps and marks the rest: the chapter number, the hairline along the
+   top of a white cap, the list marks, the flow arrow. The set of chapter accents
+   is offset one step on each visit, so the board turns over.
+
+   No colour here is tinted, lightened or mixed. Every value is the manual's own.
    ========================================================================== */
 
 @font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.woff2') format('woff2'),url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
@@ -125,7 +130,10 @@ a.key--white:hover,a.key--white:focus-visible,a.key--white:active{
   box-shadow:inset 0 4px 0 var(--accent),
              inset 0 0 0 1.5px rgba(23,32,46,.12),
              0 0 0 var(--key-side)}
-.key--turquoise{background:var(--turquoise)}
+/* The chapter's accent, painted across the whole cap. Every accent in the
+   palette is light enough to carry Stabilní černá, so type stays navy. */
+.key--accent{background:var(--accent);color:var(--navy)}
+.key--turquoise{background:var(--turquoise);color:var(--navy)}
 .key--soft{background:var(--navy-soft);color:var(--white)}
 .key--navy,.key--photo-hire{background:var(--navy);color:var(--white)}
 
@@ -171,7 +179,8 @@ a.key:hover .key-go{opacity:1}
 .key-list li{position:relative;padding-left:16px;margin-top:7px;opacity:.8}
 .key-list li::before{content:"";position:absolute;left:0;top:.46em;
   width:8px;height:3px;border-radius:2px;background:var(--accent)}
-.key--turquoise .key-list li::before{background:var(--navy);opacity:.55}
+.key--turquoise .key-list li::before,
+.key--accent .key-list li::before{background:var(--navy);opacity:.55}
 
 /* What goes in, what comes out — the whole promise of a routine in one row. */
 .key-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
@@ -179,7 +188,8 @@ a.key:hover .key-go{opacity:1}
   font-size:10px;letter-spacing:.03em}
 .key-flow b{font-weight:500;opacity:.85}
 .key-flow i{font-style:normal;color:var(--accent)}
-.key--turquoise .key-flow i{color:var(--navy);opacity:.5}
+.key--turquoise .key-flow i,
+.key--accent .key-flow i{color:var(--navy);opacity:.5}
 .key--navy .key-flow{border-top-color:rgba(251,251,251,.22)}
 
 /* A number that leads instead of a sentence. */

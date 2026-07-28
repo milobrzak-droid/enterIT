@@ -360,7 +360,7 @@ function render(code) {
     .join("\n");
 
   /* ---- 01 · what we build --------------------------------------------- */
-  const disciplineTones = ["turquoise", "navy", "white"];
+  const disciplineTones = ["turquoise", "navy", "accent"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
@@ -374,7 +374,7 @@ function render(code) {
           go: card.link, href: at(card.href),
         })),
       key({
-        span: 8, tone: "soft", legend: "U", eyebrow: t.reachEyebrow,
+        span: 8, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
         title: t.reachTitle, size: "big", sub: t.reachSub, go: t.reachGo, href: "/us/",
       }),
       slot({ span: 4, hint: t.artHint, brief: t.slots[3] }),
@@ -388,7 +388,7 @@ function render(code) {
     keys: [
       ...c.solutions.cards.map((card, i) =>
         key({
-          span: 3, tone: i % 6 === 0 ? "turquoise" : "white",
+          span: 3, tone: i % 4 === 0 ? "turquoise" : i % 4 === 2 ? "accent" : "white",
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
           href: `/${card.href}`, mark: false,
@@ -407,7 +407,7 @@ function render(code) {
   const cs = caseStudies[code];
   const pick = (id) => cs.cards.find((x) => x.id === id);
   const [lead, second, ...rest] = boardOrder.map(pick);
-  const smallTones = ["white", "white", "white", "white"];
+  const smallTones = ["white", "accent", "white", "accent"];
 
   const results = chapter({
     id: "results", no: "03", hue: 2,
@@ -477,7 +477,7 @@ function render(code) {
     keys: [
       ...page.integrations.groups.map(([name, items], i) =>
         key({
-          span: 4, tone: i === 1 ? "turquoise" : "white", legend: ["E", "C", "D"][i],
+          span: 4, tone: i === 1 ? "turquoise" : i === 2 ? "accent" : "white", legend: ["E", "C", "D"][i],
           eyebrow: name, title: items.join(" · "), size: "sm",
           mark: false,
         })),
@@ -501,7 +501,7 @@ function render(code) {
     keys: [
       ...c.operations.cards.map((card, i) =>
         key({
-          span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "soft",
+          span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "accent",
           legend: ["S", "O", "G"][i], eyebrow: card.tag,
           title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined, href: i === 2 ? at("podminky.html") : "#start",
