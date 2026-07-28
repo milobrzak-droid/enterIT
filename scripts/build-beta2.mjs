@@ -32,6 +32,7 @@ import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
 import { escapeHtml } from "./site-shell.mjs";
@@ -281,12 +282,15 @@ const mascots = {
  */
 function key({
   span, rows, tone = "white", legend, eyebrow, title, size, sub, meta, stat, statLabel,
-  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag,
+  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet,
 }) {
   const style = `grid-column:span ${span}${rows ? `;grid-row:span ${rows}` : ""}`;
   const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
+  /* A figure that is a phrase rather than a number cannot run at stat size
+     without wrapping into a wall, so it steps down a notch. */
+  const statClass = stat && stat.length > 9 ? " key-stat--sm" : "";
   const Tag = href ? "a" : "div";
-  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
+  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${mascot ? `<img class="key-mascot" src="${mascots[mascot]}" alt="" loading="lazy">` : ""}
         ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
@@ -295,7 +299,7 @@ function key({
         ${pill ? `<span class="key-pill">${searchIcon}${e(pill)}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
         ${tag ? `<span class="key-tag">${e(tag)}</span>` : ""}
-        ${stat ? `<span class="key-stat">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}
+        ${stat ? `<span class="key-stat${statClass}">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}
         ${title ? `<span class="key-title${sizeClass}">${e(title)}</span>` : ""}
         ${sub ? `<span class="key-sub">${e(sub)}</span>` : ""}
         ${flow ? `<span class="key-flow"><b>${e(flow[0])}</b><i>→</i><b>${e(flow[1])}</b></span>` : ""}
@@ -390,26 +394,51 @@ function render(code) {
     ],
   });
 
-  /* ---- 03 · what came out --------------------------------------------- */
-  const caseTones = ["accent", "white", "tint"];
+  /* ---- 03 · what came out ---------------------------------------------
+     The two the reader is most likely to recognise themselves in lead at half
+     the board's width; four more follow at a quarter each. Every figure is the
+     one published in the case study — nothing is rounded up here. */
+  const cs = caseStudies[code];
+  const pick = (id) => cs.cards.find((x) => x.id === id);
+  const [lead, second, ...rest] = boardOrder.map(pick);
+  const smallTones = ["white", "tint", "white", "tint"];
+
   const results = chapter({
     id: "results", no: "03", hue: 2,
-    kicker: page.results.kicker, title: page.results.title, ask: t.asks[2],
+    kicker: cs.kicker, title: cs.title, ask: cs.intro,
     keys: [
-      ...c.cases.cards.map((card, i) =>
+      key({
+        span: 6, tone: "accent", legend: "1", eyebrow: lead.client,
+        title: lead.title, size: "big", sub: lead.impact,
+        meta: `${lead.industry} · ${lead.tech.join(" · ")} · ${cs.byLabel[lead.by]}`,
+        href: "#start",
+      }),
+      key({
+        span: 6, tone: "navy", legend: "2", eyebrow: second.client,
+        stat: second.metric, statLabel: second.metricLabel,
+        sub: second.impact,
+        meta: `${second.industry} · ${second.tech.join(" · ")} · ${cs.byLabel[second.by]}`,
+        mascot: "blue", href: "#start",
+      }),
+      ...rest.map((card, i) =>
         key({
-          span: 4, tone: caseTones[i], legend: ["1", "2", "3"][i],
-          eyebrow: card.context, stat: card.metric, statLabel: card.solution,
-          sub: card.impact, meta: card.tech.join(" · "),
-          go: i === 0 ? t.casesGo : undefined, href: "#start",
+          span: 3, tone: smallTones[i], legend: String(i + 3),
+          eyebrow: card.client, stat: card.metric, statLabel: card.metricLabel,
+          title: card.title, size: "sm",
+          meta: `${card.industry} · ${cs.byLabel[card.by]}`,
+          href: "#start", mark: false,
         })),
-      slot({ span: 5, hint: t.artHint, brief: t.slots[0] }),
+      /* The house numbers sit on the team at work — the photograph runs quiet
+         under a heavy scrim, there to prove the place is alive rather than to
+         be looked at. */
       key({
         span: 7, tone: "navy", legend: "N", eyebrow: t.proofLabel,
         title: page.proof.map(([v, l]) => `${v} ${l}`).join(" · "),
-        size: "big", sub: page.results.note, mascot: "wave",
+        size: "big", sub: page.results.note,
         go: t.teamGo, href: at("tym.html"),
+        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
+      slot({ span: 5, hint: t.artHint, brief: t.slots[0] }),
     ],
   });
 
