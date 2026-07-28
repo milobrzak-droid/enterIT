@@ -532,3 +532,7 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 .back svg{width:13px;height:13px}
 .hero-meta{margin-top:14px !important;font-size:11px;letter-spacing:.04em;
   opacity:.55 !important}
+/* A stat strip living inside a cap rather than under the hero. */
+.strip--in{margin-top:16px;padding-top:18px;gap:0 32px;
+  border-top-color:rgba(23,32,46,.2)}
+.strip--in .stat b{font-size:22px}

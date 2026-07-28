@@ -189,7 +189,9 @@ ${cards}
 function startBlock() {
   const s = us.start;
   const tones = ["turquoise", "violet", "yellow", "blue", "red", "navy", "turquoise", "violet"];
-  const caps = s.rows.map(([name, before, after, effect], i) => `      <a class="key key--${tones[i]}" href="#next" style="grid-column:span 3">
+  /* Row order on the board matches the order in beta2-routines.mjs. */
+  const slugs = ["invoices", "orders", "warehouse", "attendance", "timesheets", "mileage", "complaints", "time-off"];
+  const caps = s.rows.map(([name, before, after, effect], i) => `      <a class="key key--${tones[i]}" href="/beta2/routines/${slugs[i]}.html" style="grid-column:span 3">
         <span class="key-arrow">${chevron}</span>
         <span class="key-title key-title--sm">${e(name)}</span>
         <span class="key-flow"><b>${e(before)}</b><i>→</i><b>${e(after)}</b></span>
@@ -223,8 +225,8 @@ function workBlock() {
     body: `    <div class="keys">
 ${cards}
       <div class="key key--navy links" style="grid-column:span 12">
-        <a class="key-go" href="/en/jak-stavime-agenty.html">${e(w.links[0])}</a>
-        <a class="key-go" href="/en/jak-stavime-automatizace.html">${e(w.links[1])}</a>
+        <a class="key-go" href="/beta2/agents.html">${e(w.links[0])}</a>
+        <a class="key-go" href="/beta2/automation.html">${e(w.links[1])}</a>
       </div>
     </div>`,
   });
