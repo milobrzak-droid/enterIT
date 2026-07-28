@@ -60,6 +60,10 @@ const chrome = {
     reachTitle: "A European delivery partner.",
     reachSub: "US consultancies, Microsoft partners and systems integrators use us as their engineering bench in Europe.",
     reachGo: "US partnership →",
+    bubbleSay: "Tell us the process that is slowing your team down. We will tell you straight whether it is worth automating.",
+    hiringPill: "We are hiring", hiringTitle: "Build systems that actually go live.",
+    hiringSub: "No proof-of-concept graveyard. You ship to production and you keep it running.", hiringGo: "Open roles →",
+    heroWhat: "AI agents, automations and integrations — built into the systems you already run, then operated by us. 120+ projects live, from invoice extraction to agentic layers over Business Central.",
     rack: ["What we build", "Results", "How we work", "Integrations", "Team", "Calculator", "Contact"],
   },
   cs: {
@@ -92,6 +96,10 @@ const chrome = {
     reachTitle: "Evropský dodavatelský partner.",
     reachSub: "Americké konzultanty, Microsoft partnery a systémové integrátory obsluhujeme jako jejich engineering zázemí v Evropě.",
     reachGo: "Partnerství pro US →",
+    bubbleSay: "Řekněte nám proces, který vás brzdí. Řekneme vám na rovinu, jestli se ho vyplatí automatizovat.",
+    hiringPill: "Hledáme lidi", hiringTitle: "Stavějte systémy, které opravdu naběhnou.",
+    hiringSub: "Žádný hřbitov proof-of-conceptů. Dodáte do provozu a pak to provozujete.", hiringGo: "Volné pozice →",
+    heroWhat: "AI agenti, automatizace a integrace — postavené do systémů, které už používáte, a pak námi provozované. 120+ projektů v ostrém provozu, od vytěžování faktur po agentní vrstvy nad Business Central.",
     rack: ["Co stavíme", "Výsledky", "Jak pracujeme", "Integrace", "Tým", "Kalkulačka", "Kontakt"],
   },
   de: {
@@ -124,6 +132,10 @@ const chrome = {
     reachTitle: "Ein europäischer Delivery-Partner.",
     reachSub: "US-Beratungen, Microsoft-Partner und Systemintegratoren nutzen uns als ihre Engineering-Bank in Europa.",
     reachGo: "US-Partnerschaft →",
+    bubbleSay: "Nennen Sie uns den Prozess, der Ihr Team bremst. Wir sagen Ihnen offen, ob sich Automatisierung lohnt.",
+    hiringPill: "Wir stellen ein", hiringTitle: "Systeme bauen, die wirklich live gehen.",
+    hiringSub: "Kein Proof-of-Concept-Friedhof. Sie liefern in den Betrieb und halten es am Laufen.", hiringGo: "Offene Stellen →",
+    heroWhat: "KI-Agenten, Automatisierungen und Integrationen — eingebaut in Ihre bestehenden Systeme und von uns betrieben. 120+ Projekte im Echtbetrieb, von der Rechnungsextraktion bis zu agentischen Schichten über Business Central.",
     rack: ["Was wir bauen", "Ergebnisse", "So arbeiten wir", "Integrationen", "Team", "Rechner", "Kontakt"],
   },
   pl: {
@@ -156,9 +168,19 @@ const chrome = {
     reachTitle: "Europejski partner wdrożeniowy.",
     reachSub: "Amerykańskie konsultingi, partnerzy Microsoftu i integratorzy korzystają z nas jako zaplecza inżynierskiego w Europie.",
     reachGo: "Partnerstwo dla USA →",
+    bubbleSay: "Powiedz nam, który proces spowalnia Twój zespół. Powiemy wprost, czy warto go automatyzować.",
+    hiringPill: "Rekrutujemy", hiringTitle: "Buduj systemy, które naprawdę ruszają.",
+    hiringSub: "Żadnego cmentarza proof-of-conceptów. Wdrażasz na produkcję i utrzymujesz.", hiringGo: "Otwarte role →",
+    heroWhat: "Agenci AI, automatyzacje i integracje — wbudowane w systemy, których już używacie, i utrzymywane przez nas. 120+ projektów na produkcji, od ekstrakcji faktur po warstwy agentowe nad Business Central.",
     rack: ["Co budujemy", "Wyniki", "Jak pracujemy", "Integracje", "Zespół", "Kalkulator", "Kontakt"],
   },
 };
+
+const searchIcon =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+
+const chevron =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
 /**
  * One pressable key.
@@ -167,11 +189,13 @@ const chrome = {
  * carry the point without the support beneath it. `sub` explains, `stat` leads
  * with a figure instead of a sentence, `photo` turns the cap into an image.
  */
-function key({ col, span, row, tone, legend, eyebrow, title, size, sub, meta, stat, statLabel, go, href, photo, alt }) {
+function key({ col, span, row, tone, hue, legend, eyebrow, title, size, sub, meta, stat, statLabel, go, href, photo, alt, mark = true }) {
   const place = `grid-column:${col} / span ${span};grid-row:${row}`;
   const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : "";
-  return `      <a class="key key--${tone}${photo ? " key--photo" : ""}" href="${href}" style="${place}">
-        ${photo ? `<img src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
+  return `      <a class="key key--${tone}${photo ? " key--photo" : ""}"${hue !== undefined ? ` data-hue="${hue}"` : ""} href="${href}" style="${place}">
+        ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
+        ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
+        <span class="key-arrow">${chevron}</span>
         ${legend ? `<span class="key-legend">${legend}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
         ${stat ? `<span class="key-stat">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}
@@ -214,7 +238,7 @@ function render(code) {
 
 <header class="site-head">
   <a href="${code === "en" ? "/beta2/" : `/beta2/${file[code]}`}" aria-label="${e(page.homeLabel)}">
-    <img src="/assets/enter_logo_white.svg" alt="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
   </a>
   <nav class="head-nav" aria-label="${e(page.mainNavLabel)}">
     <a href="#build">${e(page.nav.services)}</a>
@@ -231,15 +255,18 @@ function render(code) {
   <div class="hero-bar">
     <div>
       <h1>${e(t.hello)} ${e(page.hero.title)} ${e(page.hero.highlight)}</h1>
-      <p>${e(t.heroLead)}</p>
+      <p>${e(t.heroWhat)}</p>
     </div>
     <div class="hero-side">
-      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" style="height:30px;filter:invert(1)">
-      <span style="font-family:var(--font-head);font-weight:700;font-size:14px">Microsoft<br><span style="font-family:var(--font-mono);font-weight:500;font-size:10.5px;opacity:.6">Solutions Partner</span></span>
+      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
+      <span class="hero-ms">
+        <span class="sq"><i></i><i></i><i></i><i></i></span>
+        <span><b>Microsoft</b><span>Solutions Partner</span></span>
+      </span>
     </div>
   </div>
 
-${key({ col: 1, span: 7, row: 2, tone: "turquoise", legend: "W", eyebrow: page.services.kicker,
+${key({ col: 1, span: 7, row: 2, tone: "turquoise", hue: 0, legend: "W", eyebrow: page.services.kicker,
         title: page.services.title, size: "big",
         sub: page.services.cards.map((x) => x.title).join(" · "),
         go: t.buildGo, href: "#build" })}
@@ -249,31 +276,43 @@ ${key({ col: 8, span: 5, row: 2, tone: "navy", legend: "T", eyebrow: t.teamEyebr
         go: t.teamGo, href: `/${prefix}tym.html`,
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt })}
 
-${key({ col: 1, span: 3, row: 3, tone: "blue", legend: "N", eyebrow: t.factsEyebrow,
+${key({ col: 1, span: 3, row: 3, tone: "blue", hue: 1, legend: "N", eyebrow: t.factsEyebrow,
         stat: manufacturing.metric, statLabel: t.factsLabel,
         sub: manufacturing.solution, href: "#results" })}
 
-${key({ col: 4, span: 4, row: 3, tone: "red", legend: "C", eyebrow: t.caseEyebrow,
+${key({ col: 4, span: 4, row: 3, tone: "red", hue: 2, legend: "C", eyebrow: t.caseEyebrow,
         stat: metals.metric, statLabel: metals.context,
         sub: metals.impact, go: t.casesGo, href: "#results" })}
 
-${key({ col: 8, span: 5, row: 3, tone: "violet", legend: "A", eyebrow: t.canEyebrow,
+${key({ col: 8, span: 5, row: 3, tone: "violet", hue: 3, legend: "A", eyebrow: t.canEyebrow,
         title: t.agentsTitle, size: "big", sub: t.agentsMeta,
         go: t.agentsGo, href: `/${prefix}jak-stavime-agenty.html` })}
 
-      <a class="key key--enter" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:1 / span 5;grid-row:4">
+      <a class="key key--bubble" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:1 / span 5;grid-row:4">
         <span class="key-legend">⏎</span>
         <span class="key-eyebrow">${e(t.startEyebrow)}</span>
-        <span class="key-title key-title--big">${e(page.contact.primary)}</span>
-        <span class="key-sub">${e(page.contact.text)}</span>
-        <span class="key-go">${e(t.startPress)} · milo@enterit.cz · +420 608 969 263</span>
+        <span class="key-title key-title--big">${e(t.bubbleSay)}</span>
+        <span class="bubble-by">
+          <img src="/assets/decor/mascot-wave.svg" alt="">
+          <span><b>${e(t.startPress)}</b><span>milo@enterit.cz · +420 608 969 263</span></span>
+        </span>
       </a>
 
-      <div class="rack" style="grid-column:6 / span 7;grid-row:4">
+      <div class="rack" style="grid-column:6 / span 4;grid-row:4">
 ${rack}
       </div>
 
-${key({ col: 1, span: 4, row: 5, tone: "yellow", legend: "D", eyebrow: t.canEyebrow,
+      <a class="key key--photo key--navy" href="${`/${prefix}tym.html`}" style="grid-column:10 / span 3;grid-row:4">
+        <img class="key-bg" src="/assets/team/klesnarova.jpg" alt="" loading="lazy">
+        <img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">
+        <span class="key-arrow">${chevron}</span>
+        <span class="key-pill">${searchIcon}${e(t.hiringPill)}</span>
+        <span class="key-title">${e(t.hiringTitle)}</span>
+        <span class="key-sub">${e(t.hiringSub)}</span>
+        <span class="key-go">${e(t.hiringGo)}</span>
+      </a>
+
+${key({ col: 1, span: 4, row: 5, tone: "yellow", hue: 4, legend: "D", eyebrow: t.canEyebrow,
         title: t.docsTitle, sub: t.docsMeta, go: t.solutionsGo, href: "#build" })}
 
 ${key({ col: 5, span: 4, row: 5, tone: "white", legend: "I", eyebrow: t.intgEyebrow,
@@ -288,12 +327,12 @@ ${key({ col: 1, span: 5, row: 6, tone: "navy", legend: "P", eyebrow: page.proces
         go: t.processGo, href: "#process",
         photo: "/assets/decor/guy.webp", alt: t.processPhotoAlt })}
 
-${key({ col: 6, span: 7, row: 6, tone: "pink", legend: "S", eyebrow: c.operations.kicker,
+${key({ col: 6, span: 7, row: 6, tone: "pink", hue: 5, legend: "S", eyebrow: c.operations.kicker,
         title: c.operations.title, size: "big",
         sub: c.operations.cards.map((x) => x.title).join(" · "),
         go: t.slaGo, href: `/${prefix}podminky.html` })}
 
-${key({ col: 1, span: 6, row: 7, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
+${key({ col: 1, span: 6, row: 7, tone: "turquoise", hue: 1, legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "big", sub: t.selfSub,
         go: t.selfGo, href: `/${prefix}firma-2030.html` })}
 
@@ -308,6 +347,22 @@ ${key({ col: 7, span: 6, row: 7, tone: "navy", legend: "U", eyebrow: t.reachEyeb
   <span><a href="/${prefix}gdpr.html">${e(page.footer.privacy)}</a> · <a href="/${prefix}podminky.html">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
 </footer>
 
+
+<script>
+/* The palette rotates on each visit: every colourable cap declares a slot and
+   the whole set is offset by one step, so the board greets a returning visitor
+   in a different arrangement while the brand's own colours stay in charge.
+   Turquoise leads the list, so it keeps the largest share of the board. */
+(function(){
+  var PALETTE = ["turquoise","blue","violet","pink","yellow","red"];
+  var offset = Math.floor(Math.random() * PALETTE.length);
+  document.querySelectorAll(".key[data-hue]").forEach(function(cap){
+    var slot = (parseInt(cap.dataset.hue, 10) + offset) % PALETTE.length;
+    PALETTE.forEach(function(name){ cap.classList.remove("key--" + name); });
+    cap.classList.add("key--" + PALETTE[slot]);
+  });
+})();
+<\/script>
 </body>
 </html>
 `;
