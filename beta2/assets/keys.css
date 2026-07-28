@@ -1,0 +1,168 @@
+/* ==========================================================================
+   EnterIT beta2 — the keycap board.
+   Tiles are physical keys: a solid side under the cap, which collapses as the
+   key travels down on press. Colour lives in the caps; the ground stays navy.
+   ========================================================================== */
+
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Heavy.woff2') format('woff2'),url('/assets/fonts/GreycliffCF-Heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Greycliff CF';src:url('/assets/fonts/GreycliffCF-Bold.woff2') format('woff2'),url('/assets/fonts/GreycliffCF-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url('/assets/fonts/FiraMono-Medium.woff2') format('woff2'),url('/assets/fonts/FiraMono-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+
+:root{
+  --floor:#0A111C;          /* board ground — deeper than the site navy */
+  --key-side:#060B13;       /* the solid edge under every cap */
+  --panel:#0E1624;          /* recessed surfaces */
+  --panel-line:#22303F;
+
+  --navy:#17202E;
+  --white:#FBFBFB;
+  --turquoise:#41E39E;
+  --blue:#6ECEFF;
+  --violet:#B790FF;
+  --pink:#E399FF;
+  --yellow:#F8E354;
+  --red:#FF848C;
+
+  --font-head:'Greycliff CF','Plus Jakarta Sans',system-ui,Arial,sans-serif;
+  --font-mono:'Fira Mono',ui-monospace,Menlo,monospace;
+
+  --travel:9px;             /* how far a big key falls */
+  --r-key:22px;
+  --board-max:1512px;
+  --gutter:36px;
+  --press:90ms cubic-bezier(.3,.7,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--floor);color:var(--white);
+  font-family:var(--font-mono);font-weight:500;text-wrap:pretty;
+  -webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--turquoise);text-decoration:none}
+::selection{background:var(--turquoise);color:var(--navy)}
+
+.shell{max-width:var(--board-max);margin:0 auto;padding-inline:var(--gutter)}
+
+/* ---------- Board ---------- */
+.board{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;
+  padding:10px var(--gutter) 0;max-width:var(--board-max);margin:0 auto}
+
+/* ---------- Key ---------- */
+.key{
+  position:relative;display:flex;flex-direction:column;text-align:left;
+  padding:26px;border:none;cursor:pointer;border-radius:var(--r-key);
+  font-family:var(--font-mono);background:var(--white);color:var(--navy);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.45),
+    inset 0 -5px 0 rgba(0,0,0,.10),
+    0 var(--travel) 0 var(--key-side),
+    0 10px 18px rgba(0,0,0,.35);
+  transition:transform var(--press),box-shadow var(--press);
+}
+/* Pressing collapses the side and drops the cap onto the board. */
+.key:hover,.key:focus-visible,.key:active{
+  transform:translateY(var(--travel));
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.30),
+    inset 0 -2px 0 rgba(0,0,0,.12),
+    0 0 0 var(--key-side),
+    0 2px 6px rgba(0,0,0,.30);
+}
+.key:focus-visible{outline:2px solid var(--turquoise);outline-offset:4px}
+
+.key--navy{background:var(--navy);color:var(--white)}
+.key--red{background:var(--red)}
+.key--blue{background:var(--blue)}
+.key--yellow{background:var(--yellow)}
+.key--turquoise{background:var(--turquoise)}
+.key--violet{background:var(--violet)}
+.key--pink{background:var(--pink)}
+
+/* Letter stamped in the corner, like a keycap legend. */
+.key-legend{position:absolute;top:14px;right:16px;width:24px;height:24px;
+  border-radius:7px;border:1.5px solid currentColor;opacity:.55;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:10px;pointer-events:none}
+
+.key-eyebrow{align-self:flex-start;padding:6px 14px;border-radius:999px;
+  background:var(--navy);color:var(--white);
+  font-size:9.5px;letter-spacing:.12em;text-transform:uppercase}
+.key--navy .key-eyebrow{background:var(--white);color:var(--navy)}
+
+.key-title{margin-top:auto;padding-top:20px;font-family:var(--font-head);
+  font-weight:900;font-size:clamp(24px,2.1vw,31px);line-height:.98;
+  letter-spacing:-.015em}
+.key-title--big{font-size:clamp(30px,3vw,44px)}
+.key-meta{margin-top:12px;font-size:10.5px;line-height:1.5;opacity:.75}
+.key-go{margin-top:12px;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;opacity:.7}
+
+/* ---------- Hero bar ---------- */
+.hero-bar{grid-column:1 / span 12;border-radius:var(--r-key);
+  background:var(--white);color:var(--navy);padding:38px 44px;
+  display:flex;align-items:center;justify-content:space-between;gap:40px;
+  flex-wrap:wrap}
+.hero-bar h1{margin:0;font-family:var(--font-head);font-weight:900;
+  font-size:clamp(28px,3.4vw,50px);line-height:.98;letter-spacing:-.02em;
+  max-width:20ch}
+.hero-bar p{margin:10px 0 0;font-size:12px;line-height:1.6;opacity:.72;max-width:52ch}
+.hero-side{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+
+/* ---------- Key rack (quick nav) ---------- */
+.rack{border-radius:var(--r-key);background:var(--panel);
+  border:1.5px solid var(--panel-line);padding:15px;
+  display:flex;flex-wrap:wrap;gap:8px;align-content:center}
+.rack-key{height:38px;border-radius:11px;background:var(--white);color:var(--navy);
+  border:none;cursor:pointer;font-family:var(--font-mono);font-weight:500;
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:0 15px;
+  display:inline-flex;align-items:center;white-space:nowrap;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -3px 0 rgba(0,0,0,.08),0 4px 0 var(--key-side);
+  transition:transform var(--press),box-shadow var(--press)}
+.rack-key:hover,.rack-key:focus-visible,.rack-key:active{
+  transform:translateY(4px);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),0 0 0 var(--key-side)}
+.rack-key:focus-visible{outline:2px solid var(--turquoise);outline-offset:3px}
+
+/* ---------- Start-here key (outlined, carries the ⏎) ---------- */
+.key--enter{background:transparent;color:var(--white);
+  border:1.5px dashed var(--panel-line);box-shadow:none;padding:26px}
+.key--enter:hover,.key--enter:focus-visible{transform:none;
+  border-color:var(--turquoise);box-shadow:none}
+.key--enter .key-eyebrow{background:var(--turquoise);color:var(--navy)}
+.key--enter .key-legend{border-color:var(--turquoise);color:var(--turquoise);opacity:1}
+.key--enter .key-title{font-size:clamp(24px,2.3vw,34px)}
+
+/* ---------- Header / footer ---------- */
+.site-head{max-width:var(--board-max);margin:0 auto;padding:0 var(--gutter);
+  height:84px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.site-head img{height:26px;width:auto}
+.head-nav{display:flex;align-items:center;gap:26px}
+.head-nav a{color:var(--white);opacity:.72;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;transition:opacity .18s}
+.head-nav a:hover{opacity:1}
+.lang{display:flex;gap:2px;padding:3px;border:1px solid var(--panel-line);
+  border-radius:999px;background:var(--panel)}
+.lang a{padding:5px 9px;border-radius:999px;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--white);opacity:.55}
+.lang a.on{background:var(--turquoise);color:var(--navy);opacity:1}
+
+.site-foot{max-width:var(--board-max);margin:0 auto;
+  padding:28px var(--gutter) 40px;display:flex;justify-content:space-between;
+  align-items:center;gap:24px;flex-wrap:wrap;
+  font-size:10.5px;opacity:.6}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1180px){
+  .board{padding-inline:20px;gap:10px}
+  .key{padding:18px}
+  .site-head{padding-inline:20px}
+  .head-nav{display:none}
+}
+@media(max-width:760px){
+  .board{display:flex;flex-direction:column}
+  .hero-bar{padding:26px}
+  .key-title{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  .key,.rack-key{transition:none}
+}
