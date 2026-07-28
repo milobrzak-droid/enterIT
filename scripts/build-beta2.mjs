@@ -33,6 +33,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { writeAgents } from "./build-beta2-agents.mjs";
+import { writeAutomation } from "./build-beta2-automation.mjs";
 import { writeUs } from "./build-beta2-us.mjs";
 import { voice } from "./beta2-copy.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
@@ -680,6 +681,7 @@ ${start}
 
 writeUs();
 writeAgents();
+writeAutomation();
 for (const code of order) {
   writeFileSync(resolve(root, "beta2", file[code]), render(code), "utf8");
   console.log(`beta2/${file[code]}  (${code})`);
