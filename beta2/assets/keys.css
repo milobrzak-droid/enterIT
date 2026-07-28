@@ -10,7 +10,7 @@
 
 :root{
   --floor:#FBFBFB;          /* board ground — Jednoduchá bílá */
-  --key-side:#D3D8DF;       /* the solid edge under every cap, on white */
+  --key-side:#17202E;       /* Stabilní černá — the solid edge under every cap */
   --panel:#0E1624;          /* recessed surfaces */
   --panel-line:#22303F;
 
@@ -52,21 +52,18 @@ a{color:var(--turquoise);text-decoration:none}
   position:relative;display:flex;flex-direction:column;text-align:left;
   padding:26px;border:none;cursor:pointer;border-radius:var(--r-key);
   font-family:var(--font-mono);background:var(--white);color:var(--navy);
+  /* The cap rests above its own solid edge, offset diagonally. */
   box-shadow:
-    inset 0 0 0 1.5px rgba(23,32,46,.10),
-    inset 0 -5px 0 rgba(0,0,0,.07),
-    0 var(--travel) 0 var(--key-side),
-    0 12px 20px rgba(23,32,46,.13);
+    inset 0 0 0 1.5px rgba(23,32,46,.12),
+    var(--travel) var(--travel) 0 var(--key-side);
   transition:transform var(--press),box-shadow var(--press);
 }
 /* Pressing collapses the side and drops the cap onto the board. */
 .key:hover,.key:focus-visible,.key:active{
-  transform:translateY(var(--travel));
+  transform:translate(var(--travel),var(--travel));
   box-shadow:
     inset 0 0 0 1.5px rgba(23,32,46,.12),
-    inset 0 -2px 0 rgba(0,0,0,.08),
-    0 0 0 var(--key-side),
-    0 2px 6px rgba(23,32,46,.16);
+    0 0 0 var(--key-side);
 }
 .key:focus-visible{outline:2px solid var(--turquoise);outline-offset:4px}
 
@@ -202,18 +199,15 @@ a{color:var(--turquoise);text-decoration:none}
   border:none;cursor:pointer;font-family:var(--font-mono);font-weight:500;
   font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:0 15px;
   display:inline-flex;align-items:center;white-space:nowrap;
-  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -3px 0 rgba(0,0,0,.08),0 4px 0 var(--key-side);
+  box-shadow:inset 0 0 0 1.2px rgba(23,32,46,.12),4px 4px 0 var(--key-side);
   transition:transform var(--press),box-shadow var(--press)}
 .rack-key:hover,.rack-key:focus-visible,.rack-key:active{
-  transform:translateY(4px);
-  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),0 0 0 var(--key-side)}
+  transform:translate(4px,4px);
+  box-shadow:inset 0 0 0 1.2px rgba(23,32,46,.12),0 0 0 var(--key-side)}
 .rack-key:focus-visible{outline:2px solid var(--turquoise);outline-offset:3px}
 
 /* ---------- Start-here key (outlined, carries the ⏎) ---------- */
-.key--enter{background:transparent;color:var(--navy);
-  border:1.5px dashed rgba(23,32,46,.22);box-shadow:none;padding:26px}
-.key--enter:hover,.key--enter:focus-visible{transform:none;
-  border-color:var(--turquoise);box-shadow:none}
+.key--enter{background:var(--white);color:var(--navy);padding:26px}
 .key--enter .key-eyebrow{background:var(--turquoise);color:var(--navy)}
 .key--enter .key-legend{border-color:var(--turquoise);color:var(--turquoise);opacity:1}
 .key--enter .key-title{font-size:clamp(24px,2.3vw,34px)}
