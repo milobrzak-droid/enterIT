@@ -28,7 +28,7 @@
  * Output: beta2/index.html (EN), beta2/cs.html, beta2/de.html, beta2/pl.html
  * Run:    node scripts/build-beta2.mjs
  */
-import { writeFileSync } from "node:fs";
+import { existsSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -301,6 +301,36 @@ const mascotFile = (face, tone) => {
  * `tone` picks the cap face: `accent` and `tint` follow the chapter's own
  * colour, so a chapter reads as one family and the whole board still rotates.
  */
+/**
+ * The moving backdrop behind the hero.
+ *
+ * A real clip is better than four stills and this takes one the moment there is
+ * one to take: put hero.webm and/or hero.mp4 in assets/decor and the build
+ * switches to <video>, keeping the first still as the poster so the banner is
+ * never empty while the file downloads. With no clip on disk it renders the
+ * stills, which crossfade on an eight-second beat.
+ *
+ * The video is muted, inline and looping, because those three together are what
+ * lets a browser autoplay it at all — a clip with sound would simply be blocked
+ * and the hero would sit frozen on the poster.
+ */
+const HERO_STILLS = ["firmy", "standup", "meeting", "screenwork"];
+function heroFilm() {
+  const clips = ["webm", "mp4"]
+    .filter((ext) => existsSync(resolve(root, "assets/decor", `hero.${ext}`)));
+  if (clips.length) {
+    return `<video class="hero-film hero-film--clip" autoplay muted loop playsinline
+      preload="metadata" poster="/assets/decor/${HERO_STILLS[0]}.webp" aria-hidden="true">
+${clips.map((ext) => `      <source src="/assets/decor/hero.${ext}" type="video/${ext}">`).join("\n")}
+    </video>`;
+  }
+  return `<div class="hero-film" aria-hidden="true">
+${HERO_STILLS
+  .map((f, i) => `      <img src="/assets/decor/${f}.webp" alt="" loading="eager"${i ? ' fetchpriority="low"' : ""}>`)
+  .join("\n")}
+    </div>`;
+}
+
 function key({
   span, rows, tone = "white", legend, eyebrow, title, size, sub, meta, stat, statLabel,
   bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet, wide, extra,
@@ -312,7 +342,7 @@ function key({
      without wrapping into a wall, so it steps down a notch. */
   const statClass = stat && stat.length > 9 ? " key-stat--sm" : "";
   const Tag = href ? "a" : "div";
-  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
+  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${tint ? " key--tinted" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${tint ? `<img class="key-tint" src="${tint}" alt="" loading="lazy">` : ""}
         ${mascot ? `<img class="key-mascot" src="${mascotFile(mascot, tone)}" alt="" loading="lazy">` : ""}
@@ -775,11 +805,7 @@ ${rack}
 <main class="board">
 
   <div class="hero-bar" data-hue="0">
-    <div class="hero-film" aria-hidden="true">
-${["firmy", "standup", "meeting", "screenwork"]
-  .map((f, i) => `      <img src="/assets/decor/${f}.webp" alt="" loading="eager"${i ? ' fetchpriority="low"' : ""}>`)
-  .join("\n")}
-    </div>
+    ${heroFilm()}
     <span class="hero-wash"></span>
     <div class="hero-say">
       <h1>${e(v.hero.h1)}</h1>

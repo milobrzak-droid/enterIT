@@ -25,8 +25,8 @@ export const voice = {
   cs: {
     hero: {
       h1: "Performance AI tým, který dodává do provozu.",
-      lead: "Baví nás úlohy, které je potřeba rozlousknout — a rádi na nich pracujeme. Od komplexní agentní platformy po jednoho agenta: postavíme to do systémů, které už máte, a pak to provozujeme. Ne pilot, ne demo.",
-      note: "120+ projektů v ostrém provozu · 60+ napojených systémů · 75 lidí na všechno od návrhu po provoz",
+      lead: "Baví nás úlohy, které je potřeba rozlousknout. Od agentní platformy po jednoho agenta — postavíme to do vašich systémů a provozujeme. Ne pilot, ne demo.",
+      note: "120+ projektů v provozu · 60+ systémů · 75 lidí na vše",
     },
     chapters: [
       {
@@ -140,8 +140,8 @@ export const voice = {
   en: {
     hero: {
       h1: "A performance AI team that ships to production.",
-      lead: "We like the problems that have to be cracked, and we enjoy the work. From a complex agentic platform down to a single agent: built into the systems you already run, then operated by us. Not a pilot, not a demo.",
-      note: "120+ projects in production · 60+ systems connected · 75 people, from design through to operations",
+      lead: "We like the problems that have to be cracked. From an agentic platform to a single agent — built into your systems, then run by us. Not a pilot, not a demo.",
+      note: "120+ projects live · 60+ systems · 75 people, end to end",
     },
     chapters: [
       {
@@ -255,8 +255,8 @@ export const voice = {
   de: {
     hero: {
       h1: "Ein Performance-KI-Team, das in den Betrieb liefert.",
-      lead: "Uns reizen die Aufgaben, die man erst knacken muss — und wir arbeiten gern daran. Von der komplexen Agentenplattform bis zum einzelnen Agenten: gebaut in die Systeme, die Sie schon betreiben, und danach von uns betrieben. Kein Pilot, keine Demo.",
-      note: "120+ Projekte im Echtbetrieb · 60+ angebundene Systeme · 75 Personen — vom Entwurf bis zum Betrieb",
+      lead: "Uns reizen Aufgaben, die man knacken muss. Von der Agentenplattform bis zum einzelnen Agenten — gebaut in Ihre Systeme und von uns betrieben. Kein Pilot, keine Demo.",
+      note: "120+ Projekte live · 60+ Systeme · 75 Personen",
     },
     chapters: [
       {
@@ -370,8 +370,8 @@ export const voice = {
   pl: {
     hero: {
       h1: "Performance AI team, który dowozi na produkcję.",
-      lead: "Lubimy zadania, które trzeba rozgryźć — i chętnie przy nich pracujemy. Od złożonej platformy agentowej po pojedynczego agenta: wbudujemy to w systemy, których już używacie, a potem to utrzymujemy. Nie pilot, nie demo.",
-      note: "120+ projektów na produkcji · 60+ podłączonych systemów · 75 osób — od projektu po utrzymanie",
+      lead: "Lubimy zadania, które trzeba rozgryźć. Od platformy agentowej po pojedynczego agenta — wbudowane w wasze systemy i utrzymywane przez nas. Nie pilot, nie demo.",
+      note: "120+ projektów live · 60+ systemów · 75 osób",
     },
     chapters: [
       {

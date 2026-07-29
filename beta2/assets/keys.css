@@ -316,40 +316,41 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 
 /* ---------- Hero bar ---------- */
 .hero-bar{position:relative;overflow:hidden;border-radius:var(--r-key);
-  background:var(--navy);color:var(--white);padding:52px 48px 0;
+  background:var(--navy);color:var(--white);padding:40px 44px 0;
   display:flex;flex-direction:column;gap:0}
-.hero-say{max-width:68ch}
+.hero-say{max-width:58ch}
 .hero-bar h1{margin:0;font-family:var(--font-head);font-weight:900;
   font-size:clamp(32px,4.2vw,62px);line-height:.96;letter-spacing:-.025em;
   max-width:24ch;text-wrap:balance}
-.hero-bar p{margin:18px 0 0;font-size:15px;line-height:1.6;opacity:.8;max-width:62ch}
-.hero-note{display:inline-block;margin-top:18px;padding:7px 15px;
+.hero-bar p{margin:14px 0 0;font-size:15px;line-height:1.6;opacity:.8;max-width:60ch}
+.hero-note{display:inline-block;margin-top:16px;padding:7px 15px;
   border-radius:999px;border:1.5px solid rgba(251,251,251,.28);
   font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
 /* The partner band. Restraint reads as confidence here: the marks sit small and
    dimmed, and come up to full white only when you look at them. Every mark is
    white rather than its own brand colour, so none of the three looks like the
    weaker of the set. */
-.hero-side{margin-top:36px;padding:22px 0 28px;
-  border-top:1.5px solid rgba(251,251,251,.14)}
-.hero-side-label{display:block;font-size:9px;letter-spacing:.18em;
-  text-transform:uppercase;opacity:.4;margin-bottom:16px}
+.hero-side{margin-top:22px;padding:18px 0 22px;
+  border-top:1.5px solid rgba(251,251,251,.14);
+  display:flex;align-items:center;gap:clamp(24px,3vw,44px);flex-wrap:wrap}
+.hero-side-label{font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.4;flex:none}
 .hero-marks{display:flex;align-items:center;flex-wrap:wrap;
-  gap:clamp(26px,3.4vw,46px)}
-.hero-marks img{height:clamp(22px,2.2vw,30px);width:auto;
-  opacity:.5;transition:opacity .22s}
+  gap:clamp(28px,3.6vw,52px)}
+.hero-marks img{height:clamp(30px,3.1vw,42px);width:auto;
+  opacity:.82;transition:opacity .22s}
 .hero-marks img:hover{opacity:1}
-.hero-ms{display:flex;align-items:center;gap:9px;
-  opacity:.5;transition:opacity .22s}
+.hero-ms{display:flex;align-items:center;gap:11px;
+  opacity:.82;transition:opacity .22s}
 .hero-ms:hover{opacity:1}
 .hero-ms .sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;
-  width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px);flex:none}
+  width:clamp(26px,2.6vw,34px);height:clamp(26px,2.6vw,34px);flex:none}
 .hero-ms .sq i{display:block;background:var(--white)}
 .hero-ms-name{display:block}
 .hero-ms-name b{display:block;font-family:var(--font-head);font-weight:700;
-  font-size:clamp(13px,1.3vw,17px);line-height:1.05;color:var(--white)}
+  font-size:clamp(16px,1.7vw,22px);line-height:1.05;color:var(--white)}
 .hero-ms-name small{display:block;font-family:var(--font-mono);
-  font-size:clamp(8px,.72vw,9.5px);letter-spacing:.06em;opacity:.75;margin-top:2px}
+  font-size:clamp(9px,.85vw,11px);letter-spacing:.06em;opacity:.75;margin-top:3px}
 
 /* ---------- Key rack (quick nav) ---------- */
 .rack{border-radius:var(--r-key);background:rgba(23,32,46,.045);
@@ -628,6 +629,13 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
    multiply on a light cap, screen on a dark one, because a single blend mode
    turns one of the two to mud. It comes up a little on hover, which is the
    only place it is meant to be noticed. */
+/* Without this the tint is invisible and looks like a build that did not ship.
+   A child at z-index -1 paints above its parent's own background only inside a
+   stacking context, and .key is position:relative with z-index auto — which is
+   not one. The colour painted straight over the photograph. .key--photo already
+   carried isolation:isolate for exactly this reason; the tinted caps need it
+   too, and it doubles as the container the multiply blends against. */
+.key--tinted{isolation:isolate;overflow:hidden}
 .key-tint{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   z-index:-1;pointer-events:none;opacity:.15;
   filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply;
@@ -640,6 +648,10 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
 @media(prefers-reduced-motion:reduce){.key-tint{transition:none}}
 
 .hero-film{position:absolute;inset:0;z-index:-2;overflow:hidden}
+/* When a real clip is in place it takes the same slot and the same treatment as
+   the stills, so swapping one for the other changes nothing but the source. */
+.hero-film--clip{width:100%;height:100%;object-fit:cover;object-position:center 40%;
+  filter:grayscale(1) contrast(1.05) brightness(.55)}
 .hero-film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:center 40%;opacity:0;will-change:opacity,transform;
   filter:grayscale(1) contrast(1.05) brightness(.55);
