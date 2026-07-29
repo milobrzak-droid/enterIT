@@ -412,8 +412,7 @@ export const us = {
       },
       {
         q: "Where your data lives",
-        a: "Your own cloud tenant, your own servers, or EU cloud — your choice, decided before we build. US-region hosting where a client requires it.",
-        need: need("confirm US-region hosting is genuinely available"),
+        a: "For European clients we stand on Azure, so the data stays inside Europe and GDPR is a design decision rather than a discussion. Your own tenant, your own servers, or EU-region Azure — decided before we build. For a US engagement, hosting follows from the consulting phase rather than leading it: we work out what you already run and where we can genuinely help, and the answer to this question falls out of that.",
       },
       {
         q: "Language",

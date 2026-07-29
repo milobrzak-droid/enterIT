@@ -1,0 +1,358 @@
+/**
+ * beta2-automation-copy.mjs — the automation page, in four languages.
+ *
+ * The companion to the agents page and the one most readers should act on
+ * first. It opens with four situations from real engagements rather than with a
+ * definition, because a reader recognises their own back office faster than
+ * they recognise a category.
+ *
+ * The Helios walkthrough at the end is the most useful thing on the page: the
+ * only place on the site where a reader sees an engagement in order, including
+ * the week spent auditing ten drawings before quoting. Its missing number keeps
+ * its marker in every language.
+ */
+export const automationCopy = {
+  en: {
+    eyebrow: "How we do it",
+    h1: "Automation that removes repetitive work, not people.",
+    lead: "Retyping orders, hunting through price lists, filling the same form twice — that is machine work. We automate the processes and systems you actually have, and leave judgment and control where they belong.",
+    meta: "Roughly a five-minute read · start here if you are not sure where to start",
+    cta: "Tell us which process hurts",
+    problem: {
+      kicker: "Where it hurts",
+      h2: "Repetitive work does not just cost hours. It costs capacity.",
+      ask: "These four are from real engagements. If one of them sounds like your own back office, that is the conversation to have — the impact is measurable in hours and in money, and we measure it before we quote.",
+      items: [
+        ["The order arrives by email and someone retypes it", "A wholesaler's back office entered orders and attendance by hand, line by line. Every entry was work nobody needed to do and a chance to get a digit wrong."],
+        ["A process engineer spends hours creating near-identical items", "A machine shop created 15 to 25 assemblies — 70 to 120 Helios items — every week from drawings, applying the same standards each time."],
+        ["A salesperson clicks through exports to find a price", "Sales searched K2 and Excel for the right combination of dimension, material and colour, quoting from data that might already be stale."],
+        ["Management signs off but cannot prove who read it", "Contract approvals ran through email with no audit trail, so nobody could show afterwards who had reviewed which version."],
+      ],
+    },
+    scope: {
+      kicker: "The five layers",
+      h2: "Five kinds of bottleneck, and they are usually not the ones people name first.",
+      ask: "Most companies ask us about the transactional layer because it is the visible one. The knowledge and monitoring layers are where the quieter money is.",
+      layers: [
+        ["Transactional", "Data that gets retyped", "Pull attachments apart, sync CRM and ERP, create records, generate quotes — including the whole email-to-order path."],
+        ["Knowledge", "Answers buried in documents", "Ask a question across PDFs, spreadsheets and drawings in plain language and get the answer with the source attached."],
+        ["Reporting", "Numbers people are waiting on", "ERP and warehouse data assembled into one view without somebody rebuilding it by hand every Monday."],
+        ["Communication", "Questions that keep coming back", "Recurring web, email and WhatsApp traffic handled around the clock, with only the exceptions escalated."],
+        ["Monitoring", "Deadlines and deviations that slip", "Catch a slipping date or an out-of-range value early, and leave the decision about it to a person."],
+      ],
+    },
+    how: {
+      kicker: "Four phases",
+      h2: "Each phase ends where you could walk away.",
+      ask: "The order is deliberate. We spend the first two weeks finding out whether this is worth doing at all, and we have told clients it is not.",
+      phases: [
+        ["Analysis", "Measure today", "We map inputs, handoffs and duplicated work, then set a baseline for time, cost and quality. Without that number, nobody can tell in month nine whether it worked.", "1 to 2 weeks"],
+        ["Pilot", "Prove it on real data", "A live prototype runs against your actual documents. On one machine-shop engagement we audited five to ten real drawings before quoting, because the layout of a title block changes both the reliability and the price.", "2 to 3 weeks"],
+        ["Implementation", "Connect systems and roles", "Existing systems, data, approvals and decision points wired together so the thing becomes part of the working day rather than a tool somebody has to remember to open.", "1 to 2 weeks"],
+        ["Support", "Run it, measure it, tune it", "We operate and keep improving it after launch. One K2 engagement ran with two years of hosting and a source-code buyout option written in from the start.", "ongoing"],
+      ],
+    },
+    boundary: {
+      kicker: "Where it stops",
+      h2: "Knowing what not to automate is most of the skill.",
+      ask: "Reliability comes from the line, not from the coverage. Four places where we deliberately leave the work with a person.",
+      items: [
+        ["We exclude unreliable machine reading.", "On complex drawings, OCR reads the title block and the bill of materials — the fields that are dependable. Ambiguous dimensions are not read at all, because a wrong dimension costs more than the minute it saves."],
+        ["What only a person can see stays with a person.", "An engineer enters sheet thickness or bend count in a short dialog; the verified figure then builds the ERP structure. The machine does the typing, the human does the seeing."],
+        ["The system records. The person signs.", "A contract workflow logs who reviewed what and when, and produces the audit trail. The signature itself stays human, every time."],
+        ["It flags. It does not decide.", "The monitoring layer raises a deviation. What happens next is somebody's call, and that somebody has a name in the design document."],
+      ],
+      realEyebrow: "And one that is about us, not the software",
+      realTitle: "Realism is part of the contract.",
+      realSub: "Plans account for ERP data arriving late, for holidays, and for the client-side dependencies that always exist. We would rather quote a date we can hold than the date that wins the meeting.",
+    },
+    walk: {
+      kicker: "One engagement, end to end",
+      h2: "A machine shop, and the agent that stopped the retyping.",
+      ask: "The clearest way to explain how we work is to show one engagement in order, including the week we spent finding out whether it was possible at all.",
+      steps: [
+        ["Starting point", "Hours of routine, every day.", "One process engineer manually created 15 to 25 assemblies — 70 to 120 Helios items — each week from PDF, DWG and DXF files, applying the same standards every time."],
+        ["Before quoting", "We audited ten real drawings first.", "Title-block layout decides what can be read reliably, and therefore what the work costs. We would rather spend a week finding that out than quote a number we would have to revise."],
+        ["What it does now", "Reads, matches, builds the structure.", "The agent reads title blocks and parts lists, finds similar existing items, and builds the component structure with process steps and time standards attached."],
+      ],
+      endEyebrow: "Where it stops",
+      endTitle: "The engineer reviews and decides instead of typing.",
+      endSub: "Dimensions that need judgment were left with the process engineer on purpose. The rollout was staged rather than switched on, so each step could be checked against the old way before the next one started.",
+      endMeta: "Helios API · PDF, DWG and DXF parsing · OCR · staged rollout",
+      endNeed: "hours returned on this engagement — the one number this walkthrough is missing",
+      nextEyebrow: "Next",
+      nextTitle: "The same discipline, applied to agents.",
+      nextSub: "Where a fixed track is not enough and the work needs judgment.",
+      nextGo: "How we build agents →",
+    },
+    foundation: {
+      kicker: "Three constants",
+      h2: "Your systems, security in the design, and a number at the end.",
+      cards: [
+        ["We build on what you already run.", "K2, Helios, Business Central, SharePoint, Microsoft 365, your accounting package, PDM and CAD, email and WhatsApp — connected through whichever orchestration layer your own people will be able to maintain."],
+        ["Security starts in the design.", "Encrypted data, GDPR controls, an on-premises option, and stated rules for AI use. That is what makes regulated and sensitive work possible rather than a special case."],
+        ["Every solution has a business case.", "Time, transaction cost, quality, errors and capacity, measured against the baseline from phase one. Typical payback is 3 to 12 months."],
+      ],
+    },
+    seoTitle: "How we build automation | EnterIT",
+    seoDesc: "Five kinds of operational bottleneck, four phases each ending in a decision you can walk away from, and the places we deliberately leave the work with a person.",
+  },
+
+  cs: {
+    eyebrow: "Jak to děláme",
+    h1: "Automatizace, která bere rutinu, ne lidi.",
+    lead: "Přepisování objednávek, hledání v cenících, vyplňování téhož formuláře podruhé — to je práce pro stroj. Automatizujeme procesy a systémy, které opravdu máte, a úsudek i kontrolu necháváme tam, kam patří.",
+    meta: "Zhruba na pět minut čtení · začněte tady, když nevíte, kde začít",
+    cta: "Řekněte nám, který proces bolí",
+    problem: {
+      kicker: "Kde to bolí",
+      h2: "Rutina nestojí jen hodiny. Stojí kapacitu.",
+      ask: "Tyhle čtyři jsou z reálných zakázek. Jestli vám jedna z nich zní jako vaše vlastní zázemí, je to ten hovor, který stojí za to vést — dopad se dá změřit v hodinách i v penězích a měříme ho dřív, než dáme cenu.",
+      items: [
+        ["Objednávka přijde mailem a někdo ji přepisuje", "Zázemí velkoobchodu zadávalo objednávky a docházku ručně, řádek po řádku. Každý zápis byla práce, kterou nikdo dělat nemusel, a šance splést číslici."],
+        ["Technolog tráví hodiny zakládáním skoro stejných položek", "Strojírna zakládala 15 až 25 sestav — 70 až 120 položek v Heliosu — každý týden z výkresů, pokaždé se stejnými normami."],
+        ["Obchodník proklikává exporty, aby našel cenu", "Obchod hledal v K2 a Excelu správnou kombinaci rozměru, materiálu a barvy a nabízel z dat, která už mohla být neaktuální."],
+        ["Vedení schválí, ale neprokáže, kdo to četl", "Schvalování smluv běželo mailem bez auditní stopy, takže nikdo nedokázal zpětně ukázat, kdo která verzi viděl."],
+      ],
+    },
+    scope: {
+      kicker: "Pět vrstev",
+      h2: "Pět druhů úzkých hrdel, a většinou to nejsou ta, která lidé jmenují první.",
+      ask: "Většina firem se nás ptá na transakční vrstvu, protože ta je vidět. Znalostní a monitorovací vrstva je tam, kde jsou tišší peníze.",
+      layers: [
+        ["Transakční", "Data, která se přepisují", "Rozebrat přílohy, sesynchronizovat CRM a ERP, založit záznamy, vygenerovat nabídky — včetně celé cesty z e-mailu do objednávky."],
+        ["Znalostní", "Odpovědi zahrabané v dokumentech", "Zeptejte se napříč PDF, tabulkami a výkresy běžnou řečí a dostanete odpověď i se zdrojem."],
+        ["Reportovací", "Čísla, na která se čeká", "Data z ERP a skladu složená do jednoho pohledu, aniž je někdo v pondělí ráno ručně skládá znovu."],
+        ["Komunikační", "Otázky, které se pořád vracejí", "Opakovaný provoz na webu, v mailu a na WhatsAppu obsloužený nepřetržitě, eskalují se jen výjimky."],
+        ["Monitorovací", "Termíny a odchylky, které propadnou", "Zachytit klouzající termín nebo hodnotu mimo rozsah včas — a rozhodnutí o tom nechat člověku."],
+      ],
+    },
+    how: {
+      kicker: "Čtyři fáze",
+      h2: "Každá fáze končí tam, kde můžete odejít.",
+      ask: "To pořadí je záměrné. První dva týdny zjišťujeme, jestli se to vůbec vyplatí — a klientům jsme už řekli, že ne.",
+      phases: [
+        ["Analýza", "Změřit dnešek", "Zmapujeme vstupy, předávky a zdvojenou práci a nastavíme výchozí stav pro čas, náklady a kvalitu. Bez toho čísla nikdo v devátém měsíci neřekne, jestli to fungovalo.", "1–2 týdny"],
+        ["Pilot", "Ověřit na ostrých datech", "Živý prototyp běží proti vašim skutečným dokladům. U jedné strojírenské zakázky jsme před cenovou nabídkou zauditovali pět až deset skutečných výkresů, protože rozvržení rohového razítka mění spolehlivost i cenu.", "2–3 týdny"],
+        ["Implementace", "Propojit systémy a role", "Stávající systémy, data, schvalování a rozhodovací body pospojované tak, aby se to stalo součástí pracovního dne, ne nástrojem, který si někdo musí pamatovat otevřít.", "1–2 týdny"],
+        ["Podpora", "Provozovat, měřit, ladit", "Po spuštění to provozujeme a dál zlepšujeme. Jedna zakázka nad K2 běžela se dvěma lety hostingu a s opcí odkupu zdrojového kódu, zapsanou od začátku.", "průběžně"],
+      ],
+    },
+    boundary: {
+      kicker: "Kde to končí",
+      h2: "Vědět, co neautomatizovat, je většina toho řemesla.",
+      ask: "Spolehlivost dělá ta čára, ne pokrytí. Čtyři místa, kde práci záměrně necháváme člověku.",
+      items: [
+        ["Vylučujeme nespolehlivé strojové čtení.", "U složitých výkresů čte OCR rohové razítko a kusovník — pole, na která je spoleh. Nejednoznačné kóty nečte vůbec, protože špatná kóta stojí víc než minuta, kterou ušetří."],
+        ["Co vidí jen člověk, zůstává člověku.", "Technolog zadá tloušťku plechu nebo počet ohybů v krátkém dialogu; ověřený údaj pak postaví strukturu v ERP. Stroj píše, člověk vidí."],
+        ["Systém zaznamená. Člověk podepíše.", "Smluvní workflow zaznamená, kdo co a kdy viděl, a vytvoří auditní stopu. Samotný podpis zůstává lidský, pokaždé."],
+        ["Upozorní. Nerozhoduje.", "Monitorovací vrstva ohlásí odchylku. Co se stane potom, je něčí rozhodnutí — a ten někdo má v návrhovém dokumentu jméno."],
+      ],
+      realEyebrow: "A jedna, která je o nás, ne o softwaru",
+      realTitle: "Realismus je součást smlouvy.",
+      realSub: "Plány počítají s tím, že data z ERP přijdou pozdě, s dovolenými a se závislostmi na straně klienta, které vždycky jsou. Radši dáme termín, který udržíme, než ten, který vyhraje schůzku.",
+    },
+    walk: {
+      kicker: "Jedna zakázka od začátku do konce",
+      h2: "Strojírna a agent, který zastavil přepisování.",
+      ask: "Nejjasnější způsob, jak vysvětlit, jak pracujeme, je ukázat jednu zakázku po pořádku — včetně toho týdne, kdy jsme zjišťovali, jestli je to vůbec možné.",
+      steps: [
+        ["Výchozí stav", "Hodiny rutiny, každý den.", "Jeden technolog ručně zakládal 15 až 25 sestav — 70 až 120 položek v Heliosu — každý týden z PDF, DWG a DXF, pokaždé se stejnými normami."],
+        ["Před cenovou nabídkou", "Nejdřív jsme zauditovali deset skutečných výkresů.", "Rozvržení rohového razítka rozhoduje, co jde přečíst spolehlivě, a tím i kolik ta práce stojí. Radši strávíme týden zjišťováním než dáme číslo, které bychom museli revidovat."],
+        ["Co dělá dnes", "Čte, páruje, staví strukturu.", "Agent čte rohová razítka a kusovníky, najde podobné existující položky a postaví strukturu komponent s technologickými postupy a normami."],
+      ],
+      endEyebrow: "Kde končí",
+      endTitle: "Technolog kontroluje a rozhoduje, místo aby psal.",
+      endSub: "Kóty, které vyžadují úsudek, jsme technologovi nechali záměrně. Nasazení bylo po etapách, ne přepnutím, aby se každý krok dal ověřit proti starému postupu, než začal další.",
+      endMeta: "Helios API · čtení PDF, DWG a DXF · OCR · nasazení po etapách",
+      endNeed: "ušetřené hodiny u téhle zakázky — jediné číslo, které téhle případovce chybí",
+      nextEyebrow: "Dál",
+      nextTitle: "Stejná disciplína, aplikovaná na agenty.",
+      nextSub: "Tam, kde pevná kolej nestačí a práce potřebuje úsudek.",
+      nextGo: "Jak stavíme AI agenty →",
+    },
+    foundation: {
+      kicker: "Tři konstanty",
+      h2: "Vaše systémy, bezpečnost v návrhu a číslo na konci.",
+      cards: [
+        ["Stavíme na tom, co už máte.", "K2, Helios, Business Central, SharePoint, Microsoft 365, váš účetní systém, PDM a CAD, e-mail a WhatsApp — propojené přes tu orchestrační vrstvu, kterou vaši lidé udrží."],
+        ["Bezpečnost začíná v návrhu.", "Šifrovaná data, GDPR, možnost on-premise a vyslovená pravidla použití AI. To dělá z regulované a citlivé práce normální věc, ne výjimku."],
+        ["Každé řešení má business case.", "Čas, cena transakce, kvalita, chybovost a kapacita, měřené proti výchozímu stavu z první fáze. Typická návratnost je 3 až 12 měsíců."],
+      ],
+    },
+    seoTitle: "Jak stavíme automatizace | EnterIT",
+    seoDesc: "Pět druhů provozních úzkých hrdel, čtyři fáze, z nichž každá končí rozhodnutím, po kterém můžete odejít, a místa, kde práci záměrně necháváme člověku.",
+  },
+
+  de: {
+    eyebrow: "So machen wir das",
+    h1: "Automatisierung, die Routine abnimmt, nicht Menschen.",
+    lead: "Bestellungen abtippen, Preislisten durchsuchen, dasselbe Formular zweimal ausfüllen — das ist Maschinenarbeit. Wir automatisieren die Prozesse und Systeme, die Sie tatsächlich haben, und lassen Urteil und Kontrolle dort, wo sie hingehören.",
+    meta: "Etwa fünf Minuten Lesezeit · fangen Sie hier an, wenn Sie nicht wissen, wo Sie anfangen sollen",
+    cta: "Sagen Sie uns, welcher Prozess weh tut",
+    problem: {
+      kicker: "Wo es weh tut",
+      h2: "Routine kostet nicht nur Stunden. Sie kostet Kapazität.",
+      ask: "Diese vier stammen aus echten Aufträgen. Wenn eine davon nach Ihrem eigenen Backoffice klingt, ist das das Gespräch, das sich lohnt — die Wirkung ist in Stunden und in Geld messbar, und wir messen sie, bevor wir ein Angebot machen.",
+      items: [
+        ["Die Bestellung kommt per E-Mail und jemand tippt sie ab", "Das Backoffice eines Großhändlers erfasste Bestellungen und Anwesenheiten von Hand, Zeile für Zeile. Jeder Eintrag war Arbeit, die niemand brauchte, und eine Gelegenheit, sich zu vertippen."],
+        ["Ein Arbeitsvorbereiter legt stundenlang fast gleiche Positionen an", "Eine Werkstatt legte jede Woche 15 bis 25 Baugruppen an — 70 bis 120 Helios-Positionen — aus Zeichnungen, jedes Mal mit denselben Normen."],
+        ["Ein Vertriebler klickt sich durch Exporte, um einen Preis zu finden", "Der Vertrieb suchte in K2 und Excel nach der richtigen Kombination aus Maß, Material und Farbe und bot aus Daten an, die schon veraltet sein konnten."],
+        ["Die Leitung gibt frei, kann aber nicht belegen, wer gelesen hat", "Vertragsfreigaben liefen per E-Mail ohne Audit-Trail, sodass niemand nachweisen konnte, wer welche Fassung geprüft hatte."],
+      ],
+    },
+    scope: {
+      kicker: "Die fünf Schichten",
+      h2: "Fünf Arten von Engpass, und meist nicht die, die zuerst genannt werden.",
+      ask: "Die meisten fragen uns nach der transaktionalen Schicht, weil sie sichtbar ist. In der Wissens- und der Überwachungsschicht liegt das leisere Geld.",
+      layers: [
+        ["Transaktional", "Daten, die abgetippt werden", "Anhänge auseinandernehmen, CRM und ERP abgleichen, Datensätze anlegen, Angebote erzeugen — samt dem ganzen Weg von der E-Mail zur Bestellung."],
+        ["Wissen", "Antworten, die in Dokumenten vergraben sind", "Eine Frage über PDFs, Tabellen und Zeichnungen hinweg in normaler Sprache stellen und die Antwort mit Quelle bekommen."],
+        ["Reporting", "Zahlen, auf die gewartet wird", "ERP- und Lagerdaten in einer Sicht zusammengeführt, ohne dass sie jemand jeden Montag von Hand neu baut."],
+        ["Kommunikation", "Fragen, die immer wiederkommen", "Wiederkehrender Verkehr über Web, E-Mail und WhatsApp rund um die Uhr bearbeitet, eskaliert werden nur die Ausnahmen."],
+        ["Überwachung", "Fristen und Abweichungen, die durchrutschen", "Ein rutschendes Datum oder einen Wert außerhalb des Bereichs früh erkennen — und die Entscheidung darüber einem Menschen überlassen."],
+      ],
+    },
+    how: {
+      kicker: "Vier Phasen",
+      h2: "Jede Phase endet dort, wo Sie aussteigen könnten.",
+      ask: "Die Reihenfolge ist Absicht. Die ersten zwei Wochen klären, ob sich das überhaupt lohnt — und wir haben Kunden schon gesagt, dass es das nicht tut.",
+      phases: [
+        ["Analyse", "Den Ist-Zustand messen", "Wir bilden Eingaben, Übergaben und doppelte Arbeit ab und setzen eine Ausgangslage für Zeit, Kosten und Qualität. Ohne diese Zahl kann im neunten Monat niemand sagen, ob es gewirkt hat.", "1–2 Wochen"],
+        ["Pilot", "Auf echten Daten beweisen", "Ein Live-Prototyp läuft gegen Ihre echten Belege. Bei einem Werkstattauftrag haben wir vor dem Angebot fünf bis zehn echte Zeichnungen geprüft, weil das Schriftfeld sowohl die Verlässlichkeit als auch den Preis verändert.", "2–3 Wochen"],
+        ["Umsetzung", "Systeme und Rollen verbinden", "Bestehende Systeme, Daten, Freigaben und Entscheidungspunkte so verdrahtet, dass die Sache Teil des Arbeitstags wird und nicht ein Werkzeug, an das man sich erinnern muss.", "1–2 Wochen"],
+        ["Betrieb", "Betreiben, messen, nachschärfen", "Nach dem Start betreiben wir es und verbessern weiter. Ein K2-Auftrag lief mit zwei Jahren Hosting und einer von Anfang an vereinbarten Option auf den Quellcode.", "laufend"],
+      ],
+    },
+    boundary: {
+      kicker: "Wo es aufhört",
+      h2: "Zu wissen, was man nicht automatisiert, ist der größere Teil des Handwerks.",
+      ask: "Verlässlichkeit entsteht an der Linie, nicht durch Abdeckung. Vier Stellen, an denen wir die Arbeit bewusst beim Menschen lassen.",
+      items: [
+        ["Wir schließen unzuverlässiges maschinelles Lesen aus.", "Bei komplexen Zeichnungen liest OCR Schriftfeld und Stückliste — die Felder, auf die Verlass ist. Mehrdeutige Maße werden gar nicht gelesen, weil ein falsches Maß mehr kostet als die Minute, die es spart."],
+        ["Was nur ein Mensch sieht, bleibt beim Menschen.", "Ein Ingenieur trägt Blechdicke oder Anzahl der Biegungen in einem kurzen Dialog ein; der geprüfte Wert baut dann die ERP-Struktur. Die Maschine tippt, der Mensch sieht."],
+        ["Das System protokolliert. Der Mensch unterschreibt.", "Ein Vertragsworkflow hält fest, wer was wann geprüft hat, und erzeugt den Audit-Trail. Die Unterschrift selbst bleibt menschlich, jedes Mal."],
+        ["Es meldet. Es entscheidet nicht.", "Die Überwachungsschicht meldet eine Abweichung. Was danach passiert, entscheidet jemand — und dieser Jemand hat im Entwurfsdokument einen Namen."],
+      ],
+      realEyebrow: "Und eine, die uns betrifft, nicht die Software",
+      realTitle: "Realismus gehört in den Vertrag.",
+      realSub: "Pläne berücksichtigen, dass ERP-Daten spät kommen, Feiertage, und die Abhängigkeiten auf Kundenseite, die es immer gibt. Wir nennen lieber einen Termin, den wir halten, als den, der den Termin gewinnt.",
+    },
+    walk: {
+      kicker: "Ein Auftrag, von Anfang bis Ende",
+      h2: "Eine Werkstatt und der Agent, der das Abtippen beendet hat.",
+      ask: "Am klarsten erklärt sich unsere Arbeitsweise an einem Auftrag der Reihe nach — einschließlich der Woche, in der wir herausgefunden haben, ob es überhaupt geht.",
+      steps: [
+        ["Ausgangspunkt", "Stunden Routine, jeden Tag.", "Ein Arbeitsvorbereiter legte jede Woche 15 bis 25 Baugruppen an — 70 bis 120 Helios-Positionen — aus PDF, DWG und DXF, jedes Mal mit denselben Normen."],
+        ["Vor dem Angebot", "Wir haben zuerst zehn echte Zeichnungen geprüft.", "Das Schriftfeld entscheidet, was verlässlich gelesen werden kann, und damit, was die Arbeit kostet. Lieber eine Woche dafür als eine Zahl, die wir später korrigieren müssten."],
+        ["Was er heute tut", "Liest, ordnet zu, baut die Struktur.", "Der Agent liest Schriftfelder und Stücklisten, findet ähnliche vorhandene Positionen und baut die Komponentenstruktur samt Arbeitsgängen und Zeitvorgaben."],
+      ],
+      endEyebrow: "Wo er aufhört",
+      endTitle: "Der Arbeitsvorbereiter prüft und entscheidet, statt zu tippen.",
+      endSub: "Maße, die Urteilsvermögen verlangen, blieben bewusst beim Arbeitsvorbereiter. Der Rollout lief in Stufen statt per Schalter, damit jeder Schritt gegen den alten Weg geprüft werden konnte, bevor der nächste begann.",
+      endMeta: "Helios API · PDF-, DWG- und DXF-Auswertung · OCR · stufenweiser Rollout",
+      endNeed: "zurückgewonnene Stunden bei diesem Auftrag — die eine Zahl, die dieser Fallstudie fehlt",
+      nextEyebrow: "Weiter",
+      nextTitle: "Dieselbe Disziplin, angewandt auf Agenten.",
+      nextSub: "Dort, wo ein festes Gleis nicht reicht und die Arbeit Urteilsvermögen braucht.",
+      nextGo: "Wie wir KI-Agenten bauen →",
+    },
+    foundation: {
+      kicker: "Drei Konstanten",
+      h2: "Ihre Systeme, Sicherheit im Entwurf, und am Ende eine Zahl.",
+      cards: [
+        ["Wir bauen auf dem auf, was Sie schon betreiben.", "K2, Helios, Business Central, SharePoint, Microsoft 365, Ihre Buchhaltung, PDM und CAD, E-Mail und WhatsApp — über die Orchestrierungsschicht verbunden, die Ihre Leute pflegen können."],
+        ["Sicherheit beginnt im Entwurf.", "Verschlüsselte Daten, DSGVO-Kontrollen, eine On-premises-Option und ausgesprochene Regeln für den KI-Einsatz. Das macht regulierte und sensible Arbeit möglich statt zum Sonderfall."],
+        ["Jede Lösung hat einen Business Case.", "Zeit, Transaktionskosten, Qualität, Fehler und Kapazität, gemessen gegen die Ausgangslage aus Phase eins. Typische Amortisation: 3 bis 12 Monate."],
+      ],
+    },
+    seoTitle: "Wie wir Automatisierung bauen | EnterIT",
+    seoDesc: "Fünf Arten von Engpass, vier Phasen, die jeweils mit einer Entscheidung enden, nach der Sie aussteigen können, und die Stellen, an denen wir die Arbeit bewusst beim Menschen lassen.",
+  },
+
+  pl: {
+    eyebrow: "Jak to robimy",
+    h1: "Automatyzacja, która zabiera rutynę, a nie ludzi.",
+    lead: "Przepisywanie zamówień, szukanie w cennikach, wypełnianie tego samego formularza drugi raz — to praca dla maszyny. Automatyzujemy procesy i systemy, które naprawdę macie, a osąd i kontrolę zostawiamy tam, gdzie ich miejsce.",
+    meta: "Około pięciu minut czytania · zacznijcie tutaj, jeśli nie wiecie, od czego zacząć",
+    cta: "Powiedzcie nam, który proces boli",
+    problem: {
+      kicker: "Gdzie boli",
+      h2: "Rutyna nie kosztuje tylko godzin. Kosztuje moce przerobowe.",
+      ask: "Te cztery pochodzą z prawdziwych wdrożeń. Jeśli któraś brzmi jak wasze zaplecze, to jest ta rozmowa, którą warto odbyć — wpływ jest mierzalny w godzinach i w pieniądzach, a mierzymy go, zanim wycenimy.",
+      items: [
+        ["Zamówienie przychodzi mailem i ktoś je przepisuje", "Zaplecze hurtowni wprowadzało zamówienia i obecności ręcznie, wiersz po wierszu. Każdy wpis to praca, której nikt nie musiał wykonywać, i okazja do pomyłki."],
+        ["Technolog spędza godziny, zakładając prawie identyczne pozycje", "Zakład mechaniczny zakładał 15 do 25 zespołów — 70 do 120 pozycji w Heliosie — co tydzień z rysunków, za każdym razem z tymi samymi normami."],
+        ["Handlowiec przeklikuje eksporty, żeby znaleźć cenę", "Handlowcy szukali w K2 i Excelu właściwej kombinacji wymiaru, materiału i koloru, oferując z danych, które mogły być już nieaktualne."],
+        ["Zarząd zatwierdza, ale nie udowodni, kto to czytał", "Zatwierdzanie umów szło mailem bez ścieżki audytu, więc nikt nie mógł potem pokazać, kto widział którą wersję."],
+      ],
+    },
+    scope: {
+      kicker: "Pięć warstw",
+      h2: "Pięć rodzajów wąskich gardeł i zwykle nie te, które wymienia się pierwsze.",
+      ask: "Większość firm pyta nas o warstwę transakcyjną, bo tę widać. Warstwa wiedzy i monitoringu to miejsce cichszych pieniędzy.",
+      layers: [
+        ["Transakcyjna", "Dane, które się przepisuje", "Rozłożyć załączniki, zsynchronizować CRM i ERP, założyć rekordy, wygenerować oferty — łącznie z całą ścieżką od maila do zamówienia."],
+        ["Wiedzy", "Odpowiedzi zakopane w dokumentach", "Zadać pytanie w poprzek PDF-ów, arkuszy i rysunków zwykłym językiem i dostać odpowiedź ze źródłem."],
+        ["Raportowa", "Liczby, na które się czeka", "Dane z ERP i magazynu złożone w jeden widok, bez tego, żeby ktoś składał je ręcznie w każdy poniedziałek."],
+        ["Komunikacyjna", "Pytania, które ciągle wracają", "Powtarzalny ruch z sieci, maila i WhatsAppa obsłużony całodobowo, eskalowane tylko wyjątki."],
+        ["Monitoring", "Terminy i odchylenia, które się prześlizgują", "Wychwycić przesuwający się termin albo wartość poza zakresem wcześnie — a decyzję o tym zostawić człowiekowi."],
+      ],
+    },
+    how: {
+      kicker: "Cztery etapy",
+      h2: "Każdy etap kończy się tam, gdzie moglibyście odejść.",
+      ask: "Ta kolejność jest celowa. Pierwsze dwa tygodnie sprawdzają, czy w ogóle warto — i mówiliśmy klientom, że nie.",
+      phases: [
+        ["Analiza", "Zmierzyć dziś", "Mapujemy wejścia, przekazania i pracę zdublowaną, a potem ustalamy punkt wyjścia dla czasu, kosztu i jakości. Bez tej liczby nikt w dziewiątym miesiącu nie powie, czy zadziałało.", "1–2 tygodnie"],
+        ["Pilot", "Udowodnić na prawdziwych danych", "Żywy prototyp działa na waszych rzeczywistych dokumentach. Przy jednym zleceniu w zakładzie mechanicznym przed wyceną zaudytowaliśmy pięć do dziesięciu prawdziwych rysunków, bo układ tabelki rysunkowej zmienia i niezawodność, i cenę.", "2–3 tygodnie"],
+        ["Wdrożenie", "Połączyć systemy i role", "Istniejące systemy, dane, zatwierdzenia i punkty decyzyjne spięte tak, żeby stało się to częścią dnia pracy, a nie narzędziem, o którym trzeba pamiętać.", "1–2 tygodnie"],
+        ["Utrzymanie", "Prowadzić, mierzyć, poprawiać", "Po starcie utrzymujemy i dalej ulepszamy. Jedno zlecenie nad K2 działało z dwoma latami hostingu i opcją wykupu kodu źródłowego, zapisaną od początku.", "na bieżąco"],
+      ],
+    },
+    boundary: {
+      kicker: "Gdzie się kończy",
+      h2: "Wiedzieć, czego nie automatyzować, to większa część rzemiosła.",
+      ask: "Niezawodność bierze się z granicy, nie z pokrycia. Cztery miejsca, w których celowo zostawiamy pracę człowiekowi.",
+      items: [
+        ["Wykluczamy niepewne odczytywanie maszynowe.", "Na złożonych rysunkach OCR czyta tabelkę rysunkową i zestawienie części — pola, na których można polegać. Niejednoznacznych wymiarów nie czyta wcale, bo zły wymiar kosztuje więcej niż minuta, którą oszczędza."],
+        ["Co widzi tylko człowiek, zostaje przy człowieku.", "Inżynier wpisuje grubość blachy albo liczbę gięć w krótkim oknie; zweryfikowana wartość buduje potem strukturę w ERP. Maszyna pisze, człowiek widzi."],
+        ["System zapisuje. Człowiek podpisuje.", "Obieg umowy zapisuje, kto co i kiedy sprawdził, i tworzy ścieżkę audytu. Sam podpis zostaje ludzki, za każdym razem."],
+        ["Zgłasza. Nie decyduje.", "Warstwa monitoringu podnosi odchylenie. Co dzieje się dalej, to czyjaś decyzja — i ten ktoś ma imię w dokumencie projektowym."],
+      ],
+      realEyebrow: "I jedna, która dotyczy nas, nie oprogramowania",
+      realTitle: "Realizm jest częścią umowy.",
+      realSub: "Plany uwzględniają, że dane z ERP przyjdą późno, święta i zależności po stronie klienta, które zawsze są. Wolimy podać termin, który utrzymamy, niż ten, który wygrywa spotkanie.",
+    },
+    walk: {
+      kicker: "Jedno zlecenie od początku do końca",
+      h2: "Zakład mechaniczny i agent, który zatrzymał przepisywanie.",
+      ask: "Najjaśniej wyjaśnia nasz sposób pracy jedno zlecenie po kolei — łącznie z tygodniem, w którym sprawdzaliśmy, czy to w ogóle możliwe.",
+      steps: [
+        ["Punkt wyjścia", "Godziny rutyny, codziennie.", "Jeden technolog ręcznie zakładał 15 do 25 zespołów — 70 do 120 pozycji w Heliosie — co tydzień z PDF, DWG i DXF, za każdym razem z tymi samymi normami."],
+        ["Przed wyceną", "Najpierw zaudytowaliśmy dziesięć prawdziwych rysunków.", "Układ tabelki rysunkowej decyduje, co da się odczytać niezawodnie, a więc ile ta praca kosztuje. Wolimy poświęcić tydzień na sprawdzenie niż podać liczbę, którą trzeba by korygować."],
+        ["Co robi dziś", "Czyta, dopasowuje, buduje strukturę.", "Agent czyta tabelki rysunkowe i zestawienia części, znajduje podobne istniejące pozycje i buduje strukturę komponentów z operacjami i normami czasowymi."],
+      ],
+      endEyebrow: "Gdzie się kończy",
+      endTitle: "Technolog sprawdza i decyduje, zamiast pisać.",
+      endSub: "Wymiary wymagające osądu celowo zostały przy technologu. Wdrożenie szło etapami, a nie przełącznikiem, żeby każdy krok dało się sprawdzić wobec starego sposobu, zanim ruszył następny.",
+      endMeta: "Helios API · odczyt PDF, DWG i DXF · OCR · wdrożenie etapami",
+      endNeed: "odzyskane godziny przy tym zleceniu — jedyna liczba, której temu opisowi brakuje",
+      nextEyebrow: "Dalej",
+      nextTitle: "Ta sama dyscyplina, zastosowana do agentów.",
+      nextSub: "Tam, gdzie stały tor nie wystarcza, a praca wymaga osądu.",
+      nextGo: "Jak budujemy agentów AI →",
+    },
+    foundation: {
+      kicker: "Trzy stałe",
+      h2: "Wasze systemy, bezpieczeństwo w projekcie i liczba na końcu.",
+      cards: [
+        ["Budujemy na tym, co już macie.", "K2, Helios, Business Central, SharePoint, Microsoft 365, wasz system księgowy, PDM i CAD, mail i WhatsApp — połączone przez tę warstwę orkiestracji, którą wasi ludzie utrzymają."],
+        ["Bezpieczeństwo zaczyna się w projekcie.", "Szyfrowane dane, kontrole RODO, opcja on-premise i wypowiedziane zasady użycia AI. To sprawia, że praca regulowana i wrażliwa jest możliwa, a nie wyjątkowa."],
+        ["Każde rozwiązanie ma business case.", "Czas, koszt transakcji, jakość, błędy i moce przerobowe, mierzone wobec punktu wyjścia z pierwszego etapu. Typowy zwrot to 3 do 12 miesięcy."],
+      ],
+    },
+    seoTitle: "Jak budujemy automatyzacje | EnterIT",
+    seoDesc: "Pięć rodzajów wąskich gardeł, cztery etapy, z których każdy kończy się decyzją pozwalającą odejść, i miejsca, w których celowo zostawiamy pracę człowiekowi.",
+  },
+};

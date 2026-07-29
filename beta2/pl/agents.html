@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Jak budujemy agentów AI | EnterIT</title>
+<meta name="description" content="Agent to cel plus osąd, nie większa automatyzacja. Osiem rzeczy definiowanych przed pierwszą linijką kodu, sześć rodzajów na produkcji i to, czego agent nigdy nie zrobi.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/beta2/assets/keys.css">
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/beta2/pl.html" aria-label="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+  </a>
+  <nav class="head-nav" aria-label="Sekcje">
+    <a href="/beta2/pl.html#build">Co budujemy</a>
+    <a href="/beta2/pl.html#results">Wyniki</a>
+    <a href="/beta2/pl.html#process">Jak pracujemy</a>
+    <a href="/beta2/pl/team.html">Zespół</a>
+    <a href="/beta2/pl/engagement.html">Współpraca</a>
+    <a href="/beta2/pl/integrations.html">Integracje</a>
+  </nav>
+  <span class="head-right">
+    <a class="btn btn--sm" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Zarezerwuj rozmowę</a>
+    <span class="lang"><a class="" href="/beta2/">EN</a><a class="" href="/beta2/cs.html">CZ</a><a class="" href="/beta2/de.html">DE</a><a class="on" href="/beta2/pl.html">PL</a></span>
+  </span>
+</header>
+
+<main class="board">
+
+  <div class="hero-bar hero-bar--page">
+    <div class="hero-say">
+      <a class="back" href="/beta2/pl.html"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-7-7 7 7 7"/></svg></span>Wróć do przeglądu</a>
+      <span class="hero-note">Jak to robimy</span>
+      <h1>Agent to kolega ze spisanym zakresem obowiązków.</h1>
+      <p>Budujemy agentów, którzy czytają dokumenty, działają w wypowiedzianych zasadach i każdą decyzję wymagającą osądu przekazują człowiekowi. Ta strona jest o tym, jak definiujemy rolę, wejścia, wyjścia i bariery — bo to ta definicja, a nie model, decyduje, czy za rok to nadal działa.</p>
+      <p class="hero-meta">Około sześciu minut czytania · pisane dla technicznego czytelnika</p>
+      <span class="hero-cta"><a class="btn btn--go" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Omówmy agenta, którego macie w głowie</a></span>
+    </div>
+  </div>
+
+  <section class="chap" id="difference" data-hue="0">
+    <div class="chap-head">
+      <span class="chap-no">01</span>
+      <div>
+        <span class="chap-kicker">Różnica, na której zależy</span>
+        <h2>Agent to nie większa automatyzacja.</h2>
+        <p>Jeśli macie wynieść z tej strony jedną rzecz, to tę. Te dwie rzeczy inaczej się wycenia, inaczej zawodzą i inaczej się je utrzymuje — a dostawca, który je zlewa, sprzeda wam tę niewłaściwą.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white" style="grid-column:span 6">
+        
+        
+        <span class="key-legend">A</span>
+        <span class="key-eyebrow">Automatyzacja</span>
+        
+        <span class="key-title key-title--big">Stały tor.</span>
+        <p class="key-sub">Zdefiniowana procedura obsłuży przewidywalne wejście niezawodnie i tanio. To właściwa odpowiedź o wiele częściej, niż ludzie zakładają. Zatrzymuje się w chwili, gdy przychodzi coś, czego nikt wcześniej nie opisał — dlatego każda nasza automatyzacja ma kolejkę wyjątków, a na jej końcu człowieka.</p>
+        
+        
+        
+        <p class="key-meta key-meta--rule">Tanio, szybko, niskie ryzyko. Psuje się widocznie, nie po cichu.</p>
+        
+        
+        
+        
+      </div>
+      <div class="key key--turquoise" style="grid-column:span 6">
+        <img class="key-mascot" src="/assets/decor/mascot-blue.svg" alt="" loading="lazy">
+        
+        <span class="key-legend">B</span>
+        <span class="key-eyebrow">Agent</span>
+        
+        <span class="key-title key-title--big">Cel plus osąd.</span>
+        <p class="key-sub">Dajcie mu cel, granicę i zestaw narzędzi, a sam wybierze kroki. Poproście, żeby założył pozycje w ERP, a przeczyta dwa różnie napisane zamówienia — bo pracuje z treścią, nie z formatem.</p>
+        
+        
+        
+        <p class="key-meta key-meta--rule">Potrafi więcej, wymaga więcej inżynierii wokół siebie i trzeba nim zarządzać.</p>
+        
+        
+        
+        
+      </div>
+      <div class="key key--navy" style="grid-column:span 12">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Dlaczego to ma znaczenie, zanim kupicie którekolwiek z nich.</span>
+        
+        <p class="key-sub">Agenci przejmują dokumentową rutynę, która wcześniej wymagała człowieka do interpretacji — i dokładnie tam z firm ucieka czas i wiedza. To czyni ich cennymi i ryzykownymi jednym tchem.</p><p class="key-sub">To nie magia, to inżynieria. Agenta, który działa dwa lata, od agenta, który dobrze wypada w marcu i zostaje wyłączony w czerwcu, dzieli jedno: czy osiem rzeczy z następnej sekcji było zdefiniowanych, zanim ktoś napisał linijkę kodu.</p>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="anatomy" data-hue="1">
+    <div class="chap-head">
+      <span class="chap-no">02</span>
+      <div>
+        <span class="chap-kicker">Z czego składa się niezawodny agent</span>
+        <h2>Osiem rzeczy, zdefiniowanych przed pierwszą linijką kodu.</h2>
+        <p>Agent to układ zdefiniowanych części, nie jeden sprytny model. Każda z nich niesie ciężar: pomińcie jedną, a agent zadziała na demie i polegnie w trzecim miesiącu.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--turquoise" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">1</span>
+        
+        
+        <span class="key-title key-title--sm">Rola — i wyraźnie nie-rola</span>
+        <p class="key-sub">Mapujemy proces, a potem spisujemy, co agent robi i, równie starannie, czego nie robi. Ta granica to jest ta niezawodność.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">2</span>
+        
+        
+        <span class="key-title key-title--sm">Wejście i wyjście na każdym kroku</span>
+        <p class="key-sub">Każdy PDF, mail czy zapytanie ma zdefiniowane wyjście: wiersze do ERP, projekt odpowiedzi, plik importu. To czyni wynik testowalnym, a nie efektownym.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">3</span>
+        
+        
+        <span class="key-title key-title--sm">Bariery — wolno i nie wolno</span>
+        <p class="key-sub">Co może zrobić sam i gdzie musi się zatrzymać i poczekać. To czyni dostęp do systemu produkcyjnego czymś, co da się podpisać.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">4</span>
+        
+        
+        <span class="key-title key-title--sm">Narzędzia — ręce agenta</span>
+        <p class="key-sub">ERP, SharePoint, Microsoft 365, CRM, PDM i CAD, mail, WhatsApp — podłączone przez API tam, gdzie jest, i przez interfejs tam, gdzie go nie ma.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">5</span>
+        
+        
+        <span class="key-title key-title--sm">Pamięć i wyszukiwanie</span>
+        <p class="key-sub">Dokumenty firmowe zebrane, skany przez OCR, a odpowiedzi wyłącznie z zatwierdzonego kontekstu — zawsze ze źródłem.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--violet" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">6</span>
+        
+        
+        <span class="key-title key-title--sm">Człowiek w pętli</span>
+        <p class="key-sub">Agent rekomenduje i przygotowuje. Człowiek zatwierdza. Każdy punkt przekazania nazywamy, a nie opisujemy zasadą.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">7</span>
+        
+        
+        <span class="key-title key-title--sm">Metryki</span>
+        <p class="key-sub">Błędy, czas odpowiedzi, odzyskana praca i adopcja, mierzone wobec punktu wyjścia sprzed budowy. Agent, którego nikt nie mierzy, to agent, którego nikt nie obroni.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        <span class="key-legend">8</span>
+        
+        
+        <span class="key-title key-title--sm">Governance i bezpieczeństwo</span>
+        <p class="key-sub">Własność, dostępy i zasady użycia AI zaprojektowane na starcie. Wrażliwe obciążenia mogą działać w całości na waszej infrastrukturze.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--navy" style="grid-column:span 12">
+        <img class="key-mascot" src="/assets/decor/mascot-red-light.svg" alt="" loading="lazy">
+        
+        <span class="key-legend">!</span>
+        <span class="key-eyebrow">Granice, powiedziane wprost</span>
+        
+        <span class="key-title key-title--big">Czego agent nigdy nie zrobi.</span>
+        
+        
+        
+        <ul class="key-list"><li>Nie wyśle niczego poza firmę bez zatwierdzenia.</li><li>Nie usuwa danych.</li><li>Nie podejmuje decyzji finansowych.</li><li>Nie rozstrzyga niczego z konsekwencjami prawnymi — cen, kredytu, rekrutacji. Przygotuje sprawę; podpisuje człowiek.</li><li>A wasze dane nie trenują modelu dla nikogo innego — umownie po naszej stronie i po stronie dostawcy modelu.</li></ul>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="types" data-hue="2">
+    <div class="chap-head">
+      <span class="chap-no">03</span>
+      <div>
+        <span class="chap-kicker">Co dostarczyliśmy</span>
+        <h2>Sześć rodzajów agentów, każdy gdzieś na produkcji.</h2>
+        <p>To nie jest lista produktów. Każdy powstał, bo ten problem miał najpierw klient. Model i narzędzia dobieramy pod zadanie i wrażliwość danych, nie pod modę.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--turquoise" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Ekstrakcyjni agenci</span>
+        <p class="key-sub">Z rysunków, zestawień, faktur i umów robią dane strukturalne.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Mailowi agenci</span>
+        <p class="key-sub">Wyciągają pozycje zamówień z dowolnie pisanych wiadomości do ERP i przygotowują odpowiedzi na powtarzalne pytania.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--blue" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Wiedzy agenci</span>
+        <p class="key-sub">Odpowiadają z waszej dokumentacji i cytują dokument źródłowy. Nie odpowiadają z pamięci.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Procesowi agenci</span>
+        <p class="key-sub">Z notatek i zgłoszeń robią zadania, właścicieli i eskalacje, z którymi zespół naprawdę pracuje.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--violet" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Raportowi agenci</span>
+        <p class="key-sub">Odpowiadają zwykłym językiem na pytania wobec ERP albo magazynu.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        
+        
+        <span class="key-title key-title--sm">Komunikacyjni agenci</span>
+        <p class="key-sub">Obsługują web, WhatsApp i skrzynkę całodobowo i czysto przekazują człowiekowi.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="stack" data-hue="3">
+    <div class="chap-head">
+      <span class="chap-no">04</span>
+      <div>
+        <span class="chap-kicker">Pod maską</span>
+        <h2>Wasz tenant, wasze zasady.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-eyebrow">Modele</span>
+        
+        <span class="key-title key-title--sm">Claude, GPT, Gemini — albo Llama i Mistral na waszym sprzęcie.</span>
+        <p class="key-sub">Dobrane pod zadanie i wrażliwość danych. Gdy nie mogą wyjść z budynku, nie wychodzą.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-eyebrow">Orkiestracja</span>
+        
+        <span class="key-title key-title--sm">n8n, Make albo Power Automate.</span>
+        <p class="key-sub">Dopasowane do stacku, który po przekazaniu utrzymają wasi ludzie, nie do tego, co nam się podoba.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-eyebrow">Integracje</span>
+        
+        <span class="key-title key-title--sm">SAP, Business Central, Helios, K2, Pohoda i inne.</span>
+        <p class="key-sub">Oficjalne API tam, gdzie są. Baza, pliki albo sam interfejs tam, gdzie ich nie ma.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--turquoise" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-eyebrow">Gdzie to działa</span>
+        
+        <span class="key-title key-title--sm">Wasz tenant Azure albo M365, wasz serwer, albo chmura UE.</span>
+        <p class="key-sub">RODO i EU AI Act wpisane na starcie, a nie negocjowane przy wdrożeniu.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="trust" data-hue="4">
+    <div class="chap-head">
+      <span class="chap-no">05</span>
+      <div>
+        <span class="chap-kicker">Trudna część</span>
+        <h2>Godny zaufania agent wie, kiedy nie wie.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--navy" style="grid-column:span 8">
+        <img class="key-mascot" src="/assets/decor/mascot-wave.svg" alt="" loading="lazy">
+        
+        
+        
+        
+        
+        
+        <p class="key-sub">Inżynieria, na której zależy, nie polega na uczynieniu agenta zdolnym. Polega na postawieniu granicy tam, gdzie kończy się jego pewność, a decyzja wraca do człowieka — i postawieniu jej przed wdrożeniem, nie po pierwszym złym tygodniu.</p><p class="key-sub">W praktyce znaczy to, że agent czyta pola, które umie odczytać niezawodnie, a resztę odrzuca. Przy jednym zleceniu w zakładzie mechanicznym czyta tabelkę rysunkową i zestawienie części, a niejednoznaczne wymiary z założenia zostawia technologowi, bo zły wymiar kosztuje więcej niż czas, który oszczędza.</p><p class="key-sub">Znaczy też, że powiemy wam, gdy odpowiedzią jest automatyzacja — albo żadne oprogramowanie. Ta rozmowa odbywa się w etapie drugim, dopóki nie ma budżetu do obrony.</p>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <a class="key key--turquoise" href="/beta2/pl/automation.html" style="grid-column:span 4">
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        <span class="key-eyebrow">Dalej</span>
+        
+        <span class="key-title key-title--sm">Ta sama dyscyplina, zastosowana do automatyzacji.</span>
+        <p class="key-sub">Praca na stałym torze, pięć warstw, które pokrywamy, i gdzie kończymy.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">Jak budujemy automatyzacje →</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>Performance AI team, który dowozi na produkcję.</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Czechy
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Masz pytanie?</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Zarezerwuj 30 minut</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Sekcje</span>
+      <a href="/beta2/pl.html#build">Co budujemy</a>
+      <a href="/beta2/pl.html#results">Wyniki</a>
+      <a href="/beta2/pl.html#process">Jak pracujemy</a>
+      <a href="/beta2/pl/team.html">Zespół</a>
+      <a href="/beta2/pl/engagement.html">Współpraca</a>
+      <a href="/beta2/pl/integrations.html">Integracje</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Enter Group</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="/beta2/pl/team.html">Enter Tech</a>
+      <a href="/beta2/pl/team.html">Enter Agents</a>
+      <a href="/beta2/pl/team.html">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="/beta2/pl.html">Przegląd</a> · <a href="/beta/">beta 1</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PALETTE = ["turquoise","blue","violet","red","yellow"];
+  var offset = Math.floor(Math.random() * PALETTE.length);
+  document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
+    var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
+    PALETTE.forEach(function(name){ chap.classList.remove("ch--" + name); });
+    chap.classList.add("ch--" + PALETTE[slot]);
+  });
+})();
+</script>
+</body>
+</html>

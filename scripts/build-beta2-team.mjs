@@ -235,13 +235,24 @@ const rules = section({
     key({ span: 4, tone: "turquoise",
       title: "Roles and monitoring on day one.", size: "sm",
       sub: "Not retrofitted after go-live, when it is both more expensive and less complete." }),
+    /* Two different answers, and conflating them would be the dishonest move.
+       For a European client the hosting claim is firm because it rests on
+       something real. For a US partner it is not a hosting promise at all — it
+       is a conversation about where we can actually help. */
     key({
-      span: 12, tone: "navy",
-      eyebrow: "Where it runs",
-      title: "Your tenant, your servers, or EU cloud — decided before we build, not after.",
+      span: 6, tone: "navy",
+      eyebrow: "European clients",
+      title: "We stand on Azure, so your data stays inside Europe.",
       size: "sm",
-      sub: "US-region hosting where a client requires it. Encryption in transit and at rest either way, with GDPR and the EU AI Act handled at design time.",
-      needs: need("confirm US-region hosting is genuinely available before this goes live"),
+      sub: "Your own tenant, your own servers, or EU-region Azure — decided before we build, not after. Encryption in transit and at rest, with GDPR and the EU AI Act handled at design time rather than argued about at go-live.",
+    }),
+    key({
+      span: 6, tone: "turquoise",
+      eyebrow: "US partners",
+      title: "We start with a conversation, not a data-centre map.",
+      size: "sm",
+      sub: "With American partners the first work is consulting: understanding what you already run, where your own delivery is stretched, and where we can genuinely help. Hosting follows from that decision rather than leading it.",
+      go: "Talk it through →", href: bookingUrl,
     }),
   ],
 });
