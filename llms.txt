@@ -1,6 +1,6 @@
 # EnterIT
 
-> EnterIT is a European AI and software delivery partner. Our 75+ specialists design, build, integrate, and operate enterprise software, AI solutions, cloud platforms, and system integrations for mid-to-large companies and technology partners. Primary language of the site is Czech (cs); English, German, and Polish versions are available at /en, /de, /pl.
+> EnterIT is a European AI and software delivery partner. Our 75+ specialists design, build, integrate, and operate enterprise software, AI solutions, cloud platforms, and system integrations for mid-to-large companies and technology partners. Primary language of the site is English; Czech, German, and Polish versions are available at /cs, /de, /pl.
 
 EnterIT is the delivery/execution team of the sister company EnterAI (enterai.cz), which focuses on AI adoption strategy and transformation. EnterIT focuses specifically on hands-on delivery: building and operating the actual automations, agents, and integrations — both as EnterAI's delivery arm and as standalone IT/AI projects for direct clients. EnterIT does not do adoption/change-management consulting — that is EnterAI's role.
 
@@ -15,14 +15,14 @@ Legal entity: AI Enter s.r.o. (brand: EnterIT), Bruntál, Czech Republic.
 
 ## Ready-made solutions (/routines/)
 
-- [Invoice automation](https://enterit.cz/routines/faktury.html): AI extraction of incoming invoices into ERP.
-- [Order intake automation](https://enterit.cz/routines/objednavky.html): automatic order capture from e-mail into ERP.
-- [Complaints handling](https://enterit.cz/routines/reklamace.html): automated complaint intake and routing.
-- [Paperless warehouse](https://enterit.cz/routines/sklad.html): warehouse operations without paper delivery notes.
-- [Attendance tracking](https://enterit.cz/routines/dochazka.html): automated attendance/timesheet capture.
-- [Leave approval automation](https://enterit.cz/routines/dovolene.html): automated leave request and approval flow.
-- [Vehicle logbook automation](https://enterit.cz/routines/kniha-jizd.html): automated mileage/logbook tracking.
-- [Work report automation](https://enterit.cz/routines/vykazy.html): automated work timesheet/report generation.
+- [Invoice automation](https://enterit.cz/routines/invoices.html): AI extraction of incoming invoices into ERP.
+- [Order intake automation](https://enterit.cz/routines/orders.html): automatic order capture from e-mail into ERP.
+- [Complaints handling](https://enterit.cz/routines/complaints.html): automated complaint intake and routing.
+- [Paperless warehouse](https://enterit.cz/routines/warehouse.html): warehouse operations without paper delivery notes.
+- [Attendance tracking](https://enterit.cz/routines/attendance.html): automated attendance/timesheet capture.
+- [Leave approval automation](https://enterit.cz/routines/time-off.html): automated leave request and approval flow.
+- [Vehicle logbook automation](https://enterit.cz/routines/mileage.html): automated mileage/logbook tracking.
+- [Work report automation](https://enterit.cz/routines/timesheets.html): automated work timesheet/report generation.
 
 ## Languages
 

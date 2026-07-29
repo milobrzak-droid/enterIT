@@ -6,11 +6,10 @@
  * shell, the keycap, and the marker for a fact we do not have yet. A subpage
  * builder supplies content and colour and nothing else.
  *
- * Paths. Czech sits at the domain root because enterit.cz is a Czech company's
- * front door and a Czech visitor should not land in English; the other three get
- * a folder each — /en/agents.html and so on. Routine slugs stay localised, so
- * the Czech invoices page is /routines/faktury.html and the German one is
- * /de/routines/rechnungen.html.
+ * Paths. English sits at the domain root — the site leads with its global
+ * audience — and cs/de/pl each get a folder. Routine slugs stay localised, so
+ * the English invoices page is /routines/invoices.html and the Czech one is
+ * /cs/routines/faktury.html.
  *
  * Colour rules are the board's rules, unchanged: turquoise is the primary and
  * the only colour that fills a large cap by default; blue, violet, red and
@@ -26,7 +25,7 @@ export const langAttr = { en: "en", cs: "cs", de: "de", pl: "pl" };
 export const langLabel = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
 /** Where a subpage lives, and where the board for a locale lives. */
-export const ROOT_LOCALE = "cs";
+export const ROOT_LOCALE = "en";
 export const sub = (code, file) => (code === ROOT_LOCALE ? `/${file}` : `/${code}/${file}`);
 export const boardHref = (code) => (code === ROOT_LOCALE ? "/" : `/${code}/`);
 

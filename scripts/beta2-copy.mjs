@@ -43,9 +43,9 @@ export const voice = {
         ask: "Nic z toho není raketová věda a většinu už jsme jednou postavili. Najděte svou rutinu a rovnou uvidíte, co do ní leze a co z ní vypadne ven.",
       },
       {
-        kicker: "Dodaná práce",
-        title: "Systémy, které se přizpůsobují lidem.",
-        ask: "Tohle běží u klientů a dělá svou práci. Nikdo se kvůli tomu nemusel přeučovat na nový nástroj — systém se ohnul podle toho, jak lidé pracují, ne naopak. Čísla níž jsou naměřená z provozu; jmenovité případovky dodal tým Enter Agents se souhlasem klienta.",
+        kicker: "Výsledky",
+        title: "Systémy, které už prokazatelně fungují v provozu.",
+        ask: "Každé řešení níže běží v reálném prostředí. Uvádíme konkrétní rozsah, použité systémy a změřený dopad — ne výkon na demu.",
       },
       {
         kicker: "Jak pracujeme",
@@ -161,9 +161,9 @@ export const voice = {
         ask: "None of this is rocket science and we have built most of it before. Find your routine and you will see straight away what goes in and what comes back out.",
       },
       {
-        kicker: "Delivered work",
-        title: "Systems that adapt to people.",
-        ask: "This runs at our clients and does its job. Nobody had to relearn their work around a new tool — the system bent to the way people already work, not the other way round. The numbers below are measured in production; the named cases were delivered by our Enter Agents team with the client's consent.",
+        kicker: "Results",
+        title: "Systems delivering measurable results in production.",
+        ask: "Every solution below runs in a real operating environment. We show the scope, the systems involved and the measured outcome — not benchmark performance from a demo.",
       },
       {
         kicker: "How we work",
@@ -280,8 +280,8 @@ export const voice = {
       },
       {
         kicker: "Ergebnisse",
-        title: "Systeme, die sich den Menschen anpassen.",
-        ask: "Das läuft bei unseren Kunden und tut seine Arbeit. Niemand musste sich auf ein neues Werkzeug umgewöhnen — das System hat sich danach gerichtet, wie die Leute ohnehin arbeiten, nicht umgekehrt. Die Zahlen unten sind im Betrieb gemessen; die namentlichen Fallstudien lieferte unser Team Enter Agents mit Zustimmung der Kunden.",
+        title: "Systeme mit messbaren Ergebnissen im Produktivbetrieb.",
+        ask: "Jede Lösung unten läuft in einer realen Betriebsumgebung. Wir zeigen Umfang, beteiligte Systeme und das gemessene Ergebnis — keine Demo-Werte.",
       },
       {
         kicker: "So arbeiten wir",
@@ -397,9 +397,9 @@ export const voice = {
         ask: "Nic z tego nie jest fizyką jądrową, a większość już kiedyś zbudowaliśmy. Znajdźcie swoją rutynę, a od razu zobaczycie, co do niej wchodzi i co z niej wychodzi.",
       },
       {
-        kicker: "Dostarczona praca",
-        title: "Systemy, które dopasowują się do ludzi.",
-        ask: "To działa u naszych klientów i robi swoje. Nikt nie musiał uczyć się od nowa pracy wokół nowego narzędzia — system nagiął się do tego, jak ludzie już pracują, a nie odwrotnie. Liczby poniżej są zmierzone na produkcji; case studies z nazwy dostarczył nasz zespół Enter Agents za zgodą klientów.",
+        kicker: "Wyniki",
+        title: "Systemy, które dają mierzalne wyniki na produkcji.",
+        ask: "Każde rozwiązanie poniżej działa w realnym środowisku operacyjnym. Pokazujemy zakres, zaangażowane systemy i zmierzony wynik — nie wydajność z dema.",
       },
       {
         kicker: "Jak pracujemy",

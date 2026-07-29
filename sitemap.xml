@@ -1,70 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://enterit.cz/en/</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/agents.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/automation.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/team.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/integrations.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/engagement.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/company-2030.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/calculator.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/invoices.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/orders.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/warehouse.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/attendance.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/timesheets.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/mileage.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/complaints.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://enterit.cz/en/routines/time-off.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://enterit.cz/</loc>
     <priority>1.0</priority>
   </url>
@@ -97,35 +33,99 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/faktury.html</loc>
+    <loc>https://enterit.cz/routines/invoices.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/objednavky.html</loc>
+    <loc>https://enterit.cz/routines/orders.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/sklad.html</loc>
+    <loc>https://enterit.cz/routines/warehouse.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/dochazka.html</loc>
+    <loc>https://enterit.cz/routines/attendance.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/vykazy.html</loc>
+    <loc>https://enterit.cz/routines/timesheets.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/kniha-jizd.html</loc>
+    <loc>https://enterit.cz/routines/mileage.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/reklamace.html</loc>
+    <loc>https://enterit.cz/routines/complaints.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://enterit.cz/routines/dovolene.html</loc>
+    <loc>https://enterit.cz/routines/time-off.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/agents.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/automation.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/team.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/integrations.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/engagement.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/company-2030.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/faktury.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/objednavky.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/sklad.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/dochazka.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/vykazy.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/kniha-jizd.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/reklamace.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enterit.cz/cs/routines/dovolene.html</loc>
     <priority>0.7</priority>
   </url>
   <url>

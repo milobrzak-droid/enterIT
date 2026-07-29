@@ -41,7 +41,17 @@
     },
     {
       "source": "/en.html",
-      "destination": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cs.html",
+      "destination": "/cs/",
       "permanent": true
     },
     {
@@ -55,13 +65,53 @@
       "permanent": true
     },
     {
+      "source": "/routines/faktury.html",
+      "destination": "/cs/routines/faktury.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/objednavky.html",
+      "destination": "/cs/routines/objednavky.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/sklad.html",
+      "destination": "/cs/routines/sklad.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/dochazka.html",
+      "destination": "/cs/routines/dochazka.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/vykazy.html",
+      "destination": "/cs/routines/vykazy.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/kniha-jizd.html",
+      "destination": "/cs/routines/kniha-jizd.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/reklamace.html",
+      "destination": "/cs/routines/reklamace.html",
+      "permanent": true
+    },
+    {
+      "source": "/routines/dovolene.html",
+      "destination": "/cs/routines/dovolene.html",
+      "permanent": true
+    },
+    {
       "source": "/en/tym.html",
-      "destination": "/en/team.html",
+      "destination": "/team.html",
       "permanent": true
     },
     {
       "source": "/tym.html",
-      "destination": "/team.html",
+      "destination": "/cs/team.html",
       "permanent": true
     },
     {
@@ -76,12 +126,12 @@
     },
     {
       "source": "/en/firma-2030.html",
-      "destination": "/en/company-2030.html",
+      "destination": "/company-2030.html",
       "permanent": true
     },
     {
       "source": "/firma-2030.html",
-      "destination": "/company-2030.html",
+      "destination": "/cs/company-2030.html",
       "permanent": true
     },
     {
@@ -96,12 +146,12 @@
     },
     {
       "source": "/en/jak-stavime-agenty.html",
-      "destination": "/en/agents.html",
+      "destination": "/agents.html",
       "permanent": true
     },
     {
       "source": "/jak-stavime-agenty.html",
-      "destination": "/agents.html",
+      "destination": "/cs/agents.html",
       "permanent": true
     },
     {
@@ -116,12 +166,12 @@
     },
     {
       "source": "/en/jak-stavime-automatizace.html",
-      "destination": "/en/automation.html",
+      "destination": "/automation.html",
       "permanent": true
     },
     {
       "source": "/jak-stavime-automatizace.html",
-      "destination": "/automation.html",
+      "destination": "/cs/automation.html",
       "permanent": true
     },
     {
@@ -136,12 +186,12 @@
     },
     {
       "source": "/en/reseni-faktury.html",
-      "destination": "/en/routines/invoices.html",
+      "destination": "/routines/invoices.html",
       "permanent": true
     },
     {
       "source": "/reseni-faktury.html",
-      "destination": "/routines/faktury.html",
+      "destination": "/cs/routines/faktury.html",
       "permanent": true
     },
     {
@@ -156,12 +206,12 @@
     },
     {
       "source": "/en/reseni-objednavky.html",
-      "destination": "/en/routines/orders.html",
+      "destination": "/routines/orders.html",
       "permanent": true
     },
     {
       "source": "/reseni-objednavky.html",
-      "destination": "/routines/objednavky.html",
+      "destination": "/cs/routines/objednavky.html",
       "permanent": true
     },
     {
@@ -176,12 +226,12 @@
     },
     {
       "source": "/en/reseni-sklad-bez-papiru.html",
-      "destination": "/en/routines/warehouse.html",
+      "destination": "/routines/warehouse.html",
       "permanent": true
     },
     {
       "source": "/reseni-sklad-bez-papiru.html",
-      "destination": "/routines/sklad.html",
+      "destination": "/cs/routines/sklad.html",
       "permanent": true
     },
     {
@@ -196,12 +246,12 @@
     },
     {
       "source": "/en/reseni-dochazka.html",
-      "destination": "/en/routines/attendance.html",
+      "destination": "/routines/attendance.html",
       "permanent": true
     },
     {
       "source": "/reseni-dochazka.html",
-      "destination": "/routines/dochazka.html",
+      "destination": "/cs/routines/dochazka.html",
       "permanent": true
     },
     {
@@ -216,12 +266,12 @@
     },
     {
       "source": "/en/reseni-pracovni-vykazy.html",
-      "destination": "/en/routines/timesheets.html",
+      "destination": "/routines/timesheets.html",
       "permanent": true
     },
     {
       "source": "/reseni-pracovni-vykazy.html",
-      "destination": "/routines/vykazy.html",
+      "destination": "/cs/routines/vykazy.html",
       "permanent": true
     },
     {
@@ -236,12 +286,12 @@
     },
     {
       "source": "/en/reseni-kniha-jizd.html",
-      "destination": "/en/routines/mileage.html",
+      "destination": "/routines/mileage.html",
       "permanent": true
     },
     {
       "source": "/reseni-kniha-jizd.html",
-      "destination": "/routines/kniha-jizd.html",
+      "destination": "/cs/routines/kniha-jizd.html",
       "permanent": true
     },
     {
@@ -256,12 +306,12 @@
     },
     {
       "source": "/en/reseni-reklamace.html",
-      "destination": "/en/routines/complaints.html",
+      "destination": "/routines/complaints.html",
       "permanent": true
     },
     {
       "source": "/reseni-reklamace.html",
-      "destination": "/routines/reklamace.html",
+      "destination": "/cs/routines/reklamace.html",
       "permanent": true
     },
     {
@@ -276,12 +326,12 @@
     },
     {
       "source": "/en/reseni-dovolene.html",
-      "destination": "/en/routines/time-off.html",
+      "destination": "/routines/time-off.html",
       "permanent": true
     },
     {
       "source": "/reseni-dovolene.html",
-      "destination": "/routines/dovolene.html",
+      "destination": "/cs/routines/dovolene.html",
       "permanent": true
     },
     {
@@ -292,6 +342,11 @@
     {
       "source": "/pl/reseni-dovolene.html",
       "destination": "/pl/routines/urlopy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
       "permanent": true
     },
     {

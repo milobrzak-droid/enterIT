@@ -843,11 +843,11 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
       ${v.hero.eyebrow ? `<span class="hero-eyebrow">${e(v.hero.eyebrow)}</span>` : ""}
       <h1>${e(v.hero.h1)}</h1>
       <p>${e(v.hero.lead)}</p>
-      <span class="hero-note">${e(v.hero.note)}</span>
       <div class="hero-cta-row">
         <a class="btn btn--go" href="#start">${e(v.hero.ctaPrimary)}</a>
         <a class="btn btn--onnavy" href="${sub(code, "engagement.html")}">${e(v.hero.ctaSecondary)}</a>
       </div>
+      <span class="hero-note">${e(v.hero.note)}</span>
     </div>
     <div class="hero-side">
       <span class="hero-side-label">${e(t.partnersLabel)}</span>

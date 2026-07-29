@@ -59,10 +59,17 @@ const SLUG_ORDER = ["en", "cs", "de", "pl"];
 
 export function redirects() {
   const out = [];
-  /* The old Czech homepage was the root and still is; the other three moved
-     from /xx.html to /xx/. */
-  for (const code of ["en", "de", "pl"]) {
+  /* English now owns the root. The other three moved from /xx.html to /xx/,
+     and every /en/... URL from the interim layout collapses onto the root. */
+  out.push({ source: "/en.html", destination: "/", permanent: true });
+  out.push({ source: "/en", destination: "/", permanent: true });
+  for (const code of ["cs", "de", "pl"]) {
     out.push({ source: `/${code}.html`, destination: `/${code}/`, permanent: true });
+  }
+  /* The Czech routine slugs briefly lived at the root and clients may hold
+     cached 301s pointing there; they belong to /cs now. */
+  for (const r of routinesByLocale.cs) {
+    out.push({ source: `/routines/${r.slug}.html`, destination: `/cs/routines/${r.slug}.html`, permanent: true });
   }
   for (const [oldFile, target] of Object.entries(OLD_TO_NEW)) {
     for (const code of LOCALES) {
@@ -73,6 +80,12 @@ export function redirects() {
       out.push({ source: from, destination: to, permanent: true });
     }
   }
+  /* The blanket rule for the interim /en/ layout has to come AFTER the
+     specific old-page rules above — Vercel takes the first match, and an
+     English visitor following /en/tym.html must land on /team.html, not be
+     folded to the root first and end up redirected into Czech. */
+  out.push({ source: "/en/:path*", destination: "/:path*", permanent: true });
+
   /* Pages the new site does not have an equivalent for stay readable in the
      archive rather than 404ing. */
   for (const p of ["/us", "/us/", "/index-redesign.html", "/_redesign-demo.html"]) {
