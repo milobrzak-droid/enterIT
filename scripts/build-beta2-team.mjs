@@ -169,6 +169,13 @@ function renderIntegrations(code) {
         span: 6, tone: "turquoise", eyebrow: C.usEyebrow, title: C.usTitle,
         size: "sm", sub: C.usSub, go: C.usGo, href: bookingUrl,
       }),
+      /* Closing the section with the thing itself: hosting is a choice about a
+         machine somewhere, not an abstraction. */
+      key({
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/infra.webp", alt: C.infraAlt,
+        title: C.infraTitle, size: "big", sub: C.infraSub,
+      }),
     ],
   });
 
