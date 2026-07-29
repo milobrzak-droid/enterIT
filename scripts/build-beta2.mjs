@@ -753,7 +753,11 @@ ${rack}
 <main class="board">
 
   <div class="hero-bar" data-hue="0">
-    <img class="hero-bg" src="/assets/decor/firmy.webp" alt="" loading="eager">
+    <div class="hero-film" aria-hidden="true">
+${["firmy", "standup", "meeting", "screenwork"]
+  .map((f, i) => `      <img src="/assets/decor/${f}.webp" alt="" loading="eager"${i ? ' fetchpriority="low"' : ""}>`)
+  .join("\n")}
+    </div>
     <span class="hero-wash"></span>
     <div class="hero-say">
       <h1>${e(v.hero.h1)}</h1>

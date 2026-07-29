@@ -612,9 +612,35 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
    you get that from a room full of laptops. Colour still leads; the picture is
    texture and a hint that real people do this work. */
 .hero-bar{isolation:isolate}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  object-position:center 40%;z-index:-2;
-  filter:grayscale(1) contrast(1.05) brightness(.55)}
+/* The hero background is a slow film rather than a still: four frames of the
+   same team at work, each crossfading into the next over a twelve-second beat
+   with a drift of a couple of percent behind it. Grey, dark and far enough
+   under the wash that it reads as movement rather than as a slideshow — the
+   point is that the place looks alive, not that anyone studies the pictures.
+
+   Four frames, twelve seconds each. The first carries a negative delay so the
+   hero is already showing an image on the first paint instead of fading up
+   from flat navy. */
+.hero-film{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero-film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 40%;opacity:0;will-change:opacity,transform;
+  filter:grayscale(1) contrast(1.05) brightness(.55);
+  animation:heroCut 48s linear infinite, heroDrift 48s ease-out infinite}
+.hero-film img:nth-child(1){animation-delay:-1s,-1s}
+.hero-film img:nth-child(2){animation-delay:11s,11s}
+.hero-film img:nth-child(3){animation-delay:23s,23s}
+.hero-film img:nth-child(4){animation-delay:35s,35s}
+@keyframes heroCut{
+  0%{opacity:0} 4%{opacity:1} 23%{opacity:1} 27%{opacity:0} 100%{opacity:0}}
+@keyframes heroDrift{
+  0%{transform:scale(1.04)}
+  27%{transform:scale(1.11) translate3d(-1.4%,-1%,0)}
+  100%{transform:scale(1.11) translate3d(-1.4%,-1%,0)}}
+/* Anyone who has asked the system to stop moving things gets one still frame. */
+@media(prefers-reduced-motion:reduce){
+  .hero-film img{animation:none;transform:scale(1.04)}
+  .hero-film img:nth-child(1){opacity:1}
+}
 .hero-wash{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
     linear-gradient(100deg,
