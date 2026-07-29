@@ -35,6 +35,7 @@ import { fileURLToPath } from "node:url";
 import { writeAgents } from "./build-beta2-agents.mjs";
 import { writeAutomation } from "./build-beta2-automation.mjs";
 import { writeRoutines } from "./build-beta2-routines.mjs";
+import { writeCases } from "./build-beta2-cases.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
@@ -585,14 +586,14 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
         span: 6, tone: "turquoise", legend: "1", eyebrow: lead.client,
         title: lead.title, size: "big", sub: lead.impact,
         meta: `${lead.industry} · ${lead.tech.join(" · ")} · ${cs.byLabel[lead.by]}`,
-        href: "#start",
+        href: sub(code, "cases.html") + "#manufacturing",
       }),
       key({
         span: 6, tone: "navy", legend: "2", eyebrow: second.client,
         stat: second.metric, statLabel: second.metricLabel,
         sub: second.impact,
         meta: `${second.industry} · ${second.tech.join(" · ")} · ${cs.byLabel[second.by]}`,
-        mascot: "blue", href: "#start",
+        mascot: "blue", href: sub(code, "cases.html") + "#energy",
       }),
       ...rest.map((card, i) =>
         key({
@@ -600,7 +601,8 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
           eyebrow: card.client, stat: card.metric, statLabel: card.metricLabel,
           title: card.title, size: "sm",
           meta: `${card.industry} · ${cs.byLabel[card.by]}`,
-          href: "#start", mark: false,
+          href: card.id === "jt-investing" ? sub(code, "cases.html") + "#investment" : "#start",
+          mark: false,
         })),
       /* The house numbers sit on the team at work — the photograph runs quiet
          under a heavy scrim, there to prove the place is alive rather than to
@@ -953,6 +955,7 @@ writeAutomation();
 writeRoutines();
 writeTeamAndIntegrations();
 writeEngagement();
+writeCases();
 for (const code of order) {
   const target = resolve(root, outFile(code));
   mkdirSync(dirname(target), { recursive: true });

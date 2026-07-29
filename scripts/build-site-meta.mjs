@@ -26,7 +26,7 @@ export function urls() {
   for (const code of LOCALES) {
     out.push({ loc: boardHref(code), priority: code === ROOT_LOCALE ? "1.0" : "0.9" });
     for (const f of ["agents.html", "automation.html", "team.html", "integrations.html",
-                     "engagement.html", "company-2030.html", "calculator.html"]) {
+                     "engagement.html", "company-2030.html", "calculator.html", "cases.html"]) {
       out.push({ loc: sub(code, f), priority: "0.8" });
     }
     for (const r of routinesByLocale[code]) {
