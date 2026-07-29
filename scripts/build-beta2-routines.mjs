@@ -123,7 +123,7 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
         span: 4, tone: "white",
         title: "Or size it yourself first.", size: "sm",
         sub: "Four inputs and an order-of-magnitude estimate of what this routine costs you today.",
-        go: "Open the calculator →", href: "/beta2/#next",
+        go: "Open the calculator →", href: "/beta2/calculator.html",
       }),
       key({
         span: 4, tone: "white",
