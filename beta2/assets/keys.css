@@ -643,17 +643,21 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
 .hero-film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:center 40%;opacity:0;will-change:opacity,transform;
   filter:grayscale(1) contrast(1.05) brightness(.55);
-  animation:heroCut 48s linear infinite, heroDrift 48s ease-out infinite}
+  animation:heroCut 32s linear infinite, heroDrift 32s linear infinite}
 .hero-film img:nth-child(1){animation-delay:-1s,-1s}
-.hero-film img:nth-child(2){animation-delay:11s,11s}
-.hero-film img:nth-child(3){animation-delay:23s,23s}
-.hero-film img:nth-child(4){animation-delay:35s,35s}
+.hero-film img:nth-child(2){animation-delay:7s,7s}
+.hero-film img:nth-child(3){animation-delay:15s,15s}
+.hero-film img:nth-child(4){animation-delay:23s,23s}
 @keyframes heroCut{
-  0%{opacity:0} 4%{opacity:1} 23%{opacity:1} 27%{opacity:0} 100%{opacity:0}}
+  0%{opacity:0} 5%{opacity:1} 22%{opacity:1} 28%{opacity:0} 100%{opacity:0}}
+/* The drift runs the whole eight seconds and moves far enough to be read as
+   movement. The first pass crept two percent over twelve seconds, which is
+   below the threshold at which anyone glancing at the page sees anything at
+   all — a still picture with extra bytes. */
 @keyframes heroDrift{
-  0%{transform:scale(1.04)}
-  27%{transform:scale(1.11) translate3d(-1.4%,-1%,0)}
-  100%{transform:scale(1.11) translate3d(-1.4%,-1%,0)}}
+  0%{transform:scale(1.04) translate3d(2%,1.2%,0)}
+  28%{transform:scale(1.16) translate3d(-2.4%,-1.6%,0)}
+  100%{transform:scale(1.16) translate3d(-2.4%,-1.6%,0)}}
 /* Anyone who has asked the system to stop moving things gets one still frame. */
 @media(prefers-reduced-motion:reduce){
   .hero-film img{animation:none;transform:scale(1.04)}
