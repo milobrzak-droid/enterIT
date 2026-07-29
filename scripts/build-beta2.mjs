@@ -39,7 +39,7 @@ import { writeCases } from "./build-beta2-cases.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
-import { LANG_ARIA, LOCALES, OG_LOCALE, ROOT_LOCALE, SITE, SKIP, boardHref, sub } from "./beta2-page.mjs";
+import { LANG_ARIA, LOCALES, OG_LOCALE, ROOT_LOCALE, SITE, SKIP, asset, boardHref, sub } from "./beta2-page.mjs";
 import { routinesByLocale } from "./beta2-routines.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -816,8 +816,8 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
 })}<\/script>
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/keys.css">
-<script defer src="/assets/analytics.js"><\/script>
+<link rel="stylesheet" href="${asset("/assets/keys.css")}">
+<script defer src="${asset("/assets/analytics.js")}"><\/script>
 </head>
 <body>
 

@@ -16,7 +16,32 @@
  * yellow are accents, one assigned per section, rotating one step per visit;
  * no tints, no pink, no gradient.
  */
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { escapeHtml } from "./site-shell.mjs";
+
+const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+/**
+ * A stylesheet or script URL stamped with a hash of its own contents.
+ *
+ * Long cache lifetimes on /assets are correct — the files rarely change and the
+ * fonts are big. What was missing is a way to say "this one did change": with a
+ * bare /assets/keys.css, a returning visitor kept the old stylesheet for up to
+ * a day and saw new markup styled by old rules. The hash changes only when the
+ * file does, so caching stays aggressive and updates still land immediately.
+ */
+const hashes = new Map();
+export function asset(path) {
+  if (!hashes.has(path)) {
+    const bytes = readFileSync(resolve(repoRoot, path.replace(/^\//, "")));
+    hashes.set(path, createHash("sha256").update(bytes).digest("hex").slice(0, 8));
+  }
+  return `${path}?v=${hashes.get(path)}`;
+}
 
 export const e = (v) => escapeHtml(v ?? "");
 
@@ -178,8 +203,8 @@ ${canonical ? `<meta property="og:url" content="${SITE}${canonical}">` : ""}
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/keys.css">
-<script defer src="/assets/analytics.js"><\/script>
+<link rel="stylesheet" href="${asset("/assets/keys.css")}">
+<script defer src="${asset("/assets/analytics.js")}"><\/script>
 </head>
 <body>
 
