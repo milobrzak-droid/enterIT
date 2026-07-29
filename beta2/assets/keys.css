@@ -223,8 +223,11 @@ a.key:hover .key-mark{opacity:.5}
    Enty leans into the corner of a handful of caps. It is the brand's own
    character, so it appears where the tile is speaking rather than reporting —
    and never often enough to become wallpaper. */
-.key-mascot{position:absolute;right:-14px;bottom:-10px;width:112px;height:auto;
-  opacity:.9;pointer-events:none;
+/* Enty stands on the bottom edge of the cap rather than hanging off the corner.
+   Outside the cap it drifted over the neighbour on press and never looked
+   seated; inside, it travels with the key. */
+.key-mascot{position:absolute;right:14px;bottom:0;width:104px;height:auto;
+  opacity:.95;pointer-events:none;
   transition:transform .35s cubic-bezier(.2,.7,.3,1)}
 a.key:hover .key-mascot{transform:translateY(-6px) rotate(-3deg)}
 .key--navy .key-mascot{opacity:.85}
@@ -316,25 +319,30 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 .hero-note{display:inline-block;margin-top:18px;padding:7px 15px;
   border-radius:999px;border:1.5px solid rgba(251,251,251,.28);
   font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
-/* The partner band. Every mark runs white at the same optical weight, because a
-   grey Microsoft next to a white TD SYNNEX reads as the weaker of the pair —
-   which is the opposite of the point. */
-.hero-side{margin-top:40px;padding:26px 0 32px;
-  border-top:1.5px solid rgba(251,251,251,.16)}
-.hero-side-label{display:block;font-size:9.5px;letter-spacing:.16em;
-  text-transform:uppercase;opacity:.5;margin-bottom:20px}
+/* The partner band. Restraint reads as confidence here: the marks sit small and
+   dimmed, and come up to full white only when you look at them. Every mark is
+   white rather than its own brand colour, so none of the three looks like the
+   weaker of the set. */
+.hero-side{margin-top:36px;padding:22px 0 28px;
+  border-top:1.5px solid rgba(251,251,251,.14)}
+.hero-side-label{display:block;font-size:9px;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.4;margin-bottom:16px}
 .hero-marks{display:flex;align-items:center;flex-wrap:wrap;
-  gap:clamp(34px,5vw,72px)}
-.hero-marks img{height:clamp(38px,4.6vw,64px);width:auto}
-.hero-ms{display:flex;align-items:center;gap:16px}
-.hero-ms .sq{display:grid;grid-template-columns:1fr 1fr;gap:4px;
-  width:clamp(38px,4.4vw,58px);height:clamp(38px,4.4vw,58px);flex:none}
+  gap:clamp(26px,3.4vw,46px)}
+.hero-marks img{height:clamp(22px,2.2vw,30px);width:auto;
+  opacity:.5;transition:opacity .22s}
+.hero-marks img:hover{opacity:1}
+.hero-ms{display:flex;align-items:center;gap:9px;
+  opacity:.5;transition:opacity .22s}
+.hero-ms:hover{opacity:1}
+.hero-ms .sq{display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px);flex:none}
 .hero-ms .sq i{display:block;background:var(--white)}
 .hero-ms-name{display:block}
 .hero-ms-name b{display:block;font-family:var(--font-head);font-weight:700;
-  font-size:clamp(20px,2.4vw,32px);line-height:1.05;color:var(--white)}
+  font-size:clamp(13px,1.3vw,17px);line-height:1.05;color:var(--white)}
 .hero-ms-name small{display:block;font-family:var(--font-mono);
-  font-size:clamp(10px,1.05vw,13px);opacity:.72;margin-top:4px}
+  font-size:clamp(8px,.72vw,9.5px);letter-spacing:.06em;opacity:.75;margin-top:2px}
 
 /* ---------- Key rack (quick nav) ---------- */
 .rack{border-radius:var(--r-key);background:rgba(23,32,46,.045);
@@ -573,11 +581,11 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
    Marks already shown publicly on enterai.cz, run small and evenly weighted.
    A logo wall shouted at full size reads as insecurity; this one is a footnote
    under the cases that says "and these too". */
-.logos{padding:28px 30px}
-.logo-wall{display:flex;flex-wrap:wrap;align-items:center;
-  gap:clamp(26px,4vw,56px);margin-top:20px}
-.logo-wall img{height:clamp(20px,2.1vw,28px);width:auto;
-  opacity:.62;transition:opacity .2s}
+.logos{padding:26px 30px 30px;align-items:center;text-align:center}
+.logo-wall{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:clamp(24px,3.6vw,52px);margin-top:22px;padding-inline:clamp(0px,2vw,32px)}
+.logo-wall img{height:clamp(19px,2vw,26px);width:auto;
+  opacity:.5;transition:opacity .22s}
 .logo-wall img:hover{opacity:1}
 
 /* ---------- EU star ring ----------

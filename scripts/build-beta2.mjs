@@ -277,10 +277,15 @@ const searchIcon =
 const chevron =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
-const mascots = {
-  wave: "/assets/decor/mascot-wave.svg",
-  blue: "/assets/decor/mascot-blue.svg",
-  red: "/assets/decor/mascot-red.svg",
+/* Enty comes in two limb colours. The manual draws the limbs in Stabilní černá;
+   on a navy cap black limbs simply disappear, and white is the sanctioned
+   exception for a dark ground. The cap's own tone picks the variant, so nobody
+   has to remember. */
+const DARK_TONES = new Set(["navy", "soft", "photo-hire"]);
+const mascotFile = (face, tone) => {
+  const onDark = DARK_TONES.has(tone);
+  if (face === "wave") return onDark ? "/assets/decor/mascot-wave.svg" : "/assets/decor/mascot-wave-ink.svg";
+  return onDark ? `/assets/decor/mascot-${face}-light.svg` : `/assets/decor/mascot-${face}.svg`;
 };
 
 /**
@@ -306,7 +311,7 @@ function key({
   const Tag = href ? "a" : "div";
   return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
-        ${mascot ? `<img class="key-mascot" src="${mascots[mascot]}" alt="" loading="lazy">` : ""}
+        ${mascot ? `<img class="key-mascot" src="${mascotFile(mascot, tone)}" alt="" loading="lazy">` : ""}
         ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
         ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
         ${legend ? `<span class="key-legend">${legend}</span>` : ""}
@@ -331,7 +336,7 @@ function key({
  */
 function slot({ span, rows, hint, brief }) {
   return `      <div class="key key--slot" style="grid-column:span ${span}${rows ? `;grid-row:span ${rows}` : ""}">
-        <img class="slot-mascot" src="${mascots.blue}" alt="" loading="lazy">
+        <img class="slot-mascot" src="/assets/decor/mascot-blue.svg" alt="" loading="lazy">
         <span class="slot-hint">${e(hint)}</span>
         <span class="slot-brief">${e(brief)}</span>
       </div>`;
@@ -652,7 +657,7 @@ ${slot({ span: 4, hint: t.artHint, brief: t.slots[4] })}
         <span class="key-eyebrow">${e(page.contact.kicker)}</span>
         <span class="key-title key-title--big">${e(t.bubbleSay)}</span>
         <span class="bubble-by">
-          <img src="${mascots.wave}" alt="">
+          <img src="/assets/decor/mascot-wave-ink.svg" alt="">
           <span><b>${e(t.startPress)}</b><span>milo@enterit.cz · +420 608 969 263</span></span>
         </span>
       </a>
