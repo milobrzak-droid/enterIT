@@ -621,6 +621,24 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
    Four frames, twelve seconds each. The first carries a negative delay so the
    hero is already showing an image on the first paint instead of fading up
    from flat navy. */
+/* A photograph sunk into a coloured cap. The point is texture, not a picture:
+   the flat colour has to stay the thing you see, and the type has to stay as
+   legible as it was on a plain tile. So the image is greyscale, masked away
+   from the top-left where the words are, and blended rather than laid on top —
+   multiply on a light cap, screen on a dark one, because a single blend mode
+   turns one of the two to mud. It comes up a little on hover, which is the
+   only place it is meant to be noticed. */
+.key-tint{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  z-index:-1;pointer-events:none;opacity:.15;
+  filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply;
+  transition:opacity .3s cubic-bezier(.2,.7,.3,1);
+  -webkit-mask-image:linear-gradient(305deg,#000 0%,rgba(0,0,0,.5) 40%,transparent 74%);
+  mask-image:linear-gradient(305deg,#000 0%,rgba(0,0,0,.5) 40%,transparent 74%)}
+.key--navy .key-tint,.key--soft .key-tint{mix-blend-mode:screen;opacity:.2}
+.key:hover .key-tint{opacity:.26}
+.key--navy:hover .key-tint,.key--soft:hover .key-tint{opacity:.3}
+@media(prefers-reduced-motion:reduce){.key-tint{transition:none}}
+
 .hero-film{position:absolute;inset:0;z-index:-2;overflow:hidden}
 .hero-film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:center 40%;opacity:0;will-change:opacity,transform;

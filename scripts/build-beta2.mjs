@@ -304,6 +304,7 @@ const mascotFile = (face, tone) => {
 function key({
   span, rows, tone = "white", legend, eyebrow, title, size, sub, meta, stat, statLabel,
   bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet, wide, extra,
+  tint,
 }) {
   const style = `grid-column:span ${span}${rows ? `;grid-row:span ${rows}` : ""}`;
   const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
@@ -313,6 +314,7 @@ function key({
   const Tag = href ? "a" : "div";
   return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
+        ${tint ? `<img class="key-tint" src="${tint}" alt="" loading="lazy">` : ""}
         ${mascot ? `<img class="key-mascot" src="${mascotFile(mascot, tone)}" alt="" loading="lazy">` : ""}
         ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
         ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
@@ -460,6 +462,25 @@ function render(code) {
      Eight equal peers, so this grid gets the whole palette rather than one
      chapter accent: every routine has its own colour, and no two that touch —
      across or down the 4x2 grid — carry the same one. */
+  /* The eight cards and the eight routine pages are two lists in two different
+     orders, and index i in one is not index i in the other — the board has been
+     linking the attendance card to the invoices page. Both the destination and
+     the photograph are keyed off this map, in card order.
+
+     Each tile carries a photograph of its own work, sunk into the colour far
+     enough to read as texture rather than as a picture. Five of the eight have
+     a literal match; the rest take the nearest human scene we have. */
+  const routineCards = [
+    { routine: 3, tint: "screenwork" },  // attendance — hours pulled off a screen
+    { routine: 1, tint: "onsite" },      // orders — a delivery note in someone's hand
+    { routine: 6, tint: "support" },     // complaints — the person who answers
+    { routine: 2, tint: "warehouse" },   // warehouse
+    { routine: 7, tint: "meeting" },     // time off — people round a table
+    { routine: 5, tint: "keyboard" },    // mileage
+    { routine: 0, tint: "accounting" },  // invoices
+    { routine: 4, tint: "fieldwork" },   // timesheets
+  ];
+
   const routineTones = [
     "turquoise", "violet", "yellow", "blue",
     "red", "navy", "turquoise", "violet",
@@ -471,9 +492,10 @@ function render(code) {
       ...c.solutions.cards.map((card, i) =>
         key({
           span: 3, tone: routineTones[i],
+          tint: `/assets/decor/${routineCards[i].tint}.webp`,
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
-          href: sub(code, `routines/${routinesByLocale[code][i].slug}.html`),
+          href: sub(code, `routines/${routinesByLocale[code][routineCards[i].routine].slug}.html`),
           mark: false,
         })),
       key({
