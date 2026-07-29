@@ -47,7 +47,7 @@ export const voice = {
       {
         kicker: "Jak pracujeme",
         title: "Nejdřív důkaz. Velké peníze až potom.",
-        ask: "Nikdo u nás neplatí rok za experiment. Každá fáze má konec, výstup a rozhodnutí — a v každé z nich můžete říct dost.",
+        ask: "První dvě fáze jsou otázka týdnů. Pilot je čtyři týdny až několik měsíců podle toho, kolik systémů a výjimek ten proces doopravdy má — a radši to řekneme dopředu než v půlce. Každá fáze má konec, výstup a rozhodnutí, takže v každé z nich můžete říct dost.",
       },
       {
         kicker: "Integrace",
@@ -79,10 +79,10 @@ export const voice = {
         list: ["Vlastní aplikace a portály", "Integrace i na systémy bez API", "Provoz pod SLA s konkrétním vlastníkem"] },
     ],
     stages: [
-      { title: "Najdeme, kde to opravdu drhne", text: "Zmapujeme objem práce, výjimky, data a to, co vás dnešní postup reálně stojí." },
-      { title: "Spočítáme, jestli se to vyplatí", text: "Výchozí stav, očekávaná úspora, rizika a jasná podmínka, kdy je pilot úspěšný." },
-      { title: "Postavíme pilot na ostrých datech", text: "Napojíme ho na skutečné systémy a přínos změříme na skutečné práci, ne na demu." },
-      { title: "Převezmeme provoz", text: "Monitoring, bezpečnost, SLA i další rozvoj. Má to konkrétního vlastníka a ten se jmenuje." },
+      { title: "Najdeme, kde to opravdu drhne", text: "Zmapujeme objem práce, výjimky, data a to, co vás dnešní postup reálně stojí." , time: "1–2 týdny" },
+      { title: "Spočítáme, jestli se to vyplatí", text: "Výchozí stav, očekávaná úspora, rizika a jasná podmínka, kdy je pilot úspěšný." , time: "2–3 týdny" },
+      { title: "Postavíme pilot na ostrých datech", text: "Napojíme ho na skutečné systémy a přínos změříme na skutečné práci, ne na demu." , time: "4 týdny až několik měsíců" },
+      { title: "Převezmeme provoz", text: "Monitoring, bezpečnost, SLA i další rozvoj. Má to konkrétního vlastníka a ten se jmenuje." , time: "průběžně, roky" },
     ],
     ops: [
       { title: "Ručíme za běh", text: "Dostupnost, reakční doby, dohled 24/7, zálohy i aktualizace pod jedním SLA." },
@@ -148,7 +148,7 @@ export const voice = {
       {
         kicker: "How we work",
         title: "Proof first. The big money later.",
-        ask: "Nobody here pays for a year of experimenting. Every stage has an end, an output and a decision — and at every one of them you can say stop.",
+        ask: "The first two stages are a matter of weeks. The pilot is four weeks to several months depending on how many systems and exception paths the process really has — and we would rather say that now than halfway through. Every stage has an end, an output and a decision, so at every one of them you can say stop.",
       },
       {
         kicker: "Integrations",
@@ -180,10 +180,10 @@ export const voice = {
         list: ["Your own applications and portals", "Integration even where there is no API", "Operations under SLA, with a named owner"] },
     ],
     stages: [
-      { title: "Find where it actually hurts", text: "We map the volume of work, the exceptions, the data, and what today's way of doing it really costs you." },
-      { title: "Work out whether it pays", text: "Baseline, expected saving, risks, and a clear condition for calling the pilot a success." },
-      { title: "Build the pilot on real data", text: "We connect it to the real systems and measure the benefit on real work, not on a demo." },
-      { title: "Take over operations", text: "Monitoring, security, SLA and further development. It has a specific owner, and that owner has a name." },
+      { title: "Find where it actually hurts", text: "We map the volume of work, the exceptions, the data, and what today's way of doing it really costs you." , time: "1–2 weeks" },
+      { title: "Work out whether it pays", text: "Baseline, expected saving, risks, and a clear condition for calling the pilot a success." , time: "2–3 weeks" },
+      { title: "Build the pilot on real data", text: "We connect it to the real systems and measure the benefit on real work, not on a demo." , time: "4 weeks to several months" },
+      { title: "Take over operations", text: "Monitoring, security, SLA and further development. It has a specific owner, and that owner has a name." , time: "ongoing, for years" },
     ],
     ops: [
       { title: "We answer for uptime", text: "Availability, response times, 24/7 monitoring, backups and updates, all under one SLA." },
@@ -249,7 +249,7 @@ export const voice = {
       {
         kicker: "So arbeiten wir",
         title: "Erst der Beweis. Das große Geld danach.",
-        ask: "Bei uns zahlt niemand ein Jahr lang für ein Experiment. Jede Phase hat ein Ende, ein Ergebnis und eine Entscheidung — und in jeder können Sie Schluss sagen.",
+        ask: "Die ersten beiden Phasen sind eine Frage von Wochen. Der Pilot dauert vier Wochen bis mehrere Monate, je nachdem wie viele Systeme und Ausnahmen der Prozess wirklich hat — und das sagen wir lieber jetzt als auf halbem Weg. Jede Phase hat ein Ende, ein Ergebnis und eine Entscheidung, in jeder können Sie Schluss sagen.",
       },
       {
         kicker: "Integrationen",
@@ -281,10 +281,10 @@ export const voice = {
         list: ["Eigene Anwendungen und Portale", "Integration auch ohne API", "Betrieb unter SLA, mit benanntem Eigentümer"] },
     ],
     stages: [
-      { title: "Finden, wo es wirklich weh tut", text: "Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und das, was der heutige Weg Sie tatsächlich kostet." },
-      { title: "Ausrechnen, ob es sich lohnt", text: "Ausgangslage, erwartete Einsparung, Risiken und eine klare Bedingung, wann der Pilot erfolgreich ist." },
-      { title: "Den Piloten auf echten Daten bauen", text: "Wir binden ihn an die echten Systeme an und messen den Nutzen an echter Arbeit, nicht an einer Demo." },
-      { title: "Den Betrieb übernehmen", text: "Monitoring, Sicherheit, SLA und Weiterentwicklung. Es gibt einen konkreten Eigentümer, und der hat einen Namen." },
+      { title: "Finden, wo es wirklich weh tut", text: "Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und das, was der heutige Weg Sie tatsächlich kostet." , time: "1–2 Wochen" },
+      { title: "Ausrechnen, ob es sich lohnt", text: "Ausgangslage, erwartete Einsparung, Risiken und eine klare Bedingung, wann der Pilot erfolgreich ist." , time: "2–3 Wochen" },
+      { title: "Den Piloten auf echten Daten bauen", text: "Wir binden ihn an die echten Systeme an und messen den Nutzen an echter Arbeit, nicht an einer Demo." , time: "4 Wochen bis mehrere Monate" },
+      { title: "Den Betrieb übernehmen", text: "Monitoring, Sicherheit, SLA und Weiterentwicklung. Es gibt einen konkreten Eigentümer, und der hat einen Namen." , time: "laufend, über Jahre" },
     ],
     ops: [
       { title: "Wir haften für den Betrieb", text: "Verfügbarkeit, Reaktionszeiten, Überwachung rund um die Uhr, Backups und Updates unter einem SLA." },
@@ -350,7 +350,7 @@ export const voice = {
       {
         kicker: "Jak pracujemy",
         title: "Najpierw dowód. Duże pieniądze później.",
-        ask: "Nikt u nas nie płaci przez rok za eksperyment. Każdy etap ma koniec, wynik i decyzję — i na każdym możecie powiedzieć dość.",
+        ask: "Pierwsze dwa etapy to kwestia tygodni. Pilot trwa od czterech tygodni do kilku miesięcy, zależnie od tego, ile systemów i wyjątków proces naprawdę ma — i wolimy powiedzieć to teraz niż w połowie. Każdy etap ma koniec, wynik i decyzję, więc na każdym możecie powiedzieć dość.",
       },
       {
         kicker: "Integracje",
@@ -382,10 +382,10 @@ export const voice = {
         list: ["Własne aplikacje i portale", "Integracja nawet bez API", "Utrzymanie w SLA, z imiennym właścicielem"] },
     ],
     stages: [
-      { title: "Znajdujemy, gdzie naprawdę boli", text: "Mapujemy wolumen pracy, wyjątki, dane i to, ile dzisiejszy sposób naprawdę was kosztuje." },
-      { title: "Liczymy, czy się opłaca", text: "Punkt wyjścia, oczekiwana oszczędność, ryzyka i jasny warunek, kiedy pilot jest udany." },
-      { title: "Budujemy pilota na prawdziwych danych", text: "Podłączamy go do prawdziwych systemów i mierzymy korzyść na prawdziwej pracy, nie na demie." },
-      { title: "Przejmujemy utrzymanie", text: "Monitoring, bezpieczeństwo, SLA i dalszy rozwój. Ma to konkretnego właściciela, a ten właściciel ma imię." },
+      { title: "Znajdujemy, gdzie naprawdę boli", text: "Mapujemy wolumen pracy, wyjątki, dane i to, ile dzisiejszy sposób naprawdę was kosztuje." , time: "1–2 tygodnie" },
+      { title: "Liczymy, czy się opłaca", text: "Punkt wyjścia, oczekiwana oszczędność, ryzyka i jasny warunek, kiedy pilot jest udany." , time: "2–3 tygodnie" },
+      { title: "Budujemy pilota na prawdziwych danych", text: "Podłączamy go do prawdziwych systemów i mierzymy korzyść na prawdziwej pracy, nie na demie." , time: "4 tygodnie do kilku miesięcy" },
+      { title: "Przejmujemy utrzymanie", text: "Monitoring, bezpieczeństwo, SLA i dalszy rozwój. Ma to konkretnego właściciela, a ten właściciel ma imię." , time: "na bieżąco, latami" },
     ],
     ops: [
       { title: "Odpowiadamy za działanie", text: "Dostępność, czasy reakcji, nadzór 24/7, kopie zapasowe i aktualizacje w ramach jednego SLA." },

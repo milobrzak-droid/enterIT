@@ -530,11 +530,18 @@ ${faceRow}
     id: "process", no: "04", hue: 3,
     kicker: ch(3).kicker, title: ch(3).title, ask: ch(3).ask,
     keys: [
+      /* Each stage carries a four-segment track with its own segment filled, so
+         the row reads as one sequence rather than as four separate claims:
+         solid behind you, filled where you are, outlined ahead. */
       ...v.stages.map((step, i) =>
         key({
-          span: 3, tone: i === 3 ? "turquoise" : "white", legend: String(i + 1),
+          span: 3, tone: ["turquoise", "blue", "violet", "yellow"][i],
+          legend: String(i + 1),
           eyebrow: `${t.stepLabel} ${i + 1}`, title: step.title, size: "sm", sub: step.text,
-          meta: c.processTimings[i], mark: false,
+          meta: step.time || c.processTimings[i], mark: false,
+          extra: `<span class="track">${[0, 1, 2, 3]
+            .map((j) => `<i class="${j < i ? "done" : j === i ? "on" : ""}"></i>`)
+            .join("")}</span>`,
         })),
       key({
         span: 7, tone: "navy", legend: "P", eyebrow: c.implementation.kicker,
