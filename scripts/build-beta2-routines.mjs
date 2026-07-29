@@ -43,8 +43,19 @@ function renderRoutine(code, r, i) {
     kicker: R.painKicker,
     h2: R.painH2,
     ask: R.painAsk,
-    keys: r.pain.map((p, j) =>
-      key({ span: 4, tone: j === 0 ? tone : "white", legend: String(j + 1), title: p, size: "sm" })),
+    keys: [
+      ...r.pain.map((p, j) =>
+        key({ span: 4, tone: j === 0 ? tone : "white", legend: String(j + 1), title: p, size: "sm" })),
+      /* Optional. A photograph of the work as it looks today, placed where the
+         reader has just recognised their own back office. */
+      r.photo && key({
+        span: 12, tone: "navy", wide: true,
+        photo: r.photo, alt: r.photoAlt,
+        eyebrow: R.todayEyebrow,
+        title: r.h1, size: "big",
+        meta: `${r.flowIn}  →  ${r.flowOut}`,
+      }),
+    ],
   });
 
   const flow = section({

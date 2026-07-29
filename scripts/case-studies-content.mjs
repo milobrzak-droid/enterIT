@@ -1,5 +1,5 @@
 /**
- * case-studies-content.mjs — the delivered work, named.
+ * case-studies-content.mjs — the delivered work, by typology.
  *
  * This module is deliberately separate from `homepage-restoration-content.mjs`.
  * That one feeds the live site and beta1; this one feeds beta2 only, so the
@@ -8,10 +8,10 @@
  * Two kinds of entry live here and they are not mixed:
  *
  *   by: "enter"  — delivered by EnterIT's own engineering teams. The client is
- *                  anonymised, as on the live site.
+ *                  identified by typology, as on the live site.
  *   by: "qube"   — delivered by Enter Agents (SuperQube). These are published
  *                  under the client's own name on superqube.ai, so they are
- *                  named here too, with the delivering team credited on the card.
+ *                  still shown by typology here, with the delivering team credited.
  *
  * Every figure below is taken from the published case study. The one exception
  * is marked `unverified: true` — the Business Central data platform, whose
@@ -19,7 +19,7 @@
  * because no measured outcome has been handed over yet.
  *
  * Card fields:
- *   client       who it was for — a name for qube cases, a sector for enter ones
+ *   client       who it was for, as a typology — no company is named on this site
  *   industry     one word, shown next to the client
  *   metric       the headline figure; it runs large and alone on the cap
  *   metricLabel  what the figure counts
@@ -39,7 +39,7 @@ export const caseStudies = {
   en: {
     kicker: "Delivered work",
     title: "Systems that are running right now.",
-    intro: "Each of these is live. The named ones were delivered by Enter Agents and are published with the client's consent; the anonymised ones come from our own enterprise teams and we bring the matching reference to the meeting.",
+    intro: "Each of these is live. We describe clients by type rather than by name — the reference itself, with the name and a person you can call, comes to the meeting.",
     allGo: "All case studies →",
     byLabel: byLabel.en,
     cards: [
@@ -53,7 +53,7 @@ export const caseStudies = {
       },
       {
         id: "energy-service-agent", by: "qube",
-        client: "Lama Energy Group", industry: "Energy",
+        client: "Energy group", industry: "Energy",
         metric: "+87%", metricLabel: "faster response to an incoming enquiry",
         title: "An agentic customer desk that never closes.",
         impact: "An agent handles the whole pre-contact phase across chat, e-mail and forms: it answers from the product database, qualifies the enquiry against set criteria and books the meeting in a human's calendar. Coverage went to 24/7 with no extra headcount, and qualified meetings rose 35%.",
@@ -61,7 +61,7 @@ export const caseStudies = {
       },
       {
         id: "jt-investing", by: "qube",
-        client: "J&T Investing", industry: "Finance",
+        client: "Investment group", industry: "Finance",
         metric: "10×", metricLabel: "analyst team productivity",
         title: "Autonomous portfolio intelligence over 100+ companies.",
         impact: "A network of specialised agents watches thousands of sources around the clock, separates signal from noise and delivers a morning briefing. A research report that took weeks now takes three to five minutes, and nothing market-critical goes unnoticed.",
@@ -69,7 +69,7 @@ export const caseStudies = {
       },
       {
         id: "orel-re", by: "qube",
-        client: "OREL RE", industry: "Hospitality · real estate",
+        client: "Hospitality and real-estate group", industry: "Hospitality · real estate",
         metric: "85%", metricLabel: "faster project approvals",
         title: "Approvals and invoices, routed by agents.",
         impact: "Approvals went from three to four weeks down to three to five days, and invoice matching from eight to ten hours a week down to fifteen minutes. Leadership sees OPEX and CAPEX live instead of weeks after close.",
@@ -77,7 +77,7 @@ export const caseStudies = {
       },
       {
         id: "ladeo", by: "qube",
-        client: "Ladeo Lukavec", industry: "Waste management",
+        client: "Waste management operator", industry: "Waste management",
         metric: "30 min → 5 s", metricLabel: "to find a regulatory answer",
         title: "A regulatory expert the whole team can ask.",
         impact: "Hundreds of pages of regulation became a knowledge base anyone can question in plain language. Expertise stopped sitting with two senior people, and there has been no compliance incident since go-live.",
@@ -85,7 +85,7 @@ export const caseStudies = {
       },
       {
         id: "stavbyday", by: "qube",
-        client: "StavbyDay", industry: "Construction",
+        client: "Construction services firm", industry: "Construction",
         metric: "80%", metricLabel: "less administrative work",
         title: "From paper and Excel to one source of truth.",
         impact: "Sixty hours a week of retyping between systems became a single database with automated workflows. The business grew 40% without adding an administrator, and data-entry errors fell by 93%.",
@@ -93,7 +93,7 @@ export const caseStudies = {
       },
       {
         id: "eurepol", by: "qube",
-        client: "EUREPOL", industry: "Agriculture",
+        client: "Agricultural business", industry: "Agriculture",
         metric: "73%", metricLabel: "less time spent looking for information",
         title: "A virtual executive team for a farm run remotely.",
         impact: "Maintenance scheduling, compliance documents and daily lookups are handled by a set of connected agents. The owner runs the operation from anywhere, and no machine has failed for a missed service.",
@@ -109,7 +109,7 @@ export const caseStudies = {
       },
       {
         id: "slevomat", by: "qube",
-        client: "Slevomat", industry: "E-commerce · enablement",
+        client: "E-commerce platform", industry: "E-commerce · enablement",
         metric: "90%", metricLabel: "of trained managers now use AI daily",
         title: "An AI ambassador programme, not another training course.",
         impact: "A three-month programme across strategy, tooling and change management left the organisation self-sufficient: full coverage of AI expertise in every team and five working prototypes deployed.",
@@ -137,7 +137,7 @@ export const caseStudies = {
   cs: {
     kicker: "Dodaná práce",
     title: "Systémy, které běží právě teď.",
-    intro: "Každý z nich je v ostrém provozu. Jmenovité případovky dodal tým Enter Agents a jsou zveřejněné se souhlasem klienta; anonymizované pocházejí z našich enterprise týmů a odpovídající referenci doložíme na schůzce.",
+    intro: "Každý z nich je v ostrém provozu. Klienty popisujeme typologicky, ne jménem — konkrétní referenci včetně jména a člověka, kterému můžete zavolat, přineseme na schůzku.",
     allGo: "Všechny případovky →",
     byLabel: byLabel.cs,
     cards: [
@@ -151,7 +151,7 @@ export const caseStudies = {
       },
       {
         id: "energy-service-agent", by: "qube",
-        client: "Lama Energy Group", industry: "Energetika",
+        client: "Energetická skupina", industry: "Energetika",
         metric: "+87 %", metricLabel: "rychlejší reakce na příchozí poptávku",
         title: "Agentní zákaznická péče, která nikdy nezavírá.",
         impact: "Agent obslouží celou fázi před kontaktem — chat, e-mail i formuláře. Odpovídá z produktové databáze, kvalifikuje poptávku podle nastavených kritérií a rezervuje schůzku do kalendáře konkrétního člověka. Pokrytí je nepřetržité bez posílení týmu a kvalifikovaných schůzek přibylo 35 %.",
@@ -159,7 +159,7 @@ export const caseStudies = {
       },
       {
         id: "jt-investing", by: "qube",
-        client: "J&T Investing", industry: "Finance",
+        client: "Investiční skupina", industry: "Finance",
         metric: "10×", metricLabel: "produktivita analytického týmu",
         title: "Autonomní portfoliová inteligence nad 100+ firmami.",
         impact: "Síť specializovaných agentů sleduje tisíce zdrojů nepřetržitě, odděluje signál od šumu a ráno dodá briefing. Rešerše, která trvala týdny, je hotová za tři až pět minut a nic zásadního neproklouzne.",
@@ -167,7 +167,7 @@ export const caseStudies = {
       },
       {
         id: "orel-re", by: "qube",
-        client: "OREL RE", industry: "Hotelnictví · nemovitosti",
+        client: "Hotelová a realitní skupina", industry: "Hotelnictví · nemovitosti",
         metric: "85 %", metricLabel: "rychlejší schvalování projektů",
         title: "Schvalování a faktury řízené agenty.",
         impact: "Schvalování kleslo ze tří až čtyř týdnů na tři až pět dní, párování faktur z osmi až deseti hodin týdně na patnáct minut. Vedení vidí OPEX i CAPEX živě, ne týdny po uzávěrce.",
@@ -175,7 +175,7 @@ export const caseStudies = {
       },
       {
         id: "ladeo", by: "qube",
-        client: "Ladeo Lukavec", industry: "Odpadové hospodářství",
+        client: "Provozovatel odpadového hospodářství", industry: "Odpadové hospodářství",
         metric: "30 min → 5 s", metricLabel: "než tým najde odpověď v předpisech",
         title: "Regulační expert, kterého se může zeptat kdokoli.",
         impact: "Stovky stran předpisů se staly znalostní bází, na kterou se dá ptát běžnou řečí. Expertiza přestala viset na dvou seniorních lidech a od nasazení nedošlo k žádnému compliance incidentu.",
@@ -183,7 +183,7 @@ export const caseStudies = {
       },
       {
         id: "stavbyday", by: "qube",
-        client: "StavbyDay", industry: "Stavebnictví",
+        client: "Firma ve stavebních službách", industry: "Stavebnictví",
         metric: "80 %", metricLabel: "méně administrativy",
         title: "Z papíru a Excelu na jeden zdroj pravdy.",
         impact: "Šedesát hodin týdně přepisování mezi systémy nahradila jedna databáze s automatizovanými toky. Firma vyrostla o 40 % bez přijetí administrativy a chybovost při zadávání dat klesla o 93 %.",
@@ -191,7 +191,7 @@ export const caseStudies = {
       },
       {
         id: "eurepol", by: "qube",
-        client: "EUREPOL", industry: "Zemědělství",
+        client: "Zemědělský podnik", industry: "Zemědělství",
         metric: "73 %", metricLabel: "méně času stráveného hledáním informací",
         title: "Virtuální výkonný tým pro provoz řízený na dálku.",
         impact: "Plánování údržby, compliance dokumenty i každodenní dotazy obsluhuje soustava propojených agentů. Majitel řídí provoz odkudkoli a žádný stroj neselhal kvůli zmeškanému servisu.",
@@ -207,7 +207,7 @@ export const caseStudies = {
       },
       {
         id: "slevomat", by: "qube",
-        client: "Slevomat", industry: "E-commerce · adopce",
+        client: "E-commerce platforma", industry: "E-commerce · adopce",
         metric: "90 %", metricLabel: "vyškolených manažerů používá AI denně",
         title: "Program AI ambasadorů, ne další školení.",
         impact: "Tříměsíční program přes strategii, nástroje a řízení změny nechal firmu soběstačnou: AI expertiza pokrytá v každém týmu a pět funkčních prototypů v provozu.",
@@ -235,7 +235,7 @@ export const caseStudies = {
   de: {
     kicker: "Gelieferte Arbeit",
     title: "Systeme, die gerade jetzt laufen.",
-    intro: "Jedes davon ist im Echtbetrieb. Die namentlichen Fallstudien hat das Team Enter Agents geliefert; sie sind mit Zustimmung der Kunden veröffentlicht. Die anonymisierten stammen aus unseren Enterprise-Teams, die passende Referenz bringen wir zum Termin mit.",
+    intro: "Jedes davon ist im Echtbetrieb. Wir beschreiben Kunden nach Typ, nicht nach Namen — die konkrete Referenz samt Namen und einer Person, die Sie anrufen können, bringen wir zum Termin mit.",
     allGo: "Alle Fallstudien →",
     byLabel: byLabel.de,
     cards: [
@@ -249,7 +249,7 @@ export const caseStudies = {
       },
       {
         id: "energy-service-agent", by: "qube",
-        client: "Lama Energy Group", industry: "Energie",
+        client: "Energiekonzern", industry: "Energie",
         metric: "+87 %", metricLabel: "schnellere Reaktion auf eine Anfrage",
         title: "Ein agentischer Kundendesk, der nie schließt.",
         impact: "Ein Agent übernimmt die gesamte Phase vor dem Kontakt — Chat, E-Mail und Formulare. Er antwortet aus der Produktdatenbank, qualifiziert die Anfrage nach festen Kriterien und bucht den Termin im Kalender eines Menschen. Rund um die Uhr, ohne zusätzliches Personal, mit 35 % mehr qualifizierten Terminen.",
@@ -257,7 +257,7 @@ export const caseStudies = {
       },
       {
         id: "jt-investing", by: "qube",
-        client: "J&T Investing", industry: "Finanzen",
+        client: "Investmentgruppe", industry: "Finanzen",
         metric: "10×", metricLabel: "Produktivität des Analystenteams",
         title: "Autonome Portfolio-Intelligenz über 100+ Unternehmen.",
         impact: "Ein Netz spezialisierter Agenten beobachtet rund um die Uhr Tausende Quellen, trennt Signal von Rauschen und liefert morgens ein Briefing. Eine Recherche, die Wochen dauerte, ist in drei bis fünf Minuten fertig.",
@@ -265,7 +265,7 @@ export const caseStudies = {
       },
       {
         id: "orel-re", by: "qube",
-        client: "OREL RE", industry: "Hotellerie · Immobilien",
+        client: "Hotel- und Immobiliengruppe", industry: "Hotellerie · Immobilien",
         metric: "85 %", metricLabel: "schnellere Projektfreigaben",
         title: "Freigaben und Rechnungen, von Agenten gesteuert.",
         impact: "Freigaben sanken von drei bis vier Wochen auf drei bis fünf Tage, der Rechnungsabgleich von acht bis zehn Stunden pro Woche auf fünfzehn Minuten. Die Leitung sieht OPEX und CAPEX live.",
@@ -273,7 +273,7 @@ export const caseStudies = {
       },
       {
         id: "ladeo", by: "qube",
-        client: "Ladeo Lukavec", industry: "Abfallwirtschaft",
+        client: "Entsorgungsbetrieb", industry: "Abfallwirtschaft",
         metric: "30 Min → 5 Sek", metricLabel: "bis zur Antwort aus den Vorschriften",
         title: "Ein Regulierungsexperte, den jeder fragen kann.",
         impact: "Hunderte Seiten Vorschriften wurden zu einer Wissensbasis, die man in normaler Sprache befragt. Das Wissen hängt nicht mehr an zwei erfahrenen Personen, und seit dem Go-live gab es keinen Compliance-Vorfall.",
@@ -281,7 +281,7 @@ export const caseStudies = {
       },
       {
         id: "stavbyday", by: "qube",
-        client: "StavbyDay", industry: "Bauwesen",
+        client: "Bauleistungsunternehmen", industry: "Bauwesen",
         metric: "80 %", metricLabel: "weniger Verwaltungsarbeit",
         title: "Von Papier und Excel zu einer Quelle der Wahrheit.",
         impact: "Sechzig Stunden Abtippen pro Woche wurden zu einer Datenbank mit automatisierten Abläufen. Das Geschäft wuchs um 40 % ohne zusätzliche Verwaltung, Eingabefehler sanken um 93 %.",
@@ -289,7 +289,7 @@ export const caseStudies = {
       },
       {
         id: "eurepol", by: "qube",
-        client: "EUREPOL", industry: "Landwirtschaft",
+        client: "Agrarbetrieb", industry: "Landwirtschaft",
         metric: "73 %", metricLabel: "weniger Zeit für die Suche nach Informationen",
         title: "Ein virtuelles Führungsteam für einen fernbetriebenen Hof.",
         impact: "Wartungsplanung, Compliance-Dokumente und tägliche Abfragen übernimmt ein Verbund von Agenten. Der Betrieb wird von überall geführt, keine Maschine fiel wegen versäumter Wartung aus.",
@@ -305,7 +305,7 @@ export const caseStudies = {
       },
       {
         id: "slevomat", by: "qube",
-        client: "Slevomat", industry: "E-Commerce · Enablement",
+        client: "E-Commerce-Plattform", industry: "E-Commerce · Enablement",
         metric: "90 %", metricLabel: "der geschulten Führungskräfte nutzen KI täglich",
         title: "Ein KI-Botschafterprogramm statt einer weiteren Schulung.",
         impact: "Ein dreimonatiges Programm aus Strategie, Werkzeugen und Change-Management machte die Organisation selbstständig: KI-Kompetenz in jedem Team und fünf laufende Prototypen.",
@@ -333,7 +333,7 @@ export const caseStudies = {
   pl: {
     kicker: "Dostarczona praca",
     title: "Systemy, które działają właśnie teraz.",
-    intro: "Każdy z nich jest na produkcji. Case studies z nazwy dostarczył zespół Enter Agents i są publikowane za zgodą klientów; zanonimizowane pochodzą z naszych zespołów enterprise, a odpowiednią referencję przynosimy na spotkanie.",
+    intro: "Każdy z nich jest na produkcji. Klientów opisujemy typologicznie, nie z nazwy — konkretną referencję z nazwą i osobą, do której można zadzwonić, przynosimy na spotkanie.",
     allGo: "Wszystkie case studies →",
     byLabel: byLabel.pl,
     cards: [
@@ -347,7 +347,7 @@ export const caseStudies = {
       },
       {
         id: "energy-service-agent", by: "qube",
-        client: "Lama Energy Group", industry: "Energetyka",
+        client: "Grupa energetyczna", industry: "Energetyka",
         metric: "+87 %", metricLabel: "szybsza reakcja na zapytanie",
         title: "Agentowa obsługa klienta, która nigdy się nie zamyka.",
         impact: "Agent obsługuje całą fazę przed kontaktem — czat, e-mail i formularze. Odpowiada z bazy produktowej, kwalifikuje zapytanie według ustalonych kryteriów i rezerwuje spotkanie w kalendarzu konkretnej osoby. Praca całodobowa bez zwiększania zespołu, 35 % więcej kwalifikowanych spotkań.",
@@ -355,7 +355,7 @@ export const caseStudies = {
       },
       {
         id: "jt-investing", by: "qube",
-        client: "J&T Investing", industry: "Finanse",
+        client: "Grupa inwestycyjna", industry: "Finanse",
         metric: "10×", metricLabel: "produktywność zespołu analityków",
         title: "Autonomiczna inteligencja portfela nad 100+ spółkami.",
         impact: "Sieć wyspecjalizowanych agentów obserwuje tysiące źródeł całodobowo, oddziela sygnał od szumu i rano dostarcza briefing. Analiza, która zajmowała tygodnie, powstaje w trzy do pięciu minut.",
@@ -363,7 +363,7 @@ export const caseStudies = {
       },
       {
         id: "orel-re", by: "qube",
-        client: "OREL RE", industry: "Hotelarstwo · nieruchomości",
+        client: "Grupa hotelowa i nieruchomości", industry: "Hotelarstwo · nieruchomości",
         metric: "85 %", metricLabel: "szybsze zatwierdzanie projektów",
         title: "Zatwierdzenia i faktury sterowane przez agentów.",
         impact: "Zatwierdzanie spadło z trzech–czterech tygodni do trzech–pięciu dni, dopasowywanie faktur z ośmiu–dziesięciu godzin tygodniowo do piętnastu minut. Zarząd widzi OPEX i CAPEX na żywo.",
@@ -371,7 +371,7 @@ export const caseStudies = {
       },
       {
         id: "ladeo", by: "qube",
-        client: "Ladeo Lukavec", industry: "Gospodarka odpadami",
+        client: "Operator gospodarki odpadami", industry: "Gospodarka odpadami",
         metric: "30 min → 5 s", metricLabel: "do znalezienia odpowiedzi w przepisach",
         title: "Ekspert regulacyjny, którego może zapytać każdy.",
         impact: "Setki stron przepisów stały się bazą wiedzy, o którą pyta się zwykłym językiem. Wiedza przestała wisieć na dwóch seniorach, a od wdrożenia nie było żadnego incydentu compliance.",
@@ -379,7 +379,7 @@ export const caseStudies = {
       },
       {
         id: "stavbyday", by: "qube",
-        client: "StavbyDay", industry: "Budownictwo",
+        client: "Firma usług budowlanych", industry: "Budownictwo",
         metric: "80 %", metricLabel: "mniej pracy administracyjnej",
         title: "Z papieru i Excela do jednego źródła prawdy.",
         impact: "Sześćdziesiąt godzin tygodniowo przepisywania między systemami zastąpiła jedna baza z automatycznymi przepływami. Firma urosła o 40 % bez zatrudniania administracji, a błędy wprowadzania danych spadły o 93 %.",
@@ -387,7 +387,7 @@ export const caseStudies = {
       },
       {
         id: "eurepol", by: "qube",
-        client: "EUREPOL", industry: "Rolnictwo",
+        client: "Przedsiębiorstwo rolne", industry: "Rolnictwo",
         metric: "73 %", metricLabel: "mniej czasu na szukanie informacji",
         title: "Wirtualny zespół zarządzający dla gospodarstwa prowadzonego zdalnie.",
         impact: "Planowanie serwisów, dokumenty compliance i codzienne pytania obsługuje zestaw połączonych agentów. Właściciel prowadzi operację z dowolnego miejsca, żadna maszyna nie zawiodła przez pominięty serwis.",
@@ -403,7 +403,7 @@ export const caseStudies = {
       },
       {
         id: "slevomat", by: "qube",
-        client: "Slevomat", industry: "E-commerce · adopcja",
+        client: "Platforma e-commerce", industry: "E-commerce · adopcja",
         metric: "90 %", metricLabel: "przeszkolonych menedżerów używa AI codziennie",
         title: "Program ambasadorów AI, a nie kolejne szkolenie.",
         impact: "Trzymiesięczny program obejmujący strategię, narzędzia i zarządzanie zmianą zostawił organizację samodzielną: kompetencje AI w każdym zespole i pięć działających prototypów.",

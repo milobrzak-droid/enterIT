@@ -173,7 +173,7 @@ export const us = {
         tech: "Business Central · Data platform · Power BI · Agent layer",
       },
       {
-        client: "Lama Energy Group", context: "Energy services",
+        client: "Energy group", context: "Energy services",
         metric: "+87%", metricLabel: "faster response to an incoming inquiry",
         problem: "Leads were lost to response time rather than to price. Follow-up took hours or days, and coverage stopped at the end of the business day.",
         built: "An agent that handles the entire pre-contact phase across chat, email and web forms: it answers from the product database, qualifies the inquiry against set criteria, and books the meeting directly in a salesperson's calendar.",
@@ -181,7 +181,7 @@ export const us = {
         tech: "Agents · CRM · Calendar API · NLP", by: "Enter Agents",
       },
       {
-        client: "J&T Investing", context: "Investment management · 100+ portfolio companies",
+        client: "Investment group", context: "Investment management · 100+ portfolio companies",
         metric: "10×", metricLabel: "output from the same analyst team",
         problem: "Monitoring more than a hundred portfolio companies by hand did not scale. Market-critical events were caught late and research reports took weeks.",
         built: "A network of specialized agents running as continuous research infrastructure: scanning agents watch thousands of sources, analytical agents separate signal from noise, and reporting agents deliver a morning briefing.",
@@ -190,7 +190,7 @@ export const us = {
         resultNeed: need("be ready to substantiate the 10x figure — a US buyer will ask how it was derived"),
       },
       {
-        client: "OREL RE", context: "Hospitality and real estate · properties in Prague, Switzerland and Italy",
+        client: "Hospitality and real-estate group", context: "Hospitality and real estate · properties in Prague, Switzerland and Italy",
         metric: "85%", metricLabel: "faster project approvals",
         problem: "Project approvals took three to four weeks across multiple stakeholders, invoice-to-project matching took eight to ten hours a week, and leadership saw budget figures weeks after period close.",
         built: "An agent-driven project and facility management platform: submissions route themselves to the right stakeholders by type, value and location, agents process and categorize invoices into the accounting system, and dashboards show budget status live.",
@@ -198,7 +198,7 @@ export const us = {
         tech: "Agents · OCR · BI dashboards · Multi-currency accounting", by: "Enter Agents",
       },
       {
-        client: "Ladeo Lukavec", context: "Waste management · one of the most heavily regulated sectors",
+        client: "Waste management operator", context: "Waste management · one of the most heavily regulated sectors",
         metric: "30 min → 5 s", metricLabel: "to find a regulatory answer",
         problem: "Staff spent more than thirty minutes searching hundreds of pages of regulation, the knowledge sat with two senior people, and interpretation varied across the team.",
         built: "A knowledge agent over the digitized regulatory library and operating manuals. It answers in plain language, understands the sector's terminology, and flags documents before they expire rather than after.",
@@ -206,7 +206,7 @@ export const us = {
         tech: "Knowledge base · NLP · Document ingest", by: "Enter Agents",
       },
       {
-        client: "StavbyDay", context: "Construction services",
+        client: "Construction services firm", context: "Construction services",
         metric: "80%", metricLabel: "less administrative work",
         problem: "Sixty hours a week went into re-keying data between systems. Records lived across spreadsheets and paper, and admin capacity was the ceiling on growth.",
         built: "One central database as the source of truth, automated workflows connecting the systems, automatic work-order assignment, document processing for invoices and costs, and live performance reporting.",
@@ -233,8 +233,8 @@ export const us = {
     ],
     alsoLabel: "Also running in production",
     also: [
-      ["EUREPOL", "agriculture — a virtual executive team for a farm run remotely, 73% less time spent looking for information"],
-      ["Slevomat", "e-commerce — an AI ambassador program; 90% of trained managers now use AI daily"],
+      ["Agricultural business", "agriculture — a virtual executive team for a farm run remotely, 73% less time spent looking for information"],
+      ["E-commerce platform", "e-commerce — an AI ambassador program; 90% of trained managers now use AI daily"],
       ["Boutique marketing agency", "marketing — an AI social media manager; three times the clients with the same team"],
       ["Construction group", "construction — an internal application with an API layer and Power BI; roughly 180 hours a month returned"],
     ],

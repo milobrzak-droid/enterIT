@@ -7,6 +7,8 @@
 export const pl = [
   {
     slug: "faktury",
+    photo: "/assets/decor/accounting.webp",
+    photoAlt: "Księgowa przy dwóch monitorach: na jednym system księgowy, na drugim faktura od dostawcy w PDF.",
     tag: "Faktury",
     h1: "Faktury, które księgują się same.",
     lead: "Agent wyciąga dane z faktury, dopasowuje ją do zamówienia i kieruje do zatwierdzenia. Nikt niczego nie przepisuje.",
@@ -87,6 +89,8 @@ export const pl = [
   },
   {
     slug: "magazyn",
+    photo: "/assets/decor/warehouse.webp",
+    photoAlt: "Magazynier przy regale porównuje list przewozowy z odczytem ze skanera.",
     tag: "Magazyn",
     h1: "Zróbcie zdjęcie listu przewozowego. Towar przyjmie się sam.",
     lead: "Ktoś fotografuje list przewozowy; agent wyciąga dane, dopasowuje do zamówienia i przyjmuje towar.",
@@ -157,6 +161,8 @@ export const pl = [
   },
   {
     slug: "karty-pracy",
+    photo: "/assets/decor/fieldwork.webp",
+    photoAlt: "Technik serwisu wypełnia raport w telefonie przy maszynie, którą właśnie naprawił.",
     tag: "Karty pracy",
     h1: "Karty pracy z terenu: zebrane, zatwierdzone, gotowe do faktury.",
     lead: "Agent zbiera karty pracy, przypisuje każdy wpis do właściwego zlecenia i przygotowuje dane do fakturowania oraz płac.",

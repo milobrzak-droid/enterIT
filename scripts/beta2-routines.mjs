@@ -28,6 +28,8 @@ import { pl } from "./beta2-routines-pl.mjs";
 const en = [
   {
     slug: "invoices",
+    photo: "/assets/decor/accounting.webp",
+    photoAlt: "An accountant at two screens: the accounting system on one, a supplier invoice PDF on the other.",
     tag: "Invoices",
     h1: "Invoices that post themselves into accounting.",
     lead: "The agent extracts each invoice, matches it to the purchase order and routes it for approval. Nobody re-keys anything.",
@@ -108,6 +110,8 @@ const en = [
   },
   {
     slug: "warehouse",
+    photo: "/assets/decor/warehouse.webp",
+    photoAlt: "A warehouse worker checking a delivery note against a handheld scanner beside labelled racking.",
     tag: "Warehouse",
     h1: "Photograph the packing slip. The goods book themselves in.",
     lead: "Someone photographs the delivery note; the agent extracts it, matches it to the order and books the goods in.",
@@ -178,6 +182,8 @@ const en = [
   },
   {
     slug: "timesheets",
+    photo: "/assets/decor/fieldwork.webp",
+    photoAlt: "A service technician filling in a job sheet on his phone in front of the machine he has just repaired.",
     tag: "Timesheets",
     h1: "Field timesheets, collected, approved and ready to invoice.",
     lead: "The agent collects timesheets, matches each entry to the right job, and prepares both the invoicing and the payroll input.",

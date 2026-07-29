@@ -9,6 +9,8 @@
 export const cs = [
   {
     slug: "faktury",
+    photo: "/assets/decor/accounting.webp",
+    photoAlt: "Účetní u dvou monitorů: na jednom účetní systém, na druhém PDF faktury od dodavatele.",
     tag: "Faktury",
     h1: "Faktury, které se zaúčtují samy.",
     lead: "Agent fakturu vytěží, spáruje s objednávkou a pošle ke schválení. Nikdo nic nepřepisuje.",
@@ -89,6 +91,8 @@ export const cs = [
   },
   {
     slug: "sklad",
+    photo: "/assets/decor/warehouse.webp",
+    photoAlt: "Skladník u regálu porovnává dodací list s načtenou položkou v terminálu.",
     tag: "Sklad",
     h1: "Vyfoťte dodací list. Zboží se naskladní samo.",
     lead: "Někdo vyfotí dodací list; agent ho vytěží, spáruje s objednávkou a zboží naskladní.",
@@ -159,6 +163,8 @@ export const cs = [
   },
   {
     slug: "vykazy",
+    photo: "/assets/decor/fieldwork.webp",
+    photoAlt: "Servisní technik vyplňuje výkaz v telefonu přímo u stroje, který právě opravil.",
     tag: "Pracovní výkazy",
     h1: "Výkazy z terénu, sesbírané, schválené a připravené k fakturaci.",
     lead: "Agent sesbírá výkazy, přiřadí každý záznam ke správné zakázce a připraví podklad pro fakturaci i pro mzdy.",

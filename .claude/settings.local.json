@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "/Users/jiricq/Desktop/projects/Enter/aikurzy/old/components/shared"
+    ],
+    "allow": [
+      "Read(//Users/jiricq/Desktop/projects/Enter/aikurzy/old/pages/**)"
+    ]
+  }
+}

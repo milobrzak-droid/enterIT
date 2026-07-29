@@ -8,6 +8,8 @@
 export const de = [
   {
     slug: "rechnungen",
+    photo: "/assets/decor/accounting.webp",
+    photoAlt: "Eine Buchhalterin an zwei Bildschirmen: links das Buchhaltungssystem, rechts die Lieferantenrechnung als PDF.",
     tag: "Rechnungen",
     h1: "Rechnungen, die sich selbst buchen.",
     lead: "Der Agent extrahiert jede Rechnung, gleicht sie mit der Bestellung ab und schickt sie zur Freigabe. Niemand tippt etwas ab.",
@@ -88,6 +90,8 @@ export const de = [
   },
   {
     slug: "lager",
+    photo: "/assets/decor/warehouse.webp",
+    photoAlt: "Ein Lagermitarbeiter gleicht am Regal den Lieferschein mit dem Handscanner ab.",
     tag: "Lager",
     h1: "Lieferschein fotografieren. Die Ware bucht sich selbst ein.",
     lead: "Jemand fotografiert den Lieferschein; der Agent extrahiert ihn, gleicht ihn mit der Bestellung ab und bucht die Ware ein.",
@@ -158,6 +162,8 @@ export const de = [
   },
   {
     slug: "stundenzettel",
+    photo: "/assets/decor/fieldwork.webp",
+    photoAlt: "Ein Servicetechniker füllt den Arbeitsbericht am Telefon aus, direkt vor der reparierten Maschine.",
     tag: "Stundenzettel",
     h1: "Stundenzettel aus dem Feld: erfasst, freigegeben, bereit zur Rechnung.",
     lead: "Der Agent sammelt die Stundenzettel ein, ordnet jeden Eintrag dem richtigen Auftrag zu und bereitet Rechnung und Lohn vor.",

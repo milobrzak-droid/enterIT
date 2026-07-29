@@ -9,6 +9,7 @@ export const routineUi = {
   en: {
     eyebrow: "Ready-made solutions",
     cta: "Talk through your version of this",
+    todayEyebrow: "How it looks today",
     painKicker: "Where the time goes",
     painH2: "What this looks like today.",
     painAsk: "If none of these three is familiar, this is probably not your first project — and we would rather tell you that than sell you one.",
@@ -48,6 +49,7 @@ export const routineUi = {
   cs: {
     eyebrow: "Hotová řešení",
     cta: "Probrat vaši verzi tohohle",
+    todayEyebrow: "Jak to vypadá dnes",
     painKicker: "Kam mizí čas",
     painH2: "Jak to vypadá dnes.",
     painAsk: "Jestli vám ani jedna ze tří vět nezní povědomě, tohle nejspíš není váš první projekt — a radši vám to řekneme, než abychom vám ho prodali.",
@@ -87,6 +89,7 @@ export const routineUi = {
   de: {
     eyebrow: "Fertige Lösungen",
     cta: "Ihre Variante davon besprechen",
+    todayEyebrow: "So sieht es heute aus",
     painKicker: "Wo die Zeit hingeht",
     painH2: "So sieht es heute aus.",
     painAsk: "Wenn Ihnen keiner dieser drei Sätze bekannt vorkommt, ist das vermutlich nicht Ihr erstes Projekt — und das sagen wir Ihnen lieber, als Ihnen eines zu verkaufen.",
@@ -126,6 +129,7 @@ export const routineUi = {
   pl: {
     eyebrow: "Gotowe rozwiązania",
     cta: "Omówmy waszą wersję tego",
+    todayEyebrow: "Jak to wygląda dziś",
     painKicker: "Gdzie ucieka czas",
     painH2: "Jak to wygląda dziś.",
     painAsk: "Jeśli żadne z tych trzech zdań nie brzmi znajomo, to prawdopodobnie nie jest wasz pierwszy projekt — i wolimy to powiedzieć, niż go wam sprzedać.",

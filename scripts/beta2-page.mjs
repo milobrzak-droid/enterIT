@@ -59,11 +59,13 @@ export const nd = (n, label = "Needs data") =>
 export function key({
   span = 4, tone = "white", href, legend, eyebrow, title, size, sub: subText, body,
   list, flow, meta, rule, stat, statLabel, go, mascot: face, needs, needsLabel, extra,
+  photo, alt, quiet, wide,
 }) {
   const sizeClass = size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
   const Tag = href ? "a" : "div";
   const statClass = stat && stat.length > 9 ? " key-stat--sm" : "";
-  return `      <${Tag} class="key key--${tone}"${href ? ` href="${href}"` : ""} style="grid-column:span ${span}">
+  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}"${href ? ` href="${href}"` : ""} style="grid-column:span ${span}">
+        ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${face ? `<img class="key-mascot" src="${mascotFile(face, tone)}" alt="" loading="lazy">` : ""}
         ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
         ${legend ? `<span class="key-legend">${e(legend)}</span>` : ""}
