@@ -139,7 +139,7 @@ function renderIntegrations(code) {
     keys: [
       key({
         span: 12, tone: "navy", mascot: "blue",
-        body: [`${C.numbersBodyA} ${total} ${C.numbersBodyB}`, C.numbersBodyC],
+        body: [`${C.numbersBodyA} ${total} ${C.numbersBodyB}`],
       }),
     ],
   });

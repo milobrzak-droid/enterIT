@@ -7,7 +7,7 @@
  */
 export const routineUi = {
   en: {
-    eyebrow: "Ready-made solutions",
+    eyebrow: "Proven use cases",
     cta: "Talk through your version of this",
     todayEyebrow: "How it looks today",
     painKicker: "Where the time goes",
@@ -23,7 +23,7 @@ export const routineUi = {
     runsTitle: "Your infrastructure or EU cloud. Your call, made before we build.",
     runsList: [
       "Encrypted in transit and at rest, with on-premises operation available for sensitive data.",
-      "GDPR and EU AI Act controls designed in at the start.",
+      "Designed to support your GDPR and EU AI Act requirements from the start.",
       "Role-based access, approval steps and a complete audit trail.",
     ],
     setupKicker: "What we need from you",
@@ -47,7 +47,7 @@ export const routineUi = {
     moreH2: "Same approach, different process.",
   },
   cs: {
-    eyebrow: "Hotová řešení",
+    eyebrow: "Ověřené scénáře",
     cta: "Probrat vaši verzi tohohle",
     todayEyebrow: "Jak to vypadá dnes",
     painKicker: "Kam mizí čas",
@@ -63,7 +63,7 @@ export const routineUi = {
     runsTitle: "Vaše infrastruktura nebo EU cloud. Rozhodnete vy, ještě než se začne stavět.",
     runsList: [
       "Šifrované při přenosu i v úložišti, u citlivých dat s možností provozu on-premise.",
-      "GDPR a EU AI Act zapracované už v návrhu.",
+      "Návrh od začátku podporuje vaše požadavky na GDPR i EU AI Act.",
       "Role, schvalovací kroky a úplná auditní stopa.",
     ],
     setupKicker: "Co potřebujeme od vás",
@@ -87,7 +87,7 @@ export const routineUi = {
     moreH2: "Stejný přístup, jiný proces.",
   },
   de: {
-    eyebrow: "Fertige Lösungen",
+    eyebrow: "Bewährte Szenarien",
     cta: "Ihre Variante davon besprechen",
     todayEyebrow: "So sieht es heute aus",
     painKicker: "Wo die Zeit hingeht",
@@ -103,7 +103,7 @@ export const routineUi = {
     runsTitle: "Ihre Infrastruktur oder EU-Cloud. Ihre Wahl, getroffen bevor wir bauen.",
     runsList: [
       "Verschlüsselt bei Übertragung und Speicherung, mit On-premises-Betrieb für sensible Daten.",
-      "DSGVO und EU AI Act von Anfang an eingeplant.",
+      "Der Entwurf unterstützt Ihre DSGVO- und EU-AI-Act-Anforderungen von Anfang an.",
       "Rollenbasierter Zugriff, Freigabeschritte und ein vollständiger Audit-Trail.",
     ],
     setupKicker: "Was wir von Ihnen brauchen",
@@ -127,7 +127,7 @@ export const routineUi = {
     moreH2: "Gleicher Ansatz, anderer Prozess.",
   },
   pl: {
-    eyebrow: "Gotowe rozwiązania",
+    eyebrow: "Sprawdzone scenariusze",
     cta: "Omówmy waszą wersję tego",
     todayEyebrow: "Jak to wygląda dziś",
     painKicker: "Gdzie ucieka czas",
@@ -143,7 +143,7 @@ export const routineUi = {
     runsTitle: "Wasza infrastruktura albo chmura UE. Wasz wybór, podjęty zanim zaczniemy budować.",
     runsList: [
       "Szyfrowane w tranzycie i w spoczynku, z możliwością pracy on-premise dla danych wrażliwych.",
-      "RODO i EU AI Act wpisane w projekt od początku.",
+      "Projekt od początku wspiera wasze wymagania RODO i EU AI Act.",
       "Dostęp według ról, kroki zatwierdzania i pełna ścieżka audytu.",
     ],
     setupKicker: "Czego potrzebujemy od was",

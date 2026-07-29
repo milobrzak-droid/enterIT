@@ -24,9 +24,12 @@
 export const voice = {
   cs: {
     hero: {
-      h1: "Performance AI tým, který dodává do provozu.",
-      lead: "Baví nás úlohy, které je potřeba rozlousknout. Od agentní platformy po jednoho agenta — postavíme to do vašich systémů a provozujeme. Ne pilot, ne demo.",
-      note: "120+ projektů v provozu · 60+ systémů · 75 lidí na vše",
+      eyebrow: "Podnikové AI · software · automatizace",
+      h1: "Stavíme podnikové AI a software, které obstojí v provozu.",
+      ctaPrimary: "Probrat projekt",
+      ctaSecondary: "Hledám dodací tým",
+      lead: "75 specialistů na vývoj, AI, data, integrace a cloud. Navrhujeme, stavíme a dlouhodobě provozujeme komplexní systémy pro velké firmy a technologické partnery po celém světě.",
+      note: "120+ dokončených projektů · 60+ integrovaných systémů · 75 specialistů",
     },
     chapters: [
       {
@@ -35,7 +38,7 @@ export const voice = {
         ask: "Máte proces, který stojí víc, než by měl. Zvládneme ho celý — od návrhu přes kód až po pondělní ráno v provozu. Tři disciplíny, jeden tým, jedno telefonní číslo.",
       },
       {
-        kicker: "Hotová řešení",
+        kicker: "Ověřené scénáře",
         title: "Začněte tím, co vás štve nejvíc.",
         ask: "Nic z toho není raketová věda a většinu už jsme jednou postavili. Najděte svou rutinu a rovnou uvidíte, co do ní leze a co z ní vypadne ven.",
       },
@@ -57,12 +60,12 @@ export const voice = {
       {
         kicker: "Provoz a záruky",
         title: "Po spuštění nezmizíme.",
-        ask: "Tohle je ta část, kterou většina dodavatelů radši přeskočí: kdo drží službu v běhu, komu patří kód a co se stane, když se rozhodnete odejít. Máme to ve smlouvě, ne v prezentaci.",
+        ask: "Ještě před zahájením projektu definujeme provozní odpovědnost, reakční doby, vlastnictví kódu a dat i postup předání při ukončení spolupráce.",
       },
       {
         kicker: "Kdo jsme",
-        title: "75 lidí, tři týmy, jedno jméno pod tím.",
-        ask: "Není to síť externistů. Je to jedna firma, jedna smlouva a konkrétní člověk, který to zvedne, když v sedm ráno něco spadne.",
+        title: "75 specialistů. Jeden tým, jedna odpovědnost.",
+        ask: "Není to síť externistů. Jedna firma, jedna smlouva a jmenovité vedení zakázky, které za výsledek odpovídá.",
       },
       {
         kicker: "Váš krok",
@@ -86,7 +89,7 @@ export const voice = {
     ],
     ops: [
       { title: "Ručíme za běh", text: "Dostupnost, reakční doby, dohled 24/7, zálohy i aktualizace pod jedním SLA." },
-      { title: "Kód a data jsou vaše", text: "Ve smlouvě je černé na bílém, komu patří kód, data i dokumentace — a jak proběhne předání, kdybychom skončili." },
+      { title: "Kód a data jsou vaše", text: "Ve smlouvě je černé na bílém, komu patří kód, data i dokumentace — včetně postupu předání při ukončení spolupráce." },
       { title: "Bezpečnost řešíme v návrhu", text: "EU cloud nebo on-premise, šifrování, role, oprávnění a auditní stopa, kterou přečte i auditor." },
     ],
     labels: {
@@ -113,7 +116,7 @@ export const voice = {
       standupAlt: "Tři vývojáři u tabule s nakresleným tokem",
       supportEyebrow: "Po spuštění",
       supportTitle: "Někdo to zvedne.",
-      supportSub: "Provoz není adresa podpory. Je to konkrétní člověk, který zná váš systém a ví, co se stane, když ho v sedm ráno vzbudíte.",
+      supportSub: "Provoz není adresa podpory. Je to konkrétní člověk, který zná váš systém — s definovanou eskalací a zastupitelností.",
       supportAlt: "Člověk z delivery týmu u svého pracovního místa",
       teamGo: "Poznat celý tým →",
       roiGo: "Otevřít kalkulačku →",
@@ -130,7 +133,7 @@ export const voice = {
       reachList: ["Tři týmy, každý na svou oblast", "Evropské standardy, evropská data", "Časové pásmo řešíme, ne omlouváme"],
       hiringPill: "Hledáme lidi",
       hiringTitle: "Stavějte systémy, které opravdu naběhnou.",
-      hiringSub: "Žádný hřbitov proof-of-conceptů. Dodáte to do provozu a pak to provozujete.",
+      hiringSub: "Dodáte to do provozu a pak to provozujete — a to je ta práce, která za to stojí.",
       bubbleSay: "Řekněte nám proces, který vás brzdí. Řekneme vám na rovinu, jestli se ho vyplatí automatizovat.",
       startPress: "zmáčkni enter",
       artHint: "Sem přijde fotka",
@@ -139,9 +142,12 @@ export const voice = {
 
   en: {
     hero: {
-      h1: "A performance AI team that ships to production.",
-      lead: "We like the problems that have to be cracked. From an agentic platform to a single agent — built into your systems, then run by us. Not a pilot, not a demo.",
-      note: "120+ projects live · 60+ systems · 75 people, end to end",
+      eyebrow: "Enterprise AI · Software Engineering · Automation",
+      h1: "Enterprise AI and software engineering, built for production.",
+      ctaPrimary: "Discuss a project",
+      ctaSecondary: "Extend my delivery team",
+      lead: "A 75-person team across software, AI, data, integrations and cloud. We design, build and operate complex systems for enterprises and technology partners worldwide.",
+      note: "120+ projects delivered · 60+ systems integrated · 75 specialists",
     },
     chapters: [
       {
@@ -150,7 +156,7 @@ export const voice = {
         ask: "You have a process that costs more than it should. We can take the whole thing — design, code, and Monday morning in production. Three disciplines, one team, one phone number.",
       },
       {
-        kicker: "Ready-made solutions",
+        kicker: "Proven use cases",
         title: "Start with whatever annoys you most.",
         ask: "None of this is rocket science and we have built most of it before. Find your routine and you will see straight away what goes in and what comes back out.",
       },
@@ -172,12 +178,12 @@ export const voice = {
       {
         kicker: "Operations and guarantees",
         title: "We do not disappear at go-live.",
-        ask: "This is the part most vendors would rather skip: who keeps the service running, who owns the code, and what happens if you decide to leave. It is in our contract, not in a slide.",
+        ask: "Before delivery begins, we agree on operational ownership, response times, code and data rights and the handover process if the engagement ends.",
       },
       {
         kicker: "Who we are",
-        title: "75 people, three teams, one name on it.",
-        ask: "This is not a network of freelancers. It is one company, one contract, and a specific person who picks up when something falls over at seven in the morning.",
+        title: "75 specialists. One team, one accountable partner.",
+        ask: "This is not a network of freelancers. One company, one contract, and named engagement leadership accountable for the outcome.",
       },
       {
         kicker: "Your move",
@@ -201,7 +207,7 @@ export const voice = {
     ],
     ops: [
       { title: "We answer for uptime", text: "Availability, response times, 24/7 monitoring, backups and updates, all under one SLA." },
-      { title: "The code and the data are yours", text: "The contract says in plain words who owns the code, the data and the documentation — and how handover works if we ever stop." },
+      { title: "The code and the data are yours", text: "The contract says in plain words who owns the code, the data and the documentation — including the handover procedure if the engagement ends." },
       { title: "Security is part of the design", text: "EU cloud or on-premise, encryption, roles, permissions, and an audit trail your auditor can actually read." },
     ],
     labels: {
@@ -228,7 +234,7 @@ export const voice = {
       standupAlt: "Three engineers at a whiteboard with the flow drawn out",
       supportEyebrow: "After go-live",
       supportTitle: "Someone picks up.",
-      supportSub: "Operations is not a support address. It is a specific person who knows your system and knows what happens if you wake them at seven in the morning.",
+      supportSub: "Operations is not a support address. It is a specific person who knows your system — with a defined escalation path and cover.",
       supportAlt: "Someone from the delivery team at their desk",
       teamGo: "Meet the whole team →",
       roiGo: "Open the calculator →",
@@ -245,7 +251,7 @@ export const voice = {
       reachList: ["Three teams, each for its own domain", "European standards, European data", "We solve the time zone rather than apologize for it"],
       hiringPill: "We are hiring",
       hiringTitle: "Build systems that actually go live.",
-      hiringSub: "No proof-of-concept graveyard. You ship it to production and then you run it.",
+      hiringSub: "You ship it to production and then you run it — which is the job worth having.",
       bubbleSay: "Tell us the process that is slowing your team down. We will tell you straight whether it is worth automating.",
       startPress: "press enter",
       artHint: "Photo goes here",
@@ -254,9 +260,12 @@ export const voice = {
 
   de: {
     hero: {
-      h1: "Ein Performance-KI-Team, das in den Betrieb liefert.",
-      lead: "Uns reizen Aufgaben, die man knacken muss. Von der Agentenplattform bis zum einzelnen Agenten — gebaut in Ihre Systeme und von uns betrieben. Kein Pilot, keine Demo.",
-      note: "120+ Projekte live · 60+ Systeme · 75 Personen",
+      eyebrow: "Enterprise-KI · Software-Engineering · Automatisierung",
+      h1: "Enterprise-KI und Software, gebaut für den Produktivbetrieb.",
+      ctaPrimary: "Projekt besprechen",
+      ctaSecondary: "Delivery-Team erweitern",
+      lead: "Ein Team von 75 Spezialistinnen und Spezialisten für Software, KI, Daten, Integrationen und Cloud. Wir konzipieren, bauen und betreiben komplexe Systeme für Unternehmen und Technologiepartner weltweit.",
+      note: "120+ umgesetzte Projekte · 60+ integrierte Systeme · 75 Spezialisten",
     },
     chapters: [
       {
@@ -265,12 +274,12 @@ export const voice = {
         ask: "Sie haben einen Prozess, der mehr kostet als nötig. Wir übernehmen ihn ganz — Entwurf, Code und der Montagmorgen im Betrieb. Drei Disziplinen, ein Team, eine Telefonnummer.",
       },
       {
-        kicker: "Fertige Lösungen",
+        kicker: "Bewährte Szenarien",
         title: "Fangen Sie mit dem an, was Sie am meisten stört.",
         ask: "Nichts davon ist Raketenwissenschaft, und das meiste haben wir schon gebaut. Finden Sie Ihre Routine, und Sie sehen sofort, was hineingeht und was herauskommt.",
       },
       {
-        kicker: "Gelieferte Arbeit",
+        kicker: "Ergebnisse",
         title: "Systeme, die sich den Menschen anpassen.",
         ask: "Das läuft bei unseren Kunden und tut seine Arbeit. Niemand musste sich auf ein neues Werkzeug umgewöhnen — das System hat sich danach gerichtet, wie die Leute ohnehin arbeiten, nicht umgekehrt. Die Zahlen unten sind im Betrieb gemessen; die namentlichen Fallstudien lieferte unser Team Enter Agents mit Zustimmung der Kunden.",
       },
@@ -287,12 +296,12 @@ export const voice = {
       {
         kicker: "Betrieb und Garantien",
         title: "Nach dem Go-live verschwinden wir nicht.",
-        ask: "Das ist der Teil, den die meisten Anbieter lieber überspringen: wer den Dienst am Laufen hält, wem der Code gehört und was passiert, wenn Sie gehen wollen. Bei uns steht das im Vertrag, nicht auf einer Folie.",
+        ask: "Bevor die Umsetzung beginnt, legen wir Betriebsverantwortung, Reaktionszeiten, Code- und Datenrechte sowie den Übergabeprozess bei Vertragsende fest.",
       },
       {
         kicker: "Wer wir sind",
-        title: "75 Menschen, drei Teams, ein Name darunter.",
-        ask: "Kein Netzwerk von Freelancern. Ein Unternehmen, ein Vertrag und eine konkrete Person, die abnimmt, wenn morgens um sieben etwas ausfällt.",
+        title: "75 Spezialisten. Ein Team, eine Verantwortung.",
+        ask: "Kein Netzwerk von Freelancern. Ein Unternehmen, ein Vertrag und eine benannte Projektleitung, die für das Ergebnis einsteht.",
       },
       {
         kicker: "Ihr Zug",
@@ -306,13 +315,13 @@ export const voice = {
       { title: "KI-Agenten im Echtbetrieb", text: "Ein Agent bekommt ein Ziel, eine Grenze und Werkzeuge und wählt die Schritte selbst. Sensibles genehmigt ein Mensch, jede Aktion bleibt nachvollziehbar.",
         list: ["Dokumenten- und E-Mail-Extraktion", "Wissensagenten, die die Quelle nennen", "Reporting über das ERP in normaler Sprache"] },
       { title: "Maßgeschneiderte Lösungen", text: "Für den Punkt, an dem Standardsoftware endet: eigene Anwendung, die Integrations- und Datenschicht darunter, und ein Betrieb, der auch danach dafür haftet.",
-        list: ["Eigene Anwendungen und Portale", "Integration auch ohne API", "Betrieb unter SLA, mit benanntem Eigentümer"] },
+        list: ["Eigene Anwendungen und Portale", "Integration auch ohne API", "Betrieb unter SLA, mit benannter Verantwortlichkeit"] },
     ],
     stages: [
       { title: "Finden, wo es wirklich weh tut", text: "Wir erfassen Arbeitsvolumen, Ausnahmen, Daten und das, was der heutige Weg Sie tatsächlich kostet." , time: "1–2 Wochen" },
       { title: "Ausrechnen, ob es sich lohnt", text: "Ausgangslage, erwartete Einsparung, Risiken und eine klare Bedingung, wann der Pilot erfolgreich ist." , time: "2–3 Wochen" },
       { title: "Den Piloten auf echten Daten bauen", text: "Wir binden ihn an die echten Systeme an und messen den Nutzen an echter Arbeit, nicht an einer Demo." , time: "4 Wochen bis mehrere Monate" },
-      { title: "Den Betrieb übernehmen", text: "Monitoring, Sicherheit, SLA und Weiterentwicklung. Es gibt einen konkreten Eigentümer, und der hat einen Namen." , time: "laufend, über Jahre" },
+      { title: "Den Betrieb übernehmen", text: "Monitoring, Sicherheit, SLA und Weiterentwicklung — mit einer benannten verantwortlichen Person." , time: "laufend, über Jahre" },
     ],
     ops: [
       { title: "Wir haften für den Betrieb", text: "Verfügbarkeit, Reaktionszeiten, Überwachung rund um die Uhr, Backups und Updates unter einem SLA." },
@@ -343,7 +352,7 @@ export const voice = {
       standupAlt: "Drei Entwickler am Whiteboard mit dem aufgezeichneten Ablauf",
       supportEyebrow: "Nach dem Go-live",
       supportTitle: "Jemand geht ran.",
-      supportSub: "Betrieb ist keine Support-Adresse. Es ist eine bestimmte Person, die Ihr System kennt und weiß, was passiert, wenn Sie sie um sieben Uhr morgens wecken.",
+      supportSub: "Betrieb ist keine Support-Adresse. Es ist eine bestimmte Person, die Ihr System kennt — mit definierter Eskalation und Vertretung.",
       supportAlt: "Jemand aus dem Delivery-Team am Arbeitsplatz",
       teamGo: "Das ganze Team →",
       roiGo: "Rechner öffnen →",
@@ -360,7 +369,7 @@ export const voice = {
       reachList: ["Drei Teams, jedes für sein Gebiet", "Europäische Standards, europäische Daten", "Die Zeitzone lösen wir, statt sie zu entschuldigen"],
       hiringPill: "Wir stellen ein",
       hiringTitle: "Systeme bauen, die wirklich live gehen.",
-      hiringSub: "Kein Proof-of-Concept-Friedhof. Sie liefern es in den Betrieb und betreiben es dann.",
+      hiringSub: "Sie liefern in den Produktivbetrieb und betreiben es dann — das ist die Aufgabe, die zählt.",
       bubbleSay: "Nennen Sie uns den Prozess, der Ihr Team bremst. Wir sagen Ihnen offen, ob sich Automatisierung lohnt.",
       startPress: "Enter drücken",
       artHint: "Hier kommt ein Foto",
@@ -369,9 +378,12 @@ export const voice = {
 
   pl: {
     hero: {
-      h1: "Performance AI team, który dowozi na produkcję.",
-      lead: "Lubimy zadania, które trzeba rozgryźć. Od platformy agentowej po pojedynczego agenta — wbudowane w wasze systemy i utrzymywane przez nas. Nie pilot, nie demo.",
-      note: "120+ projektów live · 60+ systemów · 75 osób",
+      eyebrow: "AI dla firm · Software engineering · Automatyzacja",
+      h1: "Budujemy firmowe AI i oprogramowanie, które sprawdzają się w produkcji.",
+      ctaPrimary: "Porozmawiajmy o projekcie",
+      ctaSecondary: "Szukam zespołu delivery",
+      lead: "75 specjalistów od oprogramowania, AI, danych, integracji i chmury. Projektujemy, budujemy i długoterminowo utrzymujemy złożone systemy dla dużych firm i partnerów technologicznych na całym świecie.",
+      note: "120+ zrealizowanych projektów · 60+ zintegrowanych systemów · 75 specjalistów",
     },
     chapters: [
       {
@@ -380,7 +392,7 @@ export const voice = {
         ask: "Macie proces, który kosztuje więcej, niż powinien. Weźmiemy go w całości — projekt, kod i poniedziałkowy poranek na produkcji. Trzy dyscypliny, jeden zespół, jeden numer telefonu.",
       },
       {
-        kicker: "Gotowe rozwiązania",
+        kicker: "Sprawdzone scenariusze",
         title: "Zacznijcie od tego, co najbardziej irytuje.",
         ask: "Nic z tego nie jest fizyką jądrową, a większość już kiedyś zbudowaliśmy. Znajdźcie swoją rutynę, a od razu zobaczycie, co do niej wchodzi i co z niej wychodzi.",
       },
@@ -402,12 +414,12 @@ export const voice = {
       {
         kicker: "Utrzymanie i gwarancje",
         title: "Po wdrożeniu nie znikamy.",
-        ask: "To ta część, którą większość dostawców woli pominąć: kto utrzymuje usługę, do kogo należy kod i co się stanie, gdy zdecydujecie się odejść. U nas jest to w umowie, nie na slajdzie.",
+        ask: "Zanim zacznie się realizacja, ustalamy odpowiedzialność operacyjną, czasy reakcji, prawa do kodu i danych oraz procedurę przekazania na koniec współpracy.",
       },
       {
         kicker: "Kim jesteśmy",
-        title: "75 osób, trzy zespoły, jedno nazwisko pod tym.",
-        ask: "To nie sieć freelancerów. To jedna firma, jedna umowa i konkretna osoba, która odbierze, gdy o siódmej rano coś padnie.",
+        title: "75 specjalistów. Jeden zespół, jedna odpowiedzialność.",
+        ask: "To nie sieć freelancerów. Jedna firma, jedna umowa i imiennie wskazane kierownictwo zlecenia, które odpowiada za wynik.",
       },
       {
         kicker: "Wasz ruch",
@@ -431,7 +443,7 @@ export const voice = {
     ],
     ops: [
       { title: "Odpowiadamy za działanie", text: "Dostępność, czasy reakcji, nadzór 24/7, kopie zapasowe i aktualizacje w ramach jednego SLA." },
-      { title: "Kod i dane są wasze", text: "W umowie stoi czarno na białym, do kogo należy kod, dane i dokumentacja — i jak wygląda przekazanie, gdybyśmy skończyli." },
+      { title: "Kod i dane są wasze", text: "W umowie stoi czarno na białym, do kogo należy kod, dane i dokumentacja — łącznie z procedurą przekazania na koniec współpracy." },
       { title: "Bezpieczeństwo projektujemy od początku", text: "Chmura UE albo on-premise, szyfrowanie, role, uprawnienia i ścieżka audytu, którą audytor naprawdę przeczyta." },
     ],
     labels: {
@@ -458,7 +470,7 @@ export const voice = {
       standupAlt: "Trzech inżynierów przy tablicy z narysowanym przepływem",
       supportEyebrow: "Po wdrożeniu",
       supportTitle: "Ktoś odbiera.",
-      supportSub: "Utrzymanie to nie adres wsparcia. To konkretna osoba, która zna wasz system i wie, co się stanie, gdy obudzicie ją o siódmej rano.",
+      supportSub: "Utrzymanie to nie adres wsparcia. To konkretna osoba, która zna wasz system — ze zdefiniowaną eskalacją i zastępowalnością.",
       supportAlt: "Ktoś z zespołu dostawczego przy swoim biurku",
       teamGo: "Poznaj cały zespół →",
       roiGo: "Otwórz kalkulator →",
@@ -475,7 +487,7 @@ export const voice = {
       reachList: ["Trzy zespoły, każdy do swojej dziedziny", "Europejskie standardy, europejskie dane", "Strefę czasową rozwiązujemy, a nie tłumaczymy"],
       hiringPill: "Rekrutujemy",
       hiringTitle: "Buduj systemy, które naprawdę ruszają.",
-      hiringSub: "Żadnego cmentarza proof-of-conceptów. Wdrażasz na produkcję i potem to utrzymujesz.",
+      hiringSub: "Wdrażasz na produkcję i potem to utrzymujesz — i to jest praca, która ma sens.",
       bubbleSay: "Powiedzcie nam, który proces was spowalnia. Powiemy wprost, czy warto go automatyzować.",
       startPress: "naciśnij enter",
       artHint: "Tu wejdzie zdjęcie",

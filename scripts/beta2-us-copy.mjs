@@ -316,8 +316,8 @@ export const us = {
     ],
     groupLabel: "Across all three teams",
     group: [
-      { name: "Milo Brzák", role: "Founder & CEO, Enter Group", image: "/assets/team/milo.jpg", body: "Has trained more than 800 people across over a hundred companies. Owns strategy, product and methodology." },
-      { name: "Michaela Klesnárová", role: "Operations & Delivery, Enter Group", image: "/assets/team/klesnarova.jpg", body: "Nearly two decades in enterprise C-level roles. Owns client delivery and production operations across all three teams.", need: need("confirm the two-decades figure") },
+      { name: "Milo Brzák", role: "CEO", image: "/assets/team/milo.jpg", body: "Has trained more than 800 people across over a hundred companies. Owns strategy, product and methodology." },
+      { name: "Michaela Klesnárová", role: "Analytics", image: "/assets/team/klesnarova.jpg", body: "Nearly two decades in enterprise C-level roles. Owns client delivery and production operations across all three teams.", need: need("confirm the two-decades figure") },
     ],
     titlesNote: "Titles above are team-level. Enter Agents and Enter Tech each have their own CEO and founder; Enter Group has one.",
   },

@@ -236,7 +236,7 @@ ${nav.map(([l, h]) => `      <a href="${h}">${e(l)}</a>`).join("\n")}
   </div>
   <div class="foot-line">
     <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-    <span><a href="${boardHref(code)}">${e(ui.overview)}</a> · <a href="/beta/">beta 1</a></span>
+    <span><a href="${boardHref(code)}">${e(ui.overview)}</a></span>
   </div>
 </footer>
 

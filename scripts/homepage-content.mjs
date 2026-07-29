@@ -133,19 +133,19 @@ export const locales = {
       leaders: [
         {
           name: "Milo Brzák",
-          role: "Founder & CEO",
+          role: "CEO",
           image: "/assets/team/milo.jpg",
           text: "120+ firem a 800+ vyškolených lidí. Odpovídá za strategii, produkt a metodiku.",
         },
         {
           name: "Michaela Klesnárová",
-          role: "Operations & Delivery",
+          role: "Analytics",
           image: "/assets/team/klesnarova.jpg",
           text: "Téměř 20 let na C-level pozicích. Řídí klientskou dodávku a produkční provoz.",
         },
         {
           name: "Gašpar Nagy",
-          role: "Founder, Enter Tech",
+          role: "CTO",
           image: "/assets/team/gaspar-nagy.jpg",
           text: "Vede inženýrskou stranu — architekturu enterprise implementací a tým, který je staví a provozuje.",
         },
@@ -310,19 +310,19 @@ export const locales = {
       leaders: [
         {
           name: "Milo Brzák",
-          role: "Founder & CEO",
+          role: "CEO",
           image: "/assets/team/milo.jpg",
           text: "120+ companies and 800+ people trained. Responsible for strategy, product and methodology.",
         },
         {
           name: "Michaela Klesnárová",
-          role: "Operations & Delivery",
+          role: "Analytics",
           image: "/assets/team/klesnarova.jpg",
           text: "Nearly 20 years in C-level roles. Leads client delivery and production operations.",
         },
         {
           name: "Gašpar Nagy",
-          role: "Founder, Enter Tech",
+          role: "CTO",
           image: "/assets/team/gaspar-nagy.jpg",
           text: "Leads the engineering side — the architecture of enterprise implementations and the team that builds and runs them.",
         },
@@ -487,19 +487,19 @@ export const locales = {
       leaders: [
         {
           name: "Milo Brzák",
-          role: "Founder & CEO",
+          role: "CEO",
           image: "/assets/team/milo.jpg",
           text: "120+ Unternehmen und 800+ geschulte Personen. Verantwortlich für Strategie, Produkt und Methodik.",
         },
         {
           name: "Michaela Klesnárová",
-          role: "Operations & Delivery",
+          role: "Analytics",
           image: "/assets/team/klesnarova.jpg",
           text: "Fast 20 Jahre in C-Level-Rollen. Leitet Kundenauslieferung und Produktionsbetrieb.",
         },
         {
           name: "Gašpar Nagy",
-          role: "Founder, Enter Tech",
+          role: "CTO",
           image: "/assets/team/gaspar-nagy.jpg",
           text: "Führt die Engineering-Seite — die Architektur der Enterprise-Implementierungen und das Team, das sie baut und betreibt.",
         },
@@ -664,19 +664,19 @@ export const locales = {
       leaders: [
         {
           name: "Milo Brzák",
-          role: "Founder & CEO",
+          role: "CEO",
           image: "/assets/team/milo.jpg",
           text: "120+ firm i 800+ przeszkolonych osób. Odpowiada za strategię, produkt i metodykę.",
         },
         {
           name: "Michaela Klesnárová",
-          role: "Operations & Delivery",
+          role: "Analytics",
           image: "/assets/team/klesnarova.jpg",
           text: "Prawie 20 lat na stanowiskach C-level. Prowadzi delivery dla klientów i utrzymanie produkcyjne.",
         },
         {
           name: "Gašpar Nagy",
-          role: "Founder, Enter Tech",
+          role: "CTO",
           image: "/assets/team/gaspar-nagy.jpg",
           text: "Prowadzi stronę inżynierską — architekturę wdrożeń enterprise i zespół, który je buduje i utrzymuje.",
         },

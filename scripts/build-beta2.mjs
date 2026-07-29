@@ -840,9 +840,14 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
     ${heroFilm()}
     <span class="hero-wash"></span>
     <div class="hero-say">
+      ${v.hero.eyebrow ? `<span class="hero-eyebrow">${e(v.hero.eyebrow)}</span>` : ""}
       <h1>${e(v.hero.h1)}</h1>
       <p>${e(v.hero.lead)}</p>
       <span class="hero-note">${e(v.hero.note)}</span>
+      <div class="hero-cta-row">
+        <a class="btn btn--go" href="#start">${e(v.hero.ctaPrimary)}</a>
+        <a class="btn btn--onnavy" href="${sub(code, "engagement.html")}">${e(v.hero.ctaSecondary)}</a>
+      </div>
     </div>
     <div class="hero-side">
       <span class="hero-side-label">${e(t.partnersLabel)}</span>
@@ -911,7 +916,7 @@ ${start}
   </div>
   <div class="foot-line">
     <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-    <span><a href="/gdpr.html">${e(page.footer.privacy)}</a> · <a href="/podminky.html">${e(page.footer.terms)}</a> · <a href="/verze1/">${e(page.footer.previous)}</a></span>
+    <span><a href="/gdpr.html">${e(page.footer.privacy)}</a> · <a href="/podminky.html">${e(page.footer.terms)}</a></span>
   </div>
 </footer>
 
