@@ -121,6 +121,16 @@ export function pageHead({ code, eyebrow, h1, lead, meta, cta, bookingUrl, ui })
 /** The whole document. Subpages differ only in `body`. */
 export const SITE = "https://enterit.cz";
 
+/** "Skip to content" for keyboard and screen-reader users, per locale. */
+export const SKIP = {
+  cs: "Přeskočit na obsah", en: "Skip to content",
+  de: "Zum Inhalt springen", pl: "Przejdź do treści",
+};
+export const LANG_ARIA = {
+  cs: "Jazyk webu", en: "Site language", de: "Sprache", pl: "Język strony",
+};
+export const OG_LOCALE = { cs: "cs_CZ", en: "en_US", de: "de_DE", pl: "pl_PL" };
+
 /**
  * Canonical and hreflang for one page, given a function that returns its path
  * in any language. Routine slugs are localised, so the caller supplies the
@@ -151,9 +161,22 @@ export function page({ code, title, description, body, bookingUrl, ui, canonical
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${e(title)}</title>
 <meta name="description" content="${e(description)}">
+<meta name="theme-color" content="#17202E">
 ${canonical ? `<link rel="canonical" href="${SITE}${canonical}">` : ""}
 ${alternates ? alternates.map(([x, href]) => `<link rel="alternate" hreflang="${x}" href="${SITE}${href}">`).join("\n") : ""}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EnterIT">
+<meta property="og:locale" content="${OG_LOCALE[code]}">
+<meta property="og:title" content="${e(title)}">
+<meta property="og:description" content="${e(description)}">
+${canonical ? `<meta property="og:url" content="${SITE}${canonical}">` : ""}
+<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/keys.css">
@@ -161,20 +184,21 @@ ${alternates ? alternates.map(([x, href]) => `<link rel="alternate" hreflang="${
 </head>
 <body>
 
+<a class="skip" href="#main">${e(SKIP[code])}</a>
 <header class="site-head">
   <a href="${boardHref(code)}" aria-label="EnterIT">
-    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT" width="62" height="26">
   </a>
   <nav class="head-nav" aria-label="${e(ui.navLabel)}">
 ${nav.map(([l, h]) => `    <a href="${h}">${e(l)}</a>`).join("\n")}
   </nav>
   <span class="head-right">
     <a class="btn btn--sm" href="${bookingUrl}" target="_blank" rel="noopener">${e(ui.bookShort)}</a>
-    <span class="lang">${langs}</span>
+    <span class="lang" role="group" aria-label="${e(LANG_ARIA[code])}">${langs}</span>
   </span>
 </header>
 
-<main class="board">
+<main class="board" id="main">
 
 ${body}
 
@@ -183,7 +207,7 @@ ${body}
 <footer class="site-foot">
   <div class="foot-grid">
     <div class="foot-col foot-col--who">
-      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT" width="52" height="22">
       <p>${e(ui.footClaim)}</p>
       <p class="foot-reg">
         AI Enter s.r.o.<br>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>404 — stránka nenalezena | EnterIT</title>
+<meta name="description" content="Tahle stránka neexistuje.">
+<meta name="theme-color" content="#17202E">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/keys.css">
+<style>
+/* One key on an empty board. Everything it needs is already in keys.css; this
+   only centres it and sizes the lost-page cap. */
+.lost{min-height:calc(100vh - 120px);display:flex;align-items:center;justify-content:center;
+  padding:24px}
+.lost .key{max-width:560px;width:100%;cursor:default}
+.lost .key-legend{font-size:28px;width:64px;height:64px;line-height:60px}
+.lost h1{margin:18px 0 0;font-family:var(--font-head);font-weight:900;
+  font-size:clamp(28px,4vw,44px);line-height:1;letter-spacing:-.02em}
+.lost p{margin:14px 0 0;font-size:15px;line-height:1.6;opacity:.85}
+.lost .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.lost .en{margin-top:20px;padding-top:16px;padding-right:120px;
+  border-top:1.5px solid rgba(23,32,46,.12);
+  font-family:var(--font-mono);font-size:12px;opacity:.6}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/" aria-label="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+  </a>
+</header>
+
+<main class="lost">
+  <div class="key key--white" style="--hair:#FF848C">
+    <span class="key-legend">?</span>
+    <img class="key-mascot" src="/assets/decor/mascot-red.svg" alt="" width="104" height="104">
+    <h1>Tahle klávesa tu není.</h1>
+    <p>Stránka, kterou hledáte, neexistuje nebo se přestěhovala. Web jsme nedávno
+    přestavěli — staré adresy přesměrováváme, ale některé odkazy mohly zůstat pozadu.</p>
+    <div class="row">
+      <a class="btn btn--go" href="/">Zpět na hlavní stránku</a>
+      <a class="btn" href="/#solutions">Hotová řešení</a>
+    </div>
+    <p class="en">404 — page not found. It may have moved when we rebuilt the site.
+    <a href="/en/">English homepage →</a></p>
+  </div>
+</main>
+
+</body>
+</html>

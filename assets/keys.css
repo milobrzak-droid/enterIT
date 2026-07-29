@@ -647,6 +647,27 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
 .key--navy:hover .key-tint,.key--soft:hover .key-tint{opacity:.3}
 @media(prefers-reduced-motion:reduce){.key-tint{transition:none}}
 
+/* Keyboard and screen-reader path. The skip link stays off-screen until it is
+   focused, then drops in as a keycap of its own. Focus rings use the ink
+   colour with an offset so they read on any tile colour. */
+.skip{position:absolute;left:16px;top:-64px;z-index:100;
+  background:var(--white);color:var(--ink);border:1.5px solid var(--ink);
+  border-radius:12px;padding:10px 18px;font-family:var(--font-mono);
+  font-size:12px;letter-spacing:.06em;text-decoration:none;
+  box-shadow:6px 6px 0 var(--key-side);transition:top .15s}
+.skip:focus{top:16px}
+.key:focus-visible,.head-nav a:focus-visible,.lang a:focus-visible,
+.btn:focus-visible,.foot-col a:focus-visible,.key-go:focus-visible{
+  outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.key--navy:focus-visible,.key--photo:focus-visible{outline-color:var(--white)}
+
+/* Touch devices have no hover, so the tile photographs sit at their hover
+   strength by default there — otherwise half the visitors never see them. */
+@media(hover:none){
+  .key-tint{opacity:.24}
+  .key--navy .key-tint,.key--soft .key-tint{opacity:.28}
+}
+
 .hero-film{position:absolute;inset:0;z-index:-2;overflow:hidden}
 /* When a real clip is in place it takes the same slot and the same treatment as
    the stills, so swapping one for the other changes nothing but the source. */

@@ -38,7 +38,7 @@ import { writeRoutines } from "./build-beta2-routines.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
-import { LOCALES, ROOT_LOCALE, boardHref, sub } from "./beta2-page.mjs";
+import { LANG_ARIA, LOCALES, OG_LOCALE, ROOT_LOCALE, SITE, SKIP, boardHref, sub } from "./beta2-page.mjs";
 import { routinesByLocale } from "./beta2-routines.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -56,7 +56,8 @@ const e = (v) => escapeHtml(v ?? "");
 const order = ["en", "cs", "de", "pl"];
 /* Czech is the root locale, so it writes index.html at the top of the site and
    the other three get a folder each. */
-export const SITE = "https://enterit.cz";
+const LOGO_DIMS = { isotra: [332, 86], gentec: [373, 118], brgroup: [731, 133],
+  rsm: [1183, 497], proact: [1221, 229], autoklastr: [330, 90], bigboard: [321, 65] };
 const outFile = (code) => (code === ROOT_LOCALE ? "index.html" : `${code}/index.html`);
 const label = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
@@ -545,8 +546,10 @@ function render(code) {
     ["gaspar-nagy", "Gašpar Nagy"], ["adam-nagy", "Adam Nagy"],
     ["studio-1", "Jiří Čechal"], ["studio-2", "Vítek Sasin"],
   ];
+  const FACE_DIMS = { milo: 440, klesnarova: 440, hanigovsky: 600, nedvidek: 600,
+    "gaspar-nagy": 600, "adam-nagy": 600, "studio-1": 600, "studio-2": 600 };
   const faceRow = faces
-    .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" loading="lazy">`)
+    .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" width="${FACE_DIMS[f]}" height="${FACE_DIMS[f]}" loading="lazy">`)
     .join("\n");
 
   /* Clients already shown publicly on enterai.cz. Anyone not on that page
@@ -559,7 +562,7 @@ function render(code) {
   const logoWall = `      <div class="key key--navy logos" style="grid-column:span 12">
         <span class="key-eyebrow">${e(t.clientsLabel)}</span>
         <div class="logo-wall">
-${clientLogos.map(([f, n]) => `          <img src="/assets/logos/${f}-white.png" alt="${e(n)}" loading="lazy">`).join("\n")}
+${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img src="/assets/logos/${f}-white.png" alt="${e(n)}" width="${d[0]}" height="${d[1]}" loading="lazy">`; }).join("\n")}
         </div>
       </div>`;
 
@@ -784,10 +787,31 @@ ${rack}
 <meta name="robots" content="index,follow">
 <title>${e(page.title)}</title>
 <meta name="description" content="${e(page.description)}">
+<meta name="theme-color" content="#17202E">
 <link rel="canonical" href="${SITE}${boardHref(code)}">
 ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${boardHref(x)}">`).join("\n")}
 <link rel="alternate" hreflang="x-default" href="${SITE}${boardHref(ROOT_LOCALE)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EnterIT">
+<meta property="og:locale" content="${OG_LOCALE[code]}">
+<meta property="og:title" content="${e(page.title)}">
+<meta property="og:description" content="${e(page.description)}">
+<meta property="og:url" content="${SITE}${boardHref(code)}">
+<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org", "@type": "Organization",
+  name: "EnterIT", legalName: "AI Enter s.r.o.", url: SITE + "/",
+  logo: SITE + "/assets/enter_logo_black.svg",
+  email: "milo@enterit.cz", telephone: "+420608969263",
+  address: { "@type": "PostalAddress", streetAddress: "Zahradní 2004/46d",
+    addressLocality: "Bruntál", postalCode: "792 01", addressCountry: "CZ" },
+})}<\/script>
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/keys.css">
@@ -795,9 +819,10 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
 </head>
 <body>
 
+<a class="skip" href="#main">${e(SKIP[code])}</a>
 <header class="site-head">
   <a href="${boardHref(code)}" aria-label="${e(page.homeLabel)}">
-    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT" width="62" height="26">
   </a>
   <nav class="head-nav" aria-label="${e(page.mainNavLabel)}">
     <a href="#build">${e(page.nav.services)}</a>
@@ -806,10 +831,10 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
     <a href="#integrations">${e(page.nav.integrations)}</a>
     <a href="#team">${e(page.nav.team)}</a>
   </nav>
-  <span class="lang">${langs}</span>
+  <span class="lang" role="group" aria-label="${e(LANG_ARIA[code])}">${langs}</span>
 </header>
 
-<main class="board">
+<main class="board" id="main">
 
   <div class="hero-bar" data-hue="0">
     ${heroFilm()}
@@ -822,12 +847,12 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
     <div class="hero-side">
       <span class="hero-side-label">${e(t.partnersLabel)}</span>
       <div class="hero-marks">
-        <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
+        <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI" width="1300" height="460">
         <span class="hero-ms">
           <span class="sq"><i></i><i></i><i></i><i></i></span>
           <span class="hero-ms-name"><b>Microsoft</b><small>Solutions Partner</small></span>
         </span>
-        <img src="/assets/logos/rsm-white.png" alt="RSM">
+        <img src="/assets/logos/rsm-white.png" alt="RSM" width="1183" height="497">
       </div>
     </div>
   </div>
@@ -853,7 +878,7 @@ ${start}
 <footer class="site-foot">
   <div class="foot-grid">
     <div class="foot-col foot-col--who">
-      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT" width="52" height="22">
       <p>${e(v.hero.h1)}</p>
       <p class="foot-reg">
         AI Enter s.r.o.<br>
