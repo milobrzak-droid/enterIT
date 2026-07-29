@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Einsparungsrechner | EnterIT</title>
+<meta name="description" content="Vier Regler und eine Größenordnung dessen, was Routinearbeit Ihr Unternehmen jährlich kostet. Läuft in der Seite, ohne E-Mail.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/beta2/assets/keys.css">
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/beta2/de.html" aria-label="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+  </a>
+  <nav class="head-nav" aria-label="Abschnitte">
+    <a href="/beta2/de.html#build">Was wir bauen</a>
+    <a href="/beta2/de.html#results">Ergebnisse</a>
+    <a href="/beta2/de.html#process">So arbeiten wir</a>
+    <a href="/beta2/de/team.html">Team</a>
+    <a href="/beta2/de/engagement.html">Zusammenarbeit</a>
+    <a href="/beta2/de/integrations.html">Integrationen</a>
+  </nav>
+  <span class="head-right">
+    <a class="btn btn--sm" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Termin buchen</a>
+    <span class="lang"><a class="" href="/beta2/">EN</a><a class="" href="/beta2/cs.html">CZ</a><a class="on" href="/beta2/de.html">DE</a><a class="" href="/beta2/pl.html">PL</a></span>
+  </span>
+</header>
+
+<main class="board">
+
+  <div class="hero-bar hero-bar--page">
+    <div class="hero-say">
+      <a class="back" href="/beta2/de.html"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-7-7 7 7 7"/></svg></span>Zurück zur Übersicht</a>
+      <span class="hero-note">Einsparungsrechner</span>
+      <h1>Was kostet Sie die Routine heute?</h1>
+      <p>Bewegen Sie vier Regler und Sie bekommen eine Größenordnung dessen, was wiederkehrende Arbeit Ihr Unternehmen jedes Jahr kostet. Er läuft vollständig in dieser Seite — es wird nichts verschickt und es gibt kein Formular.</p>
+      <p class="hero-meta">Gerechnet mit 46 Arbeitswochen und 1840 Stunden je Vollzeitkraft und Jahr</p>
+      
+    </div>
+  </div>
+
+  <section class="chap" id="calc" data-hue="0">
+    <div class="chap-head">
+      <span class="chap-no">01</span>
+      <div>
+        <span class="chap-kicker">Einsparungsrechner</span>
+        <h2>Vier Eingaben. Eine Größenordnung.</h2>
+        <p>Bewusst grob. Er sagt Ihnen, ob das ein fünfstelliges oder ein sechsstelliges Gespräch ist — und nichts Genaueres sollte man glauben, bevor wir Ihre Daten gesehen haben.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white calc" style="grid-column:span 7">
+        <label class="calc-field" for="c-people">
+          <span class="calc-label">Personen mit Routinearbeit<b id="c-people-out">10</b></span>
+          <input id="c-people" type="range" min="1" max="200" step="1" value="10">
+          <span class="calc-hint">Wie viele Mitarbeitende Zeit mit wiederkehrenden Aufgaben verbringen.</span>
+        </label>
+        <label class="calc-field" for="c-hours">
+          <span class="calc-label">Routinestunden pro Person und Woche<b id="c-hours-out">8</b></span>
+          <input id="c-hours" type="range" min="1" max="40" step="1" value="8">
+          <span class="calc-hint">Abtippen, Suchen, Ausfüllen und Nachverfolgen.</span>
+        </label>
+        <label class="calc-field" for="c-rate">
+          <span class="calc-label">Stundensatz<b id="c-rate-out">20</b></span>
+          <input id="c-rate" type="range" min="10" max="80" step="2" value="20">
+          <span class="calc-hint">Durchschnittliche Kosten pro Arbeitsstunde einschließlich Gemeinkosten.</span>
+        </label>
+        <label class="calc-field" for="c-share">
+          <span class="calc-label">Automatisierbarer Anteil der Routine<b id="c-share-out">45</b></span>
+          <input id="c-share" type="range" min="20" max="70" step="5" value="45">
+          <span class="calc-hint">Bei geeigneten Prozessen typischerweise 30–60 % der Routinearbeit.</span>
+        </label>
+      </div>
+      <div class="key key--turquoise calc-out" style="grid-column:span 5">
+        <span class="key-eyebrow">Jährliche Kosteneinsparung</span>
+        <span class="calc-big" id="c-out-money">—</span>
+        <span class="key-meta">bei Automatisierung der gewählten Routine</span>
+        <div class="strip strip--in">
+          <span class="stat"><b id="c-out-hours">—</b>jährlich eingesparte Stunden</span>
+          <span class="stat"><b id="c-out-fte">—</b>freigesetzte FTE-Kapazität</span>
+        </div>
+        <p class="key-meta key-meta--rule">Richtwert zur Einordnung der Größenordnung, kein Angebot. Den tatsächlichen Nutzen prüfen wir im Pilotprojekt mit Ihren Daten.</p>
+        <a class="key-go" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Meine Prozesse besprechen →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="after" data-hue="1">
+    <div class="chap-head">
+      <span class="chap-no">02</span>
+      <div>
+        <span class="chap-kicker">Was mit dieser Zahl passiert</span>
+        <h2>In den ersten zwei Wochen ersetzen wir sie durch eine echte.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--navy" style="grid-column:span 8">
+        <img class="key-mascot" src="/assets/decor/mascot-blue-light.svg" alt="" loading="lazy">
+        
+        
+        
+        
+        
+        
+        <p class="key-sub">Phase eins macht aus dieser Schätzung eine Messung: wie viel Arbeit es tatsächlich gibt, wie viele Ausnahmen der Prozess wirklich hat, und was der heutige Weg kostet — einschließlich des Teils, den niemand zählt, nämlich erfahrener Leute, die Junior-Arbeit machen.</p><p class="key-sub">Manchmal bringt diese Messung das Projekt um. Das ist vorgekommen, und für beide Seiten ist es in Woche zwei billiger als in Monat sechs.</p>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <a class="key key--white" href="/beta2/de.html#process" style="grid-column:span 4">
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Sehen Sie sich die vier Phasen an.</span>
+        <p class="key-sub">Jede endet mit einem Ergebnis, einem Entscheidungspunkt und einem Verantwortlichen.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">So arbeiten wir →</span>
+      </a>
+    </div>
+  </section>
+<script>
+(function(){
+  var ids = ["people","hours","rate","share"];
+  var els = {};
+  ids.forEach(function(id){
+    els[id] = document.getElementById("c-" + id);
+    els[id].addEventListener("input", run);
+  });
+  /* Namespaced: the sliders already own c-hours, and an id collision here once
+     silently pointed the result at the input. */
+  var money = document.getElementById("c-out-money");
+  var hoursOut = document.getElementById("c-out-hours");
+  var fteOut = document.getElementById("c-out-fte");
+  var fmt = new Intl.NumberFormat("de-DE", {
+    style: "currency", currency: "EUR", maximumFractionDigits: 0
+  });
+  function round(n){
+    if (n >= 100000) return Math.round(n / 10000) * 10000;
+    if (n >= 10000) return Math.round(n / 1000) * 1000;
+    return Math.round(n / 100) * 100;
+  }
+  function run(){
+    var v = {};
+    ids.forEach(function(id){
+      v[id] = parseFloat(els[id].value);
+      document.getElementById("c-" + id + "-out").textContent =
+        id === "share" ? v[id] + "%" : id === "rate" ? "€" + v[id] : v[id];
+    });
+    var hours = v.people * v.hours * 46 * (v.share / 100);
+    money.textContent = fmt.format(round(hours * v.rate));
+    hoursOut.textContent = Math.round(hours / 10) * 10;
+    fteOut.textContent = (hours / 1840).toFixed(1);
+  }
+  run();
+})();
+</script>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>Ein Performance-KI-Team, das in den Betrieb liefert.</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Tschechien
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Eine Frage?</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">30 Minuten buchen</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Abschnitte</span>
+      <a href="/beta2/de.html#build">Was wir bauen</a>
+      <a href="/beta2/de.html#results">Ergebnisse</a>
+      <a href="/beta2/de.html#process">So arbeiten wir</a>
+      <a href="/beta2/de/team.html">Team</a>
+      <a href="/beta2/de/engagement.html">Zusammenarbeit</a>
+      <a href="/beta2/de/integrations.html">Integrationen</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Enter Group</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="/beta2/de/team.html">Enter Tech</a>
+      <a href="/beta2/de/team.html">Enter Agents</a>
+      <a href="/beta2/de/team.html">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="/beta2/de.html">Übersicht</a> · <a href="/beta/">beta 1</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PALETTE = ["turquoise","blue","violet","red","yellow"];
+  var offset = Math.floor(Math.random() * PALETTE.length);
+  document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
+    var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
+    PALETTE.forEach(function(name){ chap.classList.remove("ch--" + name); });
+    chap.classList.add("ch--" + PALETTE[slot]);
+  });
+})();
+</script>
+</body>
+</html>

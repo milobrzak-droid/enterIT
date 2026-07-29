@@ -38,6 +38,8 @@ import { writeRoutines } from "./build-beta2-routines.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
+import { LOCALES, sub } from "./beta2-page.mjs";
+import { routinesByLocale } from "./beta2-routines.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
@@ -413,6 +415,12 @@ function render(code) {
   /* Turquoise leads as the primary, then two of the manual's own accents.
      Two greens with a navy between them read as one colour interrupted. */
   const disciplineTones = ["turquoise", "violet", "red"];
+  /* automation · agents · custom-built — each opens the page that explains it */
+  const DISCIPLINE_HREF = [
+    (c) => sub(c, "automation.html"),
+    (c) => sub(c, "agents.html"),
+    (c) => sub(c, "team.html"),
+  ];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
@@ -426,7 +434,7 @@ function render(code) {
           go: card.link,
           /* card.href already carries the locale prefix for de and pl —
              wrapping it in at() produced /de/de/... */
-          href: v.disciplines[i].href || `/${card.href}`,
+          href: DISCIPLINE_HREF[i](code),
         })),
       key({
         span: 8, tone: "navy", legend: "EU", eyebrow: t.reachEyebrow,
@@ -439,7 +447,7 @@ function render(code) {
         span: 4, tone: "navy", eyebrow: t.teamGo.replace(" →", ""),
         title: t.reachTitle, size: "sm",
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
-        href: code === "en" ? "/beta2/team.html" : at("tym.html"),
+        href: sub(code, "team.html"),
       }),
     ],
   });
@@ -465,7 +473,7 @@ function render(code) {
           span: 3, tone: routineTones[i],
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
-          href: code === "en" ? `/beta2/routines/${routineSlugs[i]}.html` : `/${card.href}`,
+          href: sub(code, `routines/${routinesByLocale[code][i].slug}.html`),
           mark: false,
         })),
       key({
@@ -543,13 +551,13 @@ ${clientLogos.map(([f, n]) => `          <img src="/assets/logos/${f}-white.png"
         span: 7, tone: "navy", legend: "N", eyebrow: t.proofLabel,
         title: page.proof.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.results.note,
-        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"),
+        go: t.teamGo, href: sub(code, "team.html"),
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
       /* Next to the room, the faces in it. An empty placeholder beside a
          photograph of a workshop was the one spot on the board that looked
          unfinished rather than reserved. */
-      `      <a class="key key--white faces" href="${code === "en" ? "/beta2/team.html" : at("tym.html")}" style="grid-column:span 5">
+      `      <a class="key key--white faces" href="${sub(code, "team.html")}" style="grid-column:span 5">
         <span class="key-arrow">${chevron}</span>
         <span class="key-eyebrow">${e(t.facesLabel)}</span>
         <div class="face-wall">
@@ -583,7 +591,7 @@ ${faceRow}
         span: 7, tone: "navy", legend: "P", eyebrow: c.implementation.kicker,
         title: c.implementation.title, size: "big", sub: c.implementation.intro,
         meta: c.implementation.flowLabel,
-        go: t.processGo, href: code === "en" ? "/beta2/automation.html" : at("jak-stavime-automatizace.html"),
+        go: t.processGo, href: sub(code, "automation.html"),
         photo: "/assets/decor/guy.webp", alt: t.processPhotoAlt,
       }),
       flowViz(t),
@@ -604,7 +612,7 @@ ${faceRow}
       key({
         span: 5, tone: "navy", legend: "I", eyebrow: c.integrations.catalogLabel,
         title: c.integrations.proof, size: "big", mascot: "blue",
-        go: t.systemsGo, href: code === "en" ? "/beta2/integrations.html" : "#integrations",
+        go: t.systemsGo, href: sub(code, "integrations.html"),
       }),
       key({
         span: 7, tone: "white", legend: "S", eyebrow: page.integrations.kicker,
@@ -626,7 +634,7 @@ ${faceRow}
           title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined,
           href: i === 2
-            ? (code === "en" ? "/beta2/engagement.html" : at("podminky.html"))
+            ? (sub(code, "engagement.html"))
             : "#start",
         })),
     ],
@@ -641,25 +649,25 @@ ${faceRow}
         span: 7, tone: "navy", legend: "T", eyebrow: page.team.kicker,
         title: page.team.stats.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.team.intro,
-        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"),
+        go: t.teamGo, href: sub(code, "team.html"),
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt,
       }),
       key({
         span: 5, tone: "turquoise", legend: "L", eyebrow: t.leadersEyebrow,
         title: page.team.leadershipTitle, size: "sm", sub: page.team.leadershipIntro,
         bullets: page.team.leaders.map((l) => `${l.name} — ${l.role}`),
-        go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"), mascot: "red",
+        go: t.teamGo, href: sub(code, "team.html"), mascot: "red",
       }),
       ...page.team.leaders.map((l, i) =>
         key({
           span: 3, tone: "navy", photo: l.image, alt: l.name,
           eyebrow: l.role, title: l.name, size: "sm", sub: l.text,
-          href: code === "en" ? "/beta2/team.html" : at("tym.html"), mark: false,
+          href: sub(code, "team.html"), mark: false,
         })),
       key({
         span: 3, tone: "photo-hire", legend: "H", photo: "/assets/team/studio-1.jpg",
         pill: t.hiringPill, title: t.hiringTitle, size: "sm", sub: t.hiringSub,
-        go: t.hiringGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"), mark: false,
+        go: t.hiringGo, href: sub(code, "team.html"), mark: false,
       }),
       slot({ span: 12, hint: t.artHint, brief: t.slots[2] }),
     ],
@@ -678,10 +686,10 @@ ${faceRow}
     <div class="keys">
 ${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
         title: c.calculator.title, size: "sm", sub: c.calculator.intro,
-        go: t.roiGo, href: code === "en" ? "/beta2/calculator.html" : "#start" })}
+        go: t.roiGo, href: sub(code, "calculator.html") })}
 ${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
-        go: t.selfGo, href: code === "en" ? "/beta2/company-2030.html" : at("firma-2030.html") })}
+        go: t.selfGo, href: sub(code, "company-2030.html") })}
 ${slot({ span: 4, hint: t.artHint, brief: t.slots[4] })}
       <a class="key key--bubble" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:span 8">
         <span class="key-legend">⏎</span>
@@ -792,19 +800,19 @@ ${start}
       <a href="#results">${e(page.nav.results)}</a>
       <a href="#process">${e(page.nav.process)}</a>
       <a href="#integrations">${e(page.nav.integrations)}</a>
-      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">${e(page.nav.team)}</a>
+      <a href="${sub(code, "team.html")}">${e(page.nav.team)}</a>
     </div>
     <div class="foot-col">
       <span class="foot-h">${e(t.footGroup)}</span>
       <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
-      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Tech</a>
-      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Agents</a>
-      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Studio</a>
+      <a href="${sub(code, "team.html")}">Enter Tech</a>
+      <a href="${sub(code, "team.html")}">Enter Agents</a>
+      <a href="${sub(code, "team.html")}">Enter Studio</a>
     </div>
   </div>
   <div class="foot-line">
     <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-    <span><a href="${at("gdpr.html")}">${e(page.footer.privacy)}</a> · <a href="${code === "en" ? "/beta2/engagement.html" : at("podminky.html")}">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
+    <span><a href="${at("gdpr.html")}">${e(page.footer.privacy)}</a> · <a href="${sub(code, "engagement.html")}">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
   </div>
 </footer>
 

@@ -1,193 +1,158 @@
 /**
- * build-beta2-engage.mjs — /beta2/engagement.html, /beta2/company-2030.html,
- * /beta2/calculator.html.
+ * build-beta2-engage.mjs — engagement, the 2030 self-check and the calculator,
+ * in four languages.
  *
  * Engagement is the page an IT-company owner reads first and the one the old
- * site did not have at all. Commercial models, SLA, who owns the code, what
- * happens at the exit, and the four practical questions a US buyer asks before
- * any technical one. Everything still unconfirmed carries a marker rather than
- * a confident sentence.
+ * site did not have at all. Everything still unconfirmed carries a marker in
+ * every language rather than quietly becoming a confident sentence abroad.
  *
  * Company 2030 is the self-check. Its value is the honest read, so the levels
- * are written with the sentence you would actually hear in that company rather
- * than with a maturity label nobody recognizes themselves in.
+ * are written as the sentence you would actually hear in that company rather
+ * than as a maturity label nobody recognises themselves in.
  *
  * The calculator is deliberately blunt. It runs entirely in the page, asks for
  * no email, and says on its face that it is an order of magnitude and not a
- * quote — a calculator that oversells is worse than no calculator.
+ * quote — a calculator that oversells is worse than no calculator. Its fields
+ * come from the production content module, which is already translated.
+ *
+ * Copy: scripts/beta2-pages-copy.mjs
  */
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { e, key, need, page, pageHead, section } from "./beta2-page.mjs";
+import { LOCALES, e, key, need, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { pagesCopy } from "./beta2-pages-copy.mjs";
 import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
-import { us } from "./beta2-us-copy.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const board = (code) => (code === "en" ? "/beta2/" : `/beta2/${code}.html`);
 
-/* -------------------------------------------------------- Engagement ---- */
+/* ---------------------------------------------------------- Engagement -- */
 
-const models = section({
-  id: "models", no: "01", hue: 0,
-  kicker: "Four commercial models",
-  h2: "Pick the one that matches how much you want to hand over.",
-  ask: "They are not tiers and there is no upsell path built into them. Most clients start with the second and move to whichever of the other three fits what they learned.",
-  keys: us.engage.cards.map((c, i) =>
-    key({
-      span: 3, tone: i === 1 ? "turquoise" : i === 2 ? "navy" : "white",
-      legend: String(i + 1), title: c.title, size: "sm", sub: c.body,
-      needs: c.need,
-    })),
-});
+function renderEngagement(code) {
+  const C = pagesCopy[code].engagement;
+  const U = ui[code];
 
-const money = section({
-  id: "money", no: "02", hue: 1,
-  kicker: "What it costs",
-  h2: "No price list, and the reason is not coyness.",
-  keys: [
-    key({
-      span: 8, tone: "white",
-      body: [
-        "We do not publish a price list. For work that is built rather than licensed, a range honest enough to be true is too wide to help you, and a narrow one is a guess dressed up as a number — and either way it anchors the conversation before anyone knows what is being built.",
-        "Four things move the figure, and you can assess three of them yourself right now: how many systems have to be reached, whether they have usable APIs, how clean the master data underneath is, and how many exception paths the process really has. That last one is almost always larger than people expect, which is exactly why we measure it before quoting rather than after.",
-        "What we can commit to up front is the shape of the risk. The smallest possible first step is the discovery phase: fixed fee, agreed before it starts, and it ends with a process map, a measured baseline and a business case that is yours to keep whether or not you build with us. If the numbers do not work, that document is what tells you so — and we have handed over exactly that more than once.",
-      ],
-    }),
-    key({
-      span: 4, tone: "turquoise", mascot: "wave",
-      title: "Size it yourself first.", size: "sm",
-      sub: "Four inputs, an order-of-magnitude estimate, no email required.",
-      go: "Open the calculator →", href: "/beta2/calculator.html",
-    }),
-  ],
-});
+  const models = section({
+    id: "models", no: "01", hue: 0,
+    kicker: C.modelsKicker, h2: C.modelsH2, ask: C.modelsAsk,
+    keys: C.models.map(([title, subText], i) =>
+      key({
+        span: 3, tone: i === 1 ? "turquoise" : i === 2 ? "navy" : "white",
+        legend: String(i + 1), title, size: "sm", sub: subText,
+      })),
+  });
 
-const guarantees = section({
-  id: "guarantees", no: "03", hue: 2,
-  kicker: "How you are protected",
-  h2: "We plan the ending at the beginning.",
-  ask: "This is the part most suppliers leave for the contract review, by which point the leverage has moved. It is easier to read it now.",
-  keys: us.safe.cards.map((c, i) =>
-    key({
-      span: 4, tone: i === 0 ? "turquoise" : i === 2 ? "navy" : "white",
-      eyebrow: c.tag, title: c.title, size: "sm", sub: c.body, needs: c.need,
-    })),
-});
+  const money = section({
+    id: "money", no: "02", hue: 1,
+    kicker: C.moneyKicker, h2: C.moneyH2,
+    keys: [
+      key({ span: 8, tone: "white", body: C.moneyBody }),
+      key({
+        span: 4, tone: "turquoise", mascot: "wave",
+        title: C.calcTitle, size: "sm", sub: C.calcSub,
+        go: C.calcGo, href: sub(code, "calculator.html"),
+      }),
+    ],
+  });
 
-const atlantic = section({
-  id: "atlantic", no: "04", hue: 3,
-  kicker: "Across the Atlantic",
-  h2: "The practical questions, answered up front.",
-  raw: `      <div class="key key--white panel" style="grid-column:span 12">
-${us.atlantic.items.map((x) => `        <div class="qa"><b>${e(x.q)}</b><p>${e(x.a)}</p>${x.need ? `<span class="needs"><b>Needs data</b>${e(x.need.__need)}</span>` : ""}</div>`).join("\n")}
+  const guarantees = section({
+    id: "guarantees", no: "03", hue: 2,
+    kicker: C.safeKicker, h2: C.safeH2, ask: C.safeAsk,
+    keys: C.safe.map(([tag, title, subText, needText], i) =>
+      key({
+        span: 4, tone: i === 0 ? "turquoise" : i === 2 ? "navy" : "white",
+        eyebrow: tag, title, size: "sm", sub: subText,
+        needs: needText ? need(needText) : undefined, needsLabel: U.needsLabel,
+      })),
+  });
+
+  const far = section({
+    id: "far", no: "04", hue: 3,
+    kicker: C.farKicker, h2: C.farH2,
+    raw: `      <div class="key key--white panel" style="grid-column:span 12">
+${C.far.map(([q, a, needText]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p>${
+      needText ? `<span class="needs"><b>${e(U.needsLabel)}</b>${e(needText)}</span>` : ""
+    }</div>`).join("\n")}
       </div>`,
-});
+  });
 
-const limits = section({
-  id: "limits", no: "05", hue: 4,
-  kicker: "Boundaries",
-  h2: "Things we will turn down.",
-  ask: "The cheapest credibility on this site. A supplier who says yes to everything is telling you where their limit is anyway — just later, and at your expense.",
-  keys: [
-    key({
-      span: 12, tone: "navy",
-      body: us.limits.items,
-      mascot: "red",
-    }),
-  ],
-});
+  const limits = section({
+    id: "limits", no: "05", hue: 4,
+    kicker: C.limitsKicker, h2: C.limitsH2, ask: C.limitsAsk,
+    keys: [key({ span: 12, tone: "navy", body: C.limits, mascot: "red" })],
+  });
 
-const engageBody = [
-  pageHead({
-    code: "en", ui: ui.en,
-    eyebrow: "Engagement",
-    h1: "How this is actually bought.",
-    lead: "Four commercial models, what happens to the code, who is on the hook once it is live, and what a US client needs to know about working with a team six hours ahead. If you run an IT company yourself, this is the page to read first.",
-    meta: "Fixed-scope · Discovery · Dedicated team · Run and evolve",
-    cta: "Talk through the right model",
-    bookingUrl,
-  }),
-  models, money, guarantees, atlantic, limits,
-].join("\n\n");
+  return page({
+    code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    body: [
+      pageHead({ code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead, meta: C.meta, cta: C.cta, bookingUrl }),
+      models, money, guarantees, far, limits,
+    ].join("\n\n"),
+  });
+}
 
-/* ------------------------------------------------------ Company 2030 ---- */
+/* -------------------------------------------------------- Company 2030 -- */
 
-const levels = [
-  ["Manual operation", "Data gets retyped between systems and the knowledge lives in people's heads and inboxes.", "“That is something only one person in accounting knows.”", "Start with a single routine that has a clear owner. Attendance or invoices are usually the shortest path to a measured result."],
-  ["Licenses bought, impact never measured", "The AI licenses exist. Regular use and measured adoption do not.", "“We are paying for it, but we do not know whether it pays off.”", "Take a baseline before doing anything else. Without one, nothing that follows can be defended in a budget meeting."],
-  ["People ready, first agents in production", "Role-based adoption and the first agents in production, delivering measured hours, with people approving the high-impact actions.", "“We can finally see it in the numbers.”", "Widen from one process to the ones next to it, and put the governance model in writing before the count grows."],
-  ["Connected agent workflows", "Order, warehouse and invoicing agents pass work between them; people review the exceptions. One energy client runs nine agents this way.", "“The agents pass work around on their own. We just approve the exceptions.”", "Move the monitoring and the metrics into one place. At this level the risk stops being capability and starts being oversight."],
-  ["A company running on the loop", "The agentic layer is core operations. Sensitive data and learned procedures stay inside; anything external follows explicit rules.", "“We add a new process to the loop in days, not quarters.”", "This is the 2030 position. Nobody we work with is fully here yet, and any supplier who tells you their client is should be asked for the audit trail."],
-];
+function render2030(code) {
+  const C = pagesCopy[code].c2030;
+  const U = ui[code];
 
-const pace = section({
-  id: "pace", no: "01", hue: 0,
-  kicker: "Why the question is worth asking now",
-  h2: "Four numbers, none of them ours.",
-  ask: "We cite these because they are independent. The last one is the one worth sitting with.",
-  keys: [
-    key({ span: 3, tone: "white", stat: "×2", statLabel: "every ~7 months — the length of task AI can complete on its own", meta: "METR, 2025–26" }),
-    key({ span: 3, tone: "white", stat: "280×", statLabel: "fall in the cost of GPT-3.5-level performance in two years", meta: "Stanford AI Index, 2025" }),
-    key({ span: 3, tone: "white", stat: "22%", statLabel: "of jobs reshuffled by 2030", meta: "World Economic Forum, 2025" }),
-    key({ span: 3, tone: "red", stat: "95%", statLabel: "of generative-AI pilots show no measurable profit impact", meta: "MIT, 2025" }),
-    key({
-      span: 12, tone: "navy",
-      title: "That last number is the reason we start every engagement with a baseline, an owner and a defined benefit.",
-      size: "big",
-      sub: "The pilots in that 95% did not fail on the technology. They failed on method, ownership and measurement — three things that cost nothing to fix at the start and cannot be fixed at the end.",
-      mascot: "wave",
-    }),
-  ],
-});
+  const pace = section({
+    id: "pace", no: "01", hue: 0,
+    kicker: C.paceKicker, h2: C.paceH2, ask: C.paceAsk,
+    keys: [
+      ...C.pace.map(([stat, statLabel, meta], i) =>
+        key({ span: 3, tone: i === 3 ? "red" : "white", stat, statLabel, meta })),
+      key({
+        span: 12, tone: "navy", title: C.paceCloseTitle, size: "big",
+        sub: C.paceCloseSub, mascot: "wave",
+      }),
+    ],
+  });
 
-const ladder = section({
-  id: "levels", no: "02", hue: 1,
-  kicker: "Five levels",
-  h2: "Find the sentence you actually hear in your company.",
-  ask: "Most companies are at level 1 or 2, which is also where progress is fastest. Read the quoted line rather than the label — it is the more honest test.",
-  keys: levels.map(([title, body, tell, step], i) =>
-    key({
-      span: i === 4 ? 12 : 3,
-      tone: i === 4 ? "turquoise" : i === 2 ? "violet" : "white",
-      legend: String(i + 1), title, size: "sm", sub: body,
-      rule: tell,
-      meta: `Next step — ${step}`,
-    })),
-});
+  const ladder = section({
+    id: "levels", no: "02", hue: 1,
+    kicker: C.levelsKicker, h2: C.levelsH2, ask: C.levelsAsk,
+    keys: C.levels.map(([title, body, tell, step], i) =>
+      key({
+        span: i === 4 ? 12 : 3,
+        tone: i === 4 ? "turquoise" : i === 2 ? "violet" : "white",
+        legend: String(i + 1), title, size: "sm", sub: body,
+        rule: tell, meta: `${C.stepLabel} — ${step}`,
+      })),
+  });
 
-const c2030Body = [
-  pageHead({
-    code: "en", ui: ui.en,
-    eyebrow: "Company 2030 · self-check",
-    h1: "Where is your company on the agentic road?",
-    lead: "Five levels, the sentence you would actually hear at each one, and the single practical step that moves you to the next. It takes about two minutes and there is no form at the end.",
-    meta: "No email required · read the quoted line, not the label",
-    cta: "Talk through your level",
-    bookingUrl,
-  }),
-  pace, ladder,
-].join("\n\n");
+  return page({
+    code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    body: [
+      pageHead({ code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead, meta: C.meta, cta: C.cta, bookingUrl }),
+      pace, ladder,
+    ].join("\n\n"),
+  });
+}
 
-/* -------------------------------------------------------- Calculator ---- */
+/* ---------------------------------------------------------- Calculator -- */
 
-const calc = restorationContent.en.calculator;
-const f = calc.fields;
+function renderCalculator(code) {
+  const C = pagesCopy[code].calc;
+  const U = ui[code];
+  const calc = restorationContent[code].calculator;
+  const f = calc.fields;
 
-const field = (id, x) => `        <label class="calc-field" for="c-${id}">
+  const field = (id, x) => `        <label class="calc-field" for="c-${id}">
           <span class="calc-label">${e(x.label)}<b id="c-${id}-out">${x.defaultValue}</b></span>
           <input id="c-${id}" type="range" min="${x.min}" max="${x.max}" step="${x.step}" value="${x.defaultValue}">
           <span class="calc-hint">${e(x.hint)}</span>
         </label>`;
 
-const calcSection = section({
-  id: "calc", no: "01", hue: 0,
-  kicker: "Savings calculator",
-  h2: "Four inputs. One order of magnitude.",
-  ask: "Deliberately rough. It exists to tell you whether this is a five-figure conversation or a six-figure one, and nothing more precise than that should be trusted before we have seen your data.",
-  raw: `      <div class="key key--white calc" style="grid-column:span 7">
+  const calcSection = section({
+    id: "calc", no: "01", hue: 0,
+    kicker: C.calcKicker, h2: C.calcH2, ask: C.calcAsk,
+    raw: `      <div class="key key--white calc" style="grid-column:span 7">
 ${field("people", f.people)}
 ${field("hours", f.hours)}
 ${field("rate", f.rate)}
@@ -204,47 +169,25 @@ ${field("share", f.share)}
         <p class="key-meta key-meta--rule">${e(calc.disclaimer)}</p>
         <a class="key-go" href="${bookingUrl}" target="_blank" rel="noopener">${e(calc.results.cta)} →</a>
       </div>`,
-});
+  });
 
-const calcAfter = section({
-  id: "after", no: "02", hue: 1,
-  kicker: "What happens to this number",
-  h2: "We replace it with a real one in the first two weeks.",
-  keys: [
-    key({
-      span: 8, tone: "navy",
-      body: [
-        "Stage one exists to turn this estimate into a measurement: how much work there actually is, how many exceptions the process really has, and what the current way of doing it costs including the part nobody counts, which is senior people doing junior work.",
-        "Sometimes that measurement kills the project. That has happened, and it is cheaper for both of us in week two than in month six.",
-      ],
-      mascot: "blue",
-    }),
-    key({
-      span: 4, tone: "white",
-      title: "See the four stages.", size: "sm",
-      sub: "Each one ends with a deliverable, a decision point and an owner.",
-      go: "How we work →", href: "/beta2/#work",
-    }),
-  ],
-});
+  const after = section({
+    id: "after", no: "02", hue: 1,
+    kicker: C.afterKicker, h2: C.afterH2,
+    keys: [
+      key({ span: 8, tone: "navy", body: C.afterBody, mascot: "blue" }),
+      key({
+        span: 4, tone: "white", title: C.stagesTitle, size: "sm",
+        sub: C.stagesSub, go: C.stagesGo, href: `${board(code)}#process`,
+      }),
+    ],
+  });
 
-const calcBody = [
-  pageHead({
-    code: "en", ui: ui.en,
-    eyebrow: "Savings calculator",
-    h1: "What is the routine costing you today?",
-    lead: "Move four sliders and get an order-of-magnitude estimate of what repetitive work costs your company each year. It runs entirely in this page — nothing is sent anywhere and there is no form.",
-    meta: `Based on ${calc.weeksPerYear} working weeks and ${calc.fteHoursPerYear} hours per FTE per year`,
-    bookingUrl,
-  }),
-  calcSection, calcAfter,
-].join("\n\n");
-
-const calcScript = `
+  /* Runs in the page, sends nothing anywhere. The rounding is deliberately
+     coarse: this is an order of magnitude, and a figure like 47,318 would imply
+     a precision the four inputs cannot support. */
+  const script = `
 <script>
-/* Runs in the page, sends nothing anywhere. The rounding is deliberately coarse:
-   this is an order of magnitude, and a figure like 47,318 would imply a
-   precision the inputs cannot support. */
 (function(){
   var ids = ["people","hours","rate","share"];
   var els = {};
@@ -252,7 +195,7 @@ const calcScript = `
     els[id] = document.getElementById("c-" + id);
     els[id].addEventListener("input", run);
   });
-  /* Namespaced: the sliders already own c-hours, and an id collision here
+  /* Namespaced: the sliders already own c-hours, and an id collision here once
      silently pointed the result at the input. */
   var money = document.getElementById("c-out-money");
   var hoursOut = document.getElementById("c-out-hours");
@@ -281,40 +224,26 @@ const calcScript = `
 })();
 <\/script>`;
 
+  return page({
+    code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    body: [
+      pageHead({
+        code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead,
+        meta: `${C.metaA} ${calc.weeksPerYear} ${C.metaB} ${calc.fteHoursPerYear} ${C.metaC}`,
+        bookingUrl,
+      }),
+      calcSection, after,
+    ].join("\n\n") + script,
+  });
+}
+
 export function writeEngagement() {
-  writeFileSync(
-    resolve(root, "beta2", "engagement.html"),
-    page({
-      code: "en", ui: ui.en,
-      title: "How we engage | EnterIT",
-      description: "Four commercial models, who owns the code, what happens at the exit, and the practical questions a US client asks before any technical one.",
-      body: engageBody, bookingUrl,
-    }),
-    "utf8",
-  );
-  console.log("beta2/engagement.html");
-
-  writeFileSync(
-    resolve(root, "beta2", "company-2030.html"),
-    page({
-      code: "en", ui: ui.en,
-      title: "Company 2030 · self-check | EnterIT",
-      description: "Five maturity levels on the agentic road, the sentence you would actually hear at each, and the one practical step to the next.",
-      body: c2030Body, bookingUrl,
-    }),
-    "utf8",
-  );
-  console.log("beta2/company-2030.html");
-
-  writeFileSync(
-    resolve(root, "beta2", "calculator.html"),
-    page({
-      code: "en", ui: ui.en,
-      title: "Savings calculator | EnterIT",
-      description: "Four sliders and an order-of-magnitude estimate of what routine work costs your company each year. Runs in the page; no email required.",
-      body: calcBody + calcScript, bookingUrl,
-    }),
-    "utf8",
-  );
-  console.log("beta2/calculator.html");
+  for (const code of LOCALES) {
+    const dir = code === "en" ? resolve(root, "beta2") : resolve(root, "beta2", code);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(resolve(dir, "engagement.html"), renderEngagement(code), "utf8");
+    writeFileSync(resolve(dir, "company-2030.html"), render2030(code), "utf8");
+    writeFileSync(resolve(dir, "calculator.html"), renderCalculator(code), "utf8");
+  }
+  console.log("beta2/**/engagement.html, company-2030.html, calculator.html  (4 languages)");
 }

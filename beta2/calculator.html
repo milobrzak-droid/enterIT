@@ -117,7 +117,7 @@
         
         
       </div>
-      <a class="key key--white" href="/beta2/#work" style="grid-column:span 4">
+      <a class="key key--white" href="/beta2/#process" style="grid-column:span 4">
         
         <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         
@@ -137,9 +137,6 @@
     </div>
   </section>
 <script>
-/* Runs in the page, sends nothing anywhere. The rounding is deliberately coarse:
-   this is an order of magnitude, and a figure like 47,318 would imply a
-   precision the inputs cannot support. */
 (function(){
   var ids = ["people","hours","rate","share"];
   var els = {};
@@ -147,7 +144,7 @@
     els[id] = document.getElementById("c-" + id);
     els[id].addEventListener("input", run);
   });
-  /* Namespaced: the sliders already own c-hours, and an id collision here
+  /* Namespaced: the sliders already own c-hours, and an id collision here once
      silently pointed the result at the input. */
   var money = document.getElementById("c-out-money");
   var hoursOut = document.getElementById("c-out-hours");

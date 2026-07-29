@@ -1,0 +1,237 @@
+/**
+ * beta2-pages-copy.mjs — team, integrations, engagement, the 2030 self-check
+ * and the calculator, in four languages.
+ *
+ * These five share one file because they share one shape: each is a handful of
+ * sections with a headline and a few caps, and splitting them into five modules
+ * would mean five places to look for the same kind of string.
+ *
+ * Two things are deliberately not here. The integration catalogue and the
+ * calculator's fields already exist per locale in the production content
+ * modules, so those are read rather than re-typed — one source of truth, and
+ * one less place for the four languages to drift apart.
+ *
+ * The needs-data strings are translated too. An unverified claim is unverified
+ * in every language, and a marker nobody can read is a marker nobody acts on.
+ */
+import { cs } from "./beta2-pages-cs.mjs";
+import { de } from "./beta2-pages-de.mjs";
+import { pl } from "./beta2-pages-pl.mjs";
+
+export const pagesCopy = {
+  cs, de, pl,
+  /* ------------------------------------------------------------ English -- */
+  en: {
+    team: {
+      eyebrow: "Who does the work",
+      h1: "75 engineers. Three teams. One name on the contract.",
+      lead: "Three permanent teams that have worked together long enough to hand work across the boundary without dropping it. This page is who they are, who runs them, and why the titles look the way they do.",
+      meta: "Enter Tech · Enter Agents · Enter Studio",
+      cta: "Meet the people who would run your engagement",
+      structKicker: "Three teams",
+      structH2: "Three practices, one delivery process.",
+      structAsk: "They are separate teams because the disciplines genuinely differ, and one organization because the failures we get called in to fix live in the gaps between suppliers. Work crosses the boundary internally, not through a subcontract.",
+      teams: [
+        {
+          size: "45 engineers",
+          body: "Large systems, architecture, custom development, integrations, legacy modernization, DevOps and infrastructure. The oldest practice in the group and the one behind our longest-running engagements — the work measured in years rather than in sprints.",
+          does: ["Custom internal applications and portals", "ERP, CRM and WMS integration", "Legacy modernization and gradual replacement", "Cloud, DevOps and long-term maintenance"],
+          roles: ["Founder, Enter Tech", "CIO, Enter Tech"],
+        },
+        {
+          size: "25 engineers",
+          body: "AI agents and custom LLM systems put into live operations. The engineers are forward-deployed: they sit with your process owners and watch the work happen instead of building from a specification document that was already out of date when it was written.",
+          does: ["Agents in production, with governance", "Document extraction and knowledge retrieval", "Agentic layers over an existing ERP", "Data pipelines and retrieval infrastructure"],
+          roles: ["CEO, Enter Agents", "CTO, Enter Agents"],
+        },
+        {
+          size: "5 people",
+          body: "The interface layer on top of what the other two teams build: the screens people actually work in. Product and front-end, from an MVP to something that survives real use — and on larger engagements it borrows capacity from Enter Tech rather than pretending five people can do everything.",
+          does: ["Internal apps and portals people use daily", "The screens on top of an agent or an automation", "Product work from MVP to scale", "Design systems and component libraries"],
+          roles: ["Head of Development, Enter Studio", "C programmer, Enter Studio"],
+        },
+      ],
+      titlesKicker: "About the titles",
+      titlesH2: "Yes, there is more than one CEO. Here is why.",
+      titlesBody: [
+        "Enter Agents and Enter Tech are companies with their own founders and their own chief executives, and they say so on their own websites. Enter Group is the organization the three of them deliver under, and it has one founder and one CEO.",
+        "We spell it out because on a page that does not, a reader counts two CEOs and two founders and quietly concludes that somebody is inflating titles. The structure is ordinary; only the labels look odd out of context.",
+        "What it means commercially: you sign one contract with Enter Group, and the named owner for your engagement is a person, not a company.",
+      ],
+      miloRole: "Founder & CEO. Strategy, product and methodology. 800+ people trained across more than a hundred companies.",
+      michaelaRole: "Operations & Delivery. Owns client delivery and production operations across all three teams.",
+      shapeKicker: "What that adds up to",
+      shapeH2: "75 engineers, and the reason the number matters.",
+      stats: [
+        ["75", "engineers, permanent", "Not a network of freelancers assembled per project."],
+        ["45 / 25 / 5", "tech / agents / studio", null],
+        ["120+", "projects delivered", null],
+        ["60+", "systems integrated", null],
+      ],
+      countNeed: "confirm the count before launch",
+      ownerTitle: "Every area has a named owner, and you always know who decides.",
+      ownerSub: "That is the whole argument for a team this size rather than a bigger one. Large enough to hold three disciplines permanently; small enough that the person accountable for your engagement answers their own phone.",
+      ownerGo: "Talk to us →",
+      whereKicker: "Where we are",
+      whereH2: "Bruntál and Prague, working with teams across Europe and in the US.",
+      remoteTitle: "Remote by default, on site when it earns its travel.",
+      remoteSub: "Discovery and the early process mapping are worth doing in the room. Almost everything after that is better done asynchronously, with a written status waiting when your day starts.",
+      hiringTitle: "We are hiring.",
+      hiringSub: "No proof-of-concept graveyard. You ship to production and then you keep it running — which is a different job, and the one worth having.",
+      hiringGo: "Open roles →",
+      seoTitle: "The team | EnterIT",
+      seoDesc: "75 engineers in three permanent teams — Enter Tech, Enter Agents and Enter Studio — with a named owner for every area and one contract across all three.",
+    },
+    integrations: {
+      eyebrow: "Integrations",
+      h1: "You do not have to replace anything you already run.",
+      lead: "We read, verify and write where your people already work. Through the API where there is one, through the database, the files, or the interface itself where there is not — including software old enough to have no modern API at all.",
+      metaA: "60+ systems integrated ·", metaB: "documented below",
+      cta: "Tell us what you run",
+      routesKicker: "Four ways in",
+      routesH2: "In this order of preference, and never the other way round.",
+      routesAsk: "The route is chosen by what the system actually supports, not by what is quickest for us. A system with no modern API is a normal Tuesday, not a reason to say no.",
+      routes: [
+        ["API", "Official, documented, versioned. Where it exists this is always the answer."],
+        ["Database", "Read directly, write through a controlled layer with the vendor's blessing where the vendor still exists."],
+        ["Files", "Scheduled exports and imports. Unglamorous, entirely reliable, and often what a twenty-year-old system was designed for."],
+        ["The interface itself", "UI automation, when there is genuinely nothing else. It is the last resort and we will say so out loud rather than quietly billing for it."],
+      ],
+      numbersKicker: "About the two numbers",
+      numbersH2: "60+ integrated, 44 documented. Both are true.",
+      numbersBodyA: "We have connected more than sixty systems.",
+      numbersBodyB: "of them are listed below, because those are the ones we can name — the rest are client-specific builds or legacy systems covered by an NDA.",
+      numbersBodyC: "The two figures appear next to each other on this site and they used to look like a contradiction. They are not; they count different things. If a number on any page of ours does not add up, ask — we would rather explain it than have you quietly discount everything else.",
+      catalogKickerB: "systems documented",
+      catalogH2: "The ones we can name.",
+      catalogAsk: "Not on the list does not mean not possible. It usually means we have connected it and not written it down yet.",
+      rulesKicker: "Three constants",
+      rulesH2: "The same three rules on every integration we build.",
+      rules: [
+        ["A human approves anything sensitive.", "Defined per step, named in the design document, and enforced in the code rather than in a policy nobody reads."],
+        ["Everything lands in an audit trail.", "Who or what did it, when, on which record, and what the previous value was. Written so an auditor can follow it without us in the room."],
+        ["Roles and monitoring on day one.", "Not retrofitted after go-live, when it is both more expensive and less complete."],
+      ],
+      euEyebrow: "European clients",
+      euTitle: "We stand on Azure, so your data stays inside Europe.",
+      euSub: "Your own tenant, your own servers, or EU-region Azure — decided before we build, not after. Encryption in transit and at rest, with GDPR and the EU AI Act handled at design time rather than argued about at go-live.",
+      usEyebrow: "US partners",
+      usTitle: "We start with a conversation, not a data-centre map.",
+      usSub: "With American partners the first work is consulting: understanding what you already run, where your own delivery is stretched, and where we can genuinely help. Hosting follows from that decision rather than leading it.",
+      usGo: "Talk it through →",
+      nextKicker: "Your move",
+      nextH2: "Tell us what you run. We will tell you what is reachable.",
+      nextCards: [
+        ["Book 30 minutes.", "Bring a list of your systems. We will be straight about which ones are easy, which are work, and which are not worth it.", "Book a call →"],
+        ["See how we build agents.", "What sits on top of these connections once they exist.", "How we build agents →"],
+        ["Or start with a routine.", "Eight processes we have solved often enough to quote quickly.", "All eight routines →"],
+      ],
+      seoTitle: "Integrations | EnterIT",
+      seoDesc: "60+ systems integrated. API, database, files or the interface itself — in that order of preference, chosen by what the system actually supports.",
+    },
+    engagement: {
+      eyebrow: "Engagement",
+      h1: "How this is actually bought.",
+      lead: "Four commercial models, what happens to the code, who is on the hook once it is live, and what a client on the other side of an ocean needs to know. If you run an IT company yourself, this is the page to read first.",
+      meta: "Fixed-scope · Discovery · Dedicated team · Run and evolve",
+      cta: "Talk through the right model",
+      modelsKicker: "Four commercial models",
+      modelsH2: "Pick the one that matches how much you want to hand over.",
+      modelsAsk: "They are not tiers and there is no upsell path built into them. Most clients start with the second and move to whichever of the other three fits what they learned.",
+      models: [
+        ["Fixed-scope build", "A defined deliverable with a fixed price and a fixed date. Best for the eight recurring patterns and for anything where the specification is genuinely stable."],
+        ["Discovery and business case", "Stages one and two on their own, at a fixed fee agreed before it starts. You get a process map, a measured baseline and a documented business case — yours to keep, with no obligation to build with us. If you do go ahead, it is credited against the build."],
+        ["Dedicated team", "A named team of engineers working as an extension of yours, billed monthly. Common when the client is an IT company that needs specific capability — agents, integrations, data engineering — without hiring for it. You direct the work; we handle staffing, continuity and quality."],
+        ["Run and evolve", "We take operational ownership of what is already built, yours or ours, under an SLA with a monthly retainer covering monitoring, support and a defined development capacity."],
+      ],
+      moneyKicker: "What it costs",
+      moneyH2: "No price list, and the reason is not coyness.",
+      moneyBody: [
+        "We do not publish a price list. For work that is built rather than licensed, a range honest enough to be true is too wide to help you, and a narrow one is a guess dressed up as a number — and either way it anchors the conversation before anyone knows what is being built.",
+        "Four things move the figure, and you can assess three of them yourself right now: how many systems have to be reached, whether they have usable APIs, how clean the master data underneath is, and how many exception paths the process really has. That last one is almost always larger than people expect, which is exactly why we measure it before quoting rather than after.",
+        "What we can commit to up front is the shape of the risk. The smallest possible first step is the discovery phase: fixed fee, agreed before it starts, and it ends with a process map, a measured baseline and a business case that is yours to keep whether or not you build with us. If the numbers do not work, that document is what tells you so — and we have handed over exactly that more than once.",
+      ],
+      calcTitle: "Size it yourself first.",
+      calcSub: "Four inputs, an order-of-magnitude estimate, no email required.",
+      calcGo: "Open the calculator →",
+      safeKicker: "How you are protected",
+      safeH2: "We plan the ending at the beginning.",
+      safeAsk: "This is the part most suppliers leave for the contract review, by which point the leverage has moved. It is easier to read it now.",
+      safe: [
+        ["SLA and operations", "We are accountable for keeping it running", "Availability targets, response times, monitoring, backups and updates under a single SLA. Named owner, defined escalation path.", "confirm whether monitoring is 24/7 or 24/5 before this goes live"],
+        ["Ownership and exit", "You know who owns the code before we write it", "The contract states who owns the code, the data and the documentation, and defines the handover procedure if the relationship ends. Standard position: you own the code and the data outright, and we deliver a documented handover package on request — no lock-in clauses, no proprietary runtime you cannot leave.", "confirm the standard position really is client-owns-everything; if not, this paragraph gets rewritten"],
+        ["Security and governance", "Security is designed in, not bolted on", "EU cloud or fully on-premises. Encryption in transit and at rest, role-based access, and a complete audit trail. GDPR and the EU AI Act are addressed at design time. Under our contract and our model-vendor terms, your data is not used to train models for anyone else.", "check the training-data wording against the OpenAI / Anthropic / Microsoft agreements, and add SOC 2 or ISO 27001 status"],
+      ],
+      farKicker: "Working across a distance",
+      farH2: "The practical questions, answered up front.",
+      far: [
+        ["Time zone", "We work on Central European Time. Our standard day overlaps with the US East Coast until around 11:00 a.m. Eastern, and we hold a fixed late-afternoon window in Prague for West Coast calls. Delivery teams work asynchronously by default — a written status lands in your inbox before your day starts.", "confirm the West Coast call window, and that delivery can carry the written-status-before-your-day commitment"],
+        ["Contracting and invoicing", "Contracts in English, invoicing in EUR or USD, payment by wire.", "governing law, accepted payment methods, and whether a US entity exists or is planned"],
+        ["Where your data lives", "For European clients we stand on Azure, so the data stays inside Europe and GDPR is a design decision rather than a discussion. For a US engagement, hosting follows from the consulting phase rather than leading it: we work out what you already run and where we can genuinely help, and the answer falls out of that.", null],
+        ["Language", "All delivery documentation, code comments and client communication in English by default.", null],
+      ],
+      limitsKicker: "Boundaries",
+      limitsH2: "Things we will turn down.",
+      limitsAsk: "The cheapest credibility on this site. A supplier who says yes to everything is telling you where their limit is anyway — just later, and at your expense.",
+      limits: [
+        "We do not take on a build without measuring the baseline first. Without it there is no way to tell later whether it worked, and we are not interested in that argument in month nine.",
+        "We do not sell proofs of concept that have no path into production. If a process cannot realistically go live, we will say so in stage two rather than bill for a pilot.",
+        "We do not put an agent in front of a decision that should stay with a person — pricing, credit, hiring, anything with legal exposure. The agent prepares the case; a human signs it.",
+        "We do resell Microsoft licensing where we implement it. We disclose the margin, and it does not drive our architecture recommendations — if the right answer is a competitor's product or no product at all, that is what the business case will say.",
+      ],
+      seoTitle: "How we engage | EnterIT",
+      seoDesc: "Four commercial models, who owns the code, what happens at the exit, and the practical questions a client asks before any technical one.",
+    },
+    c2030: {
+      eyebrow: "Company 2030 · self-check",
+      h1: "Where is your company on the agentic road?",
+      lead: "Five levels, the sentence you would actually hear at each one, and the single practical step that moves you to the next. It takes about two minutes and there is no form at the end.",
+      meta: "No email required · read the quoted line, not the label",
+      cta: "Talk through your level",
+      paceKicker: "Why the question is worth asking now",
+      paceH2: "Four numbers, none of them ours.",
+      paceAsk: "We cite these because they are independent. The last one is the one worth sitting with.",
+      pace: [
+        ["×2", "every ~7 months — the length of task AI can complete on its own", "METR, 2025–26"],
+        ["280×", "fall in the cost of GPT-3.5-level performance in two years", "Stanford AI Index, 2025"],
+        ["22%", "of jobs reshuffled by 2030", "World Economic Forum, 2025"],
+        ["95%", "of generative-AI pilots show no measurable profit impact", "MIT, 2025"],
+      ],
+      paceCloseTitle: "That last number is the reason we start every engagement with a baseline, an owner and a defined benefit.",
+      paceCloseSub: "The pilots in that 95% did not fail on the technology. They failed on method, ownership and measurement — three things that cost nothing to fix at the start and cannot be fixed at the end.",
+      levelsKicker: "Five levels",
+      levelsH2: "Find the sentence you actually hear in your company.",
+      levelsAsk: "Most companies are at level 1 or 2, which is also where progress is fastest. Read the quoted line rather than the label — it is the more honest test.",
+      stepLabel: "Next step",
+      levels: [
+        ["Manual operation", "Data gets retyped between systems and the knowledge lives in people's heads and inboxes.", "“That is something only one person in accounting knows.”", "Start with a single routine that has a clear owner. Attendance or invoices are usually the shortest path to a measured result."],
+        ["Licenses bought, impact never measured", "The AI licenses exist. Regular use and measured adoption do not.", "“We are paying for it, but we do not know whether it pays off.”", "Take a baseline before doing anything else. Without one, nothing that follows can be defended in a budget meeting."],
+        ["People ready, first agents in production", "Role-based adoption and the first agents in production, delivering measured hours, with people approving the high-impact actions.", "“We can finally see it in the numbers.”", "Widen from one process to the ones next to it, and put the governance model in writing before the count grows."],
+        ["Connected agent workflows", "Order, warehouse and invoicing agents pass work between them; people review the exceptions. One energy client runs nine agents this way.", "“The agents pass work around on their own. We just approve the exceptions.”", "Move the monitoring and the metrics into one place. At this level the risk stops being capability and starts being oversight."],
+        ["A company running on the loop", "The agentic layer is core operations. Sensitive data and learned procedures stay inside; anything external follows explicit rules.", "“We add a new process to the loop in days, not quarters.”", "This is the 2030 position. Nobody we work with is fully here yet, and any supplier who tells you their client is should be asked for the audit trail."],
+      ],
+      seoTitle: "Company 2030 · self-check | EnterIT",
+      seoDesc: "Five maturity levels on the agentic road, the sentence you would actually hear at each, and the one practical step to the next.",
+    },
+    calc: {
+      eyebrow: "Savings calculator",
+      h1: "What is the routine costing you today?",
+      lead: "Move four sliders and get an order-of-magnitude estimate of what repetitive work costs your company each year. It runs entirely in this page — nothing is sent anywhere and there is no form.",
+      metaA: "Based on", metaB: "working weeks and", metaC: "hours per FTE per year",
+      calcKicker: "Savings calculator",
+      calcH2: "Four inputs. One order of magnitude.",
+      calcAsk: "Deliberately rough. It exists to tell you whether this is a five-figure conversation or a six-figure one, and nothing more precise than that should be trusted before we have seen your data.",
+      afterKicker: "What happens to this number",
+      afterH2: "We replace it with a real one in the first two weeks.",
+      afterBody: [
+        "Stage one exists to turn this estimate into a measurement: how much work there actually is, how many exceptions the process really has, and what the current way of doing it costs including the part nobody counts, which is senior people doing junior work.",
+        "Sometimes that measurement kills the project. That has happened, and it is cheaper for both of us in week two than in month six.",
+      ],
+      stagesTitle: "See the four stages.",
+      stagesSub: "Each one ends with a deliverable, a decision point and an owner.",
+      stagesGo: "How we work →",
+      seoTitle: "Savings calculator | EnterIT",
+      seoDesc: "Four sliders and an order-of-magnitude estimate of what routine work costs your company each year. Runs in the page; no email required.",
+    },
+  },
+};
