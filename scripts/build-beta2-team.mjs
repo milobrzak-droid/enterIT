@@ -2,7 +2,7 @@
  * build-beta2-team.mjs — /beta2/team.html and /beta2/integrations.html.
  *
  * Team. The copy deck flagged a real credibility problem: Enter Agents and
- * Enter Enterprise each have their own CEO and founder, and on a page that does
+ * Enter Tech each have their own CEO and founder, and on a page that does
  * not say so, a US reader counts two CEOs and two founders and stops believing
  * the page. So every title here carries the entity it belongs to, and the
  * distinction is stated once in plain words rather than left to be inferred.
@@ -26,12 +26,12 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const teams = [
   {
-    name: "Enter Enterprise", size: "45 engineers", tone: "navy",
+    name: "Enter Tech", size: "45 engineers", tone: "navy",
     body: "Large systems, architecture, custom development, integrations, legacy modernization, DevOps and infrastructure. The oldest practice in the group and the one behind our longest-running engagements — the work measured in years rather than in sprints.",
     does: ["Custom internal applications and portals", "ERP, CRM and WMS integration", "Legacy modernization and gradual replacement", "Cloud, DevOps and long-term maintenance"],
     people: [
-      ["Gašpar Nagy", "Founder, Enter Enterprise"],
-      ["Adam Nagy", "CIO, Enter Enterprise"],
+      ["Gašpar Nagy", "Founder, Enter Tech", "/assets/team/gaspar-nagy.jpg"],
+      ["Adam Nagy", "CIO, Enter Tech", "/assets/team/adam-nagy.jpg"],
     ],
   },
   {
@@ -39,15 +39,18 @@ const teams = [
     body: "AI agents and custom LLM systems put into live operations. The engineers are forward-deployed: they sit with your process owners and watch the work happen instead of building from a specification document that was already out of date when it was written.",
     does: ["Agents in production, with governance", "Document extraction and knowledge retrieval", "Agentic layers over an existing ERP", "Data pipelines and retrieval infrastructure"],
     people: [
-      ["Honza Nedvídek", "CEO, Enter Agents"],
-      ["Ondřej Hanigovský", "CTO, Enter Agents"],
+      ["Honza Nedvídek", "CEO, Enter Agents", "/assets/team/nedvidek.jpg"],
+      ["Ondřej Hanigovský", "CTO, Enter Agents", "/assets/team/hanigovsky.jpg"],
     ],
   },
   {
     name: "Enter Studio", size: "5 people", tone: "violet",
-    body: "Product, web and mobile, from an MVP to something that survives real traffic. This is the customer-facing layer on top of what the other two teams build — and on larger engagements it borrows design and front-end capacity from Enter Enterprise rather than pretending five people can do everything.",
-    does: ["Websites, campaign pages and portals", "Online-store front ends", "Web and mobile apps from MVP to scale", "Design systems and component libraries"],
-    people: [["Jiří Čechal", "Head of Development, Enter Studio"]],
+    body: "The interface layer on top of what the other two teams build: the screens people actually work in. Product and front-end, from an MVP to something that survives real use — and on larger engagements it borrows capacity from Enter Tech rather than pretending five people can do everything.",
+    does: ["Internal apps and portals people use daily", "The screens on top of an agent or an automation", "Product work from MVP to scale", "Design systems and component libraries"],
+    people: [
+      ["Jiří Čechal", "Head of Development, Enter Studio", "/assets/team/studio-1.jpg"],
+      ["Vítek Sasin", "C programmer, Enter Studio", "/assets/team/studio-2.jpg"],
+    ],
   },
 ];
 
@@ -56,12 +59,21 @@ const structure = section({
   kicker: "Three teams",
   h2: "Three practices, one delivery process.",
   ask: "They are separate teams because the disciplines genuinely differ, and one organization because the failures we get called in to fix live in the gaps between suppliers. Work crosses the boundary internally, not through a subcontract.",
-  keys: teams.map((t) =>
-    key({
-      span: 4, tone: t.tone, eyebrow: t.size, title: t.name, size: "big",
-      sub: t.body, list: t.does,
-      rule: t.people.map(([n, r]) => `${n} — ${r}`).join(" · "),
-    })),
+  keys: [
+    ...teams.map((t) =>
+      key({
+        span: 4, tone: t.tone, eyebrow: t.size, title: t.name, size: "big",
+        sub: t.body, list: t.does,
+        rule: t.people.map(([n]) => n).join(" · "),
+      })),
+    /* The faces behind those three names. Photo caps, so the row reads as
+       people rather than as a directory. */
+    ...teams.flatMap((t) => t.people).map(([name, role, img]) => `      <div class="key key--navy key--photo" style="grid-column:span 2">
+        <img class="key-bg" src="${img}" alt="${e(name)}" loading="lazy">
+        <span class="key-title key-title--sm">${e(name)}</span>
+        <p class="key-meta">${e(role)}</p>
+      </div>`),
+  ],
 });
 
 /* The distinction the deck said would otherwise cost us the reader. */
@@ -73,20 +85,24 @@ const titles = section({
     key({
       span: 8, tone: "navy",
       body: [
-        "Enter Agents and Enter Enterprise are companies with their own founders and their own chief executives, and they say so on their own websites. Enter Group is the organization the three of them deliver under, and it has one founder and one CEO.",
+        "Enter Agents and Enter Tech are companies with their own founders and their own chief executives, and they say so on their own websites. Enter Group is the organization the three of them deliver under, and it has one founder and one CEO.",
         "We spell it out because on a page that does not, a reader counts two CEOs and two founders and quietly concludes that somebody is inflating titles. The structure is ordinary; only the labels look odd out of context.",
         "What it means commercially: you sign one contract with Enter Group, and the named owner for your engagement is a person, not a company.",
       ],
       mascot: "wave",
     }),
-    key({
-      span: 4, tone: "turquoise",
-      eyebrow: "Across all three",
-      title: "Milo Brzák", size: "sm",
-      sub: "Founder & CEO, Enter Group. Has trained more than 800 people across over a hundred companies. Owns strategy, product and methodology.",
-      rule: "Michaela Klesnárová — Operations & Delivery, Enter Group. Owns client delivery and production operations across all three teams.",
-      needs: need("confirm the 'nearly two decades in C-level roles' line for Michaela before this goes live"),
-    }),
+    `      <div class="key key--navy key--photo" style="grid-column:span 2">
+        <img class="key-bg" src="/assets/team/milo.jpg" alt="Milo Brzák" loading="lazy">
+        <span class="key-eyebrow">Enter Group</span>
+        <span class="key-title key-title--sm">Milo Brzák</span>
+        <p class="key-meta">Founder &amp; CEO. Strategy, product and methodology. 800+ people trained across more than a hundred companies.</p>
+      </div>`,
+    `      <div class="key key--navy key--photo" style="grid-column:span 2">
+        <img class="key-bg" src="/assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy">
+        <span class="key-eyebrow">Enter Group</span>
+        <span class="key-title key-title--sm">Michaela Klesnárová</span>
+        <p class="key-meta">Operations &amp; Delivery. Owns client delivery and production operations across all three teams.</p>
+      </div>`,
   ],
 });
 
@@ -100,7 +116,7 @@ const shape = section({
       sub: "Not a network of freelancers assembled per project.",
     }),
     key({
-      span: 3, tone: "white", stat: "45 / 25 / 5", statLabel: "enterprise / agents / studio",
+      span: 3, tone: "white", stat: "45 / 25 / 5", statLabel: "tech / agents / studio",
     }),
     key({
       span: 3, tone: "white", stat: "120+", statLabel: "projects delivered",
@@ -144,7 +160,7 @@ const teamBody = [
     eyebrow: "Who does the work",
     h1: "75 engineers. Three teams. One name on the contract.",
     lead: "Three permanent teams that have worked together long enough to hand work across the boundary without dropping it. This page is who they are, who runs them, and why the titles look the way they do.",
-    meta: "Enter Enterprise · Enter Agents · Enter Studio",
+    meta: "Enter Tech · Enter Agents · Enter Studio",
     cta: "Meet the people who would run your engagement",
     bookingUrl,
   }),
@@ -265,7 +281,7 @@ export function writeTeamAndIntegrations() {
     resolve(root, "beta2", "team.html"),
     page({
       title: "The team | EnterIT",
-      description: "75 engineers in three permanent teams — Enter Enterprise, Enter Agents and Enter Studio — with a named owner for every area and one contract across all three.",
+      description: "75 engineers in three permanent teams — Enter Tech, Enter Agents and Enter Studio — with a named owner for every area and one contract across all three.",
       body: teamBody, bookingUrl,
     }),
     "utf8",

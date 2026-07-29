@@ -277,12 +277,14 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
   object-fit:cover;z-index:-2;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .key--photo::before{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(180deg,rgba(10,17,28,.22) 0%,rgba(10,17,28,.55) 45%,rgba(10,17,28,.9) 100%)}
-/* A photograph that is there to prove the place is alive, not to be looked at.
-   It runs far under the type — closer to texture than to picture — so a cap can
-   carry a headline and still show real people at real desks behind it. */
+/* A photograph that proves the place is alive. It sits under the type rather
+   than competing with it, but it has to be legible as a photograph — the first
+   pass buried it at 88% and what reached the page was a black rectangle. The
+   scrim now starts light at the top, where there is no text, and deepens toward
+   the headline. */
 .key--quiet::before{background:linear-gradient(180deg,
-  rgba(14,22,36,.88) 0%,rgba(14,22,36,.92) 55%,rgba(14,22,36,.97) 100%)}
-.key--quiet .key-bg{filter:grayscale(.35) contrast(.92)}
+  rgba(14,22,36,.30) 0%,rgba(14,22,36,.62) 45%,rgba(14,22,36,.90) 100%)}
+.key--quiet .key-bg{filter:grayscale(.15)}
 .key--photo .key-eyebrow{background:var(--white);color:var(--navy)}
 .key--photo .key-legend{border-color:var(--white);color:var(--white)}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){

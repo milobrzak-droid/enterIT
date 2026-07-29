@@ -81,7 +81,7 @@ export const us = {
           "Web and mobile apps from MVP to scale",
           "Design systems and component libraries",
         ],
-        who: "Enter Studio, our product team, with additional design and front-end capacity from Enter Enterprise on larger builds.",
+        who: "Enter Studio, our product team, with additional design and front-end capacity from Enter Tech on larger builds.",
         note: "Already working with someone else? We are happy to take only the parts your current agency cannot cover — the integration layer, the data behind the site, or the AI features on top of it.",
       },
       {
@@ -299,9 +299,9 @@ export const us = {
     go: "Meet the whole team →",
     teams: [
       {
-        name: "Enter Enterprise", size: "45 people",
+        name: "Enter Tech", size: "45 people",
         body: "Large systems, architecture, custom development, integrations, legacy modernization, DevOps and infrastructure. The team behind our longest-running engagements.",
-        people: ["Adam Nagy — CIO, Enter Enterprise", "Gašpar Nagy — Founder, Enter Enterprise"],
+        people: ["Adam Nagy — CIO, Enter Tech", "Gašpar Nagy — Founder, Enter Tech"],
       },
       {
         name: "Enter Agents", size: "25 people",
@@ -310,7 +310,7 @@ export const us = {
       },
       {
         name: "Enter Studio", size: "5 people",
-        body: "Product, web and mobile development from MVP to scale — websites, portals and the customer-facing layer on top of what the other two teams build. Design and front-end capacity is shared with Enter Enterprise on larger engagements.",
+        body: "Product, web and mobile development from MVP to scale — websites, portals and the customer-facing layer on top of what the other two teams build. Design and front-end capacity is shared with Enter Tech on larger engagements.",
         people: ["Jiří Čechal — Head of Development, Enter Studio"],
       },
     ],
@@ -319,7 +319,7 @@ export const us = {
       { name: "Milo Brzák", role: "Founder & CEO, Enter Group", image: "/assets/team/milo.jpg", body: "Has trained more than 800 people across over a hundred companies. Owns strategy, product and methodology." },
       { name: "Michaela Klesnárová", role: "Operations & Delivery, Enter Group", image: "/assets/team/klesnarova.jpg", body: "Nearly two decades in enterprise C-level roles. Owns client delivery and production operations across all three teams.", need: need("confirm the two-decades figure") },
     ],
-    titlesNote: "Titles above are team-level. Enter Agents and Enter Enterprise each have their own CEO and founder; Enter Group has one.",
+    titlesNote: "Titles above are team-level. Enter Agents and Enter Tech each have their own CEO and founder; Enter Group has one.",
   },
 
   /* ---- 08 · Integrations -------------------------------------------------- */
