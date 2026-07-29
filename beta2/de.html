@@ -594,10 +594,42 @@
         
         <span class="key-go">Die vier Phasen im Detail →</span>
       </a>
-      <div class="key key--slot" style="grid-column:span 5">
-        <img class="slot-mascot" src="/assets/decor/mascot-blue.svg" alt="" loading="lazy">
-        <span class="slot-hint">Hier kommt ein Foto</span>
-        <span class="slot-brief">Ein Bildschirm mitten in der Arbeit — die Extraktion läuft gegen das ERP</span>
+      <div class="key key--white viz" style="grid-column:span 5">
+        <span class="key-eyebrow">Der Fluss, live</span>
+        <div class="flowviz">
+          <div class="fv-row">
+        <span class="fv-node" style="--i:0">
+          <i class="fv-led"></i>
+          <b>Beleg</b>
+          <small>kommt an</small>
+        </span>
+        <span class="fv-wire" style="--i:0"><i class="fv-packet"></i></span>
+        <span class="fv-node" style="--i:1">
+          <i class="fv-led"></i>
+          <b>Extraktion</b>
+          <small>liest ihn</small>
+        </span>
+        <span class="fv-wire" style="--i:1"><i class="fv-packet"></i></span>
+        <span class="fv-node" style="--i:2">
+          <i class="fv-led"></i>
+          <b>Prüfung</b>
+          <small>gegen das ERP</small>
+        </span>
+        <span class="fv-wire" style="--i:2"><i class="fv-packet"></i></span>
+        <span class="fv-node" style="--i:3">
+          <i class="fv-led"></i>
+          <b>Ein Mensch</b>
+          <small>genehmigt</small>
+        </span>
+        <span class="fv-wire" style="--i:3"><i class="fv-packet"></i></span>
+        <span class="fv-node" style="--i:4">
+          <i class="fv-led"></i>
+          <b>ERP</b>
+          <small>geschrieben</small>
+        </span>
+          </div>
+          <p class="fv-foot">Belege heute verarbeitet</p>
+        </div>
       </div>
     </div>
   </section>
@@ -973,8 +1005,43 @@
 </main>
 
 <footer class="site-foot">
-  <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652</span>
-  <span><a href="/de/gdpr.html">Datenschutz</a> · <a href="/de/podminky.html">Allgemeine Geschäftsbedingungen</a> · <a href="/beta/">beta 1</a></span>
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>Ein Performance-KI-Team, das in den Betrieb liefert.</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Czechia
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Eine Frage?</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">30 Minuten buchen</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Hauptnavigation</span>
+      <a href="#build">Was wir bauen</a>
+      <a href="#results">Ergebnisse</a>
+      <a href="#process">So arbeiten wir</a>
+      <a href="#integrations">Integrationen</a>
+      <a href="/de/tym.html">Team</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Enter Group</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="/de/tym.html">Enter Tech</a>
+      <a href="/de/tym.html">Enter Agents</a>
+      <a href="/de/tym.html">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="/de/gdpr.html">Datenschutz</a> · <a href="/de/podminky.html">Allgemeine Geschäftsbedingungen</a> · <a href="/beta/">beta 1</a></span>
+  </div>
 </footer>
 
 

@@ -330,6 +330,37 @@ function key({
 }
 
 /**
+ * The document flow, running.
+ *
+ * Five nodes and four wires. The dashes march, a packet crosses each wire in
+ * turn, and each node lights as the packet reaches it — so the picture ticks
+ * along instead of sitting there. The approval node is deliberately the one
+ * that holds: it lights and waits, because that is what actually happens.
+ *
+ * Same idea as the Loop2030 diagram — a track with marching dashes and a pulse
+ * travelling it — narrowed to the one flow chapter 04 is about. All CSS: no
+ * script, no canvas, and it stops dead under prefers-reduced-motion.
+ */
+function flowViz(t) {
+  const nodes = t.flowNodes.map((n, i) => `        <span class="fv-node" style="--i:${i}">
+          <i class="fv-led"></i>
+          <b>${e(n[0])}</b>
+          <small>${e(n[1])}</small>
+        </span>`);
+  const wires = [0, 1, 2, 3].map((i) => `        <span class="fv-wire" style="--i:${i}"><i class="fv-packet"></i></span>`);
+  const row = nodes.reduce((acc, n, i) => acc.concat(i ? [wires[i - 1], n] : [n]), []).join("\n");
+  return `      <div class="key key--white viz" style="grid-column:span 5">
+        <span class="key-eyebrow">${e(t.vizLabel)}</span>
+        <div class="flowviz">
+          <div class="fv-row">
+${row}
+          </div>
+          <p class="fv-foot">${e(t.vizFoot)}</p>
+        </div>
+      </div>`;
+}
+
+/**
  * A reserved place for artwork we do not have yet. It is deliberately visible
  * rather than an empty cap: the brief for the photograph is printed on the tile
  * it will fill, so the shot list and the layout never drift apart.
@@ -555,7 +586,7 @@ ${faceRow}
         go: t.processGo, href: code === "en" ? "/beta2/automation.html" : at("jak-stavime-automatizace.html"),
         photo: "/assets/decor/guy.webp", alt: t.processPhotoAlt,
       }),
-      slot({ span: 5, hint: t.artHint, brief: t.slots[1] }),
+      flowViz(t),
     ],
   });
 
@@ -738,8 +769,43 @@ ${start}
 </main>
 
 <footer class="site-foot">
-  <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652</span>
-  <span><a href="${at("gdpr.html")}">${e(page.footer.privacy)}</a> · <a href="${at("podminky.html")}">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>${e(v.hero.h1)}</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Czechia
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(t.footAsk)}</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="${bookingUrl}" target="_blank" rel="noopener">${e(t.footBook)}</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(page.mainNavLabel)}</span>
+      <a href="#build">${e(page.nav.services)}</a>
+      <a href="#results">${e(page.nav.results)}</a>
+      <a href="#process">${e(page.nav.process)}</a>
+      <a href="#integrations">${e(page.nav.integrations)}</a>
+      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">${e(page.nav.team)}</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(t.footGroup)}</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Tech</a>
+      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Agents</a>
+      <a href="${code === "en" ? "/beta2/team.html" : at("tym.html")}">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="${at("gdpr.html")}">${e(page.footer.privacy)}</a> · <a href="${code === "en" ? "/beta2/engagement.html" : at("podminky.html")}">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
+  </div>
 </footer>
 
 
