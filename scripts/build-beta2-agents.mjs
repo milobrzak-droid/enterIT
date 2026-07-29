@@ -44,6 +44,13 @@ function render(code) {
         span: 12, tone: "navy",
         title: C.difference.whyTitle, size: "sm", body: C.difference.why,
       }),
+      /* The distinction above is abstract. This is the concrete version of it:
+         the agent types, a person presses the key that commits. */
+      key({
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/keyboard.webp", alt: C.difference.photoAlt,
+        title: C.difference.photoTitle, size: "big", sub: C.difference.photoSub,
+      }),
     ],
   });
 

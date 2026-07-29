@@ -29,6 +29,9 @@ export const agentsCopy = {
       agentSub: "Give it a goal, a boundary and a set of tools, and it decides which steps to take. Ask it to create ERP line items and it can read two orders written differently, because it is working from content rather than from format.",
       agentRule: "More capable, more engineering around it, and it needs governing.",
       whyTitle: "Why this matters before you buy either one.",
+      photoTitle: "The agent does the typing. A person still presses the key that matters.",
+      photoSub: "Every agent we build has named points where it stops and waits for someone. Those points are written down before anything is built, not discovered afterwards when something has already gone through.",
+      photoAlt: "Close-up of two hands on a keyboard, the Enter key in frame, code on the screen behind.",
       why: [
         "Agents take on the document-heavy routine that used to need a human to interpret it — which is exactly where time and know-how leak out of a company today. That makes them valuable and it makes them risky in the same breath.",
         "It is not magic; it is engineering. What separates an agent that runs for two years from one that demos well in March and is switched off in June is whether the eight things in the next section were defined before anyone wrote code.",
@@ -115,6 +118,9 @@ export const agentsCopy = {
       agentSub: "Dostane cíl, hranice a sadu nástrojů a sám volí kroky. Řekněte mu, ať založí položky do ERP, a přečte dvě různě napsané objednávky — protože pracuje s obsahem, ne s formátem.",
       agentRule: "Umí víc, potřebuje kolem sebe víc engineeringu a musí se řídit.",
       whyTitle: "Proč na tom záleží dřív, než jedno z toho koupíte.",
+      photoTitle: "Psaní obstará agent. Tu klávesu, na které záleží, pořád mačká člověk.",
+      photoSub: "Každý agent, kterého stavíme, má pojmenovaná místa, kde se zastaví a počká na člověka. Ta místa jsou sepsaná dřív, než se začne stavět — ne objevená potom, co něco projde.",
+      photoAlt: "Detail dvou rukou na klávesnici, v záběru klávesa Enter, na obrazovce za tím kód.",
       why: [
         "Agenti přebírají dokumentovou rutinu, která dřív potřebovala člověka, aby ji vyložil — a přesně tam z firem odtéká čas a know-how. To je dělá cenné a rizikové jedním dechem.",
         "Není to kouzlo, je to engineering. Agenta, který běží dva roky, od agenta, který v březnu dobře odprezentuje a v červnu se vypne, dělí jediné: jestli bylo osm věcí z další sekce definovaných dřív, než někdo napsal řádek kódu.",
@@ -201,6 +207,9 @@ export const agentsCopy = {
       agentSub: "Geben Sie ihm ein Ziel, eine Grenze und Werkzeuge, und er wählt die Schritte selbst. Bitten Sie ihn, ERP-Positionen anzulegen, und er liest zwei unterschiedlich geschriebene Bestellungen — weil er mit dem Inhalt arbeitet, nicht mit dem Format.",
       agentRule: "Kann mehr, braucht mehr Engineering darum herum und muss gesteuert werden.",
       whyTitle: "Warum das zählt, bevor Sie eines von beiden kaufen.",
+      photoTitle: "Das Tippen übernimmt der Agent. Die Taste, auf die es ankommt, drückt weiterhin ein Mensch.",
+      photoSub: "Jeder Agent, den wir bauen, hat benannte Stellen, an denen er anhält und auf einen Menschen wartet. Diese Stellen stehen fest, bevor gebaut wird — sie werden nicht erst entdeckt, wenn schon etwas durchgelaufen ist.",
+      photoAlt: "Nahaufnahme zweier Hände auf einer Tastatur, die Enter-Taste im Bild, dahinter Code auf dem Schirm.",
       why: [
         "Agenten übernehmen die dokumentenlastige Routine, die früher einen Menschen zum Interpretieren brauchte — genau dort verliert ein Unternehmen heute Zeit und Wissen. Das macht sie wertvoll und im selben Atemzug riskant.",
         "Es ist keine Magie, es ist Engineering. Was einen Agenten, der zwei Jahre läuft, von einem trennt, der im März gut vorführt und im Juni abgeschaltet wird, ist allein, ob die acht Dinge aus dem nächsten Abschnitt definiert waren, bevor jemand Code geschrieben hat.",
@@ -287,6 +296,9 @@ export const agentsCopy = {
       agentSub: "Dajcie mu cel, granicę i zestaw narzędzi, a sam wybierze kroki. Poproście, żeby założył pozycje w ERP, a przeczyta dwa różnie napisane zamówienia — bo pracuje z treścią, nie z formatem.",
       agentRule: "Potrafi więcej, wymaga więcej inżynierii wokół siebie i trzeba nim zarządzać.",
       whyTitle: "Dlaczego to ma znaczenie, zanim kupicie którekolwiek z nich.",
+      photoTitle: "Pisanie bierze na siebie agent. Klawisz, na którym zależy, wciąż naciska człowiek.",
+      photoSub: "Każdy agent, którego budujemy, ma nazwane miejsca, w których zatrzymuje się i czeka na człowieka. Te miejsca są spisane, zanim cokolwiek powstanie — nie odkrywane potem, gdy coś już przeszło.",
+      photoAlt: "Zbliżenie dwóch dłoni na klawiaturze, w kadrze klawisz Enter, za nim kod na ekranie.",
       why: [
         "Agenci przejmują dokumentową rutynę, która wcześniej wymagała człowieka do interpretacji — i dokładnie tam z firm ucieka czas i wiedza. To czyni ich cennymi i ryzykownymi jednym tchem.",
         "To nie magia, to inżynieria. Agenta, który działa dwa lata, od agenta, który dobrze wypada w marcu i zostaje wyłączony w czerwcu, dzieli jedno: czy osiem rzeczy z następnej sekcji było zdefiniowanych, zanim ktoś napisał linijkę kodu.",
