@@ -31,8 +31,17 @@ function render(code) {
   const problem = section({
     id: "problem", no: "01", hue: 0,
     kicker: C.problem.kicker, h2: C.problem.h2, ask: C.problem.ask,
-    keys: C.problem.items.map(([title, subText], i) =>
-      key({ span: 3, tone: symptomTones[i], title, size: "sm", sub: subText })),
+    keys: [
+      ...C.problem.items.map(([title, subText], i) =>
+        key({ span: 3, tone: symptomTones[i], title, size: "sm", sub: subText })),
+      /* All four symptoms look the same from behind: a document open on one
+         side of the screen and the system it has to reach on the other. */
+      key({
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/screenwork.webp", alt: C.photoAlt,
+        title: C.photoTitle, size: "big", sub: C.photoSub,
+      }),
+    ],
   });
 
   const scope = section({

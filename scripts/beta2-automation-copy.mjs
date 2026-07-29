@@ -18,6 +18,9 @@ export const automationCopy = {
     lead: "Retyping orders, hunting through price lists, filling the same form twice — that is machine work. We automate the processes and systems you actually have, and leave judgment and control where they belong.",
     meta: "Roughly a five-minute read · start here if you are not sure where to start",
     cta: "Tell us which process hurts",
+    photoTitle: "This is what all four look like from behind.",
+    photoSub: "A document on one side of the screen, the system it has to reach on the other, and a person in between doing the reaching. Automation removes the middle step, not the person.",
+    photoAlt: "Over the shoulder of someone working: a document open on one half of the screen and an ERP record on the other.",
     problem: {
       kicker: "Where it hurts",
       h2: "Repetitive work does not just cost hours. It costs capacity.",
@@ -104,6 +107,9 @@ export const automationCopy = {
     lead: "Přepisování objednávek, hledání v cenících, vyplňování téhož formuláře podruhé — to je práce pro stroj. Automatizujeme procesy a systémy, které opravdu máte, a úsudek i kontrolu necháváme tam, kam patří.",
     meta: "Zhruba na pět minut čtení · začněte tady, když nevíte, kde začít",
     cta: "Řekněte nám, který proces bolí",
+    photoTitle: "Zezadu vypadají všechny čtyři stejně.",
+    photoSub: "Dokument na jedné půlce obrazovky, systém, kam se ta data mají dostat, na druhé, a mezi tím člověk, který je přenáší. Automatizace odstraní ten mezikrok, ne toho člověka.",
+    photoAlt: "Přes rameno člověka při práci: na jedné půlce obrazovky dokument, na druhé záznam v ERP.",
     problem: {
       kicker: "Kde to bolí",
       h2: "Rutina nestojí jen hodiny. Stojí kapacitu.",
@@ -190,6 +196,9 @@ export const automationCopy = {
     lead: "Bestellungen abtippen, Preislisten durchsuchen, dasselbe Formular zweimal ausfüllen — das ist Maschinenarbeit. Wir automatisieren die Prozesse und Systeme, die Sie tatsächlich haben, und lassen Urteil und Kontrolle dort, wo sie hingehören.",
     meta: "Etwa fünf Minuten Lesezeit · fangen Sie hier an, wenn Sie nicht wissen, wo Sie anfangen sollen",
     cta: "Sagen Sie uns, welcher Prozess weh tut",
+    photoTitle: "Von hinten sehen alle vier gleich aus.",
+    photoSub: "Ein Dokument auf der einen Bildschirmhälfte, das System, in das die Daten sollen, auf der anderen, und dazwischen ein Mensch, der sie überträgt. Automatisierung entfernt den Zwischenschritt, nicht den Menschen.",
+    photoAlt: "Über die Schulter einer arbeitenden Person: auf der einen Bildschirmhälfte ein Dokument, auf der anderen ein ERP-Datensatz.",
     problem: {
       kicker: "Wo es weh tut",
       h2: "Routine kostet nicht nur Stunden. Sie kostet Kapazität.",
@@ -276,6 +285,9 @@ export const automationCopy = {
     lead: "Przepisywanie zamówień, szukanie w cennikach, wypełnianie tego samego formularza drugi raz — to praca dla maszyny. Automatyzujemy procesy i systemy, które naprawdę macie, a osąd i kontrolę zostawiamy tam, gdzie ich miejsce.",
     meta: "Około pięciu minut czytania · zacznijcie tutaj, jeśli nie wiecie, od czego zacząć",
     cta: "Powiedzcie nam, który proces boli",
+    photoTitle: "Od tyłu wszystkie cztery wyglądają tak samo.",
+    photoSub: "Dokument na jednej połowie ekranu, system, do którego mają trafić dane, na drugiej, a między nimi człowiek, który je przenosi. Automatyzacja usuwa ten krok pośredni, nie człowieka.",
+    photoAlt: "Przez ramię osoby przy pracy: na jednej połowie ekranu dokument, na drugiej rekord w ERP.",
     problem: {
       kicker: "Gdzie boli",
       h2: "Rutyna nie kosztuje tylko godzin. Kosztuje moce przerobowe.",
