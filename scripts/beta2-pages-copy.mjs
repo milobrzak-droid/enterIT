@@ -138,6 +138,9 @@ export const pagesCopy = {
       modelsKicker: "Four commercial models",
       modelsH2: "Pick the one that matches how much you want to hand over.",
       modelsAsk: "They are not tiers and there is no upsell path built into them. Most clients start with the second and move to whichever of the other three fits what they learned.",
+      photoTitle: "Whichever model you pick, this is the room.",
+      photoSub: "Two of ours and two of yours around one table. Not a pitch deck and a projector — a laptop, your actual process on the screen, and the awkward questions asked early enough to still change something.",
+      photoAlt: "Two EnterIT people and two client people around an ordinary table, a laptop open between them.",
       models: [
         ["Fixed-scope build", "A defined deliverable with a fixed price and a fixed date. Best for the eight recurring patterns and for anything where the specification is genuinely stable."],
         ["Discovery and business case", "Stages one and two on their own, at a fixed fee agreed before it starts. You get a process map, a measured baseline and a documented business case — yours to keep, with no obligation to build with us. If you do go ahead, it is credited against the build."],

@@ -122,6 +122,9 @@ export const cs = {
     modelsKicker: "Čtyři obchodní modely",
     modelsH2: "Vyberte ten, který sedí tomu, kolik z toho chcete předat.",
     modelsAsk: "Nejsou to úrovně a není v nich zabudovaná cesta k upsellu. Většina klientů začíná druhým a přejde na ten ze zbylých tří, který sedí tomu, co se dozvěděli.",
+    photoTitle: "Ať zvolíte kterýkoli model, tohle je ta místnost.",
+    photoSub: "Dva naši a dva vaši u jednoho stolu. Žádná prezentace a projektor — notebook, váš skutečný proces na obrazovce a nepříjemné otázky položené dost brzy na to, aby ještě něco změnily.",
+    photoAlt: "Dva lidé z EnterIT a dva od klienta u obyčejného stolu, mezi nimi otevřený notebook.",
     models: [
       ["Zakázka s fixním rozsahem", "Definovaný výstup s pevnou cenou a pevným termínem. Nejlepší pro osm opakujících se vzorů a pro cokoli, kde je zadání opravdu stabilní."],
       ["Discovery a business case", "První dvě fáze samostatně, za pevnou cenu dohodnutou předem. Dostanete procesní mapu, změřený výchozí stav a sepsaný business case — je váš, bez závazku stavět s námi. Když do toho půjdete, započítá se do zakázky."],

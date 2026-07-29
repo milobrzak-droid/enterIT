@@ -116,6 +116,9 @@ export const de = {
     modelsKicker: "Vier kaufmännische Modelle",
     modelsH2: "Wählen Sie das, das dazu passt, wie viel Sie abgeben wollen.",
     modelsAsk: "Es sind keine Stufen und es ist kein Upselling-Pfad eingebaut. Die meisten Kunden beginnen mit dem zweiten und wechseln dann zu dem der übrigen drei, das zu dem passt, was sie gelernt haben.",
+    photoTitle: "Welches Modell auch immer — das ist der Raum.",
+    photoSub: "Zwei von uns und zwei von Ihnen an einem Tisch. Kein Pitch-Deck und kein Beamer — ein Laptop, Ihr echter Prozess auf dem Bildschirm und die unangenehmen Fragen früh genug, um noch etwas zu ändern.",
+    photoAlt: "Zwei Personen von EnterIT und zwei vom Kunden an einem gewöhnlichen Tisch, dazwischen ein offener Laptop.",
     models: [
       ["Auftrag mit festem Umfang", "Ein definiertes Ergebnis zu festem Preis und festem Termin. Am besten für die acht wiederkehrenden Muster und für alles, wo die Spezifikation wirklich stabil ist."],
       ["Discovery und Business Case", "Die ersten beiden Phasen für sich, zu einem vorab vereinbarten Festpreis. Sie bekommen eine Prozesskarte, eine gemessene Ausgangslage und einen dokumentierten Business Case — er gehört Ihnen, ohne Verpflichtung, mit uns zu bauen. Wenn Sie weitermachen, wird er angerechnet."],

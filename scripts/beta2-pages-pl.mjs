@@ -116,6 +116,9 @@ export const pl = {
     modelsKicker: "Cztery modele handlowe",
     modelsH2: "Wybierzcie ten, który pasuje do tego, ile chcecie oddać.",
     modelsAsk: "To nie są poziomy i nie ma w nich wbudowanej ścieżki upsellu. Większość klientów zaczyna od drugiego i przechodzi na ten z pozostałych trzech, który pasuje do tego, czego się dowiedzieli.",
+    photoTitle: "Niezależnie od modelu, to jest ta rozmowa.",
+    photoSub: "Dwoje naszych i dwoje waszych przy jednym stole. Bez prezentacji i projektora — laptop, wasz prawdziwy proces na ekranie i niewygodne pytania zadane wystarczająco wcześnie, żeby coś zmieniły.",
+    photoAlt: "Dwie osoby z EnterIT i dwie od klienta przy zwykłym stole, między nimi otwarty laptop.",
     models: [
       ["Zlecenie o stałym zakresie", "Zdefiniowany rezultat ze stałą ceną i stałym terminem. Najlepsze dla ośmiu powtarzalnych wzorców i dla wszystkiego, gdzie specyfikacja jest naprawdę stabilna."],
       ["Discovery i business case", "Pierwsze dwa etapy osobno, za stałą cenę uzgodnioną z góry. Dostajecie mapę procesu, zmierzony punkt wyjścia i spisany business case — jest wasz, bez zobowiązania, żeby budować z nami. Jeśli wejdziecie dalej, zaliczamy go na poczet."],

@@ -39,11 +39,21 @@ function renderEngagement(code) {
   const models = section({
     id: "models", no: "01", hue: 0,
     kicker: C.modelsKicker, h2: C.modelsH2, ask: C.modelsAsk,
-    keys: C.models.map(([title, subText], i) =>
+    keys: [
+      ...C.models.map(([title, subText], i) =>
+        key({
+          span: 3, tone: i === 1 ? "turquoise" : i === 2 ? "navy" : "white",
+          legend: String(i + 1), title, size: "sm", sub: subText,
+        })),
+      /* The four models are a commercial abstraction; this is what all four
+         actually look like on the day. Text sits left, so it takes the
+         sideways scrim. */
       key({
-        span: 3, tone: i === 1 ? "turquoise" : i === 2 ? "navy" : "white",
-        legend: String(i + 1), title, size: "sm", sub: subText,
-      })),
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/meeting.webp", alt: C.photoAlt,
+        title: C.photoTitle, size: "big", sub: C.photoSub,
+      }),
+    ],
   });
 
   const money = section({
