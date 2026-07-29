@@ -268,6 +268,9 @@ const chrome = {
   },
 };
 
+const euStars =
+  '<svg class="eu-stars" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true"><polygon points="60.00,10.60 61.66,15.71 67.04,15.71 62.69,18.87 64.35,23.99 60.00,20.83 55.65,23.99 57.31,18.87 52.96,15.71 58.34,15.71"/><polygon points="81.00,16.23 82.66,21.34 88.04,21.34 83.69,24.50 85.35,29.61 81.00,26.45 76.65,29.61 78.31,24.50 73.96,21.34 79.34,21.34"/><polygon points="96.37,31.60 98.03,36.71 103.41,36.71 99.06,39.87 100.72,44.99 96.37,41.83 92.02,44.99 93.68,39.87 89.34,36.71 94.71,36.71"/><polygon points="102.00,52.60 103.66,57.71 109.04,57.71 104.69,60.87 106.35,65.99 102.00,62.83 97.65,65.99 99.31,60.87 94.96,57.71 100.34,57.71"/><polygon points="96.37,73.60 98.03,78.71 103.41,78.71 99.06,81.87 100.72,86.99 96.37,83.83 92.02,86.99 93.68,81.87 89.34,78.71 94.71,78.71"/><polygon points="81.00,88.97 82.66,94.09 88.04,94.09 83.69,97.25 85.35,102.36 81.00,99.20 76.65,102.36 78.31,97.25 73.96,94.09 79.34,94.09"/><polygon points="60.00,94.60 61.66,99.71 67.04,99.71 62.69,102.87 64.35,107.99 60.00,104.83 55.65,107.99 57.31,102.87 52.96,99.71 58.34,99.71"/><polygon points="39.00,88.97 40.66,94.09 46.04,94.09 41.69,97.25 43.35,102.36 39.00,99.20 34.65,102.36 36.31,97.25 31.96,94.09 37.34,94.09"/><polygon points="23.63,73.60 25.29,78.71 30.66,78.71 26.32,81.87 27.98,86.99 23.63,83.83 19.28,86.99 20.94,81.87 16.59,78.71 21.97,78.71"/><polygon points="18.00,52.60 19.66,57.71 25.04,57.71 20.69,60.87 22.35,65.99 18.00,62.83 13.65,65.99 15.31,60.87 10.96,57.71 16.34,57.71"/><polygon points="23.63,31.60 25.29,36.71 30.66,36.71 26.32,39.87 27.98,44.99 23.63,41.83 19.28,44.99 20.94,39.87 16.59,36.71 21.97,36.71"/><polygon points="39.00,16.23 40.66,21.34 46.04,21.34 41.69,24.50 43.35,29.61 39.00,26.45 34.65,29.61 36.31,24.50 31.96,21.34 37.34,21.34"/></svg>';
+
 const searchIcon =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
 
@@ -293,7 +296,7 @@ const mascots = {
  */
 function key({
   span, rows, tone = "white", legend, eyebrow, title, size, sub, meta, stat, statLabel,
-  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet,
+  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet, extra,
 }) {
   const style = `grid-column:span ${span}${rows ? `;grid-row:span ${rows}` : ""}`;
   const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
@@ -316,6 +319,7 @@ function key({
         ${flow ? `<span class="key-flow"><b>${e(flow[0])}</b><i>→</i><b>${e(flow[1])}</b></span>` : ""}
         ${bullets ? `<ul class="key-list">${bullets.map((b) => `<li>${e(b)}</li>`).join("")}</ul>` : ""}
         ${meta ? `<span class="key-meta">${e(meta)}</span>` : ""}
+        ${extra || ""}
         ${go ? `<span class="key-go">${e(go)}</span>` : ""}
       </${Tag}>`;
 }
@@ -370,7 +374,9 @@ function render(code) {
     .join("\n");
 
   /* ---- 01 · what we build --------------------------------------------- */
-  const disciplineTones = ["turquoise", "navy", "accent"];
+  /* Turquoise leads as the primary, then two of the manual's own accents.
+     Two greens with a navy between them read as one colour interrupted. */
+  const disciplineTones = ["turquoise", "violet", "red"];
   const build = chapter({
     id: "build", no: "01", hue: 0,
     kicker: ch(0).kicker, title: ch(0).title, ask: ch(0).ask,
@@ -387,10 +393,18 @@ function render(code) {
           href: v.disciplines[i].href || `/${card.href}`,
         })),
       key({
-        span: 8, tone: "navy", legend: "U", eyebrow: t.reachEyebrow,
-        title: t.reachTitle, size: "big", sub: t.reachSub, go: t.reachGo, href: "/us/",
+        span: 8, tone: "navy", legend: "EU", eyebrow: t.reachEyebrow,
+        title: t.reachTitle, size: "big", sub: t.reachSub,
+        bullets: t.reachList, extra: euStars,
+        go: t.reachGo,
+        href: code === "en" ? "/beta2/engagement.html" : "#start",
       }),
-      slot({ span: 4, hint: t.artHint, brief: t.slots[3] }),
+      key({
+        span: 4, tone: "navy", eyebrow: t.teamGo.replace(" →", ""),
+        title: t.reachTitle, size: "sm",
+        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
+        href: code === "en" ? "/beta2/team.html" : at("tym.html"),
+      }),
     ],
   });
 
@@ -425,6 +439,31 @@ function render(code) {
     ],
   });
 
+  /* The people whose portraits the live team page already carries. */
+  const faces = [
+    ["milo", "Milo Brzák"], ["klesnarova", "Michaela Klesnárová"],
+    ["hanigovsky", "Ondřej Hanigovský"], ["nedvidek", "Honza Nedvídek"],
+    ["gaspar-nagy", "Gašpar Nagy"], ["adam-nagy", "Adam Nagy"],
+    ["studio-1", "Jiří Čechal"], ["studio-2", "Vítek Sasin"],
+  ];
+  const faceRow = faces
+    .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" loading="lazy">`)
+    .join("\n");
+
+  /* Clients already shown publicly on enterai.cz. Anyone not on that page
+     stays off this one. */
+  const clientLogos = [
+    ["isotra", "Isotra"], ["gentec", "Gentec"], ["brgroup", "BR Group"],
+    ["rsm", "RSM"], ["proact", "ProAct"], ["autoklastr", "Autoklastr"],
+    ["bigboard", "BigBoard"],
+  ];
+  const logoWall = `      <div class="key key--navy logos" style="grid-column:span 12">
+        <span class="key-eyebrow">${e(t.clientsLabel)}</span>
+        <div class="logo-wall">
+${clientLogos.map(([f, n]) => `          <img src="/assets/logos/${f}-white.png" alt="${e(n)}" loading="lazy">`).join("\n")}
+        </div>
+      </div>`;
+
   /* ---- 03 · what came out ---------------------------------------------
      The two the reader is most likely to recognise themselves in lead at half
      the board's width; four more follow at a quarter each. Every figure is the
@@ -432,7 +471,9 @@ function render(code) {
   const cs = caseStudies[code];
   const pick = (id) => cs.cards.find((x) => x.id === id);
   const [lead, second, ...rest] = boardOrder.map(pick);
-  const smallTones = ["white", "accent", "white", "accent"];
+  /* The four smaller cases take the rest of the palette rather than alternating
+     white and one accent — the row is four equal peers and it should look it. */
+  const smallTones = ["yellow", "blue", "red", "violet"];
 
   const results = chapter({
     id: "results", no: "03", hue: 2,
@@ -469,7 +510,18 @@ function render(code) {
         go: t.teamGo, href: code === "en" ? "/beta2/team.html" : at("tym.html"),
         photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
-      slot({ span: 5, hint: t.artHint, brief: t.slots[0] }),
+      /* Next to the room, the faces in it. An empty placeholder beside a
+         photograph of a workshop was the one spot on the board that looked
+         unfinished rather than reserved. */
+      `      <a class="key key--white faces" href="${code === "en" ? "/beta2/team.html" : at("tym.html")}" style="grid-column:span 5">
+        <span class="key-arrow">${chevron}</span>
+        <span class="key-eyebrow">${e(t.facesLabel)}</span>
+        <div class="face-wall">
+${faceRow}
+        </div>
+        <span class="key-go">${e(t.teamGo)}</span>
+      </a>`,
+      logoWall,
     ],
   });
 
@@ -634,18 +686,24 @@ ${rack}
 
 <main class="board">
 
-  <div class="hero-bar">
+  <div class="hero-bar" data-hue="0">
+    <img class="hero-bg" src="/assets/decor/firmy.webp" alt="" loading="eager">
+    <span class="hero-wash"></span>
     <div class="hero-say">
       <h1>${e(v.hero.h1)}</h1>
       <p>${e(v.hero.lead)}</p>
       <span class="hero-note">${e(v.hero.note)}</span>
     </div>
     <div class="hero-side">
-      <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
-      <span class="hero-ms">
-        <span class="sq"><i></i><i></i><i></i><i></i></span>
-        <span><b>Microsoft</b><span>Solutions Partner</span></span>
-      </span>
+      <span class="hero-side-label">${e(t.partnersLabel)}</span>
+      <div class="hero-marks">
+        <img src="/assets/logos/tdsynnex-destination-ai.png" alt="TD SYNNEX Destination AI">
+        <span class="hero-ms">
+          <span class="sq"><i></i><i></i><i></i><i></i></span>
+          <span class="hero-ms-name"><b>Microsoft</b><small>Solutions Partner</small></span>
+        </span>
+        <img src="/assets/logos/rsm-white.png" alt="RSM">
+      </div>
     </div>
   </div>
 
@@ -682,11 +740,17 @@ ${start}
 (function(){
   var PALETTE = ["turquoise","blue","violet","red","yellow"];
   var offset = Math.floor(Math.random() * PALETTE.length);
-  document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
+  document.querySelectorAll(".chap[data-hue], .hero-bar[data-hue]").forEach(function(chap){
     var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
     PALETTE.forEach(function(name){ chap.classList.remove("ch--" + name); });
     chap.classList.add("ch--" + PALETTE[slot]);
   });
+  /* The banner wears one of the real photographs, chosen per visit. It is
+     desaturated and washed in the accent, so the colour still leads and the
+     picture reads as texture rather than as a stock hero. */
+  var SHOTS = ["/assets/decor/firmy.webp", "/assets/decor/guy.webp"];
+  var bg = document.querySelector(".hero-bg");
+  if (bg) bg.src = SHOTS[Math.floor(Math.random() * SHOTS.length)];
 })();
 <\/script>
 </body>

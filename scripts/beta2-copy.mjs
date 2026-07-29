@@ -24,8 +24,8 @@
 export const voice = {
   cs: {
     hero: {
-      h1: "Performance AI tým. Stavíme agenty a automatizace, které jedou v ostrém provozu.",
-      lead: "Sofistikované automatizace, AI agenti a řešení na míru — postavené přímo do systémů, které už máte, a pak námi provozované. Ne pilot, ne demo. Přes 120 projektů v ostrém provozu, od vytěžování faktur po agentní vrstvu nad Business Central.",
+      h1: "Performance AI tým, který dodává do provozu.",
+      lead: "Baví nás úlohy, které je potřeba rozlousknout — a rádi na nich pracujeme. Od komplexní agentní platformy po jednoho agenta: postavíme to do systémů, které už máte, a pak to provozujeme. Ne pilot, ne demo.",
       note: "120+ projektů v ostrém provozu · 60+ napojených systémů · 75 lidí pod jednou smlouvou",
     },
     chapters: [
@@ -41,8 +41,8 @@ export const voice = {
       },
       {
         kicker: "Dodaná práce",
-        title: "Tohle běží. Dnes, u skutečných klientů.",
-        ask: "Žádné sliby, jen systémy v ostrém provozu a čísla, která jsme naměřili. Jmenovité případovky dodal tým Enter Agents se souhlasem klienta; u anonymizovaných doložíme odpovídající referenci na schůzce.",
+        title: "Systémy, které se přizpůsobují lidem.",
+        ask: "Tohle běží u klientů a dělá svou práci. Nikdo se kvůli tomu nemusel přeučovat na nový nástroj — systém se ohnul podle toho, jak lidé pracují, ne naopak. Čísla níž jsou naměřená z provozu; jmenovité případovky dodal tým Enter Agents se souhlasem klienta.",
       },
       {
         kicker: "Jak pracujeme",
@@ -98,6 +98,9 @@ export const voice = {
       processGo: "Čtyři fáze detailně →",
       systemsGo: "Celý přehled systémů →",
       opsGo: "Podmínky a SLA →",
+      clientsLabel: "Vybraní klienti",
+      partnersLabel: "Partneři",
+      facesLabel: "Lidé, kteří to staví",
       teamGo: "Poznat celý tým →",
       roiGo: "Otevřít kalkulačku →",
       selfGo: "Zjistit svou úroveň →",
@@ -107,9 +110,10 @@ export const voice = {
       selfEyebrow: "Firma 2030 · sebehodnocení",
       selfTitle: "Kde je vaše firma na cestě k agentnímu provozu?",
       selfSub: "Pět úrovní zralosti a jeden praktický krok, který vás posune na další.",
-      reachEyebrow: "Za hranice Česka",
-      reachTitle: "Evropský dodavatelský partner.",
-      reachSub: "Americké konzultanty, Microsoft partnery a systémové integrátory obsluhujeme jako jejich engineering zázemí v Evropě.",
+      reachEyebrow: "EU delivery partner",
+      reachTitle: "Dodáváme kamkoli na světě. V evropské kvalitě.",
+      reachSub: "Za námi stojí reference evropských enterprise firem i menších a středních podniků — a s obojím máme hluboké zkušenosti. Upřímně: baví nás to.",
+      reachList: ["Tři týmy, každý na svou oblast", "Evropské standardy, evropská data", "Časové pásmo řešíme, ne omlouváme"],
       hiringPill: "Hledáme lidi",
       hiringTitle: "Stavějte systémy, které opravdu naběhnou.",
       hiringSub: "Žádný hřbitov proof-of-conceptů. Dodáte to do provozu a pak to provozujete.",
@@ -121,8 +125,8 @@ export const voice = {
 
   en: {
     hero: {
-      h1: "A performance AI team. We build agents and automation that survive production.",
-      lead: "Sophisticated automation, AI agents and custom-built solutions — put straight into the systems you already run, then operated by us. Not a pilot, not a demo. Over 120 projects live, from invoice extraction to an agent layer on top of Business Central.",
+      h1: "A performance AI team that ships to production.",
+      lead: "We like the problems that have to be cracked, and we enjoy the work. From a complex agentic platform down to a single agent: built into the systems you already run, then operated by us. Not a pilot, not a demo.",
       note: "120+ projects in production · 60+ systems connected · 75 people under one contract",
     },
     chapters: [
@@ -138,8 +142,8 @@ export const voice = {
       },
       {
         kicker: "Delivered work",
-        title: "This is running. Today, for real clients.",
-        ask: "No promises — systems in production and numbers we measured. The named cases were delivered by our Enter Agents team with the client's consent; for the anonymised ones we bring the matching reference to the meeting.",
+        title: "Systems that adapt to people.",
+        ask: "This runs at our clients and does its job. Nobody had to relearn their work around a new tool — the system bent to the way people already work, not the other way round. The numbers below are measured in production; the named cases were delivered by our Enter Agents team with the client's consent.",
       },
       {
         kicker: "How we work",
@@ -195,6 +199,9 @@ export const voice = {
       processGo: "The four stages in detail →",
       systemsGo: "The whole catalogue →",
       opsGo: "Terms and SLA →",
+      clientsLabel: "Selected clients",
+      partnersLabel: "Partners",
+      facesLabel: "The people who build it",
       teamGo: "Meet the whole team →",
       roiGo: "Open the calculator →",
       selfGo: "Find your level →",
@@ -204,9 +211,10 @@ export const voice = {
       selfEyebrow: "Firma 2030 · self-check",
       selfTitle: "Where is your company on the agentic road?",
       selfSub: "Five maturity levels, and the one practical step that moves you to the next.",
-      reachEyebrow: "Beyond Czechia",
-      reachTitle: "A European delivery partner.",
-      reachSub: "US consultancies, Microsoft partners and systems integrators use us as their engineering bench in Europe.",
+      reachEyebrow: "EU delivery partner",
+      reachTitle: "We deliver anywhere in the world. At European quality.",
+      reachSub: "Behind us are European enterprise references and small and mid-sized ones too — and we have deep experience with both. Honestly: we enjoy it.",
+      reachList: ["Three teams, each for its own domain", "European standards, European data", "We solve the time zone rather than apologize for it"],
       hiringPill: "We are hiring",
       hiringTitle: "Build systems that actually go live.",
       hiringSub: "No proof-of-concept graveyard. You ship it to production and then you run it.",
@@ -218,8 +226,8 @@ export const voice = {
 
   de: {
     hero: {
-      h1: "Ein Performance-KI-Team. Wir bauen Agenten und Automatisierung, die den Echtbetrieb überstehen.",
-      lead: "Anspruchsvolle Automatisierung, KI-Agenten und maßgeschneiderte Lösungen — direkt in die Systeme gebaut, die Sie schon betreiben, und danach von uns betrieben. Kein Pilot, keine Demo. Über 120 Projekte im Echtbetrieb, von der Rechnungsextraktion bis zur Agentenschicht über Business Central.",
+      h1: "Ein Performance-KI-Team, das in den Betrieb liefert.",
+      lead: "Uns reizen die Aufgaben, die man erst knacken muss — und wir arbeiten gern daran. Von der komplexen Agentenplattform bis zum einzelnen Agenten: gebaut in die Systeme, die Sie schon betreiben, und danach von uns betrieben. Kein Pilot, keine Demo.",
       note: "120+ Projekte im Echtbetrieb · 60+ angebundene Systeme · 75 Personen unter einem Vertrag",
     },
     chapters: [
@@ -235,8 +243,8 @@ export const voice = {
       },
       {
         kicker: "Gelieferte Arbeit",
-        title: "Das läuft. Heute, bei echten Kunden.",
-        ask: "Keine Versprechen — Systeme im Echtbetrieb und Zahlen, die wir gemessen haben. Die namentlichen Fallstudien hat unser Team Enter Agents mit Zustimmung der Kunden geliefert; zu den anonymisierten bringen wir die passende Referenz zum Termin mit.",
+        title: "Systeme, die sich den Menschen anpassen.",
+        ask: "Das läuft bei unseren Kunden und tut seine Arbeit. Niemand musste sich auf ein neues Werkzeug umgewöhnen — das System hat sich danach gerichtet, wie die Leute ohnehin arbeiten, nicht umgekehrt. Die Zahlen unten sind im Betrieb gemessen; die namentlichen Fallstudien lieferte unser Team Enter Agents mit Zustimmung der Kunden.",
       },
       {
         kicker: "So arbeiten wir",
@@ -292,6 +300,9 @@ export const voice = {
       processGo: "Die vier Phasen im Detail →",
       systemsGo: "Der ganze Katalog →",
       opsGo: "Bedingungen und SLA →",
+      clientsLabel: "Ausgewählte Kunden",
+      partnersLabel: "Partner",
+      facesLabel: "Die Menschen dahinter",
       teamGo: "Das ganze Team →",
       roiGo: "Rechner öffnen →",
       selfGo: "Stufe ermitteln →",
@@ -301,9 +312,10 @@ export const voice = {
       selfEyebrow: "Firma 2030 · Selbstcheck",
       selfTitle: "Wo steht Ihr Unternehmen auf dem Weg zum agentischen Betrieb?",
       selfSub: "Fünf Reifegrade und der eine praktische Schritt zur nächsten Stufe.",
-      reachEyebrow: "Über Tschechien hinaus",
-      reachTitle: "Ein europäischer Delivery-Partner.",
-      reachSub: "US-Beratungen, Microsoft-Partner und Systemintegratoren nutzen uns als ihre Engineering-Bank in Europa.",
+      reachEyebrow: "EU Delivery Partner",
+      reachTitle: "Wir liefern überall auf der Welt. In europäischer Qualität.",
+      reachSub: "Hinter uns stehen Referenzen europäischer Konzerne ebenso wie mittelständischer Unternehmen — mit beidem haben wir tiefe Erfahrung. Ehrlich gesagt: es macht uns Freude.",
+      reachList: ["Drei Teams, jedes für sein Gebiet", "Europäische Standards, europäische Daten", "Die Zeitzone lösen wir, statt sie zu entschuldigen"],
       hiringPill: "Wir stellen ein",
       hiringTitle: "Systeme bauen, die wirklich live gehen.",
       hiringSub: "Kein Proof-of-Concept-Friedhof. Sie liefern es in den Betrieb und betreiben es dann.",
@@ -315,8 +327,8 @@ export const voice = {
 
   pl: {
     hero: {
-      h1: "Performance AI team. Budujemy agentów i automatyzacje, które wytrzymują produkcję.",
-      lead: "Zaawansowane automatyzacje, agenci AI i rozwiązania szyte na miarę — wbudowane prosto w systemy, których już używacie, a potem utrzymywane przez nas. Nie pilot, nie demo. Ponad 120 projektów na produkcji, od ekstrakcji faktur po warstwę agentową nad Business Central.",
+      h1: "Performance AI team, który dowozi na produkcję.",
+      lead: "Lubimy zadania, które trzeba rozgryźć — i chętnie przy nich pracujemy. Od złożonej platformy agentowej po pojedynczego agenta: wbudujemy to w systemy, których już używacie, a potem to utrzymujemy. Nie pilot, nie demo.",
       note: "120+ projektów na produkcji · 60+ podłączonych systemów · 75 osób pod jedną umową",
     },
     chapters: [
@@ -332,8 +344,8 @@ export const voice = {
       },
       {
         kicker: "Dostarczona praca",
-        title: "To działa. Dziś, u prawdziwych klientów.",
-        ask: "Żadnych obietnic — systemy na produkcji i liczby, które zmierzyliśmy. Case studies z nazwy dostarczył nasz zespół Enter Agents za zgodą klientów; do zanonimizowanych przynosimy odpowiednią referencję na spotkanie.",
+        title: "Systemy, które dopasowują się do ludzi.",
+        ask: "To działa u naszych klientów i robi swoje. Nikt nie musiał uczyć się od nowa pracy wokół nowego narzędzia — system nagiął się do tego, jak ludzie już pracują, a nie odwrotnie. Liczby poniżej są zmierzone na produkcji; case studies z nazwy dostarczył nasz zespół Enter Agents za zgodą klientów.",
       },
       {
         kicker: "Jak pracujemy",
@@ -389,6 +401,9 @@ export const voice = {
       processGo: "Cztery etapy szczegółowo →",
       systemsGo: "Cały katalog →",
       opsGo: "Warunki i SLA →",
+      clientsLabel: "Wybrani klienci",
+      partnersLabel: "Partnerzy",
+      facesLabel: "Ludzie, którzy to budują",
       teamGo: "Poznaj cały zespół →",
       roiGo: "Otwórz kalkulator →",
       selfGo: "Sprawdź swój poziom →",
@@ -398,9 +413,10 @@ export const voice = {
       selfEyebrow: "Firma 2030 · samoocena",
       selfTitle: "Gdzie jest Twoja firma na drodze do operacji agentowych?",
       selfSub: "Pięć poziomów dojrzałości i jeden praktyczny krok na wyższy.",
-      reachEyebrow: "Poza Czechami",
-      reachTitle: "Europejski partner wdrożeniowy.",
-      reachSub: "Amerykańskie konsultingi, partnerzy Microsoftu i integratorzy korzystają z nas jako zaplecza inżynierskiego w Europie.",
+      reachEyebrow: "EU delivery partner",
+      reachTitle: "Dostarczamy wszędzie na świecie. W europejskiej jakości.",
+      reachSub: "Za nami stoją referencje europejskich firm enterprise i mniejszych oraz średnich przedsiębiorstw — z jednymi i drugimi mamy głębokie doświadczenie. Szczerze: sprawia nam to frajdę.",
+      reachList: ["Trzy zespoły, każdy do swojej dziedziny", "Europejskie standardy, europejskie dane", "Strefę czasową rozwiązujemy, a nie tłumaczymy"],
       hiringPill: "Rekrutujemy",
       hiringTitle: "Buduj systemy, które naprawdę ruszają.",
       hiringSub: "Żadnego cmentarza proof-of-conceptów. Wdrażasz na produkcję i potem to utrzymujesz.",
