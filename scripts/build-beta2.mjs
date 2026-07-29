@@ -699,7 +699,13 @@ ${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
 ${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
         go: t.selfGo, href: sub(code, "company-2030.html") })}
-${slot({ span: 4, hint: t.artHint, brief: t.slots[4] })}
+${key({ span: 4, tone: "navy", eyebrow: t.supportEyebrow,
+        title: t.supportTitle, size: "sm", sub: t.supportSub,
+        /* The subject sits in the right half of the frame and the text in the
+           left, so this portrait takes the sideways scrim rather than the
+           top-down one. */
+        photo: "/assets/decor/support.webp", alt: t.supportAlt, wide: true,
+        go: t.opsGo, href: sub(code, "engagement.html") })}
       <a class="key key--bubble" href="${bookingUrl}" target="_blank" rel="noopener" style="grid-column:span 8">
         <span class="key-legend">⏎</span>
         <span class="key-eyebrow">${e(page.contact.kicker)}</span>

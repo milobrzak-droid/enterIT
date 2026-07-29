@@ -749,6 +749,13 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
   rgba(14,22,36,.95) 0%,rgba(14,22,36,.88) 34%,
   rgba(14,22,36,.55) 58%,rgba(14,22,36,.28) 100%)}
 .key--wide .key-title,.key--wide .key-sub{max-width:34ch}
+/* In a narrow cap the same sideways scrim has to clear sooner, or the subject
+   never emerges from it. */
+.key--wide[style*="span 4"]::before{background:linear-gradient(115deg,
+  rgba(14,22,36,.94) 0%,rgba(14,22,36,.80) 40%,
+  rgba(14,22,36,.42) 68%,rgba(14,22,36,.15) 100%)}
+.key--wide[style*="span 4"] .key-title,
+.key--wide[style*="span 4"] .key-sub{max-width:24ch}
 @media(max-width:900px){
   .key--wide::before{background:linear-gradient(180deg,
     rgba(14,22,36,.45) 0%,rgba(14,22,36,.9) 100%)}
