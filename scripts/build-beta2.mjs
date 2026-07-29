@@ -303,7 +303,7 @@ const mascotFile = (face, tone) => {
  */
 function key({
   span, rows, tone = "white", legend, eyebrow, title, size, sub, meta, stat, statLabel,
-  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet, extra,
+  bullets, flow, go, href, photo, alt, mascot, pill, mark = true, tag, quiet, wide, extra,
 }) {
   const style = `grid-column:span ${span}${rows ? `;grid-row:span ${rows}` : ""}`;
   const sizeClass = size === "xl" ? " key-title--xl" : size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
@@ -311,7 +311,7 @@ function key({
      without wrapping into a wall, so it steps down a notch. */
   const statClass = stat && stat.length > 9 ? " key-stat--sm" : "";
   const Tag = href ? "a" : "div";
-  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
+  return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}"${href ? ` href="${href}"` : ""} style="${style}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${mascot ? `<img class="key-mascot" src="${mascotFile(mascot, tone)}" alt="" loading="lazy">` : ""}
         ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
@@ -669,7 +669,16 @@ ${faceRow}
         pill: t.hiringPill, title: t.hiringTitle, size: "sm", sub: t.hiringSub,
         go: t.hiringGo, href: sub(code, "team.html"), mark: false,
       }),
-      slot({ span: 12, hint: t.artHint, brief: t.slots[2] }),
+      /* The stand-up. A panorama, which is what a full-width cap wants — and the
+         one picture that shows how a decision gets made here rather than what
+         the office looks like. */
+      key({
+        span: 12, tone: "navy", eyebrow: t.standupEyebrow,
+        title: t.standupTitle, size: "big", sub: t.standupSub,
+        photo: "/assets/decor/standup.webp", alt: t.standupAlt, wide: true,
+        go: t.processGo,
+        href: sub(code, "automation.html"),
+      }),
     ],
   });
 
