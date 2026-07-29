@@ -51,6 +51,9 @@ export const de = [
   },
   {
     slug: "bestellungen",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Ein Logistikmitarbeiter fotografiert im Lager einen Lieferschein mit dem Telefon.",
+    photoRight: true,
     tag: "Bestellungen",
     h1: "Aus einer E-Mail wird eine Bestellung, ohne Abtippen.",
     lead: "Der Agent liest Bestell-E-Mails in jedem Format, legt die Bestellung in Ihrem System an und bestätigt sie dem Kunden.",

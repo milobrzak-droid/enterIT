@@ -50,6 +50,9 @@ export const pl = [
   },
   {
     slug: "zamowienia",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Pracownik logistyki fotografuje telefonem list przewozowy na hali magazynowej.",
+    photoRight: true,
     tag: "Zamówienia",
     h1: "Z maila zamówienie, bez przepisywania.",
     lead: "Agent czyta maile z zamówieniami w dowolnym formacie, zakłada zamówienie w waszym systemie i potwierdza je klientowi.",

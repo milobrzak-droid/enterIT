@@ -49,7 +49,9 @@ function renderRoutine(code, r, i) {
       /* Optional. A photograph of the work as it looks today, placed where the
          reader has just recognised their own back office. */
       r.photo && key({
-        span: 12, tone: "navy", wide: true,
+        span: 12, tone: "navy",
+        /* Some frames leave the right half open instead of the left. */
+        wide: !r.photoRight, wideRight: !!r.photoRight,
         photo: r.photo, alt: r.photoAlt,
         eyebrow: R.todayEyebrow,
         title: r.h1, size: "big",

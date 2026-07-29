@@ -756,8 +756,22 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
   rgba(14,22,36,.42) 68%,rgba(14,22,36,.15) 100%)}
 .key--wide[style*="span 4"] .key-title,
 .key--wide[style*="span 4"] .key-sub{max-width:24ch}
+/* Mirror image: some frames put the subject on the left and leave the right
+   half open. The scrim and the type move with them rather than sitting on top
+   of the person. */
+.key--wide-r::before{background:linear-gradient(260deg,
+  rgba(14,22,36,.95) 0%,rgba(14,22,36,.88) 34%,
+  rgba(14,22,36,.55) 58%,rgba(14,22,36,.28) 100%)}
+.key--wide-r{align-items:flex-end}
+.key--wide-r>*{align-self:flex-end}
+.key--wide-r .key-title,.key--wide-r .key-sub,
+.key--wide-r .key-eyebrow,.key--wide-r .key-meta{max-width:min(34ch,42%);text-align:left}
+
 @media(max-width:900px){
-  .key--wide::before{background:linear-gradient(180deg,
+  .key--wide::before,.key--wide-r::before{background:linear-gradient(180deg,
     rgba(14,22,36,.45) 0%,rgba(14,22,36,.9) 100%)}
   .key--wide .key-title,.key--wide .key-sub{max-width:none}
+  .key--wide-r{align-items:flex-start}
+  .key--wide-r>*{align-self:flex-start}
+  .key--wide-r .key-title,.key--wide-r .key-sub{max-width:none}
 }

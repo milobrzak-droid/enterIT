@@ -71,6 +71,9 @@ const en = [
   },
   {
     slug: "orders",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "A logistics worker photographing a delivery note with his phone on the warehouse floor.",
+    photoRight: true,
     tag: "Orders",
     h1: "Turn an email into an order without re-keying it.",
     lead: "The agent reads order emails in whatever format they arrive, creates the order in your system and confirms receipt to the customer.",

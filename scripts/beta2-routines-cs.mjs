@@ -52,6 +52,9 @@ export const cs = [
   },
   {
     slug: "objednavky",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Pracovník provozu fotí telefonem dodací list přímo ve skladu.",
+    photoRight: true,
     tag: "Objednávky",
     h1: "Z e-mailu objednávka, bez přepisování.",
     lead: "Agent přečte objednávkové e-maily v jakémkoli formátu, založí objednávku ve vašem systému a potvrdí ji zákazníkovi.",
