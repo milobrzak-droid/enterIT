@@ -17,6 +17,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { e, key, need, page, pageHead, section } from "./beta2-page.mjs";
+import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
 
@@ -157,6 +158,7 @@ const where = section({
 
 const teamBody = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "Who does the work",
     h1: "75 engineers. Three teams. One name on the contract.",
     lead: "Three permanent teams that have worked together long enough to hand work across the boundary without dropping it. This page is who they are, who runs them, and why the titles look the way they do.",
@@ -266,6 +268,7 @@ const intNext = section({
 
 const intBody = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "Integrations",
     h1: "You do not have to replace anything you already run.",
     lead: "We read, verify and write where your people already work. Through the API where there is one, through the database, the files, or the interface itself where there is not — including software old enough to have no modern API at all.",
@@ -280,6 +283,7 @@ export function writeTeamAndIntegrations() {
   writeFileSync(
     resolve(root, "beta2", "team.html"),
     page({
+      code: "en", ui: ui.en,
       title: "The team | EnterIT",
       description: "75 engineers in three permanent teams — Enter Tech, Enter Agents and Enter Studio — with a named owner for every area and one contract across all three.",
       body: teamBody, bookingUrl,
@@ -291,6 +295,7 @@ export function writeTeamAndIntegrations() {
   writeFileSync(
     resolve(root, "beta2", "integrations.html"),
     page({
+      code: "en", ui: ui.en,
       title: "Integrations | EnterIT",
       description: `60+ systems integrated, ${catalogTotal} documented. API, database, files or the interface itself — in that order of preference, chosen by what the system actually supports.`,
       body: intBody, bookingUrl,

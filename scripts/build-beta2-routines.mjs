@@ -16,36 +16,42 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { e, key, page, pageHead, section } from "./beta2-page.mjs";
-import { routineTones, routines } from "./beta2-routines.mjs";
+import { e, key, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { LOCALES } from "./beta2-page.mjs";
+import { routineTones, routinesByLocale } from "./beta2-routines.mjs";
+import { routineUi } from "./beta2-routines-ui.mjs";
+import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
-function renderRoutine(r, i) {
+function renderRoutine(code, r, i) {
+  const U = ui[code];
+  const R = routineUi[code];
+  const routines = routinesByLocale[code];
   const tone = routineTones[i];
   const others = routines
     .filter((x) => x.slug !== r.slug)
     .map((x, j) => key({
       span: 3, tone: j % 3 === 0 ? "white" : "white",
       title: x.tag, size: "sm", sub: x.lead,
-      go: `${x.stat} ${x.statLabel} →`, href: `/beta2/routines/${x.slug}.html`,
+      go: `${x.stat} ${x.statLabel} →`, href: sub(code, `routines/${x.slug}.html`),
     }));
 
   const pain = section({
     id: "pain", no: "01", hue: 0,
-    kicker: "Where the time goes",
-    h2: "What this looks like today.",
-    ask: "If none of these three is familiar, this is probably not your first project — and we would rather tell you that than sell you one.",
+    kicker: R.painKicker,
+    h2: R.painH2,
+    ask: R.painAsk,
     keys: r.pain.map((p, j) =>
       key({ span: 4, tone: j === 0 ? tone : "white", legend: String(j + 1), title: p, size: "sm" })),
   });
 
   const flow = section({
     id: "flow", no: "02", hue: 1,
-    kicker: "Step by step",
-    h2: "How it runs, with the human points named.",
-    ask: "Nothing here happens off-screen. Every step has a defined output, and the places a person decides are written down before anything is built.",
+    kicker: R.flowKicker,
+    h2: R.flowH2,
+    ask: R.flowAsk,
     keys: r.flow.map(([title, sub], j) =>
       key({
         span: r.flow.length > 6 && j >= 4 ? 4 : 3,
@@ -56,22 +62,18 @@ function renderRoutine(r, i) {
 
   const never = section({
     id: "never", no: "03", hue: 2,
-    kicker: "The limits",
-    h2: "What it never does on its own.",
-    ask: "This is the part worth reading twice. A system that is allowed to do everything is a system nobody can sign off on.",
+    kicker: R.neverKicker,
+    h2: R.neverH2,
+    ask: R.neverAsk,
     keys: [
       ...r.never.map((n, j) =>
         key({ span: 4, tone: j === 1 ? tone : "white", legend: "✕", title: n, size: "sm" })),
       key({
         span: 12, tone: "navy",
-        eyebrow: "And where it runs",
-        title: "Your infrastructure or EU cloud. Your call, made before we build.",
+        eyebrow: R.runsEyebrow,
+        title: R.runsTitle,
         size: "sm",
-        list: [
-          "Encrypted in transit and at rest, with on-premises operation available for sensitive data.",
-          "GDPR and EU AI Act controls designed in at the start.",
-          "Role-based access, approval steps and a complete audit trail.",
-        ],
+        list: R.runsList,
         mascot: "blue",
       }),
     ],
@@ -79,15 +81,15 @@ function renderRoutine(r, i) {
 
   const setup = section({
     id: "setup", no: "04", hue: 3,
-    kicker: "What we need from you",
-    h2: "Three things, and none of them is a project.",
-    ask: "The most common reason a pilot slips is waiting on access. This is the whole list.",
+    kicker: R.setupKicker,
+    h2: R.setupH2,
+    ask: R.setupAsk,
     keys: [
       ...r.need.map((n, j) =>
         key({ span: 4, tone: "white", legend: String(j + 1), title: n, size: "sm" })),
       key({
         span: 12, tone: tone,
-        eyebrow: "What to expect",
+        eyebrow: R.expectEyebrow,
         size: "sm",
         /* Figures first, then the engagement that backs them — a proof line
            above the numbers reads as a caption for the wrong thing. */
@@ -100,8 +102,8 @@ function renderRoutine(r, i) {
 
   const faq = section({
     id: "faq", no: "05", hue: 4,
-    kicker: "The objections people actually raise",
-    h2: "Answered plainly.",
+    kicker: R.faqKicker,
+    h2: R.faqH2,
     raw: `      <div class="key key--white panel" style="grid-column:span 12">
 ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></div>`).join("\n")}
       </div>`,
@@ -109,49 +111,51 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
 
   const next = section({
     id: "next", no: "06", hue: 5,
-    kicker: "Your move",
-    h2: "Thirty minutes is enough to size this.",
-    ask: "We map the process, estimate what it costs you today and tell you whether it is worth automating. You will get an answer either way.",
+    kicker: R.nextKicker,
+    h2: R.nextH2,
+    ask: R.nextAsk,
     keys: [
       key({
         span: 4, tone: "turquoise", mascot: "wave",
-        title: "Book 30 minutes.", size: "sm",
+        title: R.bookTitle, size: "sm",
         sub: "milo@enterit.cz · +420 608 969 263",
-        go: "Book a call →", href: bookingUrl,
+        go: R.bookGo, href: bookingUrl,
       }),
       key({
         span: 4, tone: "white",
-        title: "Or size it yourself first.", size: "sm",
-        sub: "Four inputs and an order-of-magnitude estimate of what this routine costs you today.",
-        go: "Open the calculator →", href: "/beta2/calculator.html",
+        title: R.calcTitle, size: "sm",
+        sub: R.calcSub,
+        go: R.calcGo, href: sub(code, "calculator.html"),
       }),
       key({
         span: 4, tone: "white",
-        title: "Not sure this is the right one?", size: "sm",
-        sub: "The other seven are below, and most conversations start with whichever one hurts most.",
-        go: "All eight routines →", href: "/beta2/#start",
+        title: R.allTitle, size: "sm",
+        sub: R.allSub,
+        go: R.allGo, href: `${code === "en" ? "/beta2/" : `/beta2/${code}.html`}#start`,
       }),
     ],
   });
 
   const more = section({
     id: "more", no: "07", hue: 0,
-    kicker: "The other seven",
-    h2: "Same approach, different process.",
+    kicker: R.moreKicker,
+    h2: R.moreH2,
     keys: others,
   });
 
   return page({
+    code, ui: U,
     title: `${r.tag}: ${r.h1} | EnterIT`,
     description: r.lead,
     bookingUrl,
     body: [
       pageHead({
-        eyebrow: `Ready-made solutions · ${r.tag}`,
+        eyebrow: `${R.eyebrow} · ${r.tag}`,
+        code, ui: U,
         h1: r.h1,
         lead: r.lead,
         meta: `${r.flowIn}  →  ${r.flowOut}   ·   ${r.stat} ${r.statLabel}`,
-        cta: "Talk through your version of this",
+        cta: R.cta,
         bookingUrl,
       }),
       pain, flow, never, setup, faq, next, more,
@@ -160,9 +164,16 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
 }
 
 export function writeRoutines() {
-  mkdirSync(resolve(root, "beta2", "routines"), { recursive: true });
-  routines.forEach((r, i) => {
-    writeFileSync(resolve(root, "beta2", "routines", `${r.slug}.html`), renderRoutine(r, i), "utf8");
-  });
-  console.log(`beta2/routines/*.html  (${routines.length} pages)`);
+  let n = 0;
+  for (const code of LOCALES) {
+    const dir = code === "en"
+      ? resolve(root, "beta2", "routines")
+      : resolve(root, "beta2", code, "routines");
+    mkdirSync(dir, { recursive: true });
+    routinesByLocale[code].forEach((r, i) => {
+      writeFileSync(resolve(dir, `${r.slug}.html`), renderRoutine(code, r, i), "utf8");
+      n += 1;
+    });
+  }
+  console.log(`beta2/**/routines/*.html  (${n} pages, four languages)`);
 }

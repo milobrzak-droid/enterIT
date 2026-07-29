@@ -21,6 +21,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { e, key, need, page, pageHead, section } from "./beta2-page.mjs";
+import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
 import { us } from "./beta2-us-copy.mjs";
@@ -101,6 +102,7 @@ const limits = section({
 
 const engageBody = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "Engagement",
     h1: "How this is actually bought.",
     lead: "Four commercial models, what happens to the code, who is on the hook once it is live, and what a US client needs to know about working with a team six hours ahead. If you run an IT company yourself, this is the page to read first.",
@@ -158,6 +160,7 @@ const ladder = section({
 
 const c2030Body = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "Company 2030 · self-check",
     h1: "Where is your company on the agentic road?",
     lead: "Five levels, the sentence you would actually hear at each one, and the single practical step that moves you to the next. It takes about two minutes and there is no form at the end.",
@@ -227,6 +230,7 @@ const calcAfter = section({
 
 const calcBody = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "Savings calculator",
     h1: "What is the routine costing you today?",
     lead: "Move four sliders and get an order-of-magnitude estimate of what repetitive work costs your company each year. It runs entirely in this page — nothing is sent anywhere and there is no form.",
@@ -281,6 +285,7 @@ export function writeEngagement() {
   writeFileSync(
     resolve(root, "beta2", "engagement.html"),
     page({
+      code: "en", ui: ui.en,
       title: "How we engage | EnterIT",
       description: "Four commercial models, who owns the code, what happens at the exit, and the practical questions a US client asks before any technical one.",
       body: engageBody, bookingUrl,
@@ -292,6 +297,7 @@ export function writeEngagement() {
   writeFileSync(
     resolve(root, "beta2", "company-2030.html"),
     page({
+      code: "en", ui: ui.en,
       title: "Company 2030 · self-check | EnterIT",
       description: "Five maturity levels on the agentic road, the sentence you would actually hear at each, and the one practical step to the next.",
       body: c2030Body, bookingUrl,
@@ -303,6 +309,7 @@ export function writeEngagement() {
   writeFileSync(
     resolve(root, "beta2", "calculator.html"),
     page({
+      code: "en", ui: ui.en,
       title: "Savings calculator | EnterIT",
       description: "Four sliders and an order-of-magnitude estimate of what routine work costs your company each year. Runs in the page; no email required.",
       body: calcBody + calcScript, bookingUrl,

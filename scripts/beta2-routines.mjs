@@ -21,7 +21,11 @@
  * absent, the page says nothing rather than implying something.
  */
 
-export const routines = [
+import { cs } from "./beta2-routines-cs.mjs";
+import { de } from "./beta2-routines-de.mjs";
+import { pl } from "./beta2-routines-pl.mjs";
+
+const en = [
   {
     slug: "invoices",
     tag: "Invoices",
@@ -314,6 +318,14 @@ export const routines = [
     ],
   },
 ];
+
+/* Czech is not a translation of the English so much as a return to the
+   original — these pages were written in Czech first. Slugs differ per language
+   because a Czech reader should not be sent to /routines/invoices.html. */
+export const routinesByLocale = { en, cs, de, pl };
+
+/** Kept for callers that only ever wanted the English set. */
+export const routines = en;
 
 /** One colour per routine, in the order they appear on the board. */
 export const routineTones = [

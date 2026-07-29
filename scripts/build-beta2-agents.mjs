@@ -15,6 +15,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { key, page, pageHead, section } from "./beta2-page.mjs";
+import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -163,6 +164,7 @@ const trust = section({
 
 const body = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "How we do it",
     h1: "An agent is a colleague with a written job description.",
     lead: "We build agents that read documents, act inside stated rules, and hand every judgment call to a person. This page is how we define the role, the inputs, the outputs and the guardrails — because that definition, not the model, is what decides whether it is still running next year.",
@@ -177,6 +179,7 @@ export function writeAgents() {
   writeFileSync(
     resolve(root, "beta2", "agents.html"),
     page({
+      code: "en", ui: ui.en,
       title: "How we build AI agents | EnterIT",
       description: "An agent is a goal plus judgment, not a bigger automation. The eight things we define before writing code, the six kinds we run in production, and what an agent never does.",
       body, bookingUrl,

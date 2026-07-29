@@ -16,6 +16,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { key, need, page, pageHead, section } from "./beta2-page.mjs";
+import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -180,6 +181,7 @@ const foundation = section({
 
 const body = [
   pageHead({
+    code: "en", ui: ui.en,
     eyebrow: "How we do it",
     h1: "Automation that removes repetitive work, not people.",
     lead: "Retyping orders, hunting through price lists, filling the same form twice — that is machine work. We automate the processes and systems you actually have, and leave judgment and control where they belong.",
@@ -194,6 +196,7 @@ export function writeAutomation() {
   writeFileSync(
     resolve(root, "beta2", "automation.html"),
     page({
+      code: "en", ui: ui.en,
       title: "How we build automation | EnterIT",
       description: "Five kinds of operational bottleneck, four phases each ending in a decision you can walk away from, and the places we deliberately leave the work with a person.",
       body, bookingUrl,

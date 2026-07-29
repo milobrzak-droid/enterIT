@@ -6,6 +6,10 @@
  * shell, the keycap, and the marker for a fact we do not have yet. A subpage
  * builder supplies content and colour and nothing else.
  *
+ * Paths. English sits at the root of /beta2/ and the other three get a folder
+ * each — /beta2/cs/agents.html and so on — which keeps the English URLs short
+ * and every translation one segment away from its original.
+ *
  * Colour rules are the board's rules, unchanged: turquoise is the primary and
  * the only colour that fills a large cap by default; blue, violet, red and
  * yellow are accents, one assigned per section, rotating one step per visit;
@@ -15,22 +19,35 @@ import { escapeHtml } from "./site-shell.mjs";
 
 export const e = (v) => escapeHtml(v ?? "");
 
+export const LOCALES = ["en", "cs", "de", "pl"];
+export const langAttr = { en: "en", cs: "cs", de: "de", pl: "pl" };
+export const langLabel = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
+
+/** Where a subpage lives, and where the board for a locale lives. */
+export const sub = (code, file) => (code === "en" ? `/beta2/${file}` : `/beta2/${code}/${file}`);
+export const boardHref = (code) => (code === "en" ? "/beta2/" : `/beta2/${code}.html`);
+
 export const chevron =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 
 export const back =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-7-7 7 7 7"/></svg>';
 
-export const mascot = {
-  wave: "/assets/decor/mascot-wave.svg",
-  blue: "/assets/decor/mascot-blue.svg",
-  red: "/assets/decor/mascot-red.svg",
+/* Enty comes in two limb colours: Stabilní černá by default, white on a dark
+   ground where black would simply disappear. */
+const DARK_TONES = new Set(["navy", "soft", "photo-hire"]);
+export const mascotFile = (face, tone) => {
+  const onDark = DARK_TONES.has(tone);
+  if (face === "wave") return onDark ? "/assets/decor/mascot-wave.svg" : "/assets/decor/mascot-wave-ink.svg";
+  return onDark ? `/assets/decor/mascot-${face}-light.svg` : `/assets/decor/mascot-${face}.svg`;
 };
 
-/** A fact we do not have yet. Rendered where it will be missed, never omitted. */
+/** A fact we do not have yet. Rendered where it will be missed, never omitted.
+ *  It survives translation — an unverified claim is unverified in every
+ *  language, and dropping the marker abroad would be the easy way to lose it. */
 export const need = (what) => ({ __need: what });
-export const nd = (n) =>
-  n ? `<span class="needs"><b>Needs data</b>${e(n.__need)}</span>` : "";
+export const nd = (n, label = "Needs data") =>
+  n ? `<span class="needs"><b>${e(label)}</b>${e(n.__need)}</span>` : "";
 
 /**
  * One pressable cap.
@@ -40,26 +57,26 @@ export const nd = (n) =>
  * should read as a palette rather than as one colour repeated.
  */
 export function key({
-  span = 4, tone = "white", href, legend, eyebrow, title, size, sub, body,
-  list, flow, meta, rule, stat, statLabel, go, mascot: face, needs, extra,
+  span = 4, tone = "white", href, legend, eyebrow, title, size, sub: subText, body,
+  list, flow, meta, rule, stat, statLabel, go, mascot: face, needs, needsLabel, extra,
 }) {
   const sizeClass = size === "big" ? " key-title--big" : size === "sm" ? " key-title--sm" : "";
   const Tag = href ? "a" : "div";
   const statClass = stat && stat.length > 9 ? " key-stat--sm" : "";
   return `      <${Tag} class="key key--${tone}"${href ? ` href="${href}"` : ""} style="grid-column:span ${span}">
-        ${face ? `<img class="key-mascot" src="${mascot[face]}" alt="" loading="lazy">` : ""}
+        ${face ? `<img class="key-mascot" src="${mascotFile(face, tone)}" alt="" loading="lazy">` : ""}
         ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
         ${legend ? `<span class="key-legend">${e(legend)}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
         ${stat ? `<span class="key-stat${statClass}">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}
         ${title ? `<span class="key-title${sizeClass}">${e(title)}</span>` : ""}
-        ${sub ? `<p class="key-sub">${e(sub)}</p>` : ""}
+        ${subText ? `<p class="key-sub">${e(subText)}</p>` : ""}
         ${(body || []).map((p) => `<p class="key-sub">${e(p)}</p>`).join("")}
         ${flow ? `<span class="key-flow"><b>${e(flow[0])}</b><i>→</i><b>${e(flow[1])}</b></span>` : ""}
         ${list ? `<ul class="key-list">${list.map((x) => `<li>${e(x)}</li>`).join("")}</ul>` : ""}
         ${rule ? `<p class="key-meta key-meta--rule">${e(rule)}</p>` : ""}
         ${meta ? `<p class="key-meta">${e(meta)}</p>` : ""}
-        ${needs ? nd(needs) : ""}
+        ${needs ? nd(needs, needsLabel) : ""}
         ${extra || ""}
         ${go ? `<span class="key-go">${e(go)}</span>` : ""}
       </${Tag}>`;
@@ -83,10 +100,10 @@ ${raw || keys.filter(Boolean).join("\n")}
 }
 
 /** The masthead of a subpage: where you are, and the way back to the board. */
-export function pageHead({ eyebrow, h1, lead, meta, cta, bookingUrl }) {
+export function pageHead({ code, eyebrow, h1, lead, meta, cta, bookingUrl, ui }) {
   return `  <div class="hero-bar hero-bar--page">
     <div class="hero-say">
-      <a class="back" href="/beta2/"><span>${back}</span>Back to the overview</a>
+      <a class="back" href="${boardHref(code)}"><span>${back}</span>${e(ui.back)}</a>
       <span class="hero-note">${e(eyebrow)}</span>
       <h1>${e(h1)}</h1>
       <p>${e(lead)}</p>
@@ -96,19 +113,22 @@ export function pageHead({ eyebrow, h1, lead, meta, cta, bookingUrl }) {
   </div>`;
 }
 
-const NAV = [
-  ["What we build", "/beta2/#build"],
-  ["Work", "/beta2/#proof"],
-  ["How we work", "/beta2/#work"],
-  ["Team", "/beta2/team.html"],
-  ["Engagement", "/beta2/engagement.html"],
-  ["Integrations", "/beta2/integrations.html"],
-];
-
 /** The whole document. Subpages differ only in `body`. */
-export function page({ title, description, body, bookingUrl }) {
+export function page({ code, title, description, body, bookingUrl, ui }) {
+  const nav = [
+    [ui.nav.build, `${boardHref(code)}#build`],
+    [ui.nav.work, `${boardHref(code)}#results`],
+    [ui.nav.how, `${boardHref(code)}#process`],
+    [ui.nav.team, sub(code, "team.html")],
+    [ui.nav.engagement, sub(code, "engagement.html")],
+    [ui.nav.integrations, sub(code, "integrations.html")],
+  ];
+  const langs = LOCALES
+    .map((x) => `<a class="${x === code ? "on" : ""}" href="${boardHref(x)}">${langLabel[x]}</a>`)
+    .join("");
+
   return `<!doctype html>
-<html lang="en">
+<html lang="${langAttr[code]}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -123,14 +143,15 @@ export function page({ title, description, body, bookingUrl }) {
 <body>
 
 <header class="site-head">
-  <a href="/beta2/" aria-label="EnterIT home">
+  <a href="${boardHref(code)}" aria-label="EnterIT">
     <img src="/assets/enter_logo_black.svg" alt="EnterIT">
   </a>
-  <nav class="head-nav" aria-label="Main">
-${NAV.map(([l, h]) => `    <a href="${h}">${e(l)}</a>`).join("\n")}
+  <nav class="head-nav" aria-label="${e(ui.navLabel)}">
+${nav.map(([l, h]) => `    <a href="${h}">${e(l)}</a>`).join("\n")}
   </nav>
   <span class="head-right">
-    <a class="btn btn--sm" href="${bookingUrl}" target="_blank" rel="noopener">Book a call</a>
+    <a class="btn btn--sm" href="${bookingUrl}" target="_blank" rel="noopener">${e(ui.bookShort)}</a>
+    <span class="lang">${langs}</span>
   </span>
 </header>
 
@@ -141,8 +162,39 @@ ${body}
 </main>
 
 <footer class="site-foot">
-  <span>© 2026 EnterIT · AI Enter s.r.o. · Reg. No. 19086652</span>
-  <span><a href="/en/gdpr.html">Privacy</a> · <a href="/beta2/engagement.html">Terms</a> · <a href="/beta2/">Overview</a></span>
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>${e(ui.footClaim)}</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, ${e(ui.czechia)}
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(ui.footAsk)}</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="${bookingUrl}" target="_blank" rel="noopener">${e(ui.footBook)}</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(ui.navLabel)}</span>
+${nav.map(([l, h]) => `      <a href="${h}">${e(l)}</a>`).join("\n")}
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">${e(ui.footGroup)}</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="${sub(code, "team.html")}">Enter Tech</a>
+      <a href="${sub(code, "team.html")}">Enter Agents</a>
+      <a href="${sub(code, "team.html")}">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="${boardHref(code)}">${e(ui.overview)}</a> · <a href="/beta/">beta 1</a></span>
+  </div>
 </footer>
 
 <script>
