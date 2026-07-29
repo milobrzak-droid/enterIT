@@ -21,14 +21,14 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { LOCALES, e, key, need, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { LOCALES, ROOT_LOCALE, boardHref, e, headLinks, key, need, page, pageHead, section, sub } from "./beta2-page.mjs";
 import { pagesCopy } from "./beta2-pages-copy.mjs";
 import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
 import { restorationContent } from "./homepage-restoration-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const board = (code) => (code === "en" ? "/beta2/" : `/beta2/${code}.html`);
+
 
 /* ---------------------------------------------------------- Engagement -- */
 
@@ -98,6 +98,7 @@ ${C.far.map(([q, a, needText]) => `        <div class="qa"><b>${e(q)}</b><p>${e(
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "engagement.html")),
     body: [
       pageHead({ code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead, meta: C.meta, cta: C.cta, bookingUrl }),
       models, money, guarantees, far, limits,
@@ -138,6 +139,7 @@ function render2030(code) {
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "company-2030.html")),
     body: [
       pageHead({ code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead, meta: C.meta, cta: C.cta, bookingUrl }),
       pace, ladder,
@@ -188,7 +190,7 @@ ${field("share", f.share)}
       key({ span: 8, tone: "navy", body: C.afterBody, mascot: "blue" }),
       key({
         span: 4, tone: "white", title: C.stagesTitle, size: "sm",
-        sub: C.stagesSub, go: C.stagesGo, href: `${board(code)}#process`,
+        sub: C.stagesSub, go: C.stagesGo, href: `${boardHref(code)}#process`,
       }),
     ],
   });
@@ -236,6 +238,7 @@ ${field("share", f.share)}
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "calculator.html")),
     body: [
       pageHead({
         code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead,
@@ -249,11 +252,11 @@ ${field("share", f.share)}
 
 export function writeEngagement() {
   for (const code of LOCALES) {
-    const dir = code === "en" ? resolve(root, "beta2") : resolve(root, "beta2", code);
+    const dir = code === ROOT_LOCALE ? root : resolve(root, code);
     mkdirSync(dir, { recursive: true });
     writeFileSync(resolve(dir, "engagement.html"), renderEngagement(code), "utf8");
     writeFileSync(resolve(dir, "company-2030.html"), render2030(code), "utf8");
     writeFileSync(resolve(dir, "calculator.html"), renderCalculator(code), "utf8");
   }
-  console.log("beta2/**/engagement.html, company-2030.html, calculator.html  (4 languages)");
+  console.log("**/engagement.html, company-2030.html, calculator.html  (4 languages)");
 }

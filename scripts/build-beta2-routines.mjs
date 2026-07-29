@@ -1,5 +1,5 @@
 /**
- * build-beta2-routines.mjs — /beta2/routines/*.html, one page per routine.
+ * build-beta2-routines.mjs — routines/*.html, one page per routine per language.
  *
  * Eight pages from one template, because eight pages that answer the same
  * questions in a different order are eight pages nobody can compare. A buyer
@@ -16,7 +16,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { e, key, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { ROOT_LOCALE, boardHref, e, headLinks, key, page, pageHead, section, sub } from "./beta2-page.mjs";
 import { LOCALES } from "./beta2-page.mjs";
 import { routineTones, routinesByLocale } from "./beta2-routines.mjs";
 import { routineUi } from "./beta2-routines-ui.mjs";
@@ -144,7 +144,7 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
         span: 4, tone: "white",
         title: R.allTitle, size: "sm",
         sub: R.allSub,
-        go: R.allGo, href: `${code === "en" ? "/beta2/" : `/beta2/${code}.html`}#start`,
+        go: R.allGo, href: `${boardHref(code)}#start`,
       }),
     ],
   });
@@ -161,6 +161,7 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
     title: `${r.tag}: ${r.h1} | EnterIT`,
     description: r.lead,
     bookingUrl,
+    ...headLinks(code, (x) => sub(x, `routines/${routinesByLocale[x][i].slug}.html`)),
     body: [
       pageHead({
         eyebrow: `${R.eyebrow} · ${r.tag}`,
@@ -179,14 +180,14 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
 export function writeRoutines() {
   let n = 0;
   for (const code of LOCALES) {
-    const dir = code === "en"
-      ? resolve(root, "beta2", "routines")
-      : resolve(root, "beta2", code, "routines");
+    const dir = code === ROOT_LOCALE
+      ? resolve(root, "routines")
+      : resolve(root, code, "routines");
     mkdirSync(dir, { recursive: true });
     routinesByLocale[code].forEach((r, i) => {
       writeFileSync(resolve(dir, `${r.slug}.html`), renderRoutine(code, r, i), "utf8");
       n += 1;
     });
   }
-  console.log(`beta2/**/routines/*.html  (${n} pages, four languages)`);
+  console.log(`**/routines/*.html  (${n} pages, four languages)`);
 }

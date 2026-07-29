@@ -1,5 +1,5 @@
 /**
- * build-beta2.mjs — renders the /beta2/ keycap board.
+ * build-beta2.mjs — renders the keycap board, one per language.
  *
  * beta2 is a second prototype track that sits alongside beta1; neither
  * overwrites the other. Where beta1 is a scrolling page, beta2 is a board of
@@ -28,7 +28,7 @@
  * Output: beta2/index.html (EN), beta2/cs.html, beta2/de.html, beta2/pl.html
  * Run:    node scripts/build-beta2.mjs
  */
-import { existsSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -38,7 +38,7 @@ import { writeRoutines } from "./build-beta2-routines.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
-import { LOCALES, sub } from "./beta2-page.mjs";
+import { LOCALES, ROOT_LOCALE, boardHref, sub } from "./beta2-page.mjs";
 import { routinesByLocale } from "./beta2-routines.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -54,7 +54,10 @@ const e = (v) => escapeHtml(v ?? "");
    fourteen-section document that briefly replaced it was the wrong shape: this
    is a keyboard you press, not a page you read. */
 const order = ["en", "cs", "de", "pl"];
-const file = { en: "index.html", cs: "cs.html", de: "de.html", pl: "pl.html" };
+/* Czech is the root locale, so it writes index.html at the top of the site and
+   the other three get a folder each. */
+export const SITE = "https://enterit.cz";
+const outFile = (code) => (code === ROOT_LOCALE ? "index.html" : `${code}/index.html`);
 const label = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
 /* Board-only copy — the connective tissue between chapters, which has no home
@@ -436,7 +439,7 @@ function render(code) {
   const at = (f) => `/${prefix}${f}`;
 
   const langs = order
-    .map((x) => `<a class="${x === code ? "on" : ""}" href="${x === "en" ? "/beta2/" : `/beta2/${file[x]}`}">${label[x]}</a>`)
+    .map((x) => `<a class="${x === code ? "on" : ""}" href="${boardHref(x)}">${label[x]}</a>`)
     .join("");
   const rackIds = ["#build", "#results", "#process", "#integrations", "#team", "#start", "#start"];
   const rack = t.rack
@@ -473,7 +476,7 @@ function render(code) {
         title: t.reachTitle, size: "big", sub: t.reachSub,
         bullets: t.reachList, extra: euStars,
         go: t.reachGo,
-        href: code === "en" ? "/beta2/engagement.html" : "#start",
+        href: sub(code, "engagement.html"),
       }),
       key({
         span: 4, tone: "navy", eyebrow: t.teamGo.replace(" →", ""),
@@ -778,18 +781,22 @@ ${rack}
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<title>${e(page.title)} — beta2</title>
+<meta name="robots" content="index,follow">
+<title>${e(page.title)}</title>
 <meta name="description" content="${e(page.description)}">
+<link rel="canonical" href="${SITE}${boardHref(code)}">
+${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${boardHref(x)}">`).join("\n")}
+<link rel="alternate" hreflang="x-default" href="${SITE}${boardHref(ROOT_LOCALE)}">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/beta2/assets/keys.css">
+<link rel="stylesheet" href="/assets/keys.css">
+<script defer src="/assets/analytics.js"><\/script>
 </head>
 <body>
 
 <header class="site-head">
-  <a href="${code === "en" ? "/beta2/" : `/beta2/${file[code]}`}" aria-label="${e(page.homeLabel)}">
+  <a href="${boardHref(code)}" aria-label="${e(page.homeLabel)}">
     <img src="/assets/enter_logo_black.svg" alt="EnterIT">
   </a>
   <nav class="head-nav" aria-label="${e(page.mainNavLabel)}">
@@ -879,7 +886,7 @@ ${start}
   </div>
   <div class="foot-line">
     <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
-    <span><a href="${at("gdpr.html")}">${e(page.footer.privacy)}</a> · <a href="${sub(code, "engagement.html")}">${e(page.footer.terms)}</a> · <a href="/beta/">beta 1</a></span>
+    <span><a href="/gdpr.html">${e(page.footer.privacy)}</a> · <a href="/podminky.html">${e(page.footer.terms)}</a> · <a href="/verze1/">${e(page.footer.previous)}</a></span>
   </div>
 </footer>
 
@@ -917,7 +924,9 @@ writeRoutines();
 writeTeamAndIntegrations();
 writeEngagement();
 for (const code of order) {
-  writeFileSync(resolve(root, "beta2", file[code]), render(code), "utf8");
-  console.log(`beta2/${file[code]}  (${code})`);
+  const target = resolve(root, outFile(code));
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, render(code), "utf8");
+  console.log(`${outFile(code)}  (${code})`);
 }
 console.log("Beta2 board built.");

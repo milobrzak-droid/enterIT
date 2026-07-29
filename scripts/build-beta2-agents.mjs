@@ -15,7 +15,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { LOCALES, key, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { LOCALES, ROOT_LOCALE, headLinks, key, page, pageHead, section, sub } from "./beta2-page.mjs";
 import { agentsCopy } from "./beta2-agents-copy.mjs";
 import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
@@ -101,6 +101,7 @@ function render(code) {
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "agents.html")),
     body: [
       pageHead({
         code, ui: U,
@@ -114,9 +115,9 @@ function render(code) {
 
 export function writeAgents() {
   for (const code of LOCALES) {
-    const dir = code === "en" ? resolve(root, "beta2") : resolve(root, "beta2", code);
+    const dir = code === ROOT_LOCALE ? root : resolve(root, code);
     mkdirSync(dir, { recursive: true });
     writeFileSync(resolve(dir, "agents.html"), render(code), "utf8");
   }
-  console.log("beta2/**/agents.html  (4 languages)");
+  console.log("**/agents.html  (4 languages)");
 }

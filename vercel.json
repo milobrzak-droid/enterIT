@@ -10,12 +10,7 @@
   "outputDirectory": ".",
   "cleanUrls": false,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/us",
-      "destination": "/us/index.html"
-    }
-  ],
+  "rewrites": [],
   "redirects": [
     {
       "source": "/index.html",
@@ -45,19 +40,279 @@
       "permanent": true
     },
     {
-      "source": "/en",
-      "destination": "/en.html",
+      "source": "/en.html",
+      "destination": "/en/",
       "permanent": true
     },
     {
-      "source": "/de",
-      "destination": "/de.html",
+      "source": "/de.html",
+      "destination": "/de/",
       "permanent": true
     },
     {
-      "source": "/pl",
-      "destination": "/pl.html",
+      "source": "/pl.html",
+      "destination": "/pl/",
       "permanent": true
+    },
+    {
+      "source": "/en/tym.html",
+      "destination": "/en/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/tym.html",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/tym.html",
+      "destination": "/de/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/tym.html",
+      "destination": "/pl/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/firma-2030.html",
+      "destination": "/en/company-2030.html",
+      "permanent": true
+    },
+    {
+      "source": "/firma-2030.html",
+      "destination": "/company-2030.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/firma-2030.html",
+      "destination": "/de/company-2030.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/firma-2030.html",
+      "destination": "/pl/company-2030.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/jak-stavime-agenty.html",
+      "destination": "/en/agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/jak-stavime-agenty.html",
+      "destination": "/agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/jak-stavime-agenty.html",
+      "destination": "/de/agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/jak-stavime-agenty.html",
+      "destination": "/pl/agents.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/jak-stavime-automatizace.html",
+      "destination": "/en/automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/jak-stavime-automatizace.html",
+      "destination": "/automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/jak-stavime-automatizace.html",
+      "destination": "/de/automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/jak-stavime-automatizace.html",
+      "destination": "/pl/automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-faktury.html",
+      "destination": "/en/routines/invoices.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-faktury.html",
+      "destination": "/routines/faktury.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-faktury.html",
+      "destination": "/de/routines/rechnungen.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-faktury.html",
+      "destination": "/pl/routines/faktury.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-objednavky.html",
+      "destination": "/en/routines/orders.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-objednavky.html",
+      "destination": "/routines/objednavky.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-objednavky.html",
+      "destination": "/de/routines/bestellungen.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-objednavky.html",
+      "destination": "/pl/routines/zamowienia.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-sklad-bez-papiru.html",
+      "destination": "/en/routines/warehouse.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-sklad-bez-papiru.html",
+      "destination": "/routines/sklad.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-sklad-bez-papiru.html",
+      "destination": "/de/routines/lager.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-sklad-bez-papiru.html",
+      "destination": "/pl/routines/magazyn.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-dochazka.html",
+      "destination": "/en/routines/attendance.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-dochazka.html",
+      "destination": "/routines/dochazka.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-dochazka.html",
+      "destination": "/de/routines/zeiterfassung.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-dochazka.html",
+      "destination": "/pl/routines/ewidencja-czasu.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-pracovni-vykazy.html",
+      "destination": "/en/routines/timesheets.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-pracovni-vykazy.html",
+      "destination": "/routines/vykazy.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-pracovni-vykazy.html",
+      "destination": "/de/routines/stundenzettel.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-pracovni-vykazy.html",
+      "destination": "/pl/routines/karty-pracy.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-kniha-jizd.html",
+      "destination": "/en/routines/mileage.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-kniha-jizd.html",
+      "destination": "/routines/kniha-jizd.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-kniha-jizd.html",
+      "destination": "/de/routines/fahrtenbuch.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-kniha-jizd.html",
+      "destination": "/pl/routines/ewidencja-przebiegu.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-reklamace.html",
+      "destination": "/en/routines/complaints.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-reklamace.html",
+      "destination": "/routines/reklamace.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-reklamace.html",
+      "destination": "/de/routines/reklamationen.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-reklamace.html",
+      "destination": "/pl/routines/reklamacje.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/reseni-dovolene.html",
+      "destination": "/en/routines/time-off.html",
+      "permanent": true
+    },
+    {
+      "source": "/reseni-dovolene.html",
+      "destination": "/routines/dovolene.html",
+      "permanent": true
+    },
+    {
+      "source": "/de/reseni-dovolene.html",
+      "destination": "/de/routines/urlaub.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl/reseni-dovolene.html",
+      "destination": "/pl/routines/urlopy.html",
+      "permanent": true
+    },
+    {
+      "source": "/us",
+      "destination": "/verze1/us",
+      "permanent": false
+    },
+    {
+      "source": "/us/",
+      "destination": "/verze1/us/",
+      "permanent": false
+    },
+    {
+      "source": "/index-redesign.html",
+      "destination": "/verze1/index-redesign.html",
+      "permanent": false
+    },
+    {
+      "source": "/_redesign-demo.html",
+      "destination": "/verze1/_redesign-demo.html",
+      "permanent": false
     }
   ],
   "headers": [

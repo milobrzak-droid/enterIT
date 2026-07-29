@@ -16,7 +16,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { LOCALES, key, need, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { LOCALES, ROOT_LOCALE, headLinks, key, page, pageHead, section, sub } from "./beta2-page.mjs";
 import { automationCopy } from "./beta2-automation-copy.mjs";
 import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
@@ -93,7 +93,6 @@ function render(code) {
         span: 8, tone: "navy", legend: "4",
         eyebrow: C.walk.endEyebrow, title: C.walk.endTitle, size: "big",
         sub: C.walk.endSub, meta: C.walk.endMeta,
-        needs: need(C.walk.endNeed), needsLabel: U.needsLabel,
       }),
       key({
         span: 4, tone: "turquoise",
@@ -112,6 +111,7 @@ function render(code) {
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "automation.html")),
     body: [
       pageHead({
         code, ui: U,
@@ -125,9 +125,9 @@ function render(code) {
 
 export function writeAutomation() {
   for (const code of LOCALES) {
-    const dir = code === "en" ? resolve(root, "beta2") : resolve(root, "beta2", code);
+    const dir = code === ROOT_LOCALE ? root : resolve(root, code);
     mkdirSync(dir, { recursive: true });
     writeFileSync(resolve(dir, "automation.html"), render(code), "utf8");
   }
-  console.log("beta2/**/automation.html  (4 languages)");
+  console.log("**/automation.html  (4 languages)");
 }

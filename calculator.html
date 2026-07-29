@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kalkulačka úspor | EnterIT</title>
+<meta name="description" content="Čtyři posuvníky a řádový odhad toho, co vaši firmu ročně stojí opakovaná práce. Běží ve stránce, bez e-mailu.">
+<link rel="canonical" href="https://enterit.cz/calculator.html">
+<link rel="alternate" hreflang="en" href="https://enterit.cz/en/calculator.html">
+<link rel="alternate" hreflang="cs" href="https://enterit.cz/calculator.html">
+<link rel="alternate" hreflang="de" href="https://enterit.cz/de/calculator.html">
+<link rel="alternate" hreflang="pl" href="https://enterit.cz/pl/calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://enterit.cz/calculator.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/keys.css">
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/" aria-label="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+  </a>
+  <nav class="head-nav" aria-label="Sekce">
+    <a href="/#build">Co stavíme</a>
+    <a href="/#results">Výsledky</a>
+    <a href="/#process">Jak pracujeme</a>
+    <a href="/team.html">Tým</a>
+    <a href="/engagement.html">Spolupráce</a>
+    <a href="/integrations.html">Integrace</a>
+  </nav>
+  <span class="head-right">
+    <a class="btn btn--sm" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Rezervovat hovor</a>
+    <span class="lang"><a class="" href="/en/">EN</a><a class="on" href="/">CZ</a><a class="" href="/de/">DE</a><a class="" href="/pl/">PL</a></span>
+  </span>
+</header>
+
+<main class="board">
+
+  <div class="hero-bar hero-bar--page">
+    <div class="hero-say">
+      <a class="back" href="/"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-7-7 7 7 7"/></svg></span>Zpět na přehled</a>
+      <span class="hero-note">Kalkulačka úspor</span>
+      <h1>Kolik vás dnes ta rutina stojí?</h1>
+      <p>Posuňte čtyři posuvníky a dostanete řádový odhad toho, co vaši firmu ročně stojí opakovaná práce. Běží celé v téhle stránce — nic se nikam neposílá a žádný formulář tu není.</p>
+      <p class="hero-meta">Počítáno na 46 pracovních týdnů a 1840 hodin na úvazek ročně</p>
+      
+    </div>
+  </div>
+
+  <section class="chap" id="calc" data-hue="0">
+    <div class="chap-head">
+      <span class="chap-no">01</span>
+      <div>
+        <span class="chap-kicker">Kalkulačka úspor</span>
+        <h2>Čtyři vstupy. Jeden řád.</h2>
+        <p>Záměrně hrubé. Existuje proto, aby vám řeklo, jestli je tohle hovor na pětimístnou nebo šestimístnou částku — a nic přesnějšího by se nemělo brát vážně, dokud jsme neviděli vaše data.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white calc" style="grid-column:span 7">
+        <label class="calc-field" for="c-people">
+          <span class="calc-label">Počet lidí, kteří dělají rutinní práci<b id="c-people-out">10</b></span>
+          <input id="c-people" type="range" min="1" max="200" step="1" value="10">
+          <span class="calc-hint">Kolik zaměstnanců se věnuje opakující se agendě.</span>
+        </label>
+        <label class="calc-field" for="c-hours">
+          <span class="calc-label">Hodin rutiny týdně na osobu<b id="c-hours-out">8</b></span>
+          <input id="c-hours" type="range" min="1" max="40" step="1" value="8">
+          <span class="calc-hint">Přepisování, hledání, vyplňování a dohledávání.</span>
+        </label>
+        <label class="calc-field" for="c-rate">
+          <span class="calc-label">Hodinová sazba<b id="c-rate-out">500</b></span>
+          <input id="c-rate" type="range" min="200" max="2000" step="50" value="500">
+          <span class="calc-hint">Průměrné náklady na hodinu práce včetně režie.</span>
+        </label>
+        <label class="calc-field" for="c-share">
+          <span class="calc-label">Podíl rutiny, který lze automatizovat<b id="c-share-out">45</b></span>
+          <input id="c-share" type="range" min="20" max="70" step="5" value="45">
+          <span class="calc-hint">U vhodných procesů typicky 30–60 % rutinní práce.</span>
+        </label>
+      </div>
+      <div class="key key--turquoise calc-out" style="grid-column:span 5">
+        <span class="key-eyebrow">Roční úspora nákladů</span>
+        <span class="calc-big" id="c-out-money">—</span>
+        <span class="key-meta">při automatizaci zvolené rutiny</span>
+        <div class="strip strip--in">
+          <span class="stat"><b id="c-out-hours">—</b>ušetřených hodin ročně</span>
+          <span class="stat"><b id="c-out-fte">—</b>uvolněného úvazku</span>
+        </div>
+        <p class="key-meta key-meta--rule">Orientační odhad pro představu řádu, nikoli nabídka. Skutečný přínos ověříme v pilotu na vašich datech.</p>
+        <a class="key-go" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Probrat moje procesy →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="after" data-hue="1">
+    <div class="chap-head">
+      <span class="chap-no">02</span>
+      <div>
+        <span class="chap-kicker">Co se s tímhle číslem stane</span>
+        <h2>V prvních dvou týdnech ho nahradíme skutečným.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--navy" style="grid-column:span 8">
+        
+        <img class="key-mascot" src="/assets/decor/mascot-blue-light.svg" alt="" loading="lazy">
+        
+        
+        
+        
+        
+        
+        <p class="key-sub">První fáze existuje proto, aby z tohohle odhadu udělala měření: kolik té práce doopravdy je, kolik výjimek proces skutečně má a co vás dnešní postup stojí — včetně té části, kterou nikdo nepočítá, tedy seniorních lidí dělajících juniorní práci.</p><p class="key-sub">Někdy to měření projekt zabije. Stalo se to a pro obě strany je to levnější ve druhém týdnu než v šestém měsíci.</p>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <a class="key key--white" href="/#process" style="grid-column:span 4">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Projděte si čtyři fáze.</span>
+        <p class="key-sub">Každá končí výstupem, rozhodovacím bodem a vlastníkem.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">Jak pracujeme →</span>
+      </a>
+    </div>
+  </section>
+<script>
+(function(){
+  var ids = ["people","hours","rate","share"];
+  var els = {};
+  ids.forEach(function(id){
+    els[id] = document.getElementById("c-" + id);
+    els[id].addEventListener("input", run);
+  });
+  /* Namespaced: the sliders already own c-hours, and an id collision here once
+     silently pointed the result at the input. */
+  var money = document.getElementById("c-out-money");
+  var hoursOut = document.getElementById("c-out-hours");
+  var fteOut = document.getElementById("c-out-fte");
+  var fmt = new Intl.NumberFormat("cs-CZ", {
+    style: "currency", currency: "CZK", maximumFractionDigits: 0
+  });
+  function round(n){
+    if (n >= 100000) return Math.round(n / 10000) * 10000;
+    if (n >= 10000) return Math.round(n / 1000) * 1000;
+    return Math.round(n / 100) * 100;
+  }
+  function run(){
+    var v = {};
+    ids.forEach(function(id){
+      v[id] = parseFloat(els[id].value);
+      document.getElementById("c-" + id + "-out").textContent =
+        id === "share" ? v[id] + "%" : id === "rate" ? "Kč" + v[id] : v[id];
+    });
+    var hours = v.people * v.hours * 46 * (v.share / 100);
+    money.textContent = fmt.format(round(hours * v.rate));
+    hoursOut.textContent = Math.round(hours / 10) * 10;
+    fteOut.textContent = (hours / 1840).toFixed(1);
+  }
+  run();
+})();
+</script>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>Performance AI tým, který dodává do provozu.</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Česko
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Máte dotaz?</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Rezervovat 30 minut</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Sekce</span>
+      <a href="/#build">Co stavíme</a>
+      <a href="/#results">Výsledky</a>
+      <a href="/#process">Jak pracujeme</a>
+      <a href="/team.html">Tým</a>
+      <a href="/engagement.html">Spolupráce</a>
+      <a href="/integrations.html">Integrace</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Enter Group</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="/team.html">Enter Tech</a>
+      <a href="/team.html">Enter Agents</a>
+      <a href="/team.html">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="/">Přehled</a> · <a href="/beta/">beta 1</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PALETTE = ["turquoise","blue","violet","red","yellow"];
+  var offset = Math.floor(Math.random() * PALETTE.length);
+  document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
+    var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
+    PALETTE.forEach(function(name){ chap.classList.remove("ch--" + name); });
+    chap.classList.add("ch--" + PALETTE[slot]);
+  });
+})();
+</script>
+</body>
+</html>

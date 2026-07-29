@@ -610,7 +610,7 @@ function removeTeamConsultants(html, pageName) {
 
 function refreshPage(code, pageName) {
   const page = locales[code];
-  const target = resolve(root, pagePath(code, pageName));
+  const target = resolve(root, "verze1", pagePath(code, pageName));
   if (!existsSync(target)) throw new Error(`Missing production page: ${target}`);
 
   let html = readFileSync(target, "utf8");

@@ -42,7 +42,7 @@
   var t = STR[LANG] || STR.cs;
 
   var GDPR_HREF = {
-    cs: '/gdpr.html', en: '/en/gdpr.html', de: '/de/gdpr.html', pl: '/pl/gdpr.html'
+    cs: '/gdpr.html', en: '/gdpr.html', de: '/gdpr.html', pl: '/gdpr.html'
   }[LANG] || '/gdpr.html';
 
   /* ---- Consent Mode v2 default: denied until user decides ---- */

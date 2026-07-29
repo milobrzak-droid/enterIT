@@ -6,9 +6,11 @@
  * shell, the keycap, and the marker for a fact we do not have yet. A subpage
  * builder supplies content and colour and nothing else.
  *
- * Paths. English sits at the root of /beta2/ and the other three get a folder
- * each — /beta2/cs/agents.html and so on — which keeps the English URLs short
- * and every translation one segment away from its original.
+ * Paths. Czech sits at the domain root because enterit.cz is a Czech company's
+ * front door and a Czech visitor should not land in English; the other three get
+ * a folder each — /en/agents.html and so on. Routine slugs stay localised, so
+ * the Czech invoices page is /routines/faktury.html and the German one is
+ * /de/routines/rechnungen.html.
  *
  * Colour rules are the board's rules, unchanged: turquoise is the primary and
  * the only colour that fills a large cap by default; blue, violet, red and
@@ -24,8 +26,9 @@ export const langAttr = { en: "en", cs: "cs", de: "de", pl: "pl" };
 export const langLabel = { en: "EN", cs: "CZ", de: "DE", pl: "PL" };
 
 /** Where a subpage lives, and where the board for a locale lives. */
-export const sub = (code, file) => (code === "en" ? `/beta2/${file}` : `/beta2/${code}/${file}`);
-export const boardHref = (code) => (code === "en" ? "/beta2/" : `/beta2/${code}.html`);
+export const ROOT_LOCALE = "cs";
+export const sub = (code, file) => (code === ROOT_LOCALE ? `/${file}` : `/${code}/${file}`);
+export const boardHref = (code) => (code === ROOT_LOCALE ? "/" : `/${code}/`);
 
 export const chevron =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
@@ -116,7 +119,19 @@ export function pageHead({ code, eyebrow, h1, lead, meta, cta, bookingUrl, ui })
 }
 
 /** The whole document. Subpages differ only in `body`. */
-export function page({ code, title, description, body, bookingUrl, ui }) {
+export const SITE = "https://enterit.cz";
+
+/**
+ * Canonical and hreflang for one page, given a function that returns its path
+ * in any language. Routine slugs are localised, so the caller supplies the
+ * lookup rather than us assuming the filename is the same everywhere.
+ */
+export const headLinks = (code, pathFor) => ({
+  canonical: pathFor(code),
+  alternates: [...LOCALES.map((x) => [x, pathFor(x)]), ["x-default", pathFor(ROOT_LOCALE)]],
+});
+
+export function page({ code, title, description, body, bookingUrl, ui, canonical, alternates }) {
   const nav = [
     [ui.nav.build, `${boardHref(code)}#build`],
     [ui.nav.work, `${boardHref(code)}#results`],
@@ -134,13 +149,15 @@ export function page({ code, title, description, body, bookingUrl, ui }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
 <title>${e(title)}</title>
 <meta name="description" content="${e(description)}">
+${canonical ? `<link rel="canonical" href="${SITE}${canonical}">` : ""}
+${alternates ? alternates.map(([x, href]) => `<link rel="alternate" hreflang="${x}" href="${SITE}${href}">`).join("\n") : ""}
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/beta2/assets/keys.css">
+<link rel="stylesheet" href="/assets/keys.css">
+<script defer src="/assets/analytics.js"><\/script>
 </head>
 <body>
 

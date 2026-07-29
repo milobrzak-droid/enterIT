@@ -18,7 +18,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { LOCALES, e, key, need, page, pageHead, section, sub } from "./beta2-page.mjs";
+import { LOCALES, ROOT_LOCALE, boardHref, e, headLinks, key, page, pageHead, section, sub } from "./beta2-page.mjs";
 import { pagesCopy } from "./beta2-pages-copy.mjs";
 import { ui } from "./beta2-ui.mjs";
 import { bookingUrl } from "./homepage-content.mjs";
@@ -89,7 +89,6 @@ function renderTeam(code) {
       ...C.stats.map(([stat, statLabel, subText], i) =>
         key({
           span: 3, tone: "white", stat, statLabel, sub: subText || undefined,
-          needs: i >= 2 ? need(C.countNeed) : undefined, needsLabel: U.needsLabel,
         })),
       key({
         span: 12, tone: "violet", title: C.ownerTitle, size: "big",
@@ -112,6 +111,7 @@ function renderTeam(code) {
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "team.html")),
     body: [
       pageHead({ code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead, meta: C.meta, cta: C.cta, bookingUrl }),
       structure, titles, shape, where,
@@ -179,7 +179,7 @@ function renderIntegrations(code) {
     ],
   });
 
-  const hrefs = [bookingUrl, sub(code, "agents.html"), `${code === "en" ? "/beta2/" : `/beta2/${code}.html`}#start`];
+  const hrefs = [bookingUrl, sub(code, "agents.html"), `${boardHref(code)}#start`];
   const next = section({
     id: "next", no: "05", hue: 4,
     kicker: C.nextKicker, h2: C.nextH2,
@@ -193,6 +193,7 @@ function renderIntegrations(code) {
 
   return page({
     code, ui: U, title: C.seoTitle, description: C.seoDesc, bookingUrl,
+    ...headLinks(code, (x) => sub(x, "integrations.html")),
     body: [
       pageHead({
         code, ui: U, eyebrow: C.eyebrow, h1: C.h1, lead: C.lead,
@@ -205,10 +206,10 @@ function renderIntegrations(code) {
 
 export function writeTeamAndIntegrations() {
   for (const code of LOCALES) {
-    const dir = code === "en" ? resolve(root, "beta2") : resolve(root, "beta2", code);
+    const dir = code === ROOT_LOCALE ? root : resolve(root, code);
     mkdirSync(dir, { recursive: true });
     writeFileSync(resolve(dir, "team.html"), renderTeam(code), "utf8");
     writeFileSync(resolve(dir, "integrations.html"), renderIntegrations(code), "utf8");
   }
-  console.log("beta2/**/team.html, integrations.html  (4 languages)");
+  console.log("**/team.html, integrations.html  (4 languages)");
 }

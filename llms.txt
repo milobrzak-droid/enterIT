@@ -1,6 +1,6 @@
 # EnterIT
 
-> EnterIT is a European AI and software delivery partner. Our 75+ specialists design, build, integrate, and operate enterprise software, AI solutions, cloud platforms, and system integrations for mid-to-large companies and technology partners. Primary language of the site is Czech (cs); English, German, and Polish versions are available at /en, /de, /pl. A separate US partner page is available at /us.
+> EnterIT is a European AI and software delivery partner. Our 75+ specialists design, build, integrate, and operate enterprise software, AI solutions, cloud platforms, and system integrations for mid-to-large companies and technology partners. Primary language of the site is Czech (cs); English, German, and Polish versions are available at /en, /de, /pl.
 
 EnterIT is the delivery/execution team of the sister company EnterAI (enterai.cz), which focuses on AI adoption strategy and transformation. EnterIT focuses specifically on hands-on delivery: building and operating the actual automations, agents, and integrations — both as EnterAI's delivery arm and as standalone IT/AI projects for direct clients. EnterIT does not do adoption/change-management consulting — that is EnterAI's role.
 
@@ -9,21 +9,20 @@ Legal entity: AI Enter s.r.o. (brand: EnterIT), Bruntál, Czech Republic.
 ## Core pages
 
 - [Homepage](https://enterit.cz/): engineering-first overview of enterprise software and AI delivery from design through production, with structured case studies, integrations, process, savings calculator, operations, leadership, and the relationship to EnterAI.
-- [US Partner Page](https://enterit.cz/us): dedicated page for US consultancies, Microsoft partners, and systems integrators looking for a European AI and software delivery partner.
-- [Team](https://enterit.cz/tym.html): the ~75-person engineering team across three groups: Enterprise (ERP/system integration), Agents (AI agent development), and Studio (product/in-house builds).
-- [How we build agents](https://enterit.cz/jak-stavime-agenty.html): technical anatomy of an AI agent build including architecture, guardrails, human-in-the-loop, and security.
-- [How we build automations](https://enterit.cz/jak-stavime-automatizace.html): the 5-layer automation stack and 4-phase delivery process.
+- [Team](https://enterit.cz/team.html): the ~75-person engineering team across three groups: Enter Tech (ERP and system integration), Agents (AI agent development), and Studio (product/in-house builds).
+- [How we build agents](https://enterit.cz/agents.html): technical anatomy of an AI agent build including architecture, guardrails, human-in-the-loop, and security.
+- [How we build automations](https://enterit.cz/automation.html): the 5-layer automation stack and 4-phase delivery process.
 
-## Ready-made solutions (reseni-*.html)
+## Ready-made solutions (/routines/)
 
-- [Invoice automation](https://enterit.cz/reseni-faktury.html): AI extraction of incoming invoices into ERP.
-- [Order intake automation](https://enterit.cz/reseni-objednavky.html): automatic order capture from e-mail into ERP.
-- [Complaints handling](https://enterit.cz/reseni-reklamace.html): automated complaint intake and routing.
-- [Paperless warehouse](https://enterit.cz/reseni-sklad-bez-papiru.html): warehouse operations without paper delivery notes.
-- [Attendance tracking](https://enterit.cz/reseni-dochazka.html): automated attendance/timesheet capture.
-- [Leave approval automation](https://enterit.cz/reseni-dovolene.html): automated leave request and approval flow.
-- [Vehicle logbook automation](https://enterit.cz/reseni-kniha-jizd.html): automated mileage/logbook tracking.
-- [Work report automation](https://enterit.cz/reseni-pracovni-vykazy.html): automated work timesheet/report generation.
+- [Invoice automation](https://enterit.cz/routines/faktury.html): AI extraction of incoming invoices into ERP.
+- [Order intake automation](https://enterit.cz/routines/objednavky.html): automatic order capture from e-mail into ERP.
+- [Complaints handling](https://enterit.cz/routines/reklamace.html): automated complaint intake and routing.
+- [Paperless warehouse](https://enterit.cz/routines/sklad.html): warehouse operations without paper delivery notes.
+- [Attendance tracking](https://enterit.cz/routines/dochazka.html): automated attendance/timesheet capture.
+- [Leave approval automation](https://enterit.cz/routines/dovolene.html): automated leave request and approval flow.
+- [Vehicle logbook automation](https://enterit.cz/routines/kniha-jizd.html): automated mileage/logbook tracking.
+- [Work report automation](https://enterit.cz/routines/vykazy.html): automated work timesheet/report generation.
 
 ## Languages
 

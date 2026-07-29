@@ -599,7 +599,7 @@ ${siteFooter(page)}
 
 for (const code of localeOrder) {
   const page = locales[code];
-  writeFileSync(resolve(root, page.file), renderHomepage(page, code), "utf8");
+  writeFileSync(resolve(root, "verze1", page.file), renderHomepage(page, code), "utf8");
 }
 
 console.log(`Generated ${localeOrder.map((code) => locales[code].file).join(", ")}`);

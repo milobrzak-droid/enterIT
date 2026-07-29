@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ewidencja czasu: Koniec sumowania godzin na koniec miesiąca. | EnterIT</title>
+<meta name="description" content="Agent łączy czytniki, arkusze i nieobecności, sprawdza zmiany i przygotowuje dane do płac.">
+<link rel="canonical" href="https://enterit.cz/pl/routines/ewidencja-czasu.html">
+<link rel="alternate" hreflang="en" href="https://enterit.cz/en/routines/attendance.html">
+<link rel="alternate" hreflang="cs" href="https://enterit.cz/routines/dochazka.html">
+<link rel="alternate" hreflang="de" href="https://enterit.cz/de/routines/zeiterfassung.html">
+<link rel="alternate" hreflang="pl" href="https://enterit.cz/pl/routines/ewidencja-czasu.html">
+<link rel="alternate" hreflang="x-default" href="https://enterit.cz/routines/dochazka.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/fonts/GreycliffCF-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/FiraMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/keys.css">
+<script defer src="/assets/analytics.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/pl/" aria-label="EnterIT">
+    <img src="/assets/enter_logo_black.svg" alt="EnterIT">
+  </a>
+  <nav class="head-nav" aria-label="Sekcje">
+    <a href="/pl/#build">Co budujemy</a>
+    <a href="/pl/#results">Wyniki</a>
+    <a href="/pl/#process">Jak pracujemy</a>
+    <a href="/pl/team.html">Zespół</a>
+    <a href="/pl/engagement.html">Współpraca</a>
+    <a href="/pl/integrations.html">Integracje</a>
+  </nav>
+  <span class="head-right">
+    <a class="btn btn--sm" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Zarezerwuj rozmowę</a>
+    <span class="lang"><a class="" href="/en/">EN</a><a class="" href="/">CZ</a><a class="" href="/de/">DE</a><a class="on" href="/pl/">PL</a></span>
+  </span>
+</header>
+
+<main class="board">
+
+  <div class="hero-bar hero-bar--page">
+    <div class="hero-say">
+      <a class="back" href="/pl/"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-7-7 7 7 7"/></svg></span>Wróć do przeglądu</a>
+      <span class="hero-note">Gotowe rozwiązania · Ewidencja czasu</span>
+      <h1>Koniec sumowania godzin na koniec miesiąca.</h1>
+      <p>Agent łączy czytniki, arkusze i nieobecności, sprawdza zmiany i przygotowuje dane do płac.</p>
+      <p class="hero-meta">Eksporty z czytników plus Excel  →  Godziny zsumowane, gotowe do płac   ·   ~15 h miesięcznie z powrotem do kadr</p>
+      <span class="hero-cta"><a class="btn btn--go" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Omówmy waszą wersję tego</a></span>
+    </div>
+  </div>
+
+  <section class="chap" id="pain" data-hue="0">
+    <div class="chap-head">
+      <span class="chap-no">01</span>
+      <div>
+        <span class="chap-kicker">Gdzie ucieka czas</span>
+        <h2>Jak to wygląda dziś.</h2>
+        <p>Jeśli żadne z tych trzech zdań nie brzmi znajomo, to prawdopodobnie nie jest wasz pierwszy projekt — i wolimy to powiedzieć, niż go wam sprzedać.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--blue" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">1</span>
+        
+        
+        <span class="key-title key-title--sm">Ewidencja rozbita jest między czytniki, arkusz kierownika i papierowe wnioski.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">2</span>
+        
+        
+        <span class="key-title key-title--sm">Koniec miesiąca to nadrabianie luk i ręczne liczenie nadgodzin oraz dodatków.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">3</span>
+        
+        
+        <span class="key-title key-title--sm">Błędy wypływają dopiero po naliczeniu płac.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="flow" data-hue="1">
+    <div class="chap-head">
+      <span class="chap-no">02</span>
+      <div>
+        <span class="chap-kicker">Krok po kroku</span>
+        <h2>Jak to działa, z nazwanymi miejscami dla człowieka.</h2>
+        <p>Nic tu nie dzieje się poza ekranem. Każdy krok ma zdefiniowany wynik, a miejsca, w których decyduje człowiek, są spisane, zanim cokolwiek powstanie.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-legend">1</span>
+        
+        
+        <span class="key-title key-title--sm">Zbieranie na bieżąco</span>
+        <p class="key-sub">Obecności, pliki kierowników i zatwierdzone nieobecności, zbierane w miarę powstawania.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-legend">2</span>
+        
+        
+        <span class="key-title key-title--sm">Codzienne kontrole</span>
+        <p class="key-sub">Brakujące wejścia, niezgodność zmian i niezatwierdzone nadgodziny zgłaszane tego samego dnia.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-legend">3</span>
+        
+        
+        <span class="key-title key-title--sm">Wyliczenie</span>
+        <p class="key-sub">Nadgodziny, dodatki, urlop i rekompensaty według waszych zasad i przepisów prawa pracy.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-legend">4</span>
+        
+        
+        <span class="key-title key-title--sm">Dane do płac</span>
+        <p class="key-sub">Przygotowane w formacie, którego oczekuje wasz system płacowy.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--navy" style="grid-column:span 3">
+        
+        
+        
+        <span class="key-legend">5</span>
+        
+        
+        <span class="key-title key-title--sm">Zatwierdzenie kierownika</span>
+        <p class="key-sub">Działy zatwierdzają jednym kliknięciem. Niewyjaśnione różnice i zmiany zasad idą do człowieka.</p>
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="never" data-hue="2">
+    <div class="chap-head">
+      <span class="chap-no">03</span>
+      <div>
+        <span class="chap-kicker">Granice</span>
+        <h2>Czego nigdy nie zrobi sam.</h2>
+        <p>Tę część warto przeczytać dwa razy. System, któremu wolno wszystko, to system, którego nikt nie podpisze.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">✕</span>
+        
+        
+        <span class="key-title key-title--sm">Nie zmienia zasad ani stawek płacowych bez zgody HR.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--blue" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">✕</span>
+        
+        
+        <span class="key-title key-title--sm">Nie zatwierdza nadgodzin za kierownika.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">✕</span>
+        
+        
+        <span class="key-title key-title--sm">Nie zakłada nowych modeli zmian bez pytania.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--navy" style="grid-column:span 12">
+        
+        <img class="key-mascot" src="/assets/decor/mascot-blue-light.svg" alt="" loading="lazy">
+        
+        
+        <span class="key-eyebrow">I gdzie to działa</span>
+        
+        <span class="key-title key-title--sm">Wasza infrastruktura albo chmura UE. Wasz wybór, podjęty zanim zaczniemy budować.</span>
+        
+        
+        
+        <ul class="key-list"><li>Szyfrowane w tranzycie i w spoczynku, z możliwością pracy on-premise dla danych wrażliwych.</li><li>RODO i EU AI Act wpisane w projekt od początku.</li><li>Dostęp według ról, kroki zatwierdzania i pełna ścieżka audytu.</li></ul>
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="setup" data-hue="3">
+    <div class="chap-head">
+      <span class="chap-no">04</span>
+      <div>
+        <span class="chap-kicker">Czego potrzebujemy od was</span>
+        <h2>Trzy rzeczy i żadna z nich nie jest projektem.</h2>
+        <p>Najczęstszy powód opóźnienia pilota to czekanie na dostępy. To cała lista.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">1</span>
+        
+        
+        <span class="key-title key-title--sm">Dostęp do danych o czasie pracy — systemu, czytników, albo szczerze mówiąc choćby arkuszy.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">2</span>
+        
+        
+        <span class="key-title key-title--sm">Wasze modele zmian i zasady dodatków.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--white" style="grid-column:span 4">
+        
+        
+        
+        <span class="key-legend">3</span>
+        
+        
+        <span class="key-title key-title--sm">Format importu do płac.</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="key key--blue" style="grid-column:span 12">
+        
+        
+        
+        
+        <span class="key-eyebrow">Czego się spodziewać</span>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="strip strip--in"><span class="stat"><b>3–5 tygodni</b>do wdrożenia</span><span class="stat"><b>codziennie</b>wychwycone błędy</span><span class="stat"><b>~15 h/mies</b>z powrotem do kadr</span><span class="stat"><b>3 → 1</b>miejsca, gdzie żyje ewidencja</span></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="faq" data-hue="4">
+    <div class="chap-head">
+      <span class="chap-no">05</span>
+      <div>
+        <span class="chap-kicker">Zastrzeżenia, które naprawdę padają</span>
+        <h2>Odpowiedzi wprost.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key key--white panel" style="grid-column:span 12">
+        <div class="qa"><b>Mamy trzy zmiany i mnóstwo wyjątków.</b><p>Właśnie dlatego się opłaca. Zasady ustawiamy raz i stosują się co miesiąc tak samo.</p></div>
+        <div class="qa"><b>Zastąpi nasz system ewidencji?</b><p>Nie. Połączy go z resztą. Czytniki zostają.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="next" data-hue="5">
+    <div class="chap-head">
+      <span class="chap-no">06</span>
+      <div>
+        <span class="chap-kicker">Wasz ruch</span>
+        <h2>Pół godziny wystarczy, żeby to oszacować.</h2>
+        <p>Zmapujemy proces, oszacujemy, ile was dziś kosztuje, i powiemy, czy warto go automatyzować. Odpowiedź dostaniecie tak czy tak.</p>
+      </div>
+    </div>
+    <div class="keys">
+      <a class="key key--turquoise" href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" style="grid-column:span 4">
+        
+        <img class="key-mascot" src="/assets/decor/mascot-wave-ink.svg" alt="" loading="lazy">
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Zarezerwujcie 30 minut.</span>
+        <p class="key-sub">milo@enterit.cz · +420 608 969 263</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">Zarezerwuj rozmowę →</span>
+      </a>
+      <a class="key key--white" href="/pl/calculator.html" style="grid-column:span 4">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Albo policzcie to najpierw sami.</span>
+        <p class="key-sub">Cztery dane wejściowe i rząd wielkości tego, ile ta rutyna kosztuje was dziś.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">Otwórz kalkulator →</span>
+      </a>
+      <a class="key key--white" href="/pl/#start" style="grid-column:span 4">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Nie macie pewności, czy to ta właściwa?</span>
+        <p class="key-sub">Pozostałe siedem jest niżej, a większość rozmów zaczyna się od tej, która boli najbardziej.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">Wszystkie osiem rutyn →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="chap" id="more" data-hue="0">
+    <div class="chap-head">
+      <span class="chap-no">07</span>
+      <div>
+        <span class="chap-kicker">Pozostałe siedem</span>
+        <h2>To samo podejście, inny proces.</h2>
+        
+      </div>
+    </div>
+    <div class="keys">
+      <a class="key key--white" href="/pl/routines/faktury.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Faktury</span>
+        <p class="key-sub">Agent wyciąga dane z faktury, dopasowuje ją do zamówienia i kieruje do zatwierdzenia. Nikt niczego nie przepisuje.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">~30 h miesięcznie z powrotem do księgowości →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/zamowienia.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Zamówienia</span>
+        <p class="key-sub">Agent czyta maile z zamówieniami w dowolnym formacie, zakłada zamówienie w waszym systemie i potwierdza je klientowi.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">~25 h miesięcznie z powrotem do handlowców →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/magazyn.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Magazyn</span>
+        <p class="key-sub">Ktoś fotografuje list przewozowy; agent wyciąga dane, dopasowuje do zamówienia i przyjmuje towar.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">~20 h miesięcznie z powrotem do magazynu →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/karty-pracy.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Karty pracy</span>
+        <p class="key-sub">Agent zbiera karty pracy, przypisuje każdy wpis do właściwego zlecenia i przygotowuje dane do fakturowania oraz płac.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">~12 h miesięcznie z powrotem do biura →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/ewidencja-przebiegu.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Ewidencja przebiegu</span>
+        <p class="key-sub">Agent buduje ewidencję z GPS, kart paliwowych i kalendarzy, a przy okazji pilnuje przeglądów, serwisu i ubezpieczeń.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">~10 h miesięcznie z powrotem do flotowego →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/reklamacje.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Reklamacje</span>
+        <p class="key-sub">Agent rejestruje każdą reklamację — mailem, telefonem czy z sieci — pilnuje terminu i informuje klienta.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">0 przekroczonych terminów ustawowych →</span>
+      </a>
+      <a class="key key--white" href="/pl/routines/urlopy.html" style="grid-column:span 3">
+        
+        
+        <span class="key-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        
+        
+        
+        <span class="key-title key-title--sm">Urlopy</span>
+        <p class="key-sub">Ludzie wnioskują w Teams, kierownicy zatwierdzają jednym kliknięciem, a salda aktualizują się same.</p>
+        
+        
+        
+        
+        
+        
+        
+        <span class="key-go">2–4 tygodnie najszybsze wdrożenie, jakie mamy →</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-col foot-col--who">
+      <img class="foot-mark" src="/assets/enter_logo_black.svg" alt="EnterIT">
+      <p>Performance AI team, który dowozi na produkcję.</p>
+      <p class="foot-reg">
+        AI Enter s.r.o.<br>
+        IČO 19086652 · DIČ CZ19086652<br>
+        Zahradní 2004/46d<br>
+        792 01 Bruntál, Czechy
+      </p>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Masz pytanie?</span>
+      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="tel:+420608969263">+420 608 969 263</a>
+      <a href="https://outlook.office.com/bookwithme/user/c700d45aa87c4813b97dbf561b86bf1e@enterai.cz?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener">Zarezerwuj 30 minut</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Sekcje</span>
+      <a href="/pl/#build">Co budujemy</a>
+      <a href="/pl/#results">Wyniki</a>
+      <a href="/pl/#process">Jak pracujemy</a>
+      <a href="/pl/team.html">Zespół</a>
+      <a href="/pl/engagement.html">Współpraca</a>
+      <a href="/pl/integrations.html">Integracje</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h">Enter Group</span>
+      <a href="https://www.enterai.cz" target="_blank" rel="noopener">EnterAI</a>
+      <a href="/pl/team.html">Enter Tech</a>
+      <a href="/pl/team.html">Enter Agents</a>
+      <a href="/pl/team.html">Enter Studio</a>
+    </div>
+  </div>
+  <div class="foot-line">
+    <span>© 2026 EnterIT · AI Enter s.r.o. · IČO 19086652 · DIČ CZ19086652 · Zahradní 2004/46d, 792 01 Bruntál</span>
+    <span><a href="/pl/">Przegląd</a> · <a href="/beta/">beta 1</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PALETTE = ["turquoise","blue","violet","red","yellow"];
+  var offset = Math.floor(Math.random() * PALETTE.length);
+  document.querySelectorAll(".chap[data-hue]").forEach(function(chap){
+    var slot = (parseInt(chap.dataset.hue, 10) + offset) % PALETTE.length;
+    PALETTE.forEach(function(name){ chap.classList.remove("ch--" + name); });
+    chap.classList.add("ch--" + PALETTE[slot]);
+  });
+})();
+</script>
+</body>
+</html>

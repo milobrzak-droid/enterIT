@@ -7,7 +7,7 @@ import { arrow, escapeHtml, siteFooter } from "./site-shell.mjs";
 import { usPage } from "./us-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const output = resolve(root, "us/index.html");
+const output = resolve(root, "verze1/us/index.html");
 const assetVersion = "20260723-release-1";
 
 function schema() {
