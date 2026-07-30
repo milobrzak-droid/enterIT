@@ -6,7 +6,7 @@
  * sections with a headline and a few caps, and splitting them into five modules
  * would mean five places to look for the same kind of string.
  *
- * Two things are deliberately not here. The integration catalogue and the
+ * Two things are deliberately not here. The integration catalog and the
  * calculator's fields already exist per locale in the production content
  * modules, so those are read rather than re-typed — one source of truth, and
  * one less place for the four languages to drift apart.
@@ -51,12 +51,11 @@ export const pagesCopy = {
           roles: ["Head of Development, Enter Studio", "C programmer, Enter Studio"],
         },
       ],
-      titlesKicker: "About the titles",
-      titlesH2: "Yes, there is more than one CEO. Here is why.",
+      titlesKicker: "One team, one contract",
+      titlesH2: "75 specialists. Three practices. One team.",
       titlesBody: [
-        "Enter Agents and Enter Tech are companies with their own founders and their own chief executives, and they say so on their own websites. Enter Group is the organization the three of them deliver under, and it has one founder and one CEO.",
-        "We spell it out because on a page that does not, a reader counts two CEOs and two founders and quietly concludes that somebody is inflating titles. The structure is ordinary; only the labels look odd out of context.",
-        "What it means commercially: you sign one contract with Enter Group, and the named owner for your engagement is a person, not a company.",
+        "Software engineering, AI and the product interface work inside one delivery process. Whichever of the three does the work, the engagement has one contract, one delivery lead and one escalation path.",
+        "The contracting party is AI Enter s.r.o., trading as EnterIT. That is the name on the proposal, on the contract and on the invoice.",
       ],
       miloRole: "CEO. Strategy, product and methodology. 800+ people trained across more than a hundred companies.",
       michaelaRole: "Analytics. Owns client delivery and production operations across all three teams.",
@@ -196,14 +195,13 @@ export const pagesCopy = {
       paceH2: "Four numbers, none of them ours.",
       paceAsk: "We cite these because they are independent. The last one is the one worth sitting with.",
       pace: [
-        ["×2", "every ~7 months — the length of task AI can complete on its own", "METR, 2025–26"],
-        ["280×", "fall in the cost of GPT-3.5-level performance in two years", "Stanford AI Index, 2025"],
-        ["22%", "of jobs reshuffled by 2030", "World Economic Forum, 2025"],
-        ["95%", "of generative-AI pilots show no measurable profit impact", "MIT, 2025"],
+        ["×2", "every ~7 months — the length of software task AI completes at ~50% success", "METR, 2025", "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"],
+        ["280×", "fall in the cost of GPT-3.5-level inference, Nov 2022 to Oct 2024", "Stanford AI Index, 2025", "https://hai.stanford.edu/ai-index/2025-ai-index-report"],
+        ["22%", "of today's jobs structurally changed by 2030 — roles created and displaced", "World Economic Forum, 2025", "https://www.weforum.org/publications/the-future-of-jobs-report-2025/digest/"],
       ],
       paceCloseTitle: "That last number is the reason we start every engagement with a baseline, an owner and a defined benefit.",
       paceCloseAlt: "Three developers at a whiteboard, mapping a flow with boxes and arrows.",
-      paceCloseSub: "The pilots in that 95% did not fail on the technology. They failed on method, ownership and measurement — three things that cost nothing to fix at the start and cannot be fixed at the end.",
+      paceCloseSub: "Three numbers from outside this company, each linked to its primary source. None of them says AI will run your business. What they say together is that the ground moves faster than a three-year plan assumes.",
       levelsKicker: "Five levels",
       levelsH2: "Find the sentence you actually hear in your company.",
       levelsAsk: "Most companies are at level 1 or 2, which is also where progress is fastest. Read the quoted line rather than the label — it is the more honest test.",

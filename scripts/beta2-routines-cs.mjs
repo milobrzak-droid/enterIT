@@ -52,9 +52,8 @@ export const cs = [
   },
   {
     slug: "objednavky",
-    photo: "/assets/decor/onsite.webp",
-    photoAlt: "Pracovník provozu fotí telefonem dodací list přímo ve skladu.",
-    photoRight: true,
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Objednávka otevřená vedle záznamu v ERP, kterým se má stát, na jedné obrazovce.",
     tag: "Objednávky",
     h1: "Z e-mailu objednávka, bez přepisování.",
     lead: "Agent přečte objednávkové e-maily v jakémkoli formátu, založí objednávku ve vašem systému a potvrdí ji zákazníkovi.",
@@ -83,7 +82,7 @@ export const cs = [
       "Několik typických objednávkových e-mailů od vašich hlavních zákazníků.",
       "Aktuální ceny a pohled na dostupnost skladu.",
     ],
-    expect: [["4–6 týdnů", "do nasazení"], ["0", "ručních přepisů"], ["~25 h/měs", "zpátky obchodu"], ["Návratnost v pilotu", "měřená na vašich datech"]],
+    expect: [["4–6 týdnů", "do nasazení"], ["Bez přepisování", "standardních objednávek; výjimky zůstávají člověku"], ["~25 h/měs", "zpátky obchodu"], ["Návratnost v pilotu", "měřená na vašich datech"]],
     faq: [
       ["Zvládne to PDF nebo naskenovaný dopis?", "Ano — přílohu v PDF, sken i prostý text v těle e-mailu."],
       ["Co když zákazník píše volným textem?", "Pracuje s obsahem, ne s formátem, takže každý zákazník může psát dál po svém. Kde si není jistý, nehádá a předá řádek obchodníkovi."],
@@ -123,7 +122,7 @@ export const cs = [
       "Obyčejný mobil ve skladu. Nic zvláštního.",
       "Číselník zboží.",
     ],
-    expect: [["4–6 týdnů", "do nasazení"], ["během minut", "je sklad aktuální"], ["~20 h/měs", "zpátky skladu"], ["0", "papírových dokladů"]],
+    expect: [["4–6 týdnů", "do nasazení"], ["během minut", "je sklad aktuální"], ["~20 h/měs", "zpátky skladu"], ["Bez papíru", "u standardního příjmu; výjimky zůstávají na papíře"]],
     faq: [
       ["Čárové kódy máme jen na části zboží.", "To nevadí. Pracuje s textem dodacího listu, čárové kódy nejsou potřeba."],
       ["Funguje to i pro výdej?", "Ano — výdejky, podsklady, inventury, stejný princip. Začínáme příjmem, protože tam to bolí nejvíc."],
@@ -131,8 +130,8 @@ export const cs = [
   },
   {
     slug: "dochazka",
-    photo: "/assets/decor/screenwork.webp",
-    photoAlt: "Člověk u obrazovky přenáší hodiny z jednoho systému do druhého.",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Ruce na klávesnici, hodiny přepisované z jednoho systému do druhého.",
     tag: "Docházka",
     h1: "Konec sčítání hodin z píchaček a Excelu na konci měsíce.",
     lead: "Agent spojí píchačky, tabulky a evidenci absencí, zkontroluje směny a připraví podklad pro mzdy.",
@@ -206,8 +205,9 @@ export const cs = [
   },
   {
     slug: "kniha-jizd",
-    photo: "/assets/decor/keyboard.webp",
-    photoAlt: "Ruce na klávesnici, kniha jízd sepisovaná na konci měsíce.",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Pracovník v provozu zapisuje jízdu do telefonu, s dokladem v ruce.",
+    photoRight: true,
     tag: "Kniha jízd",
     h1: "Z tankování a tras se udělá hotová kniha jízd.",
     lead: "Agent sestaví knihu jízd z GPS, tankovacích karet a kalendářů — a hlídá STK, servis i pojistky.",
@@ -245,7 +245,6 @@ export const cs = [
     slug: "reklamace",
     photo: "/assets/decor/support.webp",
     photoAlt: "Člověk ze supportu u portálu zákaznické podpory, se sluchátky.",
-    photoRight: true,
     tag: "Reklamace",
     h1: "Žádná reklamace se už neztratí.",
     lead: "Agent zaeviduje každou reklamaci — e-mailem, telefonem i z webu — hlídá lhůtu a drží zákazníka v obraze.",
@@ -273,7 +272,7 @@ export const cs = [
       "Místo, kde případy budou žít: ERP, CRM, helpdesk, nebo prostá evidence.",
       "Vaše reklamační pravidla a lhůty.",
     ],
-    expect: [["3–5 týdnů", "do nasazení"], ["0", "zmeškaných lhůt"], ["během minut", "odpověď zákazníkovi"], ["rychleji", "celkové odbavení"]],
+    expect: [["3–5 týdnů", "do nasazení"], ["Upozornění", "před lhůtou, s jmenovitým vlastníkem"], ["během minut", "odpověď zákazníkovi"], ["rychleji", "celkové odbavení"]],
     faq: [
       ["Reklamace bereme i po telefonu.", "Operátor je nadiktuje do krátkého formuláře a agent udělá zbytek. Nebo hovory přepíšeme, když je vám to bližší."],
       ["Kdo rozhoduje o uznání?", "Vždy váš člověk. Agent administruje, nerozhoduje."],
@@ -310,7 +309,7 @@ export const cs = [
       "Aktuální zůstatky — stačí export ze mzdového systému.",
       "Vaši schvalovací hierarchii.",
     ],
-    expect: [["2–4 týdny", "do nasazení"], ["v reálném čase", "přehled pro HR"], ["nejrychlejší", "z osmi"], ["0", "papírových lístků"]],
+    expect: [["2–4 týdny", "do nasazení"], ["v reálném čase", "přehled pro HR"], ["nejrychlejší", "z osmi"], ["Bez papíru", "žádosti, schválení i zůstatky na jednom místě"]],
     faq: [
       ["Máme i sick days, home office a náhradní volno.", "Každý typ absence, jeden proces."],
       ["Funguje to bez Teams?", "Ano — e-mailem, nebo přes jednoduchou webovou aplikaci."],

@@ -116,8 +116,11 @@ function render2030(code) {
     id: "pace", no: "01", hue: 0,
     kicker: C.paceKicker, h2: C.paceH2, ask: C.paceAsk,
     keys: [
-      ...C.pace.map(([stat, statLabel, meta], i) =>
-        key({ span: 3, tone: ["turquoise", "white", "blue", "red"][i], stat, statLabel, meta })),
+      ...C.pace.map(([stat, statLabel, meta, src], i) =>
+        key({
+          span: 4, tone: ["turquoise", "white", "blue"][i], stat, statLabel,
+          extra: `<p class="key-meta"><a class="src" href="${src}" target="_blank" rel="noopener">${e(meta)} ↗</a></p>`,
+        })),
       /* The self-check is about where a company stands, so it closes on the
          picture of a company working out exactly that. */
       key({

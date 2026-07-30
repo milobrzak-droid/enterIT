@@ -51,9 +51,8 @@ export const de = [
   },
   {
     slug: "bestellungen",
-    photo: "/assets/decor/onsite.webp",
-    photoAlt: "Ein Logistikmitarbeiter fotografiert im Lager einen Lieferschein mit dem Telefon.",
-    photoRight: true,
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Ein Bestelldokument neben dem ERP-Datensatz, der daraus werden soll, auf einem Bildschirm.",
     tag: "Bestellungen",
     h1: "Aus einer E-Mail wird eine Bestellung, ohne Abtippen.",
     lead: "Der Agent liest Bestell-E-Mails in jedem Format, legt die Bestellung in Ihrem System an und bestätigt sie dem Kunden.",
@@ -82,7 +81,7 @@ export const de = [
       "Eine Handvoll typischer Bestell-E-Mails Ihrer wichtigsten Kunden.",
       "Aktuelle Preise und einen Blick auf die Verfügbarkeit.",
     ],
-    expect: [["4–6 Wochen", "bis zum Einsatz"], ["0", "manuelle Abtippungen"], ["~25 Std/Mon", "zurück an den Vertrieb"], ["ROI im Piloten", "an Ihren Daten gemessen"]],
+    expect: [["4–6 Wochen", "bis zum Einsatz"], ["Kein Abtippen", "bei Standardbestellungen; Ausnahmen bleiben beim Menschen"], ["~25 Std/Mon", "zurück an den Vertrieb"], ["ROI im Piloten", "an Ihren Daten gemessen"]],
     faq: [
       ["Kommt er mit einem PDF oder einem gescannten Brief zurecht?", "Ja — PDF-Anhang, Scan oder reiner Text im Nachrichtentext."],
       ["Was, wenn der Kunde Freitext schreibt?", "Er arbeitet mit dem Inhalt, nicht mit dem Format, also kann jeder Kunde weiter so schreiben wie bisher. Wo er unsicher ist, rät er nicht, sondern gibt die Position an den Vertrieb."],
@@ -122,7 +121,7 @@ export const de = [
       "Ein gewöhnliches Mobiltelefon im Lager. Nichts Besonderes.",
       "Den Artikelstamm.",
     ],
-    expect: [["4–6 Wochen", "bis zum Einsatz"], ["binnen Minuten", "ist der Bestand aktuell"], ["~20 Std/Mon", "zurück ans Lager"], ["0", "Papierbelege"]],
+    expect: [["4–6 Wochen", "bis zum Einsatz"], ["binnen Minuten", "ist der Bestand aktuell"], ["~20 Std/Mon", "zurück ans Lager"], ["Papierlos", "im Standardwareneingang; Ausnahmen bleiben auf Papier"]],
     faq: [
       ["Wir haben Barcodes nur auf einem Teil der Ware.", "Das ist in Ordnung. Er arbeitet mit dem Text des Lieferscheins, Barcodes sind nicht nötig."],
       ["Funktioniert das auch für den Warenausgang?", "Ja — Ausgangsbelege, Unterlager, Inventuren, gleiches Prinzip. Wir fangen beim Eingang an, weil es dort am meisten weh tut."],
@@ -130,8 +129,8 @@ export const de = [
   },
   {
     slug: "zeiterfassung",
-    photo: "/assets/decor/screenwork.webp",
-    photoAlt: "Jemand am Bildschirm überträgt Stunden aus einem System in ein anderes.",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Hände auf der Tastatur, Stunden werden von einem System in ein anderes übertragen.",
     tag: "Zeiterfassung",
     h1: "Schluss mit dem Zusammenzählen von Stunden zum Monatsende.",
     lead: "Der Agent führt Zeiterfassungsterminals, Tabellen und Abwesenheiten zusammen, prüft die Schichten und bereitet die Lohnabrechnung vor.",
@@ -205,8 +204,9 @@ export const de = [
   },
   {
     slug: "fahrtenbuch",
-    photo: "/assets/decor/keyboard.webp",
-    photoAlt: "Hände auf der Tastatur, das Fahrtenbuch am Monatsende nachgetragen.",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Ein Mitarbeiter im Außendienst erfasst eine Fahrt am Telefon, Belege in der Hand.",
+    photoRight: true,
     tag: "Fahrtenbuch",
     h1: "Aus Tankstopps und Routen wird ein fertiges Fahrtenbuch.",
     lead: "Der Agent baut das Fahrtenbuch aus GPS, Tankkarten und Kalendern und behält Prüfungen, Service und Versicherungen im Blick.",
@@ -244,7 +244,6 @@ export const de = [
     slug: "reklamationen",
     photo: "/assets/decor/support.webp",
     photoAlt: "Jemand aus dem Support am Kundenserviceportal, mit Headset.",
-    photoRight: true,
     tag: "Reklamationen",
     h1: "Nie wieder eine Reklamation aus den Augen verlieren.",
     lead: "Der Agent erfasst jede Reklamation — per E-Mail, Telefon oder Web — überwacht die Frist und hält den Kunden auf dem Laufenden.",
@@ -272,7 +271,7 @@ export const de = [
       "Einen Ort für die Vorgänge: ERP, CRM, Helpdesk oder ein einfaches Register.",
       "Ihre Reklamationsregeln und Fristen.",
     ],
-    expect: [["3–5 Wochen", "bis zum Einsatz"], ["0", "versäumte Fristen"], ["binnen Minuten", "Antwort an den Kunden"], ["schneller", "insgesamt bearbeitet"]],
+    expect: [["3–5 Wochen", "bis zum Einsatz"], ["Hinweis", "vor der Frist, mit benannter Verantwortung"], ["binnen Minuten", "Antwort an den Kunden"], ["schneller", "insgesamt bearbeitet"]],
     faq: [
       ["Wir nehmen Reklamationen auch telefonisch an.", "Der Mitarbeiter diktiert sie in ein kurzes Formular, den Rest macht der Agent. Wir können die Gespräche auch transkribieren, wenn Ihnen das lieber ist."],
       ["Wer entscheidet über die Anerkennung?", "Immer Ihre eigene Person. Der Agent verwaltet, er entscheidet nicht."],
@@ -309,7 +308,7 @@ export const de = [
       "Aktuelle Salden — ein Export aus der Lohnabrechnung genügt.",
       "Ihre Freigabehierarchie.",
     ],
-    expect: [["2–4 Wochen", "bis zum Einsatz"], ["in Echtzeit", "Überblick für HR"], ["der schnellste", "von den acht"], ["0", "Papierzettel"]],
+    expect: [["2–4 Wochen", "bis zum Einsatz"], ["in Echtzeit", "Überblick für HR"], ["der schnellste", "von den acht"], ["Papierlos", "Antrag, Freigabe und Saldo an einem Ort"]],
     faq: [
       ["Wir haben auch Krankentage, Homeoffice und Freizeitausgleich.", "Jede Art von Abwesenheit, ein Prozess."],
       ["Funktioniert das ohne Teams?", "Ja — per E-Mail oder über eine einfache Weboberfläche."],

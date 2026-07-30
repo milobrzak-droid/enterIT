@@ -167,13 +167,13 @@ export const voice = {
       },
       {
         kicker: "How we work",
-        title: "Proof first. The big money later.",
+        title: "Proof first. Scale the commitment after the evidence.",
         ask: "The first two stages are a matter of weeks. The pilot is four weeks to several months depending on how many systems and exception paths the process really has — and we would rather say that now than halfway through. Every stage has an end, an output and a decision, so at every one of them you can say stop.",
       },
       {
         kicker: "Integrations",
         title: "You do not have to change a thing you already have.",
-        ask: "Your stack stays as it is. We connect through the API, the database or the files — and where none of that exists, through the screen. We have done it with more than 60 systems, some of them proper veterans.",
+        ask: "Your stack stays as it is. We connect through the API, the database or the files — and where none of that exists, through the screen. We have done it with more than 60 systems, including legacy systems without a modern API.",
       },
       {
         kicker: "Operations and guarantees",
@@ -212,12 +212,12 @@ export const voice = {
     ],
     labels: {
       stepLabel: "Stage",
-      proofLabel: "The house, in three numbers",
+      proofLabel: "EnterIT in three numbers",
       leadersEyebrow: "Leadership",
       buildGo: "Three disciplines, one team →",
       solutionsGo: "All eight routines →",
       processGo: "The four stages in detail →",
-      systemsGo: "The whole catalogue →",
+      systemsGo: "The whole catalog →",
       opsGo: "Terms and SLA →",
       clientsLabel: "Selected clients",
       partnersLabel: "Partners",

@@ -50,9 +50,8 @@ export const pl = [
   },
   {
     slug: "zamowienia",
-    photo: "/assets/decor/onsite.webp",
-    photoAlt: "Pracownik logistyki fotografuje telefonem list przewozowy na hali magazynowej.",
-    photoRight: true,
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Dokument zamówienia otwarty obok rekordu ERP, którym ma się stać, na jednym ekranie.",
     tag: "Zamówienia",
     h1: "Z maila zamówienie, bez przepisywania.",
     lead: "Agent czyta maile z zamówieniami w dowolnym formacie, zakłada zamówienie w waszym systemie i potwierdza je klientowi.",
@@ -81,7 +80,7 @@ export const pl = [
       "Kilka typowych maili zamówieniowych od waszych głównych klientów.",
       "Aktualne ceny i widok dostępności magazynu.",
     ],
-    expect: [["4–6 tygodni", "do wdrożenia"], ["0", "ręcznych przepisań"], ["~25 h/mies", "z powrotem do handlowców"], ["Zwrot w pilocie", "mierzony na waszych danych"]],
+    expect: [["4–6 tygodni", "do wdrożenia"], ["Bez przepisywania", "standardowych zamówień; wyjątki zostają przy człowieku"], ["~25 h/mies", "z powrotem do handlowców"], ["Zwrot w pilocie", "mierzony na waszych danych"]],
     faq: [
       ["Poradzi sobie z PDF-em albo zeskanowanym pismem?", "Tak — załącznik PDF, skan albo zwykły tekst w treści maila."],
       ["A jeśli klient pisze dowolnym tekstem?", "Pracuje z treścią, nie z formatem, więc każdy klient może pisać dalej po swojemu. Tam, gdzie nie jest pewny, nie zgaduje — przekazuje pozycję handlowcowi."],
@@ -93,7 +92,7 @@ export const pl = [
   {
     slug: "magazyn",
     photo: "/assets/decor/warehouse.webp",
-    photoAlt: "Magazynier przy regale porównuje list przewozowy z odczytem ze skanera.",
+    photoAlt: "Magazynier przy regale porównuje dokument dostawy z odczytem ze skanera.",
     tag: "Magazyn",
     h1: "Zróbcie zdjęcie listu przewozowego. Towar przyjmie się sam.",
     lead: "Ktoś fotografuje list przewozowy; agent wyciąga dane, dopasowuje do zamówienia i przyjmuje towar.",
@@ -121,7 +120,7 @@ export const pl = [
       "Zwykły telefon w magazynie. Nic specjalnego.",
       "Kartotekę towarów.",
     ],
-    expect: [["4–6 tygodni", "do wdrożenia"], ["w kilka minut", "stan jest aktualny"], ["~20 h/mies", "z powrotem do magazynu"], ["0", "dokumentów papierowych"]],
+    expect: [["4–6 tygodni", "do wdrożenia"], ["w kilka minut", "stan jest aktualny"], ["~20 h/mies", "z powrotem do magazynu"], ["Bez papieru", "w standardowym przyjęciu; wyjątki zostają na papierze"]],
     faq: [
       ["Kody kreskowe mamy tylko na części towaru.", "To nie problem. Pracuje z tekstem listu przewozowego, kody nie są potrzebne."],
       ["Działa też przy wydaniach?", "Tak — wydania, podmagazyny, inwentaryzacje, ta sama zasada. Zaczynamy od przyjęć, bo tam boli najbardziej."],
@@ -129,8 +128,8 @@ export const pl = [
   },
   {
     slug: "ewidencja-czasu",
-    photo: "/assets/decor/screenwork.webp",
-    photoAlt: "Ktoś przy ekranie przenosi godziny z jednego systemu do drugiego.",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Ręce na klawiaturze, godziny przepisywane z jednego systemu do drugiego.",
     tag: "Ewidencja czasu",
     h1: "Koniec sumowania godzin na koniec miesiąca.",
     lead: "Agent łączy czytniki, arkusze i nieobecności, sprawdza zmiany i przygotowuje dane do płac.",
@@ -204,8 +203,9 @@ export const pl = [
   },
   {
     slug: "ewidencja-przebiegu",
-    photo: "/assets/decor/keyboard.webp",
-    photoAlt: "Ręce na klawiaturze, ewidencja spisywana na koniec miesiąca.",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "Pracownik w terenie zapisuje przejazd w telefonie, z dokumentem w ręku.",
+    photoRight: true,
     tag: "Ewidencja przebiegu",
     h1: "Z tankowań i tras robi się gotowa ewidencja przebiegu.",
     lead: "Agent buduje ewidencję z GPS, kart paliwowych i kalendarzy, a przy okazji pilnuje przeglądów, serwisu i ubezpieczeń.",
@@ -243,7 +243,6 @@ export const pl = [
     slug: "reklamacje",
     photo: "/assets/decor/support.webp",
     photoAlt: "Osoba ze wsparcia przy portalu obsługi klienta, w słuchawkach.",
-    photoRight: true,
     tag: "Reklamacje",
     h1: "Żadna reklamacja już nie zniknie.",
     lead: "Agent rejestruje każdą reklamację — mailem, telefonem czy z sieci — pilnuje terminu i informuje klienta.",
@@ -271,7 +270,7 @@ export const pl = [
       "Miejsce, w którym sprawy będą żyć: ERP, CRM, helpdesk albo prosty rejestr.",
       "Wasze zasady reklamacji i terminy.",
     ],
-    expect: [["3–5 tygodni", "do wdrożenia"], ["0", "przekroczonych terminów"], ["w kilka minut", "odpowiedź do klienta"], ["szybciej", "cała obsługa"]],
+    expect: [["3–5 tygodni", "do wdrożenia"], ["Ostrzeżenie", "przed terminem, z imiennym właścicielem"], ["w kilka minut", "odpowiedź do klienta"], ["szybciej", "cała obsługa"]],
     faq: [
       ["Reklamacje przyjmujemy też telefonicznie.", "Operator dyktuje je w krótki formularz, resztę robi agent. Możemy też transkrybować rozmowy, jeśli tak wolicie."],
       ["Kto decyduje o uznaniu?", "Zawsze wasza osoba. Agent administruje, nie decyduje."],
@@ -308,7 +307,7 @@ export const pl = [
       "Aktualne salda — wystarczy eksport z systemu płacowego.",
       "Waszą hierarchię zatwierdzania.",
     ],
-    expect: [["2–4 tygodnie", "do wdrożenia"], ["w czasie rzeczywistym", "przegląd dla HR"], ["najszybsze", "z ośmiu"], ["0", "papierowych wniosków"]],
+    expect: [["2–4 tygodnie", "do wdrożenia"], ["w czasie rzeczywistym", "przegląd dla HR"], ["najszybsze", "z ośmiu"], ["Bez papieru", "wnioski, zatwierdzenia i salda w jednym miejscu"]],
     faq: [
       ["Mamy też sick days, home office i odbiory godzin.", "Każdy rodzaj nieobecności, jeden proces."],
       ["Działa bez Teams?", "Tak — mailem albo przez prostą aplikację webową."],

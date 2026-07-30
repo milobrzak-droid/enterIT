@@ -938,7 +938,7 @@ ${start}
     chap.classList.add("ch--" + PALETTE[slot]);
   });
   /* The banner wears one of the real photographs, chosen per visit. It is
-     desaturated and washed in the accent, so the colour still leads and the
+     desaturated and washed in the accent, so the color still leads and the
      picture reads as texture rather than as a stock hero. */
   var SHOTS = ["/assets/decor/firmy.webp", "/assets/decor/guy.webp"];
   var bg = document.querySelector(".hero-bg");

@@ -34,7 +34,7 @@ const en = [
     h1: "Invoices that post themselves into accounting.",
     lead: "The agent extracts each invoice, matches it to the purchase order and routes it for approval. Nobody re-keys anything.",
     stat: "~30 h", statLabel: "a month back to the accounting team",
-    flowIn: "Invoice arrives as PDF", flowOut: "Posted, with an error rate under 1%",
+    flowIn: "Invoice arrives as PDF", flowOut: "Posted, under 1% on the reference deployment",
     pain: [
       "Accountants re-key lines from PDFs and scans into the ERP — slow work, and every digit is a chance to be wrong.",
       "Matching means searching email, spreadsheets and binders for the order and the delivery note.",
@@ -46,7 +46,7 @@ const en = [
       ["Order match", "Amounts and quantities checked against the purchase order or delivery note in the ERP."],
       ["Coding suggestion", "History proposes the account code and cost center — as a suggestion, not a decision."],
       ["Human approval", "The owner sees the invoice and the proposed match side by side, in one place."],
-      ["Posting", "After approval it posts, with an error rate under 1%."],
+      ["Posting", "After approval it posts. Under 1% error on the reference deployment; the target for yours is set from the quality of your documents."],
       ["Exceptions", "Missing orders, mismatches and new suppliers always go to a person."],
     ],
     never: [
@@ -71,12 +71,11 @@ const en = [
   },
   {
     slug: "orders",
-    photo: "/assets/decor/onsite.webp",
-    photoAlt: "A logistics worker photographing a delivery note with his phone on the warehouse floor.",
-    photoRight: true,
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "An order document open beside the ERP record it has to become, on one screen.",
     tag: "Orders",
     h1: "Turn an email into an order without re-keying it.",
-    lead: "The agent reads order emails in whatever format they arrive, creates the order in your system and confirms receipt to the customer.",
+    lead: "The agent reads order emails in the formats you actually receive, creates the order in your system and confirms receipt to the customer.",
     stat: "~25 h", statLabel: "a month back to the sales team",
     flowIn: "Order arrives in any format", flowOut: "Created and confirmed in the ERP",
     pain: [
@@ -102,7 +101,7 @@ const en = [
       "A handful of typical order emails from your main customers.",
       "Current prices and a view of stock availability.",
     ],
-    expect: [["4–6 weeks", "to deployment"], ["0", "manual re-keys"], ["~25 h/mo", "back to sales"], ["ROI in the pilot", "measured on your data"]],
+    expect: [["4–6 weeks", "to deployment"], ["No re-keying", "of standard orders; exceptions stay with a person"], ["~25 h/mo", "back to sales"], ["ROI in the pilot", "measured on your data"]],
     faq: [
       ["Does it handle a PDF, or a scanned letter?", "Yes — a PDF attachment, a scan, or plain text in the body of the email."],
       ["What if the customer writes free text?", "It works from content, not format, so every customer can keep writing the way they always have. Where it is not sure, it does not guess; it passes the line to a salesperson."],
@@ -142,7 +141,7 @@ const en = [
       "An ordinary mobile phone in the warehouse. Nothing special.",
       "The goods master list.",
     ],
-    expect: [["4–6 weeks", "to deployment"], ["within minutes", "stock is current"], ["~20 h/mo", "back to the warehouse"], ["0", "paper documents"]],
+    expect: [["4–6 weeks", "to deployment"], ["within minutes", "stock is current"], ["~20 h/mo", "back to the warehouse"], ["Paperless", "for standard receipts; exceptions stay on paper"]],
     faq: [
       ["Only some of our goods carry barcodes.", "That is fine. It works from the text of the delivery note; barcodes are not required."],
       ["Does it work for dispatch too?", "Yes — issue notes, sub-warehouses, stocktakes, same principle. We start with goods receipt because that is where it hurts most."],
@@ -150,8 +149,8 @@ const en = [
   },
   {
     slug: "attendance",
-    photo: "/assets/decor/screenwork.webp",
-    photoAlt: "Someone at a screen pulling hours out of one system and into another.",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Hands on a keyboard, hours being typed up from one system into another.",
     tag: "Attendance",
     h1: "No more adding up hours from terminals and spreadsheets at month end.",
     lead: "The agent combines time clocks, spreadsheets and leave records, checks the shifts and prepares payroll input.",
@@ -225,8 +224,9 @@ const en = [
   },
   {
     slug: "mileage",
-    photo: "/assets/decor/keyboard.webp",
-    photoAlt: "Hands on a keyboard, the log being typed up at the end of the month.",
+    photo: "/assets/decor/onsite.webp",
+    photoAlt: "A field worker recording a journey on his phone, paperwork in hand.",
+    photoRight: true,
     tag: "Mileage log",
     h1: "Fuel stops and routes turn themselves into a finished log.",
     lead: "The agent builds the mileage log from GPS, fuel cards and calendars, and keeps an eye on inspections, service and insurance.",
@@ -264,7 +264,6 @@ const en = [
     slug: "complaints",
     photo: "/assets/decor/support.webp",
     photoAlt: "Someone from the support team at a customer service portal, headset on.",
-    photoRight: true,
     tag: "Complaints",
     h1: "Never lose track of a customer complaint again.",
     lead: "The agent logs every complaint — email, phone or web — tracks the deadline and keeps the customer updated.",
@@ -292,7 +291,7 @@ const en = [
       "Somewhere for the cases to live: ERP, CRM, helpdesk, or a simple register.",
       "Your complaints rules and deadlines.",
     ],
-    expect: [["3–5 weeks", "to deployment"], ["0", "missed deadlines"], ["within minutes", "customer gets a reply"], ["faster", "resolution overall"]],
+    expect: [["3–5 weeks", "to deployment"], ["Flagged", "before the deadline, with a named owner"], ["within minutes", "customer gets a reply"], ["faster", "resolution overall"]],
     faq: [
       ["We take complaints by phone too.", "The operator dictates into a short form and the agent does the rest. We can transcribe the calls instead, if you would rather."],
       ["Who decides whether to accept a claim?", "Always your own person. The agent administers; it does not decide."],
@@ -329,7 +328,7 @@ const en = [
       "Current balances — an export from payroll is enough.",
       "Your approval hierarchy.",
     ],
-    expect: [["2–4 weeks", "to deployment"], ["real time", "overview for HR"], ["fastest", "of the eight"], ["0", "paper slips"]],
+    expect: [["2–4 weeks", "to deployment"], ["real time", "overview for HR"], ["fastest", "of the eight"], ["Paperless", "requests, approvals and balances in one place"]],
     faq: [
       ["We also have sick days, home office and time off in lieu.", "Every type of absence, one process."],
       ["Does it work without Teams?", "Yes — email, or a simple web app."],

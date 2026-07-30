@@ -189,6 +189,11 @@ a.key--white:hover,a.key--white:focus-visible,a.key--white:active{
 .key-sub{margin-top:13px;font-size:12.5px;line-height:1.6;opacity:.78;max-width:46ch}
 .key-meta{margin-top:12px;font-size:10px;line-height:1.5;opacity:.6;
   letter-spacing:.04em}
+/* An external figure has to be checkable, so its source is a link rather than a
+   line of small print. */
+.src{text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;opacity:.85}
+.src:hover{opacity:1}
 .key-go{margin-top:16px;font-size:10px;letter-spacing:.1em;
   text-transform:uppercase;opacity:.72;display:inline-flex;align-items:center;gap:7px}
 a.key:hover .key-go{opacity:1}

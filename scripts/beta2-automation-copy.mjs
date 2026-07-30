@@ -28,7 +28,7 @@ export const automationCopy = {
       items: [
         ["The order arrives by email and someone retypes it", "A wholesaler's back office entered orders and attendance by hand, line by line. Every entry was work nobody needed to do and a chance to get a digit wrong."],
         ["A process engineer spends hours creating near-identical items", "A machine shop created 15 to 25 assemblies — 70 to 120 Helios items — every week from drawings, applying the same standards each time."],
-        ["A salesperson clicks through exports to find a price", "Sales searched K2 and Excel for the right combination of dimension, material and colour, quoting from data that might already be stale."],
+        ["A salesperson clicks through exports to find a price", "Sales searched K2 and Excel for the right combination of dimension, material and color, quoting from data that might already be stale."],
         ["Management signs off but cannot prove who read it", "Contract approvals ran through email with no audit trail, so nobody could show afterwards who had reviewed which version."],
       ],
     },

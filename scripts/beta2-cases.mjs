@@ -52,16 +52,16 @@ export const casesByLocale = {
       {
         id: "energy",
         client: "Energy group", industry: "Energy services",
-        title: "87% faster response to new enquiries, around the clock.",
-        problem: "New enquiries arrived by chat, email and web forms into a team working business hours. Response times stretched with the queue, and the first qualified conversation often happened days after the first contact — long enough for a prospect to keep shopping.",
+        title: "87% faster response to new inquiries, around the clock.",
+        problem: "New inquiries arrived by chat, email and web forms into a team working business hours. Response times stretched with the queue, and the first qualified conversation often happened days after the first contact — long enough for a prospect to keep shopping.",
         built: [
           "One agent across chat, email and forms, answering from the company's own product database — with the source attached.",
           "Qualification built into the conversation: the agent gathers what sales actually needs before a meeting is worth booking.",
-          "Calendar integration: a qualified enquiry leaves with a booked meeting, not a promise of a callback.",
+          "Calendar integration: a qualified inquiry leaves with a booked meeting, not a promise of a callback.",
         ],
         runs: "The agent answers what the product data supports and hands anything else to a person, with the full conversation attached. Sensitive commitments stay human.",
         outcome: [
-          ["87%", "faster response to a new enquiry"],
+          ["87%", "faster response to a new inquiry"],
           ["24/7", "coverage without growing the team"],
           ["+35%", "qualified meetings booked"],
         ],
@@ -72,13 +72,13 @@ export const casesByLocale = {
         id: "investment",
         client: "Investment group", industry: "Finance · 100+ portfolio companies",
         title: "Portfolio intelligence over a hundred-plus companies.",
-        problem: "Monthly reporting from more than a hundred portfolio companies arrived in a hundred formats. The analyst team spent its capacity collecting and normalising instead of analysing, and questions across the portfolio took days to answer.",
+        problem: "Monthly reporting from more than a hundred portfolio companies arrived in a hundred formats. The analyst team spent its capacity collecting and normalizing instead of analyzing, and questions across the portfolio took days to answer.",
         built: [
-          "Automated intake and normalisation of portfolio reporting into one queryable base.",
+          "Automated intake and normalization of portfolio reporting into one queryable base.",
           "Agentic analysis on top: cross-portfolio questions answered in minutes, with the underlying figures traceable.",
           "Autonomous monitoring that flags deviations instead of waiting for someone to look.",
         ],
-        runs: "Analysts direct the questions and own the conclusions; the agent does the collecting, normalising and first-pass analysis they used to lose their week to.",
+        runs: "Analysts direct the questions and own the conclusions; the agent does the collecting, normalizing and first-pass analysis they used to lose their week to.",
         outcome: [
           ["10×", "analyst team productivity"],
           ["100+", "companies under one analytical layer"],
@@ -238,7 +238,7 @@ export const casesByLocale = {
   },
 
   pl: {
-    eyebrow: "Case studies",
+    eyebrow: "Studia przypadków",
     h1: "Trzy systemy, opisane na głębokość, jakiej kupujący naprawdę potrzebuje.",
     lead: "Zakres, architektura, punkty ludzkiego zatwierdzania i zmierzony wynik — po jednym zleceniu z każdego rodzaju naszej pracy. Klientów opisujemy typologicznie; imienną referencję przynosimy na spotkanie.",
     meta: "Produkcja · Energetyka · Zarządzanie inwestycjami",
