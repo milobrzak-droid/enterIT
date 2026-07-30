@@ -319,7 +319,7 @@ const mascotFile = (face, tone) => {
  * lets a browser autoplay it at all — a clip with sound would simply be blocked
  * and the hero would sit frozen on the poster.
  */
-const HERO_STILLS = ["firmy", "standup", "meeting", "screenwork"];
+const HERO_STILLS = ["standup", "meeting", "screenwork", "accounting", "onsite", "keyboard"];
 function heroFilm() {
   const clips = ["webm", "mp4"]
     .filter((ext) => existsSync(resolve(root, "assets/decor", `hero.${ext}`)));

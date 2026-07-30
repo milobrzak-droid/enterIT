@@ -130,6 +130,8 @@ export const de = [
   },
   {
     slug: "zeiterfassung",
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Jemand am Bildschirm überträgt Stunden aus einem System in ein anderes.",
     tag: "Zeiterfassung",
     h1: "Schluss mit dem Zusammenzählen von Stunden zum Monatsende.",
     lead: "Der Agent führt Zeiterfassungsterminals, Tabellen und Abwesenheiten zusammen, prüft die Schichten und bereitet die Lohnabrechnung vor.",
@@ -203,6 +205,8 @@ export const de = [
   },
   {
     slug: "fahrtenbuch",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Hände auf der Tastatur, das Fahrtenbuch am Monatsende nachgetragen.",
     tag: "Fahrtenbuch",
     h1: "Aus Tankstopps und Routen wird ein fertiges Fahrtenbuch.",
     lead: "Der Agent baut das Fahrtenbuch aus GPS, Tankkarten und Kalendern und behält Prüfungen, Service und Versicherungen im Blick.",
@@ -238,6 +242,9 @@ export const de = [
   },
   {
     slug: "reklamationen",
+    photo: "/assets/decor/support.webp",
+    photoAlt: "Jemand aus dem Support am Kundenserviceportal, mit Headset.",
+    photoRight: true,
     tag: "Reklamationen",
     h1: "Nie wieder eine Reklamation aus den Augen verlieren.",
     lead: "Der Agent erfasst jede Reklamation — per E-Mail, Telefon oder Web — überwacht die Frist und hält den Kunden auf dem Laufenden.",
@@ -273,6 +280,8 @@ export const de = [
   },
   {
     slug: "urlaub",
+    photo: "/assets/decor/meeting.webp",
+    photoAlt: "Menschen am Tisch, die klären, wer welche Woche übernimmt.",
     tag: "Urlaub",
     h1: "Anträge, Freigaben und Salden an einer Stelle.",
     lead: "Mitarbeitende beantragen in Teams, Führungskräfte geben mit einem Klick frei, und die Salden aktualisieren sich selbst.",

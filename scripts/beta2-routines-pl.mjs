@@ -129,6 +129,8 @@ export const pl = [
   },
   {
     slug: "ewidencja-czasu",
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Ktoś przy ekranie przenosi godziny z jednego systemu do drugiego.",
     tag: "Ewidencja czasu",
     h1: "Koniec sumowania godzin na koniec miesiąca.",
     lead: "Agent łączy czytniki, arkusze i nieobecności, sprawdza zmiany i przygotowuje dane do płac.",
@@ -202,6 +204,8 @@ export const pl = [
   },
   {
     slug: "ewidencja-przebiegu",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Ręce na klawiaturze, ewidencja spisywana na koniec miesiąca.",
     tag: "Ewidencja przebiegu",
     h1: "Z tankowań i tras robi się gotowa ewidencja przebiegu.",
     lead: "Agent buduje ewidencję z GPS, kart paliwowych i kalendarzy, a przy okazji pilnuje przeglądów, serwisu i ubezpieczeń.",
@@ -237,6 +241,9 @@ export const pl = [
   },
   {
     slug: "reklamacje",
+    photo: "/assets/decor/support.webp",
+    photoAlt: "Osoba ze wsparcia przy portalu obsługi klienta, w słuchawkach.",
+    photoRight: true,
     tag: "Reklamacje",
     h1: "Żadna reklamacja już nie zniknie.",
     lead: "Agent rejestruje każdą reklamację — mailem, telefonem czy z sieci — pilnuje terminu i informuje klienta.",
@@ -272,6 +279,8 @@ export const pl = [
   },
   {
     slug: "urlopy",
+    photo: "/assets/decor/meeting.webp",
+    photoAlt: "Ludzie przy stole ustalają, kto bierze który tydzień.",
     tag: "Urlopy",
     h1: "Wnioski, zatwierdzenia i salda w jednym miejscu.",
     lead: "Ludzie wnioskują w Teams, kierownicy zatwierdzają jednym kliknięciem, a salda aktualizują się same.",

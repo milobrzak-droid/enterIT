@@ -150,6 +150,8 @@ const en = [
   },
   {
     slug: "attendance",
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Someone at a screen pulling hours out of one system and into another.",
     tag: "Attendance",
     h1: "No more adding up hours from terminals and spreadsheets at month end.",
     lead: "The agent combines time clocks, spreadsheets and leave records, checks the shifts and prepares payroll input.",
@@ -223,6 +225,8 @@ const en = [
   },
   {
     slug: "mileage",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Hands on a keyboard, the log being typed up at the end of the month.",
     tag: "Mileage log",
     h1: "Fuel stops and routes turn themselves into a finished log.",
     lead: "The agent builds the mileage log from GPS, fuel cards and calendars, and keeps an eye on inspections, service and insurance.",
@@ -258,6 +262,9 @@ const en = [
   },
   {
     slug: "complaints",
+    photo: "/assets/decor/support.webp",
+    photoAlt: "Someone from the support team at a customer service portal, headset on.",
+    photoRight: true,
     tag: "Complaints",
     h1: "Never lose track of a customer complaint again.",
     lead: "The agent logs every complaint — email, phone or web — tracks the deadline and keeps the customer updated.",
@@ -293,6 +300,8 @@ const en = [
   },
   {
     slug: "time-off",
+    photo: "/assets/decor/meeting.webp",
+    photoAlt: "People round a table agreeing who covers which week.",
     tag: "Time off",
     h1: "Requests, approvals and balances in one place.",
     lead: "People request time off in Teams, managers approve in one click, and balances update themselves.",

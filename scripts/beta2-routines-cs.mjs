@@ -131,6 +131,8 @@ export const cs = [
   },
   {
     slug: "dochazka",
+    photo: "/assets/decor/screenwork.webp",
+    photoAlt: "Člověk u obrazovky přenáší hodiny z jednoho systému do druhého.",
     tag: "Docházka",
     h1: "Konec sčítání hodin z píchaček a Excelu na konci měsíce.",
     lead: "Agent spojí píchačky, tabulky a evidenci absencí, zkontroluje směny a připraví podklad pro mzdy.",
@@ -204,6 +206,8 @@ export const cs = [
   },
   {
     slug: "kniha-jizd",
+    photo: "/assets/decor/keyboard.webp",
+    photoAlt: "Ruce na klávesnici, kniha jízd sepisovaná na konci měsíce.",
     tag: "Kniha jízd",
     h1: "Z tankování a tras se udělá hotová kniha jízd.",
     lead: "Agent sestaví knihu jízd z GPS, tankovacích karet a kalendářů — a hlídá STK, servis i pojistky.",
@@ -239,6 +243,9 @@ export const cs = [
   },
   {
     slug: "reklamace",
+    photo: "/assets/decor/support.webp",
+    photoAlt: "Člověk ze supportu u portálu zákaznické podpory, se sluchátky.",
+    photoRight: true,
     tag: "Reklamace",
     h1: "Žádná reklamace se už neztratí.",
     lead: "Agent zaeviduje každou reklamaci — e-mailem, telefonem i z webu — hlídá lhůtu a drží zákazníka v obraze.",
@@ -274,6 +281,8 @@ export const cs = [
   },
   {
     slug: "dovolene",
+    photo: "/assets/decor/meeting.webp",
+    photoAlt: "Lidé u stolu, kteří se domlouvají, kdo kdy zaskočí.",
     tag: "Dovolené",
     h1: "Žádosti, schválení a zůstatky na jednom místě.",
     lead: "Lidé žádají v Teams, vedoucí schvalují jedním kliknutím a zůstatky se aktualizují samy.",

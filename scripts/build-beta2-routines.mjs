@@ -25,6 +25,11 @@ import { bookingUrl } from "./homepage-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
+/* Peer rows take the palette rather than one accent plus white. Offset by the
+   routine's own index so no two routine pages open with the same colour. */
+const PEER = ["turquoise", "blue", "violet", "red", "yellow"];
+const peer = (i, j) => PEER[(i + j) % PEER.length];
+
 function renderRoutine(code, r, i) {
   const U = ui[code];
   const R = routineUi[code];
@@ -33,7 +38,7 @@ function renderRoutine(code, r, i) {
   const others = routines
     .filter((x) => x.slug !== r.slug)
     .map((x, j) => key({
-      span: j < 4 ? 3 : 4, tone: "white",
+      span: j < 4 ? 3 : 4, tone: j % 3 === 1 ? peer(i, j) : "white",
       title: x.tag, size: "sm", sub: x.lead,
       go: `${x.stat} ${x.statLabel} →`, href: sub(code, `routines/${x.slug}.html`),
     }));
@@ -45,7 +50,7 @@ function renderRoutine(code, r, i) {
     ask: R.painAsk,
     keys: [
       ...r.pain.map((p, j) =>
-        key({ span: 4, tone: j === 0 ? tone : "white", legend: String(j + 1), title: p, size: "sm" })),
+        key({ span: 4, tone: peer(i, j), legend: String(j + 1), title: p, size: "sm" })),
       /* Optional. A photograph of the work as it looks today, placed where the
          reader has just recognised their own back office. */
       r.photo && key({
@@ -68,7 +73,7 @@ function renderRoutine(code, r, i) {
     keys: r.flow.map(([title, sub], j) =>
       key({
         span: r.flow.length > 6 && j >= 4 ? 4 : 3,
-        tone: j === r.flow.length - 1 ? "navy" : "white",
+        tone: j === r.flow.length - 1 ? "navy" : j % 2 ? peer(i, j) : "white",
         legend: String(j + 1), title, size: "sm", sub,
       })),
   });
@@ -80,7 +85,7 @@ function renderRoutine(code, r, i) {
     ask: R.neverAsk,
     keys: [
       ...r.never.map((n, j) =>
-        key({ span: 4, tone: j === 1 ? tone : "white", legend: "✕", title: n, size: "sm" })),
+        key({ span: 4, tone: j === 1 ? "red" : "white", legend: "✕", title: n, size: "sm" })),
       key({
         span: 12, tone: "navy",
         eyebrow: R.runsEyebrow,
@@ -99,7 +104,7 @@ function renderRoutine(code, r, i) {
     ask: R.setupAsk,
     keys: [
       ...r.need.map((n, j) =>
-        key({ span: 4, tone: "white", legend: String(j + 1), title: n, size: "sm" })),
+        key({ span: 4, tone: j === 1 ? peer(i, 3) : "white", legend: String(j + 1), title: n, size: "sm" })),
       key({
         span: 12, tone: tone,
         eyebrow: R.expectEyebrow,
