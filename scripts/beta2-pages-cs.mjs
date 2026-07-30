@@ -186,6 +186,7 @@ export const cs = {
       ["95 %", "pilotů generativní AI nevykazuje měřitelný dopad na zisk", "MIT, 2025"],
     ],
     paceCloseTitle: "To poslední číslo je důvod, proč každou zakázku začínáme výchozím stavem, vlastníkem a definovaným přínosem.",
+    paceCloseAlt: "Tři vývojáři u tabule kreslí tok — boxy a šipky.",
     paceCloseSub: "Piloty v těch 95 % neselhaly na technologii. Selhaly na metodě, vlastnictví a měření — třech věcech, které nic nestojí opravit na začátku a na konci opravit nejdou.",
     levelsKicker: "Pět úrovní",
     levelsH2: "Najděte větu, kterou u vás ve firmě opravdu slýcháte.",
@@ -211,6 +212,8 @@ export const cs = {
     calcAsk: "Záměrně hrubé. Existuje proto, aby vám řeklo, jestli je tohle hovor na pětimístnou nebo šestimístnou částku — a nic přesnějšího by se nemělo brát vážně, dokud jsme neviděli vaše data.",
     afterKicker: "Co se s tímhle číslem stane",
     afterH2: "V prvních dvou týdnech ho nahradíme skutečným.",
+    afterPhotoAlt: "Účetní u dvou monitorů, na jednom faktura, na druhém účetní systém.",
+    afterPhotoTitle: "To číslo nad tím je jeden týden jednoho člověka. Takhle ten týden vypadá.",
     afterBody: [
       "První fáze existuje proto, aby z tohohle odhadu udělala měření: kolik té práce doopravdy je, kolik výjimek proces skutečně má a co vás dnešní postup stojí — včetně té části, kterou nikdo nepočítá, tedy seniorních lidí dělajících juniorní práci.",
       "Někdy to měření projekt zabije. Stalo se to a pro obě strany je to levnější ve druhém týdnu než v šestém měsíci.",

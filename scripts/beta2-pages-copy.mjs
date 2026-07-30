@@ -202,6 +202,7 @@ export const pagesCopy = {
         ["95%", "of generative-AI pilots show no measurable profit impact", "MIT, 2025"],
       ],
       paceCloseTitle: "That last number is the reason we start every engagement with a baseline, an owner and a defined benefit.",
+      paceCloseAlt: "Three developers at a whiteboard, mapping a flow with boxes and arrows.",
       paceCloseSub: "The pilots in that 95% did not fail on the technology. They failed on method, ownership and measurement — three things that cost nothing to fix at the start and cannot be fixed at the end.",
       levelsKicker: "Five levels",
       levelsH2: "Find the sentence you actually hear in your company.",
@@ -227,6 +228,8 @@ export const pagesCopy = {
       calcAsk: "Deliberately rough. It exists to tell you whether this is a five-figure conversation or a six-figure one, and nothing more precise than that should be trusted before we have seen your data.",
       afterKicker: "What happens to this number",
       afterH2: "We replace it with a real one in the first two weeks.",
+      afterPhotoAlt: "An accountant at two screens, the invoice on one and the accounting system on the other.",
+      afterPhotoTitle: "The number above is one person's week. This is the week.",
       afterBody: [
         "Stage one exists to turn this estimate into a measurement: how much work there actually is, how many exceptions the process really has, and what the current way of doing it costs including the part nobody counts, which is senior people doing junior work.",
         "Sometimes that measurement kills the project. That has happened, and it is cheaper for both of us in week two than in month six.",

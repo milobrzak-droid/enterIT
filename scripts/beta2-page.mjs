@@ -154,6 +154,9 @@ export const LANG_ARIA = {
   cs: "Jazyk webu", en: "Site language", de: "Sprache", pl: "Język strony",
 };
 export const OG_LOCALE = { cs: "cs_CZ", en: "en_US", de: "de_DE", pl: "pl_PL" };
+/* One preview card per language: the headline on the card is the headline on the
+   page it opens, so a reader is not promised one thing and shown another. */
+export const OG_IMAGE = (code) => (code === "en" ? "/assets/og.png" : `/assets/og-${code}.png`);
 
 /**
  * Canonical and hreflang for one page, given a function that returns its path
@@ -194,7 +197,7 @@ ${alternates ? alternates.map(([x, href]) => `<link rel="alternate" hreflang="${
 <meta property="og:title" content="${e(title)}">
 <meta property="og:description" content="${e(description)}">
 ${canonical ? `<meta property="og:url" content="${SITE}${canonical}">` : ""}
-<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image" content="${SITE}${asset(OG_IMAGE(code))}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

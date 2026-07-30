@@ -180,6 +180,7 @@ export const pl = {
       ["95 %", "pilotaży generatywnej AI nie wykazuje mierzalnego wpływu na zysk", "MIT, 2025"],
     ],
     paceCloseTitle: "Ta ostatnia liczba to powód, dla którego każde zlecenie zaczynamy od punktu wyjścia, właściciela i zdefiniowanej korzyści.",
+    paceCloseAlt: "Trzech programistów przy tablicy rysuje przepływ — pudełka i strzałki.",
     paceCloseSub: "Pilotaże w tych 95 % nie poległy na technologii. Poległy na metodzie, własności i pomiarze — trzech rzeczach, które nic nie kosztują na starcie i których na końcu naprawić się nie da.",
     levelsKicker: "Pięć poziomów",
     levelsH2: "Znajdźcie zdanie, które naprawdę słyszycie u siebie.",
@@ -205,6 +206,8 @@ export const pl = {
     calcAsk: "Celowo zgrubne. Istnieje po to, żeby powiedzieć wam, czy to rozmowa na pięć czy na sześć cyfr — a niczemu dokładniejszemu nie warto wierzyć, zanim zobaczymy wasze dane.",
     afterKicker: "Co się dzieje z tą liczbą",
     afterH2: "W pierwszych dwóch tygodniach zastępujemy ją prawdziwą.",
+    afterPhotoAlt: "Księgowa przy dwóch monitorach, na jednym faktura, na drugim system księgowy.",
+    afterPhotoTitle: "Liczba powyżej to tydzień jednej osoby. Tak wygląda ten tydzień.",
     afterBody: [
       "Pierwszy etap istnieje po to, żeby zamienić to oszacowanie w pomiar: ile tej pracy naprawdę jest, ile wyjątków proces faktycznie ma i ile kosztuje dzisiejszy sposób — łącznie z tą częścią, której nikt nie liczy, czyli seniorami wykonującymi pracę juniorów.",
       "Czasem ten pomiar zabija projekt. Zdarzyło się, i dla obu stron jest to tańsze w drugim tygodniu niż w szóstym miesiącu.",

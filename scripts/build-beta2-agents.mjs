@@ -60,7 +60,7 @@ function render(code) {
     keys: [
       ...C.anatomy.parts.map(([title, subText], i) =>
         key({
-          span: 3, tone: i === 0 ? "turquoise" : i === 5 ? "violet" : "white",
+          span: 3, tone: ["turquoise", "white", "blue", "white", "violet", "white", "yellow", "white"][i] || "white",
           legend: String(i + 1), title, size: "sm", sub: subText,
         })),
       key({
@@ -71,7 +71,7 @@ function render(code) {
     ],
   });
 
-  const kindTones = ["turquoise", "white", "blue", "white", "violet", "white"];
+  const kindTones = ["turquoise", "blue", "white", "violet", "yellow", "white"];
   const types = section({
     id: "types", no: "03", hue: 2,
     kicker: C.types.kicker, h2: C.types.h2, ask: C.types.ask,
@@ -83,7 +83,7 @@ function render(code) {
     id: "stack", no: "04", hue: 3,
     kicker: C.stack.kicker, h2: C.stack.h2,
     keys: C.stack.cards.map(([eyebrow, title, subText], i) =>
-      key({ span: 3, tone: i === 3 ? "turquoise" : "white", eyebrow, title, size: "sm", sub: subText })),
+      key({ span: 3, tone: ["turquoise", "white", "blue", "white"][i], eyebrow, title, size: "sm", sub: subText })),
   });
 
   const trust = section({

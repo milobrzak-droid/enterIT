@@ -180,6 +180,7 @@ export const de = {
       ["95 %", "der Piloten mit generativer KI zeigen keinen messbaren Gewinneffekt", "MIT, 2025"],
     ],
     paceCloseTitle: "Diese letzte Zahl ist der Grund, warum wir jeden Auftrag mit Ausgangslage, Verantwortlichem und definiertem Nutzen beginnen.",
+    paceCloseAlt: "Drei Entwickler an einem Whiteboard, die einen Ablauf mit Kästen und Pfeilen zeichnen.",
     paceCloseSub: "Die Piloten in diesen 95 % sind nicht an der Technologie gescheitert. Sie sind an Methode, Verantwortung und Messung gescheitert — drei Dinge, die am Anfang nichts kosten und am Ende nicht mehr zu reparieren sind.",
     levelsKicker: "Fünf Stufen",
     levelsH2: "Finden Sie den Satz, den Sie in Ihrem Unternehmen wirklich hören.",
@@ -205,6 +206,8 @@ export const de = {
     calcAsk: "Bewusst grob. Er sagt Ihnen, ob das ein fünfstelliges oder ein sechsstelliges Gespräch ist — und nichts Genaueres sollte man glauben, bevor wir Ihre Daten gesehen haben.",
     afterKicker: "Was mit dieser Zahl passiert",
     afterH2: "In den ersten zwei Wochen ersetzen wir sie durch eine echte.",
+    afterPhotoAlt: "Eine Buchhalterin an zwei Bildschirmen, links die Rechnung, rechts das Buchhaltungssystem.",
+    afterPhotoTitle: "Die Zahl darüber ist die Woche eines Menschen. So sieht diese Woche aus.",
     afterBody: [
       "Phase eins macht aus dieser Schätzung eine Messung: wie viel Arbeit es tatsächlich gibt, wie viele Ausnahmen der Prozess wirklich hat, und was der heutige Weg kostet — einschließlich des Teils, den niemand zählt, nämlich erfahrener Leute, die Junior-Arbeit machen.",
       "Manchmal bringt diese Messung das Projekt um. Das ist vorgekommen, und für beide Seiten ist es in Woche zwei billiger als in Monat sechs.",

@@ -43,12 +43,12 @@ function renderCases(code) {
     kicker: `${c.client} · ${c.industry}`, h2: c.title, ask: c.problem,
     keys: [
       key({
-        span: c.outcome ? 7 : 8, tone: "white", eyebrow: C.builtLabel,
+        span: c.outcome ? 7 : 8, tone: caseTones[i], eyebrow: C.builtLabel,
         list: c.built,
       }),
       c.outcome
         ? key({
-            span: 5, tone: caseTones[i], eyebrow: C.outcomeLabel,
+            span: 5, tone: "white", eyebrow: C.outcomeLabel,
             extra: `<div class="strip">${c.outcome
               .map(([n, l]) => `<span class="stat"><b>${e(n)}</b>${e(l)}</span>`)
               .join("")}</div>`,

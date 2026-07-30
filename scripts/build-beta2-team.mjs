@@ -78,7 +78,7 @@ function renderTeam(code) {
     keys: [
       ...C.stats.map(([stat, statLabel, subText], i) =>
         key({
-          span: 3, tone: "white", stat, statLabel, sub: subText || undefined,
+          span: 3, tone: ["turquoise", "white", "blue"][i] || "white", stat, statLabel, sub: subText || undefined,
         })),
       key({
         span: 12, tone: "violet", title: C.ownerTitle, size: "big",
@@ -91,7 +91,7 @@ function renderTeam(code) {
     id: "where", no: "04", hue: 3,
     kicker: C.whereKicker, h2: C.whereH2,
     keys: [
-      key({ span: 6, tone: "white", title: C.remoteTitle, size: "sm", sub: C.remoteSub }),
+      key({ span: 6, tone: "violet", title: C.remoteTitle, size: "sm", sub: C.remoteSub }),
       key({
         span: 6, tone: "turquoise", title: C.hiringTitle, size: "sm",
         sub: C.hiringSub, go: C.hiringGo, href: bookingUrl,
@@ -139,7 +139,7 @@ function renderIntegrations(code) {
     kicker: `${total} ${C.catalogKickerB}`, h2: C.catalogH2, ask: C.catalogAsk,
     keys: cat.groups.map((g, i) =>
       key({
-        span: 4, tone: i === 1 ? "turquoise" : i === 4 ? "violet" : "white",
+        span: 4, tone: ["turquoise", "white", "blue", "violet"][i] || "white",
         eyebrow: `${g.title} · ${g.systems.length}`,
         title: g.systems.join(" · "), size: "sm",
       })),
@@ -150,7 +150,7 @@ function renderIntegrations(code) {
     kicker: C.rulesKicker, h2: C.rulesH2,
     keys: [
       ...C.rules.map(([title, subText], i) =>
-        key({ span: 4, tone: i === 2 ? "turquoise" : "white", title, size: "sm", sub: subText })),
+        key({ span: 4, tone: ["white", "yellow", "turquoise"][i] || "white", title, size: "sm", sub: subText })),
       /* Two different answers, and conflating them would be the dishonest move.
          For a European client the hosting claim is firm because it rests on
          something real. For a US partner it is not a hosting promise at all. */

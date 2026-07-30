@@ -39,7 +39,7 @@ import { writeCases } from "./build-beta2-cases.mjs";
 import { writeEngagement } from "./build-beta2-engage.mjs";
 import { writeTeamAndIntegrations } from "./build-beta2-team.mjs";
 import { voice } from "./beta2-copy.mjs";
-import { LANG_ARIA, LOCALES, OG_LOCALE, ROOT_LOCALE, SITE, SKIP, asset, boardHref, sub } from "./beta2-page.mjs";
+import { LANG_ARIA, LOCALES, OG_IMAGE, OG_LOCALE, ROOT_LOCALE, SITE, SKIP, asset, boardHref, sub } from "./beta2-page.mjs";
 import { routinesByLocale } from "./beta2-routines.mjs";
 import { boardOrder, caseStudies } from "./case-studies-content.mjs";
 import { bookingUrl, locales } from "./homepage-content.mjs";
@@ -799,7 +799,7 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
 <meta property="og:title" content="${e(page.title)}">
 <meta property="og:description" content="${e(page.description)}">
 <meta property="og:url" content="${SITE}${boardHref(code)}">
-<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image" content="${SITE}${asset(OG_IMAGE(code))}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

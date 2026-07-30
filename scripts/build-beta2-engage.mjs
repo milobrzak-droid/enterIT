@@ -42,7 +42,7 @@ function renderEngagement(code) {
     keys: [
       ...C.models.map(([title, subText], i) =>
         key({
-          span: 3, tone: i === 1 ? "turquoise" : i === 2 ? "navy" : "white",
+          span: 3, tone: ["turquoise", "blue", "violet", "white"][i],
           legend: String(i + 1), title, size: "sm", sub: subText,
         })),
       /* The four models are a commercial abstraction; this is what all four
@@ -74,7 +74,7 @@ function renderEngagement(code) {
     kicker: C.safeKicker, h2: C.safeH2, ask: C.safeAsk,
     keys: C.safe.map(([tag, title, subText, needText], i) =>
       key({
-        span: 4, tone: i === 0 ? "turquoise" : i === 2 ? "navy" : "white",
+        span: 4, tone: ["turquoise", "white", "blue"][i],
         eyebrow: tag, title, size: "sm", sub: subText,
         needs: needText ? need(needText) : undefined, needsLabel: U.needsLabel,
       })),
@@ -117,10 +117,13 @@ function render2030(code) {
     kicker: C.paceKicker, h2: C.paceH2, ask: C.paceAsk,
     keys: [
       ...C.pace.map(([stat, statLabel, meta], i) =>
-        key({ span: 3, tone: i === 3 ? "red" : "white", stat, statLabel, meta })),
+        key({ span: 3, tone: ["turquoise", "white", "blue", "red"][i], stat, statLabel, meta })),
+      /* The self-check is about where a company stands, so it closes on the
+         picture of a company working out exactly that. */
       key({
-        span: 12, tone: "navy", title: C.paceCloseTitle, size: "big",
-        sub: C.paceCloseSub, mascot: "wave",
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/standup.webp", alt: C.paceCloseAlt,
+        title: C.paceCloseTitle, size: "big", sub: C.paceCloseSub,
       }),
     ],
   });
@@ -131,7 +134,7 @@ function render2030(code) {
     keys: C.levels.map(([title, body, tell, step], i) =>
       key({
         span: i === 4 ? 12 : 3,
-        tone: i === 4 ? "turquoise" : i === 2 ? "violet" : "white",
+        tone: i === 4 ? "turquoise" : ["white", "blue", "violet", "yellow"][i],
         legend: String(i + 1), title, size: "sm", sub: body,
         rule: tell, meta: `${C.stepLabel} — ${step}`,
       })),
@@ -189,8 +192,15 @@ ${field("share", f.share)}
     keys: [
       key({ span: 8, tone: "navy", body: C.afterBody, mascot: "blue" }),
       key({
-        span: 4, tone: "white", title: C.stagesTitle, size: "sm",
+        span: 4, tone: "turquoise", title: C.stagesTitle, size: "sm",
         sub: C.stagesSub, go: C.stagesGo, href: `${boardHref(code)}#process`,
+      }),
+      /* The figure above is an order of magnitude for one person's week. This is
+         what that week looks like. */
+      key({
+        span: 12, tone: "navy", wide: true,
+        photo: "/assets/decor/accounting.webp", alt: C.afterPhotoAlt,
+        eyebrow: C.afterKicker, title: C.afterPhotoTitle, size: "sm",
       }),
     ],
   });
