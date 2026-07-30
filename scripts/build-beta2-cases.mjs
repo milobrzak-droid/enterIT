@@ -25,6 +25,15 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const caseTones = ["turquoise", "blue", "violet"];
 
+/* One frame per case, showing the work the case describes: a document beside the
+   system it has to reach, the person who answers, the table where the analysis
+   gets argued. */
+const CASE_PHOTO = {
+  manufacturing: "/assets/decor/screenwork.webp",
+  energy: "/assets/decor/support.webp",
+  investment: "/assets/decor/meeting.webp",
+};
+
 function renderCases(code) {
   const C = casesByLocale[code];
   const U = ui[code];
@@ -49,7 +58,11 @@ function renderCases(code) {
             span: 4, tone: "navy", eyebrow: C.outcomeLabel,
             sub: C.ndaNote, meta: `${C.statusLabel}: ${c.status}`, mascot: "blue",
           }),
-      key({ span: 12, tone: "navy", eyebrow: C.runsLabel, body: [c.runs] }),
+      key({
+        span: 12, tone: "navy", wide: true,
+        photo: CASE_PHOTO[c.id], alt: C.photoAlt[c.id],
+        eyebrow: C.runsLabel, title: c.runs, size: "sm",
+      }),
       c.quote
         ? key({ span: 12, tone: "turquoise", title: `„${c.quote.text}“`, size: "sm", meta: c.quote.by })
         : "",

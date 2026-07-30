@@ -28,6 +28,11 @@ export const casesByLocale = {
     statusLabel: "Status",
     ndaNote: "Specific figures for this engagement are under NDA. We bring the measured numbers, and the reference behind them, to the meeting.",
     backLabel: "All results →",
+    photoAlt: {
+      manufacturing: "A document open beside the ERP record it has to reach, on one screen.",
+      energy: "Someone from the support team at a customer service portal, headset on.",
+      investment: "Analysts and clients around one table, the figures on a laptop between them.",
+    },
     cases: [
       {
         id: "manufacturing",
@@ -97,6 +102,11 @@ export const casesByLocale = {
     statusLabel: "Stav",
     ndaNote: "Konkrétní čísla téhle zakázky jsou pod NDA. Naměřené hodnoty i referenci za nimi přineseme na schůzku.",
     backLabel: "Všechny výsledky →",
+    photoAlt: {
+      manufacturing: "Dokument otevřený vedle záznamu v ERP, do kterého se má dostat, na jedné obrazovce.",
+      energy: "Člověk ze supportu u portálu zákaznické podpory, se sluchátky.",
+      investment: "Analytici a klienti u jednoho stolu, čísla na notebooku mezi nimi.",
+    },
     cases: [
       {
         id: "manufacturing",
@@ -166,6 +176,11 @@ export const casesByLocale = {
     statusLabel: "Status",
     ndaNote: "Die konkreten Zahlen dieses Auftrags stehen unter NDA. Die gemessenen Werte und die Referenz dahinter bringen wir zum Termin mit.",
     backLabel: "Alle Ergebnisse →",
+    photoAlt: {
+      manufacturing: "Ein Dokument neben dem ERP-Datensatz, in den es gehört, auf einem Bildschirm.",
+      energy: "Jemand aus dem Support am Kundenserviceportal, mit Headset.",
+      investment: "Analysten und Kunden an einem Tisch, die Zahlen auf einem Laptop dazwischen.",
+    },
     cases: [
       {
         id: "manufacturing",
@@ -235,6 +250,11 @@ export const casesByLocale = {
     statusLabel: "Status",
     ndaNote: "Konkretne liczby tego zlecenia są objęte NDA. Zmierzone wartości i stojącą za nimi referencję przynosimy na spotkanie.",
     backLabel: "Wszystkie wyniki →",
+    photoAlt: {
+      manufacturing: "Dokument otwarty obok rekordu w ERP, do którego ma trafić, na jednym ekranie.",
+      energy: "Osoba ze wsparcia przy portalu obsługi klienta, w słuchawkach.",
+      investment: "Analitycy i klienci przy jednym stole, liczby na laptopie między nimi.",
+    },
     cases: [
       {
         id: "manufacturing",

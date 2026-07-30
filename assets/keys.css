@@ -552,8 +552,10 @@ a.key:hover .key-arrow{opacity:1;transform:translate(2px,-2px)}
 }
 
 /* ---------- Subpage masthead ---------- */
-.hero-bar--page{padding:40px 48px 44px}
-.hero-bar--page h1{font-size:clamp(30px,4vw,58px);max-width:22ch}
+/* The subpage hero ran 563px tall with 46% of its width empty and a headline two
+   steps larger than the board's. Same scale as the board, less air. */
+.hero-bar--page{padding:30px 44px 34px}
+.hero-bar--page h1{font-size:clamp(28px,3.2vw,46px);max-width:30ch}
 .back{display:flex;width:fit-content;align-items:center;gap:9px;color:var(--white);
   opacity:.6;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   margin-bottom:22px;transition:opacity .18s}
@@ -716,6 +718,26 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
   .hero-wash{background:linear-gradient(180deg,
     rgba(23,32,46,.88) 0%, var(--navy) 62%)}
 }
+
+/* ---------- Portrait caps ----------
+   A face is not a decorative background. These caps hold a fixed 4:5 portrait
+   whatever the text does, so a row of people reads as one row of people; and the
+   crop is anchored high, because a headshot puts the eyes in the upper third and
+   a centred crop cuts the face across the mouth. */
+.key--face{aspect-ratio:4/5;min-height:0;justify-content:flex-end;
+  padding:18px;overflow:hidden}
+/* The eight portraits come from eight different shoots — a blue studio backdrop,
+   a field at dusk, a dark room. Pulling the saturation back makes the row read as
+   one row rather than eight unrelated pictures; hovering returns the colour. */
+.key--face .key-bg{object-position:center 22%;filter:grayscale(.72) contrast(1.04);
+  transition:filter .28s}
+.key--face:hover .key-bg{filter:grayscale(0) contrast(1)}
+.key--face::before{background:linear-gradient(180deg,
+  rgba(10,17,28,.05) 0%,rgba(10,17,28,.35) 52%,rgba(10,17,28,.92) 100%)}
+.key--face .key-title{font-size:15px;line-height:1.15}
+.key--face .key-meta{margin-top:4px;font-size:10.5px;line-height:1.35;opacity:.8;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:900px){.key--face{aspect-ratio:1}}
 
 /* ---------- Face wall ----------
    The room next door, and the people in it. Portraits run quiet and square so

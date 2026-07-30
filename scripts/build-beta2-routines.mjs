@@ -33,7 +33,7 @@ function renderRoutine(code, r, i) {
   const others = routines
     .filter((x) => x.slug !== r.slug)
     .map((x, j) => key({
-      span: 3, tone: j % 3 === 0 ? "white" : "white",
+      span: j < 4 ? 3 : 4, tone: "white",
       title: x.tag, size: "sm", sub: x.lead,
       go: `${x.stat} ${x.statLabel} →`, href: sub(code, `routines/${x.slug}.html`),
     }));

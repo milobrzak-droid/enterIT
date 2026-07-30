@@ -35,8 +35,8 @@ const PEOPLE = [
 const TEAM_NAMES = ["Enter Tech", "Enter Agents", "Enter Studio"];
 const TEAM_TONES = ["navy", "turquoise", "violet"];
 
-const faceCap = (name, role, img) => `      <div class="key key--navy key--photo" style="grid-column:span 2">
-        <img class="key-bg" src="${img}" alt="${e(name)}" loading="lazy">
+const faceCap = (name, role, img, span = 2) => `      <div class="key key--navy key--photo key--face" style="grid-column:span ${span}">
+        <img class="key-bg" src="${img}" alt="${e(name)}" width="440" height="440" loading="lazy">
         <span class="key-title key-title--sm">${e(name)}</span>
         <p class="key-meta">${e(role)}</p>
       </div>`;
@@ -67,18 +67,8 @@ function renderTeam(code) {
     kicker: C.titlesKicker, h2: C.titlesH2,
     keys: [
       key({ span: 8, tone: "navy", body: C.titlesBody, mascot: "wave" }),
-      `      <div class="key key--navy key--photo" style="grid-column:span 2">
-        <img class="key-bg" src="/assets/team/milo.jpg" alt="Milo Brzák" loading="lazy">
-        <span class="key-eyebrow">Enter Group</span>
-        <span class="key-title key-title--sm">Milo Brzák</span>
-        <p class="key-meta">${e(C.miloRole)}</p>
-      </div>`,
-      `      <div class="key key--navy key--photo" style="grid-column:span 2">
-        <img class="key-bg" src="/assets/team/klesnarova.jpg" alt="Michaela Klesnárová" loading="lazy">
-        <span class="key-eyebrow">Enter Group</span>
-        <span class="key-title key-title--sm">Michaela Klesnárová</span>
-        <p class="key-meta">${e(C.michaelaRole)}</p>
-      </div>`,
+      faceCap("Milo Brzák", C.miloRole, "/assets/team/milo.jpg"),
+      faceCap("Michaela Klesnárová", C.michaelaRole, "/assets/team/klesnarova.jpg"),
     ],
   });
 
