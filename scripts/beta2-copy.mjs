@@ -89,7 +89,7 @@ export const voice = {
     ],
     ops: [
       { title: "Ručíme za běh", text: "Dostupnost, reakční doby, dohled 24/7, zálohy i aktualizace pod jedním SLA." },
-      { title: "Kód a data jsou vaše", text: "Ve smlouvě je černé na bílém, komu patří kód, data i dokumentace — včetně postupu předání při ukončení spolupráce." },
+      { title: "Vlastnictví je vyřešené předem", text: "Ve smlouvě je černé na bílém, komu patří kód, data i dokumentace — a dohodne se to dřív, než se začne stavět, ne až na konci. Součástí je i postup předání při ukončení spolupráce." },
       { title: "Bezpečnost řešíme v návrhu", text: "EU cloud nebo on-premise, šifrování, role, oprávnění a auditní stopa, kterou přečte i auditor." },
     ],
     labels: {
@@ -207,7 +207,7 @@ export const voice = {
     ],
     ops: [
       { title: "We answer for uptime", text: "Availability, response times, 24/7 monitoring, backups and updates, all under one SLA." },
-      { title: "The code and the data are yours", text: "The contract says in plain words who owns the code, the data and the documentation — including the handover procedure if the engagement ends." },
+      { title: "Ownership is settled before we build", text: "The contract says in plain words who owns the code, the data and the documentation — agreed before the work starts rather than at the end. The handover procedure is part of it." },
       { title: "Security is part of the design", text: "EU cloud or on-premise, encryption, roles, permissions, and an audit trail your auditor can actually read." },
     ],
     labels: {
@@ -325,7 +325,7 @@ export const voice = {
     ],
     ops: [
       { title: "Wir haften für den Betrieb", text: "Verfügbarkeit, Reaktionszeiten, Überwachung rund um die Uhr, Backups und Updates unter einem SLA." },
-      { title: "Code und Daten gehören Ihnen", text: "Im Vertrag steht im Klartext, wem Code, Daten und Dokumentation gehören — und wie die Übergabe abläuft, falls wir aufhören." },
+      { title: "Eigentum ist vorab geregelt", text: "Im Vertrag steht im Klartext, wem Code, Daten und Dokumentation gehören — vereinbart, bevor gebaut wird, nicht erst am Ende. Der Übergabeprozess gehört dazu." },
       { title: "Sicherheit gehört in den Entwurf", text: "EU-Cloud oder on-premise, Verschlüsselung, Rollen, Berechtigungen und ein Audit-Trail, den Ihr Prüfer wirklich lesen kann." },
     ],
     labels: {
@@ -443,7 +443,7 @@ export const voice = {
     ],
     ops: [
       { title: "Odpowiadamy za działanie", text: "Dostępność, czasy reakcji, nadzór 24/7, kopie zapasowe i aktualizacje w ramach jednego SLA." },
-      { title: "Kod i dane są wasze", text: "W umowie stoi czarno na białym, do kogo należy kod, dane i dokumentacja — łącznie z procedurą przekazania na koniec współpracy." },
+      { title: "Własność jest ustalona z góry", text: "W umowie stoi czarno na białym, do kogo należy kod, dane i dokumentacja — uzgodnione, zanim zaczniemy budować, a nie na końcu. Procedura przekazania jest jej częścią." },
       { title: "Bezpieczeństwo projektujemy od początku", text: "Chmura UE albo on-premise, szyfrowanie, role, uprawnienia i ścieżka audytu, którą audytor naprawdę przeczyta." },
     ],
     labels: {

@@ -351,8 +351,7 @@ function key({
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${tint ? `<img class="key-tint" src="${tint}" alt="" loading="lazy">` : ""}
         ${mascot ? `<img class="key-mascot" src="${mascotFile(mascot, tone)}" alt="" loading="lazy">` : ""}
-        ${mark ? `<img class="key-mark" src="/assets/enter_symbol_color.svg" alt="">` : ""}
-        ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
+        <img class="key-mark" src="/assets/enter_symbol_color.svg" alt="" width="200" height="200">
         ${legend ? `<span class="key-legend">${legend}</span>` : ""}
         ${pill ? `<span class="key-pill">${searchIcon}${e(pill)}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
@@ -464,7 +463,7 @@ function render(code) {
     keys: [
       ...page.services.cards.map((card, i) =>
         key({
-          span: 4, tone: disciplineTones[i], legend: ["A", "G", "C"][i],
+          span: 4, tone: disciplineTones[i],
           title: v.disciplines[i].title, size: "big", sub: v.disciplines[i].text,
           bullets: v.disciplines[i].list || card.bullets,
           mascot: i === 1 ? "wave" : undefined,
@@ -474,7 +473,7 @@ function render(code) {
           href: DISCIPLINE_HREF[i](code),
         })),
       key({
-        span: 8, tone: "navy", legend: "EU", eyebrow: t.reachEyebrow,
+        span: 8, tone: "navy", eyebrow: t.reachEyebrow,
         title: t.reachTitle, size: "big", sub: t.reachSub,
         bullets: t.reachList, extra: euStars,
         go: t.reachGo,
@@ -483,7 +482,7 @@ function render(code) {
       key({
         span: 4, tone: "navy", eyebrow: t.teamGo.replace(" →", ""),
         title: t.reachTitle, size: "sm",
-        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
+        photo: "/assets/decor/meeting.webp", alt: t.teamPhotoAlt, quiet: true,
         href: sub(code, "team.html"),
       }),
     ],
@@ -531,10 +530,9 @@ function render(code) {
           title: card.title, size: "sm", sub: card.description,
           flow: [card.input, card.output], meta: card.proof,
           href: sub(code, `routines/${routinesByLocale[code][routineCards[i].routine].slug}.html`),
-          mark: false,
         })),
       key({
-        span: 12, tone: "navy", legend: "?", title: c.solutions.cta, size: "big",
+        span: 12, tone: "navy", title: c.solutions.cta, size: "big",
         mascot: "red", go: t.solutionsGo, href: "#start",
       }),
     ],
@@ -583,13 +581,13 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
     kicker: ch(2).kicker, title: ch(2).title, ask: ch(2).ask,
     keys: [
       key({
-        span: 6, tone: "turquoise", legend: "1", eyebrow: lead.client,
+        span: 6, tone: "turquoise", eyebrow: lead.client,
         title: lead.title, size: "big", sub: lead.impact,
         meta: `${lead.industry} · ${lead.tech.join(" · ")} · ${cs.byLabel[lead.by]}`,
         href: sub(code, "cases.html") + "#manufacturing",
       }),
       key({
-        span: 6, tone: "navy", legend: "2", eyebrow: second.client,
+        span: 6, tone: "navy", eyebrow: second.client,
         stat: second.metric, statLabel: second.metricLabel,
         sub: second.impact,
         meta: `${second.industry} · ${second.tech.join(" · ")} · ${cs.byLabel[second.by]}`,
@@ -597,28 +595,26 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
       }),
       ...rest.map((card, i) =>
         key({
-          span: 3, tone: smallTones[i], legend: String(i + 3),
+          span: 3, tone: smallTones[i],
           eyebrow: card.client, stat: card.metric, statLabel: card.metricLabel,
           title: card.title, size: "sm",
           meta: `${card.industry} · ${cs.byLabel[card.by]}`,
           href: card.id === "jt-investing" ? sub(code, "cases.html") + "#investment" : "#start",
-          mark: false,
         })),
       /* The house numbers sit on the team at work — the photograph runs quiet
          under a heavy scrim, there to prove the place is alive rather than to
          be looked at. */
       key({
-        span: 7, tone: "navy", legend: "N", eyebrow: t.proofLabel,
+        span: 7, tone: "navy", eyebrow: t.proofLabel,
         title: page.proof.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.results.note,
         go: t.teamGo, href: sub(code, "team.html"),
-        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt, quiet: true,
+        photo: "/assets/decor/standup.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
       /* Next to the room, the faces in it. An empty placeholder beside a
          photograph of a workshop was the one spot on the board that looked
          unfinished rather than reserved. */
       `      <a class="key key--white faces" href="${sub(code, "team.html")}" style="grid-column:span 5">
-        <span class="key-arrow">${chevron}</span>
         <span class="key-eyebrow">${e(t.facesLabel)}</span>
         <div class="face-wall">
 ${faceRow}
@@ -640,15 +636,14 @@ ${faceRow}
       ...v.stages.map((step, i) =>
         key({
           span: 3, tone: ["turquoise", "blue", "violet", "yellow"][i],
-          legend: String(i + 1),
           eyebrow: `${t.stepLabel} ${i + 1}`, title: step.title, size: "sm", sub: step.text,
-          meta: step.time || c.processTimings[i], mark: false,
+          meta: step.time || c.processTimings[i],
           extra: `<span class="track">${[0, 1, 2, 3]
             .map((j) => `<i class="${j < i ? "done" : j === i ? "on" : ""}"></i>`)
             .join("")}</span>`,
         })),
       key({
-        span: 7, tone: "navy", legend: "P", eyebrow: c.implementation.kicker,
+        span: 7, tone: "navy", eyebrow: c.implementation.kicker,
         title: c.implementation.title, size: "big", sub: c.implementation.intro,
         meta: c.implementation.flowLabel,
         go: t.processGo, href: sub(code, "automation.html"),
@@ -665,19 +660,18 @@ ${faceRow}
     keys: [
       ...page.integrations.groups.map(([name, items], i) =>
         key({
-          span: 4, tone: i === 1 ? "turquoise" : i === 2 ? "accent" : "white", legend: ["E", "C", "D"][i],
+          span: 4, tone: i === 1 ? "turquoise" : i === 2 ? "accent" : "white",
           eyebrow: name, title: items.join(" · "), size: "sm",
-          mark: false,
         })),
       key({
-        span: 5, tone: "navy", legend: "I", eyebrow: c.integrations.catalogLabel,
+        span: 5, tone: "navy", eyebrow: c.integrations.catalogLabel,
         title: c.integrations.proof, size: "big", mascot: "blue",
         go: t.systemsGo, href: sub(code, "integrations.html"),
       }),
       key({
-        span: 7, tone: "white", legend: "S", eyebrow: page.integrations.kicker,
+        span: 7, tone: "white", eyebrow: page.integrations.kicker,
         title: page.integrations.intro, size: "sm",
-        bullets: page.integrations.points, mascot: "wave", mark: false,
+        bullets: page.integrations.points, mascot: "wave",
       }),
     ],
   });
@@ -689,8 +683,7 @@ ${faceRow}
     keys: [
       ...c.operations.cards.map((card, i) =>
         key({
-          span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "accent",
-          legend: ["S", "O", "G"][i], eyebrow: card.tag,
+          span: 4, tone: i === 0 ? "turquoise" : i === 1 ? "white" : "accent", eyebrow: card.tag,
           title: v.ops[i].title, sub: v.ops[i].text, meta: card.meta,
           go: i === 2 ? t.opsGo : undefined,
           href: i === 2
@@ -706,14 +699,14 @@ ${faceRow}
     kicker: ch(6).kicker, title: ch(6).title, ask: ch(6).ask,
     keys: [
       key({
-        span: 7, tone: "navy", legend: "T", eyebrow: page.team.kicker,
+        span: 7, tone: "navy", eyebrow: page.team.kicker,
         title: page.team.stats.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.team.intro,
         go: t.teamGo, href: sub(code, "team.html"),
-        photo: "/assets/decor/firmy.webp", alt: t.teamPhotoAlt,
+        photo: "/assets/decor/standup.webp", alt: t.teamPhotoAlt,
       }),
       key({
-        span: 5, tone: "turquoise", legend: "L", eyebrow: t.leadersEyebrow,
+        span: 5, tone: "turquoise", eyebrow: t.leadersEyebrow,
         title: page.team.leadershipTitle, size: "sm", sub: page.team.leadershipIntro,
         bullets: page.team.leaders.map((l) => `${l.name} — ${l.role}`),
         go: t.teamGo, href: sub(code, "team.html"), mascot: "red",
@@ -722,12 +715,12 @@ ${faceRow}
         key({
           span: 3, tone: "navy", photo: l.image, alt: l.name,
           eyebrow: l.role, title: l.name, size: "sm", sub: l.text,
-          href: sub(code, "team.html"), mark: false,
+          href: sub(code, "team.html"),
         })),
       key({
-        span: 3, tone: "photo-hire", legend: "H", photo: "/assets/team/studio-1.jpg",
+        span: 3, tone: "photo-hire", photo: "/assets/team/studio-1.jpg",
         pill: t.hiringPill, title: t.hiringTitle, size: "sm", sub: t.hiringSub,
-        go: t.hiringGo, href: sub(code, "team.html"), mark: false,
+        go: t.hiringGo, href: sub(code, "team.html"),
       }),
       /* The stand-up. A panorama, which is what a full-width cap wants — and the
          one picture that shows how a decision gets made here rather than what
@@ -753,10 +746,10 @@ ${faceRow}
       </div>
     </div>
     <div class="keys">
-${key({ span: 4, tone: "white", legend: "R", eyebrow: c.calculator.kicker,
+${key({ span: 4, tone: "white", eyebrow: c.calculator.kicker,
         title: c.calculator.title, size: "sm", sub: c.calculator.intro,
         go: t.roiGo, href: sub(code, "calculator.html") })}
-${key({ span: 4, tone: "turquoise", legend: "F", eyebrow: t.selfEyebrow,
+${key({ span: 4, tone: "turquoise", eyebrow: t.selfEyebrow,
         title: t.selfTitle, size: "sm", sub: t.selfSub, mascot: "blue",
         go: t.selfGo, href: sub(code, "company-2030.html") })}
 ${key({ span: 4, tone: "navy", eyebrow: t.supportEyebrow,
@@ -940,7 +933,7 @@ ${start}
   /* The banner wears one of the real photographs, chosen per visit. It is
      desaturated and washed in the accent, so the color still leads and the
      picture reads as texture rather than as a stock hero. */
-  var SHOTS = ["/assets/decor/firmy.webp", "/assets/decor/guy.webp"];
+  var SHOTS = ["/assets/decor/standup.webp", "/assets/decor/meeting.webp", "/assets/decor/screenwork.webp"];
   var bg = document.querySelector(".hero-bg");
   if (bg) bg.src = SHOTS[Math.floor(Math.random() * SHOTS.length)];
 })();

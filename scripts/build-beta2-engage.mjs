@@ -42,8 +42,7 @@ function renderEngagement(code) {
     keys: [
       ...C.models.map(([title, subText], i) =>
         key({
-          span: 3, tone: ["turquoise", "blue", "violet", "white"][i],
-          legend: String(i + 1), title, size: "sm", sub: subText,
+          span: 3, tone: ["turquoise", "blue", "violet", "white"][i], title, size: "sm", sub: subText,
         })),
       /* The four models are a commercial abstraction; this is what all four
          actually look like on the day. Text sits left, so it takes the
@@ -137,8 +136,7 @@ function render2030(code) {
     keys: C.levels.map(([title, body, tell, step], i) =>
       key({
         span: i === 4 ? 12 : 3,
-        tone: i === 4 ? "turquoise" : ["white", "blue", "violet", "yellow"][i],
-        legend: String(i + 1), title, size: "sm", sub: body,
+        tone: i === 4 ? "turquoise" : ["white", "blue", "violet", "yellow"][i], title, size: "sm", sub: body,
         rule: tell, meta: `${C.stepLabel} — ${step}`,
       })),
   });

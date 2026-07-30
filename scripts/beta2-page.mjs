@@ -94,7 +94,7 @@ export function key({
   return `      <${Tag} class="key key--${tone}${photo ? " key--photo" : ""}${quiet ? " key--quiet" : ""}${wide ? " key--wide" : ""}${wideRight ? " key--wide key--wide-r" : ""}"${href ? ` href="${href}"` : ""} style="grid-column:span ${span}">
         ${photo ? `<img class="key-bg" src="${photo}" alt="${e(alt || "")}" loading="lazy">` : ""}
         ${face ? `<img class="key-mascot" src="${mascotFile(face, tone)}" alt="" loading="lazy">` : ""}
-        ${href ? `<span class="key-arrow">${chevron}</span>` : ""}
+        <img class="key-mark" src="/assets/enter_symbol_color.svg" alt="" width="200" height="200">
         ${legend ? `<span class="key-legend">${e(legend)}</span>` : ""}
         ${eyebrow ? `<span class="key-eyebrow">${e(eyebrow)}</span>` : ""}
         ${stat ? `<span class="key-stat${statClass}">${e(stat)}${statLabel ? `<small>${e(statLabel)}</small>` : ""}</span>` : ""}

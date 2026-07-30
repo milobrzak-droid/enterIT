@@ -50,7 +50,7 @@ function renderRoutine(code, r, i) {
     ask: R.painAsk,
     keys: [
       ...r.pain.map((p, j) =>
-        key({ span: 4, tone: peer(i, j), legend: String(j + 1), title: p, size: "sm" })),
+        key({ span: 4, tone: peer(i, j), title: p, size: "sm" })),
       /* Optional. A photograph of the work as it looks today, placed where the
          reader has just recognised their own back office. */
       r.photo && key({
@@ -74,7 +74,7 @@ function renderRoutine(code, r, i) {
       key({
         span: r.flow.length > 6 && j >= 4 ? 4 : 3,
         tone: j === r.flow.length - 1 ? "navy" : j % 2 ? peer(i, j) : "white",
-        legend: String(j + 1), title, size: "sm", sub,
+        title, size: "sm", sub,
       })),
   });
 
@@ -85,7 +85,7 @@ function renderRoutine(code, r, i) {
     ask: R.neverAsk,
     keys: [
       ...r.never.map((n, j) =>
-        key({ span: 4, tone: j === 1 ? "red" : "white", legend: "✕", title: n, size: "sm" })),
+        key({ span: 4, tone: j === 1 ? "red" : "white", title: n, size: "sm" })),
       key({
         span: 12, tone: "navy",
         eyebrow: R.runsEyebrow,
@@ -104,7 +104,7 @@ function renderRoutine(code, r, i) {
     ask: R.setupAsk,
     keys: [
       ...r.need.map((n, j) =>
-        key({ span: 4, tone: j === 1 ? peer(i, 3) : "white", legend: String(j + 1), title: n, size: "sm" })),
+        key({ span: 4, tone: j === 1 ? peer(i, 3) : "white", title: n, size: "sm" })),
       key({
         span: 12, tone: tone,
         eyebrow: R.expectEyebrow,

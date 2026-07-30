@@ -50,8 +50,7 @@ function render(code) {
     keys: C.scope.layers.map(([title, strap, subText], i) =>
       key({
         span: i < 3 ? 4 : 6,
-        tone: i === 0 ? "turquoise" : i === 3 ? "blue" : "white",
-        legend: String(i + 1), eyebrow: strap, title, size: "sm", sub: subText,
+        tone: i === 0 ? "turquoise" : i === 3 ? "blue" : "white", eyebrow: strap, title, size: "sm", sub: subText,
       })),
   });
 
@@ -60,7 +59,7 @@ function render(code) {
     kicker: C.how.kicker, h2: C.how.h2, ask: C.how.ask,
     keys: C.how.phases.map(([tag, title, subText, time], i) =>
       key({
-        span: 3, tone: i === 3 ? "turquoise" : "white", legend: String(i + 1),
+        span: 3, tone: i === 3 ? "turquoise" : "white",
         eyebrow: `${tag} · ${time}`, title, size: "sm", sub: subText,
       })),
   });
@@ -86,11 +85,11 @@ function render(code) {
     keys: [
       ...C.walk.steps.map(([eyebrow, title, subText], i) =>
         key({
-          span: 4, tone: i === 1 ? "turquoise" : "white", legend: String(i + 1),
+          span: 4, tone: i === 1 ? "turquoise" : "white",
           eyebrow, title, size: "sm", sub: subText,
         })),
       key({
-        span: 8, tone: "navy", legend: "4",
+        span: 8, tone: "navy",
         eyebrow: C.walk.endEyebrow, title: C.walk.endTitle, size: "big",
         sub: C.walk.endSub, meta: C.walk.endMeta,
       }),

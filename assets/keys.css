@@ -800,7 +800,8 @@ a.key:hover .eu-stars{transform:rotate(30deg)}
 .faces{justify-content:space-between}
 .face-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
   margin-top:20px}
-.face-wall img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;
+.face-wall img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;
+  object-position:center 22%;border-radius:12px;
   filter:grayscale(.5);opacity:.9;
   transition:filter .25s,opacity .25s,transform .25s}
 .faces:hover .face-wall img{filter:grayscale(0);opacity:1}

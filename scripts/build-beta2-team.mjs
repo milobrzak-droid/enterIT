@@ -120,7 +120,7 @@ function renderIntegrations(code) {
     id: "routes", no: "01", hue: 0,
     kicker: C.routesKicker, h2: C.routesH2, ask: C.routesAsk,
     keys: C.routes.map(([title, subText], i) =>
-      key({ span: 3, tone: routeTones[i], legend: String(i + 1), title, size: "sm", sub: subText })),
+      key({ span: 3, tone: routeTones[i], title, size: "sm", sub: subText })),
   });
 
   const numbers = section({

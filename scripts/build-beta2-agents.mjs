@@ -31,12 +31,12 @@ function render(code) {
     kicker: C.difference.kicker, h2: C.difference.h2, ask: C.difference.ask,
     keys: [
       key({
-        span: 6, tone: "white", legend: "A",
+        span: 6, tone: "white",
         eyebrow: C.difference.autoEyebrow, title: C.difference.autoTitle, size: "big",
         sub: C.difference.autoSub, rule: C.difference.autoRule,
       }),
       key({
-        span: 6, tone: "turquoise", legend: "B",
+        span: 6, tone: "turquoise",
         eyebrow: C.difference.agentEyebrow, title: C.difference.agentTitle, size: "big",
         sub: C.difference.agentSub, rule: C.difference.agentRule, mascot: "blue",
       }),
@@ -60,11 +60,10 @@ function render(code) {
     keys: [
       ...C.anatomy.parts.map(([title, subText], i) =>
         key({
-          span: 3, tone: ["turquoise", "white", "blue", "white", "violet", "white", "yellow", "white"][i] || "white",
-          legend: String(i + 1), title, size: "sm", sub: subText,
+          span: 3, tone: ["turquoise", "white", "blue", "white", "violet", "white", "yellow", "white"][i] || "white", title, size: "sm", sub: subText,
         })),
       key({
-        span: 12, tone: "navy", legend: "!",
+        span: 12, tone: "navy",
         eyebrow: C.anatomy.neverEyebrow, title: C.anatomy.neverTitle, size: "big",
         list: C.anatomy.never, mascot: "red",
       }),
