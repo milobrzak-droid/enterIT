@@ -555,8 +555,7 @@ function render(code) {
      stays off this one. */
   const clientLogos = [
     ["isotra", "Isotra"], ["gentec", "Gentec"], ["brgroup", "BR Group"],
-    ["rsm", "RSM"], ["proact", "ProAct"], ["autoklastr", "Autoklastr"],
-    ["bigboard", "BigBoard"],
+    ["proact", "ProAct"], ["autoklastr", "Autoklastr"], ["bigboard", "BigBoard"],
   ];
   const logoWall = `      <div class="key key--navy logos" style="grid-column:span 12">
         <span class="key-eyebrow">${e(t.clientsLabel)}</span>
