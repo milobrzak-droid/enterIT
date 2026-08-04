@@ -22,7 +22,7 @@ function schema() {
         url: "https://enterit.cz/",
         logo: "https://enterit.cz/assets/enter_logo_color.svg",
         image: "https://enterit.cz/assets/og.png",
-        email: "milo@enterit.cz",
+        email: "milo@enterai.cz",
         telephone: "+420608969263",
         address: {
           "@type": "PostalAddress",
@@ -326,7 +326,7 @@ function contact() {
       <div><h2>${escapeHtml(usPage.contact.title)}</h2><p>${escapeHtml(usPage.contact.text)}</p></div>
       <div class="us-contact__actions">
         <a class="button" href="${escapeHtml(bookingUrl)}" target="_blank" rel="noopener">${escapeHtml(usPage.contact.primary)} ${arrow}</a>
-        <a class="button button--ghost" href="mailto:milo@enterit.cz">${escapeHtml(usPage.contact.secondary)}</a>
+        <a class="button button--ghost" href="mailto:milo@enterai.cz">${escapeHtml(usPage.contact.secondary)}</a>
       </div>
       <img src="/assets/decor/mascot-red.svg" alt="" width="280" height="280" loading="lazy" decoding="async" aria-hidden="true">
     </div>

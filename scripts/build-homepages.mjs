@@ -54,7 +54,7 @@ function schemaFor(page) {
           height: 200,
         },
         image: "https://enterit.cz/assets/og.png",
-        email: "milo@enterit.cz",
+        email: "milo@enterai.cz",
         telephone: "+420608969263",
         address: {
           "@type": "PostalAddress",
@@ -72,7 +72,7 @@ function schemaFor(page) {
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "sales",
-          email: "milo@enterit.cz",
+          email: "milo@enterai.cz",
           telephone: "+420608969263",
           availableLanguage: localeOrder,
         },
@@ -561,7 +561,7 @@ function contact(page) {
         <p>${escapeHtml(page.contact.text)}</p>
         <div class="contact-actions">
           <a class="button" href="${escapeHtml(bookingUrl)}" target="_blank" rel="noopener">${escapeHtml(page.contact.primary)} ${arrow}</a>
-          <a class="button button--light" href="mailto:milo@enterit.cz">${escapeHtml(page.contact.secondary)}</a>
+          <a class="button button--light" href="mailto:milo@enterai.cz">${escapeHtml(page.contact.secondary)}</a>
         </div>
       </div>
       <div class="contact-brand-art" aria-hidden="true"><img src="/assets/decor/mascot-wave.svg" alt="" width="91" height="96" loading="lazy" decoding="async"></div>

@@ -613,7 +613,7 @@ function contact(page, code) {
       <p class="c-lead">${e(page.contact.text)}</p>
       <div class="contact-actions">
         <a class="btn btn--lg" href="${bookingUrl}" target="_blank" rel="noopener">${e(page.contact.primary)} ${arrow}</a>
-        <a class="btn btn--outline btn--lg" href="mailto:milo@enterit.cz">${e(page.contact.secondary)}</a>
+        <a class="btn btn--outline btn--lg" href="mailto:milo@enterai.cz">${e(page.contact.secondary)}</a>
       </div>
       <img class="mascot mascot--float" src="/assets/decor/mascot-red.svg" alt="" aria-hidden="true" style="top:clamp(28px,4vw,56px);right:clamp(28px,5vw,80px);width:clamp(64px,8vw,116px)">
     </div>
@@ -658,7 +658,7 @@ function footer(page) {
     <div class="foot-grid">
       <div class="foot-col foot-contact">
         <h3>${e(f.contactHeading)}</h3>
-        <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+        <a href="mailto:milo@enterai.cz">milo@enterai.cz</a>
         <a href="tel:+420608969263">+420 608 969 263</a>
         <p class="foot-addr">
           AI Enter s.r.o.<br>

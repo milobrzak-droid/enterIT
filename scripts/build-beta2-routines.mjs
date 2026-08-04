@@ -136,7 +136,7 @@ ${r.faq.map(([q, a]) => `        <div class="qa"><b>${e(q)}</b><p>${e(a)}</p></d
       key({
         span: 4, tone: "turquoise", mascot: "wave",
         title: R.bookTitle, size: "sm",
-        sub: "milo@enterit.cz · +420 608 969 263",
+        sub: "milo@enterai.cz · +420 608 969 263",
         go: R.bookGo, href: bookingUrl,
       }),
       key({

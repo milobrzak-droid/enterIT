@@ -145,7 +145,7 @@ function organization() {
       height: 200
     },
     image: 'https://enterit.cz/assets/og.png',
-    email: 'milo@enterit.cz',
+    email: 'milo@enterai.cz',
     telephone: '+420608969263',
     address: {
       '@type': 'PostalAddress',
@@ -163,7 +163,7 @@ function organization() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'milo@enterit.cz',
+      email: 'milo@enterai.cz',
       telephone: '+420608969263',
       availableLanguage: ['cs', 'en', 'de', 'pl']
     },

@@ -380,7 +380,7 @@ function nextBlock() {
         <img class="key-mascot" src="${mascot.wave}" alt="" loading="lazy">
         <span class="hero-cta hero-cta--stack">
           <a class="btn btn--dark" href="${bookingUrl}" target="_blank" rel="noopener">${e(n.primary)}</a>
-          <a class="btn btn--line" href="mailto:milo@enterit.cz">${e(n.secondary)}</a>
+          <a class="btn btn--line" href="mailto:milo@enterai.cz">${e(n.secondary)}</a>
         </span>
         <p class="key-meta">${n.contact.map(e).join("<br>")}</p>
       </div>

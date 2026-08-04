@@ -69,7 +69,7 @@ export function siteFooter(page) {
       <section class="footer-contact" aria-labelledby="footer-contact-heading">
         <h2 class="footer-heading" id="footer-contact-heading">${escapeHtml(page.footer.contactHeading)}</h2>
         <div class="footer-contact-links">
-          <a href="mailto:milo@enterit.cz">${emailIcon}<span>milo@enterit.cz</span></a>
+          <a href="mailto:milo@enterai.cz">${emailIcon}<span>milo@enterai.cz</span></a>
           <a href="tel:+420608969263">${phoneIcon}<span>+420 608 969 263</span></a>
         </div>
         <address class="footer-address"><strong>AI Enter s.r.o.</strong><span>IČO 19086652 · DIČ CZ19086652</span><span>Zahradní 2004/46d</span><span>792 01 Bruntál, Czechia</span></address>

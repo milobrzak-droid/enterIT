@@ -764,7 +764,7 @@ ${key({ span: 4, tone: "navy", eyebrow: t.supportEyebrow,
         <span class="key-title key-title--big">${e(t.bubbleSay)}</span>
         <span class="bubble-by">
           <img src="/assets/decor/mascot-wave-ink.svg" alt="">
-          <span><b>${e(t.startPress)}</b><span>milo@enterit.cz · +420 608 969 263</span></span>
+          <span><b>${e(t.startPress)}</b><span>milo@enterai.cz · +420 608 969 263</span></span>
         </span>
       </a>
       <div class="rack" style="grid-column:span 4">
@@ -802,7 +802,7 @@ ${LOCALES.map((x) => `<link rel="alternate" hreflang="${x}" href="${SITE}${board
   "@context": "https://schema.org", "@type": "Organization",
   name: "EnterIT", legalName: "AI Enter s.r.o.", url: SITE + "/",
   logo: SITE + "/assets/enter_logo_black.svg",
-  email: "milo@enterit.cz", telephone: "+420608969263",
+  email: "milo@enterai.cz", telephone: "+420608969263",
   address: { "@type": "PostalAddress", streetAddress: "Zahradní 2004/46d",
     addressLocality: "Bruntál", postalCode: "792 01", addressCountry: "CZ" },
 })}<\/script>
@@ -888,7 +888,7 @@ ${start}
     </div>
     <div class="foot-col">
       <span class="foot-h">${e(t.footAsk)}</span>
-      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="mailto:milo@enterai.cz">milo@enterai.cz</a>
       <a href="tel:+420608969263">+420 608 969 263</a>
       <a href="${bookingUrl}" target="_blank" rel="noopener">${e(t.footBook)}</a>
     </div>

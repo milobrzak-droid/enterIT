@@ -446,7 +446,7 @@ export const us = {
     ],
     contact: [
       "Milo Brzák, Founder & CEO",
-      "milo@enterit.cz · +420 608 969 263",
+      "milo@enterai.cz · +420 608 969 263",
       "AI Enter s.r.o. · Zahradní 2004/46d, 792 01 Bruntál, Czechia · Reg. No. 19086652",
     ],
   },

@@ -245,7 +245,7 @@ ${body}
     </div>
     <div class="foot-col">
       <span class="foot-h">${e(ui.footAsk)}</span>
-      <a href="mailto:milo@enterit.cz">milo@enterit.cz</a>
+      <a href="mailto:milo@enterai.cz">milo@enterai.cz</a>
       <a href="tel:+420608969263">+420 608 969 263</a>
       <a href="${bookingUrl}" target="_blank" rel="noopener">${e(ui.footBook)}</a>
     </div>
