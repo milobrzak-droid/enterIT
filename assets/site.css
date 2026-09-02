@@ -1083,7 +1083,7 @@ body.enterit .brand-it.sub{background:none;border:none;color:var(--muted);font-w
 .cfg-card .hrs{font-weight:500}
 
 /* ============================================================
-   ENTERIT — partneři band (Microsoft · TD SYNNEX Destination AI · Techmates)
+   ENTERIT — partneři band (Microsoft · TD SYNNEX Destination AI)
    ============================================================ */
 .eit-pband{display:flex;align-items:center;gap:clamp(26px,5vw,58px);flex-wrap:wrap;justify-content:center}
 .eit-pband .plab{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);width:100%;text-align:center;margin-bottom:4px}

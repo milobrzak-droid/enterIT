@@ -348,26 +348,6 @@
       "source": "/en/:path*",
       "destination": "/:path*",
       "permanent": true
-    },
-    {
-      "source": "/us",
-      "destination": "/verze1/us",
-      "permanent": false
-    },
-    {
-      "source": "/us/",
-      "destination": "/verze1/us/",
-      "permanent": false
-    },
-    {
-      "source": "/index-redesign.html",
-      "destination": "/verze1/index-redesign.html",
-      "permanent": false
-    },
-    {
-      "source": "/_redesign-demo.html",
-      "destination": "/verze1/_redesign-demo.html",
-      "permanent": false
     }
   ],
   "headers": [

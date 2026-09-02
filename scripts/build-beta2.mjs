@@ -542,11 +542,10 @@ function render(code) {
   const faces = [
     ["milo", "Milo Brzák"], ["klesnarova", "Michaela Klesnárová"],
     ["hanigovsky", "Ondřej Hanigovský"], ["nedvidek", "Honza Nedvídek"],
-    ["gaspar-nagy", "Gašpar Nagy"], ["adam-nagy", "Adam Nagy"],
     ["studio-1", "Jiří Čechal"], ["studio-2", "Vítek Sasin"],
   ];
   const FACE_DIMS = { milo: 440, klesnarova: 440, hanigovsky: 600, nedvidek: 600,
-    "gaspar-nagy": 600, "adam-nagy": 600, "studio-1": 600, "studio-2": 600 };
+    "studio-1": 600, "studio-2": 600 };
   const faceRow = faces
     .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" width="${FACE_DIMS[f]}" height="${FACE_DIMS[f]}" loading="lazy">`)
     .join("\n");

@@ -301,7 +301,7 @@ export const us = {
       {
         name: "Enter Tech", size: "45 people",
         body: "Large systems, architecture, custom development, integrations, legacy modernization, DevOps and infrastructure. The team behind our longest-running engagements.",
-        people: ["Adam Nagy — CIO, Enter Tech", "Gašpar Nagy — Founder, Enter Tech"],
+        people: [],
       },
       {
         name: "Enter Agents", size: "25 people",

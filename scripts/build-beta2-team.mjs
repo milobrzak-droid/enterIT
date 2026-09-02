@@ -28,7 +28,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /* Names and photographs do not translate; roles do. */
 const PEOPLE = [
-  [["Gašpar Nagy", "/assets/team/gaspar-nagy.jpg"], ["Adam Nagy", "/assets/team/adam-nagy.jpg"]],
+  [],
   [["Honza Nedvídek", "/assets/team/nedvidek.jpg"], ["Ondřej Hanigovský", "/assets/team/hanigovsky.jpg"]],
   [["Jiří Čechal", "/assets/team/studio-1.jpg"], ["Vítek Sasin", "/assets/team/studio-2.jpg"]],
 ];
