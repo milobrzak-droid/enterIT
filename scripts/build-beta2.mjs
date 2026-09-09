@@ -538,16 +538,6 @@ function render(code) {
     ],
   });
 
-  /* The people whose portraits the live team page already carries. */
-  const faces = [
-    ["milo", "Milo Brzák"], ["klesnarova", "Michaela Klesnárová"],
-    ["studio-1", "Jiří Čechal"], ["studio-2", "Vítek Sasin"],
-  ];
-  const FACE_DIMS = { milo: 440, klesnarova: 440, "studio-1": 600, "studio-2": 600 };
-  const faceRow = faces
-    .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" width="${FACE_DIMS[f]}" height="${FACE_DIMS[f]}" loading="lazy">`)
-    .join("\n");
-
   /* Clients already shown publicly on enterai.cz. Anyone not on that page
      stays off this one. */
   const clientLogos = [
@@ -601,22 +591,12 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
          under a heavy scrim, there to prove the place is alive rather than to
          be looked at. */
       key({
-        span: 7, tone: "navy", eyebrow: t.proofLabel,
+        span: 12, tone: "navy", eyebrow: t.proofLabel,
         title: page.proof.map(([v, l]) => `${v} ${l}`).join(" · "),
         size: "big", sub: page.results.note,
         go: t.teamGo, href: sub(code, "team.html"),
         photo: "/assets/decor/standup.webp", alt: t.teamPhotoAlt, quiet: true,
       }),
-      /* Next to the room, the faces in it. An empty placeholder beside a
-         photograph of a workshop was the one spot on the board that looked
-         unfinished rather than reserved. */
-      `      <a class="key key--white faces" href="${sub(code, "team.html")}" style="grid-column:span 5">
-        <span class="key-eyebrow">${e(t.facesLabel)}</span>
-        <div class="face-wall">
-${faceRow}
-        </div>
-        <span class="key-go">${e(t.teamGo)}</span>
-      </a>`,
       logoWall,
     ],
   });
@@ -704,17 +684,10 @@ ${faceRow}
       key({
         span: 5, tone: "turquoise", eyebrow: t.leadersEyebrow,
         title: page.team.leadershipTitle, size: "sm", sub: page.team.leadershipIntro,
-        bullets: page.team.leaders.map((l) => `${l.name} — ${l.role}`),
         go: t.teamGo, href: sub(code, "team.html"), mascot: "red",
       }),
-      ...page.team.leaders.map((l, i) =>
-        key({
-          span: 3, tone: "navy", photo: l.image, alt: l.name,
-          eyebrow: l.role, title: l.name, size: "sm", sub: l.text,
-          href: sub(code, "team.html"),
-        })),
       key({
-        span: 3, tone: "photo-hire", photo: "/assets/team/studio-1.jpg",
+        span: 12, tone: "photo-hire", photo: "/assets/decor/keyboard.webp",
         pill: t.hiringPill, title: t.hiringTitle, size: "sm", sub: t.hiringSub,
         go: t.hiringGo, href: sub(code, "team.html"),
       }),

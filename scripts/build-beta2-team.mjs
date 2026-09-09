@@ -26,20 +26,9 @@ import { restorationContent } from "./homepage-restoration-content.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
-/* Names and photographs do not translate; roles do. */
-const PEOPLE = [
-  [],
-  [],
-  [["Jiří Čechal", "/assets/team/studio-1.jpg"], ["Vítek Sasin", "/assets/team/studio-2.jpg"]],
-];
 const TEAM_NAMES = ["Enter Tech", "Enter Agents", "Enter Studio"];
 const TEAM_TONES = ["navy", "turquoise", "violet"];
 
-const faceCap = (name, role, img, span = 2) => `      <div class="key key--navy key--photo key--face" style="grid-column:span ${span}">
-        <img class="key-bg" src="${img}" alt="${e(name)}" width="440" height="440" loading="lazy">
-        <span class="key-title key-title--sm">${e(name)}</span>
-        <p class="key-meta">${e(role)}</p>
-      </div>`;
 
 function renderTeam(code) {
   const C = pagesCopy[code].team;
@@ -53,13 +42,7 @@ function renderTeam(code) {
         key({
           span: 4, tone: TEAM_TONES[i], eyebrow: t.size, title: TEAM_NAMES[i],
           size: "big", sub: t.body, list: t.does,
-          rule: PEOPLE[i].map(([n]) => n).join(" · "),
         })),
-      /* The faces behind those names. Photo caps, so the row reads as people
-         rather than as a directory. */
-      ...C.teams.flatMap((t, i) =>
-        PEOPLE[i].map(([name, img], j) =>
-          faceCap(name, t.roles[j], img, 12 / PEOPLE.flat().length))),
     ],
   });
 
@@ -67,9 +50,7 @@ function renderTeam(code) {
     id: "titles", no: "02", hue: 1,
     kicker: C.titlesKicker, h2: C.titlesH2,
     keys: [
-      key({ span: 8, tone: "navy", body: C.titlesBody, mascot: "wave" }),
-      faceCap("Milo Brzák", C.miloRole, "/assets/team/milo.jpg"),
-      faceCap("Michaela Klesnárová", C.michaelaRole, "/assets/team/klesnarova.jpg"),
+      key({ span: 12, tone: "navy", body: C.titlesBody, mascot: "wave" }),
     ],
   });
 

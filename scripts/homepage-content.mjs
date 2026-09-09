@@ -130,20 +130,7 @@ export const locales = {
       photoAlt: "Členové týmu EnterIT při společném pracovním workshopu",
       leadershipTitle: "Lidé, kteří drží strategii, dodávku a architekturu.",
       leadershipIntro: "Každá oblast má konkrétního vlastníka. Klient ví, kdo rozhoduje a kdo ručí za výsledek.",
-      leaders: [
-        {
-          name: "Milo Brzák",
-          role: "CEO",
-          image: "/assets/team/milo.jpg",
-          text: "120+ firem a 800+ vyškolených lidí. Odpovídá za strategii, produkt a metodiku.",
-        },
-        {
-          name: "Michaela Klesnárová",
-          role: "Analytics",
-          image: "/assets/team/klesnarova.jpg",
-          text: "Téměř 20 let na C-level pozicích. Řídí klientskou dodávku a produkční provoz.",
-        },
-      ],
+      leaders: [],
       link: "Poznat celý tým",
     },
     contact: {
@@ -301,20 +288,7 @@ export const locales = {
       photoAlt: "Members of the EnterIT team during a working session",
       leadershipTitle: "The people accountable for strategy, delivery and architecture.",
       leadershipIntro: "Every critical area has a named owner. Partners know who makes decisions and who is responsible for the outcome.",
-      leaders: [
-        {
-          name: "Milo Brzák",
-          role: "CEO",
-          image: "/assets/team/milo.jpg",
-          text: "120+ companies and 800+ people trained. Responsible for strategy, product and methodology.",
-        },
-        {
-          name: "Michaela Klesnárová",
-          role: "Analytics",
-          image: "/assets/team/klesnarova.jpg",
-          text: "Nearly 20 years in C-level roles. Leads client delivery and production operations.",
-        },
-      ],
+      leaders: [],
       link: "Meet the full team",
     },
     contact: {
@@ -472,20 +446,7 @@ export const locales = {
       photoAlt: "Mitglieder des EnterIT-Teams während einer gemeinsamen Arbeitssitzung",
       leadershipTitle: "Die Verantwortlichen für Strategie, Delivery und Architektur.",
       leadershipIntro: "Jeder kritische Bereich hat einen klaren Eigentümer. Partner wissen, wer entscheidet und wer für das Ergebnis verantwortlich ist.",
-      leaders: [
-        {
-          name: "Milo Brzák",
-          role: "CEO",
-          image: "/assets/team/milo.jpg",
-          text: "120+ Unternehmen und 800+ geschulte Personen. Verantwortlich für Strategie, Produkt und Methodik.",
-        },
-        {
-          name: "Michaela Klesnárová",
-          role: "Analytics",
-          image: "/assets/team/klesnarova.jpg",
-          text: "Fast 20 Jahre in C-Level-Rollen. Leitet Kundenauslieferung und Produktionsbetrieb.",
-        },
-      ],
+      leaders: [],
       link: "Das ganze Team kennenlernen",
     },
     contact: {
@@ -643,20 +604,7 @@ export const locales = {
       photoAlt: "Członkowie zespołu EnterIT podczas wspólnej sesji roboczej",
       leadershipTitle: "Osoby odpowiedzialne za strategię, delivery i architekturę.",
       leadershipIntro: "Każdy krytyczny obszar ma konkretnego właściciela. Partner wie, kto decyduje i kto odpowiada za rezultat.",
-      leaders: [
-        {
-          name: "Milo Brzák",
-          role: "CEO",
-          image: "/assets/team/milo.jpg",
-          text: "120+ firm i 800+ przeszkolonych osób. Odpowiada za strategię, produkt i metodykę.",
-        },
-        {
-          name: "Michaela Klesnárová",
-          role: "Analytics",
-          image: "/assets/team/klesnarova.jpg",
-          text: "Prawie 20 lat na stanowiskach C-level. Prowadzi delivery dla klientów i utrzymanie produkcyjne.",
-        },
-      ],
+      leaders: [],
       link: "Poznaj cały zespół",
     },
     contact: {

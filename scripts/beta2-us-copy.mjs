@@ -315,10 +315,7 @@ export const us = {
       },
     ],
     groupLabel: "Across all three teams",
-    group: [
-      { name: "Milo Brzák", role: "CEO", image: "/assets/team/milo.jpg", body: "Has trained more than 800 people across over a hundred companies. Owns strategy, product and methodology." },
-      { name: "Michaela Klesnárová", role: "Analytics", image: "/assets/team/klesnarova.jpg", body: "Nearly two decades in enterprise C-level roles. Owns client delivery and production operations across all three teams.", need: need("confirm the two-decades figure") },
-    ],
+    group: [],
     titlesNote: "Titles above are team-level. Enter Agents and Enter Tech each have their own CEO and founder; Enter Group has one.",
   },
 
@@ -445,7 +442,6 @@ export const us = {
       { title: "Company 2030 self-check", body: "Five maturity levels and the specific next move for each. Ten questions, no email required.", go: "Find your level →", href: "/beta2/company-2030.html" },
     ],
     contact: [
-      "Milo Brzák, Founder & CEO",
       "milo@enterai.cz · +420 608 969 263",
       "AI Enter s.r.o. · Zahradní 2004/46d, 792 01 Bruntál, Czechia · Reg. No. 19086652",
     ],

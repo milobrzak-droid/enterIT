@@ -179,20 +179,7 @@ export const usPage = {
       "A 75-person European team across enterprise software, AI engineering and product delivery. English-speaking leads stay accountable from kickoff to production.",
     photoAlt: "Members of the EnterIT team collaborating during a working session",
     leadersTitle: "Partner-facing leadership",
-    leaders: [
-      {
-        name: "Milo Brzák",
-        role: "Founder & CEO",
-        image: "/assets/team/milo.jpg",
-        text: "Has advised 120+ companies and trained 800+ people. Owns strategy, product direction and partner alignment.",
-      },
-      {
-        name: "Michaela Klesnárová",
-        role: "Operations & Delivery",
-        image: "/assets/team/klesnarova.jpg",
-        text: "Nearly 20 years in C-level roles. Leads client delivery, operations and production ownership.",
-      },
-    ],
+    leaders: [],
   },
   contact: {
     title: "Bring the opportunity. We will map the delivery team.",
