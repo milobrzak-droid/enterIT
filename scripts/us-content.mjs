@@ -192,12 +192,6 @@ export const usPage = {
         image: "/assets/team/klesnarova.jpg",
         text: "Nearly 20 years in C-level roles. Leads client delivery, operations and production ownership.",
       },
-      {
-        name: "Ondřej Hanigovský",
-        role: "CTO, Enter Agents",
-        image: "/assets/team/hanigovsky.jpg",
-        text: "AI architecture, engineering quality and production deployment.",
-      },
     ],
   },
   contact: {

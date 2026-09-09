@@ -541,11 +541,9 @@ function render(code) {
   /* The people whose portraits the live team page already carries. */
   const faces = [
     ["milo", "Milo Brzák"], ["klesnarova", "Michaela Klesnárová"],
-    ["hanigovsky", "Ondřej Hanigovský"], ["nedvidek", "Honza Nedvídek"],
     ["studio-1", "Jiří Čechal"], ["studio-2", "Vítek Sasin"],
   ];
-  const FACE_DIMS = { milo: 440, klesnarova: 440, hanigovsky: 600, nedvidek: 600,
-    "studio-1": 600, "studio-2": 600 };
+  const FACE_DIMS = { milo: 440, klesnarova: 440, "studio-1": 600, "studio-2": 600 };
   const faceRow = faces
     .map(([f, n]) => `          <img src="/assets/team/${f}.jpg" alt="${e(n)}" title="${e(n)}" width="${FACE_DIMS[f]}" height="${FACE_DIMS[f]}" loading="lazy">`)
     .join("\n");

@@ -29,7 +29,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 /* Names and photographs do not translate; roles do. */
 const PEOPLE = [
   [],
-  [["Honza Nedvídek", "/assets/team/nedvidek.jpg"], ["Ondřej Hanigovský", "/assets/team/hanigovsky.jpg"]],
+  [],
   [["Jiří Čechal", "/assets/team/studio-1.jpg"], ["Vítek Sasin", "/assets/team/studio-2.jpg"]],
 ];
 const TEAM_NAMES = ["Enter Tech", "Enter Agents", "Enter Studio"];
@@ -58,7 +58,8 @@ function renderTeam(code) {
       /* The faces behind those names. Photo caps, so the row reads as people
          rather than as a directory. */
       ...C.teams.flatMap((t, i) =>
-        PEOPLE[i].map(([name, img], j) => faceCap(name, t.roles[j], img))),
+        PEOPLE[i].map(([name, img], j) =>
+          faceCap(name, t.roles[j], img, 12 / PEOPLE.flat().length))),
     ],
   });
 

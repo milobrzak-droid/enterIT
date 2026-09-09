@@ -306,7 +306,7 @@ export const us = {
       {
         name: "Enter Agents", size: "25 people",
         body: "AI agents and custom LLM systems deployed into live operations, with forward-deployed engineers who sit with your process owners rather than working from a specification document.",
-        people: ["Honza Nedvídek — CEO, Enter Agents", "Ondřej Hanigovský — CTO, Enter Agents"],
+        people: [],
       },
       {
         name: "Enter Studio", size: "5 people",
