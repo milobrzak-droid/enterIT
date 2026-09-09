@@ -68,7 +68,6 @@ const chrome = {
   en: {
     hello: "Hello.",
     heroWhat: "AI agents, automations and integrations — built into the systems you already run, then operated by us. 120+ projects live, from invoice extraction to agentic layers over Business Central.",
-    heroNote: "Czech engineering team · 75 people · delivering across Europe",
     chapters: ["What we build", "Where it starts", "What came out", "How it runs", "What it plugs into", "Who carries it after", "Who is behind it", "Your move"],
     asks: [
       "You have a process that costs more than it should. Three disciplines cover it, and one team answers for all three.",
@@ -120,7 +119,6 @@ const chrome = {
   cs: {
     hello: "Dobrý den.",
     heroWhat: "AI agenti, automatizace a integrace — postavené do systémů, které už používáte, a pak námi provozované. 120+ projektů v ostrém provozu, od vytěžování faktur po agentní vrstvy nad Business Central.",
-    heroNote: "Český engineering tým · 75 lidí · dodáváme po celé Evropě",
     chapters: ["Co stavíme", "Kde to začíná", "Co z toho vyšlo", "Jak to běží", "Do čeho to zapadne", "Kdo to ponese dál", "Kdo za tím stojí", "Váš krok"],
     asks: [
       "Máte proces, který stojí víc, než by měl. Pokrývají ho tři disciplíny a za všechny tři ručí jeden tým.",
@@ -172,7 +170,6 @@ const chrome = {
   de: {
     hello: "Guten Tag.",
     heroWhat: "KI-Agenten, Automatisierungen und Integrationen — eingebaut in Ihre bestehenden Systeme und von uns betrieben. 120+ Projekte im Echtbetrieb, von der Rechnungsextraktion bis zu agentischen Schichten über Business Central.",
-    heroNote: "Tschechisches Engineering-Team · 75 Personen · Lieferung in ganz Europa",
     chapters: ["Was wir bauen", "Wo es anfängt", "Was dabei herauskam", "Wie es läuft", "Wo es sich einfügt", "Wer es danach trägt", "Wer dahintersteht", "Ihr Zug"],
     asks: [
       "Sie haben einen Prozess, der mehr kostet als nötig. Drei Disziplinen decken ihn ab, und ein Team haftet für alle drei.",
@@ -224,7 +221,6 @@ const chrome = {
   pl: {
     hello: "Dzień dobry.",
     heroWhat: "Agenci AI, automatyzacje i integracje — wbudowane w systemy, których już używacie, i utrzymywane przez nas. 120+ projektów na produkcji, od ekstrakcji faktur po warstwy agentowe nad Business Central.",
-    heroNote: "Czeski zespół inżynierski · 75 osób · dostarczamy w całej Europie",
     chapters: ["Co budujemy", "Gdzie się zaczyna", "Co z tego wyszło", "Jak to działa", "W co się wpina", "Kto to poniesie dalej", "Kto za tym stoi", "Twój ruch"],
     asks: [
       "Macie proces, który kosztuje więcej, niż powinien. Pokrywają go trzy dyscypliny, a odpowiada za nie jeden zespół.",
@@ -676,7 +672,7 @@ ${clientLogos.map(([f, n]) => { const d = LOGO_DIMS[f]; return `          <img s
     keys: [
       key({
         span: 7, tone: "navy", eyebrow: page.team.kicker,
-        title: page.team.stats.map(([v, l]) => `${v} ${l}`).join(" · "),
+        title: page.team.title,
         size: "big", sub: page.team.intro,
         go: t.teamGo, href: sub(code, "team.html"),
         photo: "/assets/decor/standup.webp", alt: t.teamPhotoAlt,

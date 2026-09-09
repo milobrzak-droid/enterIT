@@ -232,7 +232,7 @@ ${cards}
   });
 }
 
-/** 07 — 75 people as an argument rather than a statistic. */
+/** 07 — the shape of the team as an argument rather than a statistic. */
 function teamBlock() {
   const t = us.team;
   const tones = ["navy", "turquoise", "white"];

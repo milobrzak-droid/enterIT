@@ -13,7 +13,7 @@ export const locales = {
     prefix: "",
     title: "Enterprise software a AI od návrhu po provoz | EnterIT",
     description:
-      "75členný tým navrhuje, staví a provozuje enterprise software, AI řešení, cloud a integrace. Jeden engineering partner od architektury po ostrý provoz.",
+      "Navrhujeme, stavíme a provozujeme enterprise software, AI řešení, cloud a integrace. Jeden engineering partner od architektury po ostrý provoz.",
     skip: "Přejít na obsah",
     mainNavLabel: "Hlavní navigace",
     mobileNavLabel: "Mobilní navigace",
@@ -38,7 +38,6 @@ export const locales = {
       secondary: "Prohlédnout výsledky",
     },
     proof: [
-      ["75", "specialistů pod jednou střechou"],
       ["120+", "dokončených projektů"],
       ["60+", "napojených systémů"],
     ],
@@ -123,10 +122,9 @@ export const locales = {
     },
     team: {
       kicker: "Jeden partner od návrhu po provoz",
-      title: "75 specialistů. Tři týmy. Jedna odpovědnost.",
+      title: "Tři odbornosti. Jeden tým. Jedna odpovědnost.",
       intro:
         "Architektura, software engineering, AI, infrastruktura a dlouhodobý provoz jsou pod jednou střechou.",
-      stats: [["45", "enterprise"], ["25", "AI a agenti"], ["5", "produktové studio"]],
       photoAlt: "Členové týmu EnterIT při společném pracovním workshopu",
       leadershipTitle: "Lidé, kteří drží strategii, dodávku a architekturu.",
       leadershipIntro: "Každá oblast má konkrétního vlastníka. Klient ví, kdo rozhoduje a kdo ručí za výsledek.",
@@ -171,7 +169,7 @@ export const locales = {
     prefix: "en/",
     title: "Enterprise Software & AI from Design to Operations | EnterIT",
     description:
-      "A 75-person team designs, builds and operates enterprise software, AI, cloud and integrations. One accountable partner from architecture to production.",
+      "We design, build and operate enterprise software, AI, cloud and integrations. One accountable partner from architecture to production.",
     skip: "Skip to content",
     mainNavLabel: "Main navigation",
     mobileNavLabel: "Mobile navigation",
@@ -196,7 +194,6 @@ export const locales = {
       secondary: "See the results",
     },
     proof: [
-      ["75", "specialists under one roof"],
       ["120+", "projects delivered"],
       ["60+", "systems integrated"],
     ],
@@ -281,10 +278,9 @@ export const locales = {
     },
     team: {
       kicker: "One partner from design to operations",
-      title: "75 specialists. Three teams. One responsibility.",
+      title: "Three practices. One team. One responsibility.",
       intro:
         "Architecture, software engineering, AI, infrastructure and long-term operations all sit under one roof.",
-      stats: [["45", "enterprise"], ["25", "AI and agents"], ["5", "product studio"]],
       photoAlt: "Members of the EnterIT team during a working session",
       leadershipTitle: "The people accountable for strategy, delivery and architecture.",
       leadershipIntro: "Every critical area has a named owner. Partners know who makes decisions and who is responsible for the outcome.",
@@ -329,7 +325,7 @@ export const locales = {
     prefix: "de/",
     title: "Enterprise-Software und KI für den Produktivbetrieb | EnterIT",
     description:
-      "Ein 75-köpfiges Team konzipiert, baut und betreibt Enterprise-Software, KI, Cloud und Integrationen. Ein Partner von der Architektur bis zum Betrieb.",
+      "Wir konzipieren, bauen und betreiben Enterprise-Software, KI, Cloud und Integrationen. Ein Partner von der Architektur bis zum Betrieb.",
     skip: "Zum Inhalt springen",
     mainNavLabel: "Hauptnavigation",
     mobileNavLabel: "Mobile Navigation",
@@ -354,7 +350,6 @@ export const locales = {
       secondary: "Ergebnisse ansehen",
     },
     proof: [
-      ["75", "Spezialisten unter einem Dach"],
       ["120+", "abgeschlossene Projekte"],
       ["60+", "integrierte Systeme"],
     ],
@@ -439,10 +434,9 @@ export const locales = {
     },
     team: {
       kicker: "Ein Partner von der Konzeption bis zum Betrieb",
-      title: "75 Spezialisten. Drei Teams. Eine Verantwortung.",
+      title: "Drei Disziplinen. Ein Team. Eine Verantwortung.",
       intro:
         "Architektur, Software-Engineering, KI, Infrastruktur und langfristiger Betrieb kommen aus einer Hand.",
-      stats: [["45", "Enterprise"], ["25", "KI und Agenten"], ["5", "Product Studio"]],
       photoAlt: "Mitglieder des EnterIT-Teams während einer gemeinsamen Arbeitssitzung",
       leadershipTitle: "Die Verantwortlichen für Strategie, Delivery und Architektur.",
       leadershipIntro: "Jeder kritische Bereich hat einen klaren Eigentümer. Partner wissen, wer entscheidet und wer für das Ergebnis verantwortlich ist.",
@@ -487,7 +481,7 @@ export const locales = {
     prefix: "pl/",
     title: "Oprogramowanie enterprise i AI od projektu po produkcję | EnterIT",
     description:
-      "75-osobowy zespół projektuje, buduje i utrzymuje oprogramowanie enterprise, AI, chmurę i integracje. Jeden partner od architektury po produkcję.",
+      "Projektujemy, budujemy i utrzymujemy oprogramowanie enterprise, AI, chmurę i integracje. Jeden partner od architektury po produkcję.",
     skip: "Przejdź do treści",
     mainNavLabel: "Główna nawigacja",
     mobileNavLabel: "Nawigacja mobilna",
@@ -512,7 +506,6 @@ export const locales = {
       secondary: "Zobacz wyniki",
     },
     proof: [
-      ["75", "specjalistów pod jednym dachem"],
       ["120+", "zrealizowanych projektów"],
       ["60+", "zintegrowanych systemów"],
     ],
@@ -597,10 +590,9 @@ export const locales = {
     },
     team: {
       kicker: "Jeden partner od projektu po utrzymanie",
-      title: "75 specjalistów. Trzy zespoły. Jedna odpowiedzialność.",
+      title: "Trzy specjalizacje. Jeden zespół. Jedna odpowiedzialność.",
       intro:
         "Architektura, software engineering, AI, infrastruktura i długoterminowe utrzymanie są w jednym miejscu.",
-      stats: [["45", "enterprise"], ["25", "AI i agenci"], ["5", "studio produktowe"]],
       photoAlt: "Członkowie zespołu EnterIT podczas wspólnej sesji roboczej",
       leadershipTitle: "Osoby odpowiedzialne za strategię, delivery i architekturę.",
       leadershipIntro: "Każdy krytyczny obszar ma konkretnego właściciela. Partner wie, kto decyduje i kto odpowiada za rezultat.",

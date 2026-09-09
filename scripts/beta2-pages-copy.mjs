@@ -24,7 +24,7 @@ export const pagesCopy = {
   en: {
     team: {
       eyebrow: "Who does the work",
-      h1: "75 specialists. Three practices. One team.",
+      h1: "Three practices. One team.",
       lead: "Three permanent teams that have worked together long enough to hand work across the boundary without dropping it. This page is who they are, who runs them, and why the titles look the way they do.",
       meta: "Enter Tech · Enter Agents · Enter Studio",
       cta: "Meet the people who would run your engagement",
@@ -52,7 +52,7 @@ export const pagesCopy = {
         },
       ],
       titlesKicker: "One team, one contract",
-      titlesH2: "75 specialists. Three practices. One team.",
+      titlesH2: "Three practices. One team.",
       titlesBody: [
         "Software engineering, AI and the product interface work inside one delivery process. Whichever of the three does the work, the engagement has one contract, one delivery lead and one escalation path.",
         "The contracting party is AI Enter s.r.o., trading as EnterIT. That is the name on the proposal, on the contract and on the invoice.",
@@ -60,10 +60,9 @@ export const pagesCopy = {
       miloRole: "CEO. Strategy, product and methodology. 800+ people trained across more than a hundred companies.",
       michaelaRole: "Analytics. Owns client delivery and production operations across all three teams.",
       shapeKicker: "What that adds up to",
-      shapeH2: "75 specialists, and the reason the number matters.",
+      shapeH2: "Permanent practices, not a network assembled per project.",
       stats: [
-        ["75", "engineers, permanent", "Not a network of freelancers assembled per project."],
-        ["45 / 25 / 5", "tech / agents / studio", null],
+        ["3", "permanent practices", "Software engineering, AI and agents, product — staffed permanently, not assembled per project."],
         ["120+", "projects delivered", null],
         ["60+", "systems integrated", null],
       ],
@@ -79,7 +78,7 @@ export const pagesCopy = {
       hiringSub: "You ship to production and then you keep it running — which is a different job, and the one worth having.",
       hiringGo: "Open roles →",
       seoTitle: "The team | EnterIT",
-      seoDesc: "75 specialists in three permanent teams — Enter Tech, Enter Agents and Enter Studio — with a named owner for every area and one contract across all three.",
+      seoDesc: "Three permanent practices — software engineering, AI and agents, product — with a named owner for every area and one contract across all three.",
     },
     integrations: {
       eyebrow: "Integrations",

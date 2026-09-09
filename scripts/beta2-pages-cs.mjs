@@ -8,7 +8,7 @@
 export const cs = {
   team: {
     eyebrow: "Kdo tu práci dělá",
-    h1: "75 specialistů. Tři odbornosti. Jeden tým.",
+    h1: "Tři odbornosti. Jeden tým.",
     lead: "Tři stálé týmy, které spolu pracují dost dlouho na to, aby si práci předaly přes hranici a neupustily ji. Tahle stránka je o tom, kdo jsou, kdo je vede a proč ty tituly vypadají, jak vypadají.",
     meta: "Enter Tech · Enter Agents · Enter Studio",
     cta: "Poznat lidi, kteří by vaši zakázku vedli",
@@ -36,7 +36,7 @@ export const cs = {
       },
     ],
     titlesKicker: "Jeden tým, jedna smlouva",
-    titlesH2: "75 specialistů. Tři odborné praxe. Jeden tým.",
+    titlesH2: "Tři odborné praxe. Jeden tým.",
     titlesBody: [
       "Software engineering, AI a produktové rozhraní pracují v jednom dodacím procesu. Ať práci odvede kterákoli ze tří praxí, zakázka má jednu smlouvu, jedno vedení dodávky a jednu eskalační cestu.",
       "Smluvní stranou je AI Enter s.r.o., vystupující jako EnterIT. To je jméno na nabídce, na smlouvě i na faktuře.",
@@ -44,10 +44,9 @@ export const cs = {
     miloRole: "CEO. Strategie, produkt a metodika. Přes 800 vyškolených lidí ve více než stovce firem.",
     michaelaRole: "Analytics. Ručí za klientskou dodávku a produkční provoz napříč všemi třemi týmy.",
     shapeKicker: "Co to dohromady dává",
-    shapeH2: "75 specialistů a důvod, proč na tom čísle záleží.",
+    shapeH2: "Stálé odbornosti, ne síť poskládaná ke každému projektu.",
     stats: [
-      ["75", "lidí, stálých", "Ne síť externistů poskládaná ke každému projektu."],
-      ["45 / 25 / 5", "tech / agents / studio", null],
+      ["3", "stálé odbornosti", "Software engineering, AI a agenti, produkt — obsazené natrvalo, ne skládané ke každému projektu."],
       ["120+", "dodaných projektů", null],
       ["60+", "napojených systémů", null],
     ],
@@ -63,7 +62,7 @@ export const cs = {
     hiringSub: "Dodáte to do provozu a pak to provozujete — a to je jiná práce, ta, která za to stojí.",
     hiringGo: "Volné pozice →",
     seoTitle: "Tým | EnterIT",
-    seoDesc: "75 specialistů ve třech stálých týmech — Enter Tech, Enter Agents a Enter Studio — s jmenovitým vlastníkem každé oblasti a jednou smlouvou přes všechny tři.",
+    seoDesc: "Tři stálé odbornosti — software engineering, AI a agenti, produkt — s jmenovitým vlastníkem každé oblasti a jednou smlouvou přes všechny tři.",
   },
   integrations: {
     eyebrow: "Integrace",

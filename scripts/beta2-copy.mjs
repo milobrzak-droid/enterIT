@@ -28,8 +28,8 @@ export const voice = {
       h1: "Stavíme podnikové AI a software, které obstojí v provozu.",
       ctaPrimary: "Probrat projekt",
       ctaSecondary: "Hledám dodací tým",
-      lead: "75 specialistů na vývoj, AI, data, integrace a cloud. Navrhujeme, stavíme a dlouhodobě provozujeme komplexní systémy pro velké firmy a technologické partnery po celém světě.",
-      note: "120+ dokončených projektů · 60+ integrovaných systémů · 75 specialistů",
+      lead: "Jeden tým na vývoj, AI, data, integrace a cloud. Navrhujeme, stavíme a dlouhodobě provozujeme komplexní systémy pro velké firmy a technologické partnery po celém světě.",
+      note: "120+ dokončených projektů · 60+ integrovaných systémů · tři odbornosti, jedna smlouva",
     },
     chapters: [
       {
@@ -64,7 +64,7 @@ export const voice = {
       },
       {
         kicker: "Kdo jsme",
-        title: "75 specialistů. Jeden tým, jedna odpovědnost.",
+        title: "Tři odbornosti. Jeden tým, jedna odpovědnost.",
         ask: "Není to síť externistů. Jedna firma, jedna smlouva a jmenovité vedení zakázky, které za výsledek odpovídá.",
       },
       {
@@ -94,7 +94,7 @@ export const voice = {
     ],
     labels: {
       stepLabel: "Fáze",
-      proofLabel: "Firma ve třech číslech",
+      proofLabel: "Firma v číslech",
       leadersEyebrow: "Vedení",
       buildGo: "Tři disciplíny, jeden tým →",
       solutionsGo: "Všech osm rutin →",
@@ -146,8 +146,8 @@ export const voice = {
       h1: "Enterprise AI and software engineering, built for production.",
       ctaPrimary: "Discuss a project",
       ctaSecondary: "Extend my delivery team",
-      lead: "A 75-person team across software, AI, data, integrations and cloud. We design, build and operate complex systems for enterprises and technology partners worldwide.",
-      note: "120+ projects delivered · 60+ systems integrated · 75 specialists",
+      lead: "One team across software, AI, data, integrations and cloud. We design, build and operate complex systems for enterprises and technology partners worldwide.",
+      note: "120+ projects delivered · 60+ systems integrated · three practices, one contract",
     },
     chapters: [
       {
@@ -182,7 +182,7 @@ export const voice = {
       },
       {
         kicker: "Who we are",
-        title: "75 specialists. One team, one accountable partner.",
+        title: "Three practices. One team, one accountable partner.",
         ask: "This is not a network of freelancers. One company, one contract, and named engagement leadership accountable for the outcome.",
       },
       {
@@ -212,7 +212,7 @@ export const voice = {
     ],
     labels: {
       stepLabel: "Stage",
-      proofLabel: "EnterIT in three numbers",
+      proofLabel: "EnterIT in numbers",
       leadersEyebrow: "Leadership",
       buildGo: "Three disciplines, one team →",
       solutionsGo: "All eight routines →",
@@ -264,8 +264,8 @@ export const voice = {
       h1: "Enterprise-KI und Software, gebaut für den Produktivbetrieb.",
       ctaPrimary: "Projekt besprechen",
       ctaSecondary: "Delivery-Team erweitern",
-      lead: "Ein Team von 75 Spezialistinnen und Spezialisten für Software, KI, Daten, Integrationen und Cloud. Wir konzipieren, bauen und betreiben komplexe Systeme für Unternehmen und Technologiepartner weltweit.",
-      note: "120+ umgesetzte Projekte · 60+ integrierte Systeme · 75 Spezialisten",
+      lead: "Ein Team für Software, KI, Daten, Integrationen und Cloud. Wir konzipieren, bauen und betreiben komplexe Systeme für Unternehmen und Technologiepartner weltweit.",
+      note: "120+ umgesetzte Projekte · 60+ integrierte Systeme · drei Disziplinen, ein Vertrag",
     },
     chapters: [
       {
@@ -300,7 +300,7 @@ export const voice = {
       },
       {
         kicker: "Wer wir sind",
-        title: "75 Spezialisten. Ein Team, eine Verantwortung.",
+        title: "Drei Disziplinen. Ein Team, eine Verantwortung.",
         ask: "Kein Netzwerk von Freelancern. Ein Unternehmen, ein Vertrag und eine benannte Projektleitung, die für das Ergebnis einsteht.",
       },
       {
@@ -330,7 +330,7 @@ export const voice = {
     ],
     labels: {
       stepLabel: "Phase",
-      proofLabel: "Das Haus in drei Zahlen",
+      proofLabel: "EnterIT in Zahlen",
       leadersEyebrow: "Führung",
       buildGo: "Drei Disziplinen, ein Team →",
       solutionsGo: "Alle acht Routinen →",
@@ -382,8 +382,8 @@ export const voice = {
       h1: "Budujemy firmowe AI i oprogramowanie, które sprawdzają się w produkcji.",
       ctaPrimary: "Porozmawiajmy o projekcie",
       ctaSecondary: "Szukam zespołu delivery",
-      lead: "75 specjalistów od oprogramowania, AI, danych, integracji i chmury. Projektujemy, budujemy i długoterminowo utrzymujemy złożone systemy dla dużych firm i partnerów technologicznych na całym świecie.",
-      note: "120+ zrealizowanych projektów · 60+ zintegrowanych systemów · 75 specjalistów",
+      lead: "Jeden zespół od oprogramowania, AI, danych, integracji i chmury. Projektujemy, budujemy i długoterminowo utrzymujemy złożone systemy dla dużych firm i partnerów technologicznych na całym świecie.",
+      note: "120+ zrealizowanych projektów · 60+ zintegrowanych systemów · trzy specjalizacje, jedna umowa",
     },
     chapters: [
       {
@@ -418,7 +418,7 @@ export const voice = {
       },
       {
         kicker: "Kim jesteśmy",
-        title: "75 specjalistów. Jeden zespół, jedna odpowiedzialność.",
+        title: "Trzy specjalizacje. Jeden zespół, jedna odpowiedzialność.",
         ask: "To nie sieć freelancerów. Jedna firma, jedna umowa i imiennie wskazane kierownictwo zlecenia, które odpowiada za wynik.",
       },
       {
@@ -448,7 +448,7 @@ export const voice = {
     ],
     labels: {
       stepLabel: "Etap",
-      proofLabel: "Firma w trzech liczbach",
+      proofLabel: "EnterIT w liczbach",
       leadersEyebrow: "Kierownictwo",
       buildGo: "Trzy dyscypliny, jeden zespół →",
       solutionsGo: "Wszystkie osiem rutyn →",

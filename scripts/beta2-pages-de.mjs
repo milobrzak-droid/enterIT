@@ -2,7 +2,7 @@
 export const de = {
   team: {
     eyebrow: "Wer die Arbeit macht",
-    h1: "75 Spezialisten. Drei Disziplinen. Ein Team.",
+    h1: "Drei Disziplinen. Ein Team.",
     lead: "Drei feste Teams, die lange genug zusammenarbeiten, um Arbeit über die Grenze zu reichen, ohne sie fallen zu lassen. Diese Seite zeigt, wer sie sind, wer sie führt und warum die Titel so aussehen, wie sie aussehen.",
     meta: "Enter Tech · Enter Agents · Enter Studio",
     cta: "Die Menschen kennenlernen, die Ihren Auftrag führen würden",
@@ -30,7 +30,7 @@ export const de = {
       },
     ],
     titlesKicker: "Ein Team, ein Vertrag",
-    titlesH2: "75 Spezialisten. Drei Disziplinen. Ein Team.",
+    titlesH2: "Drei Disziplinen. Ein Team.",
     titlesBody: [
       "Software-Engineering, KI und die Produktoberfläche arbeiten in einem Lieferprozess. Welche der drei Disziplinen die Arbeit übernimmt, ändert nichts daran: ein Vertrag, eine Delivery-Leitung, ein Eskalationsweg.",
       "Vertragspartner ist AI Enter s.r.o., auftretend als EnterIT. Dieser Name steht im Angebot, im Vertrag und auf der Rechnung.",
@@ -38,10 +38,9 @@ export const de = {
     miloRole: "CEO. Strategie, Produkt und Methodik. Über 800 geschulte Personen in mehr als hundert Unternehmen.",
     michaelaRole: "Analytics. Verantwortet Kundenlieferung und Produktionsbetrieb über alle drei Teams.",
     shapeKicker: "Was das ergibt",
-    shapeH2: "75 Spezialisten, und warum diese Zahl zählt.",
+    shapeH2: "Feste Disziplinen, kein pro Projekt zusammengestelltes Netzwerk.",
     stats: [
-      ["75", "Personen, fest angestellt", "Kein Netzwerk von Freelancern, das pro Projekt zusammengestellt wird."],
-      ["45 / 25 / 5", "Tech / Agents / Studio", null],
+      ["3", "feste Disziplinen", "Software-Engineering, KI und Agenten, Produkt — fest besetzt, nicht pro Projekt zusammengestellt."],
       ["120+", "gelieferte Projekte", null],
       ["60+", "angebundene Systeme", null],
     ],
@@ -57,7 +56,7 @@ export const de = {
     hiringSub: "Sie liefern in den Betrieb und halten es dann am Laufen — das ist eine andere Aufgabe, und die, die sich lohnt.",
     hiringGo: "Offene Stellen →",
     seoTitle: "Das Team | EnterIT",
-    seoDesc: "75 Personen in drei festen Teams — Enter Tech, Enter Agents und Enter Studio — mit einem benannten Verantwortlichen je Bereich und einem Vertrag über alle drei.",
+    seoDesc: "Drei feste Disziplinen — Software-Engineering, KI und Agenten, Produkt — mit einem benannten Verantwortlichen je Bereich und einem Vertrag über alle drei.",
   },
   integrations: {
     eyebrow: "Integrationen",

@@ -36,11 +36,11 @@ export const us = {
   hero: {
     eyebrow: "Prague · Bruntál · working with teams in the US",
     h1: "One engineering team for everything between your website and your ERP.",
-    lead: "Enter is an engineering organization of 75 engineers in three teams. We build websites and digital products, automate the work your people do by hand, put AI agents into live operations, and build the platforms and enterprise systems underneath. Then we run all of it under an SLA.",
+    lead: "Enter is an engineering organization of three permanent practices. We build websites and digital products, automate the work your people do by hand, put AI agents into live operations, and build the platforms and enterprise systems underneath. Then we run all of it under an SLA.",
     primary: "Book a 30-minute call",
     secondary: "See what is running today",
     stats: [
-      ["75", "engineers, three teams"],
+      ["3", "permanent practices"],
       ["120+", "projects delivered", need("confirm the count before launch")],
       ["60+", "systems integrated", need("confirm the count before launch")],
       ["8", "years of enterprise delivery", need("confirm founding year")],
@@ -55,7 +55,7 @@ export const us = {
     h2: "If you read one section, read this one.",
     body: [
       "Most companies end up with three or four suppliers: one for the website, one for automation, one for AI, one for the ERP integration. Nobody owns the whole picture, and the seams between them are where projects die.",
-      "Enter is built the other way around. 75 engineers in three teams — enterprise systems, AI and agents, and product and web — under one roof, one delivery process, and one contract. A single engagement can start with a marketing site and end with an agent that reads purchase orders and writes them straight into Business Central, without changing suppliers halfway through.",
+      "Enter is built the other way around. Three permanent practices — enterprise systems, AI and agents, and product and web — under one roof, one delivery process, and one contract. A single engagement can start with a marketing site and end with an agent that reads purchase orders and writes them straight into Business Central, without changing suppliers halfway through.",
       "We start every engagement by measuring what the current process actually costs. We build a pilot on your real data before anyone signs off on a large budget. And we do not hand over a repository and disappear — deployment, monitoring, security and continued development stay with a named owner on our side.",
       "If you run an IT company yourself: yes, we also work as an extension of another engineering team. That model is described in section 10.",
     ],
@@ -293,7 +293,7 @@ export const us = {
   /* ---- 07 · Who does the work -------------------------------------------- */
   team: {
     no: "07", eyebrow: "Who does the work",
-    h2: "75 engineers. Three teams. One name on the contract.",
+    h2: "Three practices. One team. One name on the contract.",
     intro: "Not a network of freelancers assembled per project. Three permanent teams that have worked together long enough to hand work across the boundary without dropping it.",
     close: "Every area has a named owner. You always know who decides and who is accountable for the outcome.",
     go: "Meet the whole team →",
@@ -459,7 +459,7 @@ export const us = {
   navCta: "Book a call",
   seo: {
     title: "Enterprise Software, AI Agents & Automation | EnterIT",
-    description: "75 engineers building websites, automation, AI agents, data platforms and enterprise systems — and running them in production under an SLA.",
+    description: "One team building websites, automation, AI agents, data platforms and enterprise systems — and running them in production under an SLA.",
     og: "One engineering team for everything between your website and your ERP",
   },
   needLabel: "Needs data",

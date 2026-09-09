@@ -2,7 +2,7 @@
 export const pl = {
   team: {
     eyebrow: "Kto wykonuje tę pracę",
-    h1: "75 specjalistów. Trzy specjalizacje. Jeden zespół.",
+    h1: "Trzy specjalizacje. Jeden zespół.",
     lead: "Trzy stałe zespoły, które pracują razem wystarczająco długo, żeby przekazać sobie pracę przez granicę i jej nie upuścić. Ta strona jest o tym, kim są, kto nimi kieruje i dlaczego tytuły wyglądają tak, jak wyglądają.",
     meta: "Enter Tech · Enter Agents · Enter Studio",
     cta: "Poznaj ludzi, którzy poprowadziliby wasze zlecenie",
@@ -30,7 +30,7 @@ export const pl = {
       },
     ],
     titlesKicker: "Jeden zespół, jedna umowa",
-    titlesH2: "75 specjalistów. Trzy specjalizacje. Jeden zespół.",
+    titlesH2: "Trzy specjalizacje. Jeden zespół.",
     titlesBody: [
       "Software engineering, AI i warstwa produktowa pracują w jednym procesie dostawy. Niezależnie od tego, która z trzech specjalizacji wykona pracę, zlecenie ma jedną umowę, jedno kierownictwo dostawy i jedną ścieżkę eskalacji.",
       "Stroną umowy jest AI Enter s.r.o., działająca jako EnterIT. Ta nazwa widnieje na ofercie, w umowie i na fakturze.",
@@ -38,10 +38,9 @@ export const pl = {
     miloRole: "CEO. Strategia, produkt i metodyka. Ponad 800 przeszkolonych osób w ponad stu firmach.",
     michaelaRole: "Analytics. Odpowiada za dostawę klientom i utrzymanie produkcji we wszystkich trzech zespołach.",
     shapeKicker: "Co się z tego składa",
-    shapeH2: "75 specjalistów i powód, dla którego ta liczba ma znaczenie.",
+    shapeH2: "Stałe specjalizacje, nie sieć zbierana pod każdy projekt.",
     stats: [
-      ["75", "osób, na stałe", "Nie sieć freelancerów zbierana pod każdy projekt."],
-      ["45 / 25 / 5", "tech / agents / studio", null],
+      ["3", "stałe specjalizacje", "Software engineering, AI i agenci, produkt — obsadzone na stałe, nie zbierane pod każdy projekt."],
       ["120+", "dostarczonych projektów", null],
       ["60+", "podłączonych systemów", null],
     ],
@@ -57,7 +56,7 @@ export const pl = {
     hiringSub: "Wdrażasz na produkcję i potem to utrzymujesz — a to inna praca, i ta warta zachodu.",
     hiringGo: "Otwarte role →",
     seoTitle: "Zespół | EnterIT",
-    seoDesc: "75 specjalistów w trzech stałych zespołach — Enter Tech, Enter Agents i Enter Studio — z imiennym właścicielem każdego obszaru i jedną umową na wszystkie trzy.",
+    seoDesc: "Trzy stałe specjalizacje — software engineering, AI i agenci, produkt — z imiennym właścicielem każdego obszaru i jedną umową na wszystkie trzy.",
   },
   integrations: {
     eyebrow: "Integracje",
